@@ -153,8 +153,8 @@ function FeatureCard({
   return (
     <div className="bg-white p-6 rounded-xl border shadow-sm">
       <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </div>
   )
 }
