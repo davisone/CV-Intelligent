@@ -21,6 +21,11 @@ const navItems = [
     icon: '🎨',
   },
   {
+    label: 'Mon Profil',
+    href: '/dashboard/profile',
+    icon: '👤',
+  },
+  {
     label: 'Paramètres',
     href: '/dashboard/settings',
     icon: '⚙️',

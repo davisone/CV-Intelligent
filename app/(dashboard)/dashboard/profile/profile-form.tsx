@@ -1,0 +1,458 @@
+'use client'
+
+import { useState } from 'react'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+
+interface ProfileFormProps {
+  initialProfile: any
+  initialExperiences: any[]
+  initialEducations: any[]
+  initialSkills: any[]
+  initialLanguages: any[]
+}
+
+export function ProfileForm({
+  initialProfile,
+  initialExperiences,
+  initialEducations,
+  initialSkills,
+  initialLanguages,
+}: ProfileFormProps) {
+  const [isLoading, setIsLoading] = useState(false)
+  const [profile, setProfile] = useState({
+    firstName: initialProfile?.firstName || '',
+    lastName: initialProfile?.lastName || '',
+    phone: initialProfile?.phone || '',
+    jobTitle: initialProfile?.jobTitle || '',
+    address: initialProfile?.address || '',
+    city: initialProfile?.city || '',
+    country: initialProfile?.country || '',
+    zipCode: initialProfile?.zipCode || '',
+    linkedin: initialProfile?.linkedin || '',
+    github: initialProfile?.github || '',
+    website: initialProfile?.website || '',
+    summary: initialProfile?.summary || '',
+  })
+
+  const [experiences, setExperiences] = useState(initialExperiences)
+  const [educations, setEducations] = useState(initialEducations)
+  const [skills, setSkills] = useState(initialSkills)
+  const [languages, setLanguages] = useState(initialLanguages)
+
+  const handleProfileChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setProfile(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const saveProfile = async () => {
+    setIsLoading(true)
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(profile),
+      })
+      if (res.ok) {
+        toast.success('Profil sauvegardé')
+      } else {
+        toast.error('Erreur lors de la sauvegarde')
+      }
+    } catch {
+      toast.error('Erreur serveur')
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const addExperience = async () => {
+    const res = await fetch('/api/profile/experiences', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        company: '',
+        position: '',
+        startDate: new Date().toISOString(),
+        current: true,
+      }),
+    })
+    if (res.ok) {
+      const { experience } = await res.json()
+      setExperiences(prev => [...prev, experience])
+    }
+  }
+
+  const updateExperience = async (id: string, data: any) => {
+    await fetch('/api/profile/experiences', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, ...data }),
+    })
+  }
+
+  const deleteExperience = async (id: string) => {
+    await fetch(`/api/profile/experiences?id=${id}`, { method: 'DELETE' })
+    setExperiences(prev => prev.filter(e => e.id !== id))
+    toast.success('Expérience supprimée')
+  }
+
+  const addEducation = async () => {
+    const res = await fetch('/api/profile/educations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        institution: '',
+        degree: '',
+        startDate: new Date().toISOString(),
+        current: true,
+      }),
+    })
+    if (res.ok) {
+      const { education } = await res.json()
+      setEducations(prev => [...prev, education])
+    }
+  }
+
+  const deleteEducation = async (id: string) => {
+    await fetch(`/api/profile/educations?id=${id}`, { method: 'DELETE' })
+    setEducations(prev => prev.filter(e => e.id !== id))
+    toast.success('Formation supprimée')
+  }
+
+  const addSkill = async () => {
+    const res = await fetch('/api/profile/skills', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: '' }),
+    })
+    if (res.ok) {
+      const { skill } = await res.json()
+      setSkills(prev => [...prev, skill])
+    }
+  }
+
+  const deleteSkill = async (id: string) => {
+    await fetch(`/api/profile/skills?id=${id}`, { method: 'DELETE' })
+    setSkills(prev => prev.filter(s => s.id !== id))
+  }
+
+  const addLanguage = async () => {
+    const res = await fetch('/api/profile/languages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: '' }),
+    })
+    if (res.ok) {
+      const { language } = await res.json()
+      setLanguages(prev => [...prev, language])
+    }
+  }
+
+  const deleteLanguage = async (id: string) => {
+    await fetch(`/api/profile/languages?id=${id}`, { method: 'DELETE' })
+    setLanguages(prev => prev.filter(l => l.id !== id))
+  }
+
+  return (
+    <div className="space-y-8">
+      {/* Informations personnelles */}
+      <section className="bg-white p-6 rounded-xl border">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Informations personnelles</h2>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="firstName">Prénom</Label>
+            <Input id="firstName" name="firstName" value={profile.firstName} onChange={handleProfileChange} />
+          </div>
+          <div>
+            <Label htmlFor="lastName">Nom</Label>
+            <Input id="lastName" name="lastName" value={profile.lastName} onChange={handleProfileChange} />
+          </div>
+          <div>
+            <Label htmlFor="phone">Téléphone</Label>
+            <Input id="phone" name="phone" value={profile.phone} onChange={handleProfileChange} />
+          </div>
+          <div>
+            <Label htmlFor="jobTitle">Titre professionnel</Label>
+            <Input id="jobTitle" name="jobTitle" value={profile.jobTitle} onChange={handleProfileChange} placeholder="Ex: Développeur Full Stack" />
+          </div>
+          <div>
+            <Label htmlFor="city">Ville</Label>
+            <Input id="city" name="city" value={profile.city} onChange={handleProfileChange} />
+          </div>
+          <div>
+            <Label htmlFor="country">Pays</Label>
+            <Input id="country" name="country" value={profile.country} onChange={handleProfileChange} />
+          </div>
+          <div>
+            <Label htmlFor="linkedin">LinkedIn</Label>
+            <Input id="linkedin" name="linkedin" value={profile.linkedin} onChange={handleProfileChange} placeholder="https://linkedin.com/in/..." />
+          </div>
+          <div>
+            <Label htmlFor="github">GitHub</Label>
+            <Input id="github" name="github" value={profile.github} onChange={handleProfileChange} placeholder="https://github.com/..." />
+          </div>
+          <div className="col-span-2">
+            <Label htmlFor="summary">Résumé professionnel</Label>
+            <textarea
+              id="summary"
+              name="summary"
+              value={profile.summary}
+              onChange={handleProfileChange}
+              rows={4}
+              className="w-full px-3 py-2 border rounded-lg text-gray-900"
+              placeholder="Décrivez-vous en quelques phrases..."
+            />
+          </div>
+        </div>
+        <Button onClick={saveProfile} isLoading={isLoading} className="mt-4">
+          Sauvegarder le profil
+        </Button>
+      </section>
+
+      {/* Expériences */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Expériences professionnelles</h2>
+          <Button variant="outline" onClick={addExperience}>+ Ajouter</Button>
+        </div>
+        <div className="space-y-4">
+          {experiences.map((exp) => (
+            <ExperienceCard
+              key={exp.id}
+              experience={exp}
+              onUpdate={(data) => updateExperience(exp.id, data)}
+              onDelete={() => deleteExperience(exp.id)}
+            />
+          ))}
+          {experiences.length === 0 && (
+            <p className="text-gray-500 text-center py-4">Aucune expérience ajoutée</p>
+          )}
+        </div>
+      </section>
+
+      {/* Formations */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Formations</h2>
+          <Button variant="outline" onClick={addEducation}>+ Ajouter</Button>
+        </div>
+        <div className="space-y-4">
+          {educations.map((edu) => (
+            <EducationCard
+              key={edu.id}
+              education={edu}
+              onDelete={() => deleteEducation(edu.id)}
+            />
+          ))}
+          {educations.length === 0 && (
+            <p className="text-gray-500 text-center py-4">Aucune formation ajoutée</p>
+          )}
+        </div>
+      </section>
+
+      {/* Compétences */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Compétences</h2>
+          <Button variant="outline" onClick={addSkill}>+ Ajouter</Button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <SkillBadge key={skill.id} skill={skill} onDelete={() => deleteSkill(skill.id)} />
+          ))}
+          {skills.length === 0 && (
+            <p className="text-gray-500">Aucune compétence ajoutée</p>
+          )}
+        </div>
+      </section>
+
+      {/* Langues */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Langues</h2>
+          <Button variant="outline" onClick={addLanguage}>+ Ajouter</Button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {languages.map((lang) => (
+            <LanguageBadge key={lang.id} language={lang} onDelete={() => deleteLanguage(lang.id)} />
+          ))}
+          {languages.length === 0 && (
+            <p className="text-gray-500">Aucune langue ajoutée</p>
+          )}
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function ExperienceCard({ experience, onUpdate, onDelete }: { experience: any; onUpdate: (data: any) => void; onDelete: () => void }) {
+  const [data, setData] = useState(experience)
+  const [editing, setEditing] = useState(!experience.company)
+
+  const save = () => {
+    onUpdate(data)
+    setEditing(false)
+    toast.success('Expérience sauvegardée')
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <Input placeholder="Entreprise" value={data.company} onChange={(e) => setData({ ...data, company: e.target.value })} />
+          <Input placeholder="Poste" value={data.position} onChange={(e) => setData({ ...data, position: e.target.value })} />
+          <Input type="date" value={data.startDate?.slice(0, 10)} onChange={(e) => setData({ ...data, startDate: e.target.value })} />
+          <Input type="date" value={data.endDate?.slice(0, 10) || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} disabled={data.current} />
+        </div>
+        <label className="flex items-center gap-2 text-sm text-gray-700">
+          <input type="checkbox" checked={data.current} onChange={(e) => setData({ ...data, current: e.target.checked, endDate: null })} />
+          Poste actuel
+        </label>
+        <textarea
+          placeholder="Description"
+          value={data.description || ''}
+          onChange={(e) => setData({ ...data, description: e.target.value })}
+          className="w-full px-3 py-2 border rounded-lg text-gray-900"
+          rows={3}
+        />
+        <div className="flex gap-2">
+          <Button size="sm" onClick={save}>Sauvegarder</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex justify-between items-start">
+      <div>
+        <h3 className="font-medium text-gray-900">{data.position || 'Nouveau poste'}</h3>
+        <p className="text-gray-600">{data.company || 'Entreprise'}</p>
+        <p className="text-sm text-gray-500">
+          {data.startDate?.slice(0, 7)} - {data.current ? 'Présent' : data.endDate?.slice(0, 7)}
+        </p>
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+function EducationCard({ education, onDelete }: { education: any; onDelete: () => void }) {
+  const [data, setData] = useState(education)
+  const [editing, setEditing] = useState(!education.institution)
+
+  const save = async () => {
+    await fetch('/api/profile/educations', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: education.id, ...data }),
+    })
+    setEditing(false)
+    toast.success('Formation sauvegardée')
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <Input placeholder="Établissement" value={data.institution} onChange={(e) => setData({ ...data, institution: e.target.value })} />
+          <Input placeholder="Diplôme" value={data.degree} onChange={(e) => setData({ ...data, degree: e.target.value })} />
+          <Input placeholder="Domaine" value={data.field || ''} onChange={(e) => setData({ ...data, field: e.target.value })} />
+          <Input type="date" value={data.startDate?.slice(0, 10)} onChange={(e) => setData({ ...data, startDate: e.target.value })} />
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={save}>Sauvegarder</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex justify-between items-start">
+      <div>
+        <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
+        <p className="text-gray-600">{data.institution || 'Établissement'}</p>
+        {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
+  const [name, setName] = useState(skill.name)
+  const [editing, setEditing] = useState(!skill.name)
+
+  const save = async () => {
+    await fetch('/api/profile/skills', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: skill.id, name }),
+    })
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1">
+        <input
+          className="bg-transparent text-sm w-24 outline-none text-gray-900"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          onBlur={save}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
+          autoFocus
+        />
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700">×</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1 bg-primary/10 text-primary rounded-full px-3 py-1">
+      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
+      <button onClick={onDelete} className="hover:text-red-500">×</button>
+    </div>
+  )
+}
+
+function LanguageBadge({ language, onDelete }: { language: any; onDelete: () => void }) {
+  const [name, setName] = useState(language.name)
+  const [editing, setEditing] = useState(!language.name)
+
+  const save = async () => {
+    await fetch('/api/profile/languages', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: language.id, name }),
+    })
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1">
+        <input
+          className="bg-transparent text-sm w-24 outline-none text-gray-900"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          onBlur={save}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
+          autoFocus
+        />
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700">×</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1 bg-blue-100 text-blue-700 rounded-full px-3 py-1">
+      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
+      <button onClick={onDelete} className="hover:text-red-500">×</button>
+    </div>
+  )
+}

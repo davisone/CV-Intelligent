@@ -65,11 +65,105 @@ export async function POST(request: Request) {
 
     const { title, template } = validatedData.data
 
+    // Récupérer le profil de l'utilisateur pour pré-remplir
+    const userProfile = await prisma.userProfile.findUnique({
+      where: { userId: session.user.id },
+    })
+    const userExperiences = await prisma.userExperience.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
+    const userEducations = await prisma.userEducation.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
+    const userSkills = await prisma.userSkill.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
+    const userLanguages = await prisma.userLanguage.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
+
+    // Créer le CV avec les données pré-remplies
     const resume = await prisma.resume.create({
       data: {
         title,
         template,
         userId: session.user.id,
+        // Pré-remplir les infos personnelles depuis le profil
+        ...(userProfile && {
+          personalInfo: {
+            create: {
+              firstName: userProfile.firstName || '',
+              lastName: userProfile.lastName || '',
+              email: session.user.email || '',
+              phone: userProfile.phone,
+              address: userProfile.address,
+              city: userProfile.city,
+              country: userProfile.country,
+              zipCode: userProfile.zipCode,
+              linkedin: userProfile.linkedin,
+              github: userProfile.github,
+              website: userProfile.website,
+              summary: userProfile.summary,
+            },
+          },
+        }),
+        // Pré-remplir les expériences
+        ...(userExperiences.length > 0 && {
+          experiences: {
+            create: userExperiences.map((exp, index) => ({
+              company: exp.company,
+              position: exp.position,
+              location: exp.location,
+              startDate: exp.startDate,
+              endDate: exp.endDate,
+              current: exp.current,
+              description: exp.description,
+              order: index,
+            })),
+          },
+        }),
+        // Pré-remplir les formations
+        ...(userEducations.length > 0 && {
+          educations: {
+            create: userEducations.map((edu, index) => ({
+              institution: edu.institution,
+              degree: edu.degree,
+              field: edu.field,
+              location: edu.location,
+              startDate: edu.startDate,
+              endDate: edu.endDate,
+              current: edu.current,
+              description: edu.description,
+              gpa: edu.gpa,
+              order: index,
+            })),
+          },
+        }),
+        // Pré-remplir les compétences
+        ...(userSkills.length > 0 && {
+          skills: {
+            create: userSkills.map((skill, index) => ({
+              name: skill.name,
+              level: skill.level,
+              category: skill.category,
+              order: index,
+            })),
+          },
+        }),
+        // Pré-remplir les langues
+        ...(userLanguages.length > 0 && {
+          languages: {
+            create: userLanguages.map((lang, index) => ({
+              name: lang.name,
+              level: lang.level,
+              order: index,
+            })),
+          },
+        }),
       },
     })
 

@@ -50,6 +50,13 @@ model User {
   accounts      Account[]
   sessions      Session[]
   resumes       Resume[]
+  // Profil Maître
+  profile       UserProfile?
+  userExperiences  UserExperience[]
+  userEducations   UserEducation[]
+  userSkills       UserSkill[]
+  userLanguages    UserLanguage[]
+  userProjects     UserProject[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
@@ -60,6 +67,95 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// Profil Maître (infos réutilisables)
+model UserProfile {
+  id        String  @id @default(cuid())
+  userId    String  @unique
+  firstName String?
+  lastName  String?
+  phone     String?
+  address   String?
+  city      String?
+  country   String?
+  zipCode   String?
+  linkedin  String?
+  github    String?
+  website   String?
+  summary   String? @db.Text
+  jobTitle  String?
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserExperience {
+  id          String    @id @default(cuid())
+  userId      String
+  company     String
+  position    String
+  location    String?
+  startDate   DateTime
+  endDate     DateTime?
+  current     Boolean   @default(false)
+  description String?   @db.Text
+  order       Int       @default(0)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model UserEducation {
+  id          String    @id @default(cuid())
+  userId      String
+  institution String
+  degree      String
+  field       String?
+  location    String?
+  startDate   DateTime
+  endDate     DateTime?
+  current     Boolean   @default(false)
+  description String?   @db.Text
+  gpa         String?
+  order       Int       @default(0)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model UserSkill {
+  id       String     @id @default(cuid())
+  userId   String
+  name     String
+  level    SkillLevel @default(INTERMEDIATE)
+  category String?
+  order    Int        @default(0)
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model UserLanguage {
+  id     String        @id @default(cuid())
+  userId String
+  name   String
+  level  LanguageLevel @default(INTERMEDIATE)
+  order  Int           @default(0)
+  user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model UserProject {
+  id           String   @id @default(cuid())
+  userId       String
+  name         String
+  description  String?  @db.Text
+  url          String?
+  technologies String[]
+  order        Int      @default(0)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 // Resume Models
