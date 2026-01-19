@@ -108,6 +108,7 @@ export async function POST(request: Request) {
               github: userProfile.github,
               website: userProfile.website,
               summary: userProfile.summary,
+              photoUrl: userProfile.photoUrl,
             },
           },
         }),

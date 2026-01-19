@@ -78,6 +78,7 @@ export async function PUT(request: Request) {
         website: data.website,
         summary: data.summary,
         jobTitle: data.jobTitle,
+        photoUrl: data.photoUrl,
       },
       create: {
         userId: session.user.id,
@@ -93,6 +94,7 @@ export async function PUT(request: Request) {
         website: data.website,
         summary: data.summary,
         jobTitle: data.jobTitle,
+        photoUrl: data.photoUrl,
       },
     })
 
