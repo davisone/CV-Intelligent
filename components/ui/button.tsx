@@ -11,8 +11,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'default', isLoading, children, disabled, ...props }, ref) => {
     const variants = {
       default: 'bg-primary text-white hover:bg-primary/90',
-      outline: 'border border-border bg-transparent hover:bg-secondary',
-      ghost: 'hover:bg-secondary',
+      outline: 'border border-border bg-transparent text-gray-700 hover:bg-gray-100',
+      ghost: 'text-gray-700 hover:bg-gray-100',
       destructive: 'bg-destructive text-white hover:bg-destructive/90',
     }
 

@@ -1,8 +1,10 @@
+import { Suspense } from 'react'
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { ResumeList } from './resume-list'
+import { WelcomeToast } from './welcome-toast'
 import { Button } from '@/components/ui/button'
 
 export default async function DashboardPage() {
@@ -25,6 +27,9 @@ export default async function DashboardPage() {
 
   return (
     <div>
+      <Suspense fallback={null}>
+        <WelcomeToast />
+      </Suspense>
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>

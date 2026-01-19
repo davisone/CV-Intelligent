@@ -4,6 +4,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
 import bcrypt from 'bcryptjs'
+import { verifySync } from 'otplib'
 import { prisma } from '@/lib/db/prisma'
 
 export const authOptions: NextAuthOptions = {
@@ -14,7 +15,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/login',
     error: '/login',
-    newUser: '/signup',
   },
   providers: [
     GoogleProvider({
@@ -30,6 +30,7 @@ export const authOptions: NextAuthOptions = {
       credentials: {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
+        totpCode: { label: 'TOTP Code', type: 'text' },
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
@@ -51,6 +52,22 @@ export const authOptions: NextAuthOptions = {
 
         if (!isPasswordValid) {
           throw new Error('Invalid credentials')
+        }
+
+        // Check 2FA if enabled
+        if (user.totpEnabled && user.totpSecret) {
+          if (!credentials.totpCode) {
+            throw new Error('2FA_REQUIRED')
+          }
+
+          const isValidToken = verifySync({
+            token: credentials.totpCode,
+            secret: user.totpSecret,
+          })
+
+          if (!isValidToken) {
+            throw new Error('Invalid 2FA code')
+          }
         }
 
         return {

@@ -20,6 +20,11 @@ const navItems = [
     href: '/dashboard/templates',
     icon: '🎨',
   },
+  {
+    label: 'Paramètres',
+    href: '/dashboard/settings',
+    icon: '⚙️',
+  },
 ]
 
 export function Sidebar() {
@@ -49,16 +54,6 @@ export function Sidebar() {
           )
         })}
       </nav>
-
-      <div className="absolute bottom-4 left-4 right-4 p-4">
-        <Link
-          href="/dashboard/resumes/new"
-          className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
-        >
-          <span>+</span>
-          Nouveau CV
-        </Link>
-      </div>
     </aside>
   )
 }
