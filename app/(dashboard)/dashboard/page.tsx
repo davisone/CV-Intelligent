@@ -75,7 +75,7 @@ export default async function DashboardPage() {
             <p className="text-gray-500 mb-4">
               Vous n&apos;avez pas encore de CV
             </p>
-            <Link href="/dashboard/resumes/new">
+            <Link href="/dashboard/templates">
               <Button>Créer mon premier CV</Button>
             </Link>
           </div>

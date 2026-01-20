@@ -37,7 +37,7 @@ export function ResumeCard({ id, title, template, updatedAt, onDelete }: ResumeC
       })
 
       if (!response.ok) {
-        throw new Error('Failed to delete')
+        throw new Error('Impossible de supprimer')
       }
 
       toast.success('CV supprimé')
