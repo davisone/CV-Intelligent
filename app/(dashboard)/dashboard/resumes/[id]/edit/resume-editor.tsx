@@ -8,6 +8,55 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ModernTemplate } from '@/components/cv-templates/modern-template'
 
+// Types pour les données du CV
+interface ExperienceData {
+  id: string
+  company: string
+  position: string
+  startDate: string
+  endDate: string | null
+  current: boolean
+  description: string | null
+}
+
+interface EducationData {
+  id: string
+  institution: string
+  degree: string
+  field: string | null
+  startDate: string
+  endDate: string | null
+  gpa: string | null
+}
+
+type SkillLevel = 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | 'EXPERT'
+type LanguageLevel = 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | 'FLUENT' | 'NATIVE'
+
+interface SkillData {
+  id: string
+  name: string
+  level: SkillLevel
+}
+
+interface LanguageData {
+  id: string
+  name: string
+  level: LanguageLevel
+}
+
+// Helper pour formater les dates
+const formatDate = (date: Date | string | null | undefined, format: 'input' | 'display' = 'display') => {
+  if (!date) return ''
+  const d = typeof date === 'string' ? new Date(date) : date
+  if (format === 'input') {
+    return d.toISOString().slice(0, 10)
+  }
+  return d.toISOString().slice(0, 7)
+}
+
+// Générer un ID unique
+const generateId = () => `temp-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+
 interface ResumeEditorProps {
   resume: any
 }
@@ -30,10 +79,10 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
     summary: resume.personalInfo?.summary ?? '',
     photoUrl: resume.personalInfo?.photoUrl ?? '',
   })
-  const [experiences] = useState<any[]>(resume.experiences || [])
-  const [educations] = useState<any[]>(resume.educations || [])
-  const [skills] = useState<any[]>(resume.skills || [])
-  const [languages] = useState<any[]>(resume.languages || [])
+  const [experiences, setExperiences] = useState<ExperienceData[]>(resume.experiences || [])
+  const [educations, setEducations] = useState<EducationData[]>(resume.educations || [])
+  const [skills, setSkills] = useState<SkillData[]>(resume.skills || [])
+  const [languages, setLanguages] = useState<LanguageData[]>(resume.languages || [])
 
   const handlePersonalInfoChange = (field: string, value: string) => {
     setPersonalInfo(prev => ({ ...prev, [field]: value }))
@@ -58,7 +107,32 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
             linkedin: personalInfo.linkedin || undefined,
             github: personalInfo.github || undefined,
             summary: personalInfo.summary || undefined,
+            photoUrl: personalInfo.photoUrl || undefined,
           },
+          experiences: experiences.map(exp => ({
+            company: exp.company,
+            position: exp.position,
+            startDate: exp.startDate,
+            endDate: exp.endDate || undefined,
+            current: exp.current,
+            description: exp.description || undefined,
+          })),
+          educations: educations.map(edu => ({
+            institution: edu.institution,
+            degree: edu.degree,
+            field: edu.field || undefined,
+            startDate: edu.startDate,
+            endDate: edu.endDate || undefined,
+            gpa: edu.gpa || undefined,
+          })),
+          skills: skills.map(skill => ({
+            name: skill.name,
+            level: skill.level,
+          })),
+          languages: languages.map(lang => ({
+            name: lang.name,
+            level: lang.level,
+          })),
         }),
       })
 
@@ -67,11 +141,94 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
       }
 
       toast.success('CV sauvegardé !')
+      router.refresh()
     } catch {
       toast.error('Erreur lors de la sauvegarde')
     } finally {
       setIsLoading(false)
     }
+  }
+
+  // Handlers pour les expériences
+  const addExperience = () => {
+    const newExp: ExperienceData = {
+      id: generateId(),
+      company: '',
+      position: '',
+      startDate: new Date().toISOString(),
+      endDate: null,
+      current: true,
+      description: null,
+    }
+    setExperiences(prev => [...prev, newExp])
+  }
+
+  const updateExperience = (id: string, data: Partial<ExperienceData>) => {
+    setExperiences(prev => prev.map(exp => exp.id === id ? { ...exp, ...data } : exp))
+  }
+
+  const deleteExperience = (id: string) => {
+    setExperiences(prev => prev.filter(exp => exp.id !== id))
+    toast.success('Expérience supprimée')
+  }
+
+  // Handlers pour les formations
+  const addEducation = () => {
+    const newEdu: EducationData = {
+      id: generateId(),
+      institution: '',
+      degree: '',
+      field: null,
+      startDate: new Date().toISOString(),
+      endDate: null,
+      gpa: null,
+    }
+    setEducations(prev => [...prev, newEdu])
+  }
+
+  const updateEducation = (id: string, data: Partial<EducationData>) => {
+    setEducations(prev => prev.map(edu => edu.id === id ? { ...edu, ...data } : edu))
+  }
+
+  const deleteEducation = (id: string) => {
+    setEducations(prev => prev.filter(edu => edu.id !== id))
+    toast.success('Formation supprimée')
+  }
+
+  // Handlers pour les compétences
+  const addSkill = () => {
+    const newSkill: SkillData = {
+      id: generateId(),
+      name: '',
+      level: 'INTERMEDIATE',
+    }
+    setSkills(prev => [...prev, newSkill])
+  }
+
+  const updateSkill = (id: string, data: Partial<SkillData>) => {
+    setSkills(prev => prev.map(skill => skill.id === id ? { ...skill, ...data } : skill))
+  }
+
+  const deleteSkill = (id: string) => {
+    setSkills(prev => prev.filter(skill => skill.id !== id))
+  }
+
+  // Handlers pour les langues
+  const addLanguage = () => {
+    const newLang: LanguageData = {
+      id: generateId(),
+      name: '',
+      level: 'INTERMEDIATE',
+    }
+    setLanguages(prev => [...prev, newLang])
+  }
+
+  const updateLanguage = (id: string, data: Partial<LanguageData>) => {
+    setLanguages(prev => prev.map(lang => lang.id === id ? { ...lang, ...data } : lang))
+  }
+
+  const deleteLanguage = (id: string) => {
+    setLanguages(prev => prev.filter(lang => lang.id !== id))
   }
 
   const handleSyncProfile = async () => {
@@ -239,75 +396,105 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
 
           {/* Expériences */}
           <section className="bg-white p-6 rounded-xl border">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Expériences ({experiences.length})
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Expériences ({experiences.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addExperience}>
+                + Ajouter
+              </Button>
+            </div>
             {experiences.length > 0 ? (
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {experiences.map((exp) => (
-                  <div key={exp.id} className="p-3 bg-gray-50 rounded-lg">
-                    <p className="font-medium text-gray-900">{exp.position}</p>
-                    <p className="text-sm text-gray-600">{exp.company}</p>
-                  </div>
+                  <ExperienceCard
+                    key={exp.id}
+                    experience={exp}
+                    onUpdate={(data) => updateExperience(exp.id, data)}
+                    onDelete={() => deleteExperience(exp.id)}
+                  />
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">Aucune expérience (ajoutez-les dans votre profil)</p>
+              <p className="text-gray-500 text-sm text-center py-4">Aucune expérience ajoutée</p>
             )}
           </section>
 
           {/* Formations */}
           <section className="bg-white p-6 rounded-xl border">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Formations ({educations.length})
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Formations ({educations.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addEducation}>
+                + Ajouter
+              </Button>
+            </div>
             {educations.length > 0 ? (
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {educations.map((edu) => (
-                  <div key={edu.id} className="p-3 bg-gray-50 rounded-lg">
-                    <p className="font-medium text-gray-900">{edu.degree}</p>
-                    <p className="text-sm text-gray-600">{edu.institution}</p>
-                  </div>
+                  <EducationCard
+                    key={edu.id}
+                    education={edu}
+                    onUpdate={(data) => updateEducation(edu.id, data)}
+                    onDelete={() => deleteEducation(edu.id)}
+                  />
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">Aucune formation (ajoutez-les dans votre profil)</p>
+              <p className="text-gray-500 text-sm text-center py-4">Aucune formation ajoutée</p>
             )}
           </section>
 
           {/* Compétences */}
           <section className="bg-white p-6 rounded-xl border">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Compétences ({skills.length})
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Compétences ({skills.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addSkill}>
+                + Ajouter
+              </Button>
+            </div>
             {skills.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
-                  <span key={skill.id} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                    {skill.name}
-                  </span>
+                  <SkillBadge
+                    key={skill.id}
+                    skill={skill}
+                    onUpdate={(data) => updateSkill(skill.id, data)}
+                    onDelete={() => deleteSkill(skill.id)}
+                  />
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">Aucune compétence (ajoutez-les dans votre profil)</p>
+              <p className="text-gray-500 text-sm">Aucune compétence ajoutée</p>
             )}
           </section>
 
           {/* Langues */}
           <section className="bg-white p-6 rounded-xl border">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Langues ({languages.length})
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Langues ({languages.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addLanguage}>
+                + Ajouter
+              </Button>
+            </div>
             {languages.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {languages.map((lang) => (
-                  <span key={lang.id} className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-                    {lang.name}
-                  </span>
+                  <LanguageBadge
+                    key={lang.id}
+                    language={lang}
+                    onUpdate={(data) => updateLanguage(lang.id, data)}
+                    onDelete={() => deleteLanguage(lang.id)}
+                  />
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">Aucune langue (ajoutez-les dans votre profil)</p>
+              <p className="text-gray-500 text-sm">Aucune langue ajoutée</p>
             )}
           </section>
         </div>
@@ -322,6 +509,337 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
           <ModernTemplate data={cvData} />
         </div>
       )}
+    </div>
+  )
+}
+
+// Composant ExperienceCard
+interface ExperienceCardProps {
+  experience: ExperienceData
+  onUpdate: (data: Partial<ExperienceData>) => void
+  onDelete: () => void
+}
+
+function ExperienceCard({ experience, onUpdate, onDelete }: ExperienceCardProps) {
+  const [data, setData] = useState(experience)
+  const [editing, setEditing] = useState(!experience.company)
+
+  const handleChange = (field: keyof ExperienceData, value: string | boolean | null) => {
+    const newData = { ...data, [field]: value }
+    if (field === 'current' && value === true) {
+      newData.endDate = null
+    }
+    setData(newData)
+  }
+
+  const save = () => {
+    onUpdate(data)
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <Label>Entreprise</Label>
+            <Input
+              placeholder="Nom de l'entreprise"
+              value={data.company}
+              onChange={(e) => handleChange('company', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Poste</Label>
+            <Input
+              placeholder="Titre du poste"
+              value={data.position}
+              onChange={(e) => handleChange('position', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Date de début</Label>
+            <Input
+              type="date"
+              value={formatDate(data.startDate, 'input')}
+              onChange={(e) => handleChange('startDate', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Date de fin</Label>
+            <Input
+              type="date"
+              value={data.endDate ? formatDate(data.endDate, 'input') : ''}
+              onChange={(e) => handleChange('endDate', e.target.value || null)}
+              disabled={data.current}
+            />
+          </div>
+        </div>
+        <label className="flex items-center gap-2 text-sm text-gray-700">
+          <input
+            type="checkbox"
+            checked={data.current}
+            onChange={(e) => handleChange('current', e.target.checked)}
+            className="rounded"
+          />
+          Poste actuel
+        </label>
+        <div>
+          <Label>Description</Label>
+          <textarea
+            placeholder="Décrivez vos responsabilités et accomplissements..."
+            value={data.description || ''}
+            onChange={(e) => handleChange('description', e.target.value || null)}
+            className="w-full px-3 py-2 border rounded-lg text-gray-900 min-h-[80px]"
+          />
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={save}>Valider</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex justify-between items-start">
+      <div>
+        <h3 className="font-medium text-gray-900">{data.position || 'Nouveau poste'}</h3>
+        <p className="text-gray-600">{data.company || 'Entreprise'}</p>
+        <p className="text-sm text-gray-500">
+          {formatDate(data.startDate)} - {data.current ? 'Présent' : formatDate(data.endDate)}
+        </p>
+        {data.description && (
+          <p className="text-sm text-gray-500 mt-1 line-clamp-2">{data.description}</p>
+        )}
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+// Composant EducationCard
+interface EducationCardProps {
+  education: EducationData
+  onUpdate: (data: Partial<EducationData>) => void
+  onDelete: () => void
+}
+
+function EducationCard({ education, onUpdate, onDelete }: EducationCardProps) {
+  const [data, setData] = useState(education)
+  const [editing, setEditing] = useState(!education.institution)
+
+  const handleChange = (field: keyof EducationData, value: string | null) => {
+    setData({ ...data, [field]: value })
+  }
+
+  const save = () => {
+    onUpdate(data)
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <Label>Établissement</Label>
+            <Input
+              placeholder="Nom de l'établissement"
+              value={data.institution}
+              onChange={(e) => handleChange('institution', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Diplôme</Label>
+            <Input
+              placeholder="Ex: Master, Licence..."
+              value={data.degree}
+              onChange={(e) => handleChange('degree', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Domaine / Spécialité</Label>
+            <Input
+              placeholder="Ex: Informatique"
+              value={data.field || ''}
+              onChange={(e) => handleChange('field', e.target.value || null)}
+            />
+          </div>
+          <div>
+            <Label>Mention / GPA</Label>
+            <Input
+              placeholder="Ex: Bien, 3.8/4.0"
+              value={data.gpa || ''}
+              onChange={(e) => handleChange('gpa', e.target.value || null)}
+            />
+          </div>
+          <div>
+            <Label>Date de début</Label>
+            <Input
+              type="date"
+              value={formatDate(data.startDate, 'input')}
+              onChange={(e) => handleChange('startDate', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Date de fin</Label>
+            <Input
+              type="date"
+              value={data.endDate ? formatDate(data.endDate, 'input') : ''}
+              onChange={(e) => handleChange('endDate', e.target.value || null)}
+            />
+          </div>
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={save}>Valider</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex justify-between items-start">
+      <div>
+        <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
+        <p className="text-gray-600">{data.institution || 'Établissement'}</p>
+        {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
+        <p className="text-sm text-gray-500">
+          {formatDate(data.startDate)} - {data.endDate ? formatDate(data.endDate) : 'En cours'}
+        </p>
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+// Composant SkillBadge
+interface SkillBadgeProps {
+  skill: SkillData
+  onUpdate: (data: Partial<SkillData>) => void
+  onDelete: () => void
+}
+
+const skillLevelLabels: Record<SkillLevel, string> = {
+  BEGINNER: 'Débutant',
+  INTERMEDIATE: 'Intermédiaire',
+  ADVANCED: 'Avancé',
+  EXPERT: 'Expert',
+}
+
+function SkillBadge({ skill, onUpdate, onDelete }: SkillBadgeProps) {
+  const [data, setData] = useState(skill)
+  const [editing, setEditing] = useState(!skill.name)
+
+  const save = () => {
+    if (data.name.trim()) {
+      onUpdate(data)
+      setEditing(false)
+    }
+  }
+
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 bg-gray-100 rounded-lg px-2 py-1">
+        <input
+          className="bg-transparent text-sm w-20 outline-none text-gray-900"
+          value={data.name}
+          onChange={(e) => setData({ ...data, name: e.target.value })}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
+          placeholder="Compétence"
+          autoFocus
+        />
+        <select
+          className="text-xs bg-transparent outline-none text-gray-700"
+          value={data.level}
+          onChange={(e) => setData({ ...data, level: e.target.value as SkillLevel })}
+        >
+          <option value="BEGINNER">Débutant</option>
+          <option value="INTERMEDIATE">Intermédiaire</option>
+          <option value="ADVANCED">Avancé</option>
+          <option value="EXPERT">Expert</option>
+        </select>
+        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm px-1">✓</button>
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700 text-sm">×</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1 bg-blue-100 text-blue-800 rounded-full px-3 py-1">
+      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
+        {data.name}
+      </span>
+      <span className="text-xs text-blue-600">({skillLevelLabels[data.level]})</span>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
+    </div>
+  )
+}
+
+// Composant LanguageBadge
+interface LanguageBadgeProps {
+  language: LanguageData
+  onUpdate: (data: Partial<LanguageData>) => void
+  onDelete: () => void
+}
+
+const languageLevelLabels: Record<LanguageLevel, string> = {
+  BEGINNER: 'Débutant',
+  INTERMEDIATE: 'Intermédiaire',
+  ADVANCED: 'Avancé',
+  FLUENT: 'Courant',
+  NATIVE: 'Natif',
+}
+
+function LanguageBadge({ language, onUpdate, onDelete }: LanguageBadgeProps) {
+  const [data, setData] = useState(language)
+  const [editing, setEditing] = useState(!language.name)
+
+  const save = () => {
+    if (data.name.trim()) {
+      onUpdate(data)
+      setEditing(false)
+    }
+  }
+
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 bg-gray-100 rounded-lg px-2 py-1">
+        <input
+          className="bg-transparent text-sm w-20 outline-none text-gray-900"
+          value={data.name}
+          onChange={(e) => setData({ ...data, name: e.target.value })}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
+          placeholder="Langue"
+          autoFocus
+        />
+        <select
+          className="text-xs bg-transparent outline-none text-gray-700"
+          value={data.level}
+          onChange={(e) => setData({ ...data, level: e.target.value as LanguageLevel })}
+        >
+          <option value="BEGINNER">Débutant</option>
+          <option value="INTERMEDIATE">Intermédiaire</option>
+          <option value="ADVANCED">Avancé</option>
+          <option value="FLUENT">Courant</option>
+          <option value="NATIVE">Natif</option>
+        </select>
+        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm px-1">✓</button>
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700 text-sm">×</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1 bg-green-100 text-green-800 rounded-full px-3 py-1">
+      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
+        {data.name}
+      </span>
+      <span className="text-xs text-green-600">({languageLevelLabels[data.level]})</span>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
     </div>
   )
 }

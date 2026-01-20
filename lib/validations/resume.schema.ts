@@ -19,6 +19,7 @@ export const personalInfoSchema = z.object({
   github: z.string().url().optional().or(z.literal('')),
   website: z.string().url().optional().or(z.literal('')),
   summary: z.string().max(2000).optional(),
+  photoUrl: z.string().url().optional().or(z.literal('')),
 })
 
 // Experience
