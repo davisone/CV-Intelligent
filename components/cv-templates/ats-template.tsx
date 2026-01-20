@@ -50,10 +50,10 @@ export function ATSTemplate({ data }: { data: CVData }) {
             ` | ${[data.personalInfo.city, data.personalInfo.country].filter(Boolean).join(', ')}`}
         </div>
         {data.personalInfo.linkedin && (
-          <div className="text-sm text-black">{data.personalInfo.linkedin}</div>
+          <div className="text-sm text-black">LinkedIn: {data.personalInfo.linkedin}</div>
         )}
         {data.personalInfo.github && (
-          <div className="text-sm text-black">{data.personalInfo.github}</div>
+          <div className="text-sm text-black">GitHub: {data.personalInfo.github}</div>
         )}
       </div>
 

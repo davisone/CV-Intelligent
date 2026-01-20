@@ -62,9 +62,14 @@ export function ClassicTemplate({ data }: { data: CVData }) {
             )}
           </div>
 
-          {data.personalInfo.linkedin && (
-            <div className="mt-1 text-sm text-gray-500">
-              {data.personalInfo.linkedin}
+          {(data.personalInfo.linkedin || data.personalInfo.github) && (
+            <div className="mt-2 text-sm text-gray-500 space-y-1">
+              {data.personalInfo.linkedin && (
+                <div><span className="font-medium">LinkedIn:</span> {data.personalInfo.linkedin}</div>
+              )}
+              {data.personalInfo.github && (
+                <div><span className="font-medium">GitHub:</span> {data.personalInfo.github}</div>
+              )}
             </div>
           )}
         </div>

@@ -43,12 +43,14 @@ export function MinimalTemplate({ data }: { data: CVData }) {
           <span className="font-medium"> {data.personalInfo.lastName}</span>
         </h1>
 
-        <div className="mt-4 flex gap-6 text-sm text-gray-500">
+        <div className="mt-4 flex gap-6 text-sm text-gray-500 flex-wrap">
           {data.personalInfo.email && <span>{data.personalInfo.email}</span>}
           {data.personalInfo.phone && <span>{data.personalInfo.phone}</span>}
           {(data.personalInfo.city || data.personalInfo.country) && (
             <span>{[data.personalInfo.city, data.personalInfo.country].filter(Boolean).join(', ')}</span>
           )}
+          {data.personalInfo.linkedin && <span>LinkedIn: {data.personalInfo.linkedin}</span>}
+          {data.personalInfo.github && <span>GitHub: {data.personalInfo.github}</span>}
         </div>
       </div>
 
