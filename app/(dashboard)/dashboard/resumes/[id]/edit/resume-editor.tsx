@@ -6,7 +6,7 @@ import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { ModernTemplate } from '@/components/cv-templates/modern-template'
+import { templates, TemplateType } from '@/components/cv-templates'
 
 // Types pour les données du CV
 interface ExperienceData {
@@ -506,7 +506,11 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
               Imprimer / PDF
             </Button>
           </div>
-          <ModernTemplate data={cvData} />
+          {(() => {
+            const templateKey = (resume.template as TemplateType) || 'MODERN'
+            const TemplateComponent = templates[templateKey] || templates.MODERN
+            return <TemplateComponent data={cvData} />
+          })()}
         </div>
       )}
     </div>
