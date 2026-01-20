@@ -536,76 +536,119 @@ function EducationCard({ education, onDelete }: { education: any; onDelete: () =
   )
 }
 
+const skillLevels = [
+  { value: 'BEGINNER', label: 'Débutant' },
+  { value: 'INTERMEDIATE', label: 'Intermédiaire' },
+  { value: 'ADVANCED', label: 'Avancé' },
+  { value: 'EXPERT', label: 'Expert' },
+]
+
 function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
   const [name, setName] = useState(skill.name)
+  const [level, setLevel] = useState(skill.level || 'INTERMEDIATE')
   const [editing, setEditing] = useState(!skill.name)
 
   const save = async () => {
+    if (!name.trim()) return
     await fetch('/api/profile/skills', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: skill.id, name }),
+      body: JSON.stringify({ id: skill.id, name, level }),
     })
     setEditing(false)
   }
 
+  const getLevelLabel = (lvl: string) => skillLevels.find(l => l.value === lvl)?.label || lvl
+
   if (editing) {
     return (
-      <div className="flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1">
+      <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-2">
         <input
-          className="bg-transparent text-sm w-24 outline-none text-gray-900"
+          className="bg-transparent text-sm w-28 outline-none text-gray-900"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          onBlur={save}
-          onKeyDown={(e) => e.key === 'Enter' && save()}
+          placeholder="Compétence"
           autoFocus
         />
+        <select
+          value={level}
+          onChange={(e) => setLevel(e.target.value)}
+          className="text-xs bg-white border rounded px-2 py-1 text-gray-700"
+        >
+          {skillLevels.map((l) => (
+            <option key={l.value} value={l.value}>{l.label}</option>
+          ))}
+        </select>
+        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm font-medium">✓</button>
         <button onClick={onDelete} className="text-red-500 hover:text-red-700">×</button>
       </div>
     )
   }
 
   return (
-    <div className="flex items-center gap-1 bg-primary/10 text-primary rounded-full px-3 py-1">
-      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
-      <button onClick={onDelete} className="hover:text-red-500">×</button>
+    <div className="flex items-center gap-2 bg-primary/10 text-primary rounded-lg px-3 py-2 cursor-pointer" onClick={() => setEditing(true)}>
+      <span className="text-sm font-medium">{name}</span>
+      <span className="text-xs bg-primary/20 px-2 py-0.5 rounded">{getLevelLabel(level)}</span>
+      <button onClick={(e) => { e.stopPropagation(); onDelete() }} className="hover:text-red-500 ml-1">×</button>
     </div>
   )
 }
 
+const languageLevels = [
+  { value: 'BEGINNER', label: 'Débutant' },
+  { value: 'INTERMEDIATE', label: 'Intermédiaire' },
+  { value: 'ADVANCED', label: 'Avancé' },
+  { value: 'FLUENT', label: 'Courant' },
+  { value: 'NATIVE', label: 'Natif' },
+]
+
 function LanguageBadge({ language, onDelete }: { language: any; onDelete: () => void }) {
   const [name, setName] = useState(language.name)
+  const [level, setLevel] = useState(language.level || 'INTERMEDIATE')
   const [editing, setEditing] = useState(!language.name)
 
   const save = async () => {
+    if (!name.trim()) return
     await fetch('/api/profile/languages', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: language.id, name }),
+      body: JSON.stringify({ id: language.id, name, level }),
     })
     setEditing(false)
   }
 
+  const getLevelLabel = (lvl: string) => languageLevels.find(l => l.value === lvl)?.label || lvl
+
   if (editing) {
     return (
-      <div className="flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1">
+      <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-2">
         <input
-          className="bg-transparent text-sm w-24 outline-none text-gray-900"
+          className="bg-transparent text-sm w-28 outline-none text-gray-900"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          onBlur={save}
-          onKeyDown={(e) => e.key === 'Enter' && save()}
+          placeholder="Langue"
           autoFocus
         />
+        <select
+          value={level}
+          onChange={(e) => setLevel(e.target.value)}
+          className="text-xs bg-white border rounded px-2 py-1 text-gray-700"
+        >
+          {languageLevels.map((l) => (
+            <option key={l.value} value={l.value}>{l.label}</option>
+          ))}
+        </select>
+        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm font-medium">✓</button>
         <button onClick={onDelete} className="text-red-500 hover:text-red-700">×</button>
       </div>
     )
   }
 
   return (
-    <div className="flex items-center gap-1 bg-blue-100 text-blue-700 rounded-full px-3 py-1">
-      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
-      <button onClick={onDelete} className="hover:text-red-500">×</button>
+    <div className="flex items-center gap-2 bg-blue-100 text-blue-700 rounded-lg px-3 py-2 cursor-pointer" onClick={() => setEditing(true)}>
+      <span className="text-sm font-medium">{name}</span>
+      <span className="text-xs bg-blue-200 px-2 py-0.5 rounded">{getLevelLabel(level)}</span>
+      <button onClick={(e) => { e.stopPropagation(); onDelete() }} className="hover:text-red-500 ml-1">×</button>
     </div>
   )
 }

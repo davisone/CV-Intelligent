@@ -19,6 +19,8 @@ interface Resume {
     experiences: number
     educations: number
     skills: number
+    languages: number
+    interests: number
   }
 }
 
@@ -126,10 +128,12 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
               </span>
 
               {/* Stats */}
-              <div className="flex gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
                 <span>{resume._count.experiences} exp.</span>
                 <span>{resume._count.educations} form.</span>
                 <span>{resume._count.skills} comp.</span>
+                <span>{resume._count.languages} lang.</span>
+                <span>{resume._count.interests} int.</span>
               </div>
 
               {/* Date */}

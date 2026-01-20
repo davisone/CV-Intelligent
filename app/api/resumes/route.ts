@@ -26,6 +26,8 @@ export async function GET() {
             experiences: true,
             educations: true,
             skills: true,
+            languages: true,
+            interests: true,
           },
         },
       },
@@ -82,6 +84,10 @@ export async function POST(request: Request) {
       orderBy: { order: 'asc' },
     })
     const userLanguages = await prisma.userLanguage.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
+    const userInterests = await prisma.userInterest.findMany({
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
     })
@@ -161,6 +167,15 @@ export async function POST(request: Request) {
             create: userLanguages.map((lang, index) => ({
               name: lang.name,
               level: lang.level,
+              order: index,
+            })),
+          },
+        }),
+        // Pré-remplir les centres d'intérêt
+        ...(userInterests.length > 0 && {
+          interests: {
+            create: userInterests.map((interest, index) => ({
+              name: interest.name,
               order: index,
             })),
           },
