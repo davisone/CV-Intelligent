@@ -17,6 +17,7 @@ interface CVData {
   educations: any[]
   skills: any[]
   languages: any[]
+  interests?: any[]
 }
 
 export function CreativeTemplate({ data }: { data: CVData }) {
@@ -173,6 +174,20 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                       />
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Interests */}
+          {data.interests && data.interests.length > 0 && (
+            <div className="pt-4">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-white/70 mb-4">Centres d'intérêt</h2>
+              <div className="flex flex-wrap gap-2">
+                {data.interests.map((interest: any, i: number) => (
+                  <span key={i} className="text-sm px-3 py-1 bg-white/20 rounded-full">
+                    {interest.name}
+                  </span>
                 ))}
               </div>
             </div>

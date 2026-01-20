@@ -77,6 +77,13 @@ export const projectSchema = z.object({
   order: z.number().int().min(0).default(0),
 })
 
+// Interest
+export const interestSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().min(1, 'Interest name is required').max(50),
+  order: z.number().int().min(0).default(0),
+})
+
 // Full Resume
 export const resumeSchema = z.object({
   title: z.string().min(1, 'Title is required').max(100),
@@ -87,6 +94,7 @@ export const resumeSchema = z.object({
   skills: z.array(skillSchema).max(50).default([]),
   languages: z.array(languageSchema).max(10).default([]),
   projects: z.array(projectSchema).max(20).default([]),
+  interests: z.array(interestSchema).max(20).default([]),
 })
 
 // Create Resume (minimal)
@@ -122,6 +130,7 @@ export type EducationInput = z.infer<typeof educationSchema>
 export type SkillInput = z.infer<typeof skillSchema>
 export type LanguageInput = z.infer<typeof languageSchema>
 export type ProjectInput = z.infer<typeof projectSchema>
+export type InterestInput = z.infer<typeof interestSchema>
 export type ResumeInput = z.infer<typeof resumeSchema>
 export type CreateResumeInput = z.infer<typeof createResumeSchema>
 export type UpdateResumeInput = z.infer<typeof updateResumeSchema>

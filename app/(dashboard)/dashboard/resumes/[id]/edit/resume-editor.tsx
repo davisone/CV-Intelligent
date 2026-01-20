@@ -46,6 +46,11 @@ interface LanguageData {
   level: LanguageLevel
 }
 
+interface InterestData {
+  id: string
+  name: string
+}
+
 // Helper pour formater les dates
 const formatDate = (date: Date | string | null | undefined, format: 'input' | 'display' = 'display') => {
   if (!date) return ''
@@ -87,6 +92,7 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
   const [educations, setEducations] = useState<EducationData[]>(resume.educations || [])
   const [skills, setSkills] = useState<SkillData[]>(resume.skills || [])
   const [languages, setLanguages] = useState<LanguageData[]>(resume.languages || [])
+  const [interests, setInterests] = useState<InterestData[]>(resume.interests || [])
 
   const handlePersonalInfoChange = (field: string, value: string) => {
     setPersonalInfo(prev => ({ ...prev, [field]: value }))
@@ -136,6 +142,9 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
           languages: languages.map(lang => ({
             name: lang.name,
             level: lang.level,
+          })),
+          interests: interests.map(interest => ({
+            name: interest.name,
           })),
         }),
       })
@@ -235,6 +244,23 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
     setLanguages(prev => prev.filter(lang => lang.id !== id))
   }
 
+  // Handlers pour les centres d'intérêt
+  const addInterest = () => {
+    const newInterest: InterestData = {
+      id: generateId(),
+      name: '',
+    }
+    setInterests(prev => [...prev, newInterest])
+  }
+
+  const updateInterest = (id: string, data: Partial<InterestData>) => {
+    setInterests(prev => prev.map(interest => interest.id === id ? { ...interest, ...data } : interest))
+  }
+
+  const deleteInterest = (id: string) => {
+    setInterests(prev => prev.filter(interest => interest.id !== id))
+  }
+
   const handleSyncProfile = async () => {
     if (!confirm('Cela va remplacer toutes les données du CV par celles de votre profil. Continuer ?')) {
       return
@@ -326,6 +352,7 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
     educations,
     skills,
     languages,
+    interests,
   }
 
   return (
@@ -559,6 +586,32 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
               </div>
             ) : (
               <p className="text-gray-500 text-sm">Aucune langue ajoutée</p>
+            )}
+          </section>
+
+          {/* Centres d'intérêt */}
+          <section className="bg-white p-6 rounded-xl border">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Centres d'intérêt ({interests.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addInterest}>
+                + Ajouter
+              </Button>
+            </div>
+            {interests.length > 0 ? (
+              <div className="flex flex-wrap gap-2">
+                {interests.map((interest) => (
+                  <InterestBadge
+                    key={interest.id}
+                    interest={interest}
+                    onUpdate={(data) => updateInterest(interest.id, data)}
+                    onDelete={() => deleteInterest(interest.id)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500 text-sm">Aucun centre d'intérêt ajouté</p>
             )}
           </section>
         </div>
@@ -924,6 +977,51 @@ function LanguageBadge({ language, onUpdate, onDelete }: LanguageBadgeProps) {
         {data.name}
       </span>
       <span className="text-xs text-green-600">({languageLevelLabels[data.level]})</span>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
+    </div>
+  )
+}
+
+// Composant InterestBadge
+interface InterestBadgeProps {
+  interest: InterestData
+  onUpdate: (data: Partial<InterestData>) => void
+  onDelete: () => void
+}
+
+function InterestBadge({ interest, onUpdate, onDelete }: InterestBadgeProps) {
+  const [data, setData] = useState(interest)
+  const [editing, setEditing] = useState(!interest.name)
+
+  const save = () => {
+    if (data.name.trim()) {
+      onUpdate(data)
+      setEditing(false)
+    }
+  }
+
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 bg-gray-100 rounded-lg px-2 py-1">
+        <input
+          className="bg-transparent text-sm w-24 outline-none text-gray-900"
+          value={data.name}
+          onChange={(e) => setData({ ...data, name: e.target.value })}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
+          placeholder="Centre d'intérêt"
+          autoFocus
+        />
+        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm px-1">✓</button>
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700 text-sm">×</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1 bg-purple-100 text-purple-800 rounded-full px-3 py-1">
+      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
+        {data.name}
+      </span>
       <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
     </div>
   )

@@ -57,6 +57,7 @@ model User {
   userSkills       UserSkill[]
   userLanguages    UserLanguage[]
   userProjects     UserProject[]
+  userInterests    UserInterest[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
@@ -159,6 +160,16 @@ model UserProject {
   @@index([userId])
 }
 
+model UserInterest {
+  id     String @id @default(cuid())
+  userId String
+  name   String
+  order  Int    @default(0)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
 // Resume Models
 model Resume {
   id          String          @id @default(cuid())
@@ -174,6 +185,7 @@ model Resume {
   skills       Skill[]
   languages    Language[]
   projects     Project[]
+  interests    Interest[]
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt
 
@@ -266,6 +278,16 @@ model Project {
   technologies String[]
   order       Int     @default(0)
   resume      Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([resumeId])
+}
+
+model Interest {
+  id       String @id @default(cuid())
+  resumeId String
+  name     String
+  order    Int    @default(0)
+  resume   Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
 
   @@index([resumeId])
 }

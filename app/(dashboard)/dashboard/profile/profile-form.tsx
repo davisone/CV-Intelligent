@@ -22,6 +22,7 @@ interface ProfileFormProps {
   initialEducations: any[]
   initialSkills: any[]
   initialLanguages: any[]
+  initialInterests: any[]
 }
 
 export function ProfileForm({
@@ -30,6 +31,7 @@ export function ProfileForm({
   initialEducations,
   initialSkills,
   initialLanguages,
+  initialInterests,
 }: ProfileFormProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
@@ -53,6 +55,7 @@ export function ProfileForm({
   const [educations, setEducations] = useState(initialEducations)
   const [skills, setSkills] = useState(initialSkills)
   const [languages, setLanguages] = useState(initialLanguages)
+  const [interests, setInterests] = useState(initialInterests)
 
   const handleProfileChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setProfile(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -193,6 +196,23 @@ export function ProfileForm({
   const deleteLanguage = async (id: string) => {
     await fetch(`/api/profile/languages?id=${id}`, { method: 'DELETE' })
     setLanguages(prev => prev.filter(l => l.id !== id))
+  }
+
+  const addInterest = async () => {
+    const res = await fetch('/api/profile/interests', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: '' }),
+    })
+    if (res.ok) {
+      const { interest } = await res.json()
+      setInterests(prev => [...prev, interest])
+    }
+  }
+
+  const deleteInterest = async (id: string) => {
+    await fetch(`/api/profile/interests?id=${id}`, { method: 'DELETE' })
+    setInterests(prev => prev.filter(i => i.id !== id))
   }
 
   return (
@@ -399,6 +419,22 @@ export function ProfileForm({
           )}
         </div>
       </section>
+
+      {/* Centres d'intérêt */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Centres d'intérêt</h2>
+          <Button variant="outline" onClick={addInterest}>+ Ajouter</Button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {interests.map((interest) => (
+            <InterestBadge key={interest.id} interest={interest} onDelete={() => deleteInterest(interest.id)} />
+          ))}
+          {interests.length === 0 && (
+            <p className="text-gray-500">Aucun centre d'intérêt ajouté</p>
+          )}
+        </div>
+      </section>
     </div>
   )
 }
@@ -568,6 +604,43 @@ function LanguageBadge({ language, onDelete }: { language: any; onDelete: () => 
 
   return (
     <div className="flex items-center gap-1 bg-blue-100 text-blue-700 rounded-full px-3 py-1">
+      <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
+      <button onClick={onDelete} className="hover:text-red-500">×</button>
+    </div>
+  )
+}
+
+function InterestBadge({ interest, onDelete }: { interest: any; onDelete: () => void }) {
+  const [name, setName] = useState(interest.name)
+  const [editing, setEditing] = useState(!interest.name)
+
+  const save = async () => {
+    await fetch('/api/profile/interests', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: interest.id, name }),
+    })
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1">
+        <input
+          className="bg-transparent text-sm w-24 outline-none text-gray-900"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          onBlur={save}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
+          autoFocus
+        />
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700">×</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-1 bg-green-100 text-green-700 rounded-full px-3 py-1">
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
       <button onClick={onDelete} className="hover:text-red-500">×</button>
     </div>

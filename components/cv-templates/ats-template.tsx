@@ -17,6 +17,7 @@ interface CVData {
   educations: any[]
   skills: any[]
   languages: any[]
+  interests?: any[]
 }
 
 export function ATSTemplate({ data }: { data: CVData }) {
@@ -143,6 +144,18 @@ export function ATSTemplate({ data }: { data: CVData }) {
               {data.languages.map((lang: any) =>
                 `${lang.name}: ${levelLabels[lang.level] || lang.level}`
               ).join(' • ')}
+            </p>
+          </section>
+        )}
+
+        {/* Interests */}
+        {data.interests && data.interests.length > 0 && (
+          <section className="mb-5 mt-2">
+            <h2 className="text-base font-bold text-black uppercase mb-2">
+              CENTRES D'INTÉRÊT
+            </h2>
+            <p className="text-sm text-black">
+              {data.interests.map((interest: any) => interest.name).join(' • ')}
             </p>
           </section>
         )}

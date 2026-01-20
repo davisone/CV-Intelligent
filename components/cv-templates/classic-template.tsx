@@ -17,6 +17,7 @@ interface CVData {
   educations: any[]
   skills: any[]
   languages: any[]
+  interests?: any[]
 }
 
 export function ClassicTemplate({ data }: { data: CVData }) {
@@ -173,6 +174,18 @@ export function ClassicTemplate({ data }: { data: CVData }) {
             </section>
           )}
         </div>
+
+        {/* Interests */}
+        {data.interests && data.interests.length > 0 && (
+          <section className="mt-8">
+            <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
+              Centres d'intérêt
+            </h2>
+            <p className="text-sm text-gray-700">
+              {data.interests.map((interest: any) => interest.name).join(' • ')}
+            </p>
+          </section>
+        )}
       </div>
     </div>
   )

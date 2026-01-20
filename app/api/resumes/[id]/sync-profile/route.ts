@@ -44,6 +44,10 @@ export async function POST(
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
     })
+    const userInterests = await prisma.userInterest.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
 
     // Supprimer les anciennes données du CV
     await prisma.personalInfo.deleteMany({ where: { resumeId: id } })
@@ -51,6 +55,7 @@ export async function POST(
     await prisma.education.deleteMany({ where: { resumeId: id } })
     await prisma.skill.deleteMany({ where: { resumeId: id } })
     await prisma.language.deleteMany({ where: { resumeId: id } })
+    await prisma.interest.deleteMany({ where: { resumeId: id } })
 
     // Créer les nouvelles données depuis le profil
     if (userProfile) {
@@ -126,6 +131,16 @@ export async function POST(
           resumeId: id,
           name: lang.name,
           level: lang.level,
+          order: index,
+        })),
+      })
+    }
+
+    if (userInterests.length > 0) {
+      await prisma.interest.createMany({
+        data: userInterests.map((interest, index) => ({
+          resumeId: id,
+          name: interest.name,
           order: index,
         })),
       })

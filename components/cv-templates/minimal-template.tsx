@@ -17,6 +17,7 @@ interface CVData {
   educations: any[]
   skills: any[]
   languages: any[]
+  interests?: any[]
 }
 
 export function MinimalTemplate({ data }: { data: CVData }) {
@@ -153,6 +154,22 @@ export function MinimalTemplate({ data }: { data: CVData }) {
             </section>
           )}
         </div>
+
+        {/* Interests */}
+        {data.interests && data.interests.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
+              Centres d'intérêt
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {data.interests.map((interest: any, i: number) => (
+                <span key={i} className="text-sm text-gray-600">
+                  {interest.name}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   )

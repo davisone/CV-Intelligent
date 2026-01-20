@@ -28,6 +28,7 @@ export default async function EditResumePage({ params }: EditResumePageProps) {
       skills: { orderBy: { order: 'asc' } },
       languages: { orderBy: { order: 'asc' } },
       projects: { orderBy: { order: 'asc' } },
+      interests: { orderBy: { order: 'asc' } },
     },
   })
 

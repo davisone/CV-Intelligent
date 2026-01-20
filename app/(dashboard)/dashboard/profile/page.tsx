@@ -34,6 +34,11 @@ export default async function ProfilePage() {
     orderBy: { order: 'asc' },
   })
 
+  const interests = await prisma.userInterest.findMany({
+    where: { userId: session.user.id },
+    orderBy: { order: 'asc' },
+  })
+
   return (
     <div>
       <div className="mb-8">
@@ -49,6 +54,7 @@ export default async function ProfilePage() {
         initialEducations={educations}
         initialSkills={skills}
         initialLanguages={languages}
+        initialInterests={interests}
       />
     </div>
   )

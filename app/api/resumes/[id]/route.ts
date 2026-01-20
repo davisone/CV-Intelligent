@@ -33,6 +33,7 @@ export async function GET(request: Request, { params }: RouteParams) {
         skills: { orderBy: { order: 'asc' } },
         languages: { orderBy: { order: 'asc' } },
         projects: { orderBy: { order: 'asc' } },
+        interests: { orderBy: { order: 'asc' } },
       },
     })
 
@@ -88,7 +89,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
       )
     }
 
-    const { title, template, personalInfo, experiences, educations, skills, languages, projects } = validatedData.data
+    const { title, template, personalInfo, experiences, educations, skills, languages, projects, interests } = validatedData.data
 
     // Transaction pour mettre à jour toutes les relations
     const resume = await prisma.$transaction(async (tx) => {
@@ -179,6 +180,20 @@ export async function PATCH(request: Request, { params }: RouteParams) {
               ...project,
               resumeId: id,
               order: project.order ?? index,
+            })),
+          })
+        }
+      }
+
+      // Update interests (replace all)
+      if (interests) {
+        await tx.interest.deleteMany({ where: { resumeId: id } })
+        if (interests.length > 0) {
+          await tx.interest.createMany({
+            data: interests.map((interest, index) => ({
+              ...interest,
+              resumeId: id,
+              order: interest.order ?? index,
             })),
           })
         }

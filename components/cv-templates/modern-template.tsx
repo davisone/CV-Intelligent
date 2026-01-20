@@ -17,6 +17,7 @@ interface CVData {
   educations: any[]
   skills: any[]
   languages: any[]
+  interests?: any[]
 }
 
 export function ModernTemplate({ data }: { data: CVData }) {
@@ -215,6 +216,22 @@ export function ModernTemplate({ data }: { data: CVData }) {
                         {levelLabels[lang.level] || lang.level}
                       </span>
                     </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Interests */}
+            {data.interests && data.interests.length > 0 && (
+              <section className="pt-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                  Centres d'intérêt
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {data.interests.map((interest: any, i: number) => (
+                    <span key={i} className="text-sm px-3 py-1 bg-slate-100 text-slate-600 rounded-full">
+                      {interest.name}
+                    </span>
                   ))}
                 </div>
               </section>
