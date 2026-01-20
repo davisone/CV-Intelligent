@@ -1,8 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { toPng } from 'html-to-image'
+import { jsPDF } from 'jspdf'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -63,8 +65,10 @@ interface ResumeEditorProps {
 
 export function ResumeEditor({ resume }: ResumeEditorProps) {
   const router = useRouter()
+  const cvRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit')
   const [title, setTitle] = useState(resume.title)
   const [personalInfo, setPersonalInfo] = useState({
@@ -253,6 +257,66 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
       toast.error('Erreur serveur')
     } finally {
       setIsSyncing(false)
+    }
+  }
+
+  const downloadPDF = async () => {
+    if (!cvRef.current) return
+
+    setIsGeneratingPdf(true)
+    try {
+      // Capturer le CV à sa taille naturelle
+      const imgData = await toPng(cvRef.current, {
+        quality: 1,
+        pixelRatio: 3,
+        backgroundColor: '#ffffff',
+      })
+
+      // Charger l'image pour obtenir ses dimensions
+      const img = new Image()
+      img.src = imgData
+      await new Promise((resolve) => { img.onload = resolve })
+
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      })
+
+      const pdfWidth = pdf.internal.pageSize.getWidth() // 210mm
+      const pdfHeight = pdf.internal.pageSize.getHeight() // 297mm
+
+      // Calculer le ratio de l'image
+      const imgAspectRatio = img.width / img.height
+      const pdfAspectRatio = pdfWidth / pdfHeight
+
+      let finalWidth, finalHeight, xOffset, yOffset
+
+      if (imgAspectRatio > pdfAspectRatio) {
+        // Image plus large que le PDF - ajuster à la largeur
+        finalWidth = pdfWidth
+        finalHeight = pdfWidth / imgAspectRatio
+        xOffset = 0
+        yOffset = 0
+      } else {
+        // Image plus haute que le PDF - ajuster à la largeur quand même pour remplir
+        finalWidth = pdfWidth
+        finalHeight = pdfWidth / imgAspectRatio
+        xOffset = 0
+        yOffset = 0
+      }
+
+      pdf.addImage(imgData, 'PNG', xOffset, yOffset, finalWidth, finalHeight)
+
+      const fileName = `${title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_cv.pdf`
+      pdf.save(fileName)
+
+      toast.success('PDF téléchargé !')
+    } catch (error) {
+      console.error('Erreur génération PDF:', error)
+      toast.error('Erreur lors de la génération du PDF')
+    } finally {
+      setIsGeneratingPdf(false)
     }
   }
 
@@ -502,15 +566,32 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
         /* Preview */
         <div className="bg-gray-100 p-8 rounded-xl">
           <div className="mb-4 flex justify-end">
-            <Button variant="outline" onClick={() => window.print()}>
-              Imprimer / PDF
+            <Button onClick={downloadPDF} disabled={isGeneratingPdf}>
+              {isGeneratingPdf ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Génération...
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Télécharger PDF
+                </>
+              )}
             </Button>
           </div>
-          {(() => {
-            const templateKey = (resume.template as TemplateType) || 'MODERN'
-            const TemplateComponent = templates[templateKey] || templates.MODERN
-            return <TemplateComponent data={cvData} />
-          })()}
+          <div ref={cvRef} data-cv-container>
+            {(() => {
+              const templateKey = (resume.template as TemplateType) || 'MODERN'
+              const TemplateComponent = templates[templateKey] || templates.MODERN
+              return <TemplateComponent data={cvData} />
+            })()}
+          </div>
         </div>
       )}
     </div>
