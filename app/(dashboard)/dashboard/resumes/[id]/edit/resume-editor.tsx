@@ -74,6 +74,16 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
+  const [isAiLoading, setIsAiLoading] = useState<string | null>(null)
+  const [showAtsPanel, setShowAtsPanel] = useState(false)
+  const [atsScore, setAtsScore] = useState<{
+    score: number
+    breakdown: { formatting: number; keywords: number; structure: number; content: number }
+    suggestions: string[]
+    missingKeywords: string[]
+    matchedKeywords: string[]
+  } | null>(null)
+  const [isAtsLoading, setIsAtsLoading] = useState(false)
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit')
   const [title, setTitle] = useState(resume.title)
   const [personalInfo, setPersonalInfo] = useState({
@@ -286,6 +296,103 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
     }
   }
 
+  // Fonction pour améliorer le contenu avec l'IA
+  const improveWithAI = async (
+    content: string,
+    section: 'summary' | 'experience' | 'skills',
+    onSuccess: (suggestion: string) => void
+  ) => {
+    if (!content.trim()) {
+      toast.error('Ajoutez du contenu avant d\'utiliser l\'IA')
+      return
+    }
+
+    setIsAiLoading(section)
+    try {
+      const res = await fetch('/api/ai/suggest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content,
+          section,
+          context: {
+            jobTitle: personalInfo.firstName ? `${personalInfo.firstName} ${personalInfo.lastName}` : undefined,
+          },
+        }),
+      })
+
+      if (res.ok) {
+        const { data } = await res.json()
+        onSuccess(data.suggestion)
+        toast.success('Contenu amélioré avec l\'IA !')
+      } else {
+        const error = await res.json()
+        toast.error(error.error || 'Erreur lors de l\'amélioration')
+      }
+    } catch {
+      toast.error('Erreur de connexion')
+    } finally {
+      setIsAiLoading(null)
+    }
+  }
+
+  // Fonction pour calculer le score ATS
+  const calculateATS = async () => {
+    setIsAtsLoading(true)
+    setShowAtsPanel(true)
+
+    // Construire le contenu du CV en texte
+    const resumeContent = `
+Nom: ${personalInfo.firstName} ${personalInfo.lastName}
+Email: ${personalInfo.email}
+Téléphone: ${personalInfo.phone}
+Ville: ${personalInfo.city}, ${personalInfo.country}
+
+RÉSUMÉ PROFESSIONNEL:
+${personalInfo.summary}
+
+EXPÉRIENCES:
+${experiences.map(exp => `
+- ${exp.position} chez ${exp.company}
+  ${exp.description || ''}
+`).join('\n')}
+
+FORMATIONS:
+${educations.map(edu => `
+- ${edu.degree} - ${edu.institution}
+  ${edu.field || ''}
+`).join('\n')}
+
+COMPÉTENCES:
+${skills.map(s => s.name).join(', ')}
+
+LANGUES:
+${languages.map(l => l.name).join(', ')}
+
+CENTRES D'INTÉRÊT:
+${interests.map(i => i.name).join(', ')}
+    `.trim()
+
+    try {
+      const res = await fetch('/api/ai/ats-score', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resumeContent }),
+      })
+
+      if (res.ok) {
+        const { data } = await res.json()
+        setAtsScore(data)
+      } else {
+        toast.error('Erreur lors du calcul du score ATS')
+      }
+    } catch {
+      toast.error('Erreur de connexion')
+    } finally {
+      setIsAtsLoading(false)
+    }
+  }
+
   const downloadPDF = async () => {
     if (!cvRef.current) return
 
@@ -370,6 +477,9 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
           <Button variant="outline" onClick={handleSyncProfile} disabled={isSyncing}>
             {isSyncing ? '...' : '📥 Importer du profil'}
           </Button>
+          <Button variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
+            {isAtsLoading ? '⏳ Analyse...' : '🎯 Score ATS'}
+          </Button>
           <Button onClick={handleSave} isLoading={isLoading}>
             Sauvegarder
           </Button>
@@ -391,6 +501,107 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
           Aperçu
         </button>
       </div>
+
+      {/* Panneau Score ATS */}
+      {showAtsPanel && (
+        <div className="mb-6 bg-white rounded-xl border p-6">
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-lg font-semibold text-gray-900">🎯 Analyse ATS de votre CV</h3>
+            <button
+              onClick={() => setShowAtsPanel(false)}
+              className="text-gray-400 hover:text-gray-600"
+            >
+              ✕
+            </button>
+          </div>
+
+          {isAtsLoading ? (
+            <div className="flex items-center justify-center py-8">
+              <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin" />
+              <span className="ml-3 text-gray-600">Analyse en cours...</span>
+            </div>
+          ) : atsScore ? (
+            <div className="space-y-6">
+              {/* Score principal */}
+              <div className="text-center">
+                <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full text-3xl font-bold ${
+                  atsScore.score >= 80 ? 'bg-green-100 text-green-700' :
+                  atsScore.score >= 60 ? 'bg-yellow-100 text-yellow-700' :
+                  'bg-red-100 text-red-700'
+                }`}>
+                  {atsScore.score}
+                </div>
+                <p className="mt-2 text-gray-600">Score ATS global</p>
+              </div>
+
+              {/* Breakdown */}
+              <div className="grid grid-cols-4 gap-4">
+                {[
+                  { label: 'Formatage', value: atsScore.breakdown.formatting, icon: '📄' },
+                  { label: 'Mots-clés', value: atsScore.breakdown.keywords, icon: '🔑' },
+                  { label: 'Structure', value: atsScore.breakdown.structure, icon: '🏗️' },
+                  { label: 'Contenu', value: atsScore.breakdown.content, icon: '📝' },
+                ].map((item) => (
+                  <div key={item.label} className="text-center p-3 bg-gray-50 rounded-lg">
+                    <div className="text-2xl mb-1">{item.icon}</div>
+                    <div className={`text-lg font-semibold ${
+                      item.value >= 80 ? 'text-green-600' :
+                      item.value >= 60 ? 'text-yellow-600' :
+                      'text-red-600'
+                    }`}>
+                      {item.value}
+                    </div>
+                    <div className="text-xs text-gray-500">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Suggestions */}
+              {atsScore.suggestions.length > 0 && (
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">💡 Suggestions d'amélioration</h4>
+                  <ul className="space-y-2">
+                    {atsScore.suggestions.map((suggestion, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <span className="text-yellow-500">•</span>
+                        {suggestion}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Mots-clés */}
+              <div className="grid grid-cols-2 gap-4">
+                {atsScore.matchedKeywords.length > 0 && (
+                  <div>
+                    <h4 className="font-medium text-green-700 mb-2">✅ Mots-clés présents</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {atsScore.matchedKeywords.map((kw, i) => (
+                        <span key={i} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded">
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {atsScore.missingKeywords.length > 0 && (
+                  <div>
+                    <h4 className="font-medium text-red-700 mb-2">❌ Mots-clés manquants</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {atsScore.missingKeywords.map((kw, i) => (
+                        <span key={i} className="text-xs px-2 py-1 bg-red-100 text-red-700 rounded">
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      )}
 
       {activeTab === 'edit' ? (
         <div className="space-y-6">
@@ -474,7 +685,28 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
                 />
               </div>
               <div className="col-span-2">
-                <Label>Résumé professionnel</Label>
+                <div className="flex justify-between items-center mb-1">
+                  <Label>Résumé professionnel</Label>
+                  <button
+                    type="button"
+                    onClick={() => improveWithAI(
+                      personalInfo.summary,
+                      'summary',
+                      (suggestion) => handlePersonalInfoChange('summary', suggestion)
+                    )}
+                    disabled={isAiLoading === 'summary'}
+                    className="text-xs px-3 py-1 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 disabled:opacity-50 flex items-center gap-1"
+                  >
+                    {isAiLoading === 'summary' ? (
+                      <>
+                        <span className="w-3 h-3 border-2 border-purple-700 border-t-transparent rounded-full animate-spin" />
+                        Amélioration...
+                      </>
+                    ) : (
+                      <>✨ Améliorer avec IA</>
+                    )}
+                  </button>
+                </div>
                 <textarea
                   className="w-full min-h-[100px] px-3 py-2 border rounded-lg text-gray-900"
                   value={personalInfo.summary}
@@ -503,6 +735,9 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
                     experience={exp}
                     onUpdate={(data) => updateExperience(exp.id, data)}
                     onDelete={() => deleteExperience(exp.id)}
+                    onImproveWithAI={(description, onSuccess) => {
+                      improveWithAI(description, 'experience', onSuccess)
+                    }}
                   />
                 ))}
               </div>
@@ -656,11 +891,14 @@ interface ExperienceCardProps {
   experience: ExperienceData
   onUpdate: (data: Partial<ExperienceData>) => void
   onDelete: () => void
+  onImproveWithAI?: (description: string, onSuccess: (suggestion: string) => void) => void
+  isAiLoading?: boolean
 }
 
-function ExperienceCard({ experience, onUpdate, onDelete }: ExperienceCardProps) {
+function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, isAiLoading }: ExperienceCardProps) {
   const [data, setData] = useState(experience)
   const [editing, setEditing] = useState(!experience.company)
+  const [improving, setImproving] = useState(false)
 
   const handleChange = (field: keyof ExperienceData, value: string | boolean | null) => {
     const newData = { ...data, [field]: value }
@@ -723,7 +961,35 @@ function ExperienceCard({ experience, onUpdate, onDelete }: ExperienceCardProps)
           Poste actuel
         </label>
         <div>
-          <Label>Description</Label>
+          <div className="flex justify-between items-center mb-1">
+            <Label>Description</Label>
+            {onImproveWithAI && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (!data.description?.trim()) {
+                    return
+                  }
+                  setImproving(true)
+                  onImproveWithAI(data.description, (suggestion) => {
+                    handleChange('description', suggestion)
+                    setImproving(false)
+                  })
+                }}
+                disabled={improving || !data.description?.trim()}
+                className="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 disabled:opacity-50 flex items-center gap-1"
+              >
+                {improving ? (
+                  <>
+                    <span className="w-3 h-3 border-2 border-purple-700 border-t-transparent rounded-full animate-spin" />
+                    ...
+                  </>
+                ) : (
+                  <>✨ IA</>
+                )}
+              </button>
+            )}
+          </div>
           <textarea
             placeholder="Décrivez vos responsabilités et accomplissements..."
             value={data.description || ''}

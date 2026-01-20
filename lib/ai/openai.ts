@@ -1,7 +1,7 @@
-import Anthropic from '@anthropic-ai/sdk'
+import OpenAI from 'openai'
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
 })
 
 export interface SuggestionResult {
@@ -30,33 +30,35 @@ Guidelines:
 - Keep language professional but engaging
 - Optimize for Applicant Tracking Systems (ATS)
 - Be concise and impactful
+- Respond in the same language as the input content
 
-Respond in JSON format with:
-- suggestion: the improved text
-- explanation: why these changes improve the content
-- improvements: array of specific improvements made`
+Respond ONLY with valid JSON (no markdown, no backticks) with this structure:
+{"suggestion": "the improved text", "explanation": "why these changes improve the content", "improvements": ["improvement 1", "improvement 2"]}`
 
   const userPrompt = buildUserPrompt(content, section, context)
 
-  const response = await anthropic.messages.create({
-    model: 'claude-3-5-sonnet-20241022',
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4o-mini',
     max_tokens: 1024,
     messages: [
+      {
+        role: 'system',
+        content: systemPrompt,
+      },
       {
         role: 'user',
         content: userPrompt,
       },
     ],
-    system: systemPrompt,
   })
 
-  const textContent = response.content[0]
-  if (textContent?.type !== 'text') {
+  const textContent = response.choices[0]?.message?.content
+  if (!textContent) {
     throw new Error('Unexpected response format')
   }
 
   // Extraire le JSON même s'il est entouré de backticks ou texte
-  let jsonText = textContent.text
+  let jsonText = textContent
 
   // Chercher un bloc JSON entre ```json et ```
   const jsonMatch = jsonText.match(/```(?:json)?\s*([\s\S]*?)```/)
@@ -76,7 +78,7 @@ Respond in JSON format with:
   } catch {
     // Retourner le texte brut si pas de JSON valide
     return {
-      suggestion: textContent.text.replace(/```[\s\S]*?```/g, '').trim(),
+      suggestion: textContent.replace(/```[\s\S]*?```/g, '').trim(),
       explanation: 'AI suggestion generated',
       improvements: [],
     }
@@ -121,21 +123,14 @@ export async function calculateATSScore(
   missingKeywords: string[]
   matchedKeywords: string[]
 }> {
-  console.log('[calculateATSScore] Starting with content length:', resumeContent?.length)
-  console.log('[calculateATSScore] API Key present:', !!process.env.ANTHROPIC_API_KEY)
-
   const systemPrompt = `You are an ATS (Applicant Tracking System) expert. Analyze the resume and provide a score from 0-100 based on:
 - Formatting (25%): Clean structure, proper sections, no complex formatting
 - Keywords (25%): Relevant industry and role keywords
 - Structure (25%): Clear hierarchy, proper sections, chronological order
 - Content (25%): Quantified achievements, action verbs, relevant experience
 
-Respond in JSON format with:
-- score: overall score 0-100
-- breakdown: { formatting, keywords, structure, content } each 0-100
-- suggestions: array of improvement suggestions
-- missingKeywords: important keywords that should be added
-- matchedKeywords: keywords found in the resume`
+Respond ONLY with valid JSON (no markdown, no backticks) with this structure:
+{"score": 75, "breakdown": {"formatting": 80, "keywords": 70, "structure": 75, "content": 75}, "suggestions": ["suggestion 1", "suggestion 2"], "missingKeywords": ["keyword1", "keyword2"], "matchedKeywords": ["keyword1", "keyword2"]}`
 
   let userPrompt = `Analyze this resume for ATS compatibility:\n\n${resumeContent}`
 
@@ -143,33 +138,28 @@ Respond in JSON format with:
     userPrompt += `\n\nTarget job description:\n${jobDescription}`
   }
 
-  let response
-  try {
-    console.log('[calculateATSScore] Calling Anthropic API...')
-    response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 1500,
-      messages: [
-        {
-          role: 'user',
-          content: userPrompt,
-        },
-      ],
-      system: systemPrompt,
-    })
-    console.log('[calculateATSScore] API response received')
-  } catch (apiError) {
-    console.error('[calculateATSScore] Anthropic API error:', apiError)
-    throw apiError
-  }
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4o-mini',
+    max_tokens: 1500,
+    messages: [
+      {
+        role: 'system',
+        content: systemPrompt,
+      },
+      {
+        role: 'user',
+        content: userPrompt,
+      },
+    ],
+  })
 
-  const textContent = response.content[0]
-  if (textContent?.type !== 'text') {
+  const textContent = response.choices[0]?.message?.content
+  if (!textContent) {
     throw new Error('Unexpected response format')
   }
 
   // Extraire le JSON même s'il est entouré de backticks ou texte
-  let jsonText = textContent.text
+  let jsonText = textContent
 
   // Chercher un bloc JSON entre ```json et ```
   const jsonMatch = jsonText.match(/```(?:json)?\s*([\s\S]*?)```/)
