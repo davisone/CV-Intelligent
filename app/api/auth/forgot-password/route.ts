@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/db/prisma'
 import crypto from 'crypto'
+import { sendPasswordResetEmail } from '@/lib/email/resend'
 
 export async function POST(request: Request) {
   try {
@@ -37,10 +38,12 @@ export async function POST(request: Request) {
       },
     })
 
-    // TODO: Envoyer l'email avec le lien de réinitialisation
-    // Pour l'instant, on log le token (à supprimer en production)
-    console.log(`[FORGOT_PASSWORD] Reset token for ${email}: ${resetToken}`)
-    console.log(`[FORGOT_PASSWORD] Reset link: ${process.env.NEXT_PUBLIC_APP_URL}/reset-password?token=${resetToken}`)
+    // Envoyer l'email de réinitialisation
+    const emailResult = await sendPasswordResetEmail(email, resetToken)
+
+    if (!emailResult.success) {
+      console.error('[FORGOT_PASSWORD] Failed to send email:', emailResult.error)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

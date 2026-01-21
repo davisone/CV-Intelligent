@@ -20,6 +20,8 @@ export default async function ResumesPage() {
           experiences: true,
           educations: true,
           skills: true,
+          languages: true,
+          interests: true,
         },
       },
     },

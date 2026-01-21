@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { prisma } from '@/lib/db/prisma'
 import { signUpSchema } from '@/lib/validations/resume.schema'
+import { sendWelcomeEmail } from '@/lib/email/resend'
 
 export async function POST(request: Request) {
   try {
@@ -47,6 +48,11 @@ export async function POST(request: Request) {
         email: true,
         createdAt: true,
       },
+    })
+
+    // Envoyer l'email de bienvenue (non bloquant)
+    sendWelcomeEmail(email, name).catch((error) => {
+      console.error('[WELCOME_EMAIL_ERROR]:', error)
     })
 
     return NextResponse.json(
