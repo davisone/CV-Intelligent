@@ -44,6 +44,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
   const router = useRouter()
   const [resumes, setResumes] = useState(initialResumes)
   const [deletingId, setDeletingId] = useState<string | null>(null)
+  const [duplicatingId, setDuplicatingId] = useState<string | null>(null)
 
   const handleDelete = async (id: string) => {
     if (!confirm('Êtes-vous sûr de vouloir supprimer ce CV ?')) return
@@ -62,6 +63,25 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
       toast.error('Erreur serveur')
     } finally {
       setDeletingId(null)
+    }
+  }
+
+  const handleDuplicate = async (id: string) => {
+    setDuplicatingId(id)
+    try {
+      const res = await fetch(`/api/resumes/${id}/duplicate`, { method: 'POST' })
+      const data = await res.json()
+
+      if (res.ok && data.success) {
+        toast.success('CV dupliqué avec succès')
+        router.refresh()
+      } else {
+        toast.error(data.error || 'Erreur lors de la duplication')
+      }
+    } catch {
+      toast.error('Erreur serveur')
+    } finally {
+      setDuplicatingId(null)
     }
   }
 
@@ -149,9 +169,18 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                   </Button>
                 </Link>
                 <Button
+                  variant="outline"
+                  onClick={() => handleDuplicate(resume.id)}
+                  disabled={duplicatingId === resume.id}
+                  title="Dupliquer"
+                >
+                  {duplicatingId === resume.id ? '...' : '📋'}
+                </Button>
+                <Button
                   variant="destructive"
                   onClick={() => handleDelete(resume.id)}
                   disabled={deletingId === resume.id}
+                  title="Supprimer"
                 >
                   {deletingId === resume.id ? '...' : '🗑️'}
                 </Button>
