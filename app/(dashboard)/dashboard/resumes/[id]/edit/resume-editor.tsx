@@ -456,14 +456,53 @@ ${interests.map(i => i.name).join(', ')}
 
     setIsGeneratingPdf(true)
     try {
-      // Capturer le CV à sa taille naturelle
-      const imgData = await toPng(cvRef.current, {
+      // Créer un conteneur hors-écran pour la capture avec dimensions A4 exactes
+      const offScreenContainer = document.createElement('div')
+      offScreenContainer.style.cssText = `
+        position: fixed;
+        left: -9999px;
+        top: 0;
+        width: 21cm;
+        min-height: 29.7cm;
+        background: white;
+        z-index: -1;
+      `
+
+      // Cloner le contenu du CV dans le conteneur hors-écran
+      const cvClone = cvRef.current.cloneNode(true) as HTMLElement
+      cvClone.style.cssText = `
+        width: 21cm;
+        min-height: 29.7cm;
+        transform: none;
+        margin: 0;
+      `
+
+      // S'assurer que le premier enfant (le template) a aussi les bonnes dimensions
+      const templateElement = cvClone.firstElementChild as HTMLElement
+      if (templateElement) {
+        templateElement.style.width = '21cm'
+        templateElement.style.minHeight = '29.7cm'
+        templateElement.style.margin = '0'
+      }
+
+      offScreenContainer.appendChild(cvClone)
+      document.body.appendChild(offScreenContainer)
+
+      // Attendre le rendu complet
+      await new Promise(resolve => setTimeout(resolve, 200))
+
+      // Capturer le contenu cloné à haute résolution
+      const imgData = await toPng(cvClone, {
         quality: 1,
-        pixelRatio: 3,
+        pixelRatio: 2,
         backgroundColor: '#ffffff',
+        cacheBust: true,
       })
 
-      // Charger l'image pour obtenir ses dimensions
+      // Nettoyer le conteneur hors-écran
+      document.body.removeChild(offScreenContainer)
+
+      // Charger l'image pour obtenir ses dimensions réelles
       const img = new Image()
       img.src = imgData
       await new Promise((resolve) => { img.onload = resolve })
@@ -477,24 +516,24 @@ ${interests.map(i => i.name).join(', ')}
       const pdfWidth = pdf.internal.pageSize.getWidth() // 210mm
       const pdfHeight = pdf.internal.pageSize.getHeight() // 297mm
 
-      // Calculer le ratio de l'image
-      const imgAspectRatio = img.width / img.height
-      const pdfAspectRatio = pdfWidth / pdfHeight
+      // Calculer les dimensions pour que l'image remplisse la page A4
+      // en conservant le ratio si nécessaire
+      const imgRatio = img.width / img.height
+      const pdfRatio = pdfWidth / pdfHeight
 
-      let finalWidth, finalHeight, xOffset, yOffset
+      let finalWidth = pdfWidth
+      let finalHeight = pdfHeight
+      let xOffset = 0
+      let yOffset = 0
 
-      if (imgAspectRatio > pdfAspectRatio) {
-        // Image plus large que le PDF - ajuster à la largeur
-        finalWidth = pdfWidth
-        finalHeight = pdfWidth / imgAspectRatio
-        xOffset = 0
-        yOffset = 0
-      } else {
-        // Image plus haute que le PDF - ajuster à la largeur quand même pour remplir
-        finalWidth = pdfWidth
-        finalHeight = pdfWidth / imgAspectRatio
-        xOffset = 0
-        yOffset = 0
+      if (imgRatio > pdfRatio) {
+        // Image plus large - ajuster à la largeur
+        finalHeight = pdfWidth / imgRatio
+        yOffset = (pdfHeight - finalHeight) / 2
+      } else if (imgRatio < pdfRatio) {
+        // Image plus haute - ajuster à la hauteur
+        finalWidth = pdfHeight * imgRatio
+        xOffset = (pdfWidth - finalWidth) / 2
       }
 
       pdf.addImage(imgData, 'PNG', xOffset, yOffset, finalWidth, finalHeight)
@@ -1017,12 +1056,25 @@ ${interests.map(i => i.name).join(', ')}
               )}
             </Button>
           </div>
-          <div ref={cvRef} data-cv-container>
-            {(() => {
-              const templateKey = (resume.template as TemplateType) || 'MODERN'
-              const TemplateComponent = templates[templateKey] || templates.MODERN
-              return <TemplateComponent data={cvData} />
-            })()}
+          {/* Container avec scroll et centrage pour l'aperçu A4 */}
+          <div className="overflow-auto">
+            <div className="min-w-fit flex justify-center">
+              <div
+                ref={cvRef}
+                data-cv-container
+                style={{
+                  width: '21cm',
+                  minHeight: '29.7cm',
+                  transformOrigin: 'top center',
+                }}
+              >
+                {(() => {
+                  const templateKey = (resume.template as TemplateType) || 'MODERN'
+                  const TemplateComponent = templates[templateKey] || templates.MODERN
+                  return <TemplateComponent data={cvData} />
+                })()}
+              </div>
+            </div>
           </div>
         </div>
       )}
