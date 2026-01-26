@@ -3,9 +3,23 @@ import bcrypt from 'bcryptjs'
 import { prisma } from '@/lib/db/prisma'
 import { signUpSchema } from '@/lib/validations/resume.schema'
 import { sendWelcomeEmail } from '@/lib/email/resend'
+import { checkRateLimit, AUTH_RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
+               request.headers.get('x-real-ip') || 'unknown'
+    const rateLimitKey = `auth-signup:${ip}`
+    const rateLimit = checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.signup)
+
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rateLimit.resetIn / 60)} minutes.` },
+        { status: 429, headers: { 'Retry-After': String(rateLimit.resetIn) } }
+      )
+    }
+
     const body = await request.json()
 
     // Validate input

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { toPng } from 'html-to-image'
@@ -8,6 +8,9 @@ import { jsPDF } from 'jspdf'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { ConfirmDialog, useConfirmDialog } from '@/components/ui/confirm-dialog'
+import { useAutoSave } from '@/hooks/useAutoSave'
+import { useUnsavedChangesWarning } from '@/hooks/useUnsavedChangesWarning'
 import { templates, TemplateType } from '@/components/cv-templates'
 
 // Types pour les données du CV
@@ -104,6 +107,91 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
   const [languages, setLanguages] = useState<LanguageData[]>(resume.languages || [])
   const [interests, setInterests] = useState<InterestData[]>(resume.interests || [])
 
+  // Dialog de confirmation pour importer depuis le profil
+  const syncProfileDialog = useConfirmDialog({
+    title: 'Importer depuis le profil',
+    description: 'Cela va remplacer toutes les données du CV par celles de votre profil. Voulez-vous continuer ?',
+    confirmLabel: 'Importer',
+    cancelLabel: 'Annuler',
+    variant: 'default',
+  })
+
+  // Données pour l'auto-save
+  const autoSaveData = useMemo(() => ({
+    title,
+    personalInfo,
+    experiences,
+    educations,
+    skills,
+    languages,
+    interests,
+  }), [title, personalInfo, experiences, educations, skills, languages, interests])
+
+  // Fonction de sauvegarde pour l'auto-save
+  const performSave = useCallback(async (data: typeof autoSaveData) => {
+    const response = await fetch(`/api/resumes/${resume.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: data.title,
+        personalInfo: {
+          firstName: data.personalInfo.firstName,
+          lastName: data.personalInfo.lastName,
+          email: data.personalInfo.email,
+          phone: data.personalInfo.phone || undefined,
+          city: data.personalInfo.city || undefined,
+          country: data.personalInfo.country || undefined,
+          linkedin: data.personalInfo.linkedin || undefined,
+          github: data.personalInfo.github || undefined,
+          summary: data.personalInfo.summary || undefined,
+          photoUrl: data.personalInfo.photoUrl || undefined,
+        },
+        experiences: data.experiences.map(exp => ({
+          company: exp.company,
+          position: exp.position,
+          startDate: exp.startDate,
+          endDate: exp.endDate || undefined,
+          current: exp.current,
+          description: exp.description || undefined,
+        })),
+        educations: data.educations.map(edu => ({
+          institution: edu.institution,
+          degree: edu.degree,
+          field: edu.field || undefined,
+          startDate: edu.startDate,
+          endDate: edu.endDate || undefined,
+          gpa: edu.gpa || undefined,
+        })),
+        skills: data.skills.map(skill => ({
+          name: skill.name,
+          level: skill.level,
+        })),
+        languages: data.languages.map(lang => ({
+          name: lang.name,
+          level: lang.level,
+        })),
+        interests: data.interests.map(interest => ({
+          name: interest.name,
+        })),
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error('Erreur lors de la sauvegarde')
+    }
+  }, [resume.id])
+
+  // Hook d'auto-save
+  const { isSaving: isAutoSaving, lastSaved, hasUnsavedChanges, saveNow, markAsSaved } = useAutoSave({
+    data: autoSaveData,
+    onSave: performSave,
+    delay: 3000,
+    enabled: true,
+  })
+
+  // Avertissement avant de quitter avec des changements non sauvegardés
+  useUnsavedChangesWarning({ hasUnsavedChanges })
+
   const handlePersonalInfoChange = (field: string, value: string) => {
     setPersonalInfo(prev => ({ ...prev, [field]: value }))
   }
@@ -112,57 +200,8 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
     setIsLoading(true)
 
     try {
-      const response = await fetch(`/api/resumes/${resume.id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title,
-          personalInfo: {
-            firstName: personalInfo.firstName,
-            lastName: personalInfo.lastName,
-            email: personalInfo.email,
-            phone: personalInfo.phone || undefined,
-            city: personalInfo.city || undefined,
-            country: personalInfo.country || undefined,
-            linkedin: personalInfo.linkedin || undefined,
-            github: personalInfo.github || undefined,
-            summary: personalInfo.summary || undefined,
-            photoUrl: personalInfo.photoUrl || undefined,
-          },
-          experiences: experiences.map(exp => ({
-            company: exp.company,
-            position: exp.position,
-            startDate: exp.startDate,
-            endDate: exp.endDate || undefined,
-            current: exp.current,
-            description: exp.description || undefined,
-          })),
-          educations: educations.map(edu => ({
-            institution: edu.institution,
-            degree: edu.degree,
-            field: edu.field || undefined,
-            startDate: edu.startDate,
-            endDate: edu.endDate || undefined,
-            gpa: edu.gpa || undefined,
-          })),
-          skills: skills.map(skill => ({
-            name: skill.name,
-            level: skill.level,
-          })),
-          languages: languages.map(lang => ({
-            name: lang.name,
-            level: lang.level,
-          })),
-          interests: interests.map(interest => ({
-            name: interest.name,
-          })),
-        }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Erreur lors de la sauvegarde')
-      }
-
+      await performSave(autoSaveData)
+      markAsSaved()
       toast.success('CV sauvegardé !')
       router.refresh()
     } catch {
@@ -272,9 +311,8 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
   }
 
   const handleSyncProfile = async () => {
-    if (!confirm('Cela va remplacer toutes les données du CV par celles de votre profil. Continuer ?')) {
-      return
-    }
+    const confirmed = await syncProfileDialog.confirm()
+    if (!confirmed) return
 
     setIsSyncing(true)
     try {
@@ -462,23 +500,48 @@ ${interests.map(i => i.name).join(', ')}
     interests,
   }
 
+  // Formater l'heure de la dernière sauvegarde
+  const formatLastSaved = (date: Date | null) => {
+    if (!date) return null
+    return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+  }
+
   return (
     <div>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
-          <p className="text-gray-500 text-sm">Template: {resume.template}</p>
+          <div className="flex items-center gap-2 mt-1">
+            <p className="text-gray-500 text-sm">Template: {resume.template}</p>
+            {/* Indicateur de sauvegarde */}
+            {isAutoSaving ? (
+              <span className="flex items-center gap-1 text-xs text-blue-600">
+                <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
+                Sauvegarde...
+              </span>
+            ) : hasUnsavedChanges ? (
+              <span className="flex items-center gap-1 text-xs text-orange-600">
+                <span className="w-2 h-2 bg-orange-500 rounded-full" />
+                Modifications non sauvegardées
+              </span>
+            ) : lastSaved ? (
+              <span className="flex items-center gap-1 text-xs text-green-600">
+                <span className="w-2 h-2 bg-green-500 rounded-full" />
+                Sauvegardé à {formatLastSaved(lastSaved)}
+              </span>
+            ) : null}
+          </div>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" onClick={() => router.push('/dashboard/resumes')}>
             Retour
           </Button>
           <Button variant="outline" onClick={handleSyncProfile} disabled={isSyncing}>
-            {isSyncing ? '...' : '📥 Importer du profil'}
+            {isSyncing ? '...' : 'Importer du profil'}
           </Button>
           <Button variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
-            {isAtsLoading ? '⏳ Analyse...' : '🎯 Score ATS'}
+            {isAtsLoading ? 'Analyse...' : 'Score ATS'}
           </Button>
           <Button onClick={handleSave} isLoading={isLoading}>
             Sauvegarder
@@ -882,6 +945,9 @@ ${interests.map(i => i.name).join(', ')}
           </div>
         </div>
       )}
+
+      {/* Dialogs de confirmation */}
+      <syncProfileDialog.ConfirmDialogComponent />
     </div>
   )
 }

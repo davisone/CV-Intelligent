@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
+import { ConfirmDialog } from '@/components/ui/confirm-dialog'
 
 interface Resume {
   id: string
@@ -45,11 +46,21 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
   const [resumes, setResumes] = useState(initialResumes)
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [duplicatingId, setDuplicatingId] = useState<string | null>(null)
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [resumeToDelete, setResumeToDelete] = useState<string | null>(null)
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Êtes-vous sûr de vouloir supprimer ce CV ?')) return
+  const openDeleteDialog = (id: string) => {
+    setResumeToDelete(id)
+    setDeleteDialogOpen(true)
+  }
 
+  const handleDelete = async () => {
+    if (!resumeToDelete) return
+
+    const id = resumeToDelete
     setDeletingId(id)
+    setDeleteDialogOpen(false)
+
     try {
       const res = await fetch(`/api/resumes/${id}`, { method: 'DELETE' })
 
@@ -63,6 +74,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
       toast.error('Erreur serveur')
     } finally {
       setDeletingId(null)
+      setResumeToDelete(null)
     }
   }
 
@@ -178,17 +190,29 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                 </Button>
                 <Button
                   variant="destructive"
-                  onClick={() => handleDelete(resume.id)}
+                  onClick={() => openDeleteDialog(resume.id)}
                   disabled={deletingId === resume.id}
                   title="Supprimer"
                 >
-                  {deletingId === resume.id ? '...' : '🗑️'}
+                  {deletingId === resume.id ? '...' : 'Supprimer'}
                 </Button>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Dialog de confirmation de suppression */}
+      <ConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        title="Supprimer le CV"
+        description="Êtes-vous sûr de vouloir supprimer ce CV ? Cette action est irréversible."
+        confirmLabel="Supprimer"
+        cancelLabel="Annuler"
+        variant="destructive"
+        onConfirm={handleDelete}
+      />
     </div>
   )
 }

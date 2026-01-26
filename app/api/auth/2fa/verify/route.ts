@@ -3,9 +3,23 @@ import { getServerSession } from 'next-auth'
 import { verifySync } from 'otplib'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { checkRateLimit, AUTH_RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
+               request.headers.get('x-real-ip') || 'unknown'
+    const rateLimitKey = `auth-2fa-verify:${ip}`
+    const rateLimit = checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.twoFactorVerify)
+
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rateLimit.resetIn / 60)} minutes.` },
+        { status: 429, headers: { 'Retry-After': String(rateLimit.resetIn) } }
+      )
+    }
+
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {

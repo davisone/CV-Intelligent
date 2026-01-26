@@ -8,7 +8,7 @@ Generateur de CV intelligent avec IA.
 - **Backend**: Next.js API Routes
 - **Database**: PostgreSQL (Supabase)
 - **Auth**: NextAuth.js
-- **IA**: Claude API (@anthropic-ai/sdk)
+- **IA**: OpenAI API (gpt-4o-mini)
 - **PDF**: @react-pdf/renderer
 
 ## Installation

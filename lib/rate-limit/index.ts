@@ -75,3 +75,12 @@ export const AI_RATE_LIMITS = {
     windowMs: 60000,   // par minute
   },
 } as const
+
+// Configurations pour les endpoints d'authentification
+export const AUTH_RATE_LIMITS = {
+  signup: { maxRequests: 5, windowMs: 3600000 },        // 5/heure
+  forgotPassword: { maxRequests: 3, windowMs: 900000 }, // 3/15min
+  resetPassword: { maxRequests: 5, windowMs: 3600000 }, // 5/heure
+  twoFactorCheck: { maxRequests: 10, windowMs: 60000 }, // 10/min
+  twoFactorVerify: { maxRequests: 5, windowMs: 300000 }, // 5/5min
+} as const
