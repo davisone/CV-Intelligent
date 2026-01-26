@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { generateSuggestion } from '@/lib/ai/openai'
 import { checkRateLimit, AI_RATE_LIMITS } from '@/lib/rate-limit'
+import { canUseAIFeatures } from '@/lib/payments/feature-check'
 
 export async function POST(request: Request) {
   try {
@@ -32,7 +33,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const { content, section, context } = body
+    const { content, section, context, resumeId } = body
 
     if (!content || !section) {
       return NextResponse.json(
@@ -46,6 +47,17 @@ export async function POST(request: Request) {
         { error: 'Section invalide' },
         { status: 400 }
       )
+    }
+
+    // Vérifier l'accès aux features IA si resumeId fourni
+    if (resumeId) {
+      const aiAccess = await canUseAIFeatures(resumeId, session.user.id)
+      if (!aiAccess.allowed) {
+        return NextResponse.json(
+          { error: aiAccess.reason, requiresPayment: true },
+          { status: 402 }
+        )
+      }
     }
 
     const result = await generateSuggestion(content, section, context)

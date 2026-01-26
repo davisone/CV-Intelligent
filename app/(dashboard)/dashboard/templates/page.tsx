@@ -1,10 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { PriceBadge } from '@/components/payments/price-badge'
+import { CheckoutModal } from '@/components/payments/checkout-modal'
+import { FREE_TEMPLATE, isPremiumTemplate, PRICING } from '@/lib/config/pricing'
 import {
   Palette,
   ClipboardList,
@@ -21,6 +24,7 @@ interface Template {
   color: string
   icon: LucideIcon
   features: string[]
+  isFree?: boolean
 }
 
 const templates: Template[] = [
@@ -31,6 +35,7 @@ const templates: Template[] = [
     color: 'from-blue-500 to-purple-600',
     icon: Palette,
     features: ['Design coloré', 'Sections visuelles', 'Photo de profil'],
+    isFree: true,
   },
   {
     id: 'CLASSIC',
@@ -70,8 +75,28 @@ export default function TemplatesPage() {
   const router = useRouter()
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [showModal, setShowModal] = useState(false)
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false)
+  const [pendingResumeId, setPendingResumeId] = useState<string | null>(null)
+  const [pendingResumeTitle, setPendingResumeTitle] = useState('')
   const [title, setTitle] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [freeCVUsed, setFreeCVUsed] = useState(false)
+
+  // Vérifier si le CV gratuit a été utilisé
+  useEffect(() => {
+    const checkFreeCVStatus = async () => {
+      try {
+        const res = await fetch('/api/user/status')
+        if (res.ok) {
+          const data = await res.json()
+          setFreeCVUsed(data.data?.freeCVUsed ?? false)
+        }
+      } catch {
+        // Ignorer l'erreur, on suppose que le CV gratuit n'a pas été utilisé
+      }
+    }
+    checkFreeCVStatus()
+  }, [])
 
   const handleSelectTemplate = (templateId: string) => {
     setSelectedTemplate(templateId)
@@ -98,7 +123,18 @@ export default function TemplatesPage() {
       const data = await res.json()
 
       if (res.ok) {
+        // Vérifier si paiement requis
+        if (data.requiresPayment) {
+          setPendingResumeId(data.data.id)
+          setPendingResumeTitle(title.trim())
+          setShowModal(false)
+          setShowCheckoutModal(true)
+          setTitle('')
+          return
+        }
+
         toast.success('CV créé avec succès !')
+        setFreeCVUsed(true) // Mettre à jour l'état local
         router.push(`/dashboard/resumes/${data.data.id}/edit`)
       } else {
         toast.error(data.error || 'Erreur lors de la création')
@@ -108,6 +144,16 @@ export default function TemplatesPage() {
     } finally {
       setIsLoading(false)
     }
+  }
+
+  // Détermine si un template nécessite un paiement
+  const templateRequiresPayment = (templateId: string): boolean => {
+    // Si le CV gratuit n'a pas été utilisé et c'est le template MODERN, c'est gratuit
+    if (!freeCVUsed && templateId === FREE_TEMPLATE) {
+      return false
+    }
+    // Sinon, tout nécessite un paiement
+    return true
   }
 
   return (
@@ -134,9 +180,16 @@ export default function TemplatesPage() {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {template.name}
-                </h3>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {template.name}
+                  </h3>
+                  {template.isFree && !freeCVUsed ? (
+                    <PriceBadge variant="free" />
+                  ) : (
+                    <PriceBadge variant="pro" />
+                  )}
+                </div>
                 <p className="text-gray-600 text-sm mb-4">
                   {template.description}
                 </p>
@@ -165,13 +218,20 @@ export default function TemplatesPage() {
         })}
       </div>
 
-      {/* Modal */}
+      {/* Modal de création */}
       {showModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl p-6 w-full max-w-md mx-4">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">
               Créer un CV avec le template {templates.find(t => t.id === selectedTemplate)?.name}
             </h2>
+
+            {/* Info prix */}
+            {selectedTemplate && templateRequiresPayment(selectedTemplate) && (
+              <p className="text-sm text-amber-600 mb-4">
+                Ce CV nécessitera un paiement de {PRICING.displayPrice} pour être débloqué.
+              </p>
+            )}
 
             <div className="mb-4">
               <label className="block text-sm text-gray-700 mb-1">
@@ -206,6 +266,22 @@ export default function TemplatesPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Modal de paiement */}
+      {pendingResumeId && (
+        <CheckoutModal
+          open={showCheckoutModal}
+          onOpenChange={(open) => {
+            setShowCheckoutModal(open)
+            if (!open) {
+              // Rediriger vers l'éditeur même si pas payé
+              router.push(`/dashboard/resumes/${pendingResumeId}/edit`)
+            }
+          }}
+          resumeId={pendingResumeId}
+          resumeTitle={pendingResumeTitle}
+        />
       )}
     </div>
   )

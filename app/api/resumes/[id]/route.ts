@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { updateResumeSchema } from '@/lib/validations/resume.schema'
+import { checkResumeAccess } from '@/lib/payments/feature-check'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -21,6 +22,56 @@ export async function GET(request: Request, { params }: RouteParams) {
       )
     }
 
+    // Vérifier l'accès aux features premium AVANT de charger les données complètes
+    const access = await checkResumeAccess(id, session.user.id)
+
+    // Si paiement requis, ne retourner que les infos de base (pas le contenu)
+    if (access.requiresPayment && !access.canAccess) {
+      const basicResume = await prisma.resume.findFirst({
+        where: {
+          id,
+          userId: session.user.id,
+        },
+        select: {
+          id: true,
+          title: true,
+          template: true,
+          isPaid: true,
+          paymentStatus: true,
+          createdAt: true,
+          updatedAt: true,
+        },
+      })
+
+      if (!basicResume) {
+        return NextResponse.json(
+          { error: 'Resume not found' },
+          { status: 404 }
+        )
+      }
+
+      return NextResponse.json({
+        success: true,
+        data: {
+          ...basicResume,
+          // Données vides pour éviter l'extraction
+          personalInfo: null,
+          experiences: [],
+          educations: [],
+          skills: [],
+          languages: [],
+          projects: [],
+          interests: [],
+          // Flags de paiement
+          canAccessPremiumFeatures: false,
+          accessReason: access.reason,
+          requiresPayment: true,
+          isProtected: true,
+        },
+      })
+    }
+
+    // Accès autorisé - charger les données complètes
     const resume = await prisma.resume.findFirst({
       where: {
         id,
@@ -44,7 +95,16 @@ export async function GET(request: Request, { params }: RouteParams) {
       )
     }
 
-    return NextResponse.json({ success: true, data: resume })
+    return NextResponse.json({
+      success: true,
+      data: {
+        ...resume,
+        canAccessPremiumFeatures: access.canAccess,
+        accessReason: access.reason,
+        requiresPayment: access.requiresPayment,
+        isProtected: false,
+      },
+    })
   } catch (error) {
     console.error('[RESUME_GET]:', error)
     return NextResponse.json(

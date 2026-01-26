@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { calculateATSScore } from '@/lib/ai/openai'
 import { checkRateLimit, AI_RATE_LIMITS } from '@/lib/rate-limit'
+import { canUseAIFeatures } from '@/lib/payments/feature-check'
 
 export async function POST(request: Request) {
   try {
@@ -32,13 +33,24 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const { resumeContent, jobDescription } = body
+    const { resumeContent, jobDescription, resumeId } = body
 
     if (!resumeContent) {
       return NextResponse.json(
         { error: 'Contenu du CV requis' },
         { status: 400 }
       )
+    }
+
+    // Vérifier l'accès aux features IA si resumeId fourni
+    if (resumeId) {
+      const aiAccess = await canUseAIFeatures(resumeId, session.user.id)
+      if (!aiAccess.allowed) {
+        return NextResponse.json(
+          { error: aiAccess.reason, requiresPayment: true },
+          { status: 402 }
+        )
+      }
     }
 
     const result = await calculateATSScore(resumeContent, jobDescription)

@@ -10,6 +10,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ConfirmDialog, useConfirmDialog } from '@/components/ui/confirm-dialog'
 import { SortableList, DragHandle, DragHandleProps } from '@/components/ui/sortable-list'
+import { CheckoutModal } from '@/components/payments/checkout-modal'
+import { PaymentRequired } from '@/components/payments/payment-required'
 import { useAutoSave } from '@/hooks/useAutoSave'
 import { useUnsavedChangesWarning } from '@/hooks/useUnsavedChangesWarning'
 import { templates, TemplateType } from '@/components/cv-templates'
@@ -31,6 +33,7 @@ import {
   Lightbulb,
   CheckCircle,
   XCircle,
+  Lock,
 } from '@/components/ui/icons'
 
 // Types pour les données du CV
@@ -89,9 +92,11 @@ const generateId = () => `temp-${Date.now()}-${Math.random().toString(36).substr
 
 interface ResumeEditorProps {
   resume: any
+  canAccessPremiumFeatures?: boolean
+  requiresPayment?: boolean
 }
 
-export function ResumeEditor({ resume }: ResumeEditorProps) {
+export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requiresPayment = false }: ResumeEditorProps) {
   const router = useRouter()
   const cvRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -99,6 +104,7 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
   const [isAiLoading, setIsAiLoading] = useState<string | null>(null)
   const [showAtsPanel, setShowAtsPanel] = useState(false)
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false)
   const [atsScore, setAtsScore] = useState<{
     score: number
     breakdown: { formatting: number; keywords: number; structure: number; content: number }
@@ -360,6 +366,12 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
     section: 'summary' | 'experience' | 'skills',
     onSuccess: (suggestion: string) => void
   ) => {
+    // Vérifier l'accès premium
+    if (!canAccessPremiumFeatures) {
+      setShowCheckoutModal(true)
+      return
+    }
+
     if (!content.trim()) {
       toast.error('Ajoutez du contenu avant d\'utiliser l\'IA')
       return
@@ -373,11 +385,18 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
         body: JSON.stringify({
           content,
           section,
+          resumeId: resume.id,
           context: {
             jobTitle: personalInfo.firstName ? `${personalInfo.firstName} ${personalInfo.lastName}` : undefined,
           },
         }),
       })
+
+      if (res.status === 402) {
+        // Paiement requis
+        setShowCheckoutModal(true)
+        return
+      }
 
       if (res.ok) {
         const { data } = await res.json()
@@ -396,6 +415,12 @@ export function ResumeEditor({ resume }: ResumeEditorProps) {
 
   // Fonction pour calculer le score ATS
   const calculateATS = async () => {
+    // Vérifier l'accès premium
+    if (!canAccessPremiumFeatures) {
+      setShowCheckoutModal(true)
+      return
+    }
+
     setIsAtsLoading(true)
     setShowAtsPanel(true)
 
@@ -435,8 +460,15 @@ ${interests.map(i => i.name).join(', ')}
       const res = await fetch('/api/ai/ats-score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resumeContent }),
+        body: JSON.stringify({ resumeContent, resumeId: resume.id }),
       })
+
+      if (res.status === 402) {
+        // Paiement requis
+        setShowAtsPanel(false)
+        setShowCheckoutModal(true)
+        return
+      }
 
       if (res.ok) {
         const { data } = await res.json()
@@ -608,6 +640,8 @@ ${interests.map(i => i.name).join(', ')}
           <Button variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
             {isAtsLoading ? (
               <Loader2 className="w-4 h-4 animate-spin sm:mr-2" />
+            ) : !canAccessPremiumFeatures ? (
+              <Lock className="w-4 h-4 sm:mr-2" />
             ) : (
               <Target className="w-4 h-4 sm:mr-2" />
             )}
@@ -635,6 +669,15 @@ ${interests.map(i => i.name).join(', ')}
           Aperçu
         </button>
       </div>
+
+      {/* Banner paiement requis */}
+      {requiresPayment && !canAccessPremiumFeatures && (
+        <PaymentRequired
+          onUnlock={() => setShowCheckoutModal(true)}
+          className="mb-6"
+          message="Débloquez ce CV pour accéder aux suggestions IA, au score ATS et à tous les templates premium."
+        />
+      )}
 
       {/* Panneau Score ATS */}
       {showAtsPanel && (
@@ -1081,6 +1124,14 @@ ${interests.map(i => i.name).join(', ')}
 
       {/* Dialogs de confirmation */}
       <syncProfileDialog.ConfirmDialogComponent />
+
+      {/* Modal de paiement */}
+      <CheckoutModal
+        open={showCheckoutModal}
+        onOpenChange={setShowCheckoutModal}
+        resumeId={resume.id}
+        resumeTitle={title}
+      />
     </div>
   )
 }

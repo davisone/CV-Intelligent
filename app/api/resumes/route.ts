@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { createResumeSchema } from '@/lib/validations/resume.schema'
+import { canCreateResume } from '@/lib/payments/feature-check'
+import { FREE_TEMPLATE } from '@/lib/config/pricing'
 
 // GET /api/resumes - Liste des CV de l'utilisateur
 export async function GET() {
@@ -66,6 +68,32 @@ export async function POST(request: Request) {
     }
 
     const { title, template } = validatedData.data
+
+    // Vérifier si l'utilisateur peut créer ce CV
+    const createCheck = await canCreateResume(session.user.id, template)
+
+    if (!createCheck.allowed && createCheck.requiresPayment) {
+      // Créer le CV en mode "pending payment"
+      const pendingResume = await prisma.resume.create({
+        data: {
+          title,
+          template,
+          userId: session.user.id,
+          isPaid: false,
+          paymentStatus: 'NONE',
+        },
+      })
+
+      return NextResponse.json(
+        {
+          success: true,
+          data: pendingResume,
+          requiresPayment: true,
+          reason: createCheck.reason,
+        },
+        { status: 201 }
+      )
+    }
 
     // Récupérer le profil de l'utilisateur pour pré-remplir
     const userProfile = await prisma.userProfile.findUnique({
@@ -182,6 +210,14 @@ export async function POST(request: Request) {
         }),
       },
     })
+
+    // Marquer freeCVUsed si c'est le premier CV gratuit avec template MODERN
+    if (template === FREE_TEMPLATE && !createCheck.requiresPayment) {
+      await prisma.user.update({
+        where: { id: session.user.id },
+        data: { freeCVUsed: true },
+      })
+    }
 
     return NextResponse.json(
       { success: true, data: resume },

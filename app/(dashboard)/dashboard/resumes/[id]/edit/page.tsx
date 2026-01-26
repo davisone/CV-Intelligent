@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { checkResumeAccess } from '@/lib/payments/feature-check'
 import { ResumeEditor } from './resume-editor'
 
 interface EditResumePageProps {
@@ -36,5 +37,14 @@ export default async function EditResumePage({ params }: EditResumePageProps) {
     notFound()
   }
 
-  return <ResumeEditor resume={resume} />
+  // Vérifier l'accès aux features premium
+  const access = await checkResumeAccess(id, session.user.id)
+
+  return (
+    <ResumeEditor
+      resume={resume}
+      canAccessPremiumFeatures={access.canAccess}
+      requiresPayment={access.requiresPayment}
+    />
+  )
 }

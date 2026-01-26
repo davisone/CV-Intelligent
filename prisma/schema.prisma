@@ -49,9 +49,13 @@ model User {
   totpEnabled      Boolean   @default(false)
   resetToken       String?
   resetTokenExpiry DateTime?
+  // Stripe & Payment
+  stripeCustomerId String?   @unique
+  freeCVUsed       Boolean   @default(false)
   accounts         Account[]
   sessions         Session[]
   resumes          Resume[]
+  payments         Payment[]
   // Profil Maître
   profile          UserProfile?
   userExperiences  UserExperience[]
@@ -174,22 +178,28 @@ model UserInterest {
 
 // Resume Models
 model Resume {
-  id          String          @id @default(cuid())
-  userId      String
-  title       String
-  template    TemplateType    @default(MODERN)
-  isPublic    Boolean         @default(false)
-  publicSlug  String?         @unique
-  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  personalInfo PersonalInfo?
-  experiences  Experience[]
-  educations   Education[]
-  skills       Skill[]
-  languages    Language[]
-  projects     Project[]
-  interests    Interest[]
-  createdAt   DateTime        @default(now())
-  updatedAt   DateTime        @updatedAt
+  id              String          @id @default(cuid())
+  userId          String
+  title           String
+  template        TemplateType    @default(MODERN)
+  isPublic        Boolean         @default(false)
+  publicSlug      String?         @unique
+  // Payment
+  isPaid          Boolean         @default(false)
+  paidAt          DateTime?
+  stripePaymentId String?         @unique
+  paymentStatus   PaymentStatus   @default(NONE)
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  personalInfo    PersonalInfo?
+  experiences     Experience[]
+  educations      Education[]
+  skills          Skill[]
+  languages       Language[]
+  projects        Project[]
+  interests       Interest[]
+  payments        Payment[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
 
   @@index([userId])
   @@index([publicSlug])
@@ -294,7 +304,34 @@ model Interest {
   @@index([resumeId])
 }
 
+// Payment Model
+model Payment {
+  id              String        @id @default(cuid())
+  userId          String
+  resumeId        String
+  stripeSessionId String        @unique
+  stripePaymentId String?
+  amount          Int
+  currency        String        @default("eur")
+  status          PaymentStatus @default(PENDING)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  resume          Resume        @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([resumeId])
+}
+
 // Enums
+enum PaymentStatus {
+  NONE
+  PENDING
+  COMPLETED
+  FAILED
+}
+
 enum TemplateType {
   MODERN
   CLASSIC

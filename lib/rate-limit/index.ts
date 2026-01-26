@@ -84,3 +84,8 @@ export const AUTH_RATE_LIMITS = {
   twoFactorCheck: { maxRequests: 10, windowMs: 60000 }, // 10/min
   twoFactorVerify: { maxRequests: 5, windowMs: 300000 }, // 5/5min
 } as const
+
+// Configurations pour les endpoints de paiement
+export const PAYMENT_RATE_LIMITS = {
+  checkout: { maxRequests: 10, windowMs: 3600000 }, // 10/heure
+} as const

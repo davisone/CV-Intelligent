@@ -33,4 +33,7 @@ export {
   CheckCircle,        // Check circle
   XCircle,            // X circle
   Upload,             // Import
+  Lock,               // Premium/Locked feature
+  CreditCard,         // Payment
+  BarChart3,          // Charts/Stats
 } from 'lucide-react'
