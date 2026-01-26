@@ -3,32 +3,46 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils/helpers'
+import {
+  LayoutDashboard,
+  FileText,
+  Palette,
+  User,
+  Settings,
+} from '@/components/ui/icons'
+import { LucideIcon } from 'lucide-react'
 
-const navItems = [
+interface NavItem {
+  label: string
+  href: string
+  icon: LucideIcon
+}
+
+const navItems: NavItem[] = [
   {
     label: 'Dashboard',
     href: '/dashboard',
-    icon: '📊',
+    icon: LayoutDashboard,
   },
   {
     label: 'Mes CV',
     href: '/dashboard/resumes',
-    icon: '📄',
+    icon: FileText,
   },
   {
     label: 'Templates',
     href: '/dashboard/templates',
-    icon: '🎨',
+    icon: Palette,
   },
   {
     label: 'Mon Profil',
     href: '/dashboard/profile',
-    icon: '👤',
+    icon: User,
   },
   {
     label: 'Paramètres',
     href: '/dashboard/settings',
-    icon: '⚙️',
+    icon: Settings,
   },
 ]
 
@@ -36,11 +50,12 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="w-64 border-r bg-white h-[calc(100vh-4rem)]">
+    <aside className="w-64 border-r bg-white h-[calc(100vh-4rem)] hidden md:block">
       <nav className="p-4 space-y-2">
         {navItems.map((item) => {
           const isActive = pathname === item.href ||
             (item.href !== '/dashboard' && pathname.startsWith(item.href))
+          const Icon = item.icon
 
           return (
             <Link
@@ -53,7 +68,7 @@ export function Sidebar() {
                   : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
               )}
             >
-              <span>{item.icon}</span>
+              <Icon className="w-5 h-5" />
               {item.label}
             </Link>
           )

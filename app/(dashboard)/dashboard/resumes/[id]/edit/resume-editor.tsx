@@ -9,9 +9,29 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ConfirmDialog, useConfirmDialog } from '@/components/ui/confirm-dialog'
+import { SortableList, DragHandle, DragHandleProps } from '@/components/ui/sortable-list'
 import { useAutoSave } from '@/hooks/useAutoSave'
 import { useUnsavedChangesWarning } from '@/hooks/useUnsavedChangesWarning'
 import { templates, TemplateType } from '@/components/cv-templates'
+import {
+  ArrowLeft,
+  Upload,
+  Target,
+  Save,
+  X,
+  Check,
+  Loader2,
+  Sparkles,
+  Plus,
+  FileDown,
+  FileType,
+  Key,
+  Building2,
+  FileText,
+  Lightbulb,
+  CheckCircle,
+  XCircle,
+} from '@/components/ui/icons'
 
 // Types pour les données du CV
 interface ExperienceData {
@@ -508,8 +528,8 @@ ${interests.map(i => i.name).join(', ')}
 
   return (
     <div>
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      {/* Header - Responsive */}
+      <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
           <div className="flex items-center gap-2 mt-1">
@@ -533,24 +553,36 @@ ${interests.map(i => i.name).join(', ')}
             ) : null}
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="outline" onClick={() => router.push('/dashboard/resumes')}>
-            Retour
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            <span className="hidden sm:inline">Retour</span>
           </Button>
           <Button variant="outline" onClick={handleSyncProfile} disabled={isSyncing}>
-            {isSyncing ? '...' : 'Importer du profil'}
+            {isSyncing ? (
+              <Loader2 className="w-4 h-4 animate-spin sm:mr-2" />
+            ) : (
+              <Upload className="w-4 h-4 sm:mr-2" />
+            )}
+            <span className="hidden sm:inline">{isSyncing ? 'Import...' : 'Importer du profil'}</span>
           </Button>
           <Button variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
-            {isAtsLoading ? 'Analyse...' : 'Score ATS'}
+            {isAtsLoading ? (
+              <Loader2 className="w-4 h-4 animate-spin sm:mr-2" />
+            ) : (
+              <Target className="w-4 h-4 sm:mr-2" />
+            )}
+            <span className="hidden sm:inline">{isAtsLoading ? 'Analyse...' : 'Score ATS'}</span>
           </Button>
           <Button onClick={handleSave} isLoading={isLoading}>
-            Sauvegarder
+            <Save className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Sauvegarder</span>
           </Button>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex gap-2 mb-6 border-b">
+      {/* Tabs - Sticky on mobile */}
+      <div className="flex gap-2 mb-6 border-b sticky top-0 bg-white z-10 -mx-4 px-4 md:static md:mx-0 md:px-0">
         <button
           onClick={() => setActiveTab('edit')}
           className={`px-4 py-2 font-medium ${activeTab === 'edit' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
@@ -569,18 +601,21 @@ ${interests.map(i => i.name).join(', ')}
       {showAtsPanel && (
         <div className="mb-6 bg-white rounded-xl border p-6">
           <div className="flex justify-between items-start mb-4">
-            <h3 className="text-lg font-semibold text-gray-900">🎯 Analyse ATS de votre CV</h3>
+            <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+              <Target className="w-5 h-5 text-purple-600" />
+              Analyse ATS de votre CV
+            </h3>
             <button
               onClick={() => setShowAtsPanel(false)}
               className="text-gray-400 hover:text-gray-600"
             >
-              ✕
+              <X className="w-5 h-5" />
             </button>
           </div>
 
           {isAtsLoading ? (
             <div className="flex items-center justify-center py-8">
-              <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin" />
+              <Loader2 className="w-8 h-8 text-purple-600 animate-spin" />
               <span className="ml-3 text-gray-600">Analyse en cours...</span>
             </div>
           ) : atsScore ? (
@@ -597,32 +632,38 @@ ${interests.map(i => i.name).join(', ')}
                 <p className="mt-2 text-gray-600">Score ATS global</p>
               </div>
 
-              {/* Breakdown */}
-              <div className="grid grid-cols-4 gap-4">
+              {/* Breakdown - Responsive grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { label: 'Formatage', value: atsScore.breakdown.formatting, icon: '📄' },
-                  { label: 'Mots-clés', value: atsScore.breakdown.keywords, icon: '🔑' },
-                  { label: 'Structure', value: atsScore.breakdown.structure, icon: '🏗️' },
-                  { label: 'Contenu', value: atsScore.breakdown.content, icon: '📝' },
-                ].map((item) => (
-                  <div key={item.label} className="text-center p-3 bg-gray-50 rounded-lg">
-                    <div className="text-2xl mb-1">{item.icon}</div>
-                    <div className={`text-lg font-semibold ${
-                      item.value >= 80 ? 'text-green-600' :
-                      item.value >= 60 ? 'text-yellow-600' :
-                      'text-red-600'
-                    }`}>
-                      {item.value}
+                  { label: 'Formatage', value: atsScore.breakdown.formatting, icon: FileType },
+                  { label: 'Mots-clés', value: atsScore.breakdown.keywords, icon: Key },
+                  { label: 'Structure', value: atsScore.breakdown.structure, icon: Building2 },
+                  { label: 'Contenu', value: atsScore.breakdown.content, icon: FileText },
+                ].map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <div key={item.label} className="text-center p-3 bg-gray-50 rounded-lg">
+                      <Icon className="w-6 h-6 mx-auto mb-1 text-gray-500" />
+                      <div className={`text-lg font-semibold ${
+                        item.value >= 80 ? 'text-green-600' :
+                        item.value >= 60 ? 'text-yellow-600' :
+                        'text-red-600'
+                      }`}>
+                        {item.value}
+                      </div>
+                      <div className="text-xs text-gray-500">{item.label}</div>
                     </div>
-                    <div className="text-xs text-gray-500">{item.label}</div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
 
               {/* Suggestions */}
               {atsScore.suggestions.length > 0 && (
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">💡 Suggestions d'amélioration</h4>
+                  <h4 className="font-medium text-gray-900 mb-2 flex items-center gap-2">
+                    <Lightbulb className="w-4 h-4 text-yellow-500" />
+                    Suggestions d'amélioration
+                  </h4>
                   <ul className="space-y-2">
                     {atsScore.suggestions.map((suggestion, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
@@ -634,11 +675,14 @@ ${interests.map(i => i.name).join(', ')}
                 </div>
               )}
 
-              {/* Mots-clés */}
-              <div className="grid grid-cols-2 gap-4">
+              {/* Mots-clés - Responsive grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {atsScore.matchedKeywords.length > 0 && (
                   <div>
-                    <h4 className="font-medium text-green-700 mb-2">✅ Mots-clés présents</h4>
+                    <h4 className="font-medium text-green-700 mb-2 flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4" />
+                      Mots-clés présents
+                    </h4>
                     <div className="flex flex-wrap gap-1">
                       {atsScore.matchedKeywords.map((kw, i) => (
                         <span key={i} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded">
@@ -650,7 +694,10 @@ ${interests.map(i => i.name).join(', ')}
                 )}
                 {atsScore.missingKeywords.length > 0 && (
                   <div>
-                    <h4 className="font-medium text-red-700 mb-2">❌ Mots-clés manquants</h4>
+                    <h4 className="font-medium text-red-700 mb-2 flex items-center gap-2">
+                      <XCircle className="w-4 h-4" />
+                      Mots-clés manquants
+                    </h4>
                     <div className="flex flex-wrap gap-1">
                       {atsScore.missingKeywords.map((kw, i) => (
                         <span key={i} className="text-xs px-2 py-1 bg-red-100 text-red-700 rounded">
@@ -678,10 +725,10 @@ ${interests.map(i => i.name).join(', ')}
             />
           </section>
 
-          {/* Informations personnelles */}
+          {/* Informations personnelles - Responsive grid */}
           <section className="bg-white p-6 rounded-xl border">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Informations personnelles</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label>Prénom</Label>
                 <Input
@@ -747,7 +794,7 @@ ${interests.map(i => i.name).join(', ')}
                   placeholder="github.com/..."
                 />
               </div>
-              <div className="col-span-2">
+              <div className="col-span-1 md:col-span-2">
                 <div className="flex justify-between items-center mb-1">
                   <Label>Résumé professionnel</Label>
                   <button
@@ -762,11 +809,14 @@ ${interests.map(i => i.name).join(', ')}
                   >
                     {isAiLoading === 'summary' ? (
                       <>
-                        <span className="w-3 h-3 border-2 border-purple-700 border-t-transparent rounded-full animate-spin" />
+                        <Loader2 className="w-3 h-3 animate-spin" />
                         Amélioration...
                       </>
                     ) : (
-                      <>✨ Améliorer avec IA</>
+                      <>
+                        <Sparkles className="w-3 h-3" />
+                        Améliorer avec IA
+                      </>
                     )}
                   </button>
                 </div>
@@ -780,19 +830,24 @@ ${interests.map(i => i.name).join(', ')}
             </div>
           </section>
 
-          {/* Expériences */}
+          {/* Expériences avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
                 Expériences ({experiences.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addExperience}>
-                + Ajouter
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
               </Button>
             </div>
             {experiences.length > 0 ? (
-              <div className="space-y-4">
-                {experiences.map((exp) => (
+              <SortableList
+                items={experiences}
+                onReorder={setExperiences}
+                keyExtractor={(exp) => exp.id}
+                direction="vertical"
+                renderItem={(exp, dragHandleProps) => (
                   <ExperienceCard
                     key={exp.id}
                     experience={exp}
@@ -801,112 +856,143 @@ ${interests.map(i => i.name).join(', ')}
                     onImproveWithAI={(description, onSuccess) => {
                       improveWithAI(description, 'experience', onSuccess)
                     }}
+                    dragHandleProps={dragHandleProps}
                   />
-                ))}
-              </div>
+                )}
+              />
             ) : (
               <p className="text-gray-500 text-sm text-center py-4">Aucune expérience ajoutée</p>
             )}
           </section>
 
-          {/* Formations */}
+          {/* Formations avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
                 Formations ({educations.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addEducation}>
-                + Ajouter
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
               </Button>
             </div>
             {educations.length > 0 ? (
-              <div className="space-y-4">
-                {educations.map((edu) => (
+              <SortableList
+                items={educations}
+                onReorder={setEducations}
+                keyExtractor={(edu) => edu.id}
+                direction="vertical"
+                renderItem={(edu, dragHandleProps) => (
                   <EducationCard
                     key={edu.id}
                     education={edu}
                     onUpdate={(data) => updateEducation(edu.id, data)}
                     onDelete={() => deleteEducation(edu.id)}
+                    dragHandleProps={dragHandleProps}
                   />
-                ))}
-              </div>
+                )}
+              />
             ) : (
               <p className="text-gray-500 text-sm text-center py-4">Aucune formation ajoutée</p>
             )}
           </section>
 
-          {/* Compétences */}
+          {/* Compétences avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
                 Compétences ({skills.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addSkill}>
-                + Ajouter
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
               </Button>
             </div>
             {skills.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <SkillBadge
-                    key={skill.id}
-                    skill={skill}
-                    onUpdate={(data) => updateSkill(skill.id, data)}
-                    onDelete={() => deleteSkill(skill.id)}
-                  />
-                ))}
+              <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+                <SortableList
+                  items={skills}
+                  onReorder={setSkills}
+                  keyExtractor={(skill) => skill.id}
+                  direction="horizontal"
+                  renderItem={(skill, dragHandleProps) => (
+                    <SkillBadge
+                      key={skill.id}
+                      skill={skill}
+                      onUpdate={(data) => updateSkill(skill.id, data)}
+                      onDelete={() => deleteSkill(skill.id)}
+                      dragHandleProps={dragHandleProps}
+                    />
+                  )}
+                />
               </div>
             ) : (
               <p className="text-gray-500 text-sm">Aucune compétence ajoutée</p>
             )}
           </section>
 
-          {/* Langues */}
+          {/* Langues avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
                 Langues ({languages.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addLanguage}>
-                + Ajouter
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
               </Button>
             </div>
             {languages.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {languages.map((lang) => (
-                  <LanguageBadge
-                    key={lang.id}
-                    language={lang}
-                    onUpdate={(data) => updateLanguage(lang.id, data)}
-                    onDelete={() => deleteLanguage(lang.id)}
-                  />
-                ))}
+              <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+                <SortableList
+                  items={languages}
+                  onReorder={setLanguages}
+                  keyExtractor={(lang) => lang.id}
+                  direction="horizontal"
+                  renderItem={(lang, dragHandleProps) => (
+                    <LanguageBadge
+                      key={lang.id}
+                      language={lang}
+                      onUpdate={(data) => updateLanguage(lang.id, data)}
+                      onDelete={() => deleteLanguage(lang.id)}
+                      dragHandleProps={dragHandleProps}
+                    />
+                  )}
+                />
               </div>
             ) : (
               <p className="text-gray-500 text-sm">Aucune langue ajoutée</p>
             )}
           </section>
 
-          {/* Centres d'intérêt */}
+          {/* Centres d'intérêt avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
                 Centres d'intérêt ({interests.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addInterest}>
-                + Ajouter
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
               </Button>
             </div>
             {interests.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {interests.map((interest) => (
-                  <InterestBadge
-                    key={interest.id}
-                    interest={interest}
-                    onUpdate={(data) => updateInterest(interest.id, data)}
-                    onDelete={() => deleteInterest(interest.id)}
-                  />
-                ))}
+              <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+                <SortableList
+                  items={interests}
+                  onReorder={setInterests}
+                  keyExtractor={(interest) => interest.id}
+                  direction="horizontal"
+                  renderItem={(interest, dragHandleProps) => (
+                    <InterestBadge
+                      key={interest.id}
+                      interest={interest}
+                      onUpdate={(data) => updateInterest(interest.id, data)}
+                      onDelete={() => deleteInterest(interest.id)}
+                      dragHandleProps={dragHandleProps}
+                    />
+                  )}
+                />
               </div>
             ) : (
               <p className="text-gray-500 text-sm">Aucun centre d'intérêt ajouté</p>
@@ -915,22 +1001,17 @@ ${interests.map(i => i.name).join(', ')}
         </div>
       ) : (
         /* Preview */
-        <div className="bg-gray-100 p-8 rounded-xl">
+        <div className="bg-gray-100 p-4 md:p-8 rounded-xl">
           <div className="mb-4 flex justify-end">
             <Button onClick={downloadPDF} disabled={isGeneratingPdf}>
               {isGeneratingPdf ? (
                 <>
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                   Génération...
                 </>
               ) : (
                 <>
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+                  <FileDown className="w-4 h-4 mr-2" />
                   Télécharger PDF
                 </>
               )}
@@ -952,16 +1033,16 @@ ${interests.map(i => i.name).join(', ')}
   )
 }
 
-// Composant ExperienceCard
+// Composant ExperienceCard avec Drag Handle
 interface ExperienceCardProps {
   experience: ExperienceData
   onUpdate: (data: Partial<ExperienceData>) => void
   onDelete: () => void
   onImproveWithAI?: (description: string, onSuccess: (suggestion: string) => void) => void
-  isAiLoading?: boolean
+  dragHandleProps: DragHandleProps
 }
 
-function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, isAiLoading }: ExperienceCardProps) {
+function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragHandleProps }: ExperienceCardProps) {
   const [data, setData] = useState(experience)
   const [editing, setEditing] = useState(!experience.company)
   const [improving, setImproving] = useState(false)
@@ -982,7 +1063,7 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, isAiL
   if (editing) {
     return (
       <div className="border rounded-lg p-4 space-y-3">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
             <Label>Entreprise</Label>
             <Input
@@ -1047,11 +1128,14 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, isAiL
               >
                 {improving ? (
                   <>
-                    <span className="w-3 h-3 border-2 border-purple-700 border-t-transparent rounded-full animate-spin" />
+                    <Loader2 className="w-3 h-3 animate-spin" />
                     ...
                   </>
                 ) : (
-                  <>✨ IA</>
+                  <>
+                    <Sparkles className="w-3 h-3" />
+                    IA
+                  </>
                 )}
               </button>
             )}
@@ -1063,18 +1147,26 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, isAiL
             className="w-full px-3 py-2 border rounded-lg text-gray-900 min-h-[80px]"
           />
         </div>
-        <div className="flex gap-2">
-          <Button size="sm" onClick={save}>Valider</Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        <div className="flex flex-wrap gap-2">
+          <Button size="sm" onClick={save}>
+            <Check className="w-4 h-4 mr-1" />
+            Valider
+          </Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>
+            Annuler
+          </Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>
+            Supprimer
+          </Button>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="border rounded-lg p-4 flex justify-between items-start">
-      <div>
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
         <h3 className="font-medium text-gray-900">{data.position || 'Nouveau poste'}</h3>
         <p className="text-gray-600">{data.company || 'Entreprise'}</p>
         <p className="text-sm text-gray-500">
@@ -1089,14 +1181,15 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, isAiL
   )
 }
 
-// Composant EducationCard
+// Composant EducationCard avec Drag Handle
 interface EducationCardProps {
   education: EducationData
   onUpdate: (data: Partial<EducationData>) => void
   onDelete: () => void
+  dragHandleProps: DragHandleProps
 }
 
-function EducationCard({ education, onUpdate, onDelete }: EducationCardProps) {
+function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: EducationCardProps) {
   const [data, setData] = useState(education)
   const [editing, setEditing] = useState(!education.institution)
 
@@ -1112,7 +1205,7 @@ function EducationCard({ education, onUpdate, onDelete }: EducationCardProps) {
   if (editing) {
     return (
       <div className="border rounded-lg p-4 space-y-3">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
             <Label>Établissement</Label>
             <Input
@@ -1162,8 +1255,11 @@ function EducationCard({ education, onUpdate, onDelete }: EducationCardProps) {
             />
           </div>
         </div>
-        <div className="flex gap-2">
-          <Button size="sm" onClick={save}>Valider</Button>
+        <div className="flex flex-wrap gap-2">
+          <Button size="sm" onClick={save}>
+            <Check className="w-4 h-4 mr-1" />
+            Valider
+          </Button>
           <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
           <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
         </div>
@@ -1172,8 +1268,9 @@ function EducationCard({ education, onUpdate, onDelete }: EducationCardProps) {
   }
 
   return (
-    <div className="border rounded-lg p-4 flex justify-between items-start">
-      <div>
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
         <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
         <p className="text-gray-600">{data.institution || 'Établissement'}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
@@ -1186,11 +1283,12 @@ function EducationCard({ education, onUpdate, onDelete }: EducationCardProps) {
   )
 }
 
-// Composant SkillBadge
+// Composant SkillBadge avec Drag Handle
 interface SkillBadgeProps {
   skill: SkillData
   onUpdate: (data: Partial<SkillData>) => void
   onDelete: () => void
+  dragHandleProps: DragHandleProps
 }
 
 const skillLevelLabels: Record<SkillLevel, string> = {
@@ -1200,7 +1298,7 @@ const skillLevelLabels: Record<SkillLevel, string> = {
   EXPERT: 'Expert',
 }
 
-function SkillBadge({ skill, onUpdate, onDelete }: SkillBadgeProps) {
+function SkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: SkillBadgeProps) {
   const [data, setData] = useState(skill)
   const [editing, setEditing] = useState(!skill.name)
 
@@ -1232,28 +1330,43 @@ function SkillBadge({ skill, onUpdate, onDelete }: SkillBadgeProps) {
           <option value="ADVANCED">Avancé</option>
           <option value="EXPERT">Expert</option>
         </select>
-        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm px-1">✓</button>
-        <button onClick={onDelete} className="text-red-500 hover:text-red-700 text-sm">×</button>
+        <button onClick={save} className="text-green-600 hover:text-green-700 p-1">
+          <Check className="w-4 h-4" />
+        </button>
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700 p-1">
+          <X className="w-4 h-4" />
+        </button>
       </div>
     )
   }
 
   return (
     <div className="flex items-center gap-1 bg-blue-100 text-blue-800 rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-blue-400 hover:text-blue-600 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
         {data.name}
       </span>
       <span className="text-xs text-blue-600">({skillLevelLabels[data.level]})</span>
-      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">
+        <X className="w-3 h-3" />
+      </button>
     </div>
   )
 }
 
-// Composant LanguageBadge
+// Composant LanguageBadge avec Drag Handle
 interface LanguageBadgeProps {
   language: LanguageData
   onUpdate: (data: Partial<LanguageData>) => void
   onDelete: () => void
+  dragHandleProps: DragHandleProps
 }
 
 const languageLevelLabels: Record<LanguageLevel, string> = {
@@ -1264,7 +1377,7 @@ const languageLevelLabels: Record<LanguageLevel, string> = {
   NATIVE: 'Natif',
 }
 
-function LanguageBadge({ language, onUpdate, onDelete }: LanguageBadgeProps) {
+function LanguageBadge({ language, onUpdate, onDelete, dragHandleProps }: LanguageBadgeProps) {
   const [data, setData] = useState(language)
   const [editing, setEditing] = useState(!language.name)
 
@@ -1297,31 +1410,46 @@ function LanguageBadge({ language, onUpdate, onDelete }: LanguageBadgeProps) {
           <option value="FLUENT">Courant</option>
           <option value="NATIVE">Natif</option>
         </select>
-        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm px-1">✓</button>
-        <button onClick={onDelete} className="text-red-500 hover:text-red-700 text-sm">×</button>
+        <button onClick={save} className="text-green-600 hover:text-green-700 p-1">
+          <Check className="w-4 h-4" />
+        </button>
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700 p-1">
+          <X className="w-4 h-4" />
+        </button>
       </div>
     )
   }
 
   return (
     <div className="flex items-center gap-1 bg-green-100 text-green-800 rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-green-400 hover:text-green-600 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
         {data.name}
       </span>
       <span className="text-xs text-green-600">({languageLevelLabels[data.level]})</span>
-      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">
+        <X className="w-3 h-3" />
+      </button>
     </div>
   )
 }
 
-// Composant InterestBadge
+// Composant InterestBadge avec Drag Handle
 interface InterestBadgeProps {
   interest: InterestData
   onUpdate: (data: Partial<InterestData>) => void
   onDelete: () => void
+  dragHandleProps: DragHandleProps
 }
 
-function InterestBadge({ interest, onUpdate, onDelete }: InterestBadgeProps) {
+function InterestBadge({ interest, onUpdate, onDelete, dragHandleProps }: InterestBadgeProps) {
   const [data, setData] = useState(interest)
   const [editing, setEditing] = useState(!interest.name)
 
@@ -1343,18 +1471,32 @@ function InterestBadge({ interest, onUpdate, onDelete }: InterestBadgeProps) {
           placeholder="Centre d'intérêt"
           autoFocus
         />
-        <button onClick={save} className="text-green-600 hover:text-green-700 text-sm px-1">✓</button>
-        <button onClick={onDelete} className="text-red-500 hover:text-red-700 text-sm">×</button>
+        <button onClick={save} className="text-green-600 hover:text-green-700 p-1">
+          <Check className="w-4 h-4" />
+        </button>
+        <button onClick={onDelete} className="text-red-500 hover:text-red-700 p-1">
+          <X className="w-4 h-4" />
+        </button>
       </div>
     )
   }
 
   return (
     <div className="flex items-center gap-1 bg-purple-100 text-purple-800 rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-purple-400 hover:text-purple-600 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
         {data.name}
       </span>
-      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">
+        <X className="w-3 h-3" />
+      </button>
     </div>
   )
 }

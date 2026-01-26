@@ -5,14 +5,31 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import {
+  Palette,
+  ClipboardList,
+  FileCheck,
+  Sparkles,
+  Rocket,
+} from '@/components/ui/icons'
+import { LucideIcon } from 'lucide-react'
 
-const templates = [
+interface Template {
+  id: string
+  name: string
+  description: string
+  color: string
+  icon: LucideIcon
+  features: string[]
+}
+
+const templates: Template[] = [
   {
     id: 'MODERN',
     name: 'Modern',
     description: 'Design épuré avec une mise en page contemporaine. Idéal pour les métiers créatifs et tech.',
     color: 'from-blue-500 to-purple-600',
-    icon: '🎨',
+    icon: Palette,
     features: ['Design coloré', 'Sections visuelles', 'Photo de profil'],
   },
   {
@@ -20,7 +37,7 @@ const templates = [
     name: 'Classic',
     description: 'Style traditionnel et professionnel. Parfait pour les secteurs conventionnels.',
     color: 'from-gray-600 to-gray-800',
-    icon: '📋',
+    icon: ClipboardList,
     features: ['Sobre et élégant', 'Lecture facile', 'Formel'],
   },
   {
@@ -28,7 +45,7 @@ const templates = [
     name: 'ATS-Friendly',
     description: 'Optimisé pour les systèmes de recrutement automatisés. Maximise vos chances d\'être sélectionné.',
     color: 'from-green-500 to-teal-600',
-    icon: '🤖',
+    icon: FileCheck,
     features: ['Compatible ATS', 'Mots-clés optimisés', 'Format simple'],
   },
   {
@@ -36,7 +53,7 @@ const templates = [
     name: 'Minimal',
     description: 'Minimaliste et efficace. Laissez votre contenu parler de lui-même.',
     color: 'from-slate-400 to-slate-600',
-    icon: '✨',
+    icon: Sparkles,
     features: ['Ultra-simple', 'Beaucoup d\'espace', 'Focus contenu'],
   },
   {
@@ -44,7 +61,7 @@ const templates = [
     name: 'Creative',
     description: 'Audacieux et original. Démarquez-vous avec un design unique.',
     color: 'from-pink-500 to-orange-500',
-    icon: '🚀',
+    icon: Rocket,
     features: ['Design unique', 'Infographies', 'Personnalisable'],
   },
 ]
@@ -103,46 +120,49 @@ export default function TemplatesPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {templates.map((template) => (
-          <div
-            key={template.id}
-            className="bg-white rounded-xl border overflow-hidden hover:shadow-lg transition-shadow"
-          >
-            {/* Preview Header */}
-            <div className={`h-32 bg-gradient-to-br ${template.color} flex items-center justify-center`}>
-              <span className="text-5xl">{template.icon}</span>
-            </div>
-
-            {/* Content */}
-            <div className="p-5">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {template.name}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {template.description}
-              </p>
-
-              {/* Features */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {template.features.map((feature) => (
-                  <span
-                    key={feature}
-                    className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
-                  >
-                    {feature}
-                  </span>
-                ))}
+        {templates.map((template) => {
+          const Icon = template.icon
+          return (
+            <div
+              key={template.id}
+              className="bg-white rounded-xl border overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              {/* Preview Header */}
+              <div className={`h-32 bg-gradient-to-br ${template.color} flex items-center justify-center`}>
+                <Icon className="w-12 h-12 text-white" />
               </div>
 
-              <Button
-                className="w-full"
-                onClick={() => handleSelectTemplate(template.id)}
-              >
-                Utiliser ce template
-              </Button>
+              {/* Content */}
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {template.name}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {template.description}
+                </p>
+
+                {/* Features */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {template.features.map((feature) => (
+                    <span
+                      key={feature}
+                      className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+
+                <Button
+                  className="w-full"
+                  onClick={() => handleSelectTemplate(template.id)}
+                >
+                  Utiliser ce template
+                </Button>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Modal */}

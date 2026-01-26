@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/confirm-dialog'
+import { FileText, Copy, Trash2, Plus, Loader2 } from '@/components/ui/icons'
 
 interface Resume {
   id: string
@@ -108,7 +109,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
   if (resumes.length === 0) {
     return (
       <div className="text-center py-16 bg-white rounded-xl border">
-        <div className="text-6xl mb-4">📄</div>
+        <FileText className="w-16 h-16 mx-auto mb-4 text-gray-300" />
         <h2 className="text-xl font-semibold text-gray-900 mb-2">
           Aucun CV pour le moment
         </h2>
@@ -127,7 +128,10 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
       {/* Action bar */}
       <div className="flex justify-end">
         <Link href="/dashboard/templates">
-          <Button>+ Nouveau CV</Button>
+          <Button>
+            <Plus className="w-4 h-4 mr-2" />
+            Nouveau CV
+          </Button>
         </Link>
       </div>
 
@@ -185,16 +189,26 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                   onClick={() => handleDuplicate(resume.id)}
                   disabled={duplicatingId === resume.id}
                   title="Dupliquer"
+                  className="px-3"
                 >
-                  {duplicatingId === resume.id ? '...' : '📋'}
+                  {duplicatingId === resume.id ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
                 </Button>
                 <Button
                   variant="destructive"
                   onClick={() => openDeleteDialog(resume.id)}
                   disabled={deletingId === resume.id}
                   title="Supprimer"
+                  className="px-3"
                 >
-                  {deletingId === resume.id ? '...' : 'Supprimer'}
+                  {deletingId === resume.id ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="w-4 h-4" />
+                  )}
                 </Button>
               </div>
             </div>
