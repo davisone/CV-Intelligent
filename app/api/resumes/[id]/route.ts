@@ -140,6 +140,42 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     }
 
     const body = await request.json()
+
+    // Vérifier l'accès - si paiement requis, seul le titre peut être modifié
+    const access = await checkResumeAccess(id, session.user.id)
+
+    if (access.requiresPayment && !access.canAccess) {
+      // Vérifier si l'utilisateur essaie de modifier autre chose que le titre
+      const { title, ...otherFields } = body
+      const hasContentChanges = Object.keys(otherFields).some(key =>
+        otherFields[key] !== undefined && key !== 'template'
+      )
+
+      if (hasContentChanges) {
+        return NextResponse.json(
+          {
+            error: 'Paiement requis pour modifier le contenu du CV',
+            requiresPayment: true
+          },
+          { status: 402 }
+        )
+      }
+
+      // Autoriser uniquement la modification du titre
+      if (title) {
+        const updatedResume = await prisma.resume.update({
+          where: { id },
+          data: { title },
+        })
+        return NextResponse.json({ success: true, data: updatedResume })
+      }
+
+      return NextResponse.json(
+        { error: 'Aucune modification autorisée' },
+        { status: 400 }
+      )
+    }
+
     const validatedData = updateResumeSchema.safeParse(body)
 
     if (!validatedData.success) {

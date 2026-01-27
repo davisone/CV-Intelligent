@@ -17,7 +17,7 @@ export async function checkResumeAccess(
 ): Promise<FeatureCheckResult> {
   const resume = await prisma.resume.findFirst({
     where: { id: resumeId, userId },
-    select: { isPaid: true, paymentStatus: true },
+    select: { isPaid: true, paymentStatus: true, template: true, createdAt: true },
   })
 
   if (!resume) {
@@ -29,24 +29,19 @@ export async function checkResumeAccess(
     return { canAccess: true, reason: 'paid_cv', requiresPayment: false }
   }
 
-  // Vérifier si c'est le premier CV gratuit de l'utilisateur
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    select: { freeCVUsed: true },
-  })
-
-  // Premier CV avec template MODERN = gratuit
-  const firstFreeCV = await prisma.resume.findFirst({
+  // Vérifier si c'est le premier CV MODERN de l'utilisateur (le CV gratuit)
+  // On cherche le premier CV MODERN créé par l'utilisateur
+  const firstModernCV = await prisma.resume.findFirst({
     where: {
       userId,
       template: FREE_TEMPLATE,
-      isPaid: false,
     },
     orderBy: { createdAt: 'asc' },
     select: { id: true },
   })
 
-  if (firstFreeCV?.id === resumeId && !user?.freeCVUsed) {
+  // Si ce CV est le premier CV MODERN de l'utilisateur, il est gratuit
+  if (resume.template === FREE_TEMPLATE && firstModernCV?.id === resumeId) {
     return { canAccess: true, reason: 'free_cv', requiresPayment: false }
   }
 

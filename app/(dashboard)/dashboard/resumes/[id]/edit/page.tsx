@@ -4,6 +4,7 @@ import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { checkResumeAccess } from '@/lib/payments/feature-check'
 import { ResumeEditor } from './resume-editor'
+import { PaymentWall } from './payment-wall'
 
 interface EditResumePageProps {
   params: Promise<{ id: string }>
@@ -17,6 +18,33 @@ export default async function EditResumePage({ params }: EditResumePageProps) {
     return null
   }
 
+  // Vérifier l'accès aux features premium AVANT de charger les données
+  const access = await checkResumeAccess(id, session.user.id)
+
+  // Si paiement requis, ne charger que les infos de base
+  if (access.requiresPayment && !access.canAccess) {
+    const basicResume = await prisma.resume.findFirst({
+      where: {
+        id,
+        userId: session.user.id,
+      },
+      select: {
+        id: true,
+        title: true,
+        template: true,
+        isPaid: true,
+        paymentStatus: true,
+      },
+    })
+
+    if (!basicResume) {
+      notFound()
+    }
+
+    return <PaymentWall resume={basicResume} />
+  }
+
+  // Accès autorisé - charger les données complètes
   const resume = await prisma.resume.findFirst({
     where: {
       id,
@@ -36,9 +64,6 @@ export default async function EditResumePage({ params }: EditResumePageProps) {
   if (!resume) {
     notFound()
   }
-
-  // Vérifier l'accès aux features premium
-  const access = await checkResumeAccess(id, session.user.id)
 
   return (
     <ResumeEditor
