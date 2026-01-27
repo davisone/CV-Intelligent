@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import { stripe } from '@/lib/stripe/client'
 import { prisma } from '@/lib/db/prisma'
+import { sendPaymentConfirmationEmail } from '@/lib/email/resend'
+import { PRICING } from '@/lib/config/pricing'
 import type Stripe from 'stripe'
 
 export async function POST(request: Request) {
@@ -90,6 +92,18 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
     ? session.payment_intent
     : session.payment_intent?.id
 
+  // Récupérer les infos utilisateur et CV pour l'email
+  const [user, resume] = await Promise.all([
+    prisma.user.findUnique({
+      where: { id: userId },
+      select: { email: true, name: true },
+    }),
+    prisma.resume.findUnique({
+      where: { id: resumeId },
+      select: { title: true },
+    }),
+  ])
+
   await prisma.$transaction([
     // Mettre à jour le paiement
     prisma.payment.update({
@@ -110,6 +124,18 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
       },
     }),
   ])
+
+  // Envoyer l'email de confirmation
+  if (user?.email && resume?.title) {
+    await sendPaymentConfirmationEmail(
+      user.email,
+      user.name || 'Client',
+      resume.title,
+      PRICING.displayPrice,
+      resumeId
+    )
+    console.log(`[WEBHOOK] Confirmation email sent to ${user.email}`)
+  }
 
   console.log(`[WEBHOOK] Payment completed for resume ${resumeId} by user ${userId}`)
 }

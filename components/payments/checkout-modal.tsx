@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/helpers'
 import { PRICING } from '@/lib/config/pricing'
@@ -22,6 +23,7 @@ export function CheckoutModal({
   const dialogRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [acceptedCGV, setAcceptedCGV] = useState(false)
 
   const handleCheckout = async () => {
     setIsLoading(true)
@@ -136,6 +138,27 @@ export function CheckoutModal({
           <p className="text-sm text-gray-500">Paiement unique, accès permanent</p>
         </div>
 
+        {/* CGV Checkbox */}
+        <label className="flex items-start gap-3 mb-4 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={acceptedCGV}
+            onChange={(e) => setAcceptedCGV(e.target.checked)}
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+          />
+          <span className="text-sm text-gray-600">
+            J'accepte les{' '}
+            <Link
+              href="/legal/cgv"
+              target="_blank"
+              className="text-primary hover:underline"
+            >
+              Conditions Générales de Vente
+            </Link>
+            {' '}et je renonce expressément à mon droit de rétractation conformément à l'article L221-28 du Code de la consommation.
+          </span>
+        </label>
+
         {/* Error */}
         {error && (
           <div className="mb-4 p-3 rounded-lg bg-red-50 text-red-600 text-sm">
@@ -156,6 +179,7 @@ export function CheckoutModal({
           <Button
             className="flex-1"
             onClick={handleCheckout}
+            disabled={!acceptedCGV}
             isLoading={isLoading}
           >
             Payer {PRICING.displayPrice}

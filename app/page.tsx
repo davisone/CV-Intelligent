@@ -132,9 +132,33 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-8">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ResumeForge. Tous droits réservés.</p>
+      <footer className="border-t py-8 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-muted-foreground text-sm">
+              &copy; {new Date().getFullYear()} ResumeForge. Tous droits réservés.
+            </p>
+            <nav className="flex items-center gap-6 text-sm">
+              <Link
+                href="/legal/cgv"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                CGV
+              </Link>
+              <Link
+                href="/legal/mentions-legales"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Mentions légales
+              </Link>
+              <Link
+                href="/legal/confidentialite"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Confidentialité
+              </Link>
+            </nav>
+          </div>
         </div>
       </footer>
     </div>
