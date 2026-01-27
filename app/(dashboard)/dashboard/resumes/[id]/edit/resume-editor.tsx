@@ -670,12 +670,12 @@ ${interests.map(i => i.name).join(', ')}
         </button>
       </div>
 
-      {/* Banner paiement requis */}
-      {requiresPayment && !canAccessPremiumFeatures && (
+      {/* Banner paiement requis pour IA/ATS */}
+      {!canAccessPremiumFeatures && (
         <PaymentRequired
           onUnlock={() => setShowCheckoutModal(true)}
           className="mb-6"
-          message="Débloquez ce CV pour accéder aux suggestions IA, au score ATS et à tous les templates premium."
+          message="Débloquez les fonctionnalités premium (suggestions IA et score ATS) pour 4,99 €."
         />
       )}
 
@@ -893,6 +893,11 @@ ${interests.map(i => i.name).join(', ')}
                       <>
                         <Loader2 className="w-3 h-3 animate-spin" />
                         Amélioration...
+                      </>
+                    ) : !canAccessPremiumFeatures ? (
+                      <>
+                        <Lock className="w-3 h-3" />
+                        Améliorer avec IA
                       </>
                     ) : (
                       <>

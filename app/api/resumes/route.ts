@@ -4,7 +4,6 @@ import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { createResumeSchema } from '@/lib/validations/resume.schema'
 import { canCreateResume } from '@/lib/payments/feature-check'
-import { FREE_TEMPLATE } from '@/lib/config/pricing'
 
 // GET /api/resumes - Liste des CV de l'utilisateur
 export async function GET() {
@@ -210,14 +209,6 @@ export async function POST(request: Request) {
         }),
       },
     })
-
-    // Marquer freeCVUsed si c'est le premier CV gratuit avec template MODERN
-    if (template === FREE_TEMPLATE && !createCheck.requiresPayment) {
-      await prisma.user.update({
-        where: { id: session.user.id },
-        data: { freeCVUsed: true },
-      })
-    }
 
     return NextResponse.json(
       { success: true, data: resume },

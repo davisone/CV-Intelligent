@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { PriceBadge } from '@/components/payments/price-badge'
 import { CheckoutModal } from '@/components/payments/checkout-modal'
-import { FREE_TEMPLATE, isPremiumTemplate, PRICING } from '@/lib/config/pricing'
+import { FREE_TEMPLATE, PRICING } from '@/lib/config/pricing'
 import {
   Palette,
   ClipboardList,
@@ -80,23 +80,6 @@ export default function TemplatesPage() {
   const [pendingResumeTitle, setPendingResumeTitle] = useState('')
   const [title, setTitle] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [freeCVUsed, setFreeCVUsed] = useState(false)
-
-  // Vérifier si le CV gratuit a été utilisé
-  useEffect(() => {
-    const checkFreeCVStatus = async () => {
-      try {
-        const res = await fetch('/api/user/status')
-        if (res.ok) {
-          const data = await res.json()
-          setFreeCVUsed(data.data?.freeCVUsed ?? false)
-        }
-      } catch {
-        // Ignorer l'erreur, on suppose que le CV gratuit n'a pas été utilisé
-      }
-    }
-    checkFreeCVStatus()
-  }, [])
 
   const handleSelectTemplate = (templateId: string) => {
     setSelectedTemplate(templateId)
@@ -134,7 +117,6 @@ export default function TemplatesPage() {
         }
 
         toast.success('CV créé avec succès !')
-        setFreeCVUsed(true) // Mettre à jour l'état local
         router.push(`/dashboard/resumes/${data.data.id}/edit`)
       } else {
         toast.error(data.error || 'Erreur lors de la création')
@@ -148,11 +130,11 @@ export default function TemplatesPage() {
 
   // Détermine si un template nécessite un paiement
   const templateRequiresPayment = (templateId: string): boolean => {
-    // Si le CV gratuit n'a pas été utilisé et c'est le template MODERN, c'est gratuit
-    if (!freeCVUsed && templateId === FREE_TEMPLATE) {
+    // Le template MODERN est toujours gratuit
+    if (templateId === FREE_TEMPLATE) {
       return false
     }
-    // Sinon, tout nécessite un paiement
+    // Les autres templates sont toujours payants
     return true
   }
 
@@ -184,7 +166,7 @@ export default function TemplatesPage() {
                   <h3 className="text-xl font-semibold text-gray-900">
                     {template.name}
                   </h3>
-                  {template.isFree && !freeCVUsed ? (
+                  {template.isFree ? (
                     <PriceBadge variant="free" />
                   ) : (
                     <PriceBadge variant="pro" />

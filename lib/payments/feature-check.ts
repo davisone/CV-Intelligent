@@ -29,39 +29,46 @@ export async function checkResumeAccess(
     return { canAccess: true, reason: 'paid_cv', requiresPayment: false }
   }
 
-  // Vérifier si c'est le premier CV MODERN de l'utilisateur (le CV gratuit)
-  // On cherche le premier CV MODERN créé par l'utilisateur
-  const firstModernCV = await prisma.resume.findFirst({
-    where: {
-      userId,
-      template: FREE_TEMPLATE,
-    },
-    orderBy: { createdAt: 'asc' },
-    select: { id: true },
-  })
-
-  // Si ce CV est le premier CV MODERN de l'utilisateur, il est gratuit
-  if (resume.template === FREE_TEMPLATE && firstModernCV?.id === resumeId) {
+  // Le template MODERN est toujours gratuit (illimité)
+  if (resume.template === FREE_TEMPLATE) {
     return { canAccess: true, reason: 'free_cv', requiresPayment: false }
   }
 
-  // Sinon, paiement requis
+  // Les autres templates nécessitent un paiement
   return { canAccess: false, reason: 'payment_required', requiresPayment: true }
 }
 
 /**
  * Vérifie si un utilisateur peut utiliser les features IA sur un CV
+ * Seuls les CV payés ont accès aux fonctionnalités IA et ATS
  */
 export async function canUseAIFeatures(
   resumeId: string,
   userId: string
 ): Promise<{ allowed: boolean; reason?: string }> {
-  const access = await checkResumeAccess(resumeId, userId)
+  const resume = await prisma.resume.findFirst({
+    where: { id: resumeId, userId },
+    select: { isPaid: true, template: true },
+  })
 
-  if (access.canAccess) {
+  if (!resume) {
+    return { allowed: false, reason: 'CV introuvable' }
+  }
+
+  // Seuls les CV payés ont accès aux fonctionnalités IA
+  if (resume.isPaid) {
     return { allowed: true }
   }
 
+  // CV gratuit (MODERN non payé) = pas d'accès IA/ATS
+  if (resume.template === FREE_TEMPLATE) {
+    return {
+      allowed: false,
+      reason: 'Les fonctionnalités IA et ATS sont réservées aux CV premium. Débloquez ce CV pour 4,99 €.',
+    }
+  }
+
+  // Autres templates non payés
   return {
     allowed: false,
     reason: 'Les fonctionnalités IA nécessitent un CV premium. Débloquez ce CV pour 4,99 €.',
@@ -75,38 +82,16 @@ export async function canCreateResume(
   userId: string,
   template: TemplateType
 ): Promise<{ allowed: boolean; requiresPayment: boolean; reason?: string }> {
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    select: { freeCVUsed: true },
-  })
-
-  // Premier CV = gratuit si template MODERN
-  if (!user?.freeCVUsed) {
-    if (template === FREE_TEMPLATE) {
-      return { allowed: true, requiresPayment: false }
-    }
-    // Template premium sur premier CV = paiement requis
-    return {
-      allowed: false,
-      requiresPayment: true,
-      reason: `Le template ${template} est premium. Utilisez le template MODERN gratuitement ou payez 4,99 €.`,
-    }
+  // Le template MODERN est toujours gratuit (illimité)
+  if (template === FREE_TEMPLATE) {
+    return { allowed: true, requiresPayment: false }
   }
 
-  // freeCVUsed = true → tous les nouveaux CV nécessitent paiement
-  if (isPremiumTemplate(template)) {
-    return {
-      allowed: false,
-      requiresPayment: true,
-      reason: 'Vous avez déjà utilisé votre CV gratuit. Débloquez ce CV pour 4,99 €.',
-    }
-  }
-
-  // Même MODERN nécessite paiement après le premier CV
+  // Les templates premium nécessitent toujours un paiement
   return {
     allowed: false,
     requiresPayment: true,
-    reason: 'Vous avez déjà utilisé votre CV gratuit. Débloquez ce CV pour 4,99 €.',
+    reason: `Le template ${template} est premium. Débloquez ce CV pour 4,99 €.`,
   }
 }
 

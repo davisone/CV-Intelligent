@@ -65,11 +65,15 @@ export default async function EditResumePage({ params }: EditResumePageProps) {
     notFound()
   }
 
+  // Pour les features premium (IA, ATS), seuls les CV payés y ont accès
+  // Les CV MODERN gratuits peuvent éditer mais pas utiliser l'IA/ATS
+  const canUseAIAndATS = resume.isPaid
+
   return (
     <ResumeEditor
       resume={resume}
-      canAccessPremiumFeatures={access.canAccess}
-      requiresPayment={access.requiresPayment}
+      canAccessPremiumFeatures={canUseAIAndATS}
+      requiresPayment={!resume.isPaid}
     />
   )
 }
