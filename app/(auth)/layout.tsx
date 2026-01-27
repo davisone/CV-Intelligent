@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Footer } from '@/components/layout/footer'
 import type { ReactNode } from 'react'
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
@@ -16,10 +17,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
 
-      {/* Footer minimal */}
-      <footer className="p-4 text-center text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} ResumeForge
-      </footer>
+      <Footer />
     </div>
   )
 }
