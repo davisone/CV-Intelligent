@@ -10,34 +10,31 @@ export default async function ProfilePage() {
     return null
   }
 
-  const profile = await prisma.userProfile.findUnique({
-    where: { userId: session.user.id },
-  })
-
-  const experiences = await prisma.userExperience.findMany({
-    where: { userId: session.user.id },
-    orderBy: { order: 'asc' },
-  })
-
-  const educations = await prisma.userEducation.findMany({
-    where: { userId: session.user.id },
-    orderBy: { order: 'asc' },
-  })
-
-  const skills = await prisma.userSkill.findMany({
-    where: { userId: session.user.id },
-    orderBy: { order: 'asc' },
-  })
-
-  const languages = await prisma.userLanguage.findMany({
-    where: { userId: session.user.id },
-    orderBy: { order: 'asc' },
-  })
-
-  const interests = await prisma.userInterest.findMany({
-    where: { userId: session.user.id },
-    orderBy: { order: 'asc' },
-  })
+  const [profile, experiences, educations, skills, languages, interests] = await Promise.all([
+    prisma.userProfile.findUnique({
+      where: { userId: session.user.id },
+    }),
+    prisma.userExperience.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    }),
+    prisma.userEducation.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    }),
+    prisma.userSkill.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    }),
+    prisma.userLanguage.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    }),
+    prisma.userInterest.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    }),
+  ])
 
   return (
     <div>
