@@ -8,7 +8,16 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} ResumeForge. Tous droits réservés.
+            &copy; {new Date().getFullYear()} ResumeForge — Propulsé par{' '}
+            <a
+              href="https://dvs-web.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-gray-900 transition-colors underline"
+            >
+              DVS-Web
+            </a>
+            . Tous droits réservés.
           </p>
           <nav className="flex items-center gap-6 text-sm">
             <Link

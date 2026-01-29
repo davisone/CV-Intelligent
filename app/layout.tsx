@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
   keywords: ['CV', 'resume', 'générateur', 'IA', 'ATS', 'professionnel'],
-  authors: [{ name: 'ResumeForge' }],
+  authors: [{ name: 'DVS-Web - Evan Davison', url: 'https://dvs-web.fr' }],
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
