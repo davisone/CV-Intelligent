@@ -3,8 +3,11 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Conditions Générales de Vente - ResumeForge',
-  description: 'Conditions générales de vente de ResumeForge',
+  title: 'Conditions Générales de Vente',
+  description: 'Consultez les conditions générales de vente de ResumeForge : tarifs, modalités de paiement, droit de rétractation et garanties.',
+  alternates: {
+    canonical: '/legal/cgv',
+  },
 }
 
 export default function CGVPage() {

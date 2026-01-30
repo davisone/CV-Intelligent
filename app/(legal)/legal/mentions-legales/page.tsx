@@ -3,8 +3,11 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Mentions Légales - ResumeForge',
-  description: 'Mentions légales de ResumeForge',
+  title: 'Mentions Légales',
+  description: 'Mentions légales de ResumeForge : éditeur du site, hébergeur, propriété intellectuelle et responsabilité.',
+  alternates: {
+    canonical: '/legal/mentions-legales',
+  },
 }
 
 export default function MentionsLegalesPage() {

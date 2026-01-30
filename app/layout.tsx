@@ -9,22 +9,45 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: 'ResumeForge - Générateur de CV Intelligent',
     template: '%s | ResumeForge',
   },
   description:
     'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
-  keywords: ['CV', 'resume', 'générateur', 'IA', 'ATS', 'professionnel'],
+  keywords: ['CV', 'resume', 'générateur', 'IA', 'ATS', 'professionnel', 'créer CV', 'CV en ligne', 'optimisation ATS'],
   authors: [{ name: 'DVS-Web - Evan Davison', url: 'https://dvs-web.fr' }],
+  creator: 'DVS-Web - Evan Davison',
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: process.env.NEXT_PUBLIC_APP_URL,
+    url: baseUrl,
     siteName: 'ResumeForge',
     title: 'ResumeForge - Générateur de CV Intelligent',
+    description: 'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ResumeForge - Générateur de CV Intelligent',
     description: 'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

@@ -3,8 +3,11 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Politique de Confidentialité - ResumeForge',
-  description: 'Politique de confidentialité et protection des données de ResumeForge',
+  title: 'Politique de Confidentialité',
+  description: 'Politique de confidentialité de ResumeForge : collecte, utilisation et protection de vos données personnelles conformément au RGPD.',
+  alternates: {
+    canonical: '/legal/confidentialite',
+  },
 }
 
 export default function ConfidentialitePage() {

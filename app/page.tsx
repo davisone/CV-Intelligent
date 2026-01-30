@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { Footer } from '@/components/layout/footer'
+import { WebsiteJsonLd } from '@/components/seo/json-ld'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
+      <WebsiteJsonLd />
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
