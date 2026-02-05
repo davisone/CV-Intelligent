@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[#6B6560] text-sm">
-            &copy; {new Date().getFullYear()} ResumeForge — Propulsé par{' '}
+            &copy; {new Date().getFullYear()} DVS-CV — Propulsé par{' '}
             <a
               href="https://dvs-web.fr"
               target="_blank"

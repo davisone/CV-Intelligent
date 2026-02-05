@@ -50,7 +50,7 @@ export default function PublicTemplatesPage() {
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-primary">
-            ResumeForge
+            DVS-CV
           </Link>
           <nav className="flex items-center gap-4">
             <Link
@@ -143,7 +143,7 @@ export default function PublicTemplatesPage() {
       {/* Footer */}
       <footer className="border-t py-8">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ResumeForge. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} DVS-CV. Tous droits réservés.</p>
         </div>
       </footer>
     </div>

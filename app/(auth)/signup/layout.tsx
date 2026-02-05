@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Inscription',
-  description: 'Créez votre compte ResumeForge gratuitement et commencez à générer des CV professionnels optimisés avec l\'intelligence artificielle.',
+  description: 'Créez votre compte DVS-CV gratuitement et commencez à générer des CV professionnels optimisés avec l\'intelligence artificielle.',
   alternates: {
     canonical: '/signup',
   },

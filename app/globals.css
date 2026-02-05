@@ -102,7 +102,7 @@ body {
   outline-offset: 2px;
 }
 
-/* Links */
+/* Links - global styling */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -111,4 +111,10 @@ a {
 
 a:hover {
   color: var(--accent-light);
+}
+
+/* CV templates: reset link colors to inherit from template */
+[data-cv-container] a,
+[data-cv-container] a:hover {
+  color: inherit;
 }

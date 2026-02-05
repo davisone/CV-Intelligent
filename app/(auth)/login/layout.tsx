@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Connexion',
-  description: 'Connectez-vous à votre compte ResumeForge pour accéder à vos CV et continuer à créer des CV professionnels avec l\'IA.',
+  description: 'Connectez-vous à votre compte DVS-CV pour accéder à vos CV et continuer à créer des CV professionnels avec l\'IA.',
   alternates: {
     canonical: '/login',
   },

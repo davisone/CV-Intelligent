@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Mentions Légales',
-  description: 'Mentions légales de ResumeForge : éditeur du site, hébergeur, propriété intellectuelle et responsabilité.',
+  description: 'Mentions légales de DVS-CV : éditeur du site, hébergeur, propriété intellectuelle et responsabilité.',
   alternates: {
     canonical: '/legal/mentions-legales',
   },
@@ -36,7 +36,7 @@ export default function MentionsLegalesPage() {
               1. Éditeur du site
             </h2>
             <p>
-              Le site ResumeForge est édité par :
+              Le site DVS-CV est édité par :
             </p>
             <ul className="list-none mt-4 space-y-2">
               <li><strong>Nom :</strong> <span className="font-medium">Davison Evan</span></li>
@@ -87,13 +87,13 @@ export default function MentionsLegalesPage() {
             </h2>
             <p>
               L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes, code source)
-              est la propriété exclusive de ResumeForge ou de ses partenaires et est protégé par
+              est la propriété exclusive de DVS-CV ou de ses partenaires et est protégé par
               les lois françaises et internationales relatives à la propriété intellectuelle.
             </p>
             <p className="mt-2">
               Toute reproduction, représentation, modification, publication, adaptation de tout
               ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé,
-              est interdite sans autorisation écrite préalable de ResumeForge.
+              est interdite sans autorisation écrite préalable de DVS-CV.
             </p>
             <p className="mt-2">
               Les CV créés par les utilisateurs restent leur entière propriété.
@@ -144,7 +144,7 @@ export default function MentionsLegalesPage() {
               7. Liens hypertextes
             </h2>
             <p>
-              Le site peut contenir des liens vers d'autres sites. ResumeForge n'exerce aucun
+              Le site peut contenir des liens vers d'autres sites. DVS-CV n'exerce aucun
               contrôle sur ces sites et décline toute responsabilité quant à leur contenu.
             </p>
           </section>
@@ -154,12 +154,12 @@ export default function MentionsLegalesPage() {
               8. Limitation de responsabilité
             </h2>
             <p>
-              ResumeForge s'efforce de fournir des informations exactes et à jour.
+              DVS-CV s'efforce de fournir des informations exactes et à jour.
               Toutefois, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité
               des informations diffusées sur le site.
             </p>
             <p className="mt-2">
-              ResumeForge ne saurait être tenu responsable des dommages directs ou indirects
+              DVS-CV ne saurait être tenu responsable des dommages directs ou indirects
               résultant de l'accès ou de l'utilisation du site.
             </p>
           </section>

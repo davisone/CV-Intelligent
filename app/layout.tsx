@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   title: {
-    default: 'ResumeForge - Générateur de CV Intelligent',
-    template: '%s | ResumeForge',
+    default: 'DVS-CV - Générateur de CV Intelligent',
+    template: '%s | DVS-CV',
   },
   description:
     'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: baseUrl,
-    siteName: 'ResumeForge',
-    title: 'ResumeForge - Générateur de CV Intelligent',
+    siteName: 'DVS-CV',
+    title: 'DVS-CV - Générateur de CV Intelligent',
     description: 'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ResumeForge - Générateur de CV Intelligent',
+    title: 'DVS-CV - Générateur de CV Intelligent',
     description: 'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle.',
   },
   robots: {

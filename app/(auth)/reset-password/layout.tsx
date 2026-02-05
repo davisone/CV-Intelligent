@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Réinitialiser le mot de passe',
-  description: 'Définissez un nouveau mot de passe pour votre compte ResumeForge.',
+  description: 'Définissez un nouveau mot de passe pour votre compte DVS-CV.',
   robots: { index: false, follow: false },
 }
 

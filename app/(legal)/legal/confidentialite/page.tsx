@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité',
-  description: 'Politique de confidentialité de ResumeForge : collecte, utilisation et protection de vos données personnelles conformément au RGPD.',
+  description: 'Politique de confidentialité de DVS-CV : collecte, utilisation et protection de vos données personnelles conformément au RGPD.',
   alternates: {
     canonical: '/legal/confidentialite',
   },
@@ -36,7 +36,7 @@ export default function ConfidentialitePage() {
               1. Introduction
             </h2>
             <p>
-              La présente politique de confidentialité décrit comment ResumeForge
+              La présente politique de confidentialité décrit comment DVS-CV
               (<span className="font-medium">https://dvs-web.fr</span>) collecte, utilise et protège
               vos données personnelles conformément au Règlement Général sur la Protection
               des Données (RGPD) et à la loi Informatique et Libertés.

@@ -12,7 +12,7 @@ export default function HomePage() {
       <header className="border-b border-[#E0D6C8] bg-[#FBF8F4]/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-[#722F37]">
-            ResumeForge
+            DVS-CV
           </Link>
           <nav className="flex items-center gap-4">
             <Link
@@ -50,7 +50,7 @@ export default function HomePage() {
                   <span className="text-[#722F37]"> en minutes</span>
                 </h1>
                 <p className="text-lg text-[#6B6560] mb-8 max-w-xl">
-                  ResumeForge utilise l&apos;intelligence artificielle pour créer des CV professionnels,
+                  DVS-CV utilise l&apos;intelligence artificielle pour créer des CV professionnels,
                   optimisés pour les ATS et qui captent l&apos;attention des recruteurs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">

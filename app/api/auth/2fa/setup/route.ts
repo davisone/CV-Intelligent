@@ -39,7 +39,7 @@ export async function POST() {
     const otpAuthUrl = generateURI({
       secret,
       label: user.email || 'user',
-      issuer: 'ResumeForge',
+      issuer: 'DVS-CV',
     })
 
     // Generate QR Code

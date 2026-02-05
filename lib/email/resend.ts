@@ -4,7 +4,7 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null
 
-const FROM_EMAIL = process.env.FROM_EMAIL || 'ResumeForge <noreply@resumeforge.com>'
+const FROM_EMAIL = process.env.FROM_EMAIL || 'DVS-CV <noreply@resumeforge.com>'
 
 export async function sendPasswordResetEmail(
   to: string,
@@ -21,7 +21,7 @@ export async function sendPasswordResetEmail(
     const { data, error } = await resend.emails.send({
       from: FROM_EMAIL,
       to,
-      subject: 'Réinitialisation de votre mot de passe - ResumeForge',
+      subject: 'Réinitialisation de votre mot de passe - DVS-CV',
       html: `
         <!DOCTYPE html>
         <html>
@@ -36,7 +36,7 @@ export async function sendPasswordResetEmail(
             </h1>
 
             <p style="color: #666; font-size: 16px; line-height: 1.6;">
-              Vous avez demandé la réinitialisation de votre mot de passe ResumeForge.
+              Vous avez demandé la réinitialisation de votre mot de passe DVS-CV.
             </p>
 
             <p style="color: #666; font-size: 16px; line-height: 1.6;">
@@ -57,7 +57,7 @@ export async function sendPasswordResetEmail(
             <hr style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
 
             <p style="color: #999; font-size: 12px; text-align: center;">
-              ResumeForge - Créez votre CV parfait avec l'IA
+              DVS-CV - Créez votre CV parfait avec l'IA
             </p>
           </div>
         </body>
@@ -87,7 +87,7 @@ export async function sendWelcomeEmail(to: string, name: string) {
     const { data, error } = await resend.emails.send({
       from: FROM_EMAIL,
       to,
-      subject: 'Bienvenue sur ResumeForge !',
+      subject: 'Bienvenue sur DVS-CV !',
       html: `
         <!DOCTYPE html>
         <html>
@@ -102,7 +102,7 @@ export async function sendWelcomeEmail(to: string, name: string) {
             </h1>
 
             <p style="color: #666; font-size: 16px; line-height: 1.6;">
-              Merci de vous être inscrit sur ResumeForge. Vous pouvez maintenant créer des CV professionnels optimisés pour les ATS.
+              Merci de vous être inscrit sur DVS-CV. Vous pouvez maintenant créer des CV professionnels optimisés pour les ATS.
             </p>
 
             <div style="text-align: center; margin: 32px 0;">
@@ -115,7 +115,7 @@ export async function sendWelcomeEmail(to: string, name: string) {
             <hr style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
 
             <p style="color: #999; font-size: 12px; text-align: center;">
-              ResumeForge - Créez votre CV parfait avec l'IA
+              DVS-CV - Créez votre CV parfait avec l'IA
             </p>
           </div>
         </body>
@@ -160,7 +160,7 @@ export async function sendPaymentConfirmationEmail(
     const { data, error } = await resend.emails.send({
       from: FROM_EMAIL,
       to,
-      subject: `Confirmation de paiement - ${resumeTitle} | ResumeForge`,
+      subject: `Confirmation de paiement - ${resumeTitle} | DVS-CV`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -240,7 +240,7 @@ export async function sendPaymentConfirmationEmail(
             </p>
 
             <p style="color: #999; font-size: 12px; text-align: center;">
-              ResumeForge - Créez votre CV parfait avec l'IA<br>
+              DVS-CV - Créez votre CV parfait avec l'IA<br>
               TVA non applicable, article 293 B du CGI
             </p>
           </div>
