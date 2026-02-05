@@ -74,7 +74,7 @@ export function ConfirmDialog({
       <div
         ref={dialogRef}
         className={cn(
-          'relative z-50 w-full max-w-md rounded-xl bg-white p-6 shadow-xl',
+          'relative z-50 w-full max-w-md rounded-xl bg-[#FBF8F4] p-6 shadow-xl',
           'animate-in fade-in-0 zoom-in-95 duration-200'
         )}
         role="alertdialog"
@@ -84,13 +84,13 @@ export function ConfirmDialog({
       >
         <h2
           id="confirm-dialog-title"
-          className="text-lg font-semibold text-gray-900"
+          className="text-lg font-semibold text-[#1F1A17]"
         >
           {title}
         </h2>
         <p
           id="confirm-dialog-description"
-          className="mt-2 text-sm text-gray-600"
+          className="mt-2 text-sm text-[#6B6560]"
         >
           {description}
         </p>

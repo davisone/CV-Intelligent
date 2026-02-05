@@ -68,7 +68,7 @@ export default function ForgotPasswordPage() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <p className="text-sm text-gray-500 text-center">
+            <p className="text-sm text-[#6B6560] text-center">
               Vérifiez votre boîte de réception et vos spams.
             </p>
             <Link href="/login" className="block">
@@ -114,9 +114,9 @@ export default function ForgotPasswordPage() {
           </Button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-[#6B6560]">
           Vous vous souvenez de votre mot de passe ?{' '}
-          <Link href="/login" className="text-primary hover:underline font-medium">
+          <Link href="/login" className="text-[#722F37] hover:text-[#8B3A44] hover:underline font-medium">
             Se connecter
           </Link>
         </p>

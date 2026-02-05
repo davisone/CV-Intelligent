@@ -21,13 +21,13 @@ function ResetPasswordSkeleton() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <div className="h-8 bg-gray-200 rounded animate-pulse mx-auto w-48" />
-        <div className="h-4 bg-gray-200 rounded animate-pulse mx-auto w-64 mt-2" />
+        <div className="h-8 bg-[#E8E0D5] rounded animate-pulse mx-auto w-48" />
+        <div className="h-4 bg-[#E8E0D5] rounded animate-pulse mx-auto w-64 mt-2" />
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="h-10 bg-gray-200 rounded animate-pulse" />
-        <div className="h-10 bg-gray-200 rounded animate-pulse" />
-        <div className="h-10 bg-gray-200 rounded animate-pulse" />
+        <div className="h-10 bg-[#E8E0D5] rounded animate-pulse" />
+        <div className="h-10 bg-[#E8E0D5] rounded animate-pulse" />
+        <div className="h-10 bg-[#E8E0D5] rounded animate-pulse" />
       </CardContent>
     </Card>
   )
@@ -180,7 +180,7 @@ function ResetPasswordForm() {
               error={errors.password}
               disabled={isLoading}
             />
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-[#6B6560]">
               Min. 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre
             </p>
           </div>

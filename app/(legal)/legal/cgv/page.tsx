@@ -12,27 +12,27 @@ export const metadata: Metadata = {
 
 export default function CGVPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FBF8F4]">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <Link
           href="/"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-8"
+          className="inline-flex items-center text-sm text-[#6B6560] hover:text-[#1F1A17] mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Retour à l'accueil
         </Link>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-[#1F1A17] mb-8">
           Conditions Générales de Vente
         </h1>
 
-        <div className="bg-white rounded-xl border p-8 space-y-8 text-gray-700">
-          <p className="text-sm text-gray-500">
+        <div className="bg-[#F3EDE5] rounded-xl border p-8 space-y-8 text-[#4A4440]">
+          <p className="text-sm text-[#6B6560]">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 1 - Objet
             </h2>
             <p>
@@ -47,7 +47,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 2 - Identité du vendeur
             </h2>
             <ul className="list-disc list-inside space-y-1">
@@ -60,7 +60,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 3 - Prix et modalités de paiement
             </h2>
             <p>
@@ -81,7 +81,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 4 - Livraison et accès au service
             </h2>
             <p>
@@ -91,7 +91,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 5 - Droit de rétractation
             </h2>
             <p>
@@ -112,7 +112,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 6 - Description du service
             </h2>
             <p>Le Service comprend :</p>
@@ -126,7 +126,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 7 - Responsabilité
             </h2>
             <p>
@@ -142,7 +142,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 8 - Propriété intellectuelle
             </h2>
             <p>
@@ -153,12 +153,12 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 9 - Données personnelles
             </h2>
             <p>
               Les données personnelles collectées sont traitées conformément à notre{' '}
-              <Link href="/legal/confidentialite" className="text-blue-600 hover:underline">
+              <Link href="/legal/confidentialite" className="text-[#722F37] hover:underline">
                 Politique de confidentialité
               </Link>
               .
@@ -166,7 +166,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 10 - Litiges
             </h2>
             <p>
@@ -186,7 +186,7 @@ export default function CGVPage() {
                 href="https://ec.europa.eu/consumers/odr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-[#722F37] hover:underline"
               >
                 https://ec.europa.eu/consumers/odr
               </a>
@@ -194,7 +194,7 @@ export default function CGVPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               Article 11 - Modification des CGV
             </h2>
             <p>

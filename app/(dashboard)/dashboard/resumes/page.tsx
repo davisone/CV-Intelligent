@@ -31,8 +31,8 @@ export default async function ResumesPage() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Mes CV</h1>
-          <p className="text-gray-500 mt-1">
+          <h1 className="text-3xl font-bold text-[#1F1A17]">Mes CV</h1>
+          <p className="text-[#6B6560] mt-1">
             {resumes.length} CV{resumes.length > 1 ? 's' : ''} créé{resumes.length > 1 ? 's' : ''}
           </p>
         </div>

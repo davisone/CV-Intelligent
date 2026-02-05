@@ -141,8 +141,8 @@ export default function TemplatesPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Templates</h1>
-        <p className="text-gray-500 mt-1">
+        <h1 className="text-3xl font-bold text-[#1F1A17]">Templates</h1>
+        <p className="text-[#6B6560] mt-1">
           Choisissez un template pour créer votre CV
         </p>
       </div>
@@ -153,7 +153,7 @@ export default function TemplatesPage() {
           return (
             <div
               key={template.id}
-              className="bg-white rounded-xl border overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-[#FBF8F4] rounded-xl border border-[#E0D6C8] overflow-hidden hover:shadow-lg hover:border-[#722F37]/30 transition-all"
             >
               {/* Preview Header */}
               <div className={`h-32 bg-gradient-to-br ${template.color} flex items-center justify-center`}>
@@ -163,7 +163,7 @@ export default function TemplatesPage() {
               {/* Content */}
               <div className="p-5">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-[#1F1A17]">
                     {template.name}
                   </h3>
                   {template.isFree ? (
@@ -172,7 +172,7 @@ export default function TemplatesPage() {
                     <PriceBadge variant="pro" />
                   )}
                 </div>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-[#6B6560] text-sm mb-4">
                   {template.description}
                 </p>
 
@@ -181,7 +181,7 @@ export default function TemplatesPage() {
                   {template.features.map((feature) => (
                     <span
                       key={feature}
-                      className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
+                      className="text-xs bg-[#E8E0D5] text-[#4A4440] px-2 py-1 rounded-full"
                     >
                       {feature}
                     </span>
@@ -203,8 +203,8 @@ export default function TemplatesPage() {
       {/* Modal de création */}
       {showModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 w-full max-w-md mx-4">
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <div className="bg-[#FBF8F4] rounded-xl p-6 w-full max-w-md mx-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-2">
               Créer un CV avec le template {templates.find(t => t.id === selectedTemplate)?.name}
             </h2>
 
@@ -216,7 +216,7 @@ export default function TemplatesPage() {
             )}
 
             <div className="mb-4">
-              <label className="block text-sm text-gray-700 mb-1">
+              <label className="block text-sm text-[#4A4440] mb-1">
                 Titre du CV
               </label>
               <Input

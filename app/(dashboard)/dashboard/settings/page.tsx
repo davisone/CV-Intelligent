@@ -26,29 +26,29 @@ export default async function SettingsPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Paramètres</h1>
-        <p className="text-gray-500 mt-1">Gérez votre compte et vos préférences</p>
+        <h1 className="text-3xl font-bold text-[#1F1A17]">Paramètres</h1>
+        <p className="text-[#6B6560] mt-1">Gérez votre compte et vos préférences</p>
       </div>
 
       <div className="space-y-6">
         {/* Profile Section */}
-        <div className="bg-white p-6 rounded-xl border">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Profil</h2>
+        <div className="bg-[#F3EDE5] p-6 rounded-xl border border-[#E0D6C8]">
+          <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">Profil</h2>
           <div className="space-y-4">
             <div>
-              <label className="text-sm text-gray-500">Nom</label>
-              <p className="text-gray-900">{user.name || 'Non renseigné'}</p>
+              <label className="text-sm text-[#6B6560]">Nom</label>
+              <p className="text-[#1F1A17]">{user.name || 'Non renseigné'}</p>
             </div>
             <div>
-              <label className="text-sm text-gray-500">Email</label>
-              <p className="text-gray-900">{user.email}</p>
+              <label className="text-sm text-[#6B6560]">Email</label>
+              <p className="text-[#1F1A17]">{user.email}</p>
             </div>
           </div>
         </div>
 
         {/* 2FA Section */}
-        <div className="bg-white p-6 rounded-xl border">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
+        <div className="bg-[#F3EDE5] p-6 rounded-xl border border-[#E0D6C8]">
+          <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
             Authentification à deux facteurs (2FA)
           </h2>
           <TwoFactorSettings initialEnabled={user.totpEnabled} />

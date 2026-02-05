@@ -12,27 +12,27 @@ export const metadata: Metadata = {
 
 export default function ConfidentialitePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FBF8F4]">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <Link
           href="/"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-8"
+          className="inline-flex items-center text-sm text-[#6B6560] hover:text-[#1F1A17] mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Retour à l'accueil
         </Link>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-[#1F1A17] mb-8">
           Politique de Confidentialité
         </h1>
 
-        <div className="bg-white rounded-xl border p-8 space-y-8 text-gray-700">
-          <p className="text-sm text-gray-500">
+        <div className="bg-[#F3EDE5] rounded-xl border p-8 space-y-8 text-[#4A4440]">
+          <p className="text-sm text-[#6B6560]">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               1. Introduction
             </h2>
             <p>
@@ -44,7 +44,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               2. Responsable du traitement
             </h2>
             <ul className="list-none space-y-2">
@@ -56,12 +56,12 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               3. Données collectées
             </h2>
             <p>Nous collectons les données suivantes :</p>
 
-            <h3 className="text-lg font-medium text-gray-800 mt-4 mb-2">
+            <h3 className="text-lg font-medium text-[#2D2825] mt-4 mb-2">
               3.1 Données fournies directement
             </h3>
             <ul className="list-disc list-inside space-y-1">
@@ -70,7 +70,7 @@ export default function ConfidentialitePage() {
               <li><strong>Données de paiement :</strong> Traitées directement par Stripe (nous ne stockons pas vos données bancaires)</li>
             </ul>
 
-            <h3 className="text-lg font-medium text-gray-800 mt-4 mb-2">
+            <h3 className="text-lg font-medium text-[#2D2825] mt-4 mb-2">
               3.2 Données collectées automatiquement
             </h3>
             <ul className="list-disc list-inside space-y-1">
@@ -80,7 +80,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               4. Finalités du traitement
             </h2>
             <p>Vos données sont utilisées pour :</p>
@@ -96,7 +96,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               5. Base légale du traitement
             </h2>
             <ul className="list-disc list-inside space-y-1">
@@ -108,7 +108,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               6. Destinataires des données
             </h2>
             <p>Vos données peuvent être partagées avec :</p>
@@ -118,7 +118,7 @@ export default function ConfidentialitePage() {
                   href="https://stripe.com/fr/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
+                  className="text-[#722F37] hover:underline"
                 >
                   politique de confidentialité
                 </a>
@@ -135,7 +135,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               7. Transferts internationaux
             </h2>
             <p>
@@ -146,7 +146,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               8. Durée de conservation
             </h2>
             <ul className="list-disc list-inside space-y-1">
@@ -158,7 +158,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               9. Vos droits
             </h2>
             <p>Conformément au RGPD, vous disposez des droits suivants :</p>
@@ -181,7 +181,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               10. Sécurité des données
             </h2>
             <p>Nous mettons en œuvre des mesures de sécurité appropriées :</p>
@@ -195,13 +195,13 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               11. Cookies
             </h2>
             <p>Notre site utilise des cookies :</p>
             <table className="w-full mt-4 text-sm border-collapse">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-[#FBF8F4]">
                   <th className="border p-2 text-left">Cookie</th>
                   <th className="border p-2 text-left">Finalité</th>
                   <th className="border p-2 text-left">Durée</th>
@@ -227,7 +227,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               12. Réclamation
             </h2>
             <p>
@@ -238,7 +238,7 @@ export default function ConfidentialitePage() {
                 href="https://www.cnil.fr/fr/plaintes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-[#722F37] hover:underline"
               >
                 www.cnil.fr
               </a>
@@ -246,7 +246,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               13. Modifications
             </h2>
             <p>
@@ -256,7 +256,7 @@ export default function ConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               14. Contact
             </h2>
             <p>

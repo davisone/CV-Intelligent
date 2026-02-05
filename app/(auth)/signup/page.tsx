@@ -169,7 +169,7 @@ export default function SignupPage() {
               error={errors.password}
               disabled={isLoading}
             />
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-[#6B6560]">
               Min. 8 caractères avec majuscule, minuscule et chiffre
             </p>
           </div>
@@ -198,7 +198,7 @@ export default function SignupPage() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-gray-500">
+            <span className="bg-[#F3EDE5] px-2 text-[#6B6560]">
               Ou continuer avec
             </span>
           </div>
@@ -242,9 +242,9 @@ export default function SignupPage() {
           </Button>
         </div>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-[#6B6560]">
           Déjà un compte ?{' '}
-          <Link href="/login" className="text-primary hover:underline font-medium">
+          <Link href="/login" className="text-[#722F37] hover:text-[#8B3A44] hover:underline font-medium">
             Se connecter
           </Link>
         </p>

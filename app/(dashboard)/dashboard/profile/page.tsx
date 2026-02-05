@@ -39,8 +39,8 @@ export default async function ProfilePage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Mon Profil</h1>
-        <p className="text-gray-500 mt-1">
+        <h1 className="text-3xl font-bold text-[#1F1A17]">Mon Profil</h1>
+        <p className="text-[#6B6560] mt-1">
           Ces informations seront utilisées pour pré-remplir vos CV
         </p>
       </div>

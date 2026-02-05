@@ -12,27 +12,27 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FBF8F4]">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <Link
           href="/"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-8"
+          className="inline-flex items-center text-sm text-[#6B6560] hover:text-[#1F1A17] mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Retour à l'accueil
         </Link>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-[#1F1A17] mb-8">
           Mentions Légales
         </h1>
 
-        <div className="bg-white rounded-xl border p-8 space-y-8 text-gray-700">
-          <p className="text-sm text-gray-500">
+        <div className="bg-[#F3EDE5] rounded-xl border p-8 space-y-8 text-[#4A4440]">
+          <p className="text-sm text-[#6B6560]">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               1. Éditeur du site
             </h2>
             <p>
@@ -46,13 +46,13 @@ export default function MentionsLegalesPage() {
               <li><strong>Email :</strong> <span className="font-medium">contact@dvs-web.fr</span></li>
               <li><strong>Téléphone :</strong> <span className="font-medium">06 51 01 95 06</span></li>
             </ul>
-            <p className="mt-4 text-sm text-gray-500">
+            <p className="mt-4 text-sm text-[#6B6560]">
               TVA non applicable, article 293 B du Code Général des Impôts.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               2. Directeur de la publication
             </h2>
             <p>
@@ -61,7 +61,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               3. Hébergement
             </h2>
             <p>Le site est hébergé par :</p>
@@ -73,7 +73,7 @@ export default function MentionsLegalesPage() {
                   href="https://vercel.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
+                  className="text-[#722F37] hover:underline"
                 >
                   https://vercel.com
                 </a>
@@ -82,7 +82,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               4. Propriété intellectuelle
             </h2>
             <p>
@@ -101,7 +101,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               5. Protection des données personnelles
             </h2>
             <p>
@@ -110,7 +110,7 @@ export default function MentionsLegalesPage() {
             </p>
             <p className="mt-2">
               Pour plus d'informations, consultez notre{' '}
-              <Link href="/legal/confidentialite" className="text-blue-600 hover:underline">
+              <Link href="/legal/confidentialite" className="text-[#722F37] hover:underline">
                 Politique de confidentialité
               </Link>
               .
@@ -122,7 +122,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               6. Cookies
             </h2>
             <p>
@@ -140,7 +140,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               7. Liens hypertextes
             </h2>
             <p>
@@ -150,7 +150,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               8. Limitation de responsabilité
             </h2>
             <p>
@@ -165,7 +165,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               9. Droit applicable
             </h2>
             <p>
@@ -175,7 +175,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
               10. Contact
             </h2>
             <p>
