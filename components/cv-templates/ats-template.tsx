@@ -26,6 +26,11 @@ export function ATSTemplate({ data }: { data: CVData }) {
     return d.toLocaleDateString('fr-FR', { month: '2-digit', year: 'numeric' })
   }
 
+  const formatUrl = (url: string) => {
+    if (url.startsWith('http://') || url.startsWith('https://')) return url
+    return `https://${url}`
+  }
+
   const levelLabels: Record<string, string> = {
     BEGINNER: 'Débutant',
     INTERMEDIATE: 'Intermédiaire',
@@ -45,16 +50,24 @@ export function ATSTemplate({ data }: { data: CVData }) {
 
         {/* Contact info - Format simple en ligne */}
         <div className="mt-2 text-sm text-black">
-          {data.personalInfo.email}
+          <a href={`mailto:${data.personalInfo.email}`} className="hover:underline">{data.personalInfo.email}</a>
           {data.personalInfo.phone && ` | ${data.personalInfo.phone}`}
           {(data.personalInfo.city || data.personalInfo.country) &&
             ` | ${[data.personalInfo.city, data.personalInfo.country].filter(Boolean).join(', ')}`}
         </div>
         {data.personalInfo.linkedin && (
-          <div className="text-sm text-black">LinkedIn: {data.personalInfo.linkedin}</div>
+          <div className="text-sm text-black">
+            <a href={formatUrl(data.personalInfo.linkedin)} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              LinkedIn
+            </a>
+          </div>
         )}
         {data.personalInfo.github && (
-          <div className="text-sm text-black">GitHub: {data.personalInfo.github}</div>
+          <div className="text-sm text-black">
+            <a href={formatUrl(data.personalInfo.github)} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              GitHub
+            </a>
+          </div>
         )}
       </div>
 
