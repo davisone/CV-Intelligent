@@ -179,6 +179,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     const validatedData = updateResumeSchema.safeParse(body)
 
     if (!validatedData.success) {
+      console.error('[RESUME_PATCH] Validation error:', JSON.stringify(validatedData.error.issues))
       return NextResponse.json(
         { error: validatedData.error.issues[0]?.message ?? 'Invalid input' },
         { status: 400 }
@@ -300,9 +301,11 @@ export async function PATCH(request: Request, { params }: RouteParams) {
 
     return NextResponse.json({ success: true, data: resume })
   } catch (error) {
-    console.error('[RESUME_PATCH]:', error)
+    console.error('[RESUME_PATCH] Error:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    console.error('[RESUME_PATCH] Message:', errorMessage)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', message: errorMessage },
       { status: 500 }
     )
   }
