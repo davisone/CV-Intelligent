@@ -123,7 +123,9 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     city: resume.personalInfo?.city ?? '',
     country: resume.personalInfo?.country ?? '',
     linkedin: resume.personalInfo?.linkedin ?? '',
+    linkedinLabel: resume.personalInfo?.linkedinLabel ?? '',
     github: resume.personalInfo?.github ?? '',
+    githubLabel: resume.personalInfo?.githubLabel ?? '',
     summary: resume.personalInfo?.summary ?? '',
     photoUrl: resume.personalInfo?.photoUrl ?? '',
   })
@@ -168,7 +170,9 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
           city: data.personalInfo.city || undefined,
           country: data.personalInfo.country || undefined,
           linkedin: data.personalInfo.linkedin || undefined,
+          linkedinLabel: data.personalInfo.linkedinLabel || undefined,
           github: data.personalInfo.github || undefined,
+          githubLabel: data.personalInfo.githubLabel || undefined,
           summary: data.personalInfo.summary || undefined,
           photoUrl: data.personalInfo.photoUrl || undefined,
         },
@@ -860,21 +864,35 @@ ${interests.map(i => i.name).join(', ')}
                   placeholder="France"
                 />
               </div>
-              <div>
+              <div className="col-span-1 md:col-span-2">
                 <Label>LinkedIn</Label>
-                <Input
-                  value={personalInfo.linkedin}
-                  onChange={(e) => handlePersonalInfoChange('linkedin', e.target.value)}
-                  placeholder="linkedin.com/in/..."
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
+                  <Input
+                    value={personalInfo.linkedinLabel}
+                    onChange={(e) => handlePersonalInfoChange('linkedinLabel', e.target.value)}
+                    placeholder="Titre affiché (ex: Jean Dupont)"
+                  />
+                  <Input
+                    value={personalInfo.linkedin}
+                    onChange={(e) => handlePersonalInfoChange('linkedin', e.target.value)}
+                    placeholder="URL (ex: https://linkedin.com/in/jean-dupont)"
+                  />
+                </div>
               </div>
-              <div>
+              <div className="col-span-1 md:col-span-2">
                 <Label>GitHub</Label>
-                <Input
-                  value={personalInfo.github}
-                  onChange={(e) => handlePersonalInfoChange('github', e.target.value)}
-                  placeholder="github.com/..."
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
+                  <Input
+                    value={personalInfo.githubLabel}
+                    onChange={(e) => handlePersonalInfoChange('githubLabel', e.target.value)}
+                    placeholder="Titre affiché (ex: @jeandupont)"
+                  />
+                  <Input
+                    value={personalInfo.github}
+                    onChange={(e) => handlePersonalInfoChange('github', e.target.value)}
+                    placeholder="URL (ex: https://github.com/jeandupont)"
+                  />
+                </div>
               </div>
               <div className="col-span-1 md:col-span-2">
                 <div className="flex justify-between items-center mb-1">

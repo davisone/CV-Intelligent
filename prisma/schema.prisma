@@ -78,22 +78,24 @@ model VerificationToken {
 
 // Profil Maître (infos réutilisables)
 model UserProfile {
-  id        String  @id @default(cuid())
-  userId    String  @unique
-  firstName String?
-  lastName  String?
-  phone     String?
-  address   String?
-  city      String?
-  country   String?
-  zipCode   String?
-  linkedin  String?
-  github    String?
-  website   String?
-  summary   String? @db.Text
-  jobTitle  String?
-  photoUrl  String?
-  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id            String  @id @default(cuid())
+  userId        String  @unique
+  firstName     String?
+  lastName      String?
+  phone         String?
+  address       String?
+  city          String?
+  country       String?
+  zipCode       String?
+  linkedin      String?
+  linkedinLabel String?
+  github        String?
+  githubLabel   String?
+  website       String?
+  summary       String? @db.Text
+  jobTitle      String?
+  photoUrl      String?
+  user          User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model UserExperience {
@@ -206,22 +208,24 @@ model Resume {
 }
 
 model PersonalInfo {
-  id        String  @id @default(cuid())
-  resumeId  String  @unique
-  firstName String
-  lastName  String
-  email     String
-  phone     String?
-  address   String?
-  city      String?
-  country   String?
-  zipCode   String?
-  linkedin  String?
-  github    String?
-  website   String?
-  summary   String? @db.Text
-  photoUrl  String?
-  resume    Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  id            String  @id @default(cuid())
+  resumeId      String  @unique
+  firstName     String
+  lastName      String
+  email         String
+  phone         String?
+  address       String?
+  city          String?
+  country       String?
+  zipCode       String?
+  linkedin      String?
+  linkedinLabel String?
+  github        String?
+  githubLabel   String?
+  website       String?
+  summary       String? @db.Text
+  photoUrl      String?
+  resume        Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
 }
 
 model Experience {

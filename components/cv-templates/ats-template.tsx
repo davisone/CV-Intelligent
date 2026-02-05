@@ -9,7 +9,9 @@ interface CVData {
     city?: string
     country?: string
     linkedin?: string
+    linkedinLabel?: string
     github?: string
+    githubLabel?: string
     summary?: string
     photoUrl?: string
   }
@@ -58,14 +60,14 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.personalInfo.linkedin && (
           <div className="text-sm text-black">
             <a href={formatUrl(data.personalInfo.linkedin)} target="_blank" rel="noopener noreferrer" className="hover:underline">
-              LinkedIn
+              {data.personalInfo.linkedinLabel || 'LinkedIn'}
             </a>
           </div>
         )}
         {data.personalInfo.github && (
           <div className="text-sm text-black">
             <a href={formatUrl(data.personalInfo.github)} target="_blank" rel="noopener noreferrer" className="hover:underline">
-              GitHub
+              {data.personalInfo.githubLabel || 'GitHub'}
             </a>
           </div>
         )}
