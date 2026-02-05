@@ -50,17 +50,17 @@ export function ResumeCard({ id, title, template, updatedAt, onDelete }: ResumeC
   }
 
   return (
-    <Card className="hover:shadow-md transition-shadow">
+    <Card className="hover:shadow-lg hover:border-[#C9A227]/50 transition-all">
       <CardHeader className="pb-2">
         <div className="flex items-start justify-between">
           <CardTitle className="text-lg truncate">{title}</CardTitle>
-          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+          <span className="text-xs bg-[#C9A227]/10 text-[#C9A227] px-2 py-1 rounded border border-[#C9A227]/20">
             {templateLabels[template]}
           </span>
         </div>
       </CardHeader>
       <CardContent className="pb-2">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-[#A3A3A3]">
           Modifié le {formatDate(updatedAt, { day: 'numeric', month: 'short', year: 'numeric' })}
         </p>
       </CardContent>

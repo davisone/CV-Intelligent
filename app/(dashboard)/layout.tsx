@@ -23,7 +23,7 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-[#0D0D0D] flex flex-col">
       <Header />
       <div className="flex flex-1">
         <Sidebar />

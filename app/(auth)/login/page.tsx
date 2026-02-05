@@ -22,13 +22,13 @@ function LoginSkeleton() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <div className="h-8 bg-gray-200 rounded animate-pulse mx-auto w-32" />
-        <div className="h-4 bg-gray-200 rounded animate-pulse mx-auto w-48 mt-2" />
+        <div className="h-8 bg-[#2D2D2D] rounded animate-pulse mx-auto w-32" />
+        <div className="h-4 bg-[#2D2D2D] rounded animate-pulse mx-auto w-48 mt-2" />
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="h-10 bg-gray-200 rounded animate-pulse" />
-        <div className="h-10 bg-gray-200 rounded animate-pulse" />
-        <div className="h-10 bg-gray-200 rounded animate-pulse" />
+        <div className="h-10 bg-[#2D2D2D] rounded animate-pulse" />
+        <div className="h-10 bg-[#2D2D2D] rounded animate-pulse" />
+        <div className="h-10 bg-[#2D2D2D] rounded animate-pulse" />
       </CardContent>
     </Card>
   )
@@ -162,7 +162,7 @@ function LoginForm() {
                   <Label htmlFor="password">Mot de passe</Label>
                   <Link
                     href="/forgot-password"
-                    className="text-sm text-primary hover:underline"
+                    className="text-sm text-[#C9A227] hover:text-[#D4B44A] hover:underline"
                   >
                     Mot de passe oublié ?
                   </Link>
@@ -201,7 +201,7 @@ function LoginForm() {
               <button
                 type="button"
                 onClick={handleBack}
-                className="text-sm text-gray-500 hover:text-gray-700"
+                className="text-sm text-[#A3A3A3] hover:text-[#E5E5E5]"
               >
                 ← Retour
               </button>
@@ -217,10 +217,10 @@ function LoginForm() {
           <>
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
+                <span className="w-full border-t border-[#404040]" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-gray-500">
+                <span className="bg-[#1A1A1A] px-2 text-[#A3A3A3]">
                   Ou continuer avec
                 </span>
               </div>
@@ -264,9 +264,9 @@ function LoginForm() {
               </Button>
             </div>
 
-            <p className="mt-6 text-center text-sm text-gray-500">
+            <p className="mt-6 text-center text-sm text-[#A3A3A3]">
               Pas encore de compte ?{' '}
-              <Link href="/signup" className="text-primary hover:underline font-medium">
+              <Link href="/signup" className="text-[#C9A227] hover:text-[#D4B44A] hover:underline font-medium">
                 S&apos;inscrire
               </Link>
             </p>

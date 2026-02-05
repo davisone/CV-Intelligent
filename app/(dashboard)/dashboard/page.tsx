@@ -32,8 +32,8 @@ export default async function DashboardPage() {
       </Suspense>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-500 mt-1">
+          <h1 className="text-3xl font-bold text-[#E5E5E5]">Dashboard</h1>
+          <p className="text-[#A3A3A3] mt-1">
             Bienvenue, {session.user.name ?? session.user.email}
           </p>
         </div>
@@ -44,13 +44,13 @@ export default async function DashboardPage() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div className="bg-white p-6 rounded-xl border">
-          <p className="text-sm text-gray-500">Total CV</p>
-          <p className="text-3xl font-bold text-gray-900">{resumes.length}</p>
+        <div className="bg-[#1A1A1A] p-6 rounded-xl border border-[#404040]">
+          <p className="text-sm text-[#A3A3A3]">Total CV</p>
+          <p className="text-3xl font-bold text-[#C9A227]">{resumes.length}</p>
         </div>
-        <div className="bg-white p-6 rounded-xl border">
-          <p className="text-sm text-gray-500">Ce mois</p>
-          <p className="text-3xl font-bold text-gray-900">
+        <div className="bg-[#1A1A1A] p-6 rounded-xl border border-[#404040]">
+          <p className="text-sm text-[#A3A3A3]">Ce mois</p>
+          <p className="text-3xl font-bold text-[#C9A227]">
             {resumes.filter(r => {
               const now = new Date()
               const resumeDate = new Date(r.updatedAt)
@@ -59,9 +59,9 @@ export default async function DashboardPage() {
             }).length}
           </p>
         </div>
-        <div className="bg-white p-6 rounded-xl border">
-          <p className="text-sm text-gray-500">Templates utilisés</p>
-          <p className="text-3xl font-bold text-gray-900">
+        <div className="bg-[#1A1A1A] p-6 rounded-xl border border-[#404040]">
+          <p className="text-sm text-[#A3A3A3]">Templates utilisés</p>
+          <p className="text-3xl font-bold text-[#C9A227]">
             {new Set(resumes.map(r => r.template)).size}
           </p>
         </div>
@@ -69,10 +69,10 @@ export default async function DashboardPage() {
 
       {/* Recent Resumes */}
       <div>
-        <h2 className="text-xl font-semibold mb-4 text-gray-900">CV Récents</h2>
+        <h2 className="text-xl font-semibold mb-4 text-[#E5E5E5]">CV Récents</h2>
         {resumes.length === 0 ? (
-          <div className="bg-white p-12 rounded-xl border text-center">
-            <p className="text-gray-500 mb-4">
+          <div className="bg-[#1A1A1A] p-12 rounded-xl border border-[#404040] text-center">
+            <p className="text-[#A3A3A3] mb-4">
               Vous n&apos;avez pas encore de CV
             </p>
             <Link href="/dashboard/templates">
