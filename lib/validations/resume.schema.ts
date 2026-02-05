@@ -5,11 +5,28 @@ export const templateTypeSchema = z.enum(['MODERN', 'CLASSIC', 'ATS', 'MINIMAL',
 export const skillLevelSchema = z.enum(['BEGINNER', 'INTERMEDIATE', 'ADVANCED', 'EXPERT'])
 export const languageLevelSchema = z.enum(['BEGINNER', 'INTERMEDIATE', 'ADVANCED', 'FLUENT', 'NATIVE'])
 
-// Personal Info
+// Personal Info (for creation - strict validation)
 export const personalInfoSchema = z.object({
   firstName: z.string().min(1, 'First name is required').max(50),
   lastName: z.string().min(1, 'Last name is required').max(50),
   email: z.string().email('Invalid email address'),
+  phone: z.string().max(20).optional(),
+  address: z.string().max(100).optional(),
+  city: z.string().max(50).optional(),
+  country: z.string().max(50).optional(),
+  zipCode: z.string().max(20).optional(),
+  linkedin: z.string().url().optional().or(z.literal('')),
+  github: z.string().url().optional().or(z.literal('')),
+  website: z.string().url().optional().or(z.literal('')),
+  summary: z.string().max(2000).optional(),
+  photoUrl: z.string().url().optional().or(z.literal('')),
+})
+
+// Personal Info (for update - allows empty strings during editing)
+export const updatePersonalInfoSchema = z.object({
+  firstName: z.string().max(50).default(''),
+  lastName: z.string().max(50).default(''),
+  email: z.union([z.string().email(), z.literal('')]).default(''),
   phone: z.string().max(20).optional(),
   address: z.string().max(100).optional(),
   city: z.string().max(50).optional(),
@@ -103,8 +120,80 @@ export const createResumeSchema = z.object({
   template: templateTypeSchema.default('MODERN'),
 })
 
-// Update Resume
-export const updateResumeSchema = resumeSchema.partial()
+// Schema flexible pour les experiences en mise à jour
+const updateExperienceSchema = z.object({
+  id: z.string().optional(),
+  company: z.string().max(100).default(''),
+  position: z.string().max(100).default(''),
+  location: z.string().max(100).optional(),
+  startDate: z.coerce.date(),
+  endDate: z.coerce.date().nullable().optional(),
+  current: z.boolean().default(false),
+  description: z.string().max(3000).optional(),
+  order: z.number().int().min(0).default(0),
+})
+
+// Schema flexible pour les educations en mise à jour
+const updateEducationSchema = z.object({
+  id: z.string().optional(),
+  institution: z.string().max(100).default(''),
+  degree: z.string().max(100).default(''),
+  field: z.string().max(100).optional(),
+  location: z.string().max(100).optional(),
+  startDate: z.coerce.date(),
+  endDate: z.coerce.date().nullable().optional(),
+  current: z.boolean().default(false),
+  description: z.string().max(2000).optional(),
+  gpa: z.string().max(10).optional(),
+  order: z.number().int().min(0).default(0),
+})
+
+// Schema flexible pour les skills en mise à jour
+const updateSkillSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().max(50).default(''),
+  level: skillLevelSchema.default('INTERMEDIATE'),
+  category: z.string().max(50).optional(),
+  order: z.number().int().min(0).default(0),
+})
+
+// Schema flexible pour les languages en mise à jour
+const updateLanguageSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().max(50).default(''),
+  level: languageLevelSchema.default('INTERMEDIATE'),
+  order: z.number().int().min(0).default(0),
+})
+
+// Schema flexible pour les projects en mise à jour
+const updateProjectSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().max(100).default(''),
+  description: z.string().max(2000).optional(),
+  url: z.string().url().optional().or(z.literal('')),
+  technologies: z.array(z.string().max(50)).max(20).default([]),
+  order: z.number().int().min(0).default(0),
+})
+
+// Schema flexible pour les interests en mise à jour
+const updateInterestSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().max(50).default(''),
+  order: z.number().int().min(0).default(0),
+})
+
+// Update Resume (uses flexible schemas for editing)
+export const updateResumeSchema = z.object({
+  title: z.string().max(100).optional(),
+  template: templateTypeSchema.optional(),
+  personalInfo: updatePersonalInfoSchema.optional(),
+  experiences: z.array(updateExperienceSchema).max(20).optional(),
+  educations: z.array(updateEducationSchema).max(10).optional(),
+  skills: z.array(updateSkillSchema).max(50).optional(),
+  languages: z.array(updateLanguageSchema).max(10).optional(),
+  projects: z.array(updateProjectSchema).max(20).optional(),
+  interests: z.array(updateInterestSchema).max(20).optional(),
+})
 
 // Auth schemas
 export const signUpSchema = z.object({
