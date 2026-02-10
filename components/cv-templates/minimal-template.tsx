@@ -17,6 +17,7 @@ interface CVData {
   }
   experiences: any[]
   educations: any[]
+  certifications?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -146,6 +147,35 @@ export function MinimalTemplate({ data }: { data: CVData }) {
                     <h3 className="font-medium text-gray-900">{edu.degree}</h3>
                     <p className="text-gray-500">{edu.institution}</p>
                     {edu.field && <p className="text-sm text-gray-400">{edu.field}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Certifications */}
+        {data.certifications && data.certifications.length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
+              Certifications
+            </h2>
+            <div className="space-y-6">
+              {data.certifications.map((cert: any, i: number) => (
+                <div key={i} className="grid grid-cols-[120px_1fr] gap-8">
+                  <div className="text-sm text-gray-400">
+                    {formatDate(cert.issueDate)}
+                    {cert.expiryDate && (
+                      <>
+                        <br />
+                        {formatDate(cert.expiryDate)}
+                      </>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">{cert.name}</h3>
+                    <p className="text-gray-500">{cert.issuer}</p>
+                    {cert.credentialId && <p className="text-xs text-gray-400">ID: {cert.credentialId}</p>}
                   </div>
                 </div>
               ))}

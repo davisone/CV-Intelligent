@@ -57,6 +57,16 @@ interface EducationData {
   gpa: string | null
 }
 
+interface CertificationData {
+  id: string
+  name: string
+  issuer: string
+  issueDate: string
+  expiryDate: string | null
+  credentialId: string | null
+  credentialUrl: string | null
+}
+
 type SkillLevel = 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | 'EXPERT'
 type LanguageLevel = 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | 'FLUENT' | 'NATIVE'
 
@@ -131,6 +141,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   })
   const [experiences, setExperiences] = useState<ExperienceData[]>(resume.experiences || [])
   const [educations, setEducations] = useState<EducationData[]>(resume.educations || [])
+  const [certifications, setCertifications] = useState<CertificationData[]>(resume.certifications || [])
   const [skills, setSkills] = useState<SkillData[]>(resume.skills || [])
   const [languages, setLanguages] = useState<LanguageData[]>(resume.languages || [])
   const [interests, setInterests] = useState<InterestData[]>(resume.interests || [])
@@ -150,10 +161,11 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     personalInfo,
     experiences,
     educations,
+    certifications,
     skills,
     languages,
     interests,
-  }), [title, personalInfo, experiences, educations, skills, languages, interests])
+  }), [title, personalInfo, experiences, educations, certifications, skills, languages, interests])
 
   // Fonction de sauvegarde pour l'auto-save
   const performSave = useCallback(async (data: typeof autoSaveData) => {
@@ -191,6 +203,14 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
           startDate: edu.startDate,
           endDate: edu.endDate || undefined,
           gpa: edu.gpa || undefined,
+        })),
+        certifications: data.certifications.map(cert => ({
+          name: cert.name,
+          issuer: cert.issuer,
+          issueDate: cert.issueDate,
+          expiryDate: cert.expiryDate || undefined,
+          credentialId: cert.credentialId || undefined,
+          credentialUrl: cert.credentialUrl || undefined,
         })),
         skills: data.skills.map(skill => ({
           name: skill.name,
@@ -285,6 +305,29 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const deleteEducation = (id: string) => {
     setEducations(prev => prev.filter(edu => edu.id !== id))
     toast.success('Formation supprimée')
+  }
+
+  // Handlers pour les certifications
+  const addCertification = () => {
+    const newCert: CertificationData = {
+      id: generateId(),
+      name: '',
+      issuer: '',
+      issueDate: new Date().toISOString(),
+      expiryDate: null,
+      credentialId: null,
+      credentialUrl: null,
+    }
+    setCertifications(prev => [...prev, newCert])
+  }
+
+  const updateCertification = (id: string, data: Partial<CertificationData>) => {
+    setCertifications(prev => prev.map(cert => cert.id === id ? { ...cert, ...data } : cert))
+  }
+
+  const deleteCertification = (id: string) => {
+    setCertifications(prev => prev.filter(cert => cert.id !== id))
+    toast.success('Certification supprimée')
   }
 
   // Handlers pour les compétences
@@ -590,6 +633,7 @@ ${interests.map(i => i.name).join(', ')}
     personalInfo,
     experiences,
     educations,
+    certifications,
     skills,
     languages,
     interests,
@@ -1002,6 +1046,38 @@ ${interests.map(i => i.name).join(', ')}
             )}
           </section>
 
+          {/* Certifications avec Drag & Drop */}
+          <section className="bg-white p-6 rounded-xl border">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Certifications ({certifications.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addCertification}>
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
+              </Button>
+            </div>
+            {certifications.length > 0 ? (
+              <SortableList
+                items={certifications}
+                onReorder={setCertifications}
+                keyExtractor={(cert) => cert.id}
+                direction="vertical"
+                renderItem={(cert, dragHandleProps) => (
+                  <CertificationCard
+                    key={cert.id}
+                    certification={cert}
+                    onUpdate={(data) => updateCertification(cert.id, data)}
+                    onDelete={() => deleteCertification(cert.id)}
+                    dragHandleProps={dragHandleProps}
+                  />
+                )}
+              />
+            ) : (
+              <p className="text-gray-500 text-sm text-center py-4">Aucune certification ajoutée</p>
+            )}
+          </section>
+
           {/* Compétences avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
@@ -1403,6 +1479,111 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
         <p className="text-sm text-gray-500">
           {formatDate(data.startDate)} - {data.endDate ? formatDate(data.endDate) : 'En cours'}
         </p>
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+// Composant CertificationCard avec Drag Handle
+interface CertificationCardProps {
+  certification: CertificationData
+  onUpdate: (data: Partial<CertificationData>) => void
+  onDelete: () => void
+  dragHandleProps: DragHandleProps
+}
+
+function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps }: CertificationCardProps) {
+  const [data, setData] = useState(certification)
+  const [editing, setEditing] = useState(!certification.name)
+
+  const handleChange = (field: keyof CertificationData, value: string | null) => {
+    setData({ ...data, [field]: value })
+  }
+
+  const save = () => {
+    onUpdate(data)
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <Label>Nom de la certification</Label>
+            <Input
+              placeholder="Ex: AWS Solutions Architect"
+              value={data.name}
+              onChange={(e) => handleChange('name', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Organisme émetteur</Label>
+            <Input
+              placeholder="Ex: Amazon Web Services"
+              value={data.issuer}
+              onChange={(e) => handleChange('issuer', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Date d'obtention</Label>
+            <Input
+              type="date"
+              value={formatDate(data.issueDate, 'input')}
+              onChange={(e) => handleChange('issueDate', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Date d'expiration (optionnel)</Label>
+            <Input
+              type="date"
+              value={data.expiryDate ? formatDate(data.expiryDate, 'input') : ''}
+              onChange={(e) => handleChange('expiryDate', e.target.value || null)}
+            />
+          </div>
+          <div>
+            <Label>ID de la certification (optionnel)</Label>
+            <Input
+              placeholder="Ex: ABC123XYZ"
+              value={data.credentialId || ''}
+              onChange={(e) => handleChange('credentialId', e.target.value || null)}
+            />
+          </div>
+          <div>
+            <Label>URL de vérification (optionnel)</Label>
+            <Input
+              placeholder="https://..."
+              value={data.credentialUrl || ''}
+              onChange={(e) => handleChange('credentialUrl', e.target.value || null)}
+            />
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button size="sm" onClick={save}>
+            <Check className="w-4 h-4 mr-1" />
+            Valider
+          </Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
+        <h3 className="font-medium text-gray-900">{data.name || 'Nouvelle certification'}</h3>
+        <p className="text-gray-600">{data.issuer || 'Organisme'}</p>
+        <p className="text-sm text-gray-500">
+          Obtenue le {formatDate(data.issueDate)}
+          {data.expiryDate && ` • Expire le ${formatDate(data.expiryDate)}`}
+        </p>
+        {data.credentialId && (
+          <p className="text-xs text-gray-400">ID: {data.credentialId}</p>
+        )}
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
     </div>

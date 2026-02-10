@@ -59,9 +59,10 @@ model User {
   payments         Payment[]
   // Profil Maître
   profile          UserProfile?
-  userExperiences  UserExperience[]
-  userEducations   UserEducation[]
-  userSkills       UserSkill[]
+  userExperiences    UserExperience[]
+  userEducations     UserEducation[]
+  userCertifications UserCertification[]
+  userSkills         UserSkill[]
   userLanguages    UserLanguage[]
   userProjects     UserProject[]
   userInterests    UserInterest[]
@@ -133,6 +134,21 @@ model UserEducation {
   @@index([userId])
 }
 
+model UserCertification {
+  id            String    @id @default(cuid())
+  userId        String
+  name          String
+  issuer        String
+  issueDate     DateTime
+  expiryDate    DateTime?
+  credentialId  String?
+  credentialUrl String?
+  order         Int       @default(0)
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
 model UserSkill {
   id       String     @id @default(cuid())
   userId   String
@@ -196,6 +212,7 @@ model Resume {
   personalInfo    PersonalInfo?
   experiences     Experience[]
   educations      Education[]
+  certifications  Certification[]
   skills          Skill[]
   languages       Language[]
   projects        Project[]
@@ -259,6 +276,21 @@ model Education {
   gpa         String?
   order       Int      @default(0)
   resume      Resume   @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([resumeId])
+}
+
+model Certification {
+  id            String    @id @default(cuid())
+  resumeId      String
+  name          String
+  issuer        String
+  issueDate     DateTime
+  expiryDate    DateTime?
+  credentialId  String?
+  credentialUrl String?
+  order         Int       @default(0)
+  resume        Resume    @relation(fields: [resumeId], references: [id], onDelete: Cascade)
 
   @@index([resumeId])
 }

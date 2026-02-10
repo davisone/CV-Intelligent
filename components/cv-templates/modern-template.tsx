@@ -17,6 +17,7 @@ interface CVData {
   }
   experiences: any[]
   educations: any[]
+  certifications?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -180,6 +181,35 @@ export function ModernTemplate({ data }: { data: CVData }) {
                         </div>
                         <span className="text-sm text-slate-500">
                           {formatDate(edu.startDate)} — {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Certifications */}
+            {data.certifications && data.certifications.length > 0 && (
+              <section>
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                  Certifications
+                </h2>
+                <div className="space-y-4">
+                  {data.certifications.map((cert: any, i: number) => (
+                    <div key={i} className="relative pl-4 border-l-2 border-slate-200">
+                      <div className="absolute -left-[5px] top-1 w-2 h-2 bg-slate-800 rounded-full" />
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="font-bold text-slate-900">{cert.name}</h3>
+                          <p className="text-slate-600">{cert.issuer}</p>
+                          {cert.credentialId && (
+                            <p className="text-xs text-slate-400">ID: {cert.credentialId}</p>
+                          )}
+                        </div>
+                        <span className="text-sm text-slate-500">
+                          {formatDate(cert.issueDate)}
+                          {cert.expiryDate && ` — ${formatDate(cert.expiryDate)}`}
                         </span>
                       </div>
                     </div>

@@ -71,6 +71,18 @@ export const educationSchema = z.object({
   order: z.number().int().min(0).default(0),
 })
 
+// Certification
+export const certificationSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().min(1, 'Certification name is required').max(100),
+  issuer: z.string().min(1, 'Issuer is required').max(100),
+  issueDate: z.coerce.date(),
+  expiryDate: z.coerce.date().nullable().optional(),
+  credentialId: z.string().max(100).optional(),
+  credentialUrl: z.string().url().optional().or(z.literal('')),
+  order: z.number().int().min(0).default(0),
+})
+
 // Skill
 export const skillSchema = z.object({
   id: z.string().optional(),
@@ -112,6 +124,7 @@ export const resumeSchema = z.object({
   personalInfo: personalInfoSchema.optional(),
   experiences: z.array(experienceSchema).max(20).default([]),
   educations: z.array(educationSchema).max(10).default([]),
+  certifications: z.array(certificationSchema).max(20).default([]),
   skills: z.array(skillSchema).max(50).default([]),
   languages: z.array(languageSchema).max(10).default([]),
   projects: z.array(projectSchema).max(20).default([]),
@@ -149,6 +162,18 @@ const updateEducationSchema = z.object({
   current: z.boolean().default(false),
   description: z.string().max(2000).optional(),
   gpa: z.string().max(10).optional(),
+  order: z.number().int().min(0).default(0),
+})
+
+// Schema flexible pour les certifications en mise à jour
+const updateCertificationSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().max(100).default(''),
+  issuer: z.string().max(100).default(''),
+  issueDate: z.coerce.date(),
+  expiryDate: z.coerce.date().nullable().optional(),
+  credentialId: z.string().max(100).optional(),
+  credentialUrl: z.string().url().optional().or(z.literal('')),
   order: z.number().int().min(0).default(0),
 })
 
@@ -193,6 +218,7 @@ export const updateResumeSchema = z.object({
   personalInfo: updatePersonalInfoSchema.optional(),
   experiences: z.array(updateExperienceSchema).max(20).optional(),
   educations: z.array(updateEducationSchema).max(10).optional(),
+  certifications: z.array(updateCertificationSchema).max(20).optional(),
   skills: z.array(updateSkillSchema).max(50).optional(),
   languages: z.array(updateLanguageSchema).max(10).optional(),
   projects: z.array(updateProjectSchema).max(20).optional(),
@@ -220,6 +246,7 @@ export const signInSchema = z.object({
 export type PersonalInfoInput = z.infer<typeof personalInfoSchema>
 export type ExperienceInput = z.infer<typeof experienceSchema>
 export type EducationInput = z.infer<typeof educationSchema>
+export type CertificationInput = z.infer<typeof certificationSchema>
 export type SkillInput = z.infer<typeof skillSchema>
 export type LanguageInput = z.infer<typeof languageSchema>
 export type ProjectInput = z.infer<typeof projectSchema>

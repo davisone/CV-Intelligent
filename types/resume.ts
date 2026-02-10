@@ -3,6 +3,7 @@ import type {
   PersonalInfo as PrismaPersonalInfo,
   Experience as PrismaExperience,
   Education as PrismaEducation,
+  Certification as PrismaCertification,
   Skill as PrismaSkill,
   Language as PrismaLanguage,
   Project as PrismaProject,
@@ -19,6 +20,7 @@ export interface ResumeWithRelations extends PrismaResume {
   personalInfo: PrismaPersonalInfo | null
   experiences: PrismaExperience[]
   educations: PrismaEducation[]
+  certifications: PrismaCertification[]
   skills: PrismaSkill[]
   languages: PrismaLanguage[]
   projects: PrismaProject[]
@@ -66,6 +68,17 @@ export interface EducationInput {
   order?: number
 }
 
+export interface CertificationInput {
+  id?: string
+  name: string
+  issuer: string
+  issueDate: Date | string
+  expiryDate?: Date | string | null
+  credentialId?: string
+  credentialUrl?: string
+  order?: number
+}
+
 export interface SkillInput {
   id?: string
   name: string
@@ -96,6 +109,7 @@ export interface ResumeInput {
   personalInfo?: PersonalInfoInput
   experiences?: ExperienceInput[]
   educations?: EducationInput[]
+  certifications?: CertificationInput[]
   skills?: SkillInput[]
   languages?: LanguageInput[]
   projects?: ProjectInput[]

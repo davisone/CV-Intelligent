@@ -58,6 +58,7 @@ export async function GET(request: Request, { params }: RouteParams) {
           personalInfo: null,
           experiences: [],
           educations: [],
+          certifications: [],
           skills: [],
           languages: [],
           projects: [],
@@ -81,6 +82,7 @@ export async function GET(request: Request, { params }: RouteParams) {
         personalInfo: true,
         experiences: { orderBy: { order: 'asc' } },
         educations: { orderBy: { order: 'asc' } },
+        certifications: { orderBy: { order: 'asc' } },
         skills: { orderBy: { order: 'asc' } },
         languages: { orderBy: { order: 'asc' } },
         projects: { orderBy: { order: 'asc' } },
@@ -186,7 +188,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
       )
     }
 
-    const { title, template, personalInfo, experiences, educations, skills, languages, projects, interests } = validatedData.data
+    const { title, template, personalInfo, experiences, educations, certifications, skills, languages, projects, interests } = validatedData.data
 
     // Transaction pour mettre à jour toutes les relations
     const resume = await prisma.$transaction(async (tx) => {
@@ -235,6 +237,22 @@ export async function PATCH(request: Request, { params }: RouteParams) {
               order: edu.order ?? index,
               startDate: new Date(edu.startDate),
               endDate: edu.endDate ? new Date(edu.endDate) : null,
+            })),
+          })
+        }
+      }
+
+      // Update certifications (replace all)
+      if (certifications) {
+        await tx.certification.deleteMany({ where: { resumeId: id } })
+        if (certifications.length > 0) {
+          await tx.certification.createMany({
+            data: certifications.map((cert, index) => ({
+              ...cert,
+              resumeId: id,
+              order: cert.order ?? index,
+              issueDate: new Date(cert.issueDate),
+              expiryDate: cert.expiryDate ? new Date(cert.expiryDate) : null,
             })),
           })
         }

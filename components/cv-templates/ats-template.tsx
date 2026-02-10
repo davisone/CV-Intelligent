@@ -17,6 +17,7 @@ interface CVData {
   }
   experiences: any[]
   educations: any[]
+  certifications?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -129,6 +130,27 @@ export function ATSTemplate({ data }: { data: CVData }) {
                     {edu.institution} | {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
                   </div>
                   {edu.gpa && <div className="text-sm text-black">Mention: {edu.gpa}</div>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Certifications */}
+        {data.certifications && data.certifications.length > 0 && (
+          <section className="mb-5">
+            <h2 className="text-base font-bold text-black uppercase mb-2">
+              CERTIFICATIONS
+            </h2>
+            <div className="space-y-3">
+              {data.certifications.map((cert: any, i: number) => (
+                <div key={i}>
+                  <div className="font-bold text-black">{cert.name}</div>
+                  <div className="text-sm text-black">
+                    {cert.issuer} | {formatDate(cert.issueDate)}
+                    {cert.expiryDate && ` - ${formatDate(cert.expiryDate)}`}
+                  </div>
+                  {cert.credentialId && <div className="text-sm text-black">ID: {cert.credentialId}</div>}
                 </div>
               ))}
             </div>

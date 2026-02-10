@@ -17,6 +17,7 @@ interface CVData {
   }
   experiences: any[]
   educations: any[]
+  certifications?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -161,6 +162,30 @@ export function ClassicTemplate({ data }: { data: CVData }) {
                   </div>
                   <p className="text-gray-700 italic">{edu.institution}</p>
                   {edu.field && <p className="text-sm text-gray-500">{edu.field}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Certifications */}
+        {data.certifications && data.certifications.length > 0 && (
+          <section className="mb-6">
+            <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
+              Certifications
+            </h2>
+            <div className="space-y-3">
+              {data.certifications.map((cert: any, i: number) => (
+                <div key={i}>
+                  <div className="flex justify-between items-baseline">
+                    <h3 className="font-semibold text-gray-900">{cert.name}</h3>
+                    <span className="text-sm text-gray-500 italic">
+                      {formatDate(cert.issueDate)}
+                      {cert.expiryDate && ` - ${formatDate(cert.expiryDate)}`}
+                    </span>
+                  </div>
+                  <p className="text-gray-700 italic">{cert.issuer}</p>
+                  {cert.credentialId && <p className="text-xs text-gray-400">ID: {cert.credentialId}</p>}
                 </div>
               ))}
             </div>

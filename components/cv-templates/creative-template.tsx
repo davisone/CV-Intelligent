@@ -17,6 +17,7 @@ interface CVData {
   }
   experiences: any[]
   educations: any[]
+  certifications?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -266,7 +267,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
 
           {/* Education */}
           {data.educations.length > 0 && (
-            <section>
+            <section className="mb-10">
               <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
                 <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 flex items-center justify-center text-white text-sm">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -288,6 +289,36 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     </div>
                     <p className="text-gray-600">{edu.institution}</p>
                     {edu.field && <p className="text-sm text-gray-500">{edu.field}</p>}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Certifications */}
+          {data.certifications && data.certifications.length > 0 && (
+            <section>
+              <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 flex items-center justify-center text-white text-sm">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </span>
+                Certifications
+              </h2>
+              <div className="space-y-4 pl-10">
+                {data.certifications.map((cert: any, i: number) => (
+                  <div key={i} className="relative">
+                    <div className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-gradient-to-r from-rose-500 to-purple-500" />
+                    <div className="flex justify-between items-start mb-1">
+                      <h3 className="font-bold text-gray-900">{cert.name}</h3>
+                      <span className="text-sm text-purple-600 font-medium whitespace-nowrap ml-4">
+                        {formatDate(cert.issueDate)}
+                        {cert.expiryDate && ` - ${formatDate(cert.expiryDate)}`}
+                      </span>
+                    </div>
+                    <p className="text-gray-600">{cert.issuer}</p>
+                    {cert.credentialId && <p className="text-xs text-gray-400">ID: {cert.credentialId}</p>}
                   </div>
                 ))}
               </div>
