@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   title: {
-    default: 'DVS-CV - Générateur de CV Intelligent',
-    template: '%s | DVS-CV',
+    default: 'CV Builder - Générateur de CV Intelligent',
+    template: '%s | CV Builder',
   },
   description:
     'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: baseUrl,
-    siteName: 'DVS-CV',
-    title: 'DVS-CV - Générateur de CV Intelligent',
+    siteName: 'CV Builder',
+    title: 'CV Builder - Générateur de CV Intelligent',
     description: 'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DVS-CV - Générateur de CV Intelligent',
+    title: 'CV Builder - Générateur de CV Intelligent',
     description: 'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle.',
   },
   robots: {

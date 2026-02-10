@@ -18,7 +18,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
           </Link>
         </div>
         <Link href="/" className="text-2xl font-bold text-[#722F37] hover:text-[#8B3A44] transition-colors">
-          DVS-CV
+          CV Builder
         </Link>
         <div className="w-20"></div> {/* Spacer for centering */}
       </header>

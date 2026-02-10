@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Conditions Générales de Vente',
-  description: 'Consultez les conditions générales de vente de DVS-CV : tarifs, modalités de paiement, droit de rétractation et garanties.',
+  description: 'Consultez les conditions générales de vente de CV Builder : tarifs, modalités de paiement, droit de rétractation et garanties.',
   alternates: {
     canonical: '/legal/cgv',
   },
@@ -37,7 +37,7 @@ export default function CGVPage() {
             </h2>
             <p>
               Les présentes Conditions Générales de Vente (CGV) régissent les ventes de services
-              proposés par DVS-CV, accessible à l'adresse{' '}
+              proposés par CV Builder, accessible à l'adresse{' '}
               <span className="font-medium">https://dvs-web.fr</span>, ci-après dénommé "le Service".
             </p>
             <p className="mt-2">
@@ -148,7 +148,7 @@ export default function CGVPage() {
             <p>
               L'utilisateur conserve l'entière propriété intellectuelle des contenus qu'il crée
               avec le Service. Les templates et l'interface du Service restent la propriété
-              exclusive de DVS-CV.
+              exclusive de CV Builder.
             </p>
           </section>
 
@@ -176,7 +176,7 @@ export default function CGVPage() {
             <p className="mt-2">
               Conformément aux dispositions du Code de la consommation concernant le règlement
               amiable des litiges, le client peut recourir au service de médiation proposé par
-              DVS-CV. Le médiateur peut être saisi via{' '}
+              CV Builder. Le médiateur peut être saisi via{' '}
               <span className="font-medium">contact@dvs-web.fr</span>.
             </p>
             <p className="mt-2">

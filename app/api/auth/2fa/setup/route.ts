@@ -39,7 +39,7 @@ export async function POST() {
     const otpAuthUrl = generateURI({
       secret,
       label: user.email || 'user',
-      issuer: 'DVS-CV',
+      issuer: 'CV Builder',
     })
 
     // Generate QR Code

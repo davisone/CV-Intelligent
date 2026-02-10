@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Réinitialiser le mot de passe',
-  description: 'Définissez un nouveau mot de passe pour votre compte DVS-CV.',
+  description: 'Définissez un nouveau mot de passe pour votre compte CV Builder.',
   robots: { index: false, follow: false },
 }
 

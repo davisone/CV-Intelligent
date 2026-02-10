@@ -4,7 +4,7 @@ export function WebsiteJsonLd() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'DVS-CV',
+    name: 'CV Builder',
     url: baseUrl,
     description:
       'Créez des CV professionnels avec l\'aide de l\'intelligence artificielle. Templates modernes, suggestions IA, optimisation ATS.',
