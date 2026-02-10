@@ -23,38 +23,14 @@ export default async function Image() {
       >
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
+            fontSize: 64,
+            fontWeight: 800,
+            color: "white",
+            letterSpacing: -2,
             marginBottom: 40,
           }}
         >
-          <div
-            style={{
-              width: 80,
-              height: 80,
-              background: "white",
-              borderRadius: 16,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginRight: 24,
-              fontSize: 48,
-              fontWeight: 800,
-              color: "#722F37",
-            }}
-          >
-            D
-          </div>
-          <div
-            style={{
-              fontSize: 64,
-              fontWeight: 800,
-              color: "white",
-              letterSpacing: -2,
-            }}
-          >
-            CV Builder
-          </div>
+          CV Builder
         </div>
         <div
           style={{
