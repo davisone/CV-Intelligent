@@ -14,6 +14,7 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+  manifest: '/manifest.json',
   icons: {
     icon: [
       { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
@@ -69,6 +70,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#722F37" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-40PK9X3YZT"
           strategy="afterInteractive"
