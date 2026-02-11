@@ -6,6 +6,7 @@ import GithubProvider from 'next-auth/providers/github'
 import bcrypt from 'bcryptjs'
 import { verifySync } from 'otplib'
 import { prisma } from '@/lib/db/prisma'
+import { sendWelcomeEmail } from '@/lib/email/nodemailer'
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -112,6 +113,16 @@ export const authOptions: NextAuthOptions = {
       }
 
       return token
+    },
+  },
+  events: {
+    async createUser({ user }) {
+      // Envoyer l'email de bienvenue pour les inscriptions OAuth (Google, GitHub)
+      if (user.email) {
+        sendWelcomeEmail(user.email, user.name || 'Utilisateur').catch((error) => {
+          console.error('[WELCOME_EMAIL_ERROR] OAuth signup:', error)
+        })
+      }
     },
   },
 }
