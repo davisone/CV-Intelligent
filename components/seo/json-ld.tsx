@@ -32,6 +32,42 @@ export function WebsiteJsonLd() {
   )
 }
 
+export function OrganizationJsonLd() {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'CV Builder',
+    url: baseUrl,
+    logo: `${baseUrl}/icon-512.png`,
+    description: 'CV Builder est un générateur de CV intelligent propulsé par l\'IA, créé par DVS-Web.',
+    foundingDate: '2024',
+    founder: {
+      '@type': 'Person',
+      name: 'Evan Davison',
+    },
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'DVS-Web',
+      url: 'https://dvs-web.fr',
+    },
+    sameAs: [],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: 'French',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
 export function BreadcrumbJsonLd({
   items,
 }: {

@@ -179,7 +179,8 @@ export default async function DashboardPage() {
             </p>
             <Link
               href="/dashboard/templates"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#722F37] text-black font-bold rounded-xl hover:bg-[#8B3A44] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#722F37] font-bold rounded-xl hover:bg-[#8B3A44] transition-colors"
+              style={{ color: '#FFFFFF' }}
             >
               <Plus className="w-4 h-4" />
               Créer mon premier CV

@@ -1,12 +1,37 @@
 import Link from 'next/link'
 import { Footer } from '@/components/layout/footer'
-import { WebsiteJsonLd } from '@/components/seo/json-ld'
+import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd } from '@/components/seo/json-ld'
 import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check } from 'lucide-react'
+
+const faqQuestions = [
+  {
+    question: 'CV Builder est-il gratuit ?',
+    answer: 'Oui, CV Builder propose un template Modern entièrement gratuit. Vous pouvez créer, éditer et télécharger votre CV en PDF sans frais. Des templates premium sont également disponibles pour plus de choix.',
+  },
+  {
+    question: 'Comment fonctionne l\'IA de CV Builder ?',
+    answer: 'Notre intelligence artificielle analyse votre parcours professionnel et vos compétences pour suggérer des améliorations. Elle optimise la formulation de vos expériences, propose des mots-clés pertinents et améliore la structure de votre CV pour maximiser son impact.',
+  },
+  {
+    question: 'Qu\'est-ce que l\'optimisation ATS ?',
+    answer: 'ATS (Applicant Tracking System) sont des logiciels utilisés par les recruteurs pour filtrer les CV. CV Builder optimise votre CV pour ces systèmes en utilisant un formatage compatible, des mots-clés pertinents et une structure claire, augmentant vos chances d\'être sélectionné.',
+  },
+  {
+    question: 'Puis-je télécharger mon CV en PDF ?',
+    answer: 'Oui, vous pouvez télécharger votre CV en format PDF haute qualité, prêt à être envoyé aux recruteurs ou imprimé. Le PDF conserve parfaitement la mise en page et le design de votre CV.',
+  },
+  {
+    question: 'Mes données sont-elles sécurisées ?',
+    answer: 'Absolument. Vos données personnelles sont chiffrées et stockées de manière sécurisée. Nous ne partageons jamais vos informations avec des tiers. Vous pouvez supprimer votre compte et toutes vos données à tout moment.',
+  },
+]
 
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
       <WebsiteJsonLd />
+      <OrganizationJsonLd />
+      <FAQJsonLd questions={faqQuestions} />
 
       {/* Header */}
       <header className="border-b border-[#E0D6C8] bg-[#FBF8F4]/80 backdrop-blur-sm sticky top-0 z-50">

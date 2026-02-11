@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
 
 export const metadata: Metadata = {
   title: 'Mentions Légales',
@@ -13,6 +16,12 @@ export const metadata: Metadata = {
 export default function MentionsLegalesPage() {
   return (
     <div className="min-h-screen bg-[#FBF8F4]">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Accueil', url: baseUrl },
+          { name: 'Mentions légales', url: `${baseUrl}/legal/mentions-legales` },
+        ]}
+      />
       <div className="max-w-4xl mx-auto px-4 py-12">
         <Link
           href="/"
