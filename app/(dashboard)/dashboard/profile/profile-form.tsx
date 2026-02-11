@@ -20,6 +20,7 @@ interface ProfileFormProps {
   initialProfile: any
   initialExperiences: any[]
   initialEducations: any[]
+  initialCertifications: any[]
   initialSkills: any[]
   initialLanguages: any[]
   initialInterests: any[]
@@ -29,6 +30,7 @@ export function ProfileForm({
   initialProfile,
   initialExperiences,
   initialEducations,
+  initialCertifications,
   initialSkills,
   initialLanguages,
   initialInterests,
@@ -53,6 +55,7 @@ export function ProfileForm({
 
   const [experiences, setExperiences] = useState(initialExperiences)
   const [educations, setEducations] = useState(initialEducations)
+  const [certifications, setCertifications] = useState(initialCertifications)
   const [skills, setSkills] = useState(initialSkills)
   const [languages, setLanguages] = useState(initialLanguages)
   const [interests, setInterests] = useState(initialInterests)
@@ -162,6 +165,28 @@ export function ProfileForm({
     await fetch(`/api/profile/educations?id=${id}`, { method: 'DELETE' })
     setEducations(prev => prev.filter(e => e.id !== id))
     toast.success('Formation supprimée')
+  }
+
+  const addCertification = async () => {
+    const res = await fetch('/api/profile/certifications', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: '',
+        issuer: '',
+        issueDate: new Date().toISOString(),
+      }),
+    })
+    if (res.ok) {
+      const { certification } = await res.json()
+      setCertifications(prev => [...prev, certification])
+    }
+  }
+
+  const deleteCertification = async (id: string) => {
+    await fetch(`/api/profile/certifications?id=${id}`, { method: 'DELETE' })
+    setCertifications(prev => prev.filter(c => c.id !== id))
+    toast.success('Certification supprimée')
   }
 
   const addSkill = async () => {
@@ -388,6 +413,26 @@ export function ProfileForm({
         </div>
       </section>
 
+      {/* Certifications */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Certifications</h2>
+          <Button variant="outline" onClick={addCertification}>+ Ajouter</Button>
+        </div>
+        <div className="space-y-4">
+          {certifications.map((cert) => (
+            <CertificationCard
+              key={cert.id}
+              certification={cert}
+              onDelete={() => deleteCertification(cert.id)}
+            />
+          ))}
+          {certifications.length === 0 && (
+            <p className="text-gray-500 text-center py-4">Aucune certification ajoutée</p>
+          )}
+        </div>
+      </section>
+
       {/* Compétences */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
@@ -530,6 +575,60 @@ function EducationCard({ education, onDelete }: { education: any; onDelete: () =
         <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
         <p className="text-gray-600">{data.institution || 'Établissement'}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+function CertificationCard({ certification, onDelete }: { certification: any; onDelete: () => void }) {
+  const [data, setData] = useState(certification)
+  const [editing, setEditing] = useState(!certification.name)
+
+  const save = async () => {
+    await fetch('/api/profile/certifications', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: certification.id, ...data }),
+    })
+    setEditing(false)
+    toast.success('Certification sauvegardée')
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <Input placeholder="Nom de la certification" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
+          <Input placeholder="Organisme" value={data.issuer} onChange={(e) => setData({ ...data, issuer: e.target.value })} />
+          <Input type="date" placeholder="Date d'obtention" value={formatDate(data.issueDate, 'input')} onChange={(e) => setData({ ...data, issueDate: e.target.value })} />
+          <Input type="date" placeholder="Date d'expiration (optionnel)" value={formatDate(data.expiryDate, 'input') || ''} onChange={(e) => setData({ ...data, expiryDate: e.target.value || null })} />
+          <Input placeholder="ID credential (optionnel)" value={data.credentialId || ''} onChange={(e) => setData({ ...data, credentialId: e.target.value })} />
+          <Input placeholder="URL de vérification (optionnel)" value={data.credentialUrl || ''} onChange={(e) => setData({ ...data, credentialUrl: e.target.value })} />
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={save}>Sauvegarder</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex justify-between items-start">
+      <div>
+        <h3 className="font-medium text-gray-900">{data.name || 'Nouvelle certification'}</h3>
+        <p className="text-gray-600">{data.issuer || 'Organisme'}</p>
+        <p className="text-sm text-gray-500">
+          Obtenue le {formatDate(data.issueDate)}
+          {data.expiryDate && ` • Expire le ${formatDate(data.expiryDate)}`}
+        </p>
+        {data.credentialUrl && (
+          <a href={data.credentialUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+            Voir le certificat
+          </a>
+        )}
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
     </div>

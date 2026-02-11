@@ -10,7 +10,7 @@ export default async function ProfilePage() {
     return null
   }
 
-  const [profile, experiences, educations, skills, languages, interests] = await Promise.all([
+  const [profile, experiences, educations, certifications, skills, languages, interests] = await Promise.all([
     prisma.userProfile.findUnique({
       where: { userId: session.user.id },
     }),
@@ -19,6 +19,10 @@ export default async function ProfilePage() {
       orderBy: { order: 'asc' },
     }),
     prisma.userEducation.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    }),
+    prisma.userCertification.findMany({
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
     }),
@@ -49,6 +53,7 @@ export default async function ProfilePage() {
         initialProfile={profile}
         initialExperiences={experiences}
         initialEducations={educations}
+        initialCertifications={certifications}
         initialSkills={skills}
         initialLanguages={languages}
         initialInterests={interests}
