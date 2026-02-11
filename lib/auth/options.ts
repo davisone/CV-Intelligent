@@ -83,13 +83,34 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       if (token.sub && session.user) {
         session.user.id = token.sub
+        session.user.totpEnabled = token.totpEnabled
+        session.user.twoFactorVerified = token.twoFactorVerified
       }
       return session
     },
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
+      // Initial sign in
       if (user) {
         token.sub = user.id
+
+        // Fetch 2FA status from database
+        const dbUser = await prisma.user.findUnique({
+          where: { id: user.id },
+          select: { totpEnabled: true },
+        })
+
+        token.totpEnabled = dbUser?.totpEnabled ?? false
+
+        // For credentials login, 2FA was already verified in authorize()
+        // For OAuth login, 2FA needs to be verified if enabled
+        if (account?.provider === 'credentials') {
+          token.twoFactorVerified = true
+        } else {
+          // OAuth login - needs 2FA verification if enabled
+          token.twoFactorVerified = !token.totpEnabled
+        }
       }
+
       return token
     },
   },
