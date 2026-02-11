@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/db/prisma'
 import crypto from 'crypto'
-import { sendPasswordResetEmail } from '@/lib/email/resend'
+import { sendPasswordResetEmail } from '@/lib/email/nodemailer'
 import { checkRateLimit, AUTH_RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {

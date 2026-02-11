@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import { stripe } from '@/lib/stripe/client'
 import { prisma } from '@/lib/db/prisma'
-import { sendPaymentConfirmationEmail } from '@/lib/email/resend'
+import { sendPaymentConfirmationEmail } from '@/lib/email/nodemailer'
 import { PRICING } from '@/lib/config/pricing'
 import type Stripe from 'stripe'
 

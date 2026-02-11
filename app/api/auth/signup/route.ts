@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { prisma } from '@/lib/db/prisma'
 import { signUpSchema } from '@/lib/validations/resume.schema'
-import { sendWelcomeEmail } from '@/lib/email/resend'
+import { sendWelcomeEmail } from '@/lib/email/nodemailer'
 import { checkRateLimit, AUTH_RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {

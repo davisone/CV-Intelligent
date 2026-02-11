@@ -1,24 +1,30 @@
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'ssl0.ovh.net',
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: false, // true for 465, false for 587
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
+  },
+})
 
-const FROM_EMAIL = process.env.FROM_EMAIL || 'CV Builder <noreply@resumeforge.com>'
+const FROM_EMAIL = process.env.FROM_EMAIL || 'CV Builder <noreply@cv-builder.fr>'
 
 export async function sendPasswordResetEmail(
   to: string,
   resetToken: string
 ) {
-  if (!resend) {
-    console.warn('[EMAIL] Resend API key not configured, skipping email')
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    console.warn('[EMAIL] SMTP not configured, skipping email')
     return { success: false, error: 'Email not configured' }
   }
 
   const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL}/reset-password?token=${resetToken}`
 
   try {
-    const { data, error } = await resend.emails.send({
+    const info = await transporter.sendMail({
       from: FROM_EMAIL,
       to,
       subject: 'Réinitialisation de votre mot de passe - CV Builder',
@@ -45,7 +51,7 @@ export async function sendPasswordResetEmail(
 
             <div style="text-align: center; margin: 32px 0;">
               <a href="${resetUrl}"
-                 style="display: inline-block; background-color: #2563eb; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                 style="display: inline-block; background-color: #722F37; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
                 Réinitialiser mon mot de passe
               </a>
             </div>
@@ -65,12 +71,8 @@ export async function sendPasswordResetEmail(
       `,
     })
 
-    if (error) {
-      console.error('[EMAIL_ERROR]:', error)
-      return { success: false, error }
-    }
-
-    return { success: true, data }
+    console.log('[EMAIL] Password reset email sent:', info.messageId)
+    return { success: true, data: { messageId: info.messageId } }
   } catch (error) {
     console.error('[EMAIL_ERROR]:', error)
     return { success: false, error }
@@ -78,13 +80,13 @@ export async function sendPasswordResetEmail(
 }
 
 export async function sendWelcomeEmail(to: string, name: string) {
-  if (!resend) {
-    console.warn('[EMAIL] Resend API key not configured, skipping email')
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    console.warn('[EMAIL] SMTP not configured, skipping email')
     return { success: false, error: 'Email not configured' }
   }
 
   try {
-    const { data, error } = await resend.emails.send({
+    const info = await transporter.sendMail({
       from: FROM_EMAIL,
       to,
       subject: 'Bienvenue sur CV Builder !',
@@ -107,7 +109,7 @@ export async function sendWelcomeEmail(to: string, name: string) {
 
             <div style="text-align: center; margin: 32px 0;">
               <a href="${process.env.NEXT_PUBLIC_APP_URL}/dashboard"
-                 style="display: inline-block; background-color: #2563eb; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                 style="display: inline-block; background-color: #722F37; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
                 Créer mon premier CV
               </a>
             </div>
@@ -123,12 +125,8 @@ export async function sendWelcomeEmail(to: string, name: string) {
       `,
     })
 
-    if (error) {
-      console.error('[EMAIL_ERROR]:', error)
-      return { success: false, error }
-    }
-
-    return { success: true, data }
+    console.log('[EMAIL] Welcome email sent:', info.messageId)
+    return { success: true, data: { messageId: info.messageId } }
   } catch (error) {
     console.error('[EMAIL_ERROR]:', error)
     return { success: false, error }
@@ -142,8 +140,8 @@ export async function sendPaymentConfirmationEmail(
   amount: string,
   resumeId: string
 ) {
-  if (!resend) {
-    console.warn('[EMAIL] Resend API key not configured, skipping email')
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    console.warn('[EMAIL] SMTP not configured, skipping email')
     return { success: false, error: 'Email not configured' }
   }
 
@@ -157,7 +155,7 @@ export async function sendPaymentConfirmationEmail(
   })
 
   try {
-    const { data, error } = await resend.emails.send({
+    const info = await transporter.sendMail({
       from: FROM_EMAIL,
       to,
       subject: `Confirmation de paiement - ${resumeTitle} | CV Builder`,
@@ -228,7 +226,7 @@ export async function sendPaymentConfirmationEmail(
 
             <div style="text-align: center; margin: 32px 0;">
               <a href="${editUrl}"
-                 style="display: inline-block; background-color: #2563eb; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                 style="display: inline-block; background-color: #722F37; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
                 Accéder à mon CV
               </a>
             </div>
@@ -249,12 +247,8 @@ export async function sendPaymentConfirmationEmail(
       `,
     })
 
-    if (error) {
-      console.error('[EMAIL_ERROR]:', error)
-      return { success: false, error }
-    }
-
-    return { success: true, data }
+    console.log('[EMAIL] Payment confirmation email sent:', info.messageId)
+    return { success: true, data: { messageId: info.messageId } }
   } catch (error) {
     console.error('[EMAIL_ERROR]:', error)
     return { success: false, error }
