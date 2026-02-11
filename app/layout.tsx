@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Script from 'next/script'
 import { Toaster } from 'sonner'
 import { AuthProvider } from '@/components/providers/session-provider'
+import { CookieBanner } from '@/components/cookie-banner'
 import './globals.css'
 
 const inter = Inter({
@@ -71,23 +71,12 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#722F37" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-60Z6QM94H8"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-60Z6QM94H8');
-          `}
-        </Script>
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <AuthProvider>
           {children}
           <Toaster position="bottom-right" richColors closeButton />
+          <CookieBanner />
         </AuthProvider>
       </body>
     </html>
