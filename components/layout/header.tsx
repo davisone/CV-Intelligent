@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
+// Navigation items displayed in both desktop sidebar and mobile menu
 interface NavItem {
   label: string
   href: string
@@ -51,6 +52,11 @@ const navItems: NavItem[] = [
   },
 ]
 
+/**
+ * Header component with responsive navigation
+ * - Desktop: Shows logo, email, and logout button
+ * - Mobile: Shows logo and hamburger menu with navigation items
+ */
 export function Header() {
   const { data: session } = useSession()
   const pathname = usePathname()
@@ -58,10 +64,12 @@ export function Header() {
 
   return (
     <header className="h-16 border-b border-[#E0D6C8] bg-[#F3EDE5] flex items-center justify-between px-6">
+      {/* Logo */}
       <Link href="/dashboard" className="text-xl font-bold text-[#722F37] hover:text-[#8B3A44] transition-colors">
         CV Builder
       </Link>
 
+      {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-4">
         {session?.user && (
           <>
@@ -79,6 +87,7 @@ export function Header() {
         )}
       </div>
 
+      {/* Mobile Menu Toggle Button */}
       <button
         className="md:hidden p-2"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -91,9 +100,11 @@ export function Header() {
         )}
       </button>
 
+      {/* Mobile Menu Dropdown */}
       {isMenuOpen && session?.user && (
         <div className="absolute top-16 left-0 right-0 bg-[#F3EDE5] border-b border-[#E0D6C8] md:hidden z-50">
           <div className="flex flex-col p-4 gap-2">
+            {/* Navigation Links */}
             {navItems.map((item) => {
               const isActive = pathname === item.href ||
                 (item.href !== '/dashboard' && pathname.startsWith(item.href))
@@ -117,6 +128,7 @@ export function Header() {
               )
             })}
 
+            {/* User Info & Logout */}
             <div className="border-t border-[#E0D6C8] mt-2 pt-2">
               <span className="text-sm text-[#6B6560] block px-3 py-2">
                 {session.user.email}
