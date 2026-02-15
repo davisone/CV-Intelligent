@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/confirm-dialog'
+import { EmptyState } from '@/components/ui/empty-state'
 import { FileText, Copy, Trash2, Plus, Loader2 } from '@/components/ui/icons'
 
 interface Resume {
@@ -108,17 +109,13 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
   if (resumes.length === 0) {
     return (
-      <div className="text-center py-16 bg-white rounded-xl border">
-        <FileText className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">
-          Aucun CV pour le moment
-        </h2>
-        <p className="text-gray-500 mb-6">
-          Créez votre premier CV en quelques clics
-        </p>
-        <Link href="/dashboard/templates">
-          <Button>Créer un CV</Button>
-        </Link>
+      <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8]">
+        <EmptyState
+          title="Aucun CV pour le moment"
+          description="Créez votre premier CV professionnel en quelques clics"
+          actionLabel="Créer un CV"
+          actionHref="/dashboard/templates"
+        />
       </div>
     )
   }

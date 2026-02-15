@@ -5,6 +5,7 @@ import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
+import { EmptyState } from '@/components/ui/empty-state'
 import { Plus, FileText, Sparkles, TrendingUp, Clock } from 'lucide-react'
 
 export default async function DashboardPage() {
@@ -170,22 +171,7 @@ export default async function DashboardPage() {
         </div>
 
         {resumes.length === 0 ? (
-          <div className="text-center py-12">
-            <div className="w-16 h-16 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <FileText className="w-8 h-8 text-[#722F37]" />
-            </div>
-            <p className="text-[#6B6560] mb-4">
-              Vous n&apos;avez pas encore de CV
-            </p>
-            <Link
-              href="/dashboard/templates"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#722F37] font-bold rounded-xl hover:bg-[#8B3A44] transition-colors"
-              style={{ color: '#FFFFFF' }}
-            >
-              <Plus className="w-4 h-4" />
-              Créer mon premier CV
-            </Link>
-          </div>
+          <EmptyState />
         ) : (
           <ResumeList initialResumes={resumes.slice(0, 6)} />
         )}
