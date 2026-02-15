@@ -81,7 +81,8 @@ export function EmptyState({
       {/* CTA Button */}
       <Link
         href={actionHref}
-        className="inline-flex items-center gap-2 px-6 py-3 bg-[#722F37] text-white font-semibold rounded-xl hover:bg-[#8B3A44] transition-all duration-200 hover:scale-105 shadow-lg shadow-[#722F37]/20"
+        className="inline-flex items-center gap-2 px-6 py-3 bg-[#722F37] font-semibold rounded-xl hover:bg-[#8B3A44] transition-all duration-200 hover:scale-105 shadow-lg shadow-[#722F37]/20"
+        style={{ color: '#FFFFFF' }}
       >
         <Plus className="w-5 h-5" />
         {actionLabel}

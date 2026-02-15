@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { PasswordInput } from '@/components/ui/password-input'
+import { PasswordStrength } from '@/components/ui/password-strength'
 import { Label } from '@/components/ui/label'
 
 export default function SignupPage() {
@@ -169,6 +170,7 @@ export default function SignupPage() {
               error={errors.password}
               disabled={isLoading}
             />
+            <PasswordStrength password={formData.password} />
             <p className="text-xs text-[#6B6560]">
               Min. 8 caractères avec majuscule, minuscule et chiffre
             </p>

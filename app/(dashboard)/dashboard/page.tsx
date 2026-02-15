@@ -46,7 +46,7 @@ export default async function DashboardPage() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-[#1F1A17]">
-          Bonjour, {session.user.name?.split(' ')[0] ?? 'there'} 👋
+          Bonjour, {session.user.name?.split(' ')[0] ?? 'there'}
         </h1>
         <p className="text-[#6B6560] mt-1">
           Gérez vos CV et créez-en de nouveaux
