@@ -1,28 +1,52 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { Footer } from '@/components/layout/footer'
-import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd } from '@/components/seo/json-ld'
-import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check } from 'lucide-react'
+import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd, LocalBusinessJsonLd, PersonJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld'
+import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check, MapPin } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'CV Gratuit en Ligne | Créer un CV avec IA - CV Builder par Evan Davison',
+  description: 'Créez votre CV gratuit en ligne avec l\'intelligence artificielle. Générateur de CV professionnel à Rennes par Evan Davison. Comment faire un CV parfait en 5 minutes avec templates modernes et optimisation ATS.',
+  keywords: [
+    'CV gratuit',
+    'créer CV en ligne',
+    'CV IA',
+    'générateur de CV',
+    'CV Rennes',
+    'Evan Davison',
+    'comment faire un CV',
+    'création de CV',
+    'CV professionnel gratuit',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+}
 
 const faqQuestions = [
   {
-    question: 'CV Builder est-il gratuit ?',
-    answer: 'Oui, CV Builder propose un template Modern entièrement gratuit. Vous pouvez créer, éditer et télécharger votre CV en PDF sans frais. Des templates premium sont également disponibles pour plus de choix.',
+    question: 'Comment faire un CV gratuit en ligne ?',
+    answer: 'Avec CV Builder, créer un CV gratuit est simple : inscrivez-vous gratuitement, choisissez un template professionnel, remplissez vos informations et laissez notre IA optimiser votre contenu. Vous pouvez télécharger votre CV en PDF en moins de 5 minutes, entièrement gratuitement.',
   },
   {
-    question: 'Comment fonctionne l\'IA de CV Builder ?',
-    answer: 'Notre intelligence artificielle analyse votre parcours professionnel et vos compétences pour suggérer des améliorations. Elle optimise la formulation de vos expériences, propose des mots-clés pertinents et améliore la structure de votre CV pour maximiser son impact.',
+    question: 'CV Builder est-il vraiment gratuit ?',
+    answer: 'Oui, CV Builder propose la création de CV gratuite avec le template Modern. Vous pouvez créer, éditer et télécharger votre CV en PDF sans frais. Des templates premium sont également disponibles pour plus de personnalisation.',
   },
   {
-    question: 'Qu\'est-ce que l\'optimisation ATS ?',
-    answer: 'ATS (Applicant Tracking System) sont des logiciels utilisés par les recruteurs pour filtrer les CV. CV Builder optimise votre CV pour ces systèmes en utilisant un formatage compatible, des mots-clés pertinents et une structure claire, augmentant vos chances d\'être sélectionné.',
+    question: 'Comment fonctionne le CV avec IA ?',
+    answer: 'Notre CV IA analyse votre parcours professionnel et vos compétences pour suggérer des améliorations automatiques. L\'intelligence artificielle optimise la formulation de vos expériences, propose des mots-clés pertinents pour les recruteurs et améliore la structure de votre CV.',
   },
   {
-    question: 'Puis-je télécharger mon CV en PDF ?',
-    answer: 'Oui, vous pouvez télécharger votre CV en format PDF haute qualité, prêt à être envoyé aux recruteurs ou imprimé. Le PDF conserve parfaitement la mise en page et le design de votre CV.',
+    question: 'Qu\'est-ce que l\'optimisation ATS pour CV ?',
+    answer: 'L\'optimisation ATS permet à votre CV de passer les filtres automatiques des recruteurs. CV Builder formate votre CV pour être compatible avec ces systèmes, utilise les bons mots-clés et structure votre contenu pour maximiser vos chances d\'être sélectionné.',
   },
   {
-    question: 'Mes données sont-elles sécurisées ?',
-    answer: 'Absolument. Vos données personnelles sont chiffrées et stockées de manière sécurisée. Nous ne partageons jamais vos informations avec des tiers. Vous pouvez supprimer votre compte et toutes vos données à tout moment.',
+    question: 'Qui a créé CV Builder ?',
+    answer: 'CV Builder a été créé par Evan Davison, développeur web basé à Rennes, fondateur de DVS-Web. L\'application combine expertise en développement web et intelligence artificielle pour offrir un générateur de CV moderne et efficace.',
+  },
+  {
+    question: 'Comment créer un CV professionnel rapidement ?',
+    answer: 'Pour créer un CV professionnel rapidement : 1) Inscrivez-vous sur CV Builder, 2) Choisissez parmi nos templates modernes, 3) Remplissez vos informations, 4) Laissez l\'IA améliorer votre contenu, 5) Téléchargez votre CV en PDF. Le tout en moins de 5 minutes !',
   },
 ]
 
@@ -31,6 +55,9 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
       <WebsiteJsonLd />
       <OrganizationJsonLd />
+      <LocalBusinessJsonLd />
+      <PersonJsonLd />
+      <SoftwareApplicationJsonLd />
       <FAQJsonLd questions={faqQuestions} />
 
       {/* Header */}
@@ -71,12 +98,12 @@ export default function HomePage() {
                   Propulsé par l&apos;IA
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1A17] mb-6 leading-tight">
-                  Créez votre CV parfait
-                  <span className="text-[#722F37]"> en minutes</span>
+                  Créez votre <span className="text-[#722F37]">CV gratuit</span> en ligne
+                  <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">avec l&apos;intelligence artificielle</span>
                 </h1>
                 <p className="text-lg text-[#6B6560] mb-8 max-w-xl">
-                  CV Builder utilise l&apos;intelligence artificielle pour créer des CV professionnels,
-                  optimisés pour les ATS et qui captent l&apos;attention des recruteurs.
+                  Comment faire un CV parfait ? Utilisez notre générateur de CV avec IA !
+                  Création de CV professionnel en 5 minutes, optimisé ATS, 100% gratuit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
@@ -132,9 +159,10 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-[#E0D6C8]">
-                <p className="text-sm text-[#6B6560]">
-                  Rejoignez des milliers d&apos;utilisateurs
-                </p>
+                <div className="flex items-center gap-2 text-sm text-[#6B6560]">
+                  <MapPin className="w-4 h-4 text-[#722F37]" />
+                  <span>Créé à Rennes par Evan Davison</span>
+                </div>
               </div>
             </div>
           </div>
