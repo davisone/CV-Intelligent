@@ -115,7 +115,6 @@ export async function POST(request: Request) {
     const checkoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
       mode: 'payment',
-      payment_method_types: ['card', 'link'],
       line_items: [
         {
           price_data: {
@@ -129,6 +128,16 @@ export async function POST(request: Request) {
           quantity: 1,
         },
       ],
+      // Génération automatique de la facture Stripe après paiement
+      invoice_creation: {
+        enabled: true,
+        invoice_data: {
+          description: `CV Premium - ${resume.title}`,
+          metadata: {
+            resumeId: resumeId,
+          },
+        },
+      },
       metadata: {
         userId: session.user.id,
         resumeId: resumeId,

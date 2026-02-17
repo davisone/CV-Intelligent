@@ -77,22 +77,41 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
     return
   }
 
-  // Vérifier idempotence - éviter les doublons
-  const existingPayment = await prisma.payment.findUnique({
-    where: { stripeSessionId: session.id },
-    select: { status: true },
-  })
-
-  if (existingPayment?.status === 'COMPLETED') {
-    console.log('[WEBHOOK] Payment already processed:', session.id)
-    return
-  }
-
   const paymentIntentId = typeof session.payment_intent === 'string'
     ? session.payment_intent
     : session.payment_intent?.id
 
-  // Récupérer les infos utilisateur et CV pour l'email
+  // Mise à jour atomique avec condition pour éviter les doublons (race condition)
+  // updateMany retourne { count: 0 } si le WHERE ne matche pas (déjà COMPLETED)
+  const updated = await prisma.payment.updateMany({
+    where: {
+      stripeSessionId: session.id,
+      status: { not: 'COMPLETED' },
+    },
+    data: {
+      status: 'COMPLETED',
+      stripePaymentId: paymentIntentId,
+    },
+  })
+
+  // Si aucune ligne mise à jour, le paiement a déjà été traité
+  if (updated.count === 0) {
+    console.log('[WEBHOOK] Payment already processed:', session.id)
+    return
+  }
+
+  // Marquer le CV comme payé
+  await prisma.resume.update({
+    where: { id: resumeId },
+    data: {
+      isPaid: true,
+      paidAt: new Date(),
+      stripePaymentId: paymentIntentId,
+      paymentStatus: 'COMPLETED',
+    },
+  })
+
+  // Récupérer les infos pour l'email de confirmation
   const [user, resume] = await Promise.all([
     prisma.user.findUnique({
       where: { id: userId },
@@ -104,28 +123,6 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
     }),
   ])
 
-  await prisma.$transaction([
-    // Mettre à jour le paiement
-    prisma.payment.update({
-      where: { stripeSessionId: session.id },
-      data: {
-        status: 'COMPLETED',
-        stripePaymentId: paymentIntentId,
-      },
-    }),
-    // Marquer le CV comme payé
-    prisma.resume.update({
-      where: { id: resumeId },
-      data: {
-        isPaid: true,
-        paidAt: new Date(),
-        stripePaymentId: paymentIntentId,
-        paymentStatus: 'COMPLETED',
-      },
-    }),
-  ])
-
-  // Envoyer l'email de confirmation
   if (user?.email && resume?.title) {
     await sendPaymentConfirmationEmail(
       user.email,
