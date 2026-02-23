@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useState } from 'react'
+import { Suspense, useState, useEffect } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
@@ -48,6 +48,18 @@ function LoginForm() {
     totpCode: '',
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
+
+  // Afficher les erreurs OAuth redirigées par NextAuth
+  const oauthError = searchParams.get('error')
+  useEffect(() => {
+    if (oauthError === 'OAuthAccountNotLinked') {
+      toast.error('Un compte existe déjà avec cet email via un autre moyen de connexion')
+    } else if (oauthError === 'OAuthCallback' || oauthError === 'OAuthSignin') {
+      toast.error('Erreur de connexion avec le fournisseur, veuillez réessayer')
+    } else if (oauthError) {
+      toast.error('Erreur de connexion, veuillez réessayer')
+    }
+  }, [oauthError])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
