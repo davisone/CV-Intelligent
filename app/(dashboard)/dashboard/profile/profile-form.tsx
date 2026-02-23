@@ -5,6 +5,7 @@ import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { SortableList, DragHandle, DragHandleProps } from '@/components/ui/sortable-list'
 
 // Helper pour formater les dates
 const formatDate = (date: Date | string | null | undefined, format: 'input' | 'display' = 'display') => {
@@ -59,6 +60,18 @@ export function ProfileForm({
   const [skills, setSkills] = useState(initialSkills)
   const [languages, setLanguages] = useState(initialLanguages)
   const [interests, setInterests] = useState(initialInterests)
+
+  // Sauvegarde l'ordre des éléments après un drag & drop
+  const saveOrder = async (type: string, items: { id: string }[]) => {
+    await fetch('/api/profile/reorder', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type,
+        items: items.map((item, index) => ({ id: item.id, order: index })),
+      }),
+    })
+  }
 
   const handleProfileChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setProfile(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -378,19 +391,24 @@ export function ProfileForm({
           <h2 className="text-xl font-semibold text-gray-900">Expériences professionnelles</h2>
           <Button variant="outline" onClick={addExperience}>+ Ajouter</Button>
         </div>
-        <div className="space-y-4">
-          {experiences.map((exp) => (
-            <ExperienceCard
-              key={exp.id}
-              experience={exp}
-              onUpdate={(data) => updateExperience(exp.id, data)}
-              onDelete={() => deleteExperience(exp.id)}
-            />
-          ))}
-          {experiences.length === 0 && (
-            <p className="text-gray-500 text-center py-4">Aucune expérience ajoutée</p>
-          )}
-        </div>
+        {experiences.length > 0 ? (
+          <SortableList
+            items={experiences}
+            onReorder={(newItems) => { setExperiences(newItems); saveOrder('experiences', newItems) }}
+            keyExtractor={(exp) => exp.id}
+            direction="vertical"
+            renderItem={(exp, dragHandleProps) => (
+              <ExperienceCard
+                experience={exp}
+                onUpdate={(data) => updateExperience(exp.id, data)}
+                onDelete={() => deleteExperience(exp.id)}
+                dragHandleProps={dragHandleProps}
+              />
+            )}
+          />
+        ) : (
+          <p className="text-gray-500 text-center py-4">Aucune expérience ajoutée</p>
+        )}
       </section>
 
       {/* Formations */}
@@ -399,18 +417,23 @@ export function ProfileForm({
           <h2 className="text-xl font-semibold text-gray-900">Formations</h2>
           <Button variant="outline" onClick={addEducation}>+ Ajouter</Button>
         </div>
-        <div className="space-y-4">
-          {educations.map((edu) => (
-            <EducationCard
-              key={edu.id}
-              education={edu}
-              onDelete={() => deleteEducation(edu.id)}
-            />
-          ))}
-          {educations.length === 0 && (
-            <p className="text-gray-500 text-center py-4">Aucune formation ajoutée</p>
-          )}
-        </div>
+        {educations.length > 0 ? (
+          <SortableList
+            items={educations}
+            onReorder={(newItems) => { setEducations(newItems); saveOrder('educations', newItems) }}
+            keyExtractor={(edu) => edu.id}
+            direction="vertical"
+            renderItem={(edu, dragHandleProps) => (
+              <EducationCard
+                education={edu}
+                onDelete={() => deleteEducation(edu.id)}
+                dragHandleProps={dragHandleProps}
+              />
+            )}
+          />
+        ) : (
+          <p className="text-gray-500 text-center py-4">Aucune formation ajoutée</p>
+        )}
       </section>
 
       {/* Certifications */}
@@ -419,18 +442,23 @@ export function ProfileForm({
           <h2 className="text-xl font-semibold text-gray-900">Certifications</h2>
           <Button variant="outline" onClick={addCertification}>+ Ajouter</Button>
         </div>
-        <div className="space-y-4">
-          {certifications.map((cert) => (
-            <CertificationCard
-              key={cert.id}
-              certification={cert}
-              onDelete={() => deleteCertification(cert.id)}
-            />
-          ))}
-          {certifications.length === 0 && (
-            <p className="text-gray-500 text-center py-4">Aucune certification ajoutée</p>
-          )}
-        </div>
+        {certifications.length > 0 ? (
+          <SortableList
+            items={certifications}
+            onReorder={(newItems) => { setCertifications(newItems); saveOrder('certifications', newItems) }}
+            keyExtractor={(cert) => cert.id}
+            direction="vertical"
+            renderItem={(cert, dragHandleProps) => (
+              <CertificationCard
+                certification={cert}
+                onDelete={() => deleteCertification(cert.id)}
+                dragHandleProps={dragHandleProps}
+              />
+            )}
+          />
+        ) : (
+          <p className="text-gray-500 text-center py-4">Aucune certification ajoutée</p>
+        )}
       </section>
 
       {/* Compétences */}
@@ -439,14 +467,21 @@ export function ProfileForm({
           <h2 className="text-xl font-semibold text-gray-900">Compétences</h2>
           <Button variant="outline" onClick={addSkill}>+ Ajouter</Button>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <SkillBadge key={skill.id} skill={skill} onDelete={() => deleteSkill(skill.id)} />
-          ))}
-          {skills.length === 0 && (
-            <p className="text-gray-500">Aucune compétence ajoutée</p>
-          )}
-        </div>
+        {skills.length > 0 ? (
+          <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+            <SortableList
+              items={skills}
+              onReorder={(newItems) => { setSkills(newItems); saveOrder('skills', newItems) }}
+              keyExtractor={(skill) => skill.id}
+              direction="horizontal"
+              renderItem={(skill, dragHandleProps) => (
+                <SkillBadge skill={skill} onDelete={() => deleteSkill(skill.id)} dragHandleProps={dragHandleProps} />
+              )}
+            />
+          </div>
+        ) : (
+          <p className="text-gray-500">Aucune compétence ajoutée</p>
+        )}
       </section>
 
       {/* Langues */}
@@ -455,14 +490,21 @@ export function ProfileForm({
           <h2 className="text-xl font-semibold text-gray-900">Langues</h2>
           <Button variant="outline" onClick={addLanguage}>+ Ajouter</Button>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {languages.map((lang) => (
-            <LanguageBadge key={lang.id} language={lang} onDelete={() => deleteLanguage(lang.id)} />
-          ))}
-          {languages.length === 0 && (
-            <p className="text-gray-500">Aucune langue ajoutée</p>
-          )}
-        </div>
+        {languages.length > 0 ? (
+          <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+            <SortableList
+              items={languages}
+              onReorder={(newItems) => { setLanguages(newItems); saveOrder('languages', newItems) }}
+              keyExtractor={(lang) => lang.id}
+              direction="horizontal"
+              renderItem={(lang, dragHandleProps) => (
+                <LanguageBadge language={lang} onDelete={() => deleteLanguage(lang.id)} dragHandleProps={dragHandleProps} />
+              )}
+            />
+          </div>
+        ) : (
+          <p className="text-gray-500">Aucune langue ajoutée</p>
+        )}
       </section>
 
       {/* Centres d'intérêt */}
@@ -471,20 +513,27 @@ export function ProfileForm({
           <h2 className="text-xl font-semibold text-gray-900">Centres d'intérêt</h2>
           <Button variant="outline" onClick={addInterest}>+ Ajouter</Button>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {interests.map((interest) => (
-            <InterestBadge key={interest.id} interest={interest} onDelete={() => deleteInterest(interest.id)} />
-          ))}
-          {interests.length === 0 && (
-            <p className="text-gray-500">Aucun centre d'intérêt ajouté</p>
-          )}
-        </div>
+        {interests.length > 0 ? (
+          <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+            <SortableList
+              items={interests}
+              onReorder={(newItems) => { setInterests(newItems); saveOrder('interests', newItems) }}
+              keyExtractor={(interest) => interest.id}
+              direction="horizontal"
+              renderItem={(interest, dragHandleProps) => (
+                <InterestBadge interest={interest} onDelete={() => deleteInterest(interest.id)} dragHandleProps={dragHandleProps} />
+              )}
+            />
+          </div>
+        ) : (
+          <p className="text-gray-500">Aucun centre d'intérêt ajouté</p>
+        )}
       </section>
     </div>
   )
 }
 
-function ExperienceCard({ experience, onUpdate, onDelete }: { experience: any; onUpdate: (data: any) => void; onDelete: () => void }) {
+function ExperienceCard({ experience, onUpdate, onDelete, dragHandleProps }: { experience: any; onUpdate: (data: any) => void; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [data, setData] = useState(experience)
   const [editing, setEditing] = useState(!experience.company)
 
@@ -524,8 +573,9 @@ function ExperienceCard({ experience, onUpdate, onDelete }: { experience: any; o
   }
 
   return (
-    <div className="border rounded-lg p-4 flex justify-between items-start">
-      <div>
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
         <h3 className="font-medium text-gray-900">{data.position || 'Nouveau poste'}</h3>
         <p className="text-gray-600">{data.company || 'Entreprise'}</p>
         <p className="text-sm text-gray-500">
@@ -537,7 +587,7 @@ function ExperienceCard({ experience, onUpdate, onDelete }: { experience: any; o
   )
 }
 
-function EducationCard({ education, onDelete }: { education: any; onDelete: () => void }) {
+function EducationCard({ education, onDelete, dragHandleProps }: { education: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [data, setData] = useState(education)
   const [editing, setEditing] = useState(!education.institution)
 
@@ -570,8 +620,9 @@ function EducationCard({ education, onDelete }: { education: any; onDelete: () =
   }
 
   return (
-    <div className="border rounded-lg p-4 flex justify-between items-start">
-      <div>
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
         <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
         <p className="text-gray-600">{data.institution || 'Établissement'}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
@@ -581,7 +632,7 @@ function EducationCard({ education, onDelete }: { education: any; onDelete: () =
   )
 }
 
-function CertificationCard({ certification, onDelete }: { certification: any; onDelete: () => void }) {
+function CertificationCard({ certification, onDelete, dragHandleProps }: { certification: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [data, setData] = useState(certification)
   const [editing, setEditing] = useState(!certification.name)
 
@@ -616,8 +667,9 @@ function CertificationCard({ certification, onDelete }: { certification: any; on
   }
 
   return (
-    <div className="border rounded-lg p-4 flex justify-between items-start">
-      <div>
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
         <h3 className="font-medium text-gray-900">{data.name || 'Nouvelle certification'}</h3>
         <p className="text-gray-600">{data.issuer || 'Organisme'}</p>
         <p className="text-sm text-gray-500">
@@ -642,7 +694,7 @@ const skillLevels = [
   { value: 'EXPERT', label: 'Expert' },
 ]
 
-function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
+function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [name, setName] = useState(skill.name)
   const [level, setLevel] = useState(skill.level || 'INTERMEDIATE')
   const [editing, setEditing] = useState(!skill.name)
@@ -685,10 +737,18 @@ function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
   }
 
   return (
-    <div className="flex items-center gap-2 bg-primary/10 text-primary rounded-lg px-3 py-2 cursor-pointer" onClick={() => setEditing(true)}>
-      <span className="text-sm font-medium">{name}</span>
+    <div className="flex items-center gap-1 bg-primary/10 text-primary rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-primary/40 hover:text-primary/60 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
+      <span className="text-sm font-medium cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
       <span className="text-xs bg-primary/20 px-2 py-0.5 rounded">{getLevelLabel(level)}</span>
-      <button onClick={(e) => { e.stopPropagation(); onDelete() }} className="hover:text-red-500 ml-1">×</button>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
     </div>
   )
 }
@@ -701,7 +761,7 @@ const languageLevels = [
   { value: 'NATIVE', label: 'Natif' },
 ]
 
-function LanguageBadge({ language, onDelete }: { language: any; onDelete: () => void }) {
+function LanguageBadge({ language, onDelete, dragHandleProps }: { language: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [name, setName] = useState(language.name)
   const [level, setLevel] = useState(language.level || 'INTERMEDIATE')
   const [editing, setEditing] = useState(!language.name)
@@ -744,15 +804,23 @@ function LanguageBadge({ language, onDelete }: { language: any; onDelete: () => 
   }
 
   return (
-    <div className="flex items-center gap-2 bg-blue-100 text-blue-700 rounded-lg px-3 py-2 cursor-pointer" onClick={() => setEditing(true)}>
-      <span className="text-sm font-medium">{name}</span>
+    <div className="flex items-center gap-1 bg-blue-100 text-blue-700 rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-blue-400 hover:text-blue-600 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
+      <span className="text-sm font-medium cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
       <span className="text-xs bg-blue-200 px-2 py-0.5 rounded">{getLevelLabel(level)}</span>
-      <button onClick={(e) => { e.stopPropagation(); onDelete() }} className="hover:text-red-500 ml-1">×</button>
+      <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
     </div>
   )
 }
 
-function InterestBadge({ interest, onDelete }: { interest: any; onDelete: () => void }) {
+function InterestBadge({ interest, onDelete, dragHandleProps }: { interest: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [name, setName] = useState(interest.name)
   const [editing, setEditing] = useState(!interest.name)
 
@@ -783,6 +851,14 @@ function InterestBadge({ interest, onDelete }: { interest: any; onDelete: () => 
 
   return (
     <div className="flex items-center gap-1 bg-green-100 text-green-700 rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-green-400 hover:text-green-600 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
       <button onClick={onDelete} className="hover:text-red-500">×</button>
     </div>
