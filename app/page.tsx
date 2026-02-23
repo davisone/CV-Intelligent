@@ -5,19 +5,8 @@ import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd, LocalBusinessJsonLd, Pers
 import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'CV Gratuit en Ligne | Créer un CV avec IA - CV Builder par Evan Davison',
-  description: 'Créez votre CV gratuit en ligne avec l\'intelligence artificielle. Générateur de CV professionnel à Rennes par Evan Davison. Comment faire un CV parfait en 5 minutes avec templates modernes et optimisation ATS.',
-  keywords: [
-    'CV gratuit',
-    'créer CV en ligne',
-    'CV IA',
-    'générateur de CV',
-    'CV Rennes',
-    'Evan Davison',
-    'comment faire un CV',
-    'création de CV',
-    'CV professionnel gratuit',
-  ],
+  title: 'CV Gratuit en Ligne | Créer son CV avec IA - Générateur de CV Français',
+  description: 'Créez votre CV gratuit en ligne en français avec l\'intelligence artificielle. Création de CV rapide et facile : modèles professionnels, optimisation ATS, export PDF. Faire son CV en 5 minutes.',
   alternates: {
     canonical: '/',
   },
@@ -29,24 +18,32 @@ const faqQuestions = [
     answer: 'Avec CV Builder, créer un CV gratuit est simple : inscrivez-vous gratuitement, choisissez un template professionnel, remplissez vos informations et laissez notre IA optimiser votre contenu. Vous pouvez télécharger votre CV en PDF en moins de 5 minutes, entièrement gratuitement.',
   },
   {
+    question: 'Comment créer son CV rapidement ?',
+    answer: 'Pour créer son CV rapidement : 1) Inscrivez-vous sur CV Builder, 2) Choisissez parmi nos modèles de CV modernes, 3) Remplissez vos informations, 4) Laissez l\'IA améliorer votre contenu, 5) Téléchargez votre CV en PDF. La création de CV prend moins de 5 minutes !',
+  },
+  {
     question: 'CV Builder est-il vraiment gratuit ?',
     answer: 'Oui, CV Builder propose la création de CV gratuite avec le template Modern. Vous pouvez créer, éditer et télécharger votre CV en PDF sans frais. Des templates premium sont également disponibles pour plus de personnalisation.',
   },
   {
-    question: 'Comment fonctionne le CV avec IA ?',
-    answer: 'Notre CV IA analyse votre parcours professionnel et vos compétences pour suggérer des améliorations automatiques. L\'intelligence artificielle optimise la formulation de vos expériences, propose des mots-clés pertinents pour les recruteurs et améliore la structure de votre CV.',
+    question: 'Comment fonctionne le générateur de CV avec IA ?',
+    answer: 'Notre générateur de CV avec intelligence artificielle analyse votre parcours professionnel et vos compétences pour suggérer des améliorations automatiques. L\'IA optimise la formulation de vos expériences, propose des mots-clés pertinents pour les recruteurs et améliore la structure de votre CV.',
   },
   {
     question: 'Qu\'est-ce que l\'optimisation ATS pour CV ?',
     answer: 'L\'optimisation ATS permet à votre CV de passer les filtres automatiques des recruteurs. CV Builder formate votre CV pour être compatible avec ces systèmes, utilise les bons mots-clés et structure votre contenu pour maximiser vos chances d\'être sélectionné.',
   },
   {
-    question: 'Qui a créé CV Builder ?',
-    answer: 'CV Builder a été créé par Evan Davison, développeur web basé à Rennes, fondateur de DVS-Web. L\'application combine expertise en développement web et intelligence artificielle pour offrir un générateur de CV moderne et efficace.',
+    question: 'Comment faire un CV étudiant ou un premier CV ?',
+    answer: 'Pour faire un CV étudiant ou un premier CV sans expérience, CV Builder vous guide étape par étape. L\'IA vous aide à mettre en valeur vos formations, stages, compétences et centres d\'intérêt. Idéal pour un CV alternance, un CV stage ou votre tout premier CV.',
   },
   {
-    question: 'Comment créer un CV professionnel rapidement ?',
-    answer: 'Pour créer un CV professionnel rapidement : 1) Inscrivez-vous sur CV Builder, 2) Choisissez parmi nos templates modernes, 3) Remplissez vos informations, 4) Laissez l\'IA améliorer votre contenu, 5) Téléchargez votre CV en PDF. Le tout en moins de 5 minutes !',
+    question: 'Peut-on télécharger son CV en PDF gratuitement ?',
+    answer: 'Oui, vous pouvez télécharger votre CV en PDF gratuitement avec CV Builder. Le CV est généré en haute qualité, prêt à être envoyé aux recruteurs ou téléchargé sur les sites d\'emploi.',
+  },
+  {
+    question: 'Comment rédiger un CV professionnel ?',
+    answer: 'Pour rédiger un CV professionnel, concentrez-vous sur une mise en page claire, des expériences bien décrites avec des résultats concrets, et les bons mots-clés pour votre secteur. CV Builder vous accompagne avec des modèles de CV professionnels et une IA qui optimise votre contenu automatiquement.',
   },
 ]
 
@@ -98,12 +95,13 @@ export default function HomePage() {
                   Propulsé par l&apos;IA
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1A17] mb-6 leading-tight">
-                  Créez votre <span className="text-[#722F37]">CV gratuit</span> en ligne
+                  Créer son <span className="text-[#722F37]">CV gratuit</span> en ligne
                   <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">avec l&apos;intelligence artificielle</span>
                 </h1>
                 <p className="text-lg text-[#6B6560] mb-8 max-w-xl">
-                  Comment faire un CV parfait ? Utilisez notre générateur de CV avec IA !
-                  Création de CV professionnel en 5 minutes, optimisé ATS, 100% gratuit.
+                  Faire un CV n&apos;a jamais été aussi simple. Notre générateur de CV gratuit avec IA
+                  vous aide à créer un CV professionnel en 5 minutes : modèles modernes, optimisation ATS
+                  et export PDF. Le meilleur outil de création de CV en français.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
@@ -172,10 +170,10 @@ export default function HomePage() {
         <section className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1F1A17] mb-4">
-              Tout ce dont vous avez besoin
+              Comment faire un CV professionnel facilement
             </h2>
             <p className="text-[#6B6560] max-w-xl mx-auto">
-              Des outils puissants pour créer un CV qui vous démarque
+              Tous les outils pour créer son CV, le rédiger et l&apos;optimiser — gratuit et en français
             </p>
           </div>
 
@@ -256,10 +254,11 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNGRkYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-[#FFFFFF] mb-4">
-                Prêt à décrocher votre prochain job ?
+                Créez votre CV gratuit maintenant
               </h2>
               <p className="text-lg text-[#FFFFFF]/80 mb-8 max-w-xl mx-auto">
-                Créez un CV professionnel en quelques minutes et démarquez-vous des autres candidats.
+                Faire son CV en ligne n&apos;a jamais été aussi rapide. Création de CV gratuite, modèles professionnels
+                et intelligence artificielle pour décrocher votre prochain emploi.
               </p>
               <Link
                 href="/signup"

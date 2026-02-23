@@ -28,32 +28,46 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
+    languages: {
+      'fr-FR': '/',
+    },
   },
   title: {
-    default: 'CV Gratuit en Ligne | Créer un CV avec IA - CV Builder par Evan Davison',
-    template: '%s | CV Builder - Evan Davison',
+    default: 'CV Gratuit en Ligne | Créer son CV avec IA - Générateur de CV Français',
+    template: '%s | CV Builder France - Générateur de CV Gratuit',
   },
   description:
-    'Créez votre CV gratuit en ligne avec l\'intelligence artificielle. Générateur de CV professionnel à Rennes par Evan Davison (DVS-Web). Templates modernes, optimisation ATS, export PDF. Comment faire un CV parfait en 5 minutes.',
+    'Créez votre CV gratuit en ligne en français avec l\'intelligence artificielle. Générateur de CV professionnel, création de CV rapide, modèles modernes, optimisation ATS et export PDF. Faire son CV n\'a jamais été aussi simple.',
   keywords: [
-    'CV gratuit',
-    'CV en ligne',
-    'création de CV',
-    'CV IA',
-    'générateur de CV',
-    'comment faire un CV',
-    'CV professionnel',
-    'CV Rennes',
-    'Evan Davison',
-    'DVS-Web',
-    'CV Builder',
-    'créer CV gratuit',
-    'modèle CV',
-    'template CV',
-    'CV moderne',
-    'optimisation ATS',
-    'CV intelligence artificielle',
-    'faire un CV en ligne',
+    // Termes principaux
+    'cv', 'cv gratuit', 'cv en ligne', 'cv ia',
+    'créer un cv', 'créer son cv', 'créer cv gratuit', 'créer cv en ligne',
+    'faire un cv', 'faire son cv', 'faire cv en ligne', 'faire un cv gratuit',
+    // Création / génération
+    'création cv', 'création de cv', 'création de cv gratuit',
+    'générateur de cv', 'générateur cv gratuit', 'générateur cv ia',
+    'cv builder', 'cv maker', 'cv creator',
+    // Intelligence artificielle
+    'cv intelligence artificielle', 'cv avec ia', 'ia cv',
+    'cv automatique', 'aide cv', 'améliorer son cv',
+    // Modèles / templates
+    'modèle cv', 'modèle cv gratuit', 'modèle de cv',
+    'template cv', 'exemple cv', 'exemple de cv',
+    'cv moderne', 'cv professionnel', 'cv design',
+    // Comment faire
+    'comment faire un cv', 'comment créer un cv', 'comment rédiger un cv',
+    'rédiger un cv', 'rédiger cv', 'mise en page cv',
+    // Export
+    'cv pdf', 'cv pdf gratuit', 'télécharger cv',
+    // Profils spécifiques
+    'cv étudiant', 'cv alternance', 'cv stage', 'premier cv', 'cv sans expérience',
+    // Optimisation
+    'optimisation ats', 'cv ats', 'cv compatible ats',
+    // France
+    'cv france', 'cv français', 'cv gratuit france', 'cv en ligne france',
+    'créer cv france', 'générateur cv français',
+    // Local
+    'cv rennes', 'Evan Davison', 'DVS-Web',
   ],
   authors: [{ name: 'Evan Davison', url: 'https://dvs-web.fr' }],
   creator: 'Evan Davison - DVS-Web',
@@ -105,6 +119,9 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#722F37" />
+        <meta name="geo.region" content="FR" />
+        <meta name="geo.placename" content="Rennes, France" />
+        <meta httpEquiv="content-language" content="fr-FR" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <AuthProvider>
