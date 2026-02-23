@@ -96,8 +96,10 @@ model UserProfile {
   website       String?
   summary       String? @db.Text
   jobTitle      String?
-  photoUrl      String?
-  user          User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  photoUrl        String?
+  birthDate       DateTime?
+  drivingLicenses String?
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model UserExperience {

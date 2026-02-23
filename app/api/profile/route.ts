@@ -79,6 +79,8 @@ export async function PUT(request: Request) {
         summary: data.summary,
         jobTitle: data.jobTitle,
         photoUrl: data.photoUrl,
+        birthDate: data.birthDate ? new Date(data.birthDate) : null,
+        drivingLicenses: data.drivingLicenses || null,
       },
       create: {
         userId: session.user.id,
@@ -95,6 +97,8 @@ export async function PUT(request: Request) {
         summary: data.summary,
         jobTitle: data.jobTitle,
         photoUrl: data.photoUrl,
+        birthDate: data.birthDate ? new Date(data.birthDate) : null,
+        drivingLicenses: data.drivingLicenses || null,
       },
     })
 

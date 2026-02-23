@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useId } from 'react'
 import {
   DndContext,
   closestCenter,
@@ -82,6 +82,7 @@ export function SortableList<T>({
   direction = 'vertical',
   className,
 }: SortableListProps<T>) {
+  const dndId = useId()
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
@@ -111,6 +112,7 @@ export function SortableList<T>({
 
   return (
     <DndContext
+      id={dndId}
       sensors={sensors}
       collisionDetection={closestCenter}
       onDragEnd={handleDragEnd}

@@ -52,6 +52,8 @@ export function ProfileForm({
     website: initialProfile?.website || '',
     summary: initialProfile?.summary || '',
     photoUrl: initialProfile?.photoUrl || '',
+    birthDate: initialProfile?.birthDate ? formatDate(initialProfile.birthDate, 'input') : '',
+    drivingLicenses: initialProfile?.drivingLicenses || '',
   })
 
   const [experiences, setExperiences] = useState(initialExperiences)
@@ -350,6 +352,14 @@ export function ProfileForm({
           <div>
             <Label htmlFor="jobTitle">Titre professionnel</Label>
             <Input id="jobTitle" name="jobTitle" value={profile.jobTitle} onChange={handleProfileChange} placeholder="Ex: Développeur Full Stack" />
+          </div>
+          <div>
+            <Label htmlFor="birthDate">Date de naissance</Label>
+            <Input id="birthDate" name="birthDate" type="date" value={profile.birthDate} onChange={handleProfileChange} />
+          </div>
+          <div>
+            <Label htmlFor="drivingLicenses">Permis</Label>
+            <Input id="drivingLicenses" name="drivingLicenses" value={profile.drivingLicenses} onChange={handleProfileChange} placeholder="Ex: B, A2" />
           </div>
           <div>
             <Label htmlFor="city">Ville</Label>
