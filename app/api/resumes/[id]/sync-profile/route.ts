@@ -36,6 +36,10 @@ export async function POST(
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
     })
+    const userCertifications = await prisma.userCertification.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
     const userSkills = await prisma.userSkill.findMany({
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
@@ -57,6 +61,7 @@ export async function POST(
     await prisma.personalInfo.deleteMany({ where: { resumeId: id } })
     await prisma.experience.deleteMany({ where: { resumeId: id } })
     await prisma.education.deleteMany({ where: { resumeId: id } })
+    await prisma.certification.deleteMany({ where: { resumeId: id } })
     await prisma.skill.deleteMany({ where: { resumeId: id } })
     await prisma.language.deleteMany({ where: { resumeId: id } })
     await prisma.project.deleteMany({ where: { resumeId: id } })
@@ -113,6 +118,21 @@ export async function POST(
           current: edu.current,
           description: edu.description,
           gpa: edu.gpa,
+          order: index,
+        })),
+      })
+    }
+
+    if (userCertifications.length > 0) {
+      await prisma.certification.createMany({
+        data: userCertifications.map((cert, index) => ({
+          resumeId: id,
+          name: cert.name,
+          issuer: cert.issuer,
+          issueDate: cert.issueDate,
+          expiryDate: cert.expiryDate,
+          credentialId: cert.credentialId,
+          credentialUrl: cert.credentialUrl,
           order: index,
         })),
       })
