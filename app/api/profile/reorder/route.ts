@@ -8,6 +8,7 @@ const modelMap = {
   experiences: 'userExperience',
   educations: 'userEducation',
   certifications: 'userCertification',
+  projects: 'userProject',
   skills: 'userSkill',
   languages: 'userLanguage',
   interests: 'userInterest',

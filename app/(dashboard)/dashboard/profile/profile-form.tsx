@@ -24,6 +24,7 @@ interface ProfileFormProps {
   initialExperiences: any[]
   initialEducations: any[]
   initialCertifications: any[]
+  initialProjects: any[]
   initialSkills: any[]
   initialLanguages: any[]
   initialInterests: any[]
@@ -34,6 +35,7 @@ export function ProfileForm({
   initialExperiences,
   initialEducations,
   initialCertifications,
+  initialProjects,
   initialSkills,
   initialLanguages,
   initialInterests,
@@ -60,6 +62,7 @@ export function ProfileForm({
   const [experiences, setExperiences] = useState(initialExperiences)
   const [educations, setEducations] = useState(initialEducations)
   const [certifications, setCertifications] = useState(initialCertifications)
+  const [projects, setProjects] = useState(initialProjects)
   const [skills, setSkills] = useState(initialSkills)
   const [languages, setLanguages] = useState(initialLanguages)
   const [interests, setInterests] = useState(initialInterests)
@@ -249,6 +252,32 @@ export function ProfileForm({
   const deleteInterest = async (id: string) => {
     await fetch(`/api/profile/interests?id=${id}`, { method: 'DELETE' })
     setInterests(prev => prev.filter(i => i.id !== id))
+  }
+
+  const addProject = async () => {
+    const res = await fetch('/api/profile/projects', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: '' }),
+    })
+    if (res.ok) {
+      const { project } = await res.json()
+      setProjects(prev => [...prev, project])
+    }
+  }
+
+  const updateProject = async (id: string, data: Record<string, unknown>) => {
+    await fetch('/api/profile/projects', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, ...data }),
+    })
+  }
+
+  const deleteProject = async (id: string) => {
+    await fetch(`/api/profile/projects?id=${id}`, { method: 'DELETE' })
+    setProjects(prev => prev.filter(p => p.id !== id))
+    toast.success('Projet supprimé')
   }
 
   return (
@@ -461,6 +490,32 @@ export function ProfileForm({
           />
         ) : (
           <p className="text-gray-500 text-center py-4">Aucune formation ajoutée</p>
+        )}
+      </section>
+
+      {/* Projets */}
+      <section className="bg-white p-6 rounded-xl border">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Projets</h2>
+          <Button variant="outline" onClick={addProject}>+ Ajouter</Button>
+        </div>
+        {projects.length > 0 ? (
+          <SortableList
+            items={projects}
+            onReorder={(newItems) => { setProjects(newItems); saveOrder('projects', newItems) }}
+            keyExtractor={(project) => project.id}
+            direction="vertical"
+            renderItem={(project, dragHandleProps) => (
+              <ProjectCard
+                project={project}
+                onUpdate={(data) => updateProject(project.id, data)}
+                onDelete={() => deleteProject(project.id)}
+                dragHandleProps={dragHandleProps}
+              />
+            )}
+          />
+        ) : (
+          <p className="text-gray-500 text-center py-4">Aucun projet ajouté</p>
         )}
       </section>
 
@@ -708,6 +763,102 @@ function CertificationCard({ certification, onDelete, dragHandleProps }: { certi
           <a href={data.credentialUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
             Voir le certificat
           </a>
+        )}
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project: any; onUpdate: (data: Record<string, unknown>) => void; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const [data, setData] = useState(project)
+  const [editing, setEditing] = useState(!project.name)
+  const [techInput, setTechInput] = useState('')
+
+  const save = () => {
+    onUpdate(data)
+    setEditing(false)
+    toast.success('Projet sauvegardé')
+  }
+
+  const addTech = () => {
+    if (!techInput.trim()) return
+    setData((prev: typeof data) => ({ ...prev, technologies: [...(prev.technologies || []), techInput.trim()] }))
+    setTechInput('')
+  }
+
+  const removeTech = (index: number) => {
+    setData((prev: typeof data) => ({
+      ...prev,
+      technologies: prev.technologies.filter((_: string, i: number) => i !== index),
+    }))
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <Input placeholder="Nom du projet" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
+          <Input placeholder="URL (optionnel)" value={data.url || ''} onChange={(e) => setData({ ...data, url: e.target.value })} />
+        </div>
+        <textarea
+          placeholder="Description du projet"
+          value={data.description || ''}
+          onChange={(e) => setData({ ...data, description: e.target.value })}
+          className="w-full px-3 py-2 border rounded-lg text-gray-900"
+          rows={3}
+        />
+        {/* Outils utilisés */}
+        <div>
+          <Label>Outils utilisés</Label>
+          <div className="flex items-center gap-2 mt-1">
+            <Input
+              placeholder="Ex: Excel, Canva, React..."
+              value={techInput}
+              onChange={(e) => setTechInput(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTech() } }}
+            />
+            <Button type="button" size="sm" variant="outline" onClick={addTech}>+</Button>
+          </div>
+          {data.technologies?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-2">
+              {data.technologies.map((tech: string, i: number) => (
+                <span key={i} className="flex items-center gap-1 bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
+                  {tech}
+                  <button onClick={() => removeTech(i)} className="hover:text-red-500">×</button>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={save}>Sauvegarder</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2">
+          <h3 className="font-medium text-gray-900">{data.name || 'Nouveau projet'}</h3>
+          {data.url && (
+            <a href={data.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+              Voir
+            </a>
+          )}
+        </div>
+        {data.description && <p className="text-sm text-gray-600 mt-1 line-clamp-2">{data.description}</p>}
+        {data.technologies?.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-2">
+            {data.technologies.map((tech: string, i: number) => (
+              <span key={i} className="bg-purple-100 text-purple-700 rounded-full px-2 py-0.5 text-xs">{tech}</span>
+            ))}
+          </div>
         )}
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
