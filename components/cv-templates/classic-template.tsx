@@ -18,6 +18,7 @@ interface CVData {
   experiences: any[]
   educations: any[]
   certifications?: any[]
+  projects?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -162,6 +163,37 @@ export function ClassicTemplate({ data }: { data: CVData }) {
                   </div>
                   <p className="text-gray-700 italic">{edu.institution}</p>
                   {edu.field && <p className="text-sm text-gray-500">{edu.field}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Projets */}
+        {data.projects && data.projects.length > 0 && (
+          <section className="mb-6">
+            <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
+              Projets
+            </h2>
+            <div className="space-y-3">
+              {data.projects.map((project: any, i: number) => (
+                <div key={i}>
+                  <div className="flex justify-between items-baseline">
+                    <h3 className="font-semibold text-gray-900">{project.name}</h3>
+                    {project.url && (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 italic hover:underline">
+                        Lien
+                      </a>
+                    )}
+                  </div>
+                  {project.description && (
+                    <p className="text-sm text-gray-600 mt-1 leading-relaxed">{project.description}</p>
+                  )}
+                  {project.technologies?.length > 0 && (
+                    <p className="text-xs text-gray-500 mt-1">
+                      Outils : {project.technologies.join(', ')}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>

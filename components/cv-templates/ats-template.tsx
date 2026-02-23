@@ -18,6 +18,7 @@ interface CVData {
   experiences: any[]
   educations: any[]
   certifications?: any[]
+  projects?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -130,6 +131,33 @@ export function ATSTemplate({ data }: { data: CVData }) {
                     {edu.institution} | {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
                   </div>
                   {edu.gpa && <div className="text-sm text-black">Mention: {edu.gpa}</div>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Projets */}
+        {data.projects && data.projects.length > 0 && (
+          <section className="mb-5">
+            <h2 className="text-base font-bold text-black uppercase mb-2">
+              PROJETS
+            </h2>
+            <div className="space-y-3">
+              {data.projects.map((project: any, i: number) => (
+                <div key={i}>
+                  <div className="font-bold text-black">{project.name}</div>
+                  {project.description && (
+                    <p className="text-sm text-black mt-1">{project.description}</p>
+                  )}
+                  {project.technologies?.length > 0 && (
+                    <div className="text-sm text-black">
+                      Outils : {project.technologies.join(', ')}
+                    </div>
+                  )}
+                  {project.url && (
+                    <div className="text-sm text-black">{project.url}</div>
+                  )}
                 </div>
               ))}
             </div>

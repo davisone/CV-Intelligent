@@ -44,6 +44,10 @@ export async function POST(
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
     })
+    const userProjects = await prisma.userProject.findMany({
+      where: { userId: session.user.id },
+      orderBy: { order: 'asc' },
+    })
     const userInterests = await prisma.userInterest.findMany({
       where: { userId: session.user.id },
       orderBy: { order: 'asc' },
@@ -55,6 +59,7 @@ export async function POST(
     await prisma.education.deleteMany({ where: { resumeId: id } })
     await prisma.skill.deleteMany({ where: { resumeId: id } })
     await prisma.language.deleteMany({ where: { resumeId: id } })
+    await prisma.project.deleteMany({ where: { resumeId: id } })
     await prisma.interest.deleteMany({ where: { resumeId: id } })
 
     // Créer les nouvelles données depuis le profil
@@ -131,6 +136,19 @@ export async function POST(
           resumeId: id,
           name: lang.name,
           level: lang.level,
+          order: index,
+        })),
+      })
+    }
+
+    if (userProjects.length > 0) {
+      await prisma.project.createMany({
+        data: userProjects.map((project, index) => ({
+          resumeId: id,
+          name: project.name,
+          description: project.description,
+          url: project.url,
+          technologies: project.technologies,
           order: index,
         })),
       })

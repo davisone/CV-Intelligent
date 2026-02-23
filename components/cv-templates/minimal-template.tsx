@@ -18,6 +18,7 @@ interface CVData {
   experiences: any[]
   educations: any[]
   certifications?: any[]
+  projects?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -147,6 +148,39 @@ export function MinimalTemplate({ data }: { data: CVData }) {
                     <h3 className="font-medium text-gray-900">{edu.degree}</h3>
                     <p className="text-gray-500">{edu.institution}</p>
                     {edu.field && <p className="text-sm text-gray-400">{edu.field}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Projets */}
+        {data.projects && data.projects.length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
+              Projets
+            </h2>
+            <div className="space-y-6">
+              {data.projects.map((project: any, i: number) => (
+                <div key={i} className="grid grid-cols-[120px_1fr] gap-8">
+                  <div className="text-sm text-gray-400">
+                    {project.url ? (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
+                        Lien
+                      </a>
+                    ) : (
+                      <span>—</span>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">{project.name}</h3>
+                    {project.description && (
+                      <p className="text-sm text-gray-500 mt-1 leading-relaxed">{project.description}</p>
+                    )}
+                    {project.technologies?.length > 0 && (
+                      <p className="text-xs text-gray-400 mt-1">{project.technologies.join(' · ')}</p>
+                    )}
                   </div>
                 </div>
               ))}

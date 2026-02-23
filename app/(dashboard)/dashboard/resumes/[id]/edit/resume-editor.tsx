@@ -82,6 +82,14 @@ interface LanguageData {
   level: LanguageLevel
 }
 
+interface ProjectData {
+  id: string
+  name: string
+  description: string | null
+  url: string | null
+  technologies: string[]
+}
+
 interface InterestData {
   id: string
   name: string
@@ -142,6 +150,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const [experiences, setExperiences] = useState<ExperienceData[]>(resume.experiences || [])
   const [educations, setEducations] = useState<EducationData[]>(resume.educations || [])
   const [certifications, setCertifications] = useState<CertificationData[]>(resume.certifications || [])
+  const [projects, setProjects] = useState<ProjectData[]>(resume.projects || [])
   const [skills, setSkills] = useState<SkillData[]>(resume.skills || [])
   const [languages, setLanguages] = useState<LanguageData[]>(resume.languages || [])
   const [interests, setInterests] = useState<InterestData[]>(resume.interests || [])
@@ -162,10 +171,11 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     experiences,
     educations,
     certifications,
+    projects,
     skills,
     languages,
     interests,
-  }), [title, personalInfo, experiences, educations, certifications, skills, languages, interests])
+  }), [title, personalInfo, experiences, educations, certifications, projects, skills, languages, interests])
 
   // Fonction de sauvegarde pour l'auto-save
   const performSave = useCallback(async (data: typeof autoSaveData) => {
@@ -219,6 +229,12 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
         languages: data.languages.map(lang => ({
           name: lang.name,
           level: lang.level,
+        })),
+        projects: data.projects.map(project => ({
+          name: project.name,
+          description: project.description || undefined,
+          url: project.url || undefined,
+          technologies: project.technologies || [],
         })),
         interests: data.interests.map(interest => ({
           name: interest.name,
@@ -328,6 +344,27 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const deleteCertification = (id: string) => {
     setCertifications(prev => prev.filter(cert => cert.id !== id))
     toast.success('Certification supprimée')
+  }
+
+  // Handlers pour les projets
+  const addProject = () => {
+    const newProject: ProjectData = {
+      id: generateId(),
+      name: '',
+      description: null,
+      url: null,
+      technologies: [],
+    }
+    setProjects(prev => [...prev, newProject])
+  }
+
+  const updateProject = (id: string, data: Partial<ProjectData>) => {
+    setProjects(prev => prev.map(project => project.id === id ? { ...project, ...data } : project))
+  }
+
+  const deleteProject = (id: string) => {
+    setProjects(prev => prev.filter(project => project.id !== id))
+    toast.success('Projet supprimé')
   }
 
   // Handlers pour les compétences
@@ -634,6 +671,7 @@ ${interests.map(i => i.name).join(', ')}
     experiences,
     educations,
     certifications,
+    projects,
     skills,
     languages,
     interests,
@@ -1043,6 +1081,38 @@ ${interests.map(i => i.name).join(', ')}
               />
             ) : (
               <p className="text-gray-500 text-sm text-center py-4">Aucune formation ajoutée</p>
+            )}
+          </section>
+
+          {/* Projets avec Drag & Drop */}
+          <section className="bg-white p-6 rounded-xl border">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Projets ({projects.length})
+              </h2>
+              <Button variant="outline" size="sm" onClick={addProject}>
+                <Plus className="w-4 h-4 mr-1" />
+                Ajouter
+              </Button>
+            </div>
+            {projects.length > 0 ? (
+              <SortableList
+                items={projects}
+                onReorder={setProjects}
+                keyExtractor={(project) => project.id}
+                direction="vertical"
+                renderItem={(project, dragHandleProps) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onUpdate={(data) => updateProject(project.id, data)}
+                    onDelete={() => deleteProject(project.id)}
+                    dragHandleProps={dragHandleProps}
+                  />
+                )}
+              />
+            ) : (
+              <p className="text-gray-500 text-sm text-center py-4">Aucun projet ajouté</p>
             )}
           </section>
 
@@ -1583,6 +1653,132 @@ function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps 
         </p>
         {data.credentialId && (
           <p className="text-xs text-gray-400">ID: {data.credentialId}</p>
+        )}
+      </div>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+    </div>
+  )
+}
+
+// Composant ProjectCard avec Drag Handle
+interface ProjectCardProps {
+  project: ProjectData
+  onUpdate: (data: Partial<ProjectData>) => void
+  onDelete: () => void
+  dragHandleProps: DragHandleProps
+}
+
+function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCardProps) {
+  const [data, setData] = useState(project)
+  const [editing, setEditing] = useState(!project.name)
+  const [techInput, setTechInput] = useState('')
+
+  const handleChange = (field: keyof ProjectData, value: string | null) => {
+    setData({ ...data, [field]: value })
+  }
+
+  const save = () => {
+    onUpdate(data)
+    setEditing(false)
+  }
+
+  const addTech = () => {
+    if (!techInput.trim()) return
+    const newTechs = [...(data.technologies || []), techInput.trim()]
+    setData({ ...data, technologies: newTechs })
+    setTechInput('')
+  }
+
+  const removeTech = (index: number) => {
+    setData({ ...data, technologies: data.technologies.filter((_, i) => i !== index) })
+  }
+
+  if (editing) {
+    return (
+      <div className="border rounded-lg p-4 space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <Label>Nom du projet</Label>
+            <Input
+              placeholder="Ex: Application de gestion"
+              value={data.name}
+              onChange={(e) => handleChange('name', e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>URL (optionnel)</Label>
+            <Input
+              placeholder="https://..."
+              value={data.url || ''}
+              onChange={(e) => handleChange('url', e.target.value || null)}
+            />
+          </div>
+        </div>
+        <div>
+          <Label>Description</Label>
+          <textarea
+            placeholder="Décrivez le projet..."
+            value={data.description || ''}
+            onChange={(e) => setData({ ...data, description: e.target.value || null })}
+            className="w-full px-3 py-2 border rounded-lg text-gray-900 text-sm"
+            rows={3}
+          />
+        </div>
+        <div>
+          <Label>Outils utilisés</Label>
+          <div className="flex items-center gap-2 mt-1">
+            <Input
+              placeholder="Ex: Excel, Canva, React..."
+              value={techInput}
+              onChange={(e) => setTechInput(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTech() } }}
+            />
+            <Button type="button" size="sm" variant="outline" onClick={addTech}>
+              <Plus className="w-4 h-4" />
+            </Button>
+          </div>
+          {data.technologies?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-2">
+              {data.technologies.map((tech, i) => (
+                <span key={i} className="flex items-center gap-1 bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
+                  {tech}
+                  <button onClick={() => removeTech(i)} className="hover:text-red-500">×</button>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button size="sm" onClick={save}>
+            <Check className="w-4 h-4 mr-1" />
+            Valider
+          </Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="border rounded-lg p-4 flex items-start gap-2">
+      <DragHandle dragHandleProps={dragHandleProps} />
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2">
+          <h3 className="font-medium text-gray-900">{data.name || 'Nouveau projet'}</h3>
+          {data.url && (
+            <a href={data.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+              Voir
+            </a>
+          )}
+        </div>
+        {data.description && <p className="text-sm text-gray-600 mt-1 line-clamp-2">{data.description}</p>}
+        {data.technologies?.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-2">
+            {data.technologies.map((tech, i) => (
+              <span key={i} className="bg-purple-100 text-purple-700 rounded-full px-2 py-0.5 text-xs">{tech}</span>
+            ))}
+          </div>
         )}
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>

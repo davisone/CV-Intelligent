@@ -18,6 +18,7 @@ interface CVData {
   experiences: any[]
   educations: any[]
   certifications?: any[]
+  projects?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -183,6 +184,42 @@ export function ModernTemplate({ data }: { data: CVData }) {
                           {formatDate(edu.startDate)} — {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
                         </span>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Projets */}
+            {data.projects && data.projects.length > 0 && (
+              <section>
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                  Projets
+                </h2>
+                <div className="space-y-5">
+                  {data.projects.map((project: any, i: number) => (
+                    <div key={i} className="relative pl-4 border-l-2 border-slate-200">
+                      <div className="absolute -left-[5px] top-1 w-2 h-2 bg-slate-800 rounded-full" />
+                      <div className="flex justify-between items-start mb-1">
+                        <h3 className="font-bold text-slate-900">{project.name}</h3>
+                        {project.url && (
+                          <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline whitespace-nowrap">
+                            Voir le projet
+                          </a>
+                        )}
+                      </div>
+                      {project.description && (
+                        <p className="text-sm text-slate-600 leading-relaxed">{project.description}</p>
+                      )}
+                      {project.technologies?.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-2">
+                          {project.technologies.map((tech: string, j: number) => (
+                            <span key={j} className="text-xs px-2 py-0.5 bg-slate-100 text-slate-600 rounded">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

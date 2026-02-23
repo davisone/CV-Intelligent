@@ -18,6 +18,7 @@ interface CVData {
   experiences: any[]
   educations: any[]
   certifications?: any[]
+  projects?: any[]
   skills: any[]
   languages: any[]
   interests?: any[]
@@ -289,6 +290,47 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     </div>
                     <p className="text-gray-600">{edu.institution}</p>
                     {edu.field && <p className="text-sm text-gray-500">{edu.field}</p>}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Projets */}
+          {data.projects && data.projects.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 flex items-center justify-center text-white text-sm">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </span>
+                Projets
+              </h2>
+              <div className="space-y-4 pl-10">
+                {data.projects.map((project: any, i: number) => (
+                  <div key={i} className="relative">
+                    <div className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-gradient-to-r from-rose-500 to-purple-500" />
+                    <div className="flex justify-between items-start mb-1">
+                      <h3 className="font-bold text-gray-900">{project.name}</h3>
+                      {project.url && (
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sm text-purple-600 font-medium hover:underline whitespace-nowrap ml-4">
+                          Voir
+                        </a>
+                      )}
+                    </div>
+                    {project.description && (
+                      <p className="text-sm text-gray-500 leading-relaxed">{project.description}</p>
+                    )}
+                    {project.technologies?.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {project.technologies.map((tech: string, j: number) => (
+                          <span key={j} className="text-xs px-2 py-0.5 bg-purple-100 text-purple-600 rounded-full">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
