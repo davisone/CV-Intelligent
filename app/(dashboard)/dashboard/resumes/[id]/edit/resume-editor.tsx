@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label'
 import { ConfirmDialog, useConfirmDialog } from '@/components/ui/confirm-dialog'
 import { SortableList, DragHandle, DragHandleProps } from '@/components/ui/sortable-list'
 import { CheckoutModal } from '@/components/payments/checkout-modal'
+import { ReviewPromptModal } from '@/components/review-prompt'
 import { PaymentRequired } from '@/components/payments/payment-required'
 import { useAutoSave } from '@/hooks/useAutoSave'
 import { useUnsavedChangesWarning } from '@/hooks/useUnsavedChangesWarning'
@@ -123,6 +124,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const [isAiLoading, setIsAiLoading] = useState<string | null>(null)
   const [showAtsPanel, setShowAtsPanel] = useState(false)
   const [showCheckoutModal, setShowCheckoutModal] = useState(false)
+  const [showReviewPrompt, setShowReviewPrompt] = useState(false)
   const [atsScore, setAtsScore] = useState<{
     score: number
     breakdown: { formatting: number; keywords: number; structure: number; content: number }
@@ -658,6 +660,7 @@ ${interests.map(i => i.name).join(', ')}
       pdf.save(fileName)
 
       toast.success('PDF téléchargé !')
+      setShowReviewPrompt(true)
     } catch (error) {
       console.error('Erreur génération PDF:', error)
       toast.error('Erreur lors de la génération du PDF')
@@ -1293,6 +1296,11 @@ ${interests.map(i => i.name).join(', ')}
 
       {/* Dialogs de confirmation */}
       <syncProfileDialog.ConfirmDialogComponent />
+
+      {/* Modal avis Google */}
+      {showReviewPrompt && (
+        <ReviewPromptModal onClose={() => setShowReviewPrompt(false)} />
+      )}
 
       {/* Modal de paiement */}
       <CheckoutModal

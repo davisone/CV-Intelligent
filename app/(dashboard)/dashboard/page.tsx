@@ -6,6 +6,7 @@ import { prisma } from '@/lib/db/prisma'
 import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
 import { EmptyState } from '@/components/ui/empty-state'
+import { ReviewReminder } from '@/components/review-prompt'
 import { Plus, FileText, Sparkles, TrendingUp, Clock } from 'lucide-react'
 
 export default async function DashboardPage() {
@@ -155,6 +156,11 @@ export default async function DashboardPage() {
           <p className="text-4xl font-bold text-[#1F1A17] mb-1">{templatesUsed}</p>
           <p className="text-sm text-[#6B6560]">Templates utilisés</p>
         </div>
+
+        {/* Encart avis Google */}
+        <Suspense fallback={null}>
+          <ReviewReminder />
+        </Suspense>
 
       </div>
 

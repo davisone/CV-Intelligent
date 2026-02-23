@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { MapPin } from 'lucide-react'
+import { MapPin, Star } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -53,6 +53,15 @@ export function Footer() {
               >
                 Créer un CV gratuit
               </Link>
+              <a
+                href="https://g.page/r/CcSyetXUJJrpEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[#6B6560] hover:text-[#722F37] transition-colors"
+              >
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                Donner votre avis
+              </a>
             </nav>
           </div>
 
