@@ -63,7 +63,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="h-16 border-b border-[#E0D6C8] bg-[#F3EDE5] flex items-center justify-between px-6">
+    <header className="h-16 border-b border-[#E0D6C8] bg-[#F3EDE5] flex items-center justify-between px-6 sticky top-0 z-40">
       {/* Logo */}
       <Link href="/dashboard" className="text-xl font-bold text-[#722F37] hover:text-[#8B3A44] transition-colors">
         CV Builder

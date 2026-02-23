@@ -1,11 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { toast } from 'sonner'
+import { useAutoSave } from '@/hooks/useAutoSave'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { SortableList, DragHandle, DragHandleProps } from '@/components/ui/sortable-list'
+import { cn } from '@/lib/utils/helpers'
 
 // Helper pour formater les dates
 const formatDate = (date: Date | string | null | undefined, format: 'input' | 'display' = 'display') => {
@@ -36,7 +38,6 @@ export function ProfileForm({
   initialLanguages,
   initialInterests,
 }: ProfileFormProps) {
-  const [isLoading, setIsLoading] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
   const [profile, setProfile] = useState({
     firstName: initialProfile?.firstName || '',
@@ -108,25 +109,20 @@ export function ProfileForm({
     }
   }
 
-  const saveProfile = async () => {
-    setIsLoading(true)
-    try {
-      const res = await fetch('/api/profile', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(profile),
-      })
-      if (res.ok) {
-        toast.success('Profil sauvegardé')
-      } else {
-        toast.error('Erreur lors de la sauvegarde')
-      }
-    } catch {
-      toast.error('Erreur serveur')
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const onSaveProfile = useCallback(async (data: typeof profile) => {
+    const res = await fetch('/api/profile', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    if (!res.ok) throw new Error('Erreur sauvegarde')
+  }, [])
+
+  const { isSaving, hasUnsavedChanges } = useAutoSave({
+    data: profile,
+    onSave: onSaveProfile,
+    delay: 1500,
+  })
 
   const addExperience = async () => {
     const res = await fetch('/api/profile/experiences', {
@@ -257,6 +253,31 @@ export function ProfileForm({
 
   return (
     <div className="space-y-8">
+      {/* Indicateur de sauvegarde sticky */}
+      <div className="sticky top-16 z-30 -mx-6 px-6 -mt-2 pb-2 pt-2 bg-[#FBF8F4]">
+        <div className={cn(
+          'flex items-center gap-2 text-sm transition-opacity duration-300',
+          isSaving ? 'text-gray-500' : hasUnsavedChanges ? 'text-amber-600' : 'text-green-600'
+        )}>
+          {isSaving ? (
+            <>
+              <span className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
+              Sauvegarde en cours...
+            </>
+          ) : hasUnsavedChanges ? (
+            <>
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              Modifications non sauvegardées
+            </>
+          ) : (
+            <>
+              <span className="w-2 h-2 rounded-full bg-green-500" />
+              Profil sauvegardé
+            </>
+          )}
+        </div>
+      </div>
+
       {/* Photo de profil */}
       <section className="bg-white p-6 rounded-xl border">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Photo de profil</h2>
@@ -390,9 +411,6 @@ export function ProfileForm({
             />
           </div>
         </div>
-        <Button onClick={saveProfile} isLoading={isLoading} className="mt-4">
-          Sauvegarder le profil
-        </Button>
       </section>
 
       {/* Expériences */}
