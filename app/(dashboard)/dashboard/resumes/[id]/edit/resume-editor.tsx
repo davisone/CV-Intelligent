@@ -1,10 +1,8 @@
 'use client'
 
-import { useState, useRef, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
-import { toPng } from 'html-to-image'
-import { jsPDF } from 'jspdf'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -55,6 +53,7 @@ interface EducationData {
   field: string | null
   startDate: string
   endDate: string | null
+  current: boolean
   gpa: string | null
 }
 
@@ -117,7 +116,6 @@ interface ResumeEditorProps {
 
 export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requiresPayment = false }: ResumeEditorProps) {
   const router = useRouter()
-  const cvRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
@@ -213,7 +211,8 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
           degree: edu.degree,
           field: edu.field || undefined,
           startDate: edu.startDate,
-          endDate: edu.endDate || undefined,
+          endDate: edu.current ? undefined : (edu.endDate || undefined),
+          current: edu.current,
           gpa: edu.gpa || undefined,
         })),
         certifications: data.certifications.map(cert => ({
@@ -245,7 +244,8 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     })
 
     if (!response.ok) {
-      throw new Error('Erreur lors de la sauvegarde')
+      const errorData = await response.json().catch(() => null)
+      throw new Error(errorData?.error || 'Erreur lors de la sauvegarde')
     }
   }, [resume.id])
 
@@ -272,8 +272,8 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
       markAsSaved()
       toast.success('CV sauvegardé !')
       router.refresh()
-    } catch {
-      toast.error('Erreur lors de la sauvegarde')
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Erreur lors de la sauvegarde')
     } finally {
       setIsLoading(false)
     }
@@ -311,6 +311,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
       field: null,
       startDate: new Date().toISOString(),
       endDate: null,
+      current: false,
       gpa: null,
     }
     setEducations(prev => [...prev, newEdu])
@@ -570,100 +571,25 @@ ${interests.map(i => i.name).join(', ')}
   }
 
   const downloadPDF = async () => {
-    if (!cvRef.current) return
-
     setIsGeneratingPdf(true)
     try {
-      // Créer un conteneur hors-écran pour la capture avec dimensions A4 exactes
-      const offScreenContainer = document.createElement('div')
-      offScreenContainer.style.cssText = `
-        position: fixed;
-        left: -9999px;
-        top: 0;
-        width: 21cm;
-        min-height: 29.7cm;
-        background: white;
-        z-index: -1;
-      `
-
-      // Cloner le contenu du CV dans le conteneur hors-écran
-      const cvClone = cvRef.current.cloneNode(true) as HTMLElement
-      cvClone.style.cssText = `
-        width: 21cm;
-        min-height: 29.7cm;
-        transform: none;
-        margin: 0;
-      `
-
-      // S'assurer que le premier enfant (le template) a aussi les bonnes dimensions
-      const templateElement = cvClone.firstElementChild as HTMLElement
-      if (templateElement) {
-        templateElement.style.width = '21cm'
-        templateElement.style.minHeight = '29.7cm'
-        templateElement.style.margin = '0'
+      const response = await fetch(`/api/resumes/${resume.id}/pdf`)
+      if (!response.ok) {
+        const error = await response.json().catch(() => null)
+        throw new Error(error?.error || 'Erreur lors de la génération du PDF')
       }
-
-      offScreenContainer.appendChild(cvClone)
-      document.body.appendChild(offScreenContainer)
-
-      // Attendre le rendu complet
-      await new Promise(resolve => setTimeout(resolve, 200))
-
-      // Capturer le contenu cloné à haute résolution
-      const imgData = await toPng(cvClone, {
-        quality: 1,
-        pixelRatio: 2,
-        backgroundColor: '#ffffff',
-        cacheBust: true,
-      })
-
-      // Nettoyer le conteneur hors-écran
-      document.body.removeChild(offScreenContainer)
-
-      // Charger l'image pour obtenir ses dimensions réelles
-      const img = new Image()
-      img.src = imgData
-      await new Promise((resolve) => { img.onload = resolve })
-
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
-      })
-
-      const pdfWidth = pdf.internal.pageSize.getWidth() // 210mm
-      const pdfHeight = pdf.internal.pageSize.getHeight() // 297mm
-
-      // Calculer les dimensions pour que l'image remplisse la page A4
-      // en conservant le ratio si nécessaire
-      const imgRatio = img.width / img.height
-      const pdfRatio = pdfWidth / pdfHeight
-
-      let finalWidth = pdfWidth
-      let finalHeight = pdfHeight
-      let xOffset = 0
-      let yOffset = 0
-
-      if (imgRatio > pdfRatio) {
-        // Image plus large - ajuster à la largeur
-        finalHeight = pdfWidth / imgRatio
-        yOffset = (pdfHeight - finalHeight) / 2
-      } else if (imgRatio < pdfRatio) {
-        // Image plus haute - ajuster à la hauteur
-        finalWidth = pdfHeight * imgRatio
-        xOffset = (pdfWidth - finalWidth) / 2
-      }
-
-      pdf.addImage(imgData, 'PNG', xOffset, yOffset, finalWidth, finalHeight)
-
-      const fileName = `${title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_cv.pdf`
-      pdf.save(fileName)
-
+      const blob = await response.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${title.replace(/[^a-z0-9àâäéèêëïîôùûüÿçæœ\s-]/gi, '').replace(/\s+/g, '_')}_cv.pdf`
+      a.click()
+      URL.revokeObjectURL(url)
       toast.success('PDF téléchargé !')
       setShowReviewPrompt(true)
     } catch (error) {
       console.error('Erreur génération PDF:', error)
-      toast.error('Erreur lors de la génération du PDF')
+      toast.error(error instanceof Error ? error.message : 'Erreur lors de la génération du PDF')
     } finally {
       setIsGeneratingPdf(false)
     }
@@ -1275,7 +1201,6 @@ ${interests.map(i => i.name).join(', ')}
           <div className="overflow-auto">
             <div className="min-w-fit flex justify-center">
               <div
-                ref={cvRef}
                 data-cv-container
                 style={{
                   width: '21cm',
@@ -1473,8 +1398,12 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
   const [data, setData] = useState(education)
   const [editing, setEditing] = useState(!education.institution)
 
-  const handleChange = (field: keyof EducationData, value: string | null) => {
-    setData({ ...data, [field]: value })
+  const handleChange = (field: keyof EducationData, value: string | boolean | null) => {
+    const newData = { ...data, [field]: value }
+    if (field === 'current' && value === true) {
+      newData.endDate = null
+    }
+    setData(newData)
   }
 
   const save = () => {
@@ -1532,9 +1461,19 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
               type="date"
               value={data.endDate ? formatDate(data.endDate, 'input') : ''}
               onChange={(e) => handleChange('endDate', e.target.value || null)}
+              disabled={data.current}
             />
           </div>
         </div>
+        <label className="flex items-center gap-2 text-sm text-gray-700">
+          <input
+            type="checkbox"
+            checked={data.current}
+            onChange={(e) => handleChange('current', e.target.checked)}
+            className="rounded"
+          />
+          Formation en cours
+        </label>
         <div className="flex flex-wrap gap-2">
           <Button size="sm" onClick={save}>
             <Check className="w-4 h-4 mr-1" />
@@ -1555,7 +1494,7 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
         <p className="text-gray-600">{data.institution || 'Établissement'}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
         <p className="text-sm text-gray-500">
-          {formatDate(data.startDate)} - {data.endDate ? formatDate(data.endDate) : 'En cours'}
+          {formatDate(data.startDate)} - {data.current ? 'En cours' : data.endDate ? formatDate(data.endDate) : 'En cours'}
         </p>
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
