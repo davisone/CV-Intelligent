@@ -181,9 +181,12 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     const validatedData = updateResumeSchema.safeParse(body)
 
     if (!validatedData.success) {
-      console.error('[RESUME_PATCH] Validation error:', JSON.stringify(validatedData.error.issues))
+      const issue = validatedData.error.issues[0]
+      const fieldPath = issue?.path?.join('.') || 'inconnu'
+      const message = issue?.message || 'Données invalides'
+      console.error('[RESUME_PATCH] Validation error:', fieldPath, message)
       return NextResponse.json(
-        { error: validatedData.error.issues[0]?.message ?? 'Invalid input' },
+        { error: `${message} (champ : ${fieldPath})` },
         { status: 400 }
       )
     }

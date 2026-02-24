@@ -35,6 +35,10 @@ export function ClassicTemplate({ data }: { data: CVData }) {
     return `https://${url}`
   }
 
+  const displayUrl = (url: string) => {
+    return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  }
+
   const levelLabels: Record<string, string> = {
     BEGINNER: 'Débutant',
     INTERMEDIATE: 'Intermédiaire',
@@ -181,8 +185,8 @@ export function ClassicTemplate({ data }: { data: CVData }) {
                   <div className="flex justify-between items-baseline">
                     <h3 className="font-semibold text-gray-900">{project.name}</h3>
                     {project.url && (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 italic hover:underline">
-                        Lien
+                      <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 italic hover:underline">
+                        {displayUrl(formatUrl(project.url))}
                       </a>
                     )}
                   </div>

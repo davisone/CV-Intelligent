@@ -35,6 +35,10 @@ export function ATSTemplate({ data }: { data: CVData }) {
     return `https://${url}`
   }
 
+  const displayUrl = (url: string) => {
+    return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  }
+
   const levelLabels: Record<string, string> = {
     BEGINNER: 'Débutant',
     INTERMEDIATE: 'Intermédiaire',
@@ -156,7 +160,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
                     </div>
                   )}
                   {project.url && (
-                    <div className="text-sm text-black">{project.url}</div>
+                    <div className="text-sm text-black">{displayUrl(formatUrl(project.url))}</div>
                   )}
                 </div>
               ))}

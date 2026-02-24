@@ -35,6 +35,10 @@ export function CreativeTemplate({ data }: { data: CVData }) {
     return `https://${url}`
   }
 
+  const displayUrl = (url: string) => {
+    return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  }
+
   const levelLabels: Record<string, string> = {
     BEGINNER: 'Débutant',
     INTERMEDIATE: 'Intermédiaire',
@@ -314,8 +318,8 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <div className="flex justify-between items-start mb-1">
                       <h3 className="font-bold text-gray-900">{project.name}</h3>
                       {project.url && (
-                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sm text-purple-600 font-medium hover:underline whitespace-nowrap ml-4">
-                          Voir
+                        <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="text-sm text-purple-600 font-medium hover:underline whitespace-nowrap ml-4">
+                          {displayUrl(formatUrl(project.url))}
                         </a>
                       )}
                     </div>

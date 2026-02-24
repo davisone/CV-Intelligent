@@ -35,6 +35,10 @@ export function MinimalTemplate({ data }: { data: CVData }) {
     return `https://${url}`
   }
 
+  const displayUrl = (url: string) => {
+    return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  }
+
   const levelLabels: Record<string, string> = {
     BEGINNER: 'Débutant',
     INTERMEDIATE: 'Intermédiaire',
@@ -166,8 +170,8 @@ export function MinimalTemplate({ data }: { data: CVData }) {
                 <div key={i} className="grid grid-cols-[120px_1fr] gap-8">
                   <div className="text-sm text-gray-400">
                     {project.url ? (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
-                        Lien
+                      <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
+                        {displayUrl(formatUrl(project.url))}
                       </a>
                     ) : (
                       <span>—</span>

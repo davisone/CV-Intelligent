@@ -35,6 +35,10 @@ export function ModernTemplate({ data }: { data: CVData }) {
     return `https://${url}`
   }
 
+  const displayUrl = (url: string) => {
+    return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  }
+
   const levelLabels: Record<string, string> = {
     BEGINNER: 'Débutant',
     INTERMEDIATE: 'Intermédiaire',
@@ -203,8 +207,8 @@ export function ModernTemplate({ data }: { data: CVData }) {
                       <div className="flex justify-between items-start mb-1">
                         <h3 className="font-bold text-slate-900">{project.name}</h3>
                         {project.url && (
-                          <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline whitespace-nowrap">
-                            Voir le projet
+                          <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline whitespace-nowrap">
+                            {displayUrl(formatUrl(project.url))}
                           </a>
                         )}
                       </div>

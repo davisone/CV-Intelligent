@@ -1,5 +1,19 @@
 import { z } from 'zod'
 
+// Helper pour les champs URL avec auto-correction du protocole
+const urlField = () =>
+  z.union([
+    z.literal(''),
+    z.string()
+      .transform((val) => {
+        if (!val.startsWith('http://') && !val.startsWith('https://')) {
+          return `https://${val}`
+        }
+        return val
+      })
+      .pipe(z.string().url('URL invalide (ex: linkedin.com/in/votre-profil)'))
+  ]).optional()
+
 // Enums
 export const templateTypeSchema = z.enum(['MODERN', 'CLASSIC', 'ATS', 'MINIMAL', 'CREATIVE'])
 export const skillLevelSchema = z.enum(['BEGINNER', 'INTERMEDIATE', 'ADVANCED', 'EXPERT'])
@@ -15,13 +29,13 @@ export const personalInfoSchema = z.object({
   city: z.string().max(50).optional(),
   country: z.string().max(50).optional(),
   zipCode: z.string().max(20).optional(),
-  linkedin: z.string().url().optional().or(z.literal('')),
+  linkedin: urlField(),
   linkedinLabel: z.string().max(50).optional(),
-  github: z.string().url().optional().or(z.literal('')),
+  github: urlField(),
   githubLabel: z.string().max(50).optional(),
-  website: z.string().url().optional().or(z.literal('')),
+  website: urlField(),
   summary: z.string().max(2000).optional(),
-  photoUrl: z.string().url().optional().or(z.literal('')),
+  photoUrl: urlField(),
 })
 
 // Personal Info (for update - allows empty strings during editing)
@@ -34,13 +48,13 @@ export const updatePersonalInfoSchema = z.object({
   city: z.string().max(50).optional(),
   country: z.string().max(50).optional(),
   zipCode: z.string().max(20).optional(),
-  linkedin: z.string().url().optional().or(z.literal('')),
+  linkedin: urlField(),
   linkedinLabel: z.string().max(50).optional(),
-  github: z.string().url().optional().or(z.literal('')),
+  github: urlField(),
   githubLabel: z.string().max(50).optional(),
-  website: z.string().url().optional().or(z.literal('')),
+  website: urlField(),
   summary: z.string().max(2000).optional(),
-  photoUrl: z.string().url().optional().or(z.literal('')),
+  photoUrl: urlField(),
 })
 
 // Experience
@@ -79,7 +93,7 @@ export const certificationSchema = z.object({
   issueDate: z.coerce.date(),
   expiryDate: z.coerce.date().nullable().optional(),
   credentialId: z.string().max(100).optional(),
-  credentialUrl: z.string().url().optional().or(z.literal('')),
+  credentialUrl: urlField(),
   order: z.number().int().min(0).default(0),
 })
 
@@ -105,7 +119,7 @@ export const projectSchema = z.object({
   id: z.string().optional(),
   name: z.string().min(1, 'Project name is required').max(100),
   description: z.string().max(2000).optional(),
-  url: z.string().url().optional().or(z.literal('')),
+  url: urlField(),
   technologies: z.array(z.string().max(50)).max(20).default([]),
   order: z.number().int().min(0).default(0),
 })
@@ -173,7 +187,7 @@ const updateCertificationSchema = z.object({
   issueDate: z.coerce.date(),
   expiryDate: z.coerce.date().nullable().optional(),
   credentialId: z.string().max(100).optional(),
-  credentialUrl: z.string().url().optional().or(z.literal('')),
+  credentialUrl: urlField(),
   order: z.number().int().min(0).default(0),
 })
 
@@ -199,7 +213,7 @@ const updateProjectSchema = z.object({
   id: z.string().optional(),
   name: z.string().max(100).default(''),
   description: z.string().max(2000).optional(),
-  url: z.string().url().optional().or(z.literal('')),
+  url: urlField(),
   technologies: z.array(z.string().max(50)).max(20).default([]),
   order: z.number().int().min(0).default(0),
 })
