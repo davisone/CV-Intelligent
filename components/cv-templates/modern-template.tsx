@@ -51,7 +51,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
   return (
     <div className="bg-white shadow-2xl" style={{ width: '21cm', minHeight: '29.7cm', margin: '0 auto' }}>
       {/* Header avec fond coloré */}
-      <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-10 py-8">
+      <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-10 py-6">
         <div className="flex justify-between items-start">
           <div className="flex gap-6 items-start">
             {/* Photo de profil */}
@@ -70,7 +70,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
                 <span className="font-bold">{data.personalInfo.lastName}</span>
               </h1>
               {data.personalInfo.summary && (
-                <p className="mt-4 text-slate-300 max-w-xl leading-relaxed text-sm">
+                <p className="mt-2 text-slate-300 max-w-xl leading-relaxed text-sm">
                   {data.personalInfo.summary}
                 </p>
               )}
@@ -138,17 +138,17 @@ export function ModernTemplate({ data }: { data: CVData }) {
       </div>
 
       {/* Content */}
-      <div className="px-10 py-8">
-        <div className="grid grid-cols-3 gap-8">
+      <div className="px-10 py-6">
+        <div className="grid grid-cols-3 gap-6">
           {/* Main content - 2/3 */}
-          <div className="col-span-2 space-y-6">
+          <div className="col-span-2 space-y-4">
             {/* Experience */}
             {data.experiences.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Expérience Professionnelle
                 </h2>
-                <div className="space-y-5">
+                <div className="space-y-3">
                   {data.experiences.map((exp: any, i: number) => (
                     <div key={i} className="relative pl-4 border-l-2 border-slate-200">
                       <div className="absolute -left-[5px] top-1 w-2 h-2 bg-slate-800 rounded-full" />
@@ -171,7 +171,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {/* Education */}
             {data.educations.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Formation
                 </h2>
                 <div className="space-y-4">
@@ -197,10 +197,10 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {/* Projets */}
             {data.projects && data.projects.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Projets
                 </h2>
-                <div className="space-y-5">
+                <div className="space-y-3">
                   {data.projects.map((project: any, i: number) => (
                     <div key={i} className="relative pl-4 border-l-2 border-slate-200">
                       <div className="absolute -left-[5px] top-1 w-2 h-2 bg-slate-800 rounded-full" />
@@ -233,7 +233,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {/* Certifications */}
             {data.certifications && data.certifications.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Certifications
                 </h2>
                 <div className="space-y-4">
@@ -261,14 +261,14 @@ export function ModernTemplate({ data }: { data: CVData }) {
           </div>
 
           {/* Sidebar - 1/3 */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Skills */}
             {data.skills.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Compétences
                 </h2>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {data.skills.map((skill: any, i: number) => (
                     <div key={i}>
                       <div className="flex justify-between text-sm mb-1">
@@ -294,7 +294,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {/* Languages */}
             {data.languages.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Langues
                 </h2>
                 <div className="space-y-3">
@@ -313,7 +313,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {/* Interests */}
             {data.interests && data.interests.length > 0 && (
               <section className="pt-4">
-                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-2 mb-4">
+                <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Centres d'intérêt
                 </h2>
                 <div className="flex flex-wrap gap-2">
