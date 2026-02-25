@@ -62,7 +62,7 @@ export async function GET(request: Request, { params }: RouteParams) {
     if (isProduction) {
       const chromium = (await import('@sparticuz/chromium-min')).default
       executablePath = await chromium.executablePath(
-        'https://github.com/Sparticuz/chromium/releases/download/v143.0.0/chromium-v143.0.0-pack.tar'
+        'https://github.com/Sparticuz/chromium/releases/download/v143.0.4/chromium-v143.0.4-pack.x64.tar'
       )
       launchArgs = chromium.args
     } else {
@@ -101,17 +101,12 @@ export async function GET(request: Request, { params }: RouteParams) {
         || `http://localhost:${process.env.PORT || 3000}`
       const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}`
 
-      console.log('[PDF_GENERATION] renderUrl:', renderUrl)
-      console.log('[PDF_GENERATION] NEXTAUTH_URL:', process.env.NEXTAUTH_URL ?? 'non défini')
-      console.log('[PDF_GENERATION] VERCEL_URL:', process.env.VERCEL_URL ?? 'non défini')
-
       // Pré-accepter les cookies pour éviter le bandeau
       await page.evaluateOnNewDocument(() => {
         localStorage.setItem('cookie-consent', 'refused')
       })
 
-      const response = await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
-      console.log('[PDF_GENERATION] page status:', response?.status())
+      await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
 
       // Supprimer tout élément fixed/sticky résiduel (toaster, overlays, etc.)
       await page.evaluate(() => {
