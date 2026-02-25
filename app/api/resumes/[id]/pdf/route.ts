@@ -95,15 +95,23 @@ export async function GET(request: Request, { params }: RouteParams) {
 
       // Générer le token APRÈS le lancement du navigateur pour éviter l'expiration
       const { token, ts } = generateRenderToken(id)
-      const baseUrl = process.env.NEXTAUTH_URL || `http://localhost:${process.env.PORT || 3000}`
+      const baseUrl = process.env.NEXTAUTH_URL
+        || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
+        || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
+        || `http://localhost:${process.env.PORT || 3000}`
       const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}`
+
+      console.log('[PDF_GENERATION] renderUrl:', renderUrl)
+      console.log('[PDF_GENERATION] NEXTAUTH_URL:', process.env.NEXTAUTH_URL ?? 'non défini')
+      console.log('[PDF_GENERATION] VERCEL_URL:', process.env.VERCEL_URL ?? 'non défini')
 
       // Pré-accepter les cookies pour éviter le bandeau
       await page.evaluateOnNewDocument(() => {
         localStorage.setItem('cookie-consent', 'refused')
       })
 
-      await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
+      const response = await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
+      console.log('[PDF_GENERATION] page status:', response?.status())
 
       // Supprimer tout élément fixed/sticky résiduel (toaster, overlays, etc.)
       await page.evaluate(() => {
