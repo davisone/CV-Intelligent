@@ -243,9 +243,10 @@ model PersonalInfo {
   github        String?
   githubLabel   String?
   website       String?
-  summary       String? @db.Text
-  photoUrl      String?
-  resume        Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  summary         String? @db.Text
+  photoUrl        String?
+  drivingLicenses String?
+  resume          Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
 }
 
 model Experience {

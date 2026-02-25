@@ -14,6 +14,7 @@ interface CVData {
     githubLabel?: string
     summary?: string
     photoUrl?: string
+    drivingLicenses?: string
   }
   experiences: any[]
   educations: any[]
@@ -62,6 +63,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
           {data.personalInfo.phone && ` | ${data.personalInfo.phone}`}
           {(data.personalInfo.city || data.personalInfo.country) &&
             ` | ${[data.personalInfo.city, data.personalInfo.country].filter(Boolean).join(', ')}`}
+          {data.personalInfo.drivingLicenses && ` | Permis ${data.personalInfo.drivingLicenses}`}
         </div>
         {data.personalInfo.linkedin && (
           <div className="text-sm text-black">

@@ -14,6 +14,7 @@ interface CVData {
     githubLabel?: string
     summary?: string
     photoUrl?: string
+    drivingLicenses?: string
   }
   experiences: any[]
   educations: any[]
@@ -66,6 +67,9 @@ export function MinimalTemplate({ data }: { data: CVData }) {
           {data.personalInfo.phone && <span>{data.personalInfo.phone}</span>}
           {(data.personalInfo.city || data.personalInfo.country) && (
             <span>{[data.personalInfo.city, data.personalInfo.country].filter(Boolean).join(', ')}</span>
+          )}
+          {data.personalInfo.drivingLicenses && (
+            <span>Permis {data.personalInfo.drivingLicenses}</span>
           )}
           {data.personalInfo.linkedin && (
             <a

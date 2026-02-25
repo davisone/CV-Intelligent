@@ -692,6 +692,7 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
           <Input placeholder="Diplôme" value={data.degree} onChange={(e) => setData({ ...data, degree: e.target.value })} />
           <Input placeholder="Domaine" value={data.field || ''} onChange={(e) => setData({ ...data, field: e.target.value })} />
           <Input type="date" value={formatDate(data.startDate, 'input')} onChange={(e) => setData({ ...data, startDate: e.target.value })} />
+          <Input type="date" value={formatDate(data.endDate, 'input') || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} />
         </div>
         <div className="flex gap-2">
           <Button size="sm" onClick={save}>Sauvegarder</Button>
@@ -709,6 +710,9 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
         <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
         <p className="text-gray-600">{data.institution || 'Établissement'}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
+        <p className="text-sm text-gray-500">
+          {formatDate(data.startDate)} — {data.endDate ? formatDate(data.endDate) : 'Présent'}
+        </p>
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
     </div>

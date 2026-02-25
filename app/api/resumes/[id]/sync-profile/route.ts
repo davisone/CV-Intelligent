@@ -85,6 +85,7 @@ export async function POST(
           website: userProfile.website,
           summary: userProfile.summary,
           photoUrl: userProfile.photoUrl,
+          drivingLicenses: userProfile.drivingLicenses,
         },
       })
     }

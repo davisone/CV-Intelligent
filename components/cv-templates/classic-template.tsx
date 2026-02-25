@@ -14,6 +14,7 @@ interface CVData {
     githubLabel?: string
     summary?: string
     photoUrl?: string
+    drivingLicenses?: string
   }
   experiences: any[]
   educations: any[]
@@ -74,6 +75,12 @@ export function ClassicTemplate({ data }: { data: CVData }) {
               <>
                 <span className="text-gray-400">|</span>
                 <span>{[data.personalInfo.city, data.personalInfo.country].filter(Boolean).join(', ')}</span>
+              </>
+            )}
+            {data.personalInfo.drivingLicenses && (
+              <>
+                <span className="text-gray-400">|</span>
+                <span>Permis {data.personalInfo.drivingLicenses}</span>
               </>
             )}
           </div>
