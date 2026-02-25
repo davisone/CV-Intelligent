@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium'],
-  outputFileTracingIncludes: {
-    '/api/resumes/[id]/pdf': ['./node_modules/@sparticuz/chromium/**/*'],
-  },
+  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium-min'],
   async headers() {
     return [
       {

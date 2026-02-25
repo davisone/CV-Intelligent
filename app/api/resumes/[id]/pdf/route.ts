@@ -65,8 +65,10 @@ export async function GET(request: Request, { params }: RouteParams) {
     let launchArgs: string[]
 
     if (isProduction) {
-      const chromium = (await import('@sparticuz/chromium')).default
-      executablePath = await chromium.executablePath()
+      const chromium = (await import('@sparticuz/chromium-min')).default
+      executablePath = await chromium.executablePath(
+        'https://github.com/Sparticuz/chromium/releases/download/v143.0.0/chromium-v143.0.0-pack.tar'
+      )
       launchArgs = chromium.args
     } else {
       const possiblePaths = [
