@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { createHmac } from 'crypto'
 import { prisma } from '@/lib/db/prisma'
 import { templates, TemplateType } from '@/components/cv-templates'
+import { AutoFitPage } from '@/components/cv-templates/auto-fit-page'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -79,5 +80,9 @@ export default async function CvRenderPage({ params, searchParams }: PageProps) 
   const TemplateComponent = templates[templateKey] || templates.MODERN
   const cvData = buildCvData(resume as unknown as Record<string, unknown>)
 
-  return <TemplateComponent data={cvData} />
+  return (
+    <AutoFitPage>
+      <TemplateComponent data={cvData} />
+    </AutoFitPage>
+  )
 }

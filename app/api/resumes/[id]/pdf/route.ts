@@ -108,6 +108,9 @@ export async function GET(request: Request, { params }: RouteParams) {
 
       await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
 
+      // Attendre que l'auto-fit ait fini de scaler le contenu
+      await page.waitForSelector('[data-auto-fit-ready="true"]', { timeout: 5_000 })
+
       // Supprimer tout élément fixed/sticky résiduel (toaster, overlays, etc.)
       await page.evaluate(() => {
         document.querySelectorAll('*').forEach(el => {
