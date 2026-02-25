@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { checkResumeAccess } from '@/lib/payments/feature-check'
 
-export const maxDuration = 30
+export const maxDuration = 60
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -52,12 +52,7 @@ export async function GET(request: Request, { params }: RouteParams) {
       return NextResponse.json({ error: 'CV introuvable' }, { status: 404 })
     }
 
-    // Générer le token et l'URL de la page de rendu
-    const { token, ts } = generateRenderToken(id)
-    const baseUrl = process.env.NEXTAUTH_URL || `http://localhost:${process.env.PORT || 3000}`
-    const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}`
-
-    // Lancer Puppeteer
+    // Lancer Puppeteer (avant la génération du token pour éviter l'expiration)
     const isProduction = process.env.VERCEL === '1'
     const puppeteer = (await import('puppeteer-core')).default
 
@@ -97,6 +92,11 @@ export async function GET(request: Request, { params }: RouteParams) {
 
     try {
       const page = await browser.newPage()
+
+      // Générer le token APRÈS le lancement du navigateur pour éviter l'expiration
+      const { token, ts } = generateRenderToken(id)
+      const baseUrl = process.env.NEXTAUTH_URL || `http://localhost:${process.env.PORT || 3000}`
+      const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}`
 
       // Pré-accepter les cookies pour éviter le bandeau
       await page.evaluateOnNewDocument(() => {
