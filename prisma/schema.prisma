@@ -89,13 +89,15 @@ model UserProfile {
   city          String?
   country       String?
   zipCode       String?
-  linkedin      String?
-  linkedinLabel String?
-  github        String?
-  githubLabel   String?
-  website       String?
-  summary       String? @db.Text
-  jobTitle      String?
+  linkedin       String?
+  linkedinLabel  String?
+  github         String?
+  githubLabel    String?
+  portfolio      String?
+  portfolioLabel String?
+  website        String?
+  summary        String? @db.Text
+  jobTitle       String?
   photoUrl        String?
   birthDate       DateTime?
   drivingLicenses String?
@@ -238,11 +240,13 @@ model PersonalInfo {
   city          String?
   country       String?
   zipCode       String?
-  linkedin      String?
-  linkedinLabel String?
-  github        String?
-  githubLabel   String?
-  website       String?
+  linkedin       String?
+  linkedinLabel  String?
+  github         String?
+  githubLabel    String?
+  portfolio      String?
+  portfolioLabel String?
+  website        String?
   summary         String? @db.Text
   photoUrl        String?
   drivingLicenses String?

@@ -38,6 +38,7 @@ export interface PersonalInfoInput {
   zipCode?: string
   linkedin?: string
   github?: string
+  portfolio?: string
   website?: string
   summary?: string
 }

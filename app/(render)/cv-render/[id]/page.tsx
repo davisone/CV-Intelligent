@@ -39,6 +39,8 @@ function buildCvData(resume: Record<string, unknown>) {
       linkedinLabel: (personalInfo?.linkedinLabel as string) ?? '',
       github: (personalInfo?.github as string) ?? '',
       githubLabel: (personalInfo?.githubLabel as string) ?? '',
+      portfolio: (personalInfo?.portfolio as string) ?? '',
+      portfolioLabel: (personalInfo?.portfolioLabel as string) ?? '',
       summary: (personalInfo?.summary as string) ?? '',
       photoUrl: (personalInfo?.photoUrl as string) ?? '',
       drivingLicenses: (personalInfo?.drivingLicenses as string) ?? '',

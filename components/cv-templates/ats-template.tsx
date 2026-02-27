@@ -12,6 +12,8 @@ interface CVData {
     linkedinLabel?: string
     github?: string
     githubLabel?: string
+    portfolio?: string
+    portfolioLabel?: string
     summary?: string
     photoUrl?: string
     drivingLicenses?: string
@@ -76,6 +78,13 @@ export function ATSTemplate({ data }: { data: CVData }) {
           <div className="text-sm text-black">
             <a href={formatUrl(data.personalInfo.github)} target="_blank" rel="noopener noreferrer" className="hover:underline">
               {data.personalInfo.githubLabel || 'GitHub'}
+            </a>
+          </div>
+        )}
+        {data.personalInfo.portfolio && (
+          <div className="text-sm text-black">
+            <a href={formatUrl(data.personalInfo.portfolio)} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              {data.personalInfo.portfolioLabel || 'Portfolio'}
             </a>
           </div>
         )}

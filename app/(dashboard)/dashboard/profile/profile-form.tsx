@@ -52,6 +52,7 @@ export function ProfileForm({
     zipCode: initialProfile?.zipCode || '',
     linkedin: initialProfile?.linkedin || '',
     github: initialProfile?.github || '',
+    portfolio: initialProfile?.portfolio || '',
     website: initialProfile?.website || '',
     summary: initialProfile?.summary || '',
     photoUrl: initialProfile?.photoUrl || '',
@@ -426,6 +427,10 @@ export function ProfileForm({
           <div>
             <Label htmlFor="github">GitHub</Label>
             <Input id="github" name="github" value={profile.github} onChange={handleProfileChange} placeholder="https://github.com/..." />
+          </div>
+          <div className="col-span-2">
+            <Label htmlFor="portfolio">Portfolio</Label>
+            <Input id="portfolio" name="portfolio" value={profile.portfolio} onChange={handleProfileChange} placeholder="https://monportfolio.fr" />
           </div>
           <div className="col-span-2">
             <Label htmlFor="summary">Résumé professionnel</Label>

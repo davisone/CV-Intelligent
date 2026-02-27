@@ -82,6 +82,8 @@ export async function POST(
           zipCode: userProfile.zipCode,
           linkedin: userProfile.linkedin,
           github: userProfile.github,
+          portfolio: userProfile.portfolio,
+          portfolioLabel: userProfile.portfolioLabel,
           website: userProfile.website,
           summary: userProfile.summary,
           photoUrl: userProfile.photoUrl,

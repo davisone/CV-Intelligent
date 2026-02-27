@@ -144,6 +144,8 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     linkedinLabel: resume.personalInfo?.linkedinLabel ?? '',
     github: resume.personalInfo?.github ?? '',
     githubLabel: resume.personalInfo?.githubLabel ?? '',
+    portfolio: resume.personalInfo?.portfolio ?? '',
+    portfolioLabel: resume.personalInfo?.portfolioLabel ?? '',
     summary: resume.personalInfo?.summary ?? '',
     photoUrl: resume.personalInfo?.photoUrl ?? '',
   })
@@ -195,6 +197,8 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
           linkedinLabel: data.personalInfo.linkedinLabel || undefined,
           github: data.personalInfo.github || undefined,
           githubLabel: data.personalInfo.githubLabel || undefined,
+          portfolio: data.personalInfo.portfolio || undefined,
+          portfolioLabel: data.personalInfo.portfolioLabel || undefined,
           summary: data.personalInfo.summary || undefined,
           photoUrl: data.personalInfo.photoUrl || undefined,
         },
@@ -902,6 +906,21 @@ ${interests.map(i => i.name).join(', ')}
                     value={personalInfo.github}
                     onChange={(e) => handlePersonalInfoChange('github', e.target.value)}
                     placeholder="URL (ex: https://github.com/jeandupont)"
+                  />
+                </div>
+              </div>
+              <div className="col-span-1 md:col-span-2">
+                <Label>Portfolio</Label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
+                  <Input
+                    value={personalInfo.portfolioLabel}
+                    onChange={(e) => handlePersonalInfoChange('portfolioLabel', e.target.value)}
+                    placeholder="Titre affiché (ex: Mon Portfolio)"
+                  />
+                  <Input
+                    value={personalInfo.portfolio}
+                    onChange={(e) => handlePersonalInfoChange('portfolio', e.target.value)}
+                    placeholder="URL (ex: https://monportfolio.fr)"
                   />
                 </div>
               </div>
