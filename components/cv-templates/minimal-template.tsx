@@ -99,7 +99,9 @@ export function MinimalTemplate({ data }: { data: CVData }) {
               {data.personalInfo.githubLabel || 'GitHub'}
             </a>
           )}
-          {data.personalInfo.portfolio && (
+        </div>
+        {data.personalInfo.portfolio && (
+          <div className="mt-2 text-sm text-gray-500">
             <a
               href={formatUrl(data.personalInfo.portfolio)}
               target="_blank"
@@ -111,8 +113,8 @@ export function MinimalTemplate({ data }: { data: CVData }) {
               </svg>
               {data.personalInfo.portfolioLabel || 'Portfolio'}
             </a>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Content avec beaucoup d'espace */}
