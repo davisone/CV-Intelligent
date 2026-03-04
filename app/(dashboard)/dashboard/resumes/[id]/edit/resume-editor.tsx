@@ -74,6 +74,7 @@ interface SkillData {
   id: string
   name: string
   level: SkillLevel
+  category?: string | null
 }
 
 interface LanguageData {
@@ -230,6 +231,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
         skills: data.skills.map(skill => ({
           name: skill.name,
           level: skill.level,
+          category: skill.category || undefined,
         })),
         languages: data.languages.map(lang => ({
           name: lang.name,
@@ -375,11 +377,12 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   }
 
   // Handlers pour les compétences
-  const addSkill = () => {
+  const addSkill = (category?: string) => {
     const newSkill: SkillData = {
       id: generateId(),
       name: '',
       level: 'INTERMEDIATE',
+      category: category || null,
     }
     setSkills(prev => [...prev, newSkill])
   }
@@ -1096,39 +1099,14 @@ ${interests.map(i => i.name).join(', ')}
             )}
           </section>
 
-          {/* Compétences avec Drag & Drop */}
-          <section className="bg-white p-6 rounded-xl border">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">
-                Compétences ({skills.length})
-              </h2>
-              <Button variant="outline" size="sm" onClick={addSkill}>
-                <Plus className="w-4 h-4 mr-1" />
-                Ajouter
-              </Button>
-            </div>
-            {skills.length > 0 ? (
-              <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
-                <SortableList
-                  items={skills}
-                  onReorder={setSkills}
-                  keyExtractor={(skill) => skill.id}
-                  direction="horizontal"
-                  renderItem={(skill, dragHandleProps) => (
-                    <SkillBadge
-                      key={skill.id}
-                      skill={skill}
-                      onUpdate={(data) => updateSkill(skill.id, data)}
-                      onDelete={() => deleteSkill(skill.id)}
-                      dragHandleProps={dragHandleProps}
-                    />
-                  )}
-                />
-              </div>
-            ) : (
-              <p className="text-gray-500 text-sm">Aucune compétence ajoutée</p>
-            )}
-          </section>
+          {/* Compétences groupées par catégorie */}
+          <EditorSkillsSection
+            skills={skills}
+            onAdd={addSkill}
+            onUpdate={updateSkill}
+            onDelete={deleteSkill}
+            onReorder={setSkills}
+          />
 
           {/* Langues avec Drag & Drop */}
           <section className="bg-white p-6 rounded-xl border">
@@ -1752,28 +1730,192 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
   )
 }
 
-// Composant SkillBadge avec Drag Handle
-interface SkillBadgeProps {
+// Section compétences groupées par catégorie
+function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
+  skills: SkillData[]
+  onAdd: (category?: string) => void
+  onUpdate: (id: string, data: Partial<SkillData>) => void
+  onDelete: (id: string) => void
+  onReorder: (items: SkillData[]) => void
+}) {
+  const [newCategoryName, setNewCategoryName] = useState('')
+  const [isCreatingCategory, setIsCreatingCategory] = useState(false)
+
+  const categories = Array.from(new Set(
+    skills.filter(s => s.category).map(s => s.category as string)
+  ))
+  const uncategorizedSkills = skills.filter(s => !s.category)
+
+  const handleCreateCategory = () => {
+    if (!newCategoryName.trim()) return
+    onAdd(newCategoryName.trim())
+    setNewCategoryName('')
+    setIsCreatingCategory(false)
+  }
+
+  const handleRenameCategory = (oldName: string, newName: string) => {
+    if (!newName.trim() || newName === oldName) return
+    onReorder(skills.map(s => s.category === oldName ? { ...s, category: newName } : s))
+  }
+
+  return (
+    <section className="bg-white p-6 rounded-xl border">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-lg font-semibold text-gray-900">
+          Compétences ({skills.length})
+        </h2>
+        <div className="flex gap-2">
+          {isCreatingCategory ? (
+            <div className="flex items-center gap-2">
+              <input
+                className="text-sm border rounded-lg px-3 py-1.5 outline-none text-gray-900 w-40"
+                value={newCategoryName}
+                onChange={(e) => setNewCategoryName(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCreateCategory()}
+                placeholder="Nom du groupe"
+                autoFocus
+              />
+              <button onClick={handleCreateCategory} className="text-green-600 hover:text-green-700 p-1">
+                <Check className="w-4 h-4" />
+              </button>
+              <button onClick={() => { setIsCreatingCategory(false); setNewCategoryName('') }} className="text-gray-400 hover:text-gray-600 p-1">
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          ) : (
+            <Button variant="outline" size="sm" onClick={() => setIsCreatingCategory(true)}>
+              <Plus className="w-4 h-4 mr-1" />
+              Créer un groupe
+            </Button>
+          )}
+        </div>
+      </div>
+
+      {categories.map((category) => {
+        const categorySkills = skills.filter(s => s.category === category)
+        return (
+          <EditorSkillCategoryGroup
+            key={category}
+            category={category}
+            skills={categorySkills}
+            onAdd={() => onAdd(category)}
+            onUpdate={onUpdate}
+            onDelete={onDelete}
+            onRename={(newName) => handleRenameCategory(category, newName)}
+          />
+        )
+      })}
+
+      {uncategorizedSkills.length > 0 && (
+        <div className="mt-4">
+          {categories.length > 0 && (
+            <h3 className="text-sm font-medium text-gray-500 mb-2">Autres</h3>
+          )}
+          <div className="flex flex-wrap gap-2">
+            {uncategorizedSkills.map((skill) => (
+              <EditorSkillBadge
+                key={skill.id}
+                skill={skill}
+                onUpdate={(data) => onUpdate(skill.id, data)}
+                onDelete={() => onDelete(skill.id)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="mt-3">
+        <button
+          onClick={() => onAdd()}
+          className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+        >
+          + Ajouter une compétence
+        </button>
+      </div>
+
+      {skills.length === 0 && !isCreatingCategory && (
+        <p className="text-gray-500 text-sm">Aucune compétence ajoutée</p>
+      )}
+    </section>
+  )
+}
+
+function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete, onRename }: {
+  category: string
+  skills: SkillData[]
+  onAdd: () => void
+  onUpdate: (id: string, data: Partial<SkillData>) => void
+  onDelete: (id: string) => void
+  onRename: (newName: string) => void
+}) {
+  const [isRenaming, setIsRenaming] = useState(false)
+  const [categoryName, setCategoryName] = useState(category)
+
+  const handleRename = () => {
+    onRename(categoryName)
+    setIsRenaming(false)
+  }
+
+  return (
+    <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+      <div className="flex items-center justify-between mb-2">
+        {isRenaming ? (
+          <div className="flex items-center gap-2">
+            <input
+              className="text-sm font-medium bg-white border rounded px-2 py-1 outline-none text-gray-900"
+              value={categoryName}
+              onChange={(e) => setCategoryName(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleRename()}
+              autoFocus
+            />
+            <button onClick={handleRename} className="text-green-600 hover:text-green-700 p-1">
+              <Check className="w-4 h-4" />
+            </button>
+            <button onClick={() => { setIsRenaming(false); setCategoryName(category) }} className="text-gray-400 hover:text-gray-600 p-1">
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        ) : (
+          <h3
+            className="text-sm font-semibold text-gray-700 cursor-pointer hover:text-blue-600 transition-colors"
+            onClick={() => setIsRenaming(true)}
+            title="Cliquer pour renommer"
+          >
+            {category}
+          </h3>
+        )}
+        <button
+          onClick={onAdd}
+          className="text-xs text-gray-500 hover:text-blue-600 transition-colors"
+        >
+          + Ajouter
+        </button>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <EditorSkillBadge
+            key={skill.id}
+            skill={skill}
+            onUpdate={(data) => onUpdate(skill.id, data)}
+            onDelete={() => onDelete(skill.id)}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function EditorSkillBadge({ skill, onUpdate, onDelete }: {
   skill: SkillData
   onUpdate: (data: Partial<SkillData>) => void
   onDelete: () => void
-  dragHandleProps: DragHandleProps
-}
-
-const skillLevelLabels: Record<SkillLevel, string> = {
-  BEGINNER: 'Débutant',
-  INTERMEDIATE: 'Intermédiaire',
-  ADVANCED: 'Avancé',
-  EXPERT: 'Expert',
-}
-
-function SkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: SkillBadgeProps) {
+}) {
   const [data, setData] = useState(skill)
   const [editing, setEditing] = useState(!skill.name)
 
   const save = () => {
     if (data.name.trim()) {
-      onUpdate(data)
+      onUpdate({ name: data.name })
       setEditing(false)
     }
   }
@@ -1789,16 +1931,6 @@ function SkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: SkillBadgePr
           placeholder="Compétence"
           autoFocus
         />
-        <select
-          className="text-xs bg-transparent outline-none text-gray-700"
-          value={data.level}
-          onChange={(e) => setData({ ...data, level: e.target.value as SkillLevel })}
-        >
-          <option value="BEGINNER">Débutant</option>
-          <option value="INTERMEDIATE">Intermédiaire</option>
-          <option value="ADVANCED">Avancé</option>
-          <option value="EXPERT">Expert</option>
-        </select>
         <button onClick={save} className="text-green-600 hover:text-green-700 p-1">
           <Check className="w-4 h-4" />
         </button>
@@ -1811,18 +1943,9 @@ function SkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: SkillBadgePr
 
   return (
     <div className="flex items-center gap-1 bg-blue-100 text-blue-800 rounded-full px-3 py-1">
-      <button
-        type="button"
-        className="cursor-grab active:cursor-grabbing text-blue-400 hover:text-blue-600 touch-none"
-        {...dragHandleProps.attributes}
-        {...dragHandleProps.listeners}
-      >
-        <span className="text-xs">⋮⋮</span>
-      </button>
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
         {data.name}
       </span>
-      <span className="text-xs text-blue-600">({skillLevelLabels[data.level]})</span>
       <button onClick={onDelete} className="hover:text-red-500 ml-1">
         <X className="w-3 h-3" />
       </button>

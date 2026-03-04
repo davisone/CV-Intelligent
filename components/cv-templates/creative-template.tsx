@@ -188,26 +188,39 @@ export function CreativeTemplate({ data }: { data: CVData }) {
             )}
           </div>
 
-          {/* Skills with circular progress */}
+          {/* Skills */}
           {data.skills.length > 0 && (
             <div className="mb-8">
               <h2 className="text-xs font-bold uppercase tracking-wider text-white/70 mb-4">Compétences</h2>
-              <div className="space-y-3">
-                {data.skills.map((skill: any, i: number) => (
-                  <div key={i}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span>{skill.name}</span>
-                      <span className="text-white/70 text-xs">{levelLabels[skill.level]}</span>
-                    </div>
-                    <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-white rounded-full transition-all"
-                        style={{ width: `${getLevelPercent(skill.level)}%` }}
-                      />
-                    </div>
+              {(() => {
+                const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
+                const uncategorized = data.skills.filter((s: any) => !s.category)
+                return (
+                  <div className="space-y-3">
+                    {categories.map((cat: string) => (
+                      <div key={cat}>
+                        <h3 className="text-xs font-semibold text-white/60 mb-1">{cat}</h3>
+                        <div className="flex flex-wrap gap-1.5">
+                          {data.skills.filter((s: any) => s.category === cat).map((skill: any, i: number) => (
+                            <span key={i} className="text-sm px-2.5 py-0.5 bg-white/20 text-white rounded-full">
+                              {skill.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    {uncategorized.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {uncategorized.map((skill: any, i: number) => (
+                          <span key={i} className="text-sm px-2.5 py-0.5 bg-white/20 text-white rounded-full">
+                            {skill.name}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
+                )
+              })()}
             </div>
           )}
 

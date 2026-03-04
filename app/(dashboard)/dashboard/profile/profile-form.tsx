@@ -204,11 +204,11 @@ export function ProfileForm({
     toast.success('Certification supprimée')
   }
 
-  const addSkill = async () => {
+  const addSkill = async (category?: string) => {
     const res = await fetch('/api/profile/skills', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: '' }),
+      body: JSON.stringify({ name: '', category: category || null }),
     })
     if (res.ok) {
       const { skill } = await res.json()
@@ -549,28 +549,13 @@ export function ProfileForm({
         )}
       </section>
 
-      {/* Compétences */}
-      <section className="bg-white p-6 rounded-xl border">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Compétences</h2>
-          <Button variant="outline" onClick={addSkill}>+ Ajouter</Button>
-        </div>
-        {skills.length > 0 ? (
-          <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
-            <SortableList
-              items={skills}
-              onReorder={(newItems) => { setSkills(newItems); saveOrder('skills', newItems) }}
-              keyExtractor={(skill) => skill.id}
-              direction="horizontal"
-              renderItem={(skill, dragHandleProps) => (
-                <SkillBadge skill={skill} onDelete={() => deleteSkill(skill.id)} dragHandleProps={dragHandleProps} />
-              )}
-            />
-          </div>
-        ) : (
-          <p className="text-gray-500">Aucune compétence ajoutée</p>
-        )}
-      </section>
+      {/* Compétences groupées par catégorie */}
+      <SkillsSection
+        skills={skills}
+        onAdd={addSkill}
+        onDelete={deleteSkill}
+        onReorder={(newItems) => { setSkills(newItems); saveOrder('skills', newItems) }}
+      />
 
       {/* Langues */}
       <section className="bg-white p-6 rounded-xl border">
@@ -875,16 +860,169 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
   )
 }
 
-const skillLevels = [
-  { value: 'BEGINNER', label: 'Débutant' },
-  { value: 'INTERMEDIATE', label: 'Intermédiaire' },
-  { value: 'ADVANCED', label: 'Avancé' },
-  { value: 'EXPERT', label: 'Expert' },
-]
+function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
+  skills: any[]
+  onAdd: (category?: string) => void
+  onDelete: (id: string) => void
+  onReorder: (items: any[]) => void
+}) {
+  const [newCategoryName, setNewCategoryName] = useState('')
+  const [isCreatingCategory, setIsCreatingCategory] = useState(false)
 
-function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  // Extraire les catégories uniques
+  const categories = Array.from(new Set(
+    skills.filter(s => s.category).map(s => s.category as string)
+  ))
+  const uncategorizedSkills = skills.filter(s => !s.category)
+
+  const handleCreateCategory = () => {
+    if (!newCategoryName.trim()) return
+    onAdd(newCategoryName.trim())
+    setNewCategoryName('')
+    setIsCreatingCategory(false)
+  }
+
+  const handleRenameCategory = async (oldName: string, newName: string) => {
+    if (!newName.trim() || newName === oldName) return
+    const skillsInCategory = skills.filter(s => s.category === oldName)
+    for (const skill of skillsInCategory) {
+      await fetch('/api/profile/skills', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: skill.id, name: skill.name, category: newName }),
+      })
+    }
+    // Mettre à jour le state local en réordonnant pour refléter le changement
+    onReorder(skills.map(s => s.category === oldName ? { ...s, category: newName } : s))
+  }
+
+  return (
+    <section className="bg-white p-6 rounded-xl border">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-semibold text-gray-900">Compétences</h2>
+        <div className="flex gap-2">
+          {isCreatingCategory ? (
+            <div className="flex items-center gap-2">
+              <input
+                className="text-sm border rounded-lg px-3 py-1.5 outline-none text-gray-900 w-40"
+                value={newCategoryName}
+                onChange={(e) => setNewCategoryName(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCreateCategory()}
+                placeholder="Nom du groupe"
+                autoFocus
+              />
+              <button onClick={handleCreateCategory} className="text-green-600 hover:text-green-700 text-sm font-medium">✓</button>
+              <button onClick={() => { setIsCreatingCategory(false); setNewCategoryName('') }} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+            </div>
+          ) : (
+            <Button variant="outline" onClick={() => setIsCreatingCategory(true)}>+ Créer un groupe</Button>
+          )}
+        </div>
+      </div>
+
+      {/* Groupes par catégorie */}
+      {categories.map((category) => {
+        const categorySkills = skills.filter(s => s.category === category)
+        return (
+          <SkillCategoryGroup
+            key={category}
+            category={category}
+            skills={categorySkills}
+            onAdd={() => onAdd(category)}
+            onDelete={onDelete}
+            onRename={(newName) => handleRenameCategory(category, newName)}
+          />
+        )
+      })}
+
+      {/* Compétences sans catégorie */}
+      {uncategorizedSkills.length > 0 && (
+        <div className="mt-4">
+          {categories.length > 0 && (
+            <h3 className="text-sm font-medium text-gray-500 mb-2">Autres</h3>
+          )}
+          <div className="flex flex-wrap gap-2">
+            {uncategorizedSkills.map((skill) => (
+              <SkillBadge key={skill.id} skill={skill} onDelete={() => onDelete(skill.id)} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Bouton ajouter sans catégorie */}
+      <div className="mt-3">
+        <button
+          onClick={() => onAdd()}
+          className="text-sm text-gray-500 hover:text-primary transition-colors"
+        >
+          + Ajouter une compétence
+        </button>
+      </div>
+
+      {skills.length === 0 && !isCreatingCategory && (
+        <p className="text-gray-500">Aucune compétence ajoutée</p>
+      )}
+    </section>
+  )
+}
+
+function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename }: {
+  category: string
+  skills: any[]
+  onAdd: () => void
+  onDelete: (id: string) => void
+  onRename: (newName: string) => void
+}) {
+  const [isRenaming, setIsRenaming] = useState(false)
+  const [categoryName, setCategoryName] = useState(category)
+
+  const handleRename = () => {
+    onRename(categoryName)
+    setIsRenaming(false)
+  }
+
+  return (
+    <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+      <div className="flex items-center justify-between mb-2">
+        {isRenaming ? (
+          <div className="flex items-center gap-2">
+            <input
+              className="text-sm font-medium bg-white border rounded px-2 py-1 outline-none text-gray-900"
+              value={categoryName}
+              onChange={(e) => setCategoryName(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleRename()}
+              autoFocus
+            />
+            <button onClick={handleRename} className="text-green-600 hover:text-green-700 text-sm">✓</button>
+            <button onClick={() => { setIsRenaming(false); setCategoryName(category) }} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+          </div>
+        ) : (
+          <h3
+            className="text-sm font-semibold text-gray-700 cursor-pointer hover:text-primary transition-colors"
+            onClick={() => setIsRenaming(true)}
+            title="Cliquer pour renommer"
+          >
+            {category}
+          </h3>
+        )}
+        <button
+          onClick={onAdd}
+          className="text-xs text-gray-500 hover:text-primary transition-colors"
+        >
+          + Ajouter
+        </button>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <SkillBadge key={skill.id} skill={skill} onDelete={() => onDelete(skill.id)} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
   const [name, setName] = useState(skill.name)
-  const [level, setLevel] = useState(skill.level || 'INTERMEDIATE')
   const [editing, setEditing] = useState(!skill.name)
 
   const save = async () => {
@@ -892,12 +1030,10 @@ function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete
     await fetch('/api/profile/skills', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: skill.id, name, level }),
+      body: JSON.stringify({ id: skill.id, name, category: skill.category || null }),
     })
     setEditing(false)
   }
-
-  const getLevelLabel = (lvl: string) => skillLevels.find(l => l.value === lvl)?.label || lvl
 
   if (editing) {
     return (
@@ -906,18 +1042,10 @@ function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete
           className="bg-transparent text-sm w-28 outline-none text-gray-900"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && save()}
           placeholder="Compétence"
           autoFocus
         />
-        <select
-          value={level}
-          onChange={(e) => setLevel(e.target.value)}
-          className="text-xs bg-white border rounded px-2 py-1 text-gray-700"
-        >
-          {skillLevels.map((l) => (
-            <option key={l.value} value={l.value}>{l.label}</option>
-          ))}
-        </select>
         <button onClick={save} className="text-green-600 hover:text-green-700 text-sm font-medium">✓</button>
         <button onClick={onDelete} className="text-red-500 hover:text-red-700">×</button>
       </div>
@@ -926,16 +1054,7 @@ function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete
 
   return (
     <div className="flex items-center gap-1 bg-primary/10 text-primary rounded-full px-3 py-1">
-      <button
-        type="button"
-        className="cursor-grab active:cursor-grabbing text-primary/40 hover:text-primary/60 touch-none"
-        {...dragHandleProps.attributes}
-        {...dragHandleProps.listeners}
-      >
-        <span className="text-xs">⋮⋮</span>
-      </button>
       <span className="text-sm font-medium cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
-      <span className="text-xs bg-primary/20 px-2 py-0.5 rounded">{getLevelLabel(level)}</span>
       <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
     </div>
   )

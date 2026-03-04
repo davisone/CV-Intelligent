@@ -297,26 +297,35 @@ export function ModernTemplate({ data }: { data: CVData }) {
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
                   Compétences
                 </h2>
-                <div className="space-y-2">
-                  {data.skills.map((skill: any, i: number) => (
-                    <div key={i}>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-700">{skill.name}</span>
-                        <span className="text-slate-500">{levelLabels[skill.level] || skill.level}</span>
-                      </div>
-                      <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-slate-800 rounded-full"
-                          style={{
-                            width: skill.level === 'EXPERT' ? '100%' :
-                                   skill.level === 'ADVANCED' ? '80%' :
-                                   skill.level === 'INTERMEDIATE' ? '60%' : '40%'
-                          }}
-                        />
-                      </div>
+                {(() => {
+                  const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
+                  const uncategorized = data.skills.filter((s: any) => !s.category)
+                  return (
+                    <div className="space-y-2">
+                      {categories.map((cat: string) => (
+                        <div key={cat}>
+                          <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">{cat}</h3>
+                          <div className="flex flex-wrap gap-1.5">
+                            {data.skills.filter((s: any) => s.category === cat).map((skill: any, i: number) => (
+                              <span key={i} className="text-sm px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">
+                                {skill.name}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                      {uncategorized.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5">
+                          {uncategorized.map((skill: any, i: number) => (
+                            <span key={i} className="text-sm px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">
+                              {skill.name}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+                  )
+                })()}
               </section>
             )}
 

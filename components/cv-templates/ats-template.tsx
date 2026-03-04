@@ -206,11 +206,25 @@ export function ATSTemplate({ data }: { data: CVData }) {
             <h2 className="text-base font-bold text-black uppercase mb-2">
               COMPÉTENCES
             </h2>
-            <p className="text-sm text-black">
-              {data.skills.map((skill: any) =>
-                `${skill.name} (${levelLabels[skill.level] || skill.level})`
-              ).join(' • ')}
-            </p>
+            {(() => {
+              const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
+              const uncategorized = data.skills.filter((s: any) => !s.category)
+              return (
+                <div className="space-y-1">
+                  {categories.map((cat: string) => (
+                    <p key={cat} className="text-sm text-black">
+                      <span className="font-semibold">{cat} :</span>{' '}
+                      {data.skills.filter((s: any) => s.category === cat).map((s: any) => s.name).join(' • ')}
+                    </p>
+                  ))}
+                  {uncategorized.length > 0 && (
+                    <p className="text-sm text-black">
+                      {uncategorized.map((s: any) => s.name).join(' • ')}
+                    </p>
+                  )}
+                </div>
+              )
+            })()}
           </section>
         )}
 

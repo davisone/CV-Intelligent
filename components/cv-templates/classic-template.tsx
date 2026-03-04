@@ -260,14 +260,35 @@ export function ClassicTemplate({ data }: { data: CVData }) {
               <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
                 Compétences
               </h2>
-              <ul className="space-y-1">
-                {data.skills.map((skill: any, i: number) => (
-                  <li key={i} className="text-sm text-gray-700 flex justify-between">
-                    <span>{skill.name}</span>
-                    <span className="text-gray-500">{levelLabels[skill.level] || skill.level}</span>
-                  </li>
-                ))}
-              </ul>
+              {(() => {
+                const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
+                const uncategorized = data.skills.filter((s: any) => !s.category)
+                return (
+                  <div className="space-y-2">
+                    {categories.map((cat: string) => (
+                      <div key={cat}>
+                        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{cat}</h3>
+                        <div className="flex flex-wrap gap-1.5">
+                          {data.skills.filter((s: any) => s.category === cat).map((skill: any, i: number) => (
+                            <span key={i} className="text-sm px-2.5 py-0.5 bg-gray-100 text-gray-700 rounded-full">
+                              {skill.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    {uncategorized.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {uncategorized.map((skill: any, i: number) => (
+                          <span key={i} className="text-sm px-2.5 py-0.5 bg-gray-100 text-gray-700 rounded-full">
+                            {skill.name}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })()}
             </section>
           )}
 

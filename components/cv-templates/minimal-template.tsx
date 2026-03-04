@@ -250,14 +250,35 @@ export function MinimalTemplate({ data }: { data: CVData }) {
               <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
                 Compétences
               </h2>
-              <div className="space-y-2">
-                {data.skills.map((skill: any, i: number) => (
-                  <div key={i} className="flex justify-between text-sm">
-                    <span className="text-gray-700">{skill.name}</span>
-                    <span className="text-gray-400">{levelLabels[skill.level] || skill.level}</span>
+              {(() => {
+                const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
+                const uncategorized = data.skills.filter((s: any) => !s.category)
+                return (
+                  <div className="space-y-3">
+                    {categories.map((cat: string) => (
+                      <div key={cat}>
+                        <h3 className="text-xs font-medium text-gray-400 mb-1.5">{cat}</h3>
+                        <div className="flex flex-wrap gap-1.5">
+                          {data.skills.filter((s: any) => s.category === cat).map((skill: any, i: number) => (
+                            <span key={i} className="text-sm px-2.5 py-0.5 bg-gray-50 text-gray-700 rounded-full border border-gray-200">
+                              {skill.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    {uncategorized.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {uncategorized.map((skill: any, i: number) => (
+                          <span key={i} className="text-sm px-2.5 py-0.5 bg-gray-50 text-gray-700 rounded-full border border-gray-200">
+                            {skill.name}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
+                )
+              })()}
             </section>
           )}
 
