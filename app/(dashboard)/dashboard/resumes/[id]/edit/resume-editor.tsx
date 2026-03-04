@@ -1758,6 +1758,11 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
     onReorder(skills.map(s => s.category === oldName ? { ...s, category: newName } : s))
   }
 
+  const handleGroupReorder = (category: string | null, reorderedGroupSkills: SkillData[]) => {
+    const otherSkills = skills.filter(s => (category ? s.category !== category : !!s.category))
+    onReorder([...otherSkills, ...reorderedGroupSkills])
+  }
+
   return (
     <section className="bg-white p-6 rounded-xl border">
       <div className="flex justify-between items-center mb-4">
@@ -1802,6 +1807,7 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
             onUpdate={onUpdate}
             onDelete={onDelete}
             onRename={(newName) => handleRenameCategory(category, newName)}
+            onReorder={(reordered) => handleGroupReorder(category, reordered)}
           />
         )
       })}
@@ -1811,16 +1817,21 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
           {categories.length > 0 && (
             <h3 className="text-sm font-medium text-gray-500 mb-2">Autres</h3>
           )}
-          <div className="flex flex-wrap gap-2">
-            {uncategorizedSkills.map((skill) => (
+          <SortableList
+            items={uncategorizedSkills}
+            onReorder={(reordered) => handleGroupReorder(null, reordered)}
+            keyExtractor={(skill) => skill.id}
+            direction="horizontal"
+            renderItem={(skill, dragHandleProps) => (
               <EditorSkillBadge
                 key={skill.id}
                 skill={skill}
                 onUpdate={(data) => onUpdate(skill.id, data)}
                 onDelete={() => onDelete(skill.id)}
+                dragHandleProps={dragHandleProps}
               />
-            ))}
-          </div>
+            )}
+          />
         </div>
       )}
 
@@ -1840,13 +1851,14 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
   )
 }
 
-function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete, onRename }: {
+function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete, onRename, onReorder }: {
   category: string
   skills: SkillData[]
   onAdd: () => void
   onUpdate: (id: string, data: Partial<SkillData>) => void
   onDelete: (id: string) => void
   onRename: (newName: string) => void
+  onReorder: (items: SkillData[]) => void
 }) {
   const [isRenaming, setIsRenaming] = useState(false)
   const [categoryName, setCategoryName] = useState(category)
@@ -1857,7 +1869,7 @@ function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete,
   }
 
   return (
-    <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+    <div className="mb-6 p-3 bg-gray-50 rounded-lg">
       <div className="flex items-center justify-between mb-2">
         {isRenaming ? (
           <div className="flex items-center gap-2">
@@ -1877,7 +1889,7 @@ function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete,
           </div>
         ) : (
           <h3
-            className="text-sm font-semibold text-gray-700 cursor-pointer hover:text-blue-600 transition-colors"
+            className="text-sm font-bold text-gray-900 cursor-pointer hover:text-blue-600 transition-colors"
             onClick={() => setIsRenaming(true)}
             title="Cliquer pour renommer"
           >
@@ -1891,24 +1903,30 @@ function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete,
           + Ajouter
         </button>
       </div>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
+      <SortableList
+        items={skills}
+        onReorder={onReorder}
+        keyExtractor={(skill) => skill.id}
+        direction="horizontal"
+        renderItem={(skill, dragHandleProps) => (
           <EditorSkillBadge
             key={skill.id}
             skill={skill}
             onUpdate={(data) => onUpdate(skill.id, data)}
             onDelete={() => onDelete(skill.id)}
+            dragHandleProps={dragHandleProps}
           />
-        ))}
-      </div>
+        )}
+      />
     </div>
   )
 }
 
-function EditorSkillBadge({ skill, onUpdate, onDelete }: {
+function EditorSkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: {
   skill: SkillData
   onUpdate: (data: Partial<SkillData>) => void
   onDelete: () => void
+  dragHandleProps: DragHandleProps
 }) {
   const [data, setData] = useState(skill)
   const [editing, setEditing] = useState(!skill.name)
@@ -1943,6 +1961,14 @@ function EditorSkillBadge({ skill, onUpdate, onDelete }: {
 
   return (
     <div className="flex items-center gap-1 bg-blue-100 text-blue-800 rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-blue-400 hover:text-blue-600 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
       <span className="text-sm cursor-pointer" onClick={() => setEditing(true)}>
         {data.name}
       </span>

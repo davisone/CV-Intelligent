@@ -869,7 +869,6 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
   const [newCategoryName, setNewCategoryName] = useState('')
   const [isCreatingCategory, setIsCreatingCategory] = useState(false)
 
-  // Extraire les catégories uniques
   const categories = Array.from(new Set(
     skills.filter(s => s.category).map(s => s.category as string)
   ))
@@ -892,8 +891,13 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
         body: JSON.stringify({ id: skill.id, name: skill.name, category: newName }),
       })
     }
-    // Mettre à jour le state local en réordonnant pour refléter le changement
     onReorder(skills.map(s => s.category === oldName ? { ...s, category: newName } : s))
+  }
+
+  // Quand un groupe est réordonné, on remplace les skills de ce groupe dans le tableau global
+  const handleGroupReorder = (category: string | null, reorderedGroupSkills: any[]) => {
+    const otherSkills = skills.filter(s => (category ? s.category !== category : !!s.category))
+    onReorder([...otherSkills, ...reorderedGroupSkills])
   }
 
   return (
@@ -920,7 +924,6 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
         </div>
       </div>
 
-      {/* Groupes par catégorie */}
       {categories.map((category) => {
         const categorySkills = skills.filter(s => s.category === category)
         return (
@@ -931,25 +934,28 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
             onAdd={() => onAdd(category)}
             onDelete={onDelete}
             onRename={(newName) => handleRenameCategory(category, newName)}
+            onReorder={(reordered) => handleGroupReorder(category, reordered)}
           />
         )
       })}
 
-      {/* Compétences sans catégorie */}
       {uncategorizedSkills.length > 0 && (
         <div className="mt-4">
           {categories.length > 0 && (
             <h3 className="text-sm font-medium text-gray-500 mb-2">Autres</h3>
           )}
-          <div className="flex flex-wrap gap-2">
-            {uncategorizedSkills.map((skill) => (
-              <SkillBadge key={skill.id} skill={skill} onDelete={() => onDelete(skill.id)} />
-            ))}
-          </div>
+          <SortableList
+            items={uncategorizedSkills}
+            onReorder={(reordered) => handleGroupReorder(null, reordered)}
+            keyExtractor={(skill) => skill.id}
+            direction="horizontal"
+            renderItem={(skill, dragHandleProps) => (
+              <SkillBadge skill={skill} onDelete={() => onDelete(skill.id)} dragHandleProps={dragHandleProps} />
+            )}
+          />
         </div>
       )}
 
-      {/* Bouton ajouter sans catégorie */}
       <div className="mt-3">
         <button
           onClick={() => onAdd()}
@@ -966,12 +972,13 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
   )
 }
 
-function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename }: {
+function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReorder }: {
   category: string
   skills: any[]
   onAdd: () => void
   onDelete: (id: string) => void
   onRename: (newName: string) => void
+  onReorder: (items: any[]) => void
 }) {
   const [isRenaming, setIsRenaming] = useState(false)
   const [categoryName, setCategoryName] = useState(category)
@@ -982,7 +989,7 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename }: {
   }
 
   return (
-    <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+    <div className="mb-6 p-3 bg-gray-50 rounded-lg">
       <div className="flex items-center justify-between mb-2">
         {isRenaming ? (
           <div className="flex items-center gap-2">
@@ -998,7 +1005,7 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename }: {
           </div>
         ) : (
           <h3
-            className="text-sm font-semibold text-gray-700 cursor-pointer hover:text-primary transition-colors"
+            className="text-sm font-bold text-gray-900 cursor-pointer hover:text-primary transition-colors"
             onClick={() => setIsRenaming(true)}
             title="Cliquer pour renommer"
           >
@@ -1012,16 +1019,20 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename }: {
           + Ajouter
         </button>
       </div>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <SkillBadge key={skill.id} skill={skill} onDelete={() => onDelete(skill.id)} />
-        ))}
-      </div>
+      <SortableList
+        items={skills}
+        onReorder={onReorder}
+        keyExtractor={(skill) => skill.id}
+        direction="horizontal"
+        renderItem={(skill, dragHandleProps) => (
+          <SkillBadge skill={skill} onDelete={() => onDelete(skill.id)} dragHandleProps={dragHandleProps} />
+        )}
+      />
     </div>
   )
 }
 
-function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
+function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
   const [name, setName] = useState(skill.name)
   const [editing, setEditing] = useState(!skill.name)
 
@@ -1054,6 +1065,14 @@ function SkillBadge({ skill, onDelete }: { skill: any; onDelete: () => void }) {
 
   return (
     <div className="flex items-center gap-1 bg-primary/10 text-primary rounded-full px-3 py-1">
+      <button
+        type="button"
+        className="cursor-grab active:cursor-grabbing text-primary/40 hover:text-primary/60 touch-none"
+        {...dragHandleProps.attributes}
+        {...dragHandleProps.listeners}
+      >
+        <span className="text-xs">⋮⋮</span>
+      </button>
       <span className="text-sm font-medium cursor-pointer" onClick={() => setEditing(true)}>{name}</span>
       <button onClick={onDelete} className="hover:text-red-500 ml-1">×</button>
     </div>
