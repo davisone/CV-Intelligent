@@ -924,20 +924,37 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
         </div>
       </div>
 
-      {categories.map((category) => {
-        const categorySkills = skills.filter(s => s.category === category)
-        return (
-          <SkillCategoryGroup
-            key={category}
-            category={category}
-            skills={categorySkills}
-            onAdd={() => onAdd(category)}
-            onDelete={onDelete}
-            onRename={(newName) => handleRenameCategory(category, newName)}
-            onReorder={(reordered) => handleGroupReorder(category, reordered)}
-          />
-        )
-      })}
+      {/* Groupes avec drag & drop vertical */}
+      {categories.length > 0 && (
+        <SortableList
+          items={categories.map(cat => ({ id: cat, category: cat }))}
+          onReorder={(reorderedCats) => {
+            const newSkills: any[] = []
+            for (const cat of reorderedCats) {
+              newSkills.push(...skills.filter(s => s.category === cat.category))
+            }
+            newSkills.push(...uncategorizedSkills)
+            onReorder(newSkills)
+          }}
+          keyExtractor={(item) => item.id}
+          direction="vertical"
+          className="space-y-0"
+          renderItem={(item, dragHandleProps) => {
+            const categorySkills = skills.filter(s => s.category === item.category)
+            return (
+              <SkillCategoryGroup
+                category={item.category}
+                skills={categorySkills}
+                onAdd={() => onAdd(item.category)}
+                onDelete={onDelete}
+                onRename={(newName) => handleRenameCategory(item.category, newName)}
+                onReorder={(reordered) => handleGroupReorder(item.category, reordered)}
+                dragHandleProps={dragHandleProps}
+              />
+            )
+          }}
+        />
+      )}
 
       {uncategorizedSkills.length > 0 && (
         <div className="mt-4">
@@ -972,13 +989,14 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
   )
 }
 
-function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReorder }: {
+function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReorder, dragHandleProps }: {
   category: string
   skills: any[]
   onAdd: () => void
   onDelete: (id: string) => void
   onRename: (newName: string) => void
   onReorder: (items: any[]) => void
+  dragHandleProps: DragHandleProps
 }) {
   const [isRenaming, setIsRenaming] = useState(false)
   const [categoryName, setCategoryName] = useState(category)
@@ -991,27 +1009,37 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReo
   return (
     <div className="mb-6 p-3 bg-gray-50 rounded-lg">
       <div className="flex items-center justify-between mb-2">
-        {isRenaming ? (
-          <div className="flex items-center gap-2">
-            <input
-              className="text-sm font-medium bg-white border rounded px-2 py-1 outline-none text-gray-900"
-              value={categoryName}
-              onChange={(e) => setCategoryName(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleRename()}
-              autoFocus
-            />
-            <button onClick={handleRename} className="text-green-600 hover:text-green-700 text-sm">✓</button>
-            <button onClick={() => { setIsRenaming(false); setCategoryName(category) }} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
-          </div>
-        ) : (
-          <h3
-            className="text-sm font-bold text-gray-900 cursor-pointer hover:text-primary transition-colors"
-            onClick={() => setIsRenaming(true)}
-            title="Cliquer pour renommer"
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600 touch-none"
+            {...dragHandleProps.attributes}
+            {...dragHandleProps.listeners}
           >
-            {category}
-          </h3>
-        )}
+            <span className="text-sm">⋮⋮</span>
+          </button>
+          {isRenaming ? (
+            <div className="flex items-center gap-2">
+              <input
+                className="text-sm font-medium bg-white border rounded px-2 py-1 outline-none text-gray-900"
+                value={categoryName}
+                onChange={(e) => setCategoryName(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleRename()}
+                autoFocus
+              />
+              <button onClick={handleRename} className="text-green-600 hover:text-green-700 text-sm">✓</button>
+              <button onClick={() => { setIsRenaming(false); setCategoryName(category) }} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+            </div>
+          ) : (
+            <h3
+              className="text-sm font-bold text-gray-900 cursor-pointer hover:text-primary transition-colors"
+              onClick={() => setIsRenaming(true)}
+              title="Cliquer pour renommer"
+            >
+              {category}
+            </h3>
+          )}
+        </div>
         <button
           onClick={onAdd}
           className="text-xs text-gray-500 hover:text-primary transition-colors"
