@@ -10,8 +10,7 @@ import { sendWelcomeEmail } from '@/lib/email/nodemailer'
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
-  // Le commit SHA invalide toutes les sessions à chaque déploiement
-  secret: `${process.env.NEXTAUTH_SECRET}-${process.env.VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: 'jwt',
     maxAge: 60 * 60,
