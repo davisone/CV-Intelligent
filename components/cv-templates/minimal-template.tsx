@@ -73,7 +73,9 @@ export function MinimalTemplate({ data }: { data: CVData }) {
           {data.personalInfo.drivingLicenses && (
             <span>Permis {data.personalInfo.drivingLicenses}</span>
           )}
-          {data.personalInfo.linkedin && (
+        </div>
+        {data.personalInfo.linkedin && (
+          <div className="mt-1 text-sm text-gray-500">
             <a
               href={formatUrl(data.personalInfo.linkedin)}
               target="_blank"
@@ -85,8 +87,10 @@ export function MinimalTemplate({ data }: { data: CVData }) {
               </svg>
               {data.personalInfo.linkedinLabel || 'LinkedIn'}
             </a>
-          )}
-          {data.personalInfo.github && (
+          </div>
+        )}
+        {data.personalInfo.github && (
+          <div className="mt-1 text-sm text-gray-500">
             <a
               href={formatUrl(data.personalInfo.github)}
               target="_blank"
@@ -98,10 +102,10 @@ export function MinimalTemplate({ data }: { data: CVData }) {
               </svg>
               {data.personalInfo.githubLabel || 'GitHub'}
             </a>
-          )}
-        </div>
+          </div>
+        )}
         {data.personalInfo.portfolio && (
-          <div className="mt-2 text-sm text-gray-500">
+          <div className="mt-1 text-sm text-gray-500">
             <a
               href={formatUrl(data.personalInfo.portfolio)}
               target="_blank"
