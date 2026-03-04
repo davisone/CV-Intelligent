@@ -209,7 +209,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
                   <div className="flex justify-between items-baseline">
                     <h3 className="font-semibold text-gray-900">{project.name}</h3>
                     {project.url && (
-                      <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 italic hover:underline">
+                      <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 italic underline">
                         {displayUrl(formatUrl(project.url))}
                       </a>
                     )}

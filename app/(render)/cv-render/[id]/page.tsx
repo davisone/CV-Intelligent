@@ -85,7 +85,9 @@ export default async function CvRenderPage({ params, searchParams }: PageProps) 
 
   return (
     <AutoFitPage>
-      <TemplateComponent data={cvData} />
+      <div data-cv-container>
+        <TemplateComponent data={cvData} />
+      </div>
     </AutoFitPage>
   )
 }

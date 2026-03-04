@@ -195,7 +195,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
                 <div key={i} className="grid grid-cols-[120px_1fr] gap-8">
                   <div className="text-sm text-gray-400">
                     {project.url ? (
-                      <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
+                      <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600 transition-colors">
                         {displayUrl(formatUrl(project.url))}
                       </a>
                     ) : (

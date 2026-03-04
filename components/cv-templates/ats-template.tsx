@@ -171,7 +171,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
                     </div>
                   )}
                   {project.url && (
-                    <div className="text-sm text-black">{displayUrl(formatUrl(project.url))}</div>
+                    <a href={formatUrl(project.url)} target="_blank" rel="noopener noreferrer" className="block text-sm text-black underline">{displayUrl(formatUrl(project.url))}</a>
                   )}
                 </div>
               ))}
