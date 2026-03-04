@@ -301,10 +301,10 @@ export function ModernTemplate({ data }: { data: CVData }) {
                   const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
                   const uncategorized = data.skills.filter((s: any) => !s.category)
                   return (
-                    <div className="space-y-2">
+                    <div className="space-y-4">
                       {categories.map((cat: string) => (
                         <div key={cat}>
-                          <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">{cat}</h3>
+                          <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide mb-1">{cat}</h3>
                           <div className="flex flex-wrap gap-1.5">
                             {data.skills.filter((s: any) => s.category === cat).map((skill: any, i: number) => (
                               <span key={i} className="text-sm px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">

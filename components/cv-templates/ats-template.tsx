@@ -210,10 +210,10 @@ export function ATSTemplate({ data }: { data: CVData }) {
               const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
               const uncategorized = data.skills.filter((s: any) => !s.category)
               return (
-                <div className="space-y-1">
+                <div className="space-y-2.5">
                   {categories.map((cat: string) => (
                     <p key={cat} className="text-sm text-black">
-                      <span className="font-semibold">{cat} :</span>{' '}
+                      <span className="font-bold">{cat} :</span>{' '}
                       {data.skills.filter((s: any) => s.category === cat).map((s: any) => s.name).join(' • ')}
                     </p>
                   ))}
