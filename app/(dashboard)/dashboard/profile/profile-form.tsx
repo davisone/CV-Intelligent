@@ -682,7 +682,21 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
           <Input placeholder="Diplôme" value={data.degree} onChange={(e) => setData({ ...data, degree: e.target.value })} />
           <Input placeholder="Domaine" value={data.field || ''} onChange={(e) => setData({ ...data, field: e.target.value })} />
           <Input type="date" value={formatDate(data.startDate, 'input')} onChange={(e) => setData({ ...data, startDate: e.target.value })} />
-          <Input type="date" value={formatDate(data.endDate, 'input') || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} />
+          {!data.current && (
+            <Input type="date" value={formatDate(data.endDate, 'input') || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} placeholder="Date de fin" />
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            id={`current-${education.id}`}
+            checked={data.current || false}
+            onChange={(e) => setData({ ...data, current: e.target.checked, endDate: e.target.checked ? null : data.endDate })}
+            className="w-4 h-4 rounded border-gray-300"
+          />
+          <label htmlFor={`current-${education.id}`} className="text-sm text-gray-700">
+            Formation actuelle
+          </label>
         </div>
         <div className="flex gap-2">
           <Button size="sm" onClick={save}>Sauvegarder</Button>
@@ -701,7 +715,7 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
         <p className="text-gray-600">{data.institution || 'Établissement'}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
         <p className="text-sm text-gray-500">
-          {formatDate(data.startDate)} — {data.endDate ? formatDate(data.endDate) : 'Présent'}
+          {formatDate(data.startDate)} — {data.current ? 'Présent' : (data.endDate ? formatDate(data.endDate) : 'Présent')}
         </p>
       </div>
       <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>

@@ -126,7 +126,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
         {/* Summary */}
         {data.personalInfo.summary && (
           <section className="mb-12">
-            <p className="text-gray-600 leading-relaxed max-w-2xl">
+            <p className="text-gray-600 leading-relaxed max-w-2xl text-justify">
               {data.personalInfo.summary}
             </p>
           </section>

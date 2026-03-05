@@ -73,7 +73,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
                 <span className="font-bold">{data.personalInfo.lastName}</span>
               </h1>
               {data.personalInfo.summary && (
-                <p className="mt-1 text-slate-300 max-w-xl leading-normal text-sm">
+                <p className="mt-1 text-slate-300 max-w-xl leading-normal text-sm text-justify">
                   {data.personalInfo.summary}
                 </p>
               )}

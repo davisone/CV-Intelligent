@@ -275,7 +275,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                 </span>
                 À propos
               </h2>
-              <p className="text-gray-600 leading-relaxed pl-10">
+              <p className="text-gray-600 leading-relaxed pl-10 text-justify">
                 {data.personalInfo.summary}
               </p>
             </section>

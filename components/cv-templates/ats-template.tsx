@@ -100,7 +100,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
             <h2 className="text-base font-bold text-black uppercase mb-2">
               RÉSUMÉ PROFESSIONNEL
             </h2>
-            <p className="text-sm text-black leading-relaxed">
+            <p className="text-sm text-black leading-relaxed text-justify">
               {data.personalInfo.summary}
             </p>
           </section>
