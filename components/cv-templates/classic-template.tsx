@@ -54,7 +54,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
   return (
     <div className="bg-white shadow-2xl" style={{ width: '21cm', minHeight: '29.7cm', margin: '0 auto' }}>
       {/* Header classique */}
-      <div className="px-12 pt-10 pb-6 border-b-2 border-gray-800">
+      <div className="px-6 pt-10 pb-6 border-b-2 border-gray-800">
         <div className="text-center">
           <h1 className="text-3xl font-serif text-gray-900 tracking-wide">
             {data.personalInfo.firstName} {data.personalInfo.lastName}
@@ -136,7 +136,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
       </div>
 
       {/* Content */}
-      <div className="px-12 py-8">
+      <div className="px-6 py-8">
         {/* Summary */}
         {data.personalInfo.summary && (
           <section className="mb-6">

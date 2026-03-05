@@ -54,7 +54,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
   return (
     <div className="bg-white shadow-2xl" style={{ width: '21cm', minHeight: '29.7cm', margin: '0 auto' }}>
       {/* Header minimaliste */}
-      <div className="px-16 pt-16 pb-8">
+      <div className="px-8 pt-16 pb-8">
         <h1 className="text-4xl font-extralight text-gray-900 tracking-tight">
           {data.personalInfo.firstName}
           <span className="font-medium"> {data.personalInfo.lastName}</span>
@@ -122,7 +122,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
       </div>
 
       {/* Content avec beaucoup d'espace */}
-      <div className="px-16 py-6">
+      <div className="px-8 py-6">
         {/* Summary */}
         {data.personalInfo.summary && (
           <section className="mb-12">

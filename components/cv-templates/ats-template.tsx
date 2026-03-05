@@ -54,7 +54,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
   return (
     <div className="bg-white shadow-2xl font-sans" style={{ width: '21cm', minHeight: '29.7cm', margin: '0 auto' }}>
       {/* Header - Simple et sans fioritures pour ATS */}
-      <div className="px-10 pt-8 pb-4">
+      <div className="px-6 pt-8 pb-4">
         <h1 className="text-2xl font-bold text-black">
           {data.personalInfo.firstName} {data.personalInfo.lastName}
         </h1>
@@ -93,7 +93,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
       <hr className="border-black mx-10" />
 
       {/* Content */}
-      <div className="px-10 py-4">
+      <div className="px-6 py-4">
         {/* Summary / Objective */}
         {data.personalInfo.summary && (
           <section className="mb-5">
