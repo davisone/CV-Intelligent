@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
+import crypto from 'crypto'
 import { prisma } from '@/lib/db/prisma'
 import { signUpSchema } from '@/lib/validations/resume.schema'
-import { sendWelcomeEmail } from '@/lib/email/resend'
+import { sendVerificationEmail } from '@/lib/email/resend'
 import { checkRateLimit, AUTH_RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {
@@ -49,12 +50,18 @@ export async function POST(request: Request) {
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 12)
 
+    // Générer token de vérification
+    const verificationToken = crypto.randomBytes(32).toString('hex')
+    const verificationTokenExpiry = new Date(Date.now() + 24 * 3600000) // 24 heures
+
     // Create user
     const user = await prisma.user.create({
       data: {
         name,
         email,
         password: hashedPassword,
+        verificationToken,
+        verificationTokenExpiry,
       },
       select: {
         id: true,
@@ -64,9 +71,9 @@ export async function POST(request: Request) {
       },
     })
 
-    // Envoyer l'email de bienvenue (non bloquant)
-    sendWelcomeEmail(email, name).catch((error) => {
-      console.error('[WELCOME_EMAIL_ERROR]:', error)
+    // Envoyer l'email de vérification (non bloquant)
+    sendVerificationEmail(email, verificationToken).catch((error) => {
+      console.error('[VERIFICATION_EMAIL_ERROR]:', error)
     })
 
     return NextResponse.json(
