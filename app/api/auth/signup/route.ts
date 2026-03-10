@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
                request.headers.get('x-real-ip') || 'unknown'
     const rateLimitKey = `auth-signup:${ip}`
-    const rateLimit = checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.signup)
+    const rateLimit = await checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.signup)
 
     if (!rateLimit.success) {
       return NextResponse.json(

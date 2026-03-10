@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     // Rate limiting
     const rateLimitKey = `checkout:${session.user.id}`
-    const rateLimit = checkRateLimit(rateLimitKey, PAYMENT_RATE_LIMITS.checkout)
+    const rateLimit = await checkRateLimit(rateLimitKey, PAYMENT_RATE_LIMITS.checkout)
 
     if (!rateLimit.success) {
       return NextResponse.json(
