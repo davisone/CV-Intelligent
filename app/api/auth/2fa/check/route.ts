@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
                request.headers.get('x-real-ip') || 'unknown'
     const rateLimitKey = `auth-2fa-check:${ip}`
-    const rateLimit = checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.twoFactorCheck)
+    const rateLimit = await checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.twoFactorCheck)
 
     if (!rateLimit.success) {
       return NextResponse.json(

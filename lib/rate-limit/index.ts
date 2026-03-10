@@ -1,91 +1,88 @@
-type RateLimitStore = Map<string, { count: number; resetTime: number }>
-
-const store: RateLimitStore = new Map()
-
-// Nettoyage périodique des entrées expirées (toutes les 5 minutes)
-setInterval(() => {
-  const now = Date.now()
-  for (const [key, value] of store.entries()) {
-    if (now > value.resetTime) {
-      store.delete(key)
-    }
-  }
-}, 5 * 60 * 1000)
+import { Ratelimit } from '@upstash/ratelimit'
+import { Redis } from '@upstash/redis'
 
 interface RateLimitConfig {
-  maxRequests: number  // Nombre max de requêtes
-  windowMs: number     // Fenêtre de temps en ms
+  maxRequests: number
+  windowMs: number
 }
 
 interface RateLimitResult {
   success: boolean
   remaining: number
-  resetIn: number  // Temps avant reset en secondes
+  resetIn: number
 }
 
-export function checkRateLimit(
+function msToWindow(windowMs: number): `${number} ${'ms' | 's' | 'm' | 'h' | 'd'}` {
+  if (windowMs < 1000) return `${windowMs} ms`
+  if (windowMs < 60000) return `${Math.ceil(windowMs / 1000)} s`
+  if (windowMs < 3600000) return `${Math.ceil(windowMs / 60000)} m`
+  return `${Math.ceil(windowMs / 3600000)} h`
+}
+
+let redis: Redis | null = null
+const rateLimiters = new Map<string, Ratelimit>()
+
+function getRedis(): Redis | null {
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+    return null
+  }
+  if (!redis) {
+    redis = new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    })
+  }
+  return redis
+}
+
+function getRateLimiter(maxRequests: number, windowMs: number): Ratelimit | null {
+  const client = getRedis()
+  if (!client) return null
+
+  const key = `${maxRequests}:${windowMs}`
+  if (!rateLimiters.has(key)) {
+    rateLimiters.set(key, new Ratelimit({
+      redis: client,
+      limiter: Ratelimit.slidingWindow(maxRequests, msToWindow(windowMs)),
+    }))
+  }
+  return rateLimiters.get(key)!
+}
+
+export async function checkRateLimit(
   identifier: string,
   config: RateLimitConfig
-): RateLimitResult {
-  const now = Date.now()
-  const key = identifier
-  const record = store.get(key)
+): Promise<RateLimitResult> {
+  const limiter = getRateLimiter(config.maxRequests, config.windowMs)
 
-  // Si pas d'enregistrement ou fenêtre expirée, créer nouveau
-  if (!record || now > record.resetTime) {
-    store.set(key, {
-      count: 1,
-      resetTime: now + config.windowMs,
-    })
-    return {
-      success: true,
-      remaining: config.maxRequests - 1,
-      resetIn: Math.ceil(config.windowMs / 1000),
-    }
+  // Fallback en mémoire si Redis non configuré
+  if (!limiter) {
+    console.warn('[RATE_LIMIT] Upstash non configuré, rate limiting désactivé')
+    return { success: true, remaining: config.maxRequests - 1, resetIn: 0 }
   }
 
-  // Vérifier si limite atteinte
-  if (record.count >= config.maxRequests) {
-    return {
-      success: false,
-      remaining: 0,
-      resetIn: Math.ceil((record.resetTime - now) / 1000),
-    }
-  }
-
-  // Incrémenter le compteur
-  record.count++
-  store.set(key, record)
+  const { success, remaining, reset } = await limiter.limit(identifier)
 
   return {
-    success: true,
-    remaining: config.maxRequests - record.count,
-    resetIn: Math.ceil((record.resetTime - now) / 1000),
+    success,
+    remaining,
+    resetIn: Math.ceil((reset - Date.now()) / 1000),
   }
 }
 
-// Configurations prédéfinies pour les endpoints IA
 export const AI_RATE_LIMITS = {
-  suggest: {
-    maxRequests: 10,   // 10 requêtes
-    windowMs: 60000,   // par minute
-  },
-  atsScore: {
-    maxRequests: 5,    // 5 requêtes
-    windowMs: 60000,   // par minute
-  },
+  suggest: { maxRequests: 10, windowMs: 60000 },
+  atsScore: { maxRequests: 5, windowMs: 60000 },
 } as const
 
-// Configurations pour les endpoints d'authentification
 export const AUTH_RATE_LIMITS = {
-  signup: { maxRequests: 5, windowMs: 3600000 },        // 5/heure
-  forgotPassword: { maxRequests: 3, windowMs: 900000 }, // 3/15min
-  resetPassword: { maxRequests: 5, windowMs: 3600000 }, // 5/heure
-  twoFactorCheck: { maxRequests: 10, windowMs: 60000 }, // 10/min
-  twoFactorVerify: { maxRequests: 5, windowMs: 300000 }, // 5/5min
+  signup: { maxRequests: 5, windowMs: 3600000 },
+  forgotPassword: { maxRequests: 3, windowMs: 900000 },
+  resetPassword: { maxRequests: 5, windowMs: 3600000 },
+  twoFactorCheck: { maxRequests: 10, windowMs: 60000 },
+  twoFactorVerify: { maxRequests: 5, windowMs: 300000 },
 } as const
 
-// Configurations pour les endpoints de paiement
 export const PAYMENT_RATE_LIMITS = {
-  checkout: { maxRequests: 10, windowMs: 3600000 }, // 10/heure
+  checkout: { maxRequests: 10, windowMs: 3600000 },
 } as const

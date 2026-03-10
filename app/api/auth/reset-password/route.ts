@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
                request.headers.get('x-real-ip') || 'unknown'
     const rateLimitKey = `auth-reset-password:${ip}`
-    const rateLimit = checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.resetPassword)
+    const rateLimit = await checkRateLimit(rateLimitKey, AUTH_RATE_LIMITS.resetPassword)
 
     if (!rateLimit.success) {
       return NextResponse.json(

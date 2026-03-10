@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     // Vérifier le rate limit
     const rateLimitKey = `ai-suggest:${session.user.id}`
-    const rateLimit = checkRateLimit(rateLimitKey, AI_RATE_LIMITS.suggest)
+    const rateLimit = await checkRateLimit(rateLimitKey, AI_RATE_LIMITS.suggest)
 
     if (!rateLimit.success) {
       return NextResponse.json(
