@@ -1,14 +1,13 @@
 'use client'
 
 import { useEffect, useState, Suspense } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
 const VerifyEmailContent = () => {
   const searchParams = useSearchParams()
-  const router = useRouter()
   const { update } = useSession()
   const token = searchParams.get('token')
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
@@ -27,9 +26,9 @@ const VerifyEmailContent = () => {
       .then(async (res) => {
         if (res.ok) {
           setStatus('success')
-          // Rafraîchir le JWT pour mettre à jour emailVerified sans déconnecter
+          // Rafraîchir le JWT puis rechargement complet pour que le middleware lise le nouveau token
           await update()
-          router.push('/dashboard')
+          window.location.href = '/dashboard'
         } else {
           setStatus('error')
         }
