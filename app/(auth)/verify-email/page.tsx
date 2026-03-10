@@ -69,9 +69,12 @@ const VerifyEmailContent = () => {
       </CardHeader>
       <CardContent className="text-center space-y-4">
         <p className="text-[#6B6560]">Ce lien de vérification est invalide ou a expiré.</p>
-        <Button asChild>
-          <Link href="/verify-email/pending">Renvoyer un email</Link>
-        </Button>
+        <Link
+          href="/verify-email/pending"
+          className="inline-flex items-center justify-center px-4 py-2 bg-[#722F37] text-white rounded-lg font-medium hover:bg-[#8B3A44] transition-colors"
+        >
+          Renvoyer un email
+        </Link>
       </CardContent>
     </Card>
   )
