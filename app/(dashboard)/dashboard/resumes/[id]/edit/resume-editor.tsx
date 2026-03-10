@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
@@ -133,6 +133,8 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   } | null>(null)
   const [isAtsLoading, setIsAtsLoading] = useState(false)
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit')
+  const previewContainerRef = useRef<HTMLDivElement>(null)
+  const [previewScale, setPreviewScale] = useState(1)
   const [title, setTitle] = useState(resume.title)
   const [personalInfo, setPersonalInfo] = useState({
     firstName: resume.personalInfo?.firstName ?? '',
@@ -618,6 +620,22 @@ ${interests.map(i => i.name).join(', ')}
     if (!date) return null
     return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
   }
+
+  // Adapter le zoom de la preview à la largeur du conteneur (mobile)
+  useEffect(() => {
+    if (activeTab !== 'preview') return
+    const container = previewContainerRef.current
+    if (!container) return
+
+    const updateScale = () => {
+      const scale = Math.min(container.offsetWidth / 794, 1)
+      setPreviewScale(scale)
+    }
+
+    updateScale()
+    window.addEventListener('resize', updateScale)
+    return () => window.removeEventListener('resize', updateScale)
+  }, [activeTab])
 
   return (
     <div>
@@ -1194,23 +1212,22 @@ ${interests.map(i => i.name).join(', ')}
               )}
             </Button>
           </div>
-          {/* Container avec scroll et centrage pour l'aperçu A4 */}
-          <div className="overflow-auto">
-            <div className="min-w-fit flex justify-center">
-              <div
-                data-cv-container
-                style={{
-                  width: '21cm',
-                  minHeight: '29.7cm',
-                  transformOrigin: 'top center',
-                }}
-              >
-                {(() => {
-                  const templateKey = (resume.template as TemplateType) || 'MODERN'
-                  const TemplateComponent = templates[templateKey] || templates.MODERN
-                  return <TemplateComponent data={cvData} />
-                })()}
-              </div>
+          {/* Container avec scale adaptatif pour l'aperçu A4 (mobile-friendly) */}
+          <div className="overflow-hidden" ref={previewContainerRef}>
+            <div
+              data-cv-container
+              style={{
+                width: '21cm',
+                minHeight: '29.7cm',
+                transformOrigin: 'top left',
+                zoom: previewScale,
+              }}
+            >
+              {(() => {
+                const templateKey = (resume.template as TemplateType) || 'MODERN'
+                const TemplateComponent = templates[templateKey] || templates.MODERN
+                return <TemplateComponent data={cvData} />
+              })()}
             </div>
           </div>
         </div>
