@@ -51,6 +51,8 @@ model User {
   totpEnabled      Boolean   @default(false)
   resetToken       String?
   resetTokenExpiry DateTime?
+  verificationToken       String?
+  verificationTokenExpiry DateTime?
   // Stripe & Payment
   stripeCustomerId String?   @unique
   freeCVUsed       Boolean   @default(false)
