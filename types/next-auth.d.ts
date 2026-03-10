@@ -9,6 +9,7 @@ declare module 'next-auth' {
       image?: string | null
       totpEnabled?: boolean
       twoFactorVerified?: boolean
+      emailVerified?: boolean
     }
   }
 }
@@ -18,5 +19,6 @@ declare module 'next-auth/jwt' {
     sub: string
     totpEnabled?: boolean
     twoFactorVerified?: boolean
+    emailVerified?: boolean
   }
 }

@@ -81,6 +81,7 @@ export const AUTH_RATE_LIMITS = {
   resetPassword: { maxRequests: 5, windowMs: 3600000 },
   twoFactorCheck: { maxRequests: 10, windowMs: 60000 },
   twoFactorVerify: { maxRequests: 5, windowMs: 300000 },
+  resendVerification: { maxRequests: 3, windowMs: 900000 },
 } as const
 
 export const PAYMENT_RATE_LIMITS = {
