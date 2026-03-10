@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const VerifyEmailContent = () => {
   const searchParams = useSearchParams()
-  const { update, status } = useSession()
+  const { update, status: sessionStatus } = useSession()
   const token = searchParams.get('token')
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
 
@@ -28,7 +28,7 @@ const VerifyEmailContent = () => {
           setStatus('success')
           // Si connecté : rafraîchir le JWT et rediriger vers le dashboard
           // Si non connecté : rediriger vers le login avec un message de succès
-          if (status === 'authenticated') {
+          if (sessionStatus === 'authenticated') {
             await update()
             window.location.href = '/dashboard'
           } else {
