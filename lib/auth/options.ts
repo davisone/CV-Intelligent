@@ -104,7 +104,16 @@ export const authOptions: NextAuthOptions = {
       }
       return session
     },
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account, trigger }) {
+      // Rafraîchir emailVerified lors d'une mise à jour de session (après vérification email)
+      if (trigger === 'update' && token.sub) {
+        const refreshed = await prisma.user.findUnique({
+          where: { id: token.sub },
+          select: { emailVerified: true },
+        })
+        token.emailVerified = !!refreshed?.emailVerified
+      }
+
       // Initial sign in
       if (user) {
         token.sub = user.id

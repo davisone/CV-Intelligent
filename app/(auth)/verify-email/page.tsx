@@ -1,14 +1,15 @@
 'use client'
 
 import { useEffect, useState, Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { signOut } from 'next-auth/react'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 const VerifyEmailContent = () => {
   const searchParams = useSearchParams()
+  const router = useRouter()
+  const { update } = useSession()
   const token = searchParams.get('token')
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
 
@@ -26,9 +27,9 @@ const VerifyEmailContent = () => {
       .then(async (res) => {
         if (res.ok) {
           setStatus('success')
-          setTimeout(() => {
-            signOut({ callbackUrl: '/login?verified=true' })
-          }, 2000)
+          // Rafraîchir le JWT pour mettre à jour emailVerified sans déconnecter
+          await update()
+          router.push('/dashboard')
         } else {
           setStatus('error')
         }
@@ -56,7 +57,7 @@ const VerifyEmailContent = () => {
           <CardTitle className="text-green-600">Email vérifié !</CardTitle>
         </CardHeader>
         <CardContent className="text-center text-[#6B6560]">
-          <p>Votre adresse email a bien été vérifiée. Redirection vers la connexion...</p>
+          <p>Votre adresse email a bien été vérifiée. Redirection vers le dashboard...</p>
         </CardContent>
       </Card>
     )
