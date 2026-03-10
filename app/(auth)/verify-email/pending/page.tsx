@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { signOut } from 'next-auth/react'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 
 export default function VerifyEmailPendingPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -50,9 +50,12 @@ export default function VerifyEmailPendingPage() {
           {sent ? 'Email renvoyé !' : "Renvoyer l'email"}
         </Button>
         <p className="text-center text-sm text-[#6B6560]">
-          <Link href="/login" className="text-[#722F37] hover:underline">
+          <button
+            onClick={() => signOut({ callbackUrl: '/login' })}
+            className="text-[#722F37] hover:underline"
+          >
             Se déconnecter
-          </Link>
+          </button>
         </p>
       </CardContent>
     </Card>

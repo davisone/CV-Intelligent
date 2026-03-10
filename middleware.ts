@@ -65,6 +65,11 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/dashboard', request.url))
     }
 
+    // Si email non vérifié et sur une page auth, rediriger directement vers la page pending
+    if (needsEmailVerification && isAuthPage) {
+      return NextResponse.redirect(new URL('/verify-email/pending', request.url))
+    }
+
     // If authenticated and on auth pages (login/signup), redirect to dashboard
     if (!needs2FA && isAuthPage) {
       return NextResponse.redirect(new URL('/dashboard', request.url))
