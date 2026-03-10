@@ -256,3 +256,63 @@ export async function sendPaymentConfirmationEmail(
     return { success: false, error }
   }
 }
+
+export async function sendVerificationEmail(to: string, verificationToken: string) {
+  if (!process.env.RESEND_API_KEY) {
+    console.warn('[EMAIL] RESEND_API_KEY non configuré, email ignoré')
+    return { success: false, error: 'Email not configured' }
+  }
+
+  const verifyUrl = `${process.env.NEXT_PUBLIC_APP_URL}/verify-email?token=${verificationToken}`
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to,
+      subject: 'Vérifiez votre adresse email - CV Builder',
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f5f5f5; padding: 20px;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; padding: 40px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <h1 style="color: #1a1a1a; font-size: 24px; margin-bottom: 24px;">
+              Vérifiez votre adresse email
+            </h1>
+            <p style="color: #666; font-size: 16px; line-height: 1.6;">
+              Merci de vous être inscrit sur CV Builder. Cliquez sur le bouton ci-dessous pour vérifier votre adresse email.
+            </p>
+            <div style="text-align: center; margin: 32px 0;">
+              <a href="${verifyUrl}"
+                 style="display: inline-block; background-color: #722F37; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                Vérifier mon email
+              </a>
+            </div>
+            <p style="color: #999; font-size: 14px; line-height: 1.6;">
+              Ce lien expire dans 24 heures. Si vous n'avez pas créé de compte, ignorez cet email.
+            </p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
+            <p style="color: #999; font-size: 12px; text-align: center;">
+              CV Builder - Créez votre CV parfait avec l'IA
+            </p>
+          </div>
+        </body>
+        </html>
+      `,
+    })
+
+    if (error) {
+      console.error('[EMAIL] Erreur Resend:', error)
+      return { success: false, error }
+    }
+
+    console.log('[EMAIL] Email de vérification envoyé:', data?.id)
+    return { success: true, data: { messageId: data?.id } }
+  } catch (error) {
+    console.error('[EMAIL_ERROR]:', error)
+    return { success: false, error }
+  }
+}
