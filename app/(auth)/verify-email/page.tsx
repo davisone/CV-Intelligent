@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const VerifyEmailContent = () => {
   const searchParams = useSearchParams()
-  const { update } = useSession()
+  const { update, status } = useSession()
   const token = searchParams.get('token')
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
 
@@ -26,9 +26,14 @@ const VerifyEmailContent = () => {
       .then(async (res) => {
         if (res.ok) {
           setStatus('success')
-          // Rafraîchir le JWT puis rechargement complet pour que le middleware lise le nouveau token
-          await update()
-          window.location.href = '/dashboard'
+          // Si connecté : rafraîchir le JWT et rediriger vers le dashboard
+          // Si non connecté : rediriger vers le login avec un message de succès
+          if (status === 'authenticated') {
+            await update()
+            window.location.href = '/dashboard'
+          } else {
+            window.location.href = '/login?verified=true'
+          }
         } else {
           setStatus('error')
         }
