@@ -6,7 +6,7 @@ import type { NextRequest } from 'next/server'
 const protectedRoutes = ['/dashboard', '/profile', '/resumes']
 
 // Routes that should be accessible without 2FA verification
-const publicRoutes = ['/', '/login', '/signup', '/verify-2fa', '/forgot-password', '/reset-password']
+const publicRoutes = ['/', '/login', '/signup', '/verify-2fa', '/forgot-password', '/reset-password', '/verify-email']
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -32,9 +32,6 @@ export async function middleware(request: NextRequest) {
   // Check if route is protected
   const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
 
-  // Check if on verify-2fa page
-  const isVerify2FAPage = pathname === '/verify-2fa'
-
   // Check if on auth pages (login, signup)
   const isAuthPage = pathname === '/login' || pathname === '/signup'
 
@@ -48,6 +45,15 @@ export async function middleware(request: NextRequest) {
   // If authenticated
   if (isAuthenticated && token) {
     const needs2FA = token.totpEnabled === true && token.twoFactorVerified !== true
+    const isVerify2FAPage = pathname === '/verify-2fa'
+
+    // Vérification email (credentials uniquement)
+    const needsEmailVerification = token.emailVerified === false
+    const isVerifyEmailPage = pathname.startsWith('/verify-email')
+
+    if (needsEmailVerification && !isVerifyEmailPage && isProtectedRoute) {
+      return NextResponse.redirect(new URL('/verify-email/pending', request.url))
+    }
 
     // If 2FA is needed and not on verify-2fa page, redirect to verify-2fa
     if (needs2FA && !isVerify2FAPage) {
