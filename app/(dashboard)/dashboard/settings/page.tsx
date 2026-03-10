@@ -2,6 +2,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { TwoFactorSettings } from './two-factor-settings'
+import { DeleteAccountSection } from '@/components/ui/delete-account-section'
 
 export default async function SettingsPage() {
   const session = await getServerSession(authOptions)
@@ -53,6 +54,9 @@ export default async function SettingsPage() {
           </h2>
           <TwoFactorSettings initialEnabled={user.totpEnabled} />
         </div>
+
+        {/* Delete Account Section */}
+        <DeleteAccountSection />
       </div>
     </div>
   )
