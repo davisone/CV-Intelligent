@@ -61,6 +61,13 @@ function LoginForm() {
     }
   }, [oauthError])
 
+  // Afficher le toast si l'email a été vérifié
+  useEffect(() => {
+    if (searchParams.get('verified') === 'true') {
+      toast.success('Email vérifié ! Vous pouvez maintenant vous connecter.')
+    }
+  }, [searchParams])
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     if (name === 'totpCode') {
