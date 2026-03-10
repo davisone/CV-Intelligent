@@ -6,7 +6,7 @@ import GithubProvider from 'next-auth/providers/github'
 import bcrypt from 'bcryptjs'
 import { verifySync } from 'otplib'
 import { prisma } from '@/lib/db/prisma'
-import { sendWelcomeEmail } from '@/lib/email/nodemailer'
+import { sendWelcomeEmail } from '@/lib/email/resend'
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
