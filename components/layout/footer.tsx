@@ -53,6 +53,12 @@ export function Footer() {
               >
                 Créer un CV gratuit
               </Link>
+              <Link
+                href="/contact"
+                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
+              >
+                Contact
+              </Link>
               <a
                 href="https://g.page/r/CcSyetXUJJrpEAE/review"
                 target="_blank"
