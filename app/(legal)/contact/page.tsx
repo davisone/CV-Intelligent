@@ -55,7 +55,7 @@ export default function ContactPage() {
           className="inline-flex items-center gap-2 text-sm text-[#6B6560] hover:text-[#1F1A17] mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Retour à l'accueil
+          Retour à l&apos;accueil
         </Link>
 
         <div className="mb-10">
