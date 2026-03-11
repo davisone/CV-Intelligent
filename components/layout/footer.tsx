@@ -1,9 +1,13 @@
 'use client'
 
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
+import { LocaleSwitcher } from '@/components/ui/locale-switcher'
 import { MapPin, Star } from 'lucide-react'
 
 export function Footer() {
+  const t = useTranslations('landing.footer')
+
   return (
     <footer className="border-t border-[#E0D6C8] py-8 bg-[#F3EDE5]">
       <div className="container mx-auto px-4">
@@ -13,12 +17,11 @@ export function Footer() {
             <Link href="/" className="text-xl font-bold text-[#722F37] mb-3 block">
               CV Builder
             </Link>
-            <p className="text-sm text-[#6B6560] mb-2">
-              Générateur de CV gratuit avec intelligence artificielle
-            </p>
+            <p className="text-sm text-[#6B6560] mb-2">{t('brand')}</p>
             <div className="flex items-center gap-1.5 text-sm text-[#6B6560]">
               <MapPin className="w-4 h-4 text-[#722F37]" />
-              <span>Créé à Rennes par{' '}
+              <span>
+                {t('madeIn')}{' '}
                 <a
                   href="https://dvs-web.fr"
                   target="_blank"
@@ -33,31 +36,19 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-[#1F1A17] mb-3">Ressources</h3>
+            <h3 className="font-semibold text-[#1F1A17] mb-3">{t('resources')}</h3>
             <nav className="flex flex-col gap-2 text-sm">
-              <Link
-                href="/guide"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                Comment faire un CV
+              <Link href="/guide" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('guide')}
               </Link>
-              <Link
-                href="/templates"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                Templates CV
+              <Link href="/templates" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('templates')}
               </Link>
-              <Link
-                href="/signup"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                Créer un CV gratuit
+              <Link href="/signup" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('createFree')}
               </Link>
-              <Link
-                href="/contact"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                Contact
+              <Link href="/contact" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('contact')}
               </Link>
               <a
                 href="https://g.page/r/CcSyetXUJJrpEAE/review"
@@ -66,41 +57,32 @@ export function Footer() {
                 className="inline-flex items-center gap-1.5 text-[#6B6560] hover:text-[#722F37] transition-colors"
               >
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                Donner votre avis
+                {t('review')}
               </a>
             </nav>
           </div>
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-[#1F1A17] mb-3">Légal</h3>
+            <h3 className="font-semibold text-[#1F1A17] mb-3">{t('legal')}</h3>
             <nav className="flex flex-col gap-2 text-sm">
-              <Link
-                href="/legal/cgv"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                CGV
+              <Link href="/legal/cgv" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('cgv')}
               </Link>
-              <Link
-                href="/legal/mentions-legales"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                Mentions légales
+              <Link href="/legal/mentions-legales" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('mentions')}
               </Link>
-              <Link
-                href="/legal/confidentialite"
-                className="text-[#6B6560] hover:text-[#722F37] transition-colors"
-              >
-                Confidentialité
+              <Link href="/legal/confidentialite" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('privacy')}
               </Link>
             </nav>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-[#E0D6C8]">
-          <p className="text-[#6B6560] text-sm text-center">
-            &copy; {new Date().getFullYear()} CV Builder — Propulsé par{' '}
+        <div className="pt-6 border-t border-[#E0D6C8] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[#6B6560] text-sm text-center sm:text-left">
+            &copy; {new Date().getFullYear()} CV Builder —{' '}
             <a
               href="https://dvs-web.fr"
               target="_blank"
@@ -109,8 +91,9 @@ export function Footer() {
             >
               DVS-Web
             </a>
-            . Tous droits réservés.
+            {' '}— Tous droits réservés.
           </p>
+          <LocaleSwitcher />
         </div>
       </div>
     </footer>

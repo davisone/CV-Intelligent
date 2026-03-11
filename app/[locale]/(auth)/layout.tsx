@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { ArrowLeft } from 'lucide-react'
 import { Footer } from '@/components/layout/footer'
 import type { ReactNode } from 'react'

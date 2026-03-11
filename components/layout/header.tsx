@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { useSession, signOut } from 'next-auth/react'
-import { usePathname } from 'next/navigation'
+import { usePathname } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
+import { LocaleSwitcher } from '@/components/ui/locale-switcher'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/helpers'
 import {
@@ -17,60 +19,34 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
-// Navigation items displayed in both desktop sidebar and mobile menu
 interface NavItem {
-  label: string
+  labelKey: string
   href: string
   icon: LucideIcon
 }
 
 const navItems: NavItem[] = [
-  {
-    label: 'Dashboard',
-    href: '/dashboard',
-    icon: LayoutDashboard,
-  },
-  {
-    label: 'Mes CV',
-    href: '/dashboard/resumes',
-    icon: FileText,
-  },
-  {
-    label: 'Templates',
-    href: '/dashboard/templates',
-    icon: Palette,
-  },
-  {
-    label: 'Mon Profil',
-    href: '/dashboard/profile',
-    icon: User,
-  },
-  {
-    label: 'Paramètres',
-    href: '/dashboard/settings',
-    icon: Settings,
-  },
+  { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
+  { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
+  { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
+  { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
 ]
 
-/**
- * Header component with responsive navigation
- * - Desktop: Shows logo, email, and logout button
- * - Mobile: Shows logo and hamburger menu with navigation items
- */
 export function Header() {
   const { data: session } = useSession()
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const t = useTranslations('nav')
 
   return (
     <header className="h-16 border-b border-[#E0D6C8] bg-[#F3EDE5] flex items-center justify-between px-6 sticky top-0 z-40">
-      {/* Logo */}
       <Link href="/dashboard" className="text-xl font-bold text-[#722F37] hover:text-[#8B3A44] transition-colors">
         CV Builder
       </Link>
 
-      {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-4">
+        <LocaleSwitcher />
         {session?.user && (
           <>
             <span className="text-sm text-[#6B6560]">
@@ -81,13 +57,12 @@ export function Header() {
               size="sm"
               onClick={() => signOut({ callbackUrl: '/' })}
             >
-              Déconnexion
+              {t('logout')}
             </Button>
           </>
         )}
       </div>
 
-      {/* Mobile Menu Toggle Button */}
       <button
         className="md:hidden p-2"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -100,11 +75,9 @@ export function Header() {
         )}
       </button>
 
-      {/* Mobile Menu Dropdown */}
       {isMenuOpen && session?.user && (
         <div className="absolute top-16 left-0 right-0 bg-[#F3EDE5] border-b border-[#E0D6C8] md:hidden z-50">
           <div className="flex flex-col p-4 gap-2">
-            {/* Navigation Links */}
             {navItems.map((item) => {
               const isActive = pathname === item.href ||
                 (item.href !== '/dashboard' && pathname.startsWith(item.href))
@@ -123,13 +96,15 @@ export function Header() {
                   )}
                 >
                   <Icon className="w-5 h-5" />
-                  {item.label}
+                  {t(item.labelKey as Parameters<typeof t>[0])}
                 </Link>
               )
             })}
 
-            {/* User Info & Logout */}
             <div className="border-t border-[#E0D6C8] mt-2 pt-2">
+              <div className="px-3 py-2">
+                <LocaleSwitcher />
+              </div>
               <span className="text-sm text-[#6B6560] block px-3 py-2">
                 {session.user.email}
               </span>
@@ -142,7 +117,7 @@ export function Header() {
                 }}
                 className="justify-start w-full"
               >
-                Déconnexion
+                {t('logout')}
               </Button>
             </div>
           </div>

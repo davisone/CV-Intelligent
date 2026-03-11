@@ -1,0 +1,347 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "back": "Retour",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "submit": "Envoyer",
+    "retry": "Réessayer",
+    "or": "ou"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "myResumes": "Mes CV",
+    "templates": "Templates",
+    "myProfile": "Mon Profil",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "startFree": "Commencer gratuitement",
+    "backToHome": "Retour à l'accueil",
+    "back": "Retour"
+  },
+  "landing": {
+    "meta": {
+      "title": "CV Gratuit en Ligne | Créer son CV avec IA - Générateur de CV Français",
+      "description": "Créez votre CV gratuit en ligne en français avec l'intelligence artificielle. Création de CV rapide et facile : modèles professionnels, optimisation ATS, export PDF. Faire son CV en 5 minutes."
+    },
+    "badge": "Propulsé par l'IA",
+    "hero": {
+      "title": "Créer son CV gratuit en ligne",
+      "titleAccent": "CV gratuit",
+      "subtitle": "avec l'intelligence artificielle",
+      "description": "Faire un CV n'a jamais été aussi simple. Notre générateur de CV gratuit avec IA vous aide à créer un CV professionnel en 5 minutes : modèles modernes, optimisation ATS et export PDF.",
+      "cta": "Créer mon CV gratuitement",
+      "seeTemplates": "Voir les templates"
+    },
+    "stats": {
+      "why": "Pourquoi nous choisir ?",
+      "atsScore": "Compatibilité ATS",
+      "avgTime": "Temps moyen",
+      "templates": "Templates pro",
+      "madeIn": "Créé à Rennes par Evan Davison"
+    },
+    "features": {
+      "title": "Comment faire un CV professionnel facilement",
+      "subtitle": "Tous les outils pour créer son CV, le rédiger et l'optimiser — gratuit et en français",
+      "ai": {
+        "title": "Suggestions IA",
+        "description": "Notre IA analyse votre contenu et propose des améliorations pour rendre votre CV plus impactant. Reformulations, mots-clés, structure optimisée."
+      },
+      "ats": {
+        "title": "Score ATS",
+        "description": "Optimisez votre CV pour les systèmes de tri automatique."
+      },
+      "templates": {
+        "title": "Templates Pro",
+        "description": "Des designs modernes adaptés à votre secteur."
+      },
+      "export": {
+        "title": "Export PDF",
+        "description": "Téléchargez votre CV en haute qualité, prêt à envoyer."
+      },
+      "secure": {
+        "title": "Données sécurisées",
+        "description": "Vos informations sont protégées et chiffrées."
+      },
+      "howItWorks": {
+        "title": "Comment ça marche ?",
+        "step1": "Inscription",
+        "step2": "Infos",
+        "step3": "IA",
+        "step4": "Export"
+      }
+    },
+    "cta": {
+      "title": "Créez votre CV gratuit maintenant",
+      "description": "Faire son CV en ligne n'a jamais été aussi rapide. Création de CV gratuite, modèles professionnels et intelligence artificielle pour décrocher votre prochain emploi.",
+      "button": "Commencer maintenant"
+    },
+    "footer": {
+      "brand": "Générateur de CV gratuit avec intelligence artificielle",
+      "madeIn": "Créé à Rennes par",
+      "resources": "Ressources",
+      "guide": "Comment faire un CV",
+      "templates": "Templates CV",
+      "createFree": "Créer un CV gratuit",
+      "contact": "Contact",
+      "review": "Donner votre avis",
+      "legal": "Légal",
+      "cgv": "CGV",
+      "mentions": "Mentions légales",
+      "privacy": "Confidentialité",
+      "copyright": "© {year} CV Builder — Propulsé par DVS-Web. Tous droits réservés."
+    }
+  },
+  "auth": {
+    "login": {
+      "meta": { "title": "Connexion" },
+      "title": "Connexion",
+      "subtitle": "Accédez à vos CV et continuez à les améliorer",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "submitting": "Connexion...",
+      "noAccount": "Pas encore de compte ?",
+      "signup": "Créer un compte",
+      "errors": {
+        "invalidCredentials": "Email ou mot de passe incorrect",
+        "generic": "Une erreur est survenue. Réessayez."
+      }
+    },
+    "signup": {
+      "meta": { "title": "Créer un compte" },
+      "title": "Créer un compte",
+      "subtitle": "Commencez à créer votre CV professionnel",
+      "name": "Nom complet",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Email",
+      "emailPlaceholder": "jean@exemple.fr",
+      "password": "Mot de passe",
+      "passwordHint": "Au moins 8 caractères, une majuscule, une minuscule, un chiffre",
+      "submit": "Créer mon compte",
+      "submitting": "Création en cours...",
+      "alreadyAccount": "Déjà un compte ?",
+      "login": "Se connecter",
+      "errors": {
+        "emailExists": "Cet email est déjà utilisé",
+        "generic": "Une erreur est survenue. Réessayez."
+      }
+    },
+    "forgotPassword": {
+      "meta": { "title": "Mot de passe oublié" },
+      "title": "Mot de passe oublié",
+      "subtitle": "Entrez votre email pour recevoir un lien de réinitialisation",
+      "email": "Email",
+      "submit": "Envoyer le lien",
+      "submitting": "Envoi en cours...",
+      "success": "Si cet email existe, vous recevrez un lien de réinitialisation.",
+      "backToLogin": "Retour à la connexion"
+    },
+    "resetPassword": {
+      "meta": { "title": "Réinitialiser le mot de passe" },
+      "title": "Nouveau mot de passe",
+      "subtitle": "Choisissez un nouveau mot de passe sécurisé",
+      "password": "Nouveau mot de passe",
+      "confirm": "Confirmer le mot de passe",
+      "submit": "Réinitialiser",
+      "submitting": "Réinitialisation...",
+      "success": "Mot de passe réinitialisé. Vous pouvez vous connecter.",
+      "errors": {
+        "tokenInvalid": "Lien invalide ou expiré",
+        "mismatch": "Les mots de passe ne correspondent pas"
+      }
+    },
+    "verifyEmail": {
+      "meta": { "title": "Vérification email" },
+      "title": "Vérification de votre email",
+      "pendingTitle": "Vérifiez votre boîte mail",
+      "pendingSubtitle": "Un lien de vérification a été envoyé à votre adresse email.",
+      "success": "Email vérifié avec succès !",
+      "errors": {
+        "tokenInvalid": "Lien invalide ou expiré",
+        "generic": "Une erreur est survenue"
+      }
+    },
+    "verify2fa": {
+      "meta": { "title": "Vérification 2FA" },
+      "title": "Authentification à deux facteurs",
+      "subtitle": "Entrez le code de votre application d'authentification",
+      "code": "Code à 6 chiffres",
+      "submit": "Vérifier",
+      "submitting": "Vérification...",
+      "errors": {
+        "invalidCode": "Code invalide ou expiré",
+        "generic": "Une erreur est survenue"
+      }
+    }
+  },
+  "dashboard": {
+    "home": {
+      "meta": { "title": "Dashboard" },
+      "welcome": "Bienvenue, {name} !",
+      "subtitle": "Gérez vos CV et créez-en de nouveaux.",
+      "createNew": "Créer un nouveau CV",
+      "myResumes": "Mes CV",
+      "noResumes": "Vous n'avez pas encore de CV.",
+      "createFirst": "Créer mon premier CV"
+    },
+    "resumes": {
+      "meta": { "title": "Mes CV" },
+      "title": "Mes CV",
+      "new": "Nouveau CV",
+      "empty": "Aucun CV pour l'instant",
+      "emptySubtitle": "Créez votre premier CV professionnel",
+      "edit": "Modifier",
+      "download": "Télécharger",
+      "delete": "Supprimer",
+      "deleteConfirm": "Supprimer ce CV ?",
+      "deleteWarning": "Cette action est irréversible.",
+      "createdAt": "Créé le {date}",
+      "updatedAt": "Modifié le {date}"
+    },
+    "profile": {
+      "meta": { "title": "Mon Profil" },
+      "title": "Mon Profil",
+      "subtitle": "Vos informations réutilisables dans tous vos CV"
+    },
+    "settings": {
+      "meta": { "title": "Paramètres" },
+      "title": "Paramètres",
+      "security": "Sécurité",
+      "totp": "Authentification à deux facteurs",
+      "deleteAccount": "Supprimer le compte",
+      "deleteWarning": "Cette action est irréversible. Tous vos CV seront supprimés."
+    },
+    "templates": {
+      "meta": { "title": "Templates" },
+      "title": "Templates",
+      "free": "Gratuit",
+      "premium": "Premium",
+      "use": "Utiliser ce template"
+    },
+    "checkout": {
+      "success": {
+        "title": "Paiement réussi !",
+        "subtitle": "Votre CV premium est maintenant débloqué.",
+        "cta": "Voir mon CV"
+      },
+      "cancel": {
+        "title": "Paiement annulé",
+        "subtitle": "Votre paiement a été annulé.",
+        "cta": "Retour au dashboard"
+      }
+    }
+  },
+  "editor": {
+    "meta": { "title": "Éditeur CV" },
+    "save": "Enregistrer",
+    "saving": "Enregistrement...",
+    "saved": "Enregistré",
+    "download": "Télécharger PDF",
+    "downloading": "Génération du PDF...",
+    "preview": "Aperçu",
+    "aiSuggest": "Suggestion IA",
+    "aiImproving": "IA en cours...",
+    "addSection": "Ajouter",
+    "removeSection": "Supprimer la section",
+    "addItem": "Ajouter un élément",
+    "removeItem": "Supprimer",
+    "dragToReorder": "Glisser pour réorganiser"
+  },
+  "cvSections": {
+    "personalInfo": "Informations personnelles",
+    "summary": "Résumé professionnel",
+    "experience": "Expériences professionnelles",
+    "education": "Formation",
+    "skills": "Compétences",
+    "languages": "Langues",
+    "interests": "Centres d'intérêt",
+    "certifications": "Certifications",
+    "projects": "Projets"
+  },
+  "contact": {
+    "meta": { "title": "Contact" },
+    "title": "Contactez-nous",
+    "subtitle": "Une question, un problème ou une suggestion ? Nous vous répondons sous 48 heures ouvrées.",
+    "name": "Nom",
+    "namePlaceholder": "Jean Dupont",
+    "email": "Email",
+    "emailPlaceholder": "jean@exemple.fr",
+    "subject": "Sujet",
+    "subjectPlaceholder": "Sélectionnez un sujet",
+    "subjects": {
+      "general": "Question générale",
+      "technical": "Problème technique",
+      "suggestion": "Suggestion d'amélioration",
+      "other": "Autre"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Décrivez votre demande en détail...",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success": "Message envoyé ! Nous vous répondrons sous 48h.",
+    "errors": {
+      "generic": "Une erreur est survenue. Réessayez dans un moment."
+    }
+  },
+  "legal": {
+    "cgv": {
+      "meta": { "title": "CGV" },
+      "title": "Conditions Générales de Vente"
+    },
+    "mentions": {
+      "meta": { "title": "Mentions légales" },
+      "title": "Mentions légales"
+    },
+    "privacy": {
+      "meta": { "title": "Politique de confidentialité" },
+      "title": "Politique de confidentialité"
+    }
+  },
+  "emails": {
+    "resetPassword": {
+      "subject": "Réinitialisation de votre mot de passe — CV Builder",
+      "title": "Réinitialisation de mot de passe",
+      "body": "Vous avez demandé la réinitialisation de votre mot de passe CV Builder. Cliquez sur le bouton ci-dessous pour créer un nouveau mot de passe :",
+      "cta": "Réinitialiser mon mot de passe",
+      "expiry": "Ce lien expire dans 1 heure. Si vous n'avez pas demandé cette réinitialisation, ignorez cet email."
+    },
+    "verification": {
+      "subject": "Vérifiez votre email — CV Builder",
+      "title": "Vérification de votre email",
+      "body": "Cliquez sur le bouton ci-dessous pour vérifier votre adresse email et activer votre compte :",
+      "cta": "Vérifier mon email",
+      "expiry": "Ce lien expire dans 24 heures."
+    },
+    "payment": {
+      "subject": "Confirmation de paiement — {resumeTitle} | CV Builder",
+      "title": "Paiement confirmé !",
+      "body": "Merci {name} ! Votre CV premium est maintenant débloqué.",
+      "summary": "Récapitulatif de commande",
+      "resume": "CV",
+      "amount": "Montant",
+      "date": "Date",
+      "editCta": "Éditer mon CV"
+    },
+    "contact": {
+      "notificationSubject": "[CV Builder] Nouveau message de {name} — {subject}",
+      "notificationTitle": "Nouveau message de contact",
+      "confirmationSubject": "Votre message a bien été reçu — CV Builder",
+      "confirmationTitle": "Votre message a bien été reçu, {name} !",
+      "confirmationBody": "Merci de nous avoir contacté. Nous avons bien reçu votre message et vous répondrons dans un délai de 48 heures ouvrées.",
+      "summary": "Récapitulatif",
+      "date": "Date",
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message"
+    }
+  }
+}

@@ -1,24 +1,23 @@
 import { NextResponse } from 'next/server'
+import createIntlMiddleware from 'next-intl/middleware'
 import { getToken } from 'next-auth/jwt'
 import type { NextRequest } from 'next/server'
+import { routing } from './i18n/routing'
 
-// Routes that require full authentication (including 2FA)
-const protectedRoutes = ['/dashboard', '/profile', '/resumes']
+const handleI18nRouting = createIntlMiddleware(routing)
 
-// Routes that should be accessible without 2FA verification
-const publicRoutes = ['/', '/login', '/signup', '/verify-2fa', '/forgot-password', '/reset-password', '/verify-email']
+const PROTECTED_PATTERN = /^\/(fr|en)\/(dashboard|profile|resumes)/
+const AUTH_PAGE_PATTERN = /^\/(fr|en)\/(login|signup)$/
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Skip middleware for API routes, static files, and public assets
-  if (
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/static') ||
-    pathname.includes('.')
-  ) {
-    return NextResponse.next()
+  // 1. next-intl normalise l'URL en premier (redirection locale manquante)
+  const intlResponse = handleI18nRouting(request)
+
+  // Si next-intl fait une redirection (normalisation de locale), on la laisse passer
+  if (intlResponse.status === 307 || intlResponse.status === 308) {
+    return intlResponse
   }
 
   const token = await getToken({
@@ -26,69 +25,41 @@ export async function middleware(request: NextRequest) {
     secret: process.env.NEXTAUTH_SECRET,
   })
 
-  // Check if user is authenticated
-  const isAuthenticated = !!token
+  const locale = pathname.split('/')[1] || 'fr'
 
-  // Check if route is protected
-  const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
+  // 2. Routes protégées : vérifier l'authentification
+  if (PROTECTED_PATTERN.test(pathname)) {
+    if (!token) {
+      return NextResponse.redirect(new URL(`/${locale}/login`, request.url))
+    }
 
-  // Check if on auth pages (login, signup)
-  const isAuthPage = pathname === '/login' || pathname === '/signup'
-
-  // If not authenticated and trying to access protected route, redirect to login
-  if (!isAuthenticated && isProtectedRoute) {
-    const loginUrl = new URL('/login', request.url)
-    loginUrl.searchParams.set('callbackUrl', pathname)
-    return NextResponse.redirect(loginUrl)
-  }
-
-  // If authenticated
-  if (isAuthenticated && token) {
-    const needs2FA = token.totpEnabled === true && token.twoFactorVerified !== true
-    const isVerify2FAPage = pathname === '/verify-2fa'
-
-    // Vérification email (credentials uniquement)
+    // Vérification email
     const needsEmailVerification = token.emailVerified === false
-    const isVerifyEmailPage = pathname.startsWith('/verify-email')
-
-    if (needsEmailVerification && !isVerifyEmailPage && isProtectedRoute) {
-      return NextResponse.redirect(new URL('/verify-email/pending', request.url))
+    const isVerifyEmailPage = pathname.includes('/verify-email')
+    if (needsEmailVerification && !isVerifyEmailPage) {
+      return NextResponse.redirect(new URL(`/${locale}/verify-email/pending`, request.url))
     }
 
-    // If 2FA is needed and not on verify-2fa page, redirect to verify-2fa
+    // Vérification 2FA
+    const needs2FA = token.totpEnabled === true && token.twoFactorVerified !== true
+    const isVerify2FAPage = pathname.includes('/verify-2fa')
     if (needs2FA && !isVerify2FAPage) {
-      return NextResponse.redirect(new URL('/verify-2fa', request.url))
-    }
-
-    // If 2FA is verified (or not needed) and on verify-2fa page, redirect to dashboard
-    if (!needs2FA && isVerify2FAPage) {
-      return NextResponse.redirect(new URL('/dashboard', request.url))
-    }
-
-    // Si email non vérifié et sur une page auth, rediriger directement vers la page pending
-    if (needsEmailVerification && isAuthPage) {
-      return NextResponse.redirect(new URL('/verify-email/pending', request.url))
-    }
-
-    // If authenticated and on auth pages (login/signup), redirect to dashboard
-    if (!needs2FA && isAuthPage) {
-      return NextResponse.redirect(new URL('/dashboard', request.url))
+      return NextResponse.redirect(new URL(`/${locale}/verify-2fa`, request.url))
     }
   }
 
-  return NextResponse.next()
+  // 3. Pages auth : si déjà connecté → redirige vers dashboard
+  if (AUTH_PAGE_PATTERN.test(pathname) && token) {
+    const needs2FA = token.totpEnabled === true && token.twoFactorVerified !== true
+    const needsEmailVerification = token.emailVerified === false
+    if (!needs2FA && !needsEmailVerification) {
+      return NextResponse.redirect(new URL(`/${locale}/dashboard`, request.url))
+    }
+  }
+
+  return intlResponse
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)',
-  ],
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 }

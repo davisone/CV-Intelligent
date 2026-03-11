@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const { name, email, password } = validatedData.data
+    const { name, email, password, locale } = validatedData.data
 
     // Check if user already exists
     const existingUser = await prisma.user.findUnique({
@@ -62,6 +62,7 @@ export async function POST(request: Request) {
         password: hashedPassword,
         verificationToken,
         verificationTokenExpiry,
+        locale,
       },
       select: {
         id: true,
