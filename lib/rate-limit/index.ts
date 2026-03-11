@@ -87,3 +87,7 @@ export const AUTH_RATE_LIMITS = {
 export const PAYMENT_RATE_LIMITS = {
   checkout: { maxRequests: 10, windowMs: 3600000 },
 } as const
+
+export const CONTACT_RATE_LIMITS = {
+  submit: { maxRequests: 5, windowMs: 10 * 60 * 1000 }, // 5 req / 10 min
+} as const
