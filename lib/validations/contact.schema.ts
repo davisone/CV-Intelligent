@@ -13,9 +13,7 @@ export const contactSchema = z.object({
     .min(2, 'Le nom doit contenir au moins 2 caractères')
     .max(100, 'Le nom ne peut pas dépasser 100 caractères'),
   email: z.string().email('Adresse email invalide'),
-  subject: z.enum(CONTACT_SUBJECTS, {
-    errorMap: () => ({ message: 'Sujet invalide' }),
-  }),
+  subject: z.enum(CONTACT_SUBJECTS, { error: 'Sujet invalide' }),
   message: z
     .string()
     .min(10, 'Le message doit contenir au moins 10 caractères')
