@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -117,6 +118,8 @@ interface ResumeEditorProps {
 
 export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requiresPayment = false }: ResumeEditorProps) {
   const router = useRouter()
+  const t = useTranslations('editor')
+  const tSections = useTranslations('cvSections')
   const [isLoading, setIsLoading] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
@@ -162,10 +165,10 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
 
   // Dialog de confirmation pour importer depuis le profil
   const syncProfileDialog = useConfirmDialog({
-    title: 'Importer depuis le profil',
-    description: 'Cela va remplacer toutes les données du CV par celles de votre profil. Voulez-vous continuer ?',
-    confirmLabel: 'Importer',
-    cancelLabel: 'Annuler',
+    title: t('importProfileTitle'),
+    description: t('importProfileDescription'),
+    confirmLabel: t('importProfileButton'),
+    cancelLabel: t('back'),
     variant: 'default',
   })
 
@@ -253,9 +256,9 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => null)
-      throw new Error(errorData?.error || 'Erreur lors de la sauvegarde')
+      throw new Error(errorData?.error || t('savingError'))
     }
-  }, [resume.id])
+  }, [resume.id, t])
 
   // Hook d'auto-save
   const { isSaving: isAutoSaving, lastSaved, hasUnsavedChanges, saveNow, markAsSaved } = useAutoSave({
@@ -278,10 +281,10 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     try {
       await performSave(autoSaveData)
       markAsSaved()
-      toast.success('CV sauvegardé !')
+      toast.success(t('savingSuccess'))
       router.refresh()
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : 'Erreur lors de la sauvegarde')
+      toast.error(error instanceof Error ? error.message : t('savingError'))
     } finally {
       setIsLoading(false)
     }
@@ -307,7 +310,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
 
   const deleteExperience = (id: string) => {
     setExperiences(prev => prev.filter(exp => exp.id !== id))
-    toast.success('Expérience supprimée')
+    toast.success(t('experienceDeleted'))
   }
 
   // Handlers pour les formations
@@ -331,7 +334,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
 
   const deleteEducation = (id: string) => {
     setEducations(prev => prev.filter(edu => edu.id !== id))
-    toast.success('Formation supprimée')
+    toast.success(t('educationDeleted'))
   }
 
   // Handlers pour les certifications
@@ -354,7 +357,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
 
   const deleteCertification = (id: string) => {
     setCertifications(prev => prev.filter(cert => cert.id !== id))
-    toast.success('Certification supprimée')
+    toast.success(t('certificationDeleted'))
   }
 
   // Handlers pour les projets
@@ -375,7 +378,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
 
   const deleteProject = (id: string) => {
     setProjects(prev => prev.filter(project => project.id !== id))
-    toast.success('Projet supprimé')
+    toast.success(t('projectDeleted'))
   }
 
   // Handlers pour les compétences
@@ -443,14 +446,14 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
       })
 
       if (res.ok) {
-        toast.success('Données importées depuis le profil !')
+        toast.success(t('importSuccess'))
         router.refresh()
         window.location.reload()
       } else {
-        toast.error('Erreur lors de l\'importation')
+        toast.error(t('importError'))
       }
     } catch {
-      toast.error('Erreur serveur')
+      toast.error(t('serverError'))
     } finally {
       setIsSyncing(false)
     }
@@ -469,7 +472,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     }
 
     if (!content.trim()) {
-      toast.error('Ajoutez du contenu avant d\'utiliser l\'IA')
+      toast.error(t('aiAddContent'))
       return
     }
 
@@ -497,13 +500,13 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
       if (res.ok) {
         const { data } = await res.json()
         onSuccess(data.suggestion)
-        toast.success('Contenu amélioré avec l\'IA !')
+        toast.success(t('aiImproveSuccess'))
       } else {
         const error = await res.json()
-        toast.error(error.error || 'Erreur lors de l\'amélioration')
+        toast.error(error.error || t('aiImproveError'))
       }
     } catch {
-      toast.error('Erreur de connexion')
+      toast.error(t('connectionError'))
     } finally {
       setIsAiLoading(null)
     }
@@ -570,10 +573,10 @@ ${interests.map(i => i.name).join(', ')}
         const { data } = await res.json()
         setAtsScore(data)
       } else {
-        toast.error('Erreur lors du calcul du score ATS')
+        toast.error(t('atsError'))
       }
     } catch {
-      toast.error('Erreur de connexion')
+      toast.error(t('connectionError'))
     } finally {
       setIsAtsLoading(false)
     }
@@ -585,7 +588,7 @@ ${interests.map(i => i.name).join(', ')}
       const response = await fetch(`/api/resumes/${resume.id}/pdf`)
       if (!response.ok) {
         const error = await response.json().catch(() => null)
-        throw new Error(error?.error || 'Erreur lors de la génération du PDF')
+        throw new Error(error?.error || t('pdfError'))
       }
       const blob = await response.blob()
       const url = URL.createObjectURL(blob)
@@ -594,11 +597,11 @@ ${interests.map(i => i.name).join(', ')}
       a.download = `${title.replace(/[^a-z0-9àâäéèêëïîôùûüÿçæœ\s-]/gi, '').replace(/\s+/g, '_')}_cv.pdf`
       a.click()
       URL.revokeObjectURL(url)
-      toast.success('PDF téléchargé !')
+      toast.success(t('pdfSuccess'))
       setShowReviewPrompt(true)
     } catch (error) {
       console.error('Erreur génération PDF:', error)
-      toast.error(error instanceof Error ? error.message : 'Erreur lors de la génération du PDF')
+      toast.error(error instanceof Error ? error.message : t('pdfError'))
     } finally {
       setIsGeneratingPdf(false)
     }
@@ -644,22 +647,22 @@ ${interests.map(i => i.name).join(', ')}
         <div>
           <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
           <div className="flex items-center gap-2 mt-1">
-            <p className="text-gray-500 text-sm">Template: {resume.template}</p>
+            <p className="text-gray-500 text-sm">{t('templateLabel')}: {resume.template}</p>
             {/* Indicateur de sauvegarde */}
             {isAutoSaving ? (
               <span className="flex items-center gap-1 text-xs text-blue-600">
                 <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
-                Sauvegarde...
+                {t('autoSaving')}
               </span>
             ) : hasUnsavedChanges ? (
               <span className="flex items-center gap-1 text-xs text-orange-600">
                 <span className="w-2 h-2 bg-orange-500 rounded-full" />
-                Modifications non sauvegardées
+                {t('unsavedChanges')}
               </span>
             ) : lastSaved ? (
               <span className="flex items-center gap-1 text-xs text-green-600">
                 <span className="w-2 h-2 bg-green-500 rounded-full" />
-                Sauvegardé à {formatLastSaved(lastSaved)}
+                {t('savedAt', { time: formatLastSaved(lastSaved) ?? '' })}
               </span>
             ) : null}
           </div>
@@ -667,7 +670,7 @@ ${interests.map(i => i.name).join(', ')}
         <div className="flex flex-wrap gap-2">
           <Button variant="outline" onClick={() => router.push('/dashboard/resumes')}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            <span className="hidden sm:inline">Retour</span>
+            <span className="hidden sm:inline">{t('back')}</span>
           </Button>
           <Button variant="outline" onClick={handleSyncProfile} disabled={isSyncing}>
             {isSyncing ? (
@@ -675,7 +678,7 @@ ${interests.map(i => i.name).join(', ')}
             ) : (
               <Upload className="w-4 h-4 sm:mr-2" />
             )}
-            <span className="hidden sm:inline">{isSyncing ? 'Import...' : 'Importer du profil'}</span>
+            <span className="hidden sm:inline">{isSyncing ? t('importing') : t('importProfile')}</span>
           </Button>
           <Button variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
             {isAtsLoading ? (
@@ -685,11 +688,11 @@ ${interests.map(i => i.name).join(', ')}
             ) : (
               <Target className="w-4 h-4 sm:mr-2" />
             )}
-            <span className="hidden sm:inline">{isAtsLoading ? 'Analyse...' : 'Score ATS'}</span>
+            <span className="hidden sm:inline">{isAtsLoading ? t('atsAnalyzing') : t('atsScore')}</span>
           </Button>
           <Button onClick={handleSave} isLoading={isLoading}>
             <Save className="w-4 h-4 sm:mr-2" />
-            <span className="hidden sm:inline">Sauvegarder</span>
+            <span className="hidden sm:inline">{t('sauvegarder')}</span>
           </Button>
         </div>
       </div>
@@ -700,13 +703,13 @@ ${interests.map(i => i.name).join(', ')}
           onClick={() => setActiveTab('edit')}
           className={`px-4 py-2 font-medium ${activeTab === 'edit' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
         >
-          Éditer
+          {t('editTab')}
         </button>
         <button
           onClick={() => setActiveTab('preview')}
           className={`px-4 py-2 font-medium ${activeTab === 'preview' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
         >
-          Aperçu
+          {t('previewTab')}
         </button>
       </div>
 
@@ -715,7 +718,7 @@ ${interests.map(i => i.name).join(', ')}
         <PaymentRequired
           onUnlock={() => setShowCheckoutModal(true)}
           className="mb-6"
-          message="Débloquez les fonctionnalités premium (suggestions IA et score ATS) pour 4,99 €."
+          message={t('premiumBannerMessage')}
         />
       )}
 
@@ -725,7 +728,7 @@ ${interests.map(i => i.name).join(', ')}
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
               <Target className="w-5 h-5 text-purple-600" />
-              Analyse ATS de votre CV
+              {t('atsAnalysis')}
             </h3>
             <button
               onClick={() => setShowAtsPanel(false)}
@@ -738,7 +741,7 @@ ${interests.map(i => i.name).join(', ')}
           {isAtsLoading ? (
             <div className="flex items-center justify-center py-8">
               <Loader2 className="w-8 h-8 text-purple-600 animate-spin" />
-              <span className="ml-3 text-gray-600">Analyse en cours...</span>
+              <span className="ml-3 text-gray-600">{t('atsAnalysisInProgress')}</span>
             </div>
           ) : atsScore ? (
             <div className="space-y-6">
@@ -751,16 +754,16 @@ ${interests.map(i => i.name).join(', ')}
                 }`}>
                   {atsScore.score}
                 </div>
-                <p className="mt-2 text-gray-600">Score ATS global</p>
+                <p className="mt-2 text-gray-600">{t('atsGlobalScore')}</p>
               </div>
 
               {/* Breakdown - Responsive grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { label: 'Formatage', value: atsScore.breakdown.formatting, icon: FileType },
-                  { label: 'Mots-clés', value: atsScore.breakdown.keywords, icon: Key },
-                  { label: 'Structure', value: atsScore.breakdown.structure, icon: Building2 },
-                  { label: 'Contenu', value: atsScore.breakdown.content, icon: FileText },
+                  { label: t('atsFormatting'), value: atsScore.breakdown.formatting, icon: FileType },
+                  { label: t('atsKeywords'), value: atsScore.breakdown.keywords, icon: Key },
+                  { label: t('atsStructure'), value: atsScore.breakdown.structure, icon: Building2 },
+                  { label: t('atsContent'), value: atsScore.breakdown.content, icon: FileText },
                 ].map((item) => {
                   const Icon = item.icon
                   return (
@@ -784,7 +787,7 @@ ${interests.map(i => i.name).join(', ')}
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2 flex items-center gap-2">
                     <Lightbulb className="w-4 h-4 text-yellow-500" />
-                    Suggestions d'amélioration
+                    {t('atsSuggestions')}
                   </h4>
                   <ul className="space-y-2">
                     {atsScore.suggestions.map((suggestion, i) => (
@@ -803,7 +806,7 @@ ${interests.map(i => i.name).join(', ')}
                   <div>
                     <h4 className="font-medium text-green-700 mb-2 flex items-center gap-2">
                       <CheckCircle className="w-4 h-4" />
-                      Mots-clés présents
+                      {t('atsMatchedKeywords')}
                     </h4>
                     <div className="flex flex-wrap gap-1">
                       {atsScore.matchedKeywords.map((kw, i) => (
@@ -818,7 +821,7 @@ ${interests.map(i => i.name).join(', ')}
                   <div>
                     <h4 className="font-medium text-red-700 mb-2 flex items-center gap-2">
                       <XCircle className="w-4 h-4" />
-                      Mots-clés manquants
+                      {t('atsMissingKeywords')}
                     </h4>
                     <div className="flex flex-wrap gap-1">
                       {atsScore.missingKeywords.map((kw, i) => (
@@ -839,115 +842,115 @@ ${interests.map(i => i.name).join(', ')}
         <div className="space-y-6">
           {/* Titre */}
           <section className="bg-white p-6 rounded-xl border">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Titre du CV</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">{t('titleSection')}</h2>
             <Input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Titre du CV"
+              placeholder={t('titlePlaceholder')}
             />
           </section>
 
           {/* Informations personnelles - Responsive grid */}
           <section className="bg-white p-6 rounded-xl border">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Informations personnelles</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">{tSections('personalInfo')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Label>Prénom</Label>
+                <Label>{t('firstName')}</Label>
                 <Input
                   value={personalInfo.firstName}
                   onChange={(e) => handlePersonalInfoChange('firstName', e.target.value)}
-                  placeholder="Jean"
+                  placeholder={t('firstNamePlaceholder')}
                 />
               </div>
               <div>
-                <Label>Nom</Label>
+                <Label>{t('lastName')}</Label>
                 <Input
                   value={personalInfo.lastName}
                   onChange={(e) => handlePersonalInfoChange('lastName', e.target.value)}
-                  placeholder="Dupont"
+                  placeholder={t('lastNamePlaceholder')}
                 />
               </div>
               <div>
-                <Label>Email</Label>
+                <Label>{t('emailLabel')}</Label>
                 <Input
                   type="email"
                   value={personalInfo.email}
                   onChange={(e) => handlePersonalInfoChange('email', e.target.value)}
-                  placeholder="jean@exemple.com"
+                  placeholder={t('emailPlaceholder')}
                 />
               </div>
               <div>
-                <Label>Téléphone</Label>
+                <Label>{t('phone')}</Label>
                 <Input
                   value={personalInfo.phone}
                   onChange={(e) => handlePersonalInfoChange('phone', e.target.value)}
-                  placeholder="+33 6 12 34 56 78"
+                  placeholder={t('phonePlaceholder')}
                 />
               </div>
               <div>
-                <Label>Ville</Label>
+                <Label>{t('city')}</Label>
                 <Input
                   value={personalInfo.city}
                   onChange={(e) => handlePersonalInfoChange('city', e.target.value)}
-                  placeholder="Paris"
+                  placeholder={t('cityPlaceholder')}
                 />
               </div>
               <div>
-                <Label>Pays</Label>
+                <Label>{t('country')}</Label>
                 <Input
                   value={personalInfo.country}
                   onChange={(e) => handlePersonalInfoChange('country', e.target.value)}
-                  placeholder="France"
+                  placeholder={t('countryPlaceholder')}
                 />
               </div>
               <div className="col-span-1 md:col-span-2">
-                <Label>LinkedIn</Label>
+                <Label>{t('linkedin')}</Label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
                   <Input
                     value={personalInfo.linkedinLabel}
                     onChange={(e) => handlePersonalInfoChange('linkedinLabel', e.target.value)}
-                    placeholder="Titre affiché (ex: Jean Dupont)"
+                    placeholder={t('linkedinLabelPlaceholder')}
                   />
                   <Input
                     value={personalInfo.linkedin}
                     onChange={(e) => handlePersonalInfoChange('linkedin', e.target.value)}
-                    placeholder="URL (ex: https://linkedin.com/in/jean-dupont)"
+                    placeholder={t('linkedinUrlPlaceholder')}
                   />
                 </div>
               </div>
               <div className="col-span-1 md:col-span-2">
-                <Label>GitHub</Label>
+                <Label>{t('github')}</Label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
                   <Input
                     value={personalInfo.githubLabel}
                     onChange={(e) => handlePersonalInfoChange('githubLabel', e.target.value)}
-                    placeholder="Titre affiché (ex: @jeandupont)"
+                    placeholder={t('githubLabelPlaceholder')}
                   />
                   <Input
                     value={personalInfo.github}
                     onChange={(e) => handlePersonalInfoChange('github', e.target.value)}
-                    placeholder="URL (ex: https://github.com/jeandupont)"
+                    placeholder={t('githubUrlPlaceholder')}
                   />
                 </div>
               </div>
               <div className="col-span-1 md:col-span-2">
-                <Label>Portfolio</Label>
+                <Label>{t('portfolio')}</Label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
                   <Input
                     value={personalInfo.portfolioLabel}
                     onChange={(e) => handlePersonalInfoChange('portfolioLabel', e.target.value)}
-                    placeholder="Titre affiché (ex: Mon Portfolio)"
+                    placeholder={t('portfolioLabelPlaceholder')}
                   />
                   <Input
                     value={personalInfo.portfolio}
                     onChange={(e) => handlePersonalInfoChange('portfolio', e.target.value)}
-                    placeholder="URL (ex: https://monportfolio.fr)"
+                    placeholder={t('portfolioUrlPlaceholder')}
                   />
                 </div>
               </div>
               <div className="col-span-1 md:col-span-2">
                 <div className="flex justify-between items-center mb-1">
-                  <Label>Résumé professionnel</Label>
+                  <Label>{t('summaryLabel')}</Label>
                   <button
                     type="button"
                     onClick={() => improveWithAI(
@@ -961,17 +964,17 @@ ${interests.map(i => i.name).join(', ')}
                     {isAiLoading === 'summary' ? (
                       <>
                         <Loader2 className="w-3 h-3 animate-spin" />
-                        Amélioration...
+                        {t('improving')}
                       </>
                     ) : !canAccessPremiumFeatures ? (
                       <>
                         <Lock className="w-3 h-3" />
-                        Améliorer avec IA
+                        {t('aiImproveButton')}
                       </>
                     ) : (
                       <>
                         <Sparkles className="w-3 h-3" />
-                        Améliorer avec IA
+                        {t('aiImproveButton')}
                       </>
                     )}
                   </button>
@@ -980,7 +983,7 @@ ${interests.map(i => i.name).join(', ')}
                   className="w-full min-h-[100px] px-3 py-2 border rounded-lg text-gray-900"
                   value={personalInfo.summary}
                   onChange={(e) => handlePersonalInfoChange('summary', e.target.value)}
-                  placeholder="Décrivez votre profil..."
+                  placeholder={t('summaryPlaceholder')}
                 />
               </div>
             </div>
@@ -990,11 +993,11 @@ ${interests.map(i => i.name).join(', ')}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
-                Expériences ({experiences.length})
+                {tSections('experience')} ({experiences.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addExperience}>
                 <Plus className="w-4 h-4 mr-1" />
-                Ajouter
+                {t('add')}
               </Button>
             </div>
             {experiences.length > 0 ? (
@@ -1017,7 +1020,7 @@ ${interests.map(i => i.name).join(', ')}
                 )}
               />
             ) : (
-              <p className="text-gray-500 text-sm text-center py-4">Aucune expérience ajoutée</p>
+              <p className="text-gray-500 text-sm text-center py-4">{t('noExperiences')}</p>
             )}
           </section>
 
@@ -1025,11 +1028,11 @@ ${interests.map(i => i.name).join(', ')}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
-                Formations ({educations.length})
+                {tSections('education')} ({educations.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addEducation}>
                 <Plus className="w-4 h-4 mr-1" />
-                Ajouter
+                {t('add')}
               </Button>
             </div>
             {educations.length > 0 ? (
@@ -1049,7 +1052,7 @@ ${interests.map(i => i.name).join(', ')}
                 )}
               />
             ) : (
-              <p className="text-gray-500 text-sm text-center py-4">Aucune formation ajoutée</p>
+              <p className="text-gray-500 text-sm text-center py-4">{t('noEducations')}</p>
             )}
           </section>
 
@@ -1057,11 +1060,11 @@ ${interests.map(i => i.name).join(', ')}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
-                Projets ({projects.length})
+                {tSections('projects')} ({projects.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addProject}>
                 <Plus className="w-4 h-4 mr-1" />
-                Ajouter
+                {t('add')}
               </Button>
             </div>
             {projects.length > 0 ? (
@@ -1081,7 +1084,7 @@ ${interests.map(i => i.name).join(', ')}
                 )}
               />
             ) : (
-              <p className="text-gray-500 text-sm text-center py-4">Aucun projet ajouté</p>
+              <p className="text-gray-500 text-sm text-center py-4">{t('noProjects')}</p>
             )}
           </section>
 
@@ -1089,11 +1092,11 @@ ${interests.map(i => i.name).join(', ')}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
-                Certifications ({certifications.length})
+                {tSections('certifications')} ({certifications.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addCertification}>
                 <Plus className="w-4 h-4 mr-1" />
-                Ajouter
+                {t('add')}
               </Button>
             </div>
             {certifications.length > 0 ? (
@@ -1113,7 +1116,7 @@ ${interests.map(i => i.name).join(', ')}
                 )}
               />
             ) : (
-              <p className="text-gray-500 text-sm text-center py-4">Aucune certification ajoutée</p>
+              <p className="text-gray-500 text-sm text-center py-4">{t('noCertifications')}</p>
             )}
           </section>
 
@@ -1130,11 +1133,11 @@ ${interests.map(i => i.name).join(', ')}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
-                Langues ({languages.length})
+                {tSections('languages')} ({languages.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addLanguage}>
                 <Plus className="w-4 h-4 mr-1" />
-                Ajouter
+                {t('add')}
               </Button>
             </div>
             {languages.length > 0 ? (
@@ -1156,7 +1159,7 @@ ${interests.map(i => i.name).join(', ')}
                 />
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">Aucune langue ajoutée</p>
+              <p className="text-gray-500 text-sm">{t('noLanguages')}</p>
             )}
           </section>
 
@@ -1164,11 +1167,11 @@ ${interests.map(i => i.name).join(', ')}
           <section className="bg-white p-6 rounded-xl border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900">
-                Centres d'intérêt ({interests.length})
+                {tSections('interests')} ({interests.length})
               </h2>
               <Button variant="outline" size="sm" onClick={addInterest}>
                 <Plus className="w-4 h-4 mr-1" />
-                Ajouter
+                {t('add')}
               </Button>
             </div>
             {interests.length > 0 ? (
@@ -1190,7 +1193,7 @@ ${interests.map(i => i.name).join(', ')}
                 />
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">Aucun centre d'intérêt ajouté</p>
+              <p className="text-gray-500 text-sm">{t('noInterests')}</p>
             )}
           </section>
         </div>
@@ -1202,12 +1205,12 @@ ${interests.map(i => i.name).join(', ')}
               {isGeneratingPdf ? (
                 <>
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Génération...
+                  {t('downloading')}
                 </>
               ) : (
                 <>
                   <FileDown className="w-4 h-4 mr-2" />
-                  Télécharger PDF
+                  {t('download')}
                 </>
               )}
             </Button>
@@ -1262,6 +1265,7 @@ interface ExperienceCardProps {
 }
 
 function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragHandleProps }: ExperienceCardProps) {
+  const t = useTranslations('editor')
   const [data, setData] = useState(experience)
   const [editing, setEditing] = useState(!experience.company)
   const [improving, setImproving] = useState(false)
@@ -1284,23 +1288,23 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragH
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
-            <Label>Entreprise</Label>
+            <Label>{t('company')}</Label>
             <Input
-              placeholder="Nom de l'entreprise"
+              placeholder={t('companyPlaceholder')}
               value={data.company}
               onChange={(e) => handleChange('company', e.target.value)}
             />
           </div>
           <div>
-            <Label>Poste</Label>
+            <Label>{t('position')}</Label>
             <Input
-              placeholder="Titre du poste"
+              placeholder={t('positionPlaceholder')}
               value={data.position}
               onChange={(e) => handleChange('position', e.target.value)}
             />
           </div>
           <div>
-            <Label>Date de début</Label>
+            <Label>{t('startDate')}</Label>
             <Input
               type="date"
               value={formatDate(data.startDate, 'input')}
@@ -1308,7 +1312,7 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragH
             />
           </div>
           <div>
-            <Label>Date de fin</Label>
+            <Label>{t('endDate')}</Label>
             <Input
               type="date"
               value={data.endDate ? formatDate(data.endDate, 'input') : ''}
@@ -1324,11 +1328,11 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragH
             onChange={(e) => handleChange('current', e.target.checked)}
             className="rounded"
           />
-          Poste actuel
+          {t('currentJob')}
         </label>
         <div>
           <div className="flex justify-between items-center mb-1">
-            <Label>Description</Label>
+            <Label>{t('description')}</Label>
             {onImproveWithAI && (
               <button
                 type="button"
@@ -1360,7 +1364,7 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragH
             )}
           </div>
           <textarea
-            placeholder="Décrivez vos responsabilités et accomplissements..."
+            placeholder={t('experienceDescPlaceholder')}
             value={data.description || ''}
             onChange={(e) => handleChange('description', e.target.value || null)}
             className="w-full px-3 py-2 border rounded-lg text-gray-900 min-h-[80px]"
@@ -1369,13 +1373,13 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragH
         <div className="flex flex-wrap gap-2">
           <Button size="sm" onClick={save}>
             <Check className="w-4 h-4 mr-1" />
-            Valider
+            {t('validate')}
           </Button>
           <Button size="sm" variant="outline" onClick={() => setEditing(false)}>
-            Annuler
+            {t('cancelButton')}
           </Button>
           <Button size="sm" variant="destructive" onClick={onDelete}>
-            Supprimer
+            {t('deleteButton')}
           </Button>
         </div>
       </div>
@@ -1386,16 +1390,16 @@ function ExperienceCard({ experience, onUpdate, onDelete, onImproveWithAI, dragH
     <div className="border rounded-lg p-4 flex items-start gap-2">
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-gray-900">{data.position || 'Nouveau poste'}</h3>
-        <p className="text-gray-600">{data.company || 'Entreprise'}</p>
+        <h3 className="font-medium text-gray-900">{data.position || t('newPosition')}</h3>
+        <p className="text-gray-600">{data.company || t('newCompany')}</p>
         <p className="text-sm text-gray-500">
-          {formatDate(data.startDate)} - {data.current ? 'Présent' : formatDate(data.endDate)}
+          {formatDate(data.startDate)} - {data.current ? t('present') : formatDate(data.endDate)}
         </p>
         {data.description && (
           <p className="text-sm text-gray-500 mt-1 line-clamp-2">{data.description}</p>
         )}
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{t('modify')}</Button>
     </div>
   )
 }
@@ -1409,6 +1413,7 @@ interface EducationCardProps {
 }
 
 function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: EducationCardProps) {
+  const t = useTranslations('editor')
   const [data, setData] = useState(education)
   const [editing, setEditing] = useState(!education.institution)
 
@@ -1430,39 +1435,39 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
-            <Label>Établissement</Label>
+            <Label>{t('institution')}</Label>
             <Input
-              placeholder="Nom de l'établissement"
+              placeholder={t('institutionPlaceholder')}
               value={data.institution}
               onChange={(e) => handleChange('institution', e.target.value)}
             />
           </div>
           <div>
-            <Label>Diplôme</Label>
+            <Label>{t('degree')}</Label>
             <Input
-              placeholder="Ex: Master, Licence..."
+              placeholder={t('degreePlaceholder')}
               value={data.degree}
               onChange={(e) => handleChange('degree', e.target.value)}
             />
           </div>
           <div>
-            <Label>Domaine / Spécialité</Label>
+            <Label>{t('field')}</Label>
             <Input
-              placeholder="Ex: Informatique"
+              placeholder={t('fieldPlaceholder')}
               value={data.field || ''}
               onChange={(e) => handleChange('field', e.target.value || null)}
             />
           </div>
           <div>
-            <Label>Mention / GPA</Label>
+            <Label>{t('gpa')}</Label>
             <Input
-              placeholder="Ex: Bien, 3.8/4.0"
+              placeholder={t('gpaPlaceholder')}
               value={data.gpa || ''}
               onChange={(e) => handleChange('gpa', e.target.value || null)}
             />
           </div>
           <div>
-            <Label>Date de début</Label>
+            <Label>{t('startDate')}</Label>
             <Input
               type="date"
               value={formatDate(data.startDate, 'input')}
@@ -1470,7 +1475,7 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
             />
           </div>
           <div>
-            <Label>Date de fin</Label>
+            <Label>{t('endDate')}</Label>
             <Input
               type="date"
               value={data.endDate ? formatDate(data.endDate, 'input') : ''}
@@ -1486,15 +1491,15 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
             onChange={(e) => handleChange('current', e.target.checked)}
             className="rounded"
           />
-          Formation en cours
+          {t('currentStudy')}
         </label>
         <div className="flex flex-wrap gap-2">
           <Button size="sm" onClick={save}>
             <Check className="w-4 h-4 mr-1" />
-            Valider
+            {t('validate')}
           </Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{t('cancelButton')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{t('deleteButton')}</Button>
         </div>
       </div>
     )
@@ -1504,14 +1509,14 @@ function EducationCard({ education, onUpdate, onDelete, dragHandleProps }: Educa
     <div className="border rounded-lg p-4 flex items-start gap-2">
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
-        <p className="text-gray-600">{data.institution || 'Établissement'}</p>
+        <h3 className="font-medium text-gray-900">{data.degree || t('newDegree')}</h3>
+        <p className="text-gray-600">{data.institution || t('newInstitution')}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
         <p className="text-sm text-gray-500">
-          {formatDate(data.startDate)} - {data.current ? 'En cours' : data.endDate ? formatDate(data.endDate) : 'En cours'}
+          {formatDate(data.startDate)} - {data.current ? t('inProgress') : data.endDate ? formatDate(data.endDate) : t('inProgress')}
         </p>
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{t('modify')}</Button>
     </div>
   )
 }
@@ -1525,6 +1530,7 @@ interface CertificationCardProps {
 }
 
 function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps }: CertificationCardProps) {
+  const t = useTranslations('editor')
   const [data, setData] = useState(certification)
   const [editing, setEditing] = useState(!certification.name)
 
@@ -1542,23 +1548,23 @@ function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps 
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
-            <Label>Nom de la certification</Label>
+            <Label>{t('certName')}</Label>
             <Input
-              placeholder="Ex: AWS Solutions Architect"
+              placeholder={t('certNamePlaceholder')}
               value={data.name}
               onChange={(e) => handleChange('name', e.target.value)}
             />
           </div>
           <div>
-            <Label>Organisme émetteur</Label>
+            <Label>{t('certIssuer')}</Label>
             <Input
-              placeholder="Ex: Amazon Web Services"
+              placeholder={t('certIssuerPlaceholder')}
               value={data.issuer}
               onChange={(e) => handleChange('issuer', e.target.value)}
             />
           </div>
           <div>
-            <Label>Date d'obtention</Label>
+            <Label>{t('certIssueDate')}</Label>
             <Input
               type="date"
               value={formatDate(data.issueDate, 'input')}
@@ -1566,7 +1572,7 @@ function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps 
             />
           </div>
           <div>
-            <Label>Date d'expiration (optionnel)</Label>
+            <Label>{t('certExpiryDate')}</Label>
             <Input
               type="date"
               value={data.expiryDate ? formatDate(data.expiryDate, 'input') : ''}
@@ -1574,15 +1580,15 @@ function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps 
             />
           </div>
           <div>
-            <Label>ID de la certification (optionnel)</Label>
+            <Label>{t('certCredentialId')}</Label>
             <Input
-              placeholder="Ex: ABC123XYZ"
+              placeholder={t('certCredentialIdPlaceholder')}
               value={data.credentialId || ''}
               onChange={(e) => handleChange('credentialId', e.target.value || null)}
             />
           </div>
           <div>
-            <Label>URL de vérification (optionnel)</Label>
+            <Label>{t('certCredentialUrl')}</Label>
             <Input
               placeholder="https://..."
               value={data.credentialUrl || ''}
@@ -1593,10 +1599,10 @@ function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps 
         <div className="flex flex-wrap gap-2">
           <Button size="sm" onClick={save}>
             <Check className="w-4 h-4 mr-1" />
-            Valider
+            {t('validate')}
           </Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{t('cancelButton')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{t('deleteButton')}</Button>
         </div>
       </div>
     )
@@ -1606,17 +1612,17 @@ function CertificationCard({ certification, onUpdate, onDelete, dragHandleProps 
     <div className="border rounded-lg p-4 flex items-start gap-2">
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-gray-900">{data.name || 'Nouvelle certification'}</h3>
-        <p className="text-gray-600">{data.issuer || 'Organisme'}</p>
+        <h3 className="font-medium text-gray-900">{data.name || t('newCertification')}</h3>
+        <p className="text-gray-600">{data.issuer || t('newIssuer')}</p>
         <p className="text-sm text-gray-500">
-          Obtenue le {formatDate(data.issueDate)}
-          {data.expiryDate && ` • Expire le ${formatDate(data.expiryDate)}`}
+          {t('certObtainedOn', { date: formatDate(data.issueDate) })}
+          {data.expiryDate && t('certExpiresOn', { date: formatDate(data.expiryDate) })}
         </p>
         {data.credentialId && (
           <p className="text-xs text-gray-400">ID: {data.credentialId}</p>
         )}
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{t('modify')}</Button>
     </div>
   )
 }
@@ -1630,6 +1636,7 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCardProps) {
+  const t = useTranslations('editor')
   const [data, setData] = useState(project)
   const [editing, setEditing] = useState(!project.name)
   const [techInput, setTechInput] = useState('')
@@ -1659,15 +1666,15 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
-            <Label>Nom du projet</Label>
+            <Label>{t('projectName')}</Label>
             <Input
-              placeholder="Ex: Application de gestion"
+              placeholder={t('projectNamePlaceholder')}
               value={data.name}
               onChange={(e) => handleChange('name', e.target.value)}
             />
           </div>
           <div>
-            <Label>URL (optionnel)</Label>
+            <Label>{t('projectUrl')}</Label>
             <Input
               placeholder="https://..."
               value={data.url || ''}
@@ -1676,9 +1683,9 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
           </div>
         </div>
         <div>
-          <Label>Description</Label>
+          <Label>{t('projectDescription')}</Label>
           <textarea
-            placeholder="Décrivez le projet..."
+            placeholder={t('projectDescPlaceholder')}
             value={data.description || ''}
             onChange={(e) => setData({ ...data, description: e.target.value || null })}
             className="w-full px-3 py-2 border rounded-lg text-gray-900 text-sm"
@@ -1686,10 +1693,10 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
           />
         </div>
         <div>
-          <Label>Outils utilisés</Label>
+          <Label>{t('projectTech')}</Label>
           <div className="flex items-center gap-2 mt-1">
             <Input
-              placeholder="Ex: Excel, Canva, React..."
+              placeholder={t('projectTechPlaceholder')}
               value={techInput}
               onChange={(e) => setTechInput(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTech() } }}
@@ -1712,10 +1719,10 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
         <div className="flex flex-wrap gap-2">
           <Button size="sm" onClick={save}>
             <Check className="w-4 h-4 mr-1" />
-            Valider
+            {t('validate')}
           </Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{t('cancelButton')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{t('deleteButton')}</Button>
         </div>
       </div>
     )
@@ -1726,10 +1733,10 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <h3 className="font-medium text-gray-900">{data.name || 'Nouveau projet'}</h3>
+          <h3 className="font-medium text-gray-900">{data.name || t('newProject')}</h3>
           {data.url && (
             <a href={data.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-              Voir
+              {t('projectView')}
             </a>
           )}
         </div>
@@ -1742,7 +1749,7 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: ProjectCa
           </div>
         )}
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{t('modify')}</Button>
     </div>
   )
 }
@@ -1755,6 +1762,8 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
   onDelete: (id: string) => void
   onReorder: (items: SkillData[]) => void
 }) {
+  const t = useTranslations('editor')
+  const tSections = useTranslations('cvSections')
   const [newCategoryName, setNewCategoryName] = useState('')
   const [isCreatingCategory, setIsCreatingCategory] = useState(false)
 
@@ -1784,7 +1793,7 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
     <section className="bg-white p-6 rounded-xl border">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold text-gray-900">
-          Compétences ({skills.length})
+          {tSections('skills')} ({skills.length})
         </h2>
         <div className="flex gap-2">
           {isCreatingCategory ? (
@@ -1794,7 +1803,7 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
                 value={newCategoryName}
                 onChange={(e) => setNewCategoryName(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleCreateCategory()}
-                placeholder="Nom du groupe"
+                placeholder={t('groupNamePlaceholder')}
                 autoFocus
               />
               <button onClick={handleCreateCategory} className="text-green-600 hover:text-green-700 p-1">
@@ -1807,7 +1816,7 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
           ) : (
             <Button variant="outline" size="sm" onClick={() => setIsCreatingCategory(true)}>
               <Plus className="w-4 h-4 mr-1" />
-              Créer un groupe
+              {t('createGroup')}
             </Button>
           )}
         </div>
@@ -1849,7 +1858,7 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
       {uncategorizedSkills.length > 0 && (
         <div className="mt-4">
           {categories.length > 0 && (
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Autres</h3>
+            <h3 className="text-sm font-medium text-gray-500 mb-2">{t('others')}</h3>
           )}
           <SortableList
             items={uncategorizedSkills}
@@ -1874,12 +1883,12 @@ function EditorSkillsSection({ skills, onAdd, onUpdate, onDelete, onReorder }: {
           onClick={() => onAdd()}
           className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
         >
-          + Ajouter une compétence
+          + {t('addSkill')}
         </button>
       </div>
 
       {skills.length === 0 && !isCreatingCategory && (
-        <p className="text-gray-500 text-sm">Aucune compétence ajoutée</p>
+        <p className="text-gray-500 text-sm">{t('noSkills')}</p>
       )}
     </section>
   )
@@ -1895,6 +1904,7 @@ function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete,
   onReorder: (items: SkillData[]) => void
   dragHandleProps: DragHandleProps
 }) {
+  const t = useTranslations('editor')
   const [isRenaming, setIsRenaming] = useState(false)
   const [categoryName, setCategoryName] = useState(category)
 
@@ -1935,7 +1945,7 @@ function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete,
             <h3
               className="text-sm font-bold text-gray-900 cursor-pointer hover:text-blue-600 transition-colors"
               onClick={() => setIsRenaming(true)}
-              title="Cliquer pour renommer"
+              title={t('clickToRename')}
             >
               {category}
             </h3>
@@ -1945,7 +1955,7 @@ function EditorSkillCategoryGroup({ category, skills, onAdd, onUpdate, onDelete,
           onClick={onAdd}
           className="text-xs text-gray-500 hover:text-blue-600 transition-colors"
         >
-          + Ajouter
+          + {t('add')}
         </button>
       </div>
       <SortableList
@@ -1973,6 +1983,7 @@ function EditorSkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: {
   onDelete: () => void
   dragHandleProps: DragHandleProps
 }) {
+  const t = useTranslations('editor')
   const [data, setData] = useState(skill)
   const [editing, setEditing] = useState(!skill.name)
 
@@ -1991,7 +2002,7 @@ function EditorSkillBadge({ skill, onUpdate, onDelete, dragHandleProps }: {
           value={data.name}
           onChange={(e) => setData({ ...data, name: e.target.value })}
           onKeyDown={(e) => e.key === 'Enter' && save()}
-          placeholder="Compétence"
+          placeholder={t('skillPlaceholder')}
           autoFocus
         />
         <button onClick={save} className="text-green-600 hover:text-green-700 p-1">
@@ -2032,15 +2043,17 @@ interface LanguageBadgeProps {
   dragHandleProps: DragHandleProps
 }
 
-const languageLevelLabels: Record<LanguageLevel, string> = {
-  BEGINNER: 'Débutant',
-  INTERMEDIATE: 'Intermédiaire',
-  ADVANCED: 'Avancé',
-  FLUENT: 'Courant',
-  NATIVE: 'Natif',
-}
+// languageLevelLabels est maintenant géré via les clés i18n dans le composant LanguageBadge
 
 function LanguageBadge({ language, onUpdate, onDelete, dragHandleProps }: LanguageBadgeProps) {
+  const t = useTranslations('editor')
+  const languageLevelLabels: Record<LanguageLevel, string> = {
+    BEGINNER: t('langBeginner'),
+    INTERMEDIATE: t('langIntermediate'),
+    ADVANCED: t('langAdvanced'),
+    FLUENT: t('langFluent'),
+    NATIVE: t('langNative'),
+  }
   const [data, setData] = useState(language)
   const [editing, setEditing] = useState(!language.name)
 
@@ -2059,7 +2072,7 @@ function LanguageBadge({ language, onUpdate, onDelete, dragHandleProps }: Langua
           value={data.name}
           onChange={(e) => setData({ ...data, name: e.target.value })}
           onKeyDown={(e) => e.key === 'Enter' && save()}
-          placeholder="Langue"
+          placeholder={t('languagePlaceholder')}
           autoFocus
         />
         <select
@@ -2067,11 +2080,11 @@ function LanguageBadge({ language, onUpdate, onDelete, dragHandleProps }: Langua
           value={data.level}
           onChange={(e) => setData({ ...data, level: e.target.value as LanguageLevel })}
         >
-          <option value="BEGINNER">Débutant</option>
-          <option value="INTERMEDIATE">Intermédiaire</option>
-          <option value="ADVANCED">Avancé</option>
-          <option value="FLUENT">Courant</option>
-          <option value="NATIVE">Natif</option>
+          <option value="BEGINNER">{t('langBeginner')}</option>
+          <option value="INTERMEDIATE">{t('langIntermediate')}</option>
+          <option value="ADVANCED">{t('langAdvanced')}</option>
+          <option value="FLUENT">{t('langFluent')}</option>
+          <option value="NATIVE">{t('langNative')}</option>
         </select>
         <button onClick={save} className="text-green-600 hover:text-green-700 p-1">
           <Check className="w-4 h-4" />
@@ -2113,6 +2126,7 @@ interface InterestBadgeProps {
 }
 
 function InterestBadge({ interest, onUpdate, onDelete, dragHandleProps }: InterestBadgeProps) {
+  const t = useTranslations('editor')
   const [data, setData] = useState(interest)
   const [editing, setEditing] = useState(!interest.name)
 
@@ -2131,7 +2145,7 @@ function InterestBadge({ interest, onUpdate, onDelete, dragHandleProps }: Intere
           value={data.name}
           onChange={(e) => setData({ ...data, name: e.target.value })}
           onKeyDown={(e) => e.key === 'Enter' && save()}
-          placeholder="Centre d'intérêt"
+          placeholder={t('interestPlaceholder')}
           autoFocus
         />
         <button onClick={save} className="text-green-600 hover:text-green-700 p-1">

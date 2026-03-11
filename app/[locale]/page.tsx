@@ -1,15 +1,20 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import { Footer } from '@/components/layout/footer'
 import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd, LocalBusinessJsonLd, PersonJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld'
 import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check, MapPin } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'CV Gratuit en Ligne | Créer son CV avec IA - Générateur de CV Français',
-  description: 'Créez votre CV gratuit en ligne en français avec l\'intelligence artificielle. Création de CV rapide et facile : modèles professionnels, optimisation ATS, export PDF. Faire son CV en 5 minutes.',
-  alternates: {
-    canonical: '/',
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'landing.meta' })
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: '/',
+    },
+  }
 }
 
 const faqQuestions = [
@@ -47,7 +52,11 @@ const faqQuestions = [
   },
 ]
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'landing' })
+  const tNav = await getTranslations({ locale, namespace: 'nav' })
+
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
       <WebsiteJsonLd />
@@ -68,14 +77,14 @@ export default function HomePage() {
               href="/login"
               className="text-sm font-medium text-[#1F1A17] hover:text-[#722F37] transition-colors"
             >
-              Connexion
+              {tNav('login')}
             </Link>
             <Link
               href="/signup"
               className="text-sm px-4 py-2 rounded-xl bg-[#722F37] hover:bg-[#8B3A44] font-bold transition-colors"
               style={{ color: '#FFFFFF' }}
             >
-              Commencer gratuitement
+              {tNav('startFree')}
             </Link>
           </nav>
         </div>
@@ -92,16 +101,14 @@ export default function HomePage() {
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#722F37]/10 border border-[#722F37]/20 rounded-full text-[#722F37] text-sm mb-6">
                   <Sparkles className="w-4 h-4" />
-                  Propulsé par l&apos;IA
+                  {t('badge')}
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1A17] mb-6 leading-tight">
-                  Créer son <span className="text-[#722F37]">CV gratuit</span> en ligne
-                  <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">avec l&apos;intelligence artificielle</span>
+                  Créer son <span className="text-[#722F37]">{t('hero.titleAccent')}</span> en ligne
+                  <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">{t('hero.subtitle')}</span>
                 </h1>
                 <p className="text-lg text-[#6B6560] mb-8 max-w-xl">
-                  Faire un CV n&apos;a jamais été aussi simple. Notre générateur de CV gratuit avec IA
-                  vous aide à créer un CV professionnel en 5 minutes : modèles modernes, optimisation ATS
-                  et export PDF. Le meilleur outil de création de CV en français.
+                  {t('hero.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
@@ -109,14 +116,14 @@ export default function HomePage() {
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#722F37] hover:bg-[#8B3A44] font-bold rounded-xl transition-all hover:scale-[1.02]"
                     style={{ color: '#FFFFFF' }}
                   >
-                    Créer mon CV gratuitement
+                    {t('hero.cta')}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/templates"
                     className="inline-flex items-center justify-center px-6 py-3 border border-[#E0D6C8] text-[#1F1A17] font-medium rounded-xl hover:bg-[#F3EDE5] hover:border-[#722F37] transition-colors"
                   >
-                    Voir les templates
+                    {t('hero.seeTemplates')}
                   </Link>
                 </div>
               </div>
@@ -125,7 +132,7 @@ export default function HomePage() {
             {/* Stats Card */}
             <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] flex flex-col justify-between shadow-lg">
               <div>
-                <h3 className="text-sm font-medium text-[#6B6560] mb-6">Pourquoi nous choisir ?</h3>
+                <h3 className="text-sm font-medium text-[#6B6560] mb-6">{t('stats.why')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#722F37]/10 rounded-xl flex items-center justify-center">
@@ -133,7 +140,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-[#1F1A17]">98%</p>
-                      <p className="text-xs text-[#6B6560]">Compatibilité ATS</p>
+                      <p className="text-xs text-[#6B6560]">{t('stats.atsScore')}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -142,7 +149,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-[#1F1A17]">5 min</p>
-                      <p className="text-xs text-[#6B6560]">Temps moyen</p>
+                      <p className="text-xs text-[#6B6560]">{t('stats.avgTime')}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -151,7 +158,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-[#1F1A17]">5+</p>
-                      <p className="text-xs text-[#6B6560]">Templates pro</p>
+                      <p className="text-xs text-[#6B6560]">{t('stats.templates')}</p>
                     </div>
                   </div>
                 </div>
@@ -159,7 +166,7 @@ export default function HomePage() {
               <div className="mt-6 pt-6 border-t border-[#E0D6C8]">
                 <div className="flex items-center gap-2 text-sm text-[#6B6560]">
                   <MapPin className="w-4 h-4 text-[#722F37]" />
-                  <span>Créé à Rennes par Evan Davison</span>
+                  <span>{t('stats.madeIn')}</span>
                 </div>
               </div>
             </div>
@@ -170,10 +177,10 @@ export default function HomePage() {
         <section className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1F1A17] mb-4">
-              Comment faire un CV professionnel facilement
+              {t('features.title')}
             </h2>
             <p className="text-[#6B6560] max-w-xl mx-auto">
-              Tous les outils pour créer son CV, le rédiger et l&apos;optimiser — gratuit et en français
+              {t('features.subtitle')}
             </p>
           </div>
 
@@ -184,10 +191,9 @@ export default function HomePage() {
               <div className="w-14 h-14 bg-[#FFFFFF]/20 rounded-2xl flex items-center justify-center mb-6">
                 <Sparkles className="w-7 h-7 text-[#FFFFFF]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#FFFFFF] mb-3">Suggestions IA</h3>
+              <h3 className="text-2xl font-bold text-[#FFFFFF] mb-3">{t('features.ai.title')}</h3>
               <p className="text-[#FFFFFF]/80">
-                Notre IA analyse votre contenu et propose des améliorations pour rendre votre CV plus impactant.
-                Reformulations, mots-clés, structure optimisée.
+                {t('features.ai.description')}
               </p>
             </div>
 
@@ -196,9 +202,9 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <BarChart3 className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">Score ATS</h3>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('features.ats.title')}</h3>
               <p className="text-sm text-[#6B6560]">
-                Optimisez votre CV pour les systèmes de tri automatique.
+                {t('features.ats.description')}
               </p>
             </div>
 
@@ -207,9 +213,9 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <Palette className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">Templates Pro</h3>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('features.templates.title')}</h3>
               <p className="text-sm text-[#6B6560]">
-                Des designs modernes adaptés à votre secteur.
+                {t('features.templates.description')}
               </p>
             </div>
 
@@ -218,9 +224,9 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <Zap className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">Export PDF</h3>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('features.export.title')}</h3>
               <p className="text-sm text-[#6B6560]">
-                Téléchargez votre CV en haute qualité, prêt à envoyer.
+                {t('features.export.description')}
               </p>
             </div>
 
@@ -229,20 +235,20 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <Shield className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">Données sécurisées</h3>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('features.secure.title')}</h3>
               <p className="text-sm text-[#6B6560]">
-                Vos informations sont protégées et chiffrées.
+                {t('features.secure.description')}
               </p>
             </div>
 
             {/* Feature 6 - Large */}
             <div className="md:col-span-2 bg-[#F3EDE5] p-8 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all shadow-md">
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-4">Comment ça marche ?</h3>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-4">{t('features.howItWorks.title')}</h3>
               <div className="grid grid-cols-4 gap-4">
-                <StepItem number={1} label="Inscription" />
-                <StepItem number={2} label="Infos" />
-                <StepItem number={3} label="IA" />
-                <StepItem number={4} label="Export" />
+                <StepItem number={1} label={t('features.howItWorks.step1')} />
+                <StepItem number={2} label={t('features.howItWorks.step2')} />
+                <StepItem number={3} label={t('features.howItWorks.step3')} />
+                <StepItem number={4} label={t('features.howItWorks.step4')} />
               </div>
             </div>
           </div>
@@ -254,17 +260,16 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNGRkYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-[#FFFFFF] mb-4">
-                Créez votre CV gratuit maintenant
+                {t('cta.title')}
               </h2>
               <p className="text-lg text-[#FFFFFF]/80 mb-8 max-w-xl mx-auto">
-                Faire son CV en ligne n&apos;a jamais été aussi rapide. Création de CV gratuite, modèles professionnels
-                et intelligence artificielle pour décrocher votre prochain emploi.
+                {t('cta.description')}
               </p>
               <Link
                 href="/signup"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1F1A17] text-[#FFFFFF] font-bold text-lg rounded-xl hover:bg-[#3D3530] transition-all hover:scale-[1.02]"
               >
-                Commencer maintenant
+                {t('cta.button')}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Loader2, FileText, Sparkles, BarChart3 } from 'lucide-react'
 
 export default function CheckoutSuccessPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const t = useTranslations('dashboard.checkout.success')
+  const tCommon = useTranslations('common')
   const resumeId = searchParams.get('resume_id')
   const sessionId = searchParams.get('session_id')
   const [isVerifying, setIsVerifying] = useState(true)
@@ -52,7 +55,7 @@ export default function CheckoutSuccessPage() {
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="w-12 h-12 text-primary mx-auto animate-spin mb-4" />
-          <p className="text-gray-600">Vérification du paiement...</p>
+          <p className="text-gray-600">{tCommon('loading')}</p>
         </div>
       </div>
     )
@@ -69,10 +72,10 @@ export default function CheckoutSuccessPage() {
 
           {/* Title */}
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Paiement réussi !
+            {t('title')}
           </h1>
           <p className="text-gray-600 mb-6">
-            Votre CV est maintenant débloqué. Vous avez accès à toutes les fonctionnalités premium.
+            {t('subtitle')}
           </p>
 
           {/* Features unlocked */}
@@ -98,7 +101,7 @@ export default function CheckoutSuccessPage() {
 
           {/* Action button */}
           <Button onClick={handleGoToEditor} className="w-full">
-            Accéder à mon CV
+            {t('cta')}
           </Button>
 
           {!isSuccess && (

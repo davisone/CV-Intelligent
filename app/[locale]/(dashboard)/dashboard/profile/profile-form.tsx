@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 import { useAutoSave } from '@/hooks/useAutoSave'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -40,6 +41,7 @@ export function ProfileForm({
   initialLanguages,
   initialInterests,
 }: ProfileFormProps) {
+  const t = useTranslations('dashboard.profile')
   const [isUploading, setIsUploading] = useState(false)
   const [profile, setProfile] = useState({
     firstName: initialProfile?.firstName || '',
@@ -102,12 +104,12 @@ export function ProfileForm({
 
       if (res.ok) {
         setProfile(prev => ({ ...prev, photoUrl: data.photoUrl }))
-        toast.success('Photo uploadée !')
+        toast.success(t('photoSaved'))
       } else {
-        toast.error(data.error || 'Erreur lors de l\'upload')
+        toast.error(data.error || t('photoUploadError'))
       }
     } catch {
-      toast.error('Erreur serveur')
+      toast.error(t('serverError'))
     } finally {
       setIsUploading(false)
     }
@@ -156,7 +158,7 @@ export function ProfileForm({
   const deleteExperience = async (id: string) => {
     await fetch(`/api/profile/experiences?id=${id}`, { method: 'DELETE' })
     setExperiences(prev => prev.filter(e => e.id !== id))
-    toast.success('Expérience supprimée')
+    toast.success(t('experienceDeleted'))
   }
 
   const addEducation = async () => {
@@ -179,7 +181,7 @@ export function ProfileForm({
   const deleteEducation = async (id: string) => {
     await fetch(`/api/profile/educations?id=${id}`, { method: 'DELETE' })
     setEducations(prev => prev.filter(e => e.id !== id))
-    toast.success('Formation supprimée')
+    toast.success(t('educationDeleted'))
   }
 
   const addCertification = async () => {
@@ -201,7 +203,7 @@ export function ProfileForm({
   const deleteCertification = async (id: string) => {
     await fetch(`/api/profile/certifications?id=${id}`, { method: 'DELETE' })
     setCertifications(prev => prev.filter(c => c.id !== id))
-    toast.success('Certification supprimée')
+    toast.success(t('certificationDeleted'))
   }
 
   const addSkill = async (category?: string) => {
@@ -278,7 +280,7 @@ export function ProfileForm({
   const deleteProject = async (id: string) => {
     await fetch(`/api/profile/projects?id=${id}`, { method: 'DELETE' })
     setProjects(prev => prev.filter(p => p.id !== id))
-    toast.success('Projet supprimé')
+    toast.success(t('projectDeleted'))
   }
 
   return (
@@ -292,17 +294,17 @@ export function ProfileForm({
           {isSaving ? (
             <>
               <span className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
-              Sauvegarde en cours...
+              {t('savingInProgress')}
             </>
           ) : hasUnsavedChanges ? (
             <>
               <span className="w-2 h-2 rounded-full bg-amber-500" />
-              Modifications non sauvegardées
+              {t('unsavedChanges')}
             </>
           ) : (
             <>
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              Profil sauvegardé
+              {t('saved')}
             </>
           )}
         </div>
@@ -310,12 +312,12 @@ export function ProfileForm({
 
       {/* Photo de profil */}
       <section className="bg-white p-6 rounded-xl border">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Photo de profil</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t('profilePhoto')}</h2>
         <div className="flex items-start gap-6">
           {profile.photoUrl ? (
             <img
               src={profile.photoUrl}
-              alt="Photo de profil"
+              alt={t('profilePhoto')}
               className="w-24 h-24 rounded-full object-cover border-2 border-gray-200"
             />
           ) : (
@@ -328,7 +330,7 @@ export function ProfileForm({
           <div className="flex-1 space-y-4">
             {/* Upload depuis PC */}
             <div>
-              <Label>Importer depuis votre ordinateur</Label>
+              <Label>{t('importFromComputer')}</Label>
               <div className="mt-1 flex items-center gap-3">
                 <label className="cursor-pointer">
                   <input
@@ -342,25 +344,25 @@ export function ProfileForm({
                     {isUploading ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Upload...
+                        {t('uploading')}
                       </>
                     ) : (
                       <>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        Choisir une photo
+                        {t('choosePhoto')}
                       </>
                     )}
                   </span>
                 </label>
-                <span className="text-xs text-gray-500">JPG, PNG (max 2MB)</span>
+                <span className="text-xs text-gray-500">{t('photoFormat')}</span>
               </div>
             </div>
 
             {/* Ou URL */}
             <div>
-              <Label htmlFor="photoUrl">Ou coller une URL</Label>
+              <Label htmlFor="photoUrl">{t('orPasteUrl')}</Label>
               <Input
                 id="photoUrl"
                 name="photoUrl"
@@ -377,7 +379,7 @@ export function ProfileForm({
                 onClick={() => setProfile(prev => ({ ...prev, photoUrl: '' }))}
                 className="text-sm text-red-600 hover:text-red-700"
               >
-                Supprimer la photo
+                {t('deletePhoto')}
               </button>
             )}
           </div>
@@ -386,54 +388,54 @@ export function ProfileForm({
 
       {/* Informations personnelles */}
       <section className="bg-white p-6 rounded-xl border">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Informations personnelles</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t('personalInfo')}</h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="firstName">Prénom</Label>
+            <Label htmlFor="firstName">{t('firstName')}</Label>
             <Input id="firstName" name="firstName" value={profile.firstName} onChange={handleProfileChange} />
           </div>
           <div>
-            <Label htmlFor="lastName">Nom</Label>
+            <Label htmlFor="lastName">{t('lastName')}</Label>
             <Input id="lastName" name="lastName" value={profile.lastName} onChange={handleProfileChange} />
           </div>
           <div>
-            <Label htmlFor="phone">Téléphone</Label>
+            <Label htmlFor="phone">{t('phone')}</Label>
             <Input id="phone" name="phone" value={profile.phone} onChange={handleProfileChange} />
           </div>
           <div>
-            <Label htmlFor="jobTitle">Titre professionnel</Label>
-            <Input id="jobTitle" name="jobTitle" value={profile.jobTitle} onChange={handleProfileChange} placeholder="Ex: Développeur Full Stack" />
+            <Label htmlFor="jobTitle">{t('jobTitle')}</Label>
+            <Input id="jobTitle" name="jobTitle" value={profile.jobTitle} onChange={handleProfileChange} placeholder={t('jobTitlePlaceholder')} />
           </div>
           <div>
-            <Label htmlFor="birthDate">Date de naissance</Label>
+            <Label htmlFor="birthDate">{t('birthDate')}</Label>
             <Input id="birthDate" name="birthDate" type="date" value={profile.birthDate} onChange={handleProfileChange} />
           </div>
           <div>
-            <Label htmlFor="drivingLicenses">Permis</Label>
-            <Input id="drivingLicenses" name="drivingLicenses" value={profile.drivingLicenses} onChange={handleProfileChange} placeholder="Ex: B, A2" />
+            <Label htmlFor="drivingLicenses">{t('drivingLicenses')}</Label>
+            <Input id="drivingLicenses" name="drivingLicenses" value={profile.drivingLicenses} onChange={handleProfileChange} placeholder={t('drivingLicensesPlaceholder')} />
           </div>
           <div>
-            <Label htmlFor="city">Ville</Label>
+            <Label htmlFor="city">{t('city')}</Label>
             <Input id="city" name="city" value={profile.city} onChange={handleProfileChange} />
           </div>
           <div>
-            <Label htmlFor="country">Pays</Label>
+            <Label htmlFor="country">{t('country')}</Label>
             <Input id="country" name="country" value={profile.country} onChange={handleProfileChange} />
           </div>
           <div>
-            <Label htmlFor="linkedin">LinkedIn</Label>
+            <Label htmlFor="linkedin">{t('linkedin')}</Label>
             <Input id="linkedin" name="linkedin" value={profile.linkedin} onChange={handleProfileChange} placeholder="https://linkedin.com/in/..." />
           </div>
           <div>
-            <Label htmlFor="github">GitHub</Label>
+            <Label htmlFor="github">{t('github')}</Label>
             <Input id="github" name="github" value={profile.github} onChange={handleProfileChange} placeholder="https://github.com/..." />
           </div>
           <div className="col-span-2">
-            <Label htmlFor="portfolio">Portfolio</Label>
+            <Label htmlFor="portfolio">{t('portfolio')}</Label>
             <Input id="portfolio" name="portfolio" value={profile.portfolio} onChange={handleProfileChange} placeholder="https://monportfolio.fr" />
           </div>
           <div className="col-span-2">
-            <Label htmlFor="summary">Résumé professionnel</Label>
+            <Label htmlFor="summary">{t('summary')}</Label>
             <textarea
               id="summary"
               name="summary"
@@ -441,7 +443,7 @@ export function ProfileForm({
               onChange={handleProfileChange}
               rows={4}
               className="w-full px-3 py-2 border rounded-lg text-gray-900"
-              placeholder="Décrivez-vous en quelques phrases..."
+              placeholder={t('summaryPlaceholder')}
             />
           </div>
         </div>
@@ -450,8 +452,8 @@ export function ProfileForm({
       {/* Expériences */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Expériences professionnelles</h2>
-          <Button variant="outline" onClick={addExperience}>+ Ajouter</Button>
+          <h2 className="text-xl font-semibold text-gray-900">{t('experiences')}</h2>
+          <Button variant="outline" onClick={addExperience}>{t('addBtn')}</Button>
         </div>
         {experiences.length > 0 ? (
           <SortableList
@@ -469,15 +471,15 @@ export function ProfileForm({
             )}
           />
         ) : (
-          <p className="text-gray-500 text-center py-4">Aucune expérience ajoutée</p>
+          <p className="text-gray-500 text-center py-4">{t('noExperiences')}</p>
         )}
       </section>
 
       {/* Formations */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Formations</h2>
-          <Button variant="outline" onClick={addEducation}>+ Ajouter</Button>
+          <h2 className="text-xl font-semibold text-gray-900">{t('educations')}</h2>
+          <Button variant="outline" onClick={addEducation}>{t('addBtn')}</Button>
         </div>
         {educations.length > 0 ? (
           <SortableList
@@ -494,15 +496,15 @@ export function ProfileForm({
             )}
           />
         ) : (
-          <p className="text-gray-500 text-center py-4">Aucune formation ajoutée</p>
+          <p className="text-gray-500 text-center py-4">{t('noEducations')}</p>
         )}
       </section>
 
       {/* Projets */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Projets</h2>
-          <Button variant="outline" onClick={addProject}>+ Ajouter</Button>
+          <h2 className="text-xl font-semibold text-gray-900">{t('projects')}</h2>
+          <Button variant="outline" onClick={addProject}>{t('addBtn')}</Button>
         </div>
         {projects.length > 0 ? (
           <SortableList
@@ -520,15 +522,15 @@ export function ProfileForm({
             )}
           />
         ) : (
-          <p className="text-gray-500 text-center py-4">Aucun projet ajouté</p>
+          <p className="text-gray-500 text-center py-4">{t('noProjects')}</p>
         )}
       </section>
 
       {/* Certifications */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Certifications</h2>
-          <Button variant="outline" onClick={addCertification}>+ Ajouter</Button>
+          <h2 className="text-xl font-semibold text-gray-900">{t('certifications')}</h2>
+          <Button variant="outline" onClick={addCertification}>{t('addBtn')}</Button>
         </div>
         {certifications.length > 0 ? (
           <SortableList
@@ -545,7 +547,7 @@ export function ProfileForm({
             )}
           />
         ) : (
-          <p className="text-gray-500 text-center py-4">Aucune certification ajoutée</p>
+          <p className="text-gray-500 text-center py-4">{t('noCertifications')}</p>
         )}
       </section>
 
@@ -560,8 +562,8 @@ export function ProfileForm({
       {/* Langues */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Langues</h2>
-          <Button variant="outline" onClick={addLanguage}>+ Ajouter</Button>
+          <h2 className="text-xl font-semibold text-gray-900">{t('languages')}</h2>
+          <Button variant="outline" onClick={addLanguage}>{t('addBtn')}</Button>
         </div>
         {languages.length > 0 ? (
           <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
@@ -576,15 +578,15 @@ export function ProfileForm({
             />
           </div>
         ) : (
-          <p className="text-gray-500">Aucune langue ajoutée</p>
+          <p className="text-gray-500">{t('noLanguages')}</p>
         )}
       </section>
 
       {/* Centres d'intérêt */}
       <section className="bg-white p-6 rounded-xl border">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Centres d'intérêt</h2>
-          <Button variant="outline" onClick={addInterest}>+ Ajouter</Button>
+          <h2 className="text-xl font-semibold text-gray-900">{t('interests')}</h2>
+          <Button variant="outline" onClick={addInterest}>{t('addBtn')}</Button>
         </div>
         {interests.length > 0 ? (
           <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
@@ -599,7 +601,7 @@ export function ProfileForm({
             />
           </div>
         ) : (
-          <p className="text-gray-500">Aucun centre d'intérêt ajouté</p>
+          <p className="text-gray-500">{t('noInterests')}</p>
         )}
       </section>
     </div>
@@ -607,39 +609,41 @@ export function ProfileForm({
 }
 
 function ExperienceCard({ experience, onUpdate, onDelete, dragHandleProps }: { experience: any; onUpdate: (data: any) => void; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const t = useTranslations('dashboard.profile')
+  const tCommon = useTranslations('common')
   const [data, setData] = useState(experience)
   const [editing, setEditing] = useState(!experience.company)
 
   const save = () => {
     onUpdate(data)
     setEditing(false)
-    toast.success('Expérience sauvegardée')
+    toast.success(t('experienceSaved'))
   }
 
   if (editing) {
     return (
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-2 gap-3">
-          <Input placeholder="Entreprise" value={data.company} onChange={(e) => setData({ ...data, company: e.target.value })} />
-          <Input placeholder="Poste" value={data.position} onChange={(e) => setData({ ...data, position: e.target.value })} />
+          <Input placeholder={t('companyInputPlaceholder')} value={data.company} onChange={(e) => setData({ ...data, company: e.target.value })} />
+          <Input placeholder={t('positionPlaceholder')} value={data.position} onChange={(e) => setData({ ...data, position: e.target.value })} />
           <Input type="date" value={formatDate(data.startDate, 'input')} onChange={(e) => setData({ ...data, startDate: e.target.value })} />
           <Input type="date" value={formatDate(data.endDate, 'input') || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} disabled={data.current} />
         </div>
         <label className="flex items-center gap-2 text-sm text-gray-700">
           <input type="checkbox" checked={data.current} onChange={(e) => setData({ ...data, current: e.target.checked, endDate: null })} />
-          Poste actuel
+          {t('currentJob')}
         </label>
         <textarea
-          placeholder="Description"
+          placeholder={t('descriptionPlaceholder')}
           value={data.description || ''}
           onChange={(e) => setData({ ...data, description: e.target.value })}
           className="w-full px-3 py-2 border rounded-lg text-gray-900"
           rows={3}
         />
         <div className="flex gap-2">
-          <Button size="sm" onClick={save}>Sauvegarder</Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" onClick={save}>{t('saveItem')}</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{tCommon('cancel')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{tCommon('delete')}</Button>
         </div>
       </div>
     )
@@ -649,18 +653,20 @@ function ExperienceCard({ experience, onUpdate, onDelete, dragHandleProps }: { e
     <div className="border rounded-lg p-4 flex items-start gap-2">
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-gray-900">{data.position || 'Nouveau poste'}</h3>
-        <p className="text-gray-600">{data.company || 'Entreprise'}</p>
+        <h3 className="font-medium text-gray-900">{data.position || t('newJob')}</h3>
+        <p className="text-gray-600">{data.company || t('companyPlaceholder')}</p>
         <p className="text-sm text-gray-500">
-          {formatDate(data.startDate)} - {data.current ? 'Présent' : formatDate(data.endDate)}
+          {formatDate(data.startDate)} - {data.current ? t('present') : formatDate(data.endDate)}
         </p>
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{tCommon('edit')}</Button>
     </div>
   )
 }
 
 function EducationCard({ education, onDelete, dragHandleProps }: { education: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const t = useTranslations('dashboard.profile')
+  const tCommon = useTranslations('common')
   const [data, setData] = useState(education)
   const [editing, setEditing] = useState(!education.institution)
 
@@ -671,19 +677,19 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
       body: JSON.stringify({ id: education.id, ...data }),
     })
     setEditing(false)
-    toast.success('Formation sauvegardée')
+    toast.success(t('educationSaved'))
   }
 
   if (editing) {
     return (
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-2 gap-3">
-          <Input placeholder="Établissement" value={data.institution} onChange={(e) => setData({ ...data, institution: e.target.value })} />
-          <Input placeholder="Diplôme" value={data.degree} onChange={(e) => setData({ ...data, degree: e.target.value })} />
-          <Input placeholder="Domaine" value={data.field || ''} onChange={(e) => setData({ ...data, field: e.target.value })} />
+          <Input placeholder={t('institutionPlaceholder')} value={data.institution} onChange={(e) => setData({ ...data, institution: e.target.value })} />
+          <Input placeholder={t('degreePlaceholder')} value={data.degree} onChange={(e) => setData({ ...data, degree: e.target.value })} />
+          <Input placeholder={t('fieldPlaceholder')} value={data.field || ''} onChange={(e) => setData({ ...data, field: e.target.value })} />
           <Input type="date" value={formatDate(data.startDate, 'input')} onChange={(e) => setData({ ...data, startDate: e.target.value })} />
           {!data.current && (
-            <Input type="date" value={formatDate(data.endDate, 'input') || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} placeholder="Date de fin" />
+            <Input type="date" value={formatDate(data.endDate, 'input') || ''} onChange={(e) => setData({ ...data, endDate: e.target.value })} placeholder={t('endDatePlaceholder')} />
           )}
         </div>
         <div className="flex items-center gap-2">
@@ -695,13 +701,13 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
             className="w-4 h-4 rounded border-gray-300"
           />
           <label htmlFor={`current-${education.id}`} className="text-sm text-gray-700">
-            Formation actuelle
+            {t('currentStudy')}
           </label>
         </div>
         <div className="flex gap-2">
-          <Button size="sm" onClick={save}>Sauvegarder</Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" onClick={save}>{t('saveItem')}</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{tCommon('cancel')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{tCommon('delete')}</Button>
         </div>
       </div>
     )
@@ -711,19 +717,21 @@ function EducationCard({ education, onDelete, dragHandleProps }: { education: an
     <div className="border rounded-lg p-4 flex items-start gap-2">
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-gray-900">{data.degree || 'Nouveau diplôme'}</h3>
-        <p className="text-gray-600">{data.institution || 'Établissement'}</p>
+        <h3 className="font-medium text-gray-900">{data.degree || t('newDegree')}</h3>
+        <p className="text-gray-600">{data.institution || t('institutionPlaceholder')}</p>
         {data.field && <p className="text-sm text-gray-500">{data.field}</p>}
         <p className="text-sm text-gray-500">
-          {formatDate(data.startDate)} — {data.current ? 'Présent' : (data.endDate ? formatDate(data.endDate) : 'Présent')}
+          {formatDate(data.startDate)} — {data.current ? t('present') : (data.endDate ? formatDate(data.endDate) : t('present'))}
         </p>
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{tCommon('edit')}</Button>
     </div>
   )
 }
 
 function CertificationCard({ certification, onDelete, dragHandleProps }: { certification: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const t = useTranslations('dashboard.profile')
+  const tCommon = useTranslations('common')
   const [data, setData] = useState(certification)
   const [editing, setEditing] = useState(!certification.name)
 
@@ -734,24 +742,24 @@ function CertificationCard({ certification, onDelete, dragHandleProps }: { certi
       body: JSON.stringify({ id: certification.id, ...data }),
     })
     setEditing(false)
-    toast.success('Certification sauvegardée')
+    toast.success(t('certificationSaved'))
   }
 
   if (editing) {
     return (
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-2 gap-3">
-          <Input placeholder="Nom de la certification" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
-          <Input placeholder="Organisme" value={data.issuer} onChange={(e) => setData({ ...data, issuer: e.target.value })} />
-          <Input type="date" placeholder="Date d'obtention" value={formatDate(data.issueDate, 'input')} onChange={(e) => setData({ ...data, issueDate: e.target.value })} />
-          <Input type="date" placeholder="Date d'expiration (optionnel)" value={formatDate(data.expiryDate, 'input') || ''} onChange={(e) => setData({ ...data, expiryDate: e.target.value || null })} />
-          <Input placeholder="ID credential (optionnel)" value={data.credentialId || ''} onChange={(e) => setData({ ...data, credentialId: e.target.value })} />
-          <Input placeholder="URL de vérification (optionnel)" value={data.credentialUrl || ''} onChange={(e) => setData({ ...data, credentialUrl: e.target.value })} />
+          <Input placeholder={t('certificationNamePlaceholder')} value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
+          <Input placeholder={t('issuerPlaceholder')} value={data.issuer} onChange={(e) => setData({ ...data, issuer: e.target.value })} />
+          <Input type="date" placeholder={t('issueDatePlaceholder')} value={formatDate(data.issueDate, 'input')} onChange={(e) => setData({ ...data, issueDate: e.target.value })} />
+          <Input type="date" placeholder={t('expiryDatePlaceholder')} value={formatDate(data.expiryDate, 'input') || ''} onChange={(e) => setData({ ...data, expiryDate: e.target.value || null })} />
+          <Input placeholder={t('credentialIdPlaceholder')} value={data.credentialId || ''} onChange={(e) => setData({ ...data, credentialId: e.target.value })} />
+          <Input placeholder={t('credentialUrlPlaceholder')} value={data.credentialUrl || ''} onChange={(e) => setData({ ...data, credentialUrl: e.target.value })} />
         </div>
         <div className="flex gap-2">
-          <Button size="sm" onClick={save}>Sauvegarder</Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" onClick={save}>{t('saveItem')}</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{tCommon('cancel')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{tCommon('delete')}</Button>
         </div>
       </div>
     )
@@ -761,24 +769,26 @@ function CertificationCard({ certification, onDelete, dragHandleProps }: { certi
     <div className="border rounded-lg p-4 flex items-start gap-2">
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-gray-900">{data.name || 'Nouvelle certification'}</h3>
-        <p className="text-gray-600">{data.issuer || 'Organisme'}</p>
+        <h3 className="font-medium text-gray-900">{data.name || t('newCertification')}</h3>
+        <p className="text-gray-600">{data.issuer || t('issuerPlaceholder')}</p>
         <p className="text-sm text-gray-500">
-          Obtenue le {formatDate(data.issueDate)}
-          {data.expiryDate && ` • Expire le ${formatDate(data.expiryDate)}`}
+          {t('obtainedOn', { date: formatDate(data.issueDate) })}
+          {data.expiryDate && ` • ${t('expiresOn', { date: formatDate(data.expiryDate) })}`}
         </p>
         {data.credentialUrl && (
           <a href={data.credentialUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-            Voir le certificat
+            {t('viewCertificate')}
           </a>
         )}
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{tCommon('edit')}</Button>
     </div>
   )
 }
 
 function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project: any; onUpdate: (data: Record<string, unknown>) => void; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const t = useTranslations('dashboard.profile')
+  const tCommon = useTranslations('common')
   const [data, setData] = useState(project)
   const [editing, setEditing] = useState(!project.name)
   const [techInput, setTechInput] = useState('')
@@ -786,7 +796,7 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
   const save = () => {
     onUpdate(data)
     setEditing(false)
-    toast.success('Projet sauvegardé')
+    toast.success(t('projectSaved'))
   }
 
   const addTech = () => {
@@ -806,11 +816,11 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
     return (
       <div className="border rounded-lg p-4 space-y-3">
         <div className="grid grid-cols-2 gap-3">
-          <Input placeholder="Nom du projet" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
-          <Input placeholder="URL (optionnel)" value={data.url || ''} onChange={(e) => setData({ ...data, url: e.target.value })} />
+          <Input placeholder={t('projectNamePlaceholder')} value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
+          <Input placeholder={t('projectUrlPlaceholder')} value={data.url || ''} onChange={(e) => setData({ ...data, url: e.target.value })} />
         </div>
         <textarea
-          placeholder="Description du projet"
+          placeholder={t('projectDescriptionPlaceholder')}
           value={data.description || ''}
           onChange={(e) => setData({ ...data, description: e.target.value })}
           className="w-full px-3 py-2 border rounded-lg text-gray-900"
@@ -818,10 +828,10 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
         />
         {/* Outils utilisés */}
         <div>
-          <Label>Outils utilisés</Label>
+          <Label>{t('tools')}</Label>
           <div className="flex items-center gap-2 mt-1">
             <Input
-              placeholder="Ex: Excel, Canva, React..."
+              placeholder={t('toolsPlaceholder')}
               value={techInput}
               onChange={(e) => setTechInput(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTech() } }}
@@ -840,9 +850,9 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
           )}
         </div>
         <div className="flex gap-2">
-          <Button size="sm" onClick={save}>Sauvegarder</Button>
-          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>Annuler</Button>
-          <Button size="sm" variant="destructive" onClick={onDelete}>Supprimer</Button>
+          <Button size="sm" onClick={save}>{t('saveItem')}</Button>
+          <Button size="sm" variant="outline" onClick={() => setEditing(false)}>{tCommon('cancel')}</Button>
+          <Button size="sm" variant="destructive" onClick={onDelete}>{tCommon('delete')}</Button>
         </div>
       </div>
     )
@@ -853,10 +863,10 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
       <DragHandle dragHandleProps={dragHandleProps} />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <h3 className="font-medium text-gray-900">{data.name || 'Nouveau projet'}</h3>
+          <h3 className="font-medium text-gray-900">{data.name || t('newProject')}</h3>
           {data.url && (
             <a href={data.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-              Voir
+              {t('view')}
             </a>
           )}
         </div>
@@ -869,7 +879,7 @@ function ProjectCard({ project, onUpdate, onDelete, dragHandleProps }: { project
           </div>
         )}
       </div>
-      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>Modifier</Button>
+      <Button size="sm" variant="outline" onClick={() => setEditing(true)}>{tCommon('edit')}</Button>
     </div>
   )
 }
@@ -880,6 +890,7 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
   onDelete: (id: string) => void
   onReorder: (items: any[]) => void
 }) {
+  const t = useTranslations('dashboard.profile')
   const [newCategoryName, setNewCategoryName] = useState('')
   const [isCreatingCategory, setIsCreatingCategory] = useState(false)
 
@@ -917,7 +928,7 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
   return (
     <section className="bg-white p-6 rounded-xl border">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-900">Compétences</h2>
+        <h2 className="text-xl font-semibold text-gray-900">{t('skills')}</h2>
         <div className="flex gap-2">
           {isCreatingCategory ? (
             <div className="flex items-center gap-2">
@@ -926,14 +937,14 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
                 value={newCategoryName}
                 onChange={(e) => setNewCategoryName(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleCreateCategory()}
-                placeholder="Nom du groupe"
+                placeholder={t('groupNamePlaceholder')}
                 autoFocus
               />
               <button onClick={handleCreateCategory} className="text-green-600 hover:text-green-700 text-sm font-medium">✓</button>
               <button onClick={() => { setIsCreatingCategory(false); setNewCategoryName('') }} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
             </div>
           ) : (
-            <Button variant="outline" onClick={() => setIsCreatingCategory(true)}>+ Créer un groupe</Button>
+            <Button variant="outline" onClick={() => setIsCreatingCategory(true)}>{t('createGroupBtn')}</Button>
           )}
         </div>
       </div>
@@ -973,7 +984,7 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
       {uncategorizedSkills.length > 0 && (
         <div className="mt-4">
           {categories.length > 0 && (
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Autres</h3>
+            <h3 className="text-sm font-medium text-gray-500 mb-2">{t('others')}</h3>
           )}
           <SortableList
             items={uncategorizedSkills}
@@ -992,12 +1003,12 @@ function SkillsSection({ skills, onAdd, onDelete, onReorder }: {
           onClick={() => onAdd()}
           className="text-sm text-gray-500 hover:text-primary transition-colors"
         >
-          + Ajouter une compétence
+          {t('addSkillBtn')}
         </button>
       </div>
 
       {skills.length === 0 && !isCreatingCategory && (
-        <p className="text-gray-500">Aucune compétence ajoutée</p>
+        <p className="text-gray-500">{t('noSkills')}</p>
       )}
     </section>
   )
@@ -1012,6 +1023,7 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReo
   onReorder: (items: any[]) => void
   dragHandleProps: DragHandleProps
 }) {
+  const t = useTranslations('dashboard.profile')
   const [isRenaming, setIsRenaming] = useState(false)
   const [categoryName, setCategoryName] = useState(category)
 
@@ -1048,7 +1060,7 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReo
             <h3
               className="text-sm font-bold text-gray-900 cursor-pointer hover:text-primary transition-colors"
               onClick={() => setIsRenaming(true)}
-              title="Cliquer pour renommer"
+              title={t('clickToRename')}
             >
               {category}
             </h3>
@@ -1058,7 +1070,7 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReo
           onClick={onAdd}
           className="text-xs text-gray-500 hover:text-primary transition-colors"
         >
-          + Ajouter
+          {t('addBtn')}
         </button>
       </div>
       <SortableList
@@ -1075,6 +1087,7 @@ function SkillCategoryGroup({ category, skills, onAdd, onDelete, onRename, onReo
 }
 
 function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const t = useTranslations('dashboard.profile')
   const [name, setName] = useState(skill.name)
   const [editing, setEditing] = useState(!skill.name)
 
@@ -1096,7 +1109,7 @@ function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete
           value={name}
           onChange={(e) => setName(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && save()}
-          placeholder="Compétence"
+          placeholder={t('skillPlaceholder')}
           autoFocus
         />
         <button onClick={save} className="text-green-600 hover:text-green-700 text-sm font-medium">✓</button>
@@ -1121,18 +1134,19 @@ function SkillBadge({ skill, onDelete, dragHandleProps }: { skill: any; onDelete
   )
 }
 
-const languageLevels = [
-  { value: 'BEGINNER', label: 'Débutant' },
-  { value: 'INTERMEDIATE', label: 'Intermédiaire' },
-  { value: 'ADVANCED', label: 'Avancé' },
-  { value: 'FLUENT', label: 'Courant' },
-  { value: 'NATIVE', label: 'Natif' },
-]
-
 function LanguageBadge({ language, onDelete, dragHandleProps }: { language: any; onDelete: () => void; dragHandleProps: DragHandleProps }) {
+  const t = useTranslations('dashboard.profile')
   const [name, setName] = useState(language.name)
   const [level, setLevel] = useState(language.level || 'INTERMEDIATE')
   const [editing, setEditing] = useState(!language.name)
+
+  const languageLevels = [
+    { value: 'BEGINNER', label: t('levelBeginner') },
+    { value: 'INTERMEDIATE', label: t('levelIntermediate') },
+    { value: 'ADVANCED', label: t('levelAdvanced') },
+    { value: 'FLUENT', label: t('levelFluent') },
+    { value: 'NATIVE', label: t('levelNative') },
+  ]
 
   const save = async () => {
     if (!name.trim()) return
@@ -1153,7 +1167,7 @@ function LanguageBadge({ language, onDelete, dragHandleProps }: { language: any;
           className="bg-transparent text-sm w-28 outline-none text-gray-900"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Langue"
+          placeholder={t('languagePlaceholder')}
           autoFocus
         />
         <select

@@ -1,10 +1,12 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { getTranslations } from 'next-intl/server'
 import { ProfileForm } from './profile-form'
 
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions)
+  const t = await getTranslations('dashboard.profile')
 
   if (!session?.user?.id) {
     return null
@@ -47,9 +49,9 @@ export default async function ProfilePage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-[#1F1A17]">Mon Profil</h1>
+        <h1 className="text-3xl font-bold text-[#1F1A17]">{t('title')}</h1>
         <p className="text-[#6B6560] mt-1">
-          Ces informations seront utilisées pour pré-remplir vos CV
+          {t('subtitle')}
         </p>
       </div>
 

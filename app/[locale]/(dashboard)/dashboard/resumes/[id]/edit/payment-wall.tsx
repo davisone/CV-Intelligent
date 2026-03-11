@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { PRICING } from '@/lib/config/pricing'
 import {
@@ -26,6 +27,7 @@ interface PaymentWallProps {
 
 export function PaymentWall({ resume }: PaymentWallProps) {
   const router = useRouter()
+  const t = useTranslations('paywall')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [acceptedCGV, setAcceptedCGV] = useState(false)
@@ -44,24 +46,24 @@ export function PaymentWall({ resume }: PaymentWallProps) {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Erreur lors de la création du paiement')
+        throw new Error(data.error || t('paymentError'))
       }
 
       if (data.url) {
         window.location.href = data.url
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Une erreur est survenue')
+      setError(err instanceof Error ? err.message : t('paymentError'))
     } finally {
       setIsLoading(false)
     }
   }
 
   const features = [
-    { icon: FileText, text: 'Accès à tous les templates premium' },
-    { icon: Sparkles, text: 'Suggestions IA pour améliorer votre CV' },
-    { icon: BarChart3, text: 'Score ATS détaillé avec recommandations' },
-    { icon: Download, text: 'Export PDF haute qualité' },
+    { icon: FileText, text: t('feature1') },
+    { icon: Sparkles, text: t('feature2') },
+    { icon: BarChart3, text: t('feature3') },
+    { icon: Download, text: t('feature4') },
   ]
 
   return (
@@ -73,10 +75,10 @@ export function PaymentWall({ resume }: PaymentWallProps) {
             <Lock className="w-10 h-10 text-primary" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            CV Verrouillé
+            {t('title')}
           </h1>
           <p className="text-gray-600">
-            Débloquez <span className="font-medium">"{resume.title}"</span> pour accéder à l'éditeur complet et toutes les fonctionnalités premium.
+            {t('description', { title: resume.title })}
           </p>
         </div>
 
@@ -85,7 +87,7 @@ export function PaymentWall({ resume }: PaymentWallProps) {
           {/* Features */}
           <div className="mb-6">
             <p className="text-sm font-medium text-gray-700 mb-4">
-              Ce que vous obtenez :
+              {t('whatYouGet')}
             </p>
             <ul className="space-y-3">
               {features.map((feature, index) => (
@@ -105,7 +107,7 @@ export function PaymentWall({ resume }: PaymentWallProps) {
           {/* Price */}
           <div className="text-center py-4 border-t border-b border-gray-100 mb-6">
             <p className="text-4xl font-bold text-gray-900">{PRICING.displayPrice}</p>
-            <p className="text-sm text-gray-500 mt-1">Paiement unique • Accès permanent</p>
+            <p className="text-sm text-gray-500 mt-1">{t('oneTimePayment')}</p>
           </div>
 
           {/* CGV Checkbox */}
@@ -117,15 +119,15 @@ export function PaymentWall({ resume }: PaymentWallProps) {
               className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
             />
             <span className="text-sm text-gray-600">
-              J'accepte les{' '}
+              {t('cgvAccept')}{' '}
               <Link
                 href="/legal/cgv"
                 target="_blank"
                 className="text-primary hover:underline"
               >
-                Conditions Générales de Vente
+                {t('cgvLink')}
               </Link>
-              {' '}et je renonce expressément à mon droit de rétractation.
+              {' '}{t('cgvWaiver')}
             </span>
           </label>
 
@@ -146,11 +148,11 @@ export function PaymentWall({ resume }: PaymentWallProps) {
               {isLoading ? (
                 <>
                   <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                  Redirection...
+                  {t('redirecting')}
                 </>
               ) : (
                 <>
-                  Débloquer pour {PRICING.displayPrice}
+                  {t('unlockButton', { price: PRICING.displayPrice })}
                 </>
               )}
             </Button>
@@ -160,19 +162,19 @@ export function PaymentWall({ resume }: PaymentWallProps) {
               onClick={() => router.push('/dashboard/resumes')}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Retour à mes CV
+              {t('backToResumes')}
             </Button>
           </div>
 
           {/* Security note */}
           <p className="mt-4 text-xs text-center text-gray-400">
-            Paiement sécurisé par Stripe • Satisfait ou remboursé
+            {t('securePayment')}
           </p>
         </div>
 
         {/* Info */}
         <p className="text-center text-sm text-gray-500 mt-6">
-          Vous avez déjà utilisé votre CV gratuit. Chaque CV supplémentaire nécessite un paiement unique.
+          {t('alreadyUsedFree')}
         </p>
       </div>
     </div>

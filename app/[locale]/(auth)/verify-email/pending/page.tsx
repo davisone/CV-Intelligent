@@ -2,11 +2,13 @@
 
 import { useState } from 'react'
 import { signOut } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 export default function VerifyEmailPendingPage() {
+  const t = useTranslations('auth.verifyEmail')
   const [isLoading, setIsLoading] = useState(false)
   const [sent, setSent] = useState(false)
 
@@ -19,10 +21,10 @@ export default function VerifyEmailPendingPage() {
         toast.success('Email de vérification renvoyé !')
       } else {
         const data = await res.json()
-        toast.error(data.error || 'Une erreur est survenue')
+        toast.error(data.error || t('errors.generic'))
       }
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -31,9 +33,9 @@ export default function VerifyEmailPendingPage() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle>Vérifiez votre email</CardTitle>
+        <CardTitle>{t('pendingTitle')}</CardTitle>
         <CardDescription>
-          Un email de vérification vous a été envoyé. Cliquez sur le lien pour accéder à votre dashboard.
+          {t('pendingSubtitle')}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">

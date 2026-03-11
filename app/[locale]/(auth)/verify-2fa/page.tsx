@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signOut } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -11,6 +12,7 @@ import { Label } from '@/components/ui/label'
 import { ShieldCheck } from 'lucide-react'
 
 export default function Verify2FAPage() {
+  const t = useTranslations('auth.verify2fa')
   const router = useRouter()
   const [code, setCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -42,8 +44,8 @@ export default function Verify2FAPage() {
       const data = await response.json()
 
       if (!response.ok) {
-        setError(data.error || 'Code invalide')
-        toast.error(data.error || 'Code invalide')
+        setError(data.error || t('errors.invalidCode'))
+        toast.error(data.error || t('errors.invalidCode'))
         return
       }
 
@@ -51,8 +53,8 @@ export default function Verify2FAPage() {
       router.push('/dashboard')
       router.refresh()
     } catch {
-      toast.error('Une erreur est survenue')
-      setError('Une erreur est survenue')
+      toast.error(t('errors.generic'))
+      setError(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -68,15 +70,15 @@ export default function Verify2FAPage() {
         <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#722F37]/10">
           <ShieldCheck className="h-6 w-6 text-[#722F37]" />
         </div>
-        <CardTitle>Vérification 2FA</CardTitle>
+        <CardTitle>{t('title')}</CardTitle>
         <CardDescription>
-          Entrez le code à 6 chiffres de votre application d&apos;authentification
+          {t('subtitle')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="code">Code de vérification</Label>
+            <Label htmlFor="code">{t('code')}</Label>
             <Input
               id="code"
               type="text"
@@ -94,7 +96,7 @@ export default function Verify2FAPage() {
           </div>
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            Vérifier
+            {t('submit')}
           </Button>
 
           <button

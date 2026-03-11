@@ -1,12 +1,15 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { XCircle, ArrowLeft, CreditCard } from 'lucide-react'
 
 export default function CheckoutCancelPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const t = useTranslations('dashboard.checkout.cancel')
+  const tCommon = useTranslations('common')
   const resumeId = searchParams.get('resume_id')
 
   const handleRetry = async () => {
@@ -54,10 +57,10 @@ export default function CheckoutCancelPage() {
 
           {/* Title */}
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Paiement annulé
+            {t('title')}
           </h1>
           <p className="text-gray-600 mb-6">
-            Le paiement a été annulé. Votre CV a été créé mais les fonctionnalités premium sont verrouillées.
+            {t('subtitle')}
           </p>
 
           {/* Info */}
@@ -75,7 +78,7 @@ export default function CheckoutCancelPage() {
             </Button>
             <Button variant="outline" onClick={handleGoToEditor} className="w-full">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Continuer sans payer
+              {t('cta')}
             </Button>
           </div>
         </div>

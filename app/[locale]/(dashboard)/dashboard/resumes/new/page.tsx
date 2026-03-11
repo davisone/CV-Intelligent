@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -17,6 +18,8 @@ const templates: { id: TemplateType; name: string; description: string }[] = [
 
 export default function NewResumePage() {
   const router = useRouter()
+  const t = useTranslations('dashboard.resumes')
+  const tCommon = useTranslations('common')
   const [isLoading, setIsLoading] = useState(false)
   const [title, setTitle] = useState('')
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateType>('MODERN')
@@ -63,7 +66,7 @@ export default function NewResumePage() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Nouveau CV</h1>
+        <h1 className="text-3xl font-bold">{t('new')}</h1>
         <p className="text-muted-foreground mt-1">
           Choisissez un titre et un template pour commencer
         </p>
@@ -135,7 +138,7 @@ export default function NewResumePage() {
             onClick={() => router.back()}
             disabled={isLoading}
           >
-            Annuler
+            {tCommon('cancel')}
           </Button>
           <Button type="submit" isLoading={isLoading} className="flex-1">
             Créer le CV

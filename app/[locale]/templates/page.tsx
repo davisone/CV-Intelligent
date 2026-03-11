@@ -1,7 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
 
 const templates = [
@@ -44,6 +45,8 @@ const templates = [
 
 export default function PublicTemplatesPage() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
+  const t = useTranslations('landing')
+  const tNav = useTranslations('nav')
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
@@ -58,14 +61,14 @@ export default function PublicTemplatesPage() {
               href="/login"
               className="text-sm font-medium text-[#1F1A17] hover:text-[#722F37] transition-colors"
             >
-              Connexion
+              {tNav('login')}
             </Link>
             <Link
               href="/signup"
               className="text-sm px-4 py-2 rounded-xl bg-[#722F37] hover:bg-[#8B3A44] font-bold transition-colors"
               style={{ color: '#FFFFFF' }}
             >
-              Commencer gratuitement
+              {tNav('startFree')}
             </Link>
           </nav>
         </div>
@@ -118,7 +121,7 @@ export default function PublicTemplatesPage() {
                     className="mt-4 w-full inline-flex items-center justify-center px-4 py-2 text-sm font-bold bg-[#722F37] hover:bg-[#8B3A44] rounded-xl transition-colors"
                     style={{ color: '#FFFFFF' }}
                   >
-                    Utiliser ce template
+                    {t('hero.cta')}
                   </Link>
                 </div>
               </div>
@@ -130,16 +133,16 @@ export default function PublicTemplatesPage() {
             <div className="bg-gradient-to-r from-[#722F37] to-[#5A252C] rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto relative overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNGRkYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
               <div className="relative z-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#FFFFFF] mb-4">Prêt à créer votre CV ?</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#FFFFFF] mb-4">{t('cta.title')}</h2>
                 <p className="text-[#FFFFFF]/80 mb-6">
-                  Inscrivez-vous gratuitement et commencez à créer votre CV professionnel dès maintenant.
+                  {t('cta.description')}
                 </p>
                 <Link
                   href="/signup"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1F1A17] font-bold text-lg rounded-xl hover:bg-[#3D3530] transition-all hover:scale-[1.02]"
                   style={{ color: '#FFFFFF' }}
                 >
-                  Créer mon CV gratuitement
+                  {t('hero.cta')}
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { PriceBadge } from '@/components/payments/price-badge'
@@ -73,6 +74,8 @@ const templates: Template[] = [
 
 export default function TemplatesPage() {
   const router = useRouter()
+  const t = useTranslations('dashboard.templates')
+  const tCommon = useTranslations('common')
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [showModal, setShowModal] = useState(false)
   const [showCheckoutModal, setShowCheckoutModal] = useState(false)
@@ -141,7 +144,7 @@ export default function TemplatesPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-[#1F1A17]">Templates</h1>
+        <h1 className="text-3xl font-bold text-[#1F1A17]">{t('title')}</h1>
         <p className="text-[#6B6560] mt-1">
           Choisissez un template pour créer votre CV
         </p>
@@ -192,7 +195,7 @@ export default function TemplatesPage() {
                   className="w-full"
                   onClick={() => handleSelectTemplate(template.id)}
                 >
-                  Utiliser ce template
+                  {t('use')}
                 </Button>
               </div>
             </div>
@@ -236,7 +239,7 @@ export default function TemplatesPage() {
                 }}
                 disabled={isLoading}
               >
-                Annuler
+                {tCommon('cancel')}
               </Button>
               <Button
                 className="flex-1"

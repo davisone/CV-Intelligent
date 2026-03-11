@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -14,6 +14,7 @@ import { PasswordStrength } from '@/components/ui/password-strength'
 import { Label } from '@/components/ui/label'
 
 export default function SignupPage() {
+  const t = useTranslations('auth.signup')
   const router = useRouter()
   const locale = useLocale()
 
@@ -90,10 +91,10 @@ export default function SignupPage() {
 
       if (!response.ok) {
         if (data.error === 'Email already exists') {
-          setErrors({ email: 'Cet email est déjà utilisé' })
-          toast.error('Cet email est déjà utilisé')
+          setErrors({ email: t('errors.emailExists') })
+          toast.error(t('errors.emailExists'))
         } else {
-          toast.error(data.error || 'Une erreur est survenue')
+          toast.error(data.error || t('errors.generic'))
         }
         return
       }
@@ -113,7 +114,7 @@ export default function SignupPage() {
         router.push('/login')
       }
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -127,20 +128,20 @@ export default function SignupPage() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle>Créer un compte</CardTitle>
+        <CardTitle>{t('title')}</CardTitle>
         <CardDescription>
-          Inscrivez-vous pour créer vos CV professionnels
+          {t('subtitle')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Nom complet</Label>
+            <Label htmlFor="name">{t('name')}</Label>
             <Input
               id="name"
               name="name"
               type="text"
-              placeholder="Jean Dupont"
+              placeholder={t('namePlaceholder')}
               value={formData.name}
               onChange={handleChange}
               error={errors.name}
@@ -149,12 +150,12 @@ export default function SignupPage() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t('email')}</Label>
             <Input
               id="email"
               name="email"
               type="email"
-              placeholder="nom@exemple.com"
+              placeholder={t('emailPlaceholder')}
               value={formData.email}
               onChange={handleChange}
               error={errors.email}
@@ -163,7 +164,7 @@ export default function SignupPage() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password">Mot de passe</Label>
+            <Label htmlFor="password">{t('password')}</Label>
             <PasswordInput
               id="password"
               name="password"
@@ -175,12 +176,12 @@ export default function SignupPage() {
             />
             <PasswordStrength password={formData.password} />
             <p className="text-xs text-[#6B6560]">
-              Min. 8 caractères avec majuscule, minuscule et chiffre
+              {t('passwordHint')}
             </p>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Confirmer le mot de passe</Label>
+            <Label htmlFor="confirmPassword">{t('confirm')}</Label>
             <PasswordInput
               id="confirmPassword"
               name="confirmPassword"
@@ -193,7 +194,7 @@ export default function SignupPage() {
           </div>
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            Créer mon compte
+            {t('submit')}
           </Button>
         </form>
 
@@ -247,9 +248,9 @@ export default function SignupPage() {
         </div>
 
         <p className="mt-6 text-center text-sm text-[#6B6560]">
-          Déjà un compte ?{' '}
+          {t('alreadyAccount')}{' '}
           <Link href="/login" className="text-[#722F37] hover:text-[#8B3A44] hover:underline font-medium">
-            Se connecter
+            {t('login')}
           </Link>
         </p>
       </CardContent>

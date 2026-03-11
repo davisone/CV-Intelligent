@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -9,6 +10,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 export default function ForgotPasswordPage() {
+  const t = useTranslations('auth.forgotPassword')
   const [email, setEmail] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -63,7 +65,7 @@ export default function ForgotPasswordPage() {
           </div>
           <CardTitle>Email envoyé</CardTitle>
           <CardDescription>
-            Si un compte existe avec l&apos;adresse <strong>{email}</strong>, vous recevrez un email avec les instructions pour réinitialiser votre mot de passe.
+            {t('success')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -73,7 +75,7 @@ export default function ForgotPasswordPage() {
             </p>
             <Link href="/login" className="block">
               <Button variant="outline" className="w-full">
-                Retour à la connexion
+                {t('backToLogin')}
               </Button>
             </Link>
           </div>
@@ -85,15 +87,15 @@ export default function ForgotPasswordPage() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle>Mot de passe oublié ?</CardTitle>
+        <CardTitle>{t('title')}</CardTitle>
         <CardDescription>
-          Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.
+          {t('subtitle')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t('email')}</Label>
             <Input
               id="email"
               name="email"
@@ -110,14 +112,14 @@ export default function ForgotPasswordPage() {
           </div>
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            Envoyer le lien
+            {t('submit')}
           </Button>
         </form>
 
         <p className="mt-6 text-center text-sm text-[#6B6560]">
           Vous vous souvenez de votre mot de passe ?{' '}
           <Link href="/login" className="text-[#722F37] hover:text-[#8B3A44] hover:underline font-medium">
-            Se connecter
+            {t('backToLogin')}
           </Link>
         </p>
       </CardContent>

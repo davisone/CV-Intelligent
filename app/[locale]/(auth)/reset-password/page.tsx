@@ -1,8 +1,9 @@
 'use client'
 
 import { Suspense, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -34,6 +35,7 @@ function ResetPasswordSkeleton() {
 }
 
 function ResetPasswordForm() {
+  const t = useTranslations('auth.resetPassword')
   const router = useRouter()
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
@@ -63,7 +65,7 @@ function ResetPasswordForm() {
     }
 
     if (password !== confirmPassword) {
-      newErrors.confirmPassword = 'Les mots de passe ne correspondent pas'
+      newErrors.confirmPassword = t('errors.mismatch')
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -85,7 +87,7 @@ function ResetPasswordForm() {
 
       if (response.ok) {
         setIsSuccess(true)
-        toast.success('Mot de passe réinitialisé avec succès !')
+        toast.success(t('success'))
       } else {
         toast.error(data.error || 'Une erreur est survenue')
         if (data.error?.includes('expiré') || data.error?.includes('invalide')) {
@@ -108,7 +110,7 @@ function ResetPasswordForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </div>
-          <CardTitle>Lien invalide</CardTitle>
+          <CardTitle>{t('errors.tokenInvalid')}</CardTitle>
           <CardDescription>
             Ce lien de réinitialisation est invalide ou a expiré.
           </CardDescription>
@@ -135,7 +137,7 @@ function ResetPasswordForm() {
           </div>
           <CardTitle>Mot de passe réinitialisé</CardTitle>
           <CardDescription>
-            Votre mot de passe a été modifié avec succès. Vous pouvez maintenant vous connecter.
+            {t('success')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -152,9 +154,9 @@ function ResetPasswordForm() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle>Nouveau mot de passe</CardTitle>
+        <CardTitle>{t('title')}</CardTitle>
         <CardDescription>
-          Choisissez un nouveau mot de passe pour votre compte.
+          {t('subtitle')}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -166,7 +168,7 @@ function ResetPasswordForm() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="password">Nouveau mot de passe</Label>
+            <Label htmlFor="password">{t('password')}</Label>
             <Input
               id="password"
               name="password"
@@ -186,7 +188,7 @@ function ResetPasswordForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Confirmer le mot de passe</Label>
+            <Label htmlFor="confirmPassword">{t('confirm')}</Label>
             <Input
               id="confirmPassword"
               name="confirmPassword"
@@ -203,7 +205,7 @@ function ResetPasswordForm() {
           </div>
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            Réinitialiser le mot de passe
+            {t('submit')}
           </Button>
         </form>
       </CardContent>

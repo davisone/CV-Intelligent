@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/confirm-dialog'
 import { EmptyState } from '@/components/ui/empty-state'
@@ -45,6 +46,8 @@ const templateColors: Record<string, string> = {
 
 export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
   const router = useRouter()
+  const t = useTranslations('dashboard.resumes')
+  const tCommon = useTranslations('common')
   const [resumes, setResumes] = useState(initialResumes)
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [duplicatingId, setDuplicatingId] = useState<string | null>(null)
@@ -68,12 +71,12 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
       if (res.ok) {
         setResumes(prev => prev.filter(r => r.id !== id))
-        toast.success('CV supprimé')
+        toast.success(t('deleteSuccess'))
       } else {
-        toast.error('Erreur lors de la suppression')
+        toast.error(t('deleteError'))
       }
     } catch {
-      toast.error('Erreur serveur')
+      toast.error(t('serverError'))
     } finally {
       setDeletingId(null)
       setResumeToDelete(null)
@@ -87,13 +90,13 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
       const data = await res.json()
 
       if (res.ok && data.success) {
-        toast.success('CV dupliqué avec succès')
+        toast.success(t('duplicateSuccess'))
         router.refresh()
       } else {
-        toast.error(data.error || 'Erreur lors de la duplication')
+        toast.error(data.error || t('duplicateError'))
       }
     } catch {
-      toast.error('Erreur serveur')
+      toast.error(t('serverError'))
     } finally {
       setDuplicatingId(null)
     }
@@ -111,9 +114,9 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
     return (
       <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8]">
         <EmptyState
-          title="Aucun CV pour le moment"
-          description="Créez votre premier CV professionnel en quelques clics"
-          actionLabel="Créer un CV"
+          title={t('empty')}
+          description={t('emptySubtitle')}
+          actionLabel={t('new')}
           actionHref="/dashboard/templates"
         />
       </div>
@@ -127,7 +130,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
         <Link href="/dashboard/templates">
           <Button>
             <Plus className="w-4 h-4 mr-2" />
-            Nouveau CV
+            {t('new')}
           </Button>
         </Link>
       </div>
@@ -171,21 +174,21 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
               {/* Date */}
               <p className="text-xs text-gray-400 mb-4">
-                Modifié le {formatDate(resume.updatedAt)}
+                {t('updatedAt', { date: formatDate(resume.updatedAt) })}
               </p>
 
               {/* Actions */}
               <div className="flex gap-2">
                 <Link href={`/dashboard/resumes/${resume.id}/edit`} className="flex-1">
                   <Button variant="outline" className="w-full">
-                    Modifier
+                    {t('edit')}
                   </Button>
                 </Link>
                 <Button
                   variant="outline"
                   onClick={() => handleDuplicate(resume.id)}
                   disabled={duplicatingId === resume.id}
-                  title="Dupliquer"
+                  title={t('edit')}
                   className="px-3"
                 >
                   {duplicatingId === resume.id ? (
@@ -198,7 +201,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                   variant="destructive"
                   onClick={() => openDeleteDialog(resume.id)}
                   disabled={deletingId === resume.id}
-                  title="Supprimer"
+                  title={t('delete')}
                   className="px-3"
                 >
                   {deletingId === resume.id ? (
@@ -217,10 +220,10 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
       <ConfirmDialog
         open={deleteDialogOpen}
         onOpenChange={setDeleteDialogOpen}
-        title="Supprimer le CV"
-        description="Êtes-vous sûr de vouloir supprimer ce CV ? Cette action est irréversible."
-        confirmLabel="Supprimer"
-        cancelLabel="Annuler"
+        title={t('deleteConfirm')}
+        description={t('deleteWarning')}
+        confirmLabel={t('delete')}
+        cancelLabel={tCommon('cancel')}
         variant="destructive"
         onConfirm={handleDelete}
       />

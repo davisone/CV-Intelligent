@@ -1,10 +1,12 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { getTranslations } from 'next-intl/server'
 import { ResumesList } from './resumes-list'
 
 export default async function ResumesPage() {
   const session = await getServerSession(authOptions)
+  const t = await getTranslations('dashboard.resumes')
 
   if (!session?.user?.id) {
     return null
@@ -31,7 +33,7 @@ export default async function ResumesPage() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-[#1F1A17]">Mes CV</h1>
+          <h1 className="text-3xl font-bold text-[#1F1A17]">{t('title')}</h1>
           <p className="text-[#6B6560] mt-1">
             {resumes.length} CV{resumes.length > 1 ? 's' : ''} créé{resumes.length > 1 ? 's' : ''}
           </p>

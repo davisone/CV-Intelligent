@@ -1,11 +1,13 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { getTranslations } from 'next-intl/server'
 import { TwoFactorSettings } from './two-factor-settings'
 import { DeleteAccountSection } from '@/components/ui/delete-account-section'
 
 export default async function SettingsPage() {
   const session = await getServerSession(authOptions)
+  const t = await getTranslations('dashboard.settings')
 
   if (!session?.user?.id) {
     return null
@@ -27,8 +29,7 @@ export default async function SettingsPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-[#1F1A17]">Paramètres</h1>
-        <p className="text-[#6B6560] mt-1">Gérez votre compte et vos préférences</p>
+        <h1 className="text-3xl font-bold text-[#1F1A17]">{t('title')}</h1>
       </div>
 
       <div className="space-y-6">
@@ -50,7 +51,7 @@ export default async function SettingsPage() {
         {/* 2FA Section */}
         <div className="bg-[#F3EDE5] p-6 rounded-xl border border-[#E0D6C8]">
           <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">
-            Authentification à deux facteurs (2FA)
+            {t('totp')}
           </h2>
           <TwoFactorSettings initialEnabled={user.totpEnabled} />
         </div>

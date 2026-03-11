@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { toast } from 'sonner'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -12,6 +13,8 @@ interface TwoFactorSettingsProps {
 }
 
 export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
+  const t = useTranslations('dashboard.settings')
+  const tCommon = useTranslations('common')
   const [isEnabled, setIsEnabled] = useState(initialEnabled)
   const [isSettingUp, setIsSettingUp] = useState(false)
   const [isDisabling, setIsDisabling] = useState(false)
@@ -30,7 +33,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
       const data = await response.json()
 
       if (!response.ok) {
-        toast.error(data.error || 'Erreur lors de la configuration')
+        toast.error(data.error || t('setupError'))
         return
       }
 
@@ -38,7 +41,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
       setSecret(data.secret)
       setIsSettingUp(true)
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('genericError'))
     } finally {
       setIsLoading(false)
     }
@@ -46,7 +49,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
 
   const verifyAndEnable = async () => {
     if (!verificationCode || verificationCode.length !== 6) {
-      toast.error('Veuillez entrer un code à 6 chiffres')
+      toast.error(t('invalidCode'))
       return
     }
 
@@ -61,18 +64,18 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
       const data = await response.json()
 
       if (!response.ok) {
-        toast.error(data.error || 'Code invalide')
+        toast.error(data.error || t('invalidCode'))
         return
       }
 
-      toast.success('2FA activée avec succès !')
+      toast.success(t('2faEnabledSuccess'))
       setIsEnabled(true)
       setIsSettingUp(false)
       setQrCode(null)
       setSecret(null)
       setVerificationCode('')
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('genericError'))
     } finally {
       setIsLoading(false)
     }
@@ -80,7 +83,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
 
   const disable2FA = async () => {
     if (!verificationCode || verificationCode.length !== 6) {
-      toast.error('Veuillez entrer un code à 6 chiffres')
+      toast.error(t('invalidCode'))
       return
     }
 
@@ -95,16 +98,16 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
       const data = await response.json()
 
       if (!response.ok) {
-        toast.error(data.error || 'Code invalide')
+        toast.error(data.error || t('invalidCode'))
         return
       }
 
-      toast.success('2FA désactivée')
+      toast.success(t('2faDisabledSuccess'))
       setIsEnabled(false)
       setIsDisabling(false)
       setVerificationCode('')
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('genericError'))
     } finally {
       setIsLoading(false)
     }
@@ -122,14 +125,14 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <div className="h-3 w-3 bg-green-500 rounded-full"></div>
-          <p className="text-gray-700">La 2FA est activée sur votre compte</p>
+          <p className="text-gray-700">{t('2faEnabled')}</p>
         </div>
         <Button
           variant="outline"
           onClick={() => setIsDisabling(true)}
           className="text-red-600 hover:text-red-700 hover:bg-red-50"
         >
-          Désactiver la 2FA
+          {t('disable2FA')}
         </Button>
       </div>
     )
@@ -139,10 +142,10 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
     return (
       <div className="space-y-4">
         <p className="text-gray-700">
-          Pour désactiver la 2FA, entrez un code depuis votre application d&apos;authentification.
+          {t('disable2FADescription')}
         </p>
         <div className="space-y-2 max-w-xs">
-          <Label htmlFor="disable-code">Code de vérification</Label>
+          <Label htmlFor="disable-code">{t('verificationCode')}</Label>
           <Input
             id="disable-code"
             type="text"
@@ -160,7 +163,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
             onClick={disable2FA}
             isLoading={isLoading}
           >
-            Confirmer la désactivation
+            {t('confirmDisable2FA')}
           </Button>
           <Button
             variant="outline"
@@ -169,7 +172,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
               setVerificationCode('')
             }}
           >
-            Annuler
+            {tCommon('cancel')}
           </Button>
         </div>
       </div>
@@ -181,8 +184,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
       <div className="space-y-6">
         <div className="space-y-4">
           <p className="text-gray-700">
-            1. Scannez ce QR code avec votre application d&apos;authentification
-            (Google Authenticator, Authy, etc.)
+            {t('setup2FAQrCode')}
           </p>
           {qrCode && (
             <div className="flex justify-center p-4 bg-white rounded-lg border">
@@ -195,16 +197,16 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
             </div>
           )}
           <p className="text-sm text-gray-500">
-            Ou entrez ce code manuellement : <code className="bg-gray-100 px-2 py-1 rounded text-gray-900">{secret}</code>
+            {t('setup2FAManual')} <code className="bg-gray-100 px-2 py-1 rounded text-gray-900">{secret}</code>
           </p>
         </div>
 
         <div className="space-y-4">
           <p className="text-gray-700">
-            2. Entrez le code à 6 chiffres affiché dans votre application
+            {t('setup2FAEnterCode')}
           </p>
           <div className="space-y-2 max-w-xs">
-            <Label htmlFor="verification-code">Code de vérification</Label>
+            <Label htmlFor="verification-code">{t('verificationCode')}</Label>
             <Input
               id="verification-code"
               type="text"
@@ -220,10 +222,10 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
 
         <div className="flex gap-3">
           <Button onClick={verifyAndEnable} isLoading={isLoading}>
-            Activer la 2FA
+            {t('enable2FA')}
           </Button>
           <Button variant="outline" onClick={cancelSetup}>
-            Annuler
+            {tCommon('cancel')}
           </Button>
         </div>
       </div>
@@ -233,11 +235,10 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
   return (
     <div className="space-y-4">
       <p className="text-gray-700">
-        Ajoutez une couche de sécurité supplémentaire à votre compte en activant
-        l&apos;authentification à deux facteurs.
+        {t('setup2FADescription')}
       </p>
       <Button onClick={startSetup} isLoading={isLoading}>
-        Configurer la 2FA
+        {t('configure2FA')}
       </Button>
     </div>
   )

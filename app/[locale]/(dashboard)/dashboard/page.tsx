@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { getTranslations } from 'next-intl/server'
 import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
 import { EmptyState } from '@/components/ui/empty-state'
@@ -11,6 +12,7 @@ import { Plus, FileText, Sparkles, TrendingUp, Clock } from 'lucide-react'
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions)
+  const t = await getTranslations('dashboard.home')
 
   if (!session?.user?.id) {
     return null
@@ -47,10 +49,10 @@ export default async function DashboardPage() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-[#1F1A17]">
-          Bonjour, {session.user.name?.split(' ')[0] ?? 'there'}
+          {t('welcome', { name: session.user.name?.split(' ')[0] ?? 'there' })}
         </h1>
         <p className="text-[#6B6560] mt-1">
-          Gérez vos CV et créez-en de nouveaux
+          {t('subtitle')}
         </p>
       </div>
 
@@ -64,7 +66,7 @@ export default async function DashboardPage() {
         >
           <div className="flex items-center justify-between h-full">
             <div>
-              <h3 className="text-2xl font-bold text-[#FBF8F4] mb-2">Créer un nouveau CV</h3>
+              <h3 className="text-2xl font-bold text-[#FBF8F4] mb-2">{t('createNew')}</h3>
               <p className="text-[#FBF8F4]/70">Commencez avec nos templates professionnels</p>
             </div>
             <div className="w-16 h-16 bg-[#FBF8F4]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#FBF8F4]/20 transition-colors">
@@ -167,7 +169,7 @@ export default async function DashboardPage() {
       {/* CV List */}
       <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-6">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold text-[#1F1A17]">Mes CV</h2>
+          <h2 className="text-lg font-semibold text-[#1F1A17]">{t('myResumes')}</h2>
           <Link
             href="/dashboard/resumes"
             className="text-sm text-[#722F37] hover:text-[#8B3A44] transition-colors"

@@ -2,8 +2,9 @@
 
 import { Suspense, useState, useEffect } from 'react'
 import { signIn } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { toast } from 'sonner'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -36,6 +37,7 @@ function LoginSkeleton() {
 }
 
 function LoginForm() {
+  const t = useTranslations('auth.login')
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') ?? '/dashboard'
@@ -57,7 +59,7 @@ function LoginForm() {
     } else if (oauthError === 'OAuthCallback' || oauthError === 'OAuthSignin') {
       toast.error('Erreur de connexion avec le fournisseur, veuillez réessayer')
     } else if (oauthError) {
-      toast.error('Erreur de connexion, veuillez réessayer')
+      toast.error(t('errors.generic'))
     }
   }, [oauthError])
 
@@ -125,15 +127,15 @@ function LoginForm() {
           toast.error('Code 2FA invalide')
           setErrors({ totpCode: 'Code 2FA invalide' })
         } else {
-          toast.error('Email ou mot de passe incorrect')
-          setErrors({ password: 'Email ou mot de passe incorrect' })
+          toast.error(t('errors.invalidCredentials'))
+          setErrors({ password: t('errors.invalidCredentials') })
         }
       } else {
         toast.success('Connexion réussie !')
         window.location.href = callbackUrl
       }
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -152,11 +154,11 @@ function LoginForm() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle>{requires2FA ? 'Vérification 2FA' : 'Connexion'}</CardTitle>
+        <CardTitle>{requires2FA ? 'Vérification 2FA' : t('title')}</CardTitle>
         <CardDescription>
           {requires2FA
             ? 'Entrez le code de votre application d\'authentification'
-            : 'Connectez-vous pour accéder à vos CV'}
+            : t('subtitle')}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -164,7 +166,7 @@ function LoginForm() {
           {!requires2FA ? (
             <>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('email')}</Label>
                 <Input
                   id="email"
                   name="email"
@@ -179,12 +181,12 @@ function LoginForm() {
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Mot de passe</Label>
+                  <Label htmlFor="password">{t('password')}</Label>
                   <Link
                     href="/forgot-password"
                     className="text-sm text-[#722F37] hover:text-[#8B3A44] hover:underline"
                   >
-                    Mot de passe oublié ?
+                    {t('forgotPassword')}
                   </Link>
                 </div>
                 <PasswordInput
@@ -228,7 +230,7 @@ function LoginForm() {
           )}
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            {requires2FA ? 'Vérifier' : 'Se connecter'}
+            {requires2FA ? 'Vérifier' : t('submit')}
           </Button>
         </form>
 
@@ -284,9 +286,9 @@ function LoginForm() {
             </div>
 
             <p className="mt-6 text-center text-sm text-[#6B6560]">
-              Pas encore de compte ?{' '}
+              {t('noAccount')}{' '}
               <Link href="/signup" className="text-[#722F37] hover:text-[#8B3A44] hover:underline font-medium">
-                S&apos;inscrire
+                {t('signup')}
               </Link>
             </p>
           </>

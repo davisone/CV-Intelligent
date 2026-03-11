@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { ArrowLeft, Send } from 'lucide-react'
 import { toast } from 'sonner'
 import { Input } from '@/components/ui/input'
@@ -10,8 +11,18 @@ import { Button } from '@/components/ui/button'
 import { Select } from '@/components/ui/select'
 import { CONTACT_SUBJECTS } from '@/lib/validations/contact.schema'
 
+// Correspondance entre les valeurs du schéma et les clés de traduction
+const SUBJECT_TRANSLATION_KEYS: Record<string, 'general' | 'technical' | 'suggestion' | 'other'> = {
+  'Question générale': 'general',
+  'Problème technique': 'technical',
+  "Suggestion d'amélioration": 'suggestion',
+  'Autre': 'other',
+}
+
 export default function ContactPage() {
   // Note : export default requis par Next.js App Router pour les page.tsx
+  const t = useTranslations('contact')
+  const tNav = useTranslations('nav')
   const [isLoading, setIsLoading] = useState(false)
   const [form, setForm] = useState({
     name: '',
@@ -34,14 +45,14 @@ export default function ContactPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        toast.error(data.error || 'Une erreur est survenue')
+        toast.error(data.error || t('errors.generic'))
         return
       }
 
-      toast.success('Message envoyé ! Nous vous répondrons sous 48h.')
+      toast.success(t('success'))
       setForm({ name: '', email: '', subject: '', message: '' })
     } catch {
-      toast.error('Une erreur est survenue. Réessayez dans un moment.')
+      toast.error(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -55,23 +66,23 @@ export default function ContactPage() {
           className="inline-flex items-center gap-2 text-sm text-[#6B6560] hover:text-[#1F1A17] mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Retour à l&apos;accueil
+          {tNav('backToHome')}
         </Link>
 
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-[#1F1A17] mb-3">Contactez-nous</h1>
+          <h1 className="text-3xl font-bold text-[#1F1A17] mb-3">{t('title')}</h1>
           <p className="text-[#6B6560]">
-            Une question, un problème ou une suggestion ? Nous vous répondons sous 48 heures ouvrées.
+            {t('subtitle')}
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Nom</Label>
+              <Label htmlFor="name">{t('name')}</Label>
               <Input
                 id="name"
-                placeholder="Jean Dupont"
+                placeholder={t('namePlaceholder')}
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
@@ -79,11 +90,11 @@ export default function ContactPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('email')}</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="jean@exemple.fr"
+                placeholder={t('emailPlaceholder')}
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
@@ -93,7 +104,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="subject">Sujet</Label>
+            <Label htmlFor="subject">{t('subject')}</Label>
             <Select
               id="subject"
               value={form.subject}
@@ -101,19 +112,21 @@ export default function ContactPage() {
               required
               disabled={isLoading}
             >
-              <option value="" disabled>Sélectionnez un sujet</option>
+              <option value="" disabled>{t('subjectPlaceholder')}</option>
               {CONTACT_SUBJECTS.map((s) => (
-                <option key={s} value={s}>{s}</option>
+                <option key={s} value={s}>
+                  {t(`subjects.${SUBJECT_TRANSLATION_KEYS[s]}`)}
+                </option>
               ))}
             </Select>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">{t('message')}</Label>
             <textarea
               id="message"
               rows={6}
-              placeholder="Décrivez votre demande en détail..."
+              placeholder={t('messagePlaceholder')}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
@@ -128,11 +141,11 @@ export default function ContactPage() {
             className="w-full bg-[#722F37] hover:bg-[#8B3A44] text-white font-semibold h-11 rounded-xl transition-colors"
           >
             {isLoading ? (
-              'Envoi en cours...'
+              t('submitting')
             ) : (
               <span className="flex items-center justify-center gap-2">
                 <Send className="w-4 h-4" />
-                Envoyer le message
+                {t('submit')}
               </span>
             )}
           </Button>
