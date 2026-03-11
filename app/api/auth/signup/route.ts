@@ -73,7 +73,7 @@ export async function POST(request: Request) {
     })
 
     // Envoyer l'email de vérification (non bloquant)
-    sendVerificationEmail(email, verificationToken).catch((error) => {
+    sendVerificationEmail(email, verificationToken, locale).catch((error) => {
       console.error('[VERIFICATION_EMAIL_ERROR]:', error)
     })
 

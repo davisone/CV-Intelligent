@@ -1,10 +1,14 @@
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Mot de passe oublié',
-  description: 'Réinitialisez votre mot de passe CV Builder pour retrouver l\'accès à votre compte.',
-  robots: { index: false, follow: false },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'auth.forgotPassword' })
+  return {
+    title: t('meta.title'),
+    robots: { index: false, follow: false },
+  }
 }
 
 export default function ForgotPasswordLayout({ children }: { children: ReactNode }) {

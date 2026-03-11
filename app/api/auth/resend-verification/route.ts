@@ -26,7 +26,7 @@ export async function POST(request: Request) {
 
     const user = await prisma.user.findUnique({
       where: { id: session.user.id },
-      select: { email: true, emailVerified: true },
+      select: { email: true, emailVerified: true, locale: true },
     })
 
     if (!user?.email) {
@@ -45,7 +45,8 @@ export async function POST(request: Request) {
       data: { verificationToken, verificationTokenExpiry },
     })
 
-    await sendVerificationEmail(user.email, verificationToken)
+    const userLocale = (user.locale === 'en' ? 'en' : 'fr') as 'fr' | 'en'
+    await sendVerificationEmail(user.email, verificationToken, userLocale)
 
     return NextResponse.json({ success: true })
   } catch (error) {

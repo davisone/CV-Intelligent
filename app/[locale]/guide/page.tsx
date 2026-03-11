@@ -1,28 +1,23 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { Footer } from '@/components/layout/footer'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { ArrowRight, CheckCircle2, Lightbulb, FileText, Sparkles, Target, Clock, Download } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Comment Faire un CV en 2026 | Guide Complet pour Créer son CV',
-  description: 'Comment faire un CV ? Guide complet et gratuit pour créer son CV professionnel : structure, conseils, exemples de CV et modèles. Apprenez à rédiger un CV qui décroche des entretiens.',
-  keywords: [
-    'comment faire un cv', 'comment créer un cv', 'comment rédiger un cv',
-    'faire un cv', 'faire son cv', 'créer un cv', 'créer son cv', 'rédiger un cv',
-    'cv conseils', 'structure cv', 'mise en page cv',
-    'cv professionnel', 'cv gratuit', 'modèle cv', 'exemple cv', 'exemple de cv',
-    'cv étudiant', 'premier cv', 'cv sans expérience', 'cv alternance', 'cv stage',
-    'aide pour faire un cv', 'guide cv',
-  ],
-  alternates: {
-    canonical: '/guide',
-  },
-  openGraph: {
-    title: 'Comment Faire un CV en 2026 | Guide Complet Gratuit',
-    description: 'Guide complet pour créer un CV professionnel. Structure, conseils, exemples et générateur gratuit avec IA.',
-    type: 'article',
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'landing.guidePage.meta' })
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: { canonical: '/guide' },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      type: 'article',
+    },
+  }
 }
 
 const steps = [

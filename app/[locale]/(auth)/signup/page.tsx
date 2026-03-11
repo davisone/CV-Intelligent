@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
+import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { toast } from 'sonner'
@@ -14,6 +15,7 @@ import { Label } from '@/components/ui/label'
 
 export default function SignupPage() {
   const router = useRouter()
+  const locale = useLocale()
 
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
@@ -80,6 +82,7 @@ export default function SignupPage() {
           name: formData.name,
           email: formData.email,
           password: formData.password,
+          locale,
         }),
       })
 

@@ -115,7 +115,7 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
   const [user, resume] = await Promise.all([
     prisma.user.findUnique({
       where: { id: userId },
-      select: { email: true, name: true },
+      select: { email: true, name: true, locale: true },
     }),
     prisma.resume.findUnique({
       where: { id: resumeId },
@@ -124,12 +124,14 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
   ])
 
   if (user?.email && resume?.title) {
+    const userLocale = (user.locale === 'en' ? 'en' : 'fr') as 'fr' | 'en'
     await sendPaymentConfirmationEmail(
       user.email,
       user.name || 'Client',
       resume.title,
       PRICING.displayPrice,
-      resumeId
+      resumeId,
+      userLocale
     )
     console.log(`[WEBHOOK] Confirmation email sent to ${user.email}`)
   }

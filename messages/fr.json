@@ -96,11 +96,25 @@
       "mentions": "Mentions légales",
       "privacy": "Confidentialité",
       "copyright": "© {year} CV Builder — Propulsé par DVS-Web. Tous droits réservés."
+    },
+    "templatesPage": {
+      "meta": {
+        "title": "Modèles de CV Gratuits | Templates CV Professionnels",
+        "description": "Découvrez nos modèles de CV gratuits et professionnels : Modern, Classic, ATS-Friendly, Minimal et Creative. Choisissez le design parfait pour créer votre CV en ligne."
+      }
+    },
+    "guidePage": {
+      "meta": {
+        "title": "Comment Faire un CV en 2026 | Guide Complet pour Créer son CV",
+        "description": "Comment faire un CV ? Guide complet et gratuit pour créer son CV professionnel : structure, conseils, exemples de CV et modèles. Apprenez à rédiger un CV qui décroche des entretiens."
+      }
     }
   },
   "auth": {
     "login": {
-      "meta": { "title": "Connexion" },
+      "meta": {
+        "title": "Connexion"
+      },
       "title": "Connexion",
       "subtitle": "Accédez à vos CV et continuez à les améliorer",
       "email": "Email",
@@ -116,7 +130,9 @@
       }
     },
     "signup": {
-      "meta": { "title": "Créer un compte" },
+      "meta": {
+        "title": "Créer un compte"
+      },
       "title": "Créer un compte",
       "subtitle": "Commencez à créer votre CV professionnel",
       "name": "Nom complet",
@@ -135,7 +151,9 @@
       }
     },
     "forgotPassword": {
-      "meta": { "title": "Mot de passe oublié" },
+      "meta": {
+        "title": "Mot de passe oublié"
+      },
       "title": "Mot de passe oublié",
       "subtitle": "Entrez votre email pour recevoir un lien de réinitialisation",
       "email": "Email",
@@ -145,7 +163,9 @@
       "backToLogin": "Retour à la connexion"
     },
     "resetPassword": {
-      "meta": { "title": "Réinitialiser le mot de passe" },
+      "meta": {
+        "title": "Réinitialiser le mot de passe"
+      },
       "title": "Nouveau mot de passe",
       "subtitle": "Choisissez un nouveau mot de passe sécurisé",
       "password": "Nouveau mot de passe",
@@ -159,7 +179,9 @@
       }
     },
     "verifyEmail": {
-      "meta": { "title": "Vérification email" },
+      "meta": {
+        "title": "Vérification email"
+      },
       "title": "Vérification de votre email",
       "pendingTitle": "Vérifiez votre boîte mail",
       "pendingSubtitle": "Un lien de vérification a été envoyé à votre adresse email.",
@@ -170,7 +192,9 @@
       }
     },
     "verify2fa": {
-      "meta": { "title": "Vérification 2FA" },
+      "meta": {
+        "title": "Vérification 2FA"
+      },
       "title": "Authentification à deux facteurs",
       "subtitle": "Entrez le code de votre application d'authentification",
       "code": "Code à 6 chiffres",
@@ -184,7 +208,9 @@
   },
   "dashboard": {
     "home": {
-      "meta": { "title": "Dashboard" },
+      "meta": {
+        "title": "Dashboard"
+      },
       "welcome": "Bienvenue, {name} !",
       "subtitle": "Gérez vos CV et créez-en de nouveaux.",
       "createNew": "Créer un nouveau CV",
@@ -193,7 +219,9 @@
       "createFirst": "Créer mon premier CV"
     },
     "resumes": {
-      "meta": { "title": "Mes CV" },
+      "meta": {
+        "title": "Mes CV"
+      },
       "title": "Mes CV",
       "new": "Nouveau CV",
       "empty": "Aucun CV pour l'instant",
@@ -207,12 +235,16 @@
       "updatedAt": "Modifié le {date}"
     },
     "profile": {
-      "meta": { "title": "Mon Profil" },
+      "meta": {
+        "title": "Mon Profil"
+      },
       "title": "Mon Profil",
       "subtitle": "Vos informations réutilisables dans tous vos CV"
     },
     "settings": {
-      "meta": { "title": "Paramètres" },
+      "meta": {
+        "title": "Paramètres"
+      },
       "title": "Paramètres",
       "security": "Sécurité",
       "totp": "Authentification à deux facteurs",
@@ -220,7 +252,9 @@
       "deleteWarning": "Cette action est irréversible. Tous vos CV seront supprimés."
     },
     "templates": {
-      "meta": { "title": "Templates" },
+      "meta": {
+        "title": "Templates"
+      },
       "title": "Templates",
       "free": "Gratuit",
       "premium": "Premium",
@@ -240,7 +274,9 @@
     }
   },
   "editor": {
-    "meta": { "title": "Éditeur CV" },
+    "meta": {
+      "title": "Éditeur CV"
+    },
     "save": "Enregistrer",
     "saving": "Enregistrement...",
     "saved": "Enregistré",
@@ -267,7 +303,9 @@
     "projects": "Projets"
   },
   "contact": {
-    "meta": { "title": "Contact" },
+    "meta": {
+      "title": "Contact"
+    },
     "title": "Contactez-nous",
     "subtitle": "Une question, un problème ou une suggestion ? Nous vous répondons sous 48 heures ouvrées.",
     "name": "Nom",
@@ -293,15 +331,21 @@
   },
   "legal": {
     "cgv": {
-      "meta": { "title": "CGV" },
+      "meta": {
+        "title": "CGV"
+      },
       "title": "Conditions Générales de Vente"
     },
     "mentions": {
-      "meta": { "title": "Mentions légales" },
+      "meta": {
+        "title": "Mentions légales"
+      },
       "title": "Mentions légales"
     },
     "privacy": {
-      "meta": { "title": "Politique de confidentialité" },
+      "meta": {
+        "title": "Politique de confidentialité"
+      },
       "title": "Politique de confidentialité"
     }
   },

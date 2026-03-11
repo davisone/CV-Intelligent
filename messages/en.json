@@ -96,11 +96,25 @@
       "mentions": "Legal Notice",
       "privacy": "Privacy Policy",
       "copyright": "© {year} CV Builder — Powered by DVS-Web. All rights reserved."
+    },
+    "templatesPage": {
+      "meta": {
+        "title": "Free Resume Templates | Professional CV Templates Online",
+        "description": "Discover our free professional resume templates: Modern, Classic, ATS-Friendly, Minimal and Creative. Choose the perfect design to create your resume online."
+      }
+    },
+    "guidePage": {
+      "meta": {
+        "title": "How to Write a Resume in 2026 | Complete Guide",
+        "description": "How to write a resume? A complete and free guide to creating a professional resume: structure, tips, examples and templates. Learn how to write a resume that lands interviews."
+      }
     }
   },
   "auth": {
     "login": {
-      "meta": { "title": "Sign In" },
+      "meta": {
+        "title": "Sign In"
+      },
       "title": "Sign In",
       "subtitle": "Access your resumes and keep improving them",
       "email": "Email",
@@ -116,7 +130,9 @@
       }
     },
     "signup": {
-      "meta": { "title": "Create Account" },
+      "meta": {
+        "title": "Create Account"
+      },
       "title": "Create an Account",
       "subtitle": "Start building your professional resume",
       "name": "Full name",
@@ -135,7 +151,9 @@
       }
     },
     "forgotPassword": {
-      "meta": { "title": "Forgot Password" },
+      "meta": {
+        "title": "Forgot Password"
+      },
       "title": "Forgot Password",
       "subtitle": "Enter your email to receive a reset link",
       "email": "Email",
@@ -145,7 +163,9 @@
       "backToLogin": "Back to sign in"
     },
     "resetPassword": {
-      "meta": { "title": "Reset Password" },
+      "meta": {
+        "title": "Reset Password"
+      },
       "title": "New Password",
       "subtitle": "Choose a new secure password",
       "password": "New password",
@@ -159,7 +179,9 @@
       }
     },
     "verifyEmail": {
-      "meta": { "title": "Email Verification" },
+      "meta": {
+        "title": "Email Verification"
+      },
       "title": "Verifying your email",
       "pendingTitle": "Check your inbox",
       "pendingSubtitle": "A verification link was sent to your email address.",
@@ -170,7 +192,9 @@
       }
     },
     "verify2fa": {
-      "meta": { "title": "2FA Verification" },
+      "meta": {
+        "title": "2FA Verification"
+      },
       "title": "Two-Factor Authentication",
       "subtitle": "Enter the code from your authenticator app",
       "code": "6-digit code",
@@ -184,7 +208,9 @@
   },
   "dashboard": {
     "home": {
-      "meta": { "title": "Dashboard" },
+      "meta": {
+        "title": "Dashboard"
+      },
       "welcome": "Welcome, {name}!",
       "subtitle": "Manage your resumes and create new ones.",
       "createNew": "Create a new resume",
@@ -193,7 +219,9 @@
       "createFirst": "Create my first resume"
     },
     "resumes": {
-      "meta": { "title": "My Resumes" },
+      "meta": {
+        "title": "My Resumes"
+      },
       "title": "My Resumes",
       "new": "New Resume",
       "empty": "No resumes yet",
@@ -207,12 +235,16 @@
       "updatedAt": "Updated on {date}"
     },
     "profile": {
-      "meta": { "title": "My Profile" },
+      "meta": {
+        "title": "My Profile"
+      },
       "title": "My Profile",
       "subtitle": "Your reusable information across all your resumes"
     },
     "settings": {
-      "meta": { "title": "Settings" },
+      "meta": {
+        "title": "Settings"
+      },
       "title": "Settings",
       "security": "Security",
       "totp": "Two-factor authentication",
@@ -220,7 +252,9 @@
       "deleteWarning": "This action is irreversible. All your resumes will be deleted."
     },
     "templates": {
-      "meta": { "title": "Templates" },
+      "meta": {
+        "title": "Templates"
+      },
       "title": "Templates",
       "free": "Free",
       "premium": "Premium",
@@ -240,7 +274,9 @@
     }
   },
   "editor": {
-    "meta": { "title": "Resume Editor" },
+    "meta": {
+      "title": "Resume Editor"
+    },
     "save": "Save",
     "saving": "Saving...",
     "saved": "Saved",
@@ -267,7 +303,9 @@
     "projects": "Projects"
   },
   "contact": {
-    "meta": { "title": "Contact" },
+    "meta": {
+      "title": "Contact"
+    },
     "title": "Contact Us",
     "subtitle": "A question, an issue or a suggestion? We reply within 48 business hours.",
     "name": "Name",
@@ -293,15 +331,21 @@
   },
   "legal": {
     "cgv": {
-      "meta": { "title": "Terms of Sale" },
+      "meta": {
+        "title": "Terms of Sale"
+      },
       "title": "Terms of Sale"
     },
     "mentions": {
-      "meta": { "title": "Legal Notice" },
+      "meta": {
+        "title": "Legal Notice"
+      },
       "title": "Legal Notice"
     },
     "privacy": {
-      "meta": { "title": "Privacy Policy" },
+      "meta": {
+        "title": "Privacy Policy"
+      },
       "title": "Privacy Policy"
     }
   },

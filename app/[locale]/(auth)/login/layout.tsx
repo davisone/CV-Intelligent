@@ -1,12 +1,14 @@
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Connexion',
-  description: 'Connectez-vous à votre compte CV Builder pour accéder à vos CV et continuer à créer des CV professionnels avec l\'IA.',
-  alternates: {
-    canonical: '/login',
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'auth.login' })
+  return {
+    title: t('meta.title'),
+    alternates: { canonical: '/login' },
+  }
 }
 
 export default function LoginLayout({ children }: { children: ReactNode }) {

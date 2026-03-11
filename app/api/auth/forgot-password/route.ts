@@ -31,6 +31,7 @@ export async function POST(request: Request) {
     // Chercher l'utilisateur
     const user = await prisma.user.findUnique({
       where: { email: email.toLowerCase() },
+      select: { id: true, locale: true },
     })
 
     // Pour des raisons de sécurité, on retourne toujours succès
@@ -53,7 +54,8 @@ export async function POST(request: Request) {
     })
 
     // Envoyer l'email de réinitialisation
-    const emailResult = await sendPasswordResetEmail(email, resetToken)
+    const userLocale = (user.locale === 'en' ? 'en' : 'fr') as 'fr' | 'en'
+    const emailResult = await sendPasswordResetEmail(email, resetToken, userLocale)
 
     if (!emailResult.success) {
       console.error('[FORGOT_PASSWORD] Failed to send email:', emailResult.error)

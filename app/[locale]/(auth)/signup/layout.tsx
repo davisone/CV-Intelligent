@@ -1,12 +1,14 @@
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Inscription',
-  description: 'Créez votre compte CV Builder gratuitement et commencez à générer des CV professionnels optimisés avec l\'intelligence artificielle.',
-  alternates: {
-    canonical: '/signup',
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'auth.signup' })
+  return {
+    title: t('meta.title'),
+    alternates: { canonical: '/signup' },
+  }
 }
 
 export default function SignupLayout({ children }: { children: ReactNode }) {
