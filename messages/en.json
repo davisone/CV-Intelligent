@@ -107,7 +107,15 @@
       "cvModerne": "Modern CV",
       "cvSansExperience": "CV No Experience",
       "cvDeveloppeurJunior": "Junior Developer CV",
-      "modeleCvAlternance": "Apprenticeship CV"
+      "modeleCvAlternance": "Apprenticeship CV",
+      "modeleCv": "Resume Template",
+      "exempleCv": "Resume Examples",
+      "commentFaireUnCv": "How to Write a CV",
+      "cvCommercial": "Sales CV",
+      "cvMarketing": "Marketing CV",
+      "cvIngenieur": "Engineer CV",
+      "cvInfirmier": "Nurse CV",
+      "cvReconversion": "Career Change CV"
     },
     "templatesPage": {
       "meta": {
@@ -203,6 +211,54 @@
       "meta": {
         "title": "Apprenticeship Resume Template Free 2026 — Work-Study CV PDF",
         "description": "Download a free apprenticeship resume template. CV templates for work-study programs, ATS-compatible, PDF export. Create your apprenticeship CV in 5 minutes."
+      }
+    },
+    "modeleCvPage": {
+      "meta": {
+        "title": "Free Resume Template 2026 — Professional CV Template to Download",
+        "description": "Download a free resume template. Choose from modern, minimalist, professional CV templates. Create your free resume online in 5 minutes."
+      }
+    },
+    "exempleCvPage": {
+      "meta": {
+        "title": "Free Resume Examples 2026 — Professional CV Examples to Download",
+        "description": "Browse our free resume examples: professional, student, developer, sales CV. Create your resume based on real-world examples."
+      }
+    },
+    "commentFaireUnCvPage": {
+      "meta": {
+        "title": "How to Write a Resume in 2026 — Complete Guide to Create a Free CV",
+        "description": "How to write a professional resume in 2026? Complete guide: structure, content, layout. Create your CV for free with our online generator."
+      }
+    },
+    "cvCommercialPage": {
+      "meta": {
+        "title": "Free Sales Resume 2026 — CV Template for Sales Representative",
+        "description": "Create your free sales resume. CV templates for sales reps, account managers, business developers. ATS-optimized, PDF export."
+      }
+    },
+    "cvMarketingPage": {
+      "meta": {
+        "title": "Free Marketing Resume 2026 — CV Template Marketing Manager, Digital",
+        "description": "Create your free marketing resume. CV templates for marketing managers, digital project managers, community managers. ATS-optimized, PDF export."
+      }
+    },
+    "cvIngenieurPage": {
+      "meta": {
+        "title": "Free Engineer Resume 2026 — CV Template Software Engineer, Civil",
+        "description": "Create your free engineer resume. CV templates for software, civil, mechanical, electrical engineers. ATS-optimized, PDF export."
+      }
+    },
+    "cvInfirmierPage": {
+      "meta": {
+        "title": "Free Nurse Resume 2026 — CV Template Nurse, Healthcare Worker",
+        "description": "Create your free nurse resume. CV templates for nurses, nursing assistants, healthcare managers. Adapted for hospital sector, PDF export."
+      }
+    },
+    "cvReconversionPage": {
+      "meta": {
+        "title": "Career Change Resume Free 2026 — CV for Professional Reconversion",
+        "description": "Create your career change resume for free. Highlight transferable skills to switch industries. Our AI optimizes your profile."
       }
     }
   },

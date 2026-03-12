@@ -109,7 +109,15 @@
       "cvModerne": "CV Moderne",
       "cvSansExperience": "CV Sans Expérience",
       "cvDeveloppeurJunior": "CV Développeur Junior",
-      "modeleCvAlternance": "Modèle CV Alternance"
+      "modeleCvAlternance": "Modèle CV Alternance",
+      "modeleCv": "Modèle de CV",
+      "exempleCv": "Exemple de CV",
+      "commentFaireUnCv": "Comment Faire un CV",
+      "cvCommercial": "CV Commercial",
+      "cvMarketing": "CV Marketing",
+      "cvIngenieur": "CV Ingénieur",
+      "cvInfirmier": "CV Infirmier",
+      "cvReconversion": "CV Reconversion"
     },
     "templatesPage": {
       "meta": {
@@ -205,6 +213,54 @@
       "meta": {
         "title": "Modèle CV Alternance Gratuit 2026 — Template CV Alternance Étudiant PDF",
         "description": "Téléchargez un modèle CV alternance gratuit en PDF. Templates CV alternance pour étudiants, optimisés ATS. Créez votre CV d'alternance en 5 minutes."
+      }
+    },
+    "modeleCvPage": {
+      "meta": {
+        "title": "Modèle de CV Gratuit 2026 — Template CV Professionnel à Télécharger",
+        "description": "Téléchargez un modèle de CV gratuit. Choisissez parmi nos templates CV modernes, minimalistes, professionnels. Créez votre CV gratuit en ligne en 5 minutes."
+      }
+    },
+    "exempleCvPage": {
+      "meta": {
+        "title": "Exemple de CV Gratuit 2026 — Exemples CV Professionnels à Télécharger",
+        "description": "Consultez nos exemples de CV gratuits : CV professionnel, étudiant, développeur, commercial. Créez votre CV en ligne basé sur des exemples concrets."
+      }
+    },
+    "commentFaireUnCvPage": {
+      "meta": {
+        "title": "Comment Faire un CV en 2026 — Guide Complet Créer un CV Gratuit",
+        "description": "Comment faire un CV professionnel en 2026 ? Guide complet : structure, contenu, mise en page. Créez votre CV gratuitement avec notre générateur en ligne."
+      }
+    },
+    "cvCommercialPage": {
+      "meta": {
+        "title": "CV Commercial Gratuit 2026 — Modèle CV Vendeur, Technico-Commercial",
+        "description": "Créez votre CV commercial gratuit. Modèles CV pour commerciaux, vendeurs, technico-commerciaux, attachés commerciaux. Optimisé ATS, export PDF."
+      }
+    },
+    "cvMarketingPage": {
+      "meta": {
+        "title": "CV Marketing Gratuit 2026 — Modèle CV Chef de Projet Marketing, Digital",
+        "description": "Créez votre CV marketing gratuit. Modèles CV pour responsables marketing, chefs de projet digital, community managers. Optimisé ATS, export PDF."
+      }
+    },
+    "cvIngenieurPage": {
+      "meta": {
+        "title": "CV Ingénieur Gratuit 2026 — Modèle CV Ingénieur Informatique, Génie Civil",
+        "description": "Créez votre CV d'ingénieur gratuit. Modèles CV pour ingénieurs informatique, génie civil, mécanique, électronique. Optimisé ATS, export PDF."
+      }
+    },
+    "cvInfirmierPage": {
+      "meta": {
+        "title": "CV Infirmier Gratuit 2026 — Modèle CV Infirmier, Aide-Soignant",
+        "description": "Créez votre CV infirmier gratuit. Modèles CV pour infirmiers, aides-soignants, cadres de santé. Adapté au secteur hospitalier, export PDF."
+      }
+    },
+    "cvReconversionPage": {
+      "meta": {
+        "title": "CV Reconversion Professionnelle Gratuit 2026 — Changer de Métier",
+        "description": "Créez votre CV de reconversion professionnelle gratuit. Valorisez vos compétences transférables pour changer de secteur. Notre IA optimise votre profil."
       }
     }
   },
