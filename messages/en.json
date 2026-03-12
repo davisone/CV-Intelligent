@@ -115,7 +115,15 @@
       "cvMarketing": "Marketing CV",
       "cvIngenieur": "Engineer CV",
       "cvInfirmier": "Nurse CV",
-      "cvReconversion": "Career Change CV"
+      "cvReconversion": "Career Change CV",
+      "cvComptable": "Accountant CV",
+      "cvManager": "Manager CV",
+      "cvChefDeProjet": "Project Manager CV",
+      "cvRh": "HR CV",
+      "cvAssistant": "Assistant CV",
+      "cvGraphiste": "Graphic Designer CV",
+      "cvJuriste": "Legal CV",
+      "cvLogistique": "Logistics CV"
     },
     "templatesPage": {
       "meta": {
@@ -259,6 +267,54 @@
       "meta": {
         "title": "Career Change Resume Free 2026 — CV for Professional Reconversion",
         "description": "Create your career change resume for free. Highlight transferable skills to switch industries. Our AI optimizes your profile."
+      }
+    },
+    "cvComptablePage": {
+      "meta": {
+        "title": "Free Accountant Resume 2026 — CV Template Accountant, CPA, Controller",
+        "description": "Create your free accountant resume. CV templates for accountants, CPAs, financial controllers. ATS-optimized, PDF export in 5 minutes."
+      }
+    },
+    "cvManagerPage": {
+      "meta": {
+        "title": "Free Manager Resume 2026 — CV Template Manager, Team Leader",
+        "description": "Create your free manager resume. CV templates for managers, team leaders, department heads. Showcase your leadership skills, PDF export."
+      }
+    },
+    "cvChefDeProjetPage": {
+      "meta": {
+        "title": "Free Project Manager Resume 2026 — CV Template IT, Marketing Project Manager",
+        "description": "Create your free project manager resume. CV templates for IT, marketing, and construction project managers. ATS-optimized, PDF export."
+      }
+    },
+    "cvRhPage": {
+      "meta": {
+        "title": "Free HR Resume 2026 — CV Template HR Manager, Recruiter, CHRO",
+        "description": "Create your free HR resume. CV templates for HR officers, recruiters, HR managers. ATS-optimized, PDF export in 5 minutes."
+      }
+    },
+    "cvAssistantPage": {
+      "meta": {
+        "title": "Free Administrative Assistant Resume 2026 — CV Template Office Manager",
+        "description": "Create your free administrative assistant resume. CV templates for admin assistants, executive assistants, office managers. PDF export."
+      }
+    },
+    "cvGraphistePage": {
+      "meta": {
+        "title": "Free Graphic Designer Resume 2026 — CV Template Designer, UI/UX",
+        "description": "Create your free graphic designer resume. CV templates for graphic designers, UI/UX designers. Showcase your portfolio, PDF export."
+      }
+    },
+    "cvJuristePage": {
+      "meta": {
+        "title": "Free Legal CV 2026 — CV Template Lawyer, Paralegal, Legal Counsel",
+        "description": "Create your free legal CV. CV templates for lawyers, legal counsels, paralegals. ATS-optimized for law firms and corporate legal departments."
+      }
+    },
+    "cvLogistiquePage": {
+      "meta": {
+        "title": "Free Logistics Resume 2026 — CV Template Supply Chain, Logistics Manager",
+        "description": "Create your free logistics resume. CV templates for logistics managers, supply chain specialists, warehouse managers. ATS-optimized, PDF export."
       }
     }
   },

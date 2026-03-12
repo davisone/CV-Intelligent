@@ -117,7 +117,15 @@
       "cvMarketing": "CV Marketing",
       "cvIngenieur": "CV Ingénieur",
       "cvInfirmier": "CV Infirmier",
-      "cvReconversion": "CV Reconversion"
+      "cvReconversion": "CV Reconversion",
+      "cvComptable": "CV Comptable",
+      "cvManager": "CV Manager",
+      "cvChefDeProjet": "CV Chef de Projet",
+      "cvRh": "CV Ressources Humaines",
+      "cvAssistant": "CV Assistant",
+      "cvGraphiste": "CV Graphiste",
+      "cvJuriste": "CV Juriste",
+      "cvLogistique": "CV Logistique"
     },
     "templatesPage": {
       "meta": {
@@ -261,6 +269,54 @@
       "meta": {
         "title": "CV Reconversion Professionnelle Gratuit 2026 — Changer de Métier",
         "description": "Créez votre CV de reconversion professionnelle gratuit. Valorisez vos compétences transférables pour changer de secteur. Notre IA optimise votre profil."
+      }
+    },
+    "cvComptablePage": {
+      "meta": {
+        "title": "CV Comptable Gratuit 2026 — Modèle CV Comptable, Expert-Comptable",
+        "description": "Créez votre CV comptable gratuit. Modèles CV pour comptables, experts-comptables, contrôleurs de gestion. Optimisé ATS, export PDF en 5 minutes."
+      }
+    },
+    "cvManagerPage": {
+      "meta": {
+        "title": "CV Manager Gratuit 2026 — Modèle CV Manager, Responsable d'Équipe",
+        "description": "Créez votre CV manager gratuit. Modèles CV pour managers, responsables d'équipe, chefs de service. Valorisez votre leadership, export PDF."
+      }
+    },
+    "cvChefDeProjetPage": {
+      "meta": {
+        "title": "CV Chef de Projet Gratuit 2026 — Modèle CV Chef de Projet IT, Marketing",
+        "description": "Créez votre CV chef de projet gratuit. Modèles CV pour chefs de projet IT, marketing, construction. Optimisé ATS, export PDF en 5 minutes."
+      }
+    },
+    "cvRhPage": {
+      "meta": {
+        "title": "CV RH Gratuit 2026 — Modèle CV Ressources Humaines, Chargé RH",
+        "description": "Créez votre CV RH gratuit. Modèles CV pour chargés RH, responsables recrutement, DRH. Optimisé ATS, export PDF en 5 minutes."
+      }
+    },
+    "cvAssistantPage": {
+      "meta": {
+        "title": "CV Assistant Gratuit 2026 — Modèle CV Assistant Administratif, de Direction",
+        "description": "Créez votre CV assistant gratuit. Modèles CV pour assistants administratifs, assistants de direction, office managers. Export PDF en 5 minutes."
+      }
+    },
+    "cvGraphistePage": {
+      "meta": {
+        "title": "CV Graphiste Gratuit 2026 — Modèle CV Graphiste, Designer, UI/UX",
+        "description": "Créez votre CV graphiste gratuit. Modèles CV pour graphistes, designers, UI/UX designers. Mettez en valeur votre portfolio, export PDF."
+      }
+    },
+    "cvJuristePage": {
+      "meta": {
+        "title": "CV Juriste Gratuit 2026 — Modèle CV Juriste, Avocat, Paralégal",
+        "description": "Créez votre CV juriste gratuit. Modèles CV pour juristes, avocats, paralégaux. Adapté aux métiers du droit, optimisé ATS, export PDF."
+      }
+    },
+    "cvLogistiquePage": {
+      "meta": {
+        "title": "CV Logistique Gratuit 2026 — Modèle CV Responsable Logistique, Supply Chain",
+        "description": "Créez votre CV logistique gratuit. Modèles CV pour responsables logistique, supply chain, gestionnaires de stocks. Optimisé ATS, export PDF."
       }
     }
   },
