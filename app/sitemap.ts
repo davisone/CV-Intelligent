@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/guide', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/templates', priority: 0.8, changeFrequency: 'weekly' as const },
     { path: '/cv-etudiant', priority: 0.85, changeFrequency: 'monthly' as const },
+    { path: '/modele-cv-gratuit', priority: 0.90, changeFrequency: 'monthly' as const },
     { path: '/cv-pdf', priority: 0.75, changeFrequency: 'monthly' as const },
     { path: '/cv-alternance', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/cv-developpeur', priority: 0.80, changeFrequency: 'monthly' as const },

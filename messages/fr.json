@@ -96,6 +96,7 @@
       "cvAlternance": "CV Alternance",
       "cvDeveloppeur": "CV Développeur",
       "cvMinimaliste": "CV Minimaliste",
+      "modeleCvGratuit": "Modèle CV Gratuit",
       "legal": "Légal",
       "cgv": "CGV",
       "mentions": "Mentions légales",
@@ -142,6 +143,12 @@
       "meta": {
         "title": "CV Minimaliste Gratuit PDF 2026 — Template CV Moderne, Simple, Design",
         "description": "Téléchargez un modèle CV minimaliste gratuit en PDF. Templates CV modernes, simples et design : CV minimaliste, CV moderne gratuit, CV simple étudiant. Créez votre CV en ligne, export PDF instantané."
+      }
+    },
+    "modeleCvGratuitPage": {
+      "meta": {
+        "title": "Modèle CV Gratuit 2026 — Télécharger Template CV Moderne, Minimaliste, ATS",
+        "description": "Téléchargez un modèle CV gratuit en PDF. Choisissez parmi nos templates CV modernes, minimalistes, ATS-friendly. Créez et téléchargez votre CV gratuit en ligne en 5 minutes."
       }
     }
   },

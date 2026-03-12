@@ -65,6 +65,9 @@ export function Footer() {
               <Link href="/cv-pdf" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
                 {t('cvPdf')}
               </Link>
+              <Link href="/modele-cv-gratuit" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('modeleCvGratuit')}
+              </Link>
               <a
                 href="https://g.page/r/CcSyetXUJJrpEAE/review"
                 target="_blank"

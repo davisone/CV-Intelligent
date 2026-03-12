@@ -94,6 +94,7 @@
       "cvAlternance": "Work-Study Resume",
       "cvDeveloppeur": "Developer Resume",
       "cvMinimaliste": "Minimalist Resume",
+      "modeleCvGratuit": "Free CV Template",
       "legal": "Legal",
       "cgv": "Terms of Sale",
       "mentions": "Legal Notice",
@@ -140,6 +141,12 @@
       "meta": {
         "title": "Free Minimalist Resume PDF 2026 — Modern, Simple, Design CV Templates",
         "description": "Download a free minimalist resume template in PDF. Modern, simple and design CV templates. Create your resume online, instant PDF export."
+      }
+    },
+    "modeleCvGratuitPage": {
+      "meta": {
+        "title": "Free Resume Template 2026 — Download Modern, Minimalist, ATS CV Template",
+        "description": "Download a free resume template in PDF. Choose from modern, minimalist, ATS-friendly CV templates. Create and download your free resume online in 5 minutes."
       }
     }
   },
