@@ -103,10 +103,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   <Sparkles className="w-4 h-4" />
                   {t('badge')}
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1A17] mb-6 leading-tight">
-                  Créer son <span className="text-[#722F37]">{t('hero.titleAccent')}</span> en ligne
-                  <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">{t('hero.subtitle')}</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1A17] mb-2 leading-tight">
+                  Créer un <span className="text-[#722F37]">{t('hero.titleAccent')}</span> en Ligne Gratuitement
                 </h1>
+                <p className="text-2xl md:text-3xl font-semibold text-[#6B6560] mb-6">
+                  {t('hero.subtitle')}
+                </p>
                 <p className="text-lg text-[#6B6560] mb-8 max-w-xl">
                   {t('hero.description')}
                 </p>
