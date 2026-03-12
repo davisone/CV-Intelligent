@@ -91,6 +91,9 @@
       "createFree": "Create a free resume",
       "contact": "Contact",
       "review": "Leave a review",
+      "cvAlternance": "Work-Study Resume",
+      "cvDeveloppeur": "Developer Resume",
+      "cvMinimaliste": "Minimalist Resume",
       "legal": "Legal",
       "cgv": "Terms of Sale",
       "mentions": "Legal Notice",
@@ -119,6 +122,24 @@
       "meta": {
         "title": "Generate your Resume as PDF for Free — Download PDF Resume Online",
         "description": "Create and download your resume as PDF for free. Online PDF resume generator: perfect formatting, professional format, instant download."
+      }
+    },
+    "cvAlternancePage": {
+      "meta": {
+        "title": "Free Work-Study Resume Template 2026 — Internship, IT",
+        "description": "Create your free work-study resume online. Templates for work-study, internship, IT apprenticeship. AI-powered resume builder, PDF export."
+      }
+    },
+    "cvDeveloppeurPage": {
+      "meta": {
+        "title": "Free Developer Resume 2026 — Junior Dev, Web, IT Resume Examples",
+        "description": "Create your free developer resume: junior developer example, web developer CV, IT developer template. ATS-optimized tech resume, PDF export."
+      }
+    },
+    "cvMinimalistePage": {
+      "meta": {
+        "title": "Free Minimalist Resume PDF 2026 — Modern, Simple, Design CV Templates",
+        "description": "Download a free minimalist resume template in PDF. Modern, simple and design CV templates. Create your resume online, instant PDF export."
       }
     }
   },

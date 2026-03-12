@@ -50,6 +50,21 @@ export function Footer() {
               <Link href="/contact" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
                 {t('contact')}
               </Link>
+              <Link href="/cv-etudiant" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('cvEtudiant')}
+              </Link>
+              <Link href="/cv-alternance" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('cvAlternance')}
+              </Link>
+              <Link href="/cv-developpeur" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('cvDeveloppeur')}
+              </Link>
+              <Link href="/cv-minimaliste" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('cvMinimaliste')}
+              </Link>
+              <Link href="/cv-pdf" className="text-[#6B6560] hover:text-[#722F37] transition-colors">
+                {t('cvPdf')}
+              </Link>
               <a
                 href="https://g.page/r/CcSyetXUJJrpEAE/review"
                 target="_blank"

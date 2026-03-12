@@ -91,6 +91,11 @@
       "createFree": "Créer un CV gratuit",
       "contact": "Contact",
       "review": "Donner votre avis",
+      "cvEtudiant": "CV Étudiant",
+      "cvPdf": "CV PDF",
+      "cvAlternance": "CV Alternance",
+      "cvDeveloppeur": "CV Développeur",
+      "cvMinimaliste": "CV Minimaliste",
       "legal": "Légal",
       "cgv": "CGV",
       "mentions": "Mentions légales",
@@ -119,6 +124,24 @@
       "meta": {
         "title": "Générer son CV en PDF Gratuit — Télécharger CV PDF en Ligne",
         "description": "Créez et téléchargez votre CV en PDF gratuitement. Générateur de CV PDF en ligne : mise en page parfaite, format professionnel, téléchargement instantané."
+      }
+    },
+    "cvAlternancePage": {
+      "meta": {
+        "title": "Modèle CV Alternance Étudiant Gratuit 2026 — Stage, Informatique",
+        "description": "Créez votre CV d'alternance gratuit en ligne. Modèles CV alternance étudiant, CV stage, CV alternance informatique. Générateur de CV pour l'alternance avec IA, export PDF."
+      }
+    },
+    "cvDeveloppeurPage": {
+      "meta": {
+        "title": "CV Développeur Gratuit 2026 — Exemple CV Dev Junior, Web, Informatique",
+        "description": "Créez votre CV développeur gratuit : exemple CV développeur junior, CV développeur web, CV développeur informatique. Template CV tech optimisé ATS, export PDF."
+      }
+    },
+    "cvMinimalistePage": {
+      "meta": {
+        "title": "CV Minimaliste Gratuit PDF 2026 — Template CV Moderne, Simple, Design",
+        "description": "Téléchargez un modèle CV minimaliste gratuit en PDF. Templates CV modernes, simples et design : CV minimaliste, CV moderne gratuit, CV simple étudiant. Créez votre CV en ligne, export PDF instantané."
       }
     }
   },
