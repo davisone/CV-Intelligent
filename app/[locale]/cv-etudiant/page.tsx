@@ -318,7 +318,7 @@ export default function CvEtudiantPage() {
                 Commencer gratuitement
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <p className="mt-4 text-sm text-white/60">
+              <p className="mt-4 text-sm text-white/80">
                 Gratuit • Sans carte bancaire • Export PDF
               </p>
             </div>

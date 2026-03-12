@@ -312,7 +312,7 @@ export default function CvPdfPage() {
                 Créer mon CV gratuit
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <p className="mt-4 text-sm text-white/60">
+              <p className="mt-4 text-sm text-white/80">
                 Gratuit • Sans carte bancaire • PDF haute qualité
               </p>
             </div>

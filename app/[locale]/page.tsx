@@ -134,7 +134,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {/* Stats Card */}
             <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] flex flex-col justify-between shadow-lg">
               <div>
-                <h3 className="text-sm font-medium text-[#6B6560] mb-6">{t('stats.why')}</h3>
+                <p className="text-sm font-medium text-[#6B6560] mb-6">{t('stats.why')}</p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#722F37]/10 rounded-xl flex items-center justify-center">
