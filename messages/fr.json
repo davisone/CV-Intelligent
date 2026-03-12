@@ -27,8 +27,8 @@
   },
   "landing": {
     "meta": {
-      "title": "CV Gratuit en Ligne | Créer son CV avec IA - Générateur de CV Français",
-      "description": "Créez votre CV gratuit en ligne en français avec l'intelligence artificielle. Création de CV rapide et facile : modèles professionnels, optimisation ATS, export PDF. Faire son CV en 5 minutes."
+      "title": "Créer un CV Gratuit en Ligne | Générateur de CV avec IA — CV Builder",
+      "description": "Créez votre CV gratuitement en ligne en 5 minutes. Générateur de CV gratuit avec IA : modèles professionnels, modernes, minimalistes. Optimisation ATS, export PDF. CV étudiant, CV professionnel, CV design."
     },
     "badge": "Propulsé par l'IA",
     "hero": {
@@ -99,14 +99,26 @@
     },
     "templatesPage": {
       "meta": {
-        "title": "Modèles de CV Gratuits | Templates CV Professionnels",
-        "description": "Découvrez nos modèles de CV gratuits et professionnels : Modern, Classic, ATS-Friendly, Minimal et Creative. Choisissez le design parfait pour créer votre CV en ligne."
+        "title": "Modèles de CV Gratuits 2026 — Templates CV Modernes, Simples, ATS",
+        "description": "50+ modèles de CV gratuits : CV moderne, CV simple, CV minimaliste, CV design, CV ATS-friendly. Téléchargez votre template CV en PDF. CV étudiant, CV professionnel, CV créatif."
       }
     },
     "guidePage": {
       "meta": {
-        "title": "Comment Faire un CV en 2026 | Guide Complet pour Créer son CV",
-        "description": "Comment faire un CV ? Guide complet et gratuit pour créer son CV professionnel : structure, conseils, exemples de CV et modèles. Apprenez à rédiger un CV qui décroche des entretiens."
+        "title": "Comment Faire un CV en 2026 — Guide Complet + Exemples Gratuits",
+        "description": "Comment faire un CV professionnel, étudiant, ou sans expérience ? Guide complet 2026 : structure, conseils, exemples de CV modernes. Créez votre CV gratuit en ligne en 5 minutes."
+      }
+    },
+    "cvEtudiantPage": {
+      "meta": {
+        "title": "CV Étudiant Gratuit 2026 — Modèle CV Étudiant, Stage, Alternance",
+        "description": "Créez votre CV étudiant gratuit en ligne. Modèles CV pour stage, alternance, premier emploi, sans expérience. Générateur de CV étudiant avec IA, export PDF."
+      }
+    },
+    "cvPdfPage": {
+      "meta": {
+        "title": "Générer son CV en PDF Gratuit — Télécharger CV PDF en Ligne",
+        "description": "Créez et téléchargez votre CV en PDF gratuitement. Générateur de CV PDF en ligne : mise en page parfaite, format professionnel, téléchargement instantané."
       }
     }
   },

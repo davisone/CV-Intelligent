@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { Footer } from '@/components/layout/footer'
 import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd, LocalBusinessJsonLd, PersonJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld'
-import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check, MapPin } from 'lucide-react'
+import { Sparkles, BarChart3, Palette, FileText, Zap, Shield, ArrowRight, Check, MapPin, GraduationCap, Briefcase, Trophy, Code2 } from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -251,6 +251,90 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <StepItem number={4} label={t('features.howItWorks.step4')} />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Section Profils */}
+        <section className="container mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1F1A17] mb-4">
+              Un générateur de CV pour chaque profil
+            </h2>
+            <p className="text-[#6B6560] max-w-xl mx-auto">
+              Étudiant, en reconversion, développeur ou cadre — notre IA s&apos;adapte à votre parcours
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            {/* Carte 1 - CV Étudiant */}
+            <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
+              <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
+                <GraduationCap className="w-6 h-6 text-[#722F37]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Étudiant & Sans Expérience</h3>
+              <p className="text-sm text-[#6B6560] mb-4">
+                CV stage, CV alternance, CV premier emploi — l&apos;IA valorise votre formation et vos projets.
+              </p>
+              <Link
+                href="/cv-etudiant"
+                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
+              >
+                En savoir plus <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
+            {/* Carte 2 - CV Alternance/Stage */}
+            <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
+              <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
+                <Briefcase className="w-6 h-6 text-[#722F37]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Alternance & Stage</h3>
+              <p className="text-sm text-[#6B6560] mb-4">
+                Valorisez votre double profil étudiant-professionnel et convainquez les entreprises d&apos;accueil.
+              </p>
+              <Link
+                href="/signup"
+                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
+              >
+                Créer mon CV <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
+            {/* Carte 3 - CV Professionnel/Cadre */}
+            <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
+              <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
+                <Trophy className="w-6 h-6 text-[#722F37]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Professionnel & Cadre</h3>
+              <p className="text-sm text-[#6B6560] mb-4">
+                CV cadre, CV manager, CV reconversion — mettez en avant vos réalisations et compétences clés.
+              </p>
+              <Link
+                href="/signup"
+                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
+              >
+                Créer mon CV <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
+            {/* Carte 4 - CV Développeur/IT */}
+            <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
+              <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
+                <Code2 className="w-6 h-6 text-[#722F37]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Développeur & IT</h3>
+              <p className="text-sm text-[#6B6560] mb-4">
+                CV développeur, CV ingénieur, CV data — optimisé pour les postes tech avec stack, projets GitHub.
+              </p>
+              <Link
+                href="/signup"
+                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
+              >
+                Créer mon CV <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
           </div>
         </section>
 

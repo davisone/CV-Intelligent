@@ -128,6 +128,93 @@ export default function PublicTemplatesPage() {
             ))}
           </div>
 
+          {/* Section descriptions SEO des templates */}
+          <div className="mt-16 max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#1F1A17] mb-8 text-center">
+              Nos modèles de CV gratuits en détail
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
+                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Modern</h3>
+                <p className="text-sm text-[#6B6560]">
+                  Le template Modern est notre modèle de CV le plus populaire. Design épuré avec accent coloré,
+                  idéal pour la plupart des secteurs : marketing, tech, communication, commerce. Gratuit et optimisé ATS.
+                </p>
+              </div>
+              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
+                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Classic</h3>
+                <p className="text-sm text-[#6B6560]">
+                  Le template Classic adopte un format traditionnel sobre et professionnel. Parfait pour les secteurs
+                  conservateurs : banque, droit, finance, administration. Structure claire et lecture facile.
+                </p>
+              </div>
+              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
+                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV ATS-Friendly</h3>
+                <p className="text-sm text-[#6B6560]">
+                  Ce modèle de CV est conçu pour passer les filtres ATS des grandes entreprises. 100% compatible
+                  avec les logiciels de tri automatique, sans colonnes ni éléments graphiques complexes.
+                </p>
+              </div>
+              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
+                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Minimal</h3>
+                <p className="text-sm text-[#6B6560]">
+                  Le template Minimal mise sur la simplicité et l&apos;élégance. Beaucoup d&apos;espace blanc, focus sur le
+                  contenu. Idéal pour les profils qui veulent un CV sobre et moderne, tous secteurs.
+                </p>
+              </div>
+              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
+                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Creative</h3>
+                <p className="text-sm text-[#6B6560]">
+                  Le template Creative se démarque avec une sidebar colorée et une photo de profil. Parfait pour
+                  les graphistes, designers, UX/UI, photographes et profils créatifs en général.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#F3EDE5] rounded-3xl border border-[#E0D6C8] p-8 mb-8">
+              <h2 className="text-2xl font-bold text-[#1F1A17] mb-6">Comment choisir son modèle de CV ?</h2>
+              <div className="grid md:grid-cols-2 gap-4 text-sm text-[#6B6560]">
+                <div>
+                  <p className="font-semibold text-[#1F1A17] mb-1">Pour un secteur traditionnel (banque, droit, finance)</p>
+                  <p>→ Choisissez Classic ou ATS-Friendly pour une présentation sobre et professionnelle.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1F1A17] mb-1">Pour la tech et le numérique</p>
+                  <p>→ Modern ou Minimal conviennent parfaitement, avec une mise en page claire et moderne.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1F1A17] mb-1">Pour les métiers créatifs (design, art, communication)</p>
+                  <p>→ Creative vous permet de montrer votre sens du design dès le premier regard.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1F1A17] mb-1">Pour les grandes entreprises et les ATS</p>
+                  <p>→ ATS-Friendly garantit que votre CV sera bien parsé par les logiciels de recrutement.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1F1A17] mb-1">Pour un CV étudiant ou premier emploi</p>
+                  <p>→ Modern ou Minimal sont idéaux : professionnels sans être trop austères.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1F1A17] mb-1">Pour un CV cadre ou manager</p>
+                  <p>→ Classic ou Modern avec un contenu riche en réalisations chiffrées.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-8 text-[#6B6560]">
+              <p className="mb-3">
+                Tous nos <strong className="text-[#1F1A17]">modèles de CV gratuits</strong> sont disponibles
+                en ligne et téléchargeables en PDF. Chaque <strong className="text-[#1F1A17]">template CV professionnel</strong> est
+                optimisé pour les ATS, responsive et adapté à tous les secteurs.
+              </p>
+              <p>
+                Que vous cherchiez un <strong className="text-[#1F1A17]">CV étudiant</strong>,
+                un <strong className="text-[#1F1A17]">CV professionnel</strong> ou un <strong className="text-[#1F1A17]">CV créatif</strong>,
+                notre générateur de CV gratuit avec IA vous aide à créer le CV parfait en moins de 5 minutes.
+              </p>
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div className="mt-16">
             <div className="bg-gradient-to-r from-[#722F37] to-[#5A252C] rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto relative overflow-hidden shadow-xl">

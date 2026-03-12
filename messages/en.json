@@ -27,8 +27,8 @@
   },
   "landing": {
     "meta": {
-      "title": "Free Online Resume Builder | Create Your CV with AI",
-      "description": "Create your free resume online with artificial intelligence. Fast and easy CV creation: professional templates, ATS optimization, PDF export. Build your resume in 5 minutes."
+      "title": "Create a Free Resume Online | AI-Powered Resume Builder — CV Builder",
+      "description": "Create your resume for free online in 5 minutes. Free AI resume builder: professional, modern, minimalist templates. ATS optimization, PDF export. Student resume, professional CV, creative resume."
     },
     "badge": "Powered by AI",
     "hero": {
@@ -99,14 +99,26 @@
     },
     "templatesPage": {
       "meta": {
-        "title": "Free Resume Templates | Professional CV Templates Online",
-        "description": "Discover our free professional resume templates: Modern, Classic, ATS-Friendly, Minimal and Creative. Choose the perfect design to create your resume online."
+        "title": "Free Resume Templates 2026 — Modern, Simple, ATS-Friendly CV Templates",
+        "description": "50+ free resume templates: modern CV, simple resume, minimalist CV, design resume, ATS-friendly. Download your resume template in PDF. Student resume, professional CV, creative resume."
       }
     },
     "guidePage": {
       "meta": {
-        "title": "How to Write a Resume in 2026 | Complete Guide",
-        "description": "How to write a resume? A complete and free guide to creating a professional resume: structure, tips, examples and templates. Learn how to write a resume that lands interviews."
+        "title": "How to Write a Resume in 2026 — Complete Guide + Free Examples",
+        "description": "How to write a professional, student, or entry-level resume? Complete 2026 guide: structure, tips, modern resume examples. Create your free resume online in 5 minutes."
+      }
+    },
+    "cvEtudiantPage": {
+      "meta": {
+        "title": "Free Student Resume 2026 — Student CV Template, Internship, Work-Study",
+        "description": "Create your free student resume online. Resume templates for internships, work-study programs, first jobs, no experience. AI student resume builder, PDF export."
+      }
+    },
+    "cvPdfPage": {
+      "meta": {
+        "title": "Generate your Resume as PDF for Free — Download PDF Resume Online",
+        "description": "Create and download your resume as PDF for free. Online PDF resume generator: perfect formatting, professional format, instant download."
       }
     }
   },
