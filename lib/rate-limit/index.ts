@@ -22,6 +22,13 @@ function msToWindow(windowMs: number): `${number} ${'ms' | 's' | 'm' | 'h' | 'd'
 let redis: Redis | null = null
 const rateLimiters = new Map<string, Ratelimit>()
 
+// Fallback in-memory pour les environnements sans Redis (tests, dev local)
+interface MemoryEntry {
+  count: number
+  resetAt: number
+}
+const memoryStore = new Map<string, MemoryEntry>()
+
 function getRedis(): Redis | null {
   if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
     return null
@@ -55,10 +62,23 @@ export async function checkRateLimit(
 ): Promise<RateLimitResult> {
   const limiter = getRateLimiter(config.maxRequests, config.windowMs)
 
-  // Fallback en mémoire si Redis non configuré
+  // Fallback in-memory si Redis non configuré
   if (!limiter) {
-    console.warn('[RATE_LIMIT] Upstash non configuré, rate limiting désactivé')
-    return { success: true, remaining: config.maxRequests - 1, resetIn: 0 }
+    const now = Date.now()
+    const key = `${identifier}:${config.maxRequests}:${config.windowMs}`
+    const entry = memoryStore.get(key)
+
+    if (!entry || now >= entry.resetAt) {
+      memoryStore.set(key, { count: 1, resetAt: now + config.windowMs })
+      return { success: true, remaining: config.maxRequests - 1, resetIn: Math.ceil(config.windowMs / 1000) }
+    }
+
+    if (entry.count >= config.maxRequests) {
+      return { success: false, remaining: 0, resetIn: Math.ceil((entry.resetAt - now) / 1000) }
+    }
+
+    entry.count++
+    return { success: true, remaining: config.maxRequests - entry.count, resetIn: Math.ceil((entry.resetAt - now) / 1000) }
   }
 
   const { success, remaining, reset } = await limiter.limit(identifier)

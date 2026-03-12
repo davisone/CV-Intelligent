@@ -12,51 +12,51 @@ describe('checkRateLimit', () => {
 
   const config = { maxRequests: 3, windowMs: 60000 }
 
-  it('should allow the first request', () => {
-    const result = checkRateLimit('test-first', config)
+  it('should allow the first request', async () => {
+    const result = await checkRateLimit('test-first', config)
     expect(result.success).toBe(true)
     expect(result.remaining).toBe(2)
   })
 
-  it('should decrement remaining on successive calls', () => {
+  it('should decrement remaining on successive calls', async () => {
     const id = 'test-decrement'
-    checkRateLimit(id, config)
-    const result = checkRateLimit(id, config)
+    await checkRateLimit(id, config)
+    const result = await checkRateLimit(id, config)
     expect(result.success).toBe(true)
     expect(result.remaining).toBe(1)
   })
 
-  it('should block when limit is exceeded', () => {
+  it('should block when limit is exceeded', async () => {
     const id = 'test-exceed'
-    checkRateLimit(id, config)
-    checkRateLimit(id, config)
-    checkRateLimit(id, config)
-    const result = checkRateLimit(id, config)
+    await checkRateLimit(id, config)
+    await checkRateLimit(id, config)
+    await checkRateLimit(id, config)
+    const result = await checkRateLimit(id, config)
     expect(result.success).toBe(false)
     expect(result.remaining).toBe(0)
   })
 
-  it('should reset after window expires', () => {
+  it('should reset after window expires', async () => {
     const id = 'test-reset'
-    checkRateLimit(id, config)
-    checkRateLimit(id, config)
-    checkRateLimit(id, config)
+    await checkRateLimit(id, config)
+    await checkRateLimit(id, config)
+    await checkRateLimit(id, config)
 
     // Advance past the window
     vi.advanceTimersByTime(60001)
 
-    const result = checkRateLimit(id, config)
+    const result = await checkRateLimit(id, config)
     expect(result.success).toBe(true)
     expect(result.remaining).toBe(2)
   })
 
-  it('should track identifiers independently', () => {
-    checkRateLimit('user-a', config)
-    checkRateLimit('user-a', config)
-    checkRateLimit('user-a', config)
+  it('should track identifiers independently', async () => {
+    await checkRateLimit('user-a', config)
+    await checkRateLimit('user-a', config)
+    await checkRateLimit('user-a', config)
 
-    const resultA = checkRateLimit('user-a', config)
-    const resultB = checkRateLimit('user-b', config)
+    const resultA = await checkRateLimit('user-a', config)
+    const resultB = await checkRateLimit('user-b', config)
 
     expect(resultA.success).toBe(false)
     expect(resultB.success).toBe(true)
