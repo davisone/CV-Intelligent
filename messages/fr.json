@@ -101,7 +101,15 @@
       "cgv": "CGV",
       "mentions": "Mentions légales",
       "privacy": "Confidentialité",
-      "copyright": "© {year} CV Builder — Propulsé par DVS-Web. Tous droits réservés."
+      "copyright": "© {year} CV Builder — Propulsé par DVS-Web. Tous droits réservés.",
+      "modeleCvStage": "Modèle CV Stage",
+      "cvPremierEmploi": "CV Premier Emploi",
+      "cvSimple": "CV Simple",
+      "cvDesign": "CV Design",
+      "cvModerne": "CV Moderne",
+      "cvSansExperience": "CV Sans Expérience",
+      "cvDeveloppeurJunior": "CV Développeur Junior",
+      "modeleCvAlternance": "Modèle CV Alternance"
     },
     "templatesPage": {
       "meta": {
@@ -149,6 +157,54 @@
       "meta": {
         "title": "Modèle CV Gratuit 2026 — Télécharger Template CV Moderne, Minimaliste, ATS",
         "description": "Téléchargez un modèle CV gratuit en PDF. Choisissez parmi nos templates CV modernes, minimalistes, ATS-friendly. Créez et téléchargez votre CV gratuit en ligne en 5 minutes."
+      }
+    },
+    "modeleCvStagePage": {
+      "meta": {
+        "title": "Modèle CV Stage Étudiant Gratuit 2026 — Template CV Stage PDF",
+        "description": "Créez votre CV de stage étudiant gratuit en ligne. Modèles CV stage modernes, compatibles ATS, export PDF. Notre IA vous aide à décrocher votre stage."
+      }
+    },
+    "cvPremierEmploiPage": {
+      "meta": {
+        "title": "CV Premier Emploi Gratuit 2026 — Modèle CV Débutant, Jeune Diplômé",
+        "description": "Créez votre CV de premier emploi gratuit. Modèles CV pour jeunes diplômés et débutants, optimisés ATS, export PDF. Décrochez votre premier CDI en 5 minutes."
+      }
+    },
+    "cvSimplePage": {
+      "meta": {
+        "title": "CV Simple Gratuit 2026 — Télécharger Template CV Simple PDF",
+        "description": "Créez et téléchargez un CV simple gratuit en PDF. Modèles CV simples, épurés, ATS-friendly. Design sobre et professionnel pour tous secteurs."
+      }
+    },
+    "cvDesignPage": {
+      "meta": {
+        "title": "CV Design Gratuit 2026 — Template CV Créatif & Moderne en PDF",
+        "description": "Créez votre CV design gratuit en ligne. Templates CV créatifs et modernes, export PDF, compatibles ATS. Démarquez-vous avec un CV au design soigné."
+      }
+    },
+    "cvModernePage": {
+      "meta": {
+        "title": "CV Moderne Gratuit 2026 — Template CV Moderne PDF à Télécharger",
+        "description": "Téléchargez un CV moderne gratuit en PDF. Choisissez parmi nos templates CV modernes 2026, optimisés ATS. Créez votre CV moderne en 5 minutes."
+      }
+    },
+    "cvSansExperiencePage": {
+      "meta": {
+        "title": "CV Sans Expérience Gratuit 2026 — Modèle CV Étudiant Sans Expérience",
+        "description": "Créez votre CV sans expérience gratuit. Modèles CV pour étudiants et débutants sans expérience. Notre IA valorise votre formation, projets et compétences."
+      }
+    },
+    "cvDeveloppeurJuniorPage": {
+      "meta": {
+        "title": "CV Développeur Junior Gratuit 2026 — Exemple CV Dev Web Junior",
+        "description": "Créez votre CV de développeur junior gratuit. Templates CV dev web, frontend, backend, full stack. Optimisé ATS pour les recruteurs tech."
+      }
+    },
+    "modeleCvAlternancePage": {
+      "meta": {
+        "title": "Modèle CV Alternance Gratuit 2026 — Template CV Alternance Étudiant PDF",
+        "description": "Téléchargez un modèle CV alternance gratuit en PDF. Templates CV alternance pour étudiants, optimisés ATS. Créez votre CV d'alternance en 5 minutes."
       }
     }
   },

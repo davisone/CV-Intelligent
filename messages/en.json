@@ -99,7 +99,15 @@
       "cgv": "Terms of Sale",
       "mentions": "Legal Notice",
       "privacy": "Privacy Policy",
-      "copyright": "© {year} CV Builder — Powered by DVS-Web. All rights reserved."
+      "copyright": "© {year} CV Builder — Powered by DVS-Web. All rights reserved.",
+      "modeleCvStage": "CV Stage Template",
+      "cvPremierEmploi": "First Job CV",
+      "cvSimple": "Simple CV",
+      "cvDesign": "Design CV",
+      "cvModerne": "Modern CV",
+      "cvSansExperience": "CV No Experience",
+      "cvDeveloppeurJunior": "Junior Developer CV",
+      "modeleCvAlternance": "Apprenticeship CV"
     },
     "templatesPage": {
       "meta": {
@@ -147,6 +155,54 @@
       "meta": {
         "title": "Free Resume Template 2026 — Download Modern, Minimalist, ATS CV Template",
         "description": "Download a free resume template in PDF. Choose from modern, minimalist, ATS-friendly CV templates. Create and download your free resume online in 5 minutes."
+      }
+    },
+    "modeleCvStagePage": {
+      "meta": {
+        "title": "Free Internship Resume Template 2026 — Student CV Template PDF",
+        "description": "Create your free internship resume online. Modern CV templates for internship applications, ATS-friendly, PDF export. Get your internship with AI-powered resume builder."
+      }
+    },
+    "cvPremierEmploiPage": {
+      "meta": {
+        "title": "Free First Job Resume 2026 — Entry Level CV Template",
+        "description": "Create your free first job resume. Entry level CV templates for graduates and beginners, ATS-optimized, PDF export. Land your first job in 5 minutes."
+      }
+    },
+    "cvSimplePage": {
+      "meta": {
+        "title": "Simple Resume Template Free 2026 — Download Clean CV PDF",
+        "description": "Create and download a simple resume for free. Clean, minimal CV templates, ATS-friendly. Professional and straightforward for any industry."
+      }
+    },
+    "cvDesignPage": {
+      "meta": {
+        "title": "Creative Resume Template Free 2026 — Modern CV Design PDF",
+        "description": "Create your creative resume design for free. Modern and aesthetic CV templates, PDF export, ATS-compatible. Stand out with a professionally designed resume."
+      }
+    },
+    "cvModernePage": {
+      "meta": {
+        "title": "Modern Resume Template Free 2026 — Download Modern CV PDF",
+        "description": "Download a modern resume template for free. Choose from our 2026 CV templates, ATS-optimized. Create your modern resume in 5 minutes."
+      }
+    },
+    "cvSansExperiencePage": {
+      "meta": {
+        "title": "Resume Without Experience Free 2026 — Student CV No Experience",
+        "description": "Create a free resume with no experience. CV templates for students and beginners. Our AI highlights your education, projects, and skills."
+      }
+    },
+    "cvDeveloppeurJuniorPage": {
+      "meta": {
+        "title": "Junior Developer Resume Free 2026 — Web Developer CV Template",
+        "description": "Create your junior developer resume for free. Templates for frontend, backend, full stack developers. ATS-optimized for tech recruiters."
+      }
+    },
+    "modeleCvAlternancePage": {
+      "meta": {
+        "title": "Apprenticeship Resume Template Free 2026 — Work-Study CV PDF",
+        "description": "Download a free apprenticeship resume template. CV templates for work-study programs, ATS-compatible, PDF export. Create your apprenticeship CV in 5 minutes."
       }
     }
   },
