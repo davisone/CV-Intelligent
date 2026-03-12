@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, FileText, Sparkles } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/json-ld'
 import { Footer } from '@/components/layout/footer'
+import { LocaleSwitcher } from '@/components/ui/locale-switcher'
 
 export interface SeoLandingConfig {
   // Breadcrumb + canonical
@@ -74,6 +75,7 @@ export function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-[#722F37]">CV Builder</Link>
           <nav className="flex items-center gap-4">
+            <LocaleSwitcher />
             <Link href="/login" className="text-sm font-medium text-[#1F1A17] hover:text-[#722F37] transition-colors">
               Connexion
             </Link>
