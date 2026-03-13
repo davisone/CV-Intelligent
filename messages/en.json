@@ -491,6 +491,114 @@
         "ctaText": "Create my internship resume"
       }
     },
+    "exempleCvPage": {
+      "meta": {
+        "title": "Free Resume Examples 2026 — Professional Resume Samples to Download",
+        "description": "Browse our free resume examples: professional, student, developer, sales. Create your resume online based on real-world examples."
+      },
+      "breadcrumbName": "Resume Examples",
+      "hero": {
+        "badgeText": "Professional resume examples",
+        "h1Before": "Free ",
+        "h1Accent": "Resume Examples",
+        "h1After": " to Download",
+        "subtitle": "Get inspired by real professional resumes to build your own",
+        "description": "Explore resume examples for all profiles and industries: executive, developer, sales, student. Create your resume based on these examples in 5 minutes.",
+        "primaryCtaText": "Create my resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Examples for every profile",
+        "subtitle": "Find the resume example that matches your situation and adapt it to your background.",
+        "item0": { "title": "All industries", "description": "Resume examples for IT, finance, sales, healthcare, engineering and more." },
+        "item1": { "title": "All experience levels", "description": "From student resume to senior executive, including career changers." },
+        "item2": { "title": "ATS optimized", "description": "All our examples follow ATS best practices to maximize your callback rate." }
+      },
+      "section2": {
+        "title": "Resume examples by profile",
+        "subtitle": "Select the example closest to your background.",
+        "item0": { "title": "Executive Resume Example", "keyword": "executive resume example free", "description": "Resume template for managers and executives highlighting responsibilities and achievements." },
+        "item1": { "title": "Developer Resume Example", "keyword": "developer resume example free", "description": "Resume with tech stack, GitHub projects, and open source contributions." },
+        "item2": { "title": "Student Resume Example", "keyword": "student resume example free", "description": "Entry-level resume: education, internships, skills, and academic projects." },
+        "item3": { "title": "Sales Resume Example", "keyword": "sales resume example free", "description": "Results-driven resume with revenue, targets met, and client portfolio." }
+      },
+      "section3": {
+        "title": "5 tips for using these examples",
+        "tip0": "Don't copy the example as-is — adapt every sentence to your real background",
+        "tip1": "Keep the general structure but personalize the content for your industry",
+        "tip2": "Quantify your achievements like the examples: numbers, percentages, volumes",
+        "tip3": "Use the industry keywords you see in the examples",
+        "tip4": "Adjust the length: 1 page for under 10 years of experience, 2 pages beyond"
+      },
+      "faq": {
+        "title": "Questions about resume examples",
+        "subtitle": "Everything you need to use our examples effectively",
+        "q0": { "question": "Can I copy a resume example?", "answer": "You can use the structure and style as inspiration, but the content must be yours. Our resume builder helps you create an original resume based on these examples in minutes." },
+        "q1": { "question": "How do I choose the right resume example?", "answer": "Pick the example closest to your industry and experience level. Look at the structure, how achievements are presented, and adapt it." },
+        "q2": { "question": "Are the examples ATS-compatible?", "answer": "Yes, all our resume examples follow ATS best practices. Our templates ensure your resume is correctly parsed by recruitment software." },
+        "q3": { "question": "Can I download the examples as PDF?", "answer": "Yes, create your resume based on these examples with our builder and download it as PDF instantly and for free." },
+        "q4": { "question": "Are there examples for career changers?", "answer": "Yes, we have examples for career transitions highlighting transferable skills and motivation for switching industries." }
+      },
+      "finalCta": {
+        "title": "Create your resume now",
+        "description": "Based on professional examples. Free, AI-powered, instant PDF export.",
+        "ctaText": "Create my resume"
+      }
+    },
+    "commentFaireUnCvPage": {
+      "meta": {
+        "title": "How to Write a Resume in 2026 — Complete Guide to Creating a Free Resume",
+        "description": "How to write a professional resume in 2026? Complete guide: structure, content, layout. Create your resume for free with our online builder."
+      },
+      "breadcrumbName": "How to Write a Resume",
+      "hero": {
+        "badgeText": "Complete guide 2026",
+        "h1Before": "How to Write a ",
+        "h1Accent": "Professional Resume",
+        "h1After": " in 2026",
+        "subtitle": "Step-by-step guide to creating a resume that lands interviews",
+        "description": "Learn how to write a professional resume in 2026: structure, content, layout, ATS tips. Create your resume for free with our AI-powered builder.",
+        "primaryCtaText": "Create my resume for free",
+        "secondaryCtaText": "See examples"
+      },
+      "section1": {
+        "title": "The basics of a great resume",
+        "subtitle": "An effective resume in 2026 follows specific rules. Here are the fundamentals.",
+        "item0": { "title": "Clear structure", "description": "Header, experience, education, skills — in the right order. Our builder automatically structures your resume." },
+        "item1": { "title": "Impactful content", "description": "Quantified achievements rather than generic responsibilities. Our AI helps you phrase each experience." },
+        "item2": { "title": "ATS compatible", "description": "A well-structured resume passes automated screening software and reaches the human recruiter." }
+      },
+      "section2": {
+        "title": "The sections of a great resume",
+        "subtitle": "Each section has its importance and rules.",
+        "item0": { "title": "Header and summary", "keyword": "professional resume summary", "description": "Complete contact info and a compelling summary that describes your profile in 2-3 lines." },
+        "item1": { "title": "Work experience", "keyword": "work experience resume format", "description": "Most recent first, with quantified results for each role." },
+        "item2": { "title": "Education and certifications", "keyword": "education section resume", "description": "Degrees, certifications, and continuing education in reverse chronological order." },
+        "item3": { "title": "Skills and languages", "keyword": "skills section resume", "description": "Technical and soft skills organized by category, with proficiency levels." }
+      },
+      "section3": {
+        "title": "5 mistakes to avoid on your resume",
+        "tip0": "Don't include a photo unless explicitly required — focus on the content",
+        "tip1": "Avoid generic phrases ('team player', 'detail-oriented') without concrete examples",
+        "tip2": "Don't exceed 2 pages — 1 page for under 10 years of experience",
+        "tip3": "Proofread carefully for spelling errors — use our built-in spell checker",
+        "tip4": "Don't send the same resume to every job — tailor it to each posting"
+      },
+      "faq": {
+        "title": "Questions about writing a resume",
+        "subtitle": "Everything you need to know to write an effective resume in 2026",
+        "q0": { "question": "What is the ideal resume format in 2026?", "answer": "PDF is the standard format. 1 page for under 10 years of experience, maximum 2 pages. File name: FirstName-LastName-Resume.pdf. Our builder exports your resume as PDF instantly." },
+        "q1": { "question": "Should I include a photo on my resume?", "answer": "In the US and UK, photos are generally not included and can lead to bias. Focus on your skills and experience instead." },
+        "q2": { "question": "How do I write a resume with no experience?", "answer": "Highlight your education, internships, volunteer work, personal projects, and relevant skills. Our AI helps you maximize every element to compensate for limited experience." },
+        "q3": { "question": "What font and size should I use on a resume?", "answer": "Use a readable font (Arial, Calibri, Garamond) at 10-12pt for body text, 14-16pt for your name. Our builder automatically applies the right typography based on your chosen template." },
+        "q4": { "question": "How do I tailor my resume to a job posting?", "answer": "Analyze the job description and include its key terms in your resume. Reorganize your skills according to the role's priorities. Our AI helps you optimize your resume for each application." }
+      },
+      "finalCta": {
+        "title": "Create your resume now",
+        "description": "Guided by AI, free, instant PDF export. Your resume ready in 5 minutes.",
+        "ctaText": "Create my resume for free"
+      }
+    },
     "cvAssistantPage": {
       "meta": {
         "title": "Free Assistant Resume Template 2026 — Administrative, Office Assistant Resume",

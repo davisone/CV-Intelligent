@@ -892,12 +892,108 @@
       "meta": {
         "title": "Exemple de CV Gratuit 2026 — Exemples CV Professionnels à Télécharger",
         "description": "Consultez nos exemples de CV gratuits : CV professionnel, étudiant, développeur, commercial. Créez votre CV en ligne basé sur des exemples concrets."
+      },
+      "breadcrumbName": "Exemples de CV",
+      "hero": {
+        "badgeText": "Exemples CV professionnels",
+        "h1Before": "Exemples de ",
+        "h1Accent": "CV Gratuits",
+        "h1After": " à Télécharger",
+        "subtitle": "Inspirez-vous de vrais exemples de CV professionnels pour créer le vôtre",
+        "description": "Découvrez des exemples de CV pour tous les profils et secteurs : cadre, développeur, commercial, étudiant. Créez votre CV basé sur ces exemples en 5 minutes.",
+        "primaryCtaText": "Créer mon CV",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Des exemples pour chaque profil",
+        "subtitle": "Trouvez l'exemple de CV qui correspond à votre situation et adaptez-le à votre parcours.",
+        "item0": { "title": "Tous secteurs", "description": "Exemples de CV pour l'informatique, la finance, le commerce, la santé, l'ingénierie et bien plus encore." },
+        "item1": { "title": "Tous niveaux", "description": "Du CV étudiant au profil cadre senior, en passant par les reconversions professionnelles." },
+        "item2": { "title": "Optimisé ATS", "description": "Tous nos exemples suivent les bonnes pratiques ATS pour maximiser vos chances d'être rappelé." }
+      },
+      "section2": {
+        "title": "Exemples de CV par profil",
+        "subtitle": "Sélectionnez l'exemple le plus proche de votre profil.",
+        "item0": { "title": "Exemple CV Cadre", "keyword": "exemple cv cadre gratuit", "description": "Modèle de CV pour cadres et managers avec mise en valeur des responsabilités et réalisations." },
+        "item1": { "title": "Exemple CV Développeur", "keyword": "exemple cv développeur gratuit", "description": "CV avec stack technique, projets GitHub et contributions open source." },
+        "item2": { "title": "Exemple CV Étudiant", "keyword": "exemple cv étudiant gratuit", "description": "CV pour primo-demandeurs : formations, stages, compétences et projets académiques." },
+        "item3": { "title": "Exemple CV Commercial", "keyword": "exemple cv commercial gratuit", "description": "CV orienté résultats avec CA, objectifs atteints et portefeuille clients." }
+      },
+      "section3": {
+        "title": "5 conseils pour utiliser ces exemples",
+        "tip0": "Ne copiez pas l'exemple tel quel : adaptez chaque phrase à votre parcours réel",
+        "tip1": "Gardez la structure générale mais personnalisez le contenu à votre secteur",
+        "tip2": "Quantifiez vos réalisations comme dans les exemples : chiffres, pourcentages, volumes",
+        "tip3": "Utilisez les mots-clés de votre secteur que vous voyez dans les exemples",
+        "tip4": "Adaptez la longueur : 1 page pour moins de 10 ans d'expérience, 2 pages au-delà"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur les exemples de CV",
+        "subtitle": "Tout savoir pour bien utiliser nos exemples",
+        "q0": { "question": "Peut-on copier un exemple de CV ?", "answer": "Vous pouvez vous inspirer de la structure et du style, mais le contenu doit être le vôtre. Notre générateur de CV vous aide à créer un CV original basé sur ces exemples en quelques minutes." },
+        "q1": { "question": "Comment choisir le bon exemple de CV ?", "answer": "Choisissez l'exemple le plus proche de votre secteur et niveau d'expérience. Regardez la structure, la façon dont les réalisations sont présentées, et adaptez." },
+        "q2": { "question": "Les exemples sont-ils compatibles ATS ?", "answer": "Oui, tous nos exemples de CV suivent les bonnes pratiques ATS. Nos templates garantissent que votre CV est correctement parsé par les logiciels de recrutement." },
+        "q3": { "question": "Peut-on télécharger les exemples en PDF ?", "answer": "Oui, créez votre CV basé sur ces exemples avec notre générateur et téléchargez-le en PDF instantanément et gratuitement." },
+        "q4": { "question": "Y a-t-il des exemples pour les reconversions ?", "answer": "Oui, nous proposons des exemples pour les reconversions professionnelles avec mise en avant des compétences transférables et de la motivation pour changer de secteur." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV maintenant",
+        "description": "Basé sur des exemples professionnels. Gratuit, avec IA, export PDF instantané.",
+        "ctaText": "Créer mon CV"
       }
     },
     "commentFaireUnCvPage": {
       "meta": {
         "title": "Comment Faire un CV en 2026 — Guide Complet Créer un CV Gratuit",
         "description": "Comment faire un CV professionnel en 2026 ? Guide complet : structure, contenu, mise en page. Créez votre CV gratuitement avec notre générateur en ligne."
+      },
+      "breadcrumbName": "Comment Faire un CV",
+      "hero": {
+        "badgeText": "Guide complet 2026",
+        "h1Before": "Comment Faire un ",
+        "h1Accent": "CV Professionnel",
+        "h1After": " en 2026",
+        "subtitle": "Guide étape par étape pour créer un CV qui décroche des entretiens",
+        "description": "Apprenez à faire un CV professionnel en 2026 : structure, contenu, mise en page, astuces ATS. Créez votre CV gratuitement avec notre générateur IA.",
+        "primaryCtaText": "Créer mon CV gratuitement",
+        "secondaryCtaText": "Voir les exemples"
+      },
+      "section1": {
+        "title": "Les bases d'un bon CV",
+        "subtitle": "Un CV efficace en 2026 respecte des règles précises. Voici les fondamentaux.",
+        "item0": { "title": "Structure claire", "description": "En-tête, expériences, formations, compétences — dans le bon ordre. Notre générateur structure automatiquement votre CV." },
+        "item1": { "title": "Contenu percutant", "description": "Des réalisations chiffrées plutôt que des responsabilités génériques. Notre IA vous aide à formuler chaque expérience." },
+        "item2": { "title": "Compatible ATS", "description": "Un CV bien structuré passe les logiciels de tri automatique et atteint le recruteur humain." }
+      },
+      "section2": {
+        "title": "Les sections d'un bon CV",
+        "subtitle": "Chaque section a son importance et ses règles.",
+        "item0": { "title": "En-tête et accroche", "keyword": "accroche cv professionnelle", "description": "Coordonnées complètes et accroche percutante qui résume votre profil en 2-3 lignes." },
+        "item1": { "title": "Expériences professionnelles", "keyword": "présenter expériences cv", "description": "De la plus récente à la plus ancienne, avec des résultats chiffrés pour chaque poste." },
+        "item2": { "title": "Formation et diplômes", "keyword": "formation cv exemple", "description": "Diplômes, certifications et formations continues dans l'ordre chronologique inverse." },
+        "item3": { "title": "Compétences et langues", "keyword": "compétences cv", "description": "Compétences techniques et soft skills organisés par catégories, avec niveau de maîtrise." }
+      },
+      "section3": {
+        "title": "5 erreurs à éviter dans un CV",
+        "tip0": "Ne pas mettre de photo sauf si elle est demandée explicitement — focus sur le contenu",
+        "tip1": "Éviter les phrases génériques ('rigoureux', 'dynamique') sans exemples concrets",
+        "tip2": "Ne pas dépasser 2 pages — 1 page pour moins de 10 ans d'expérience",
+        "tip3": "Éviter les fautes d'orthographe — utilisez notre correcteur intégré",
+        "tip4": "Ne pas envoyer le même CV pour tous les postes — adaptez-le à chaque offre"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur la création d'un CV",
+        "subtitle": "Tout savoir pour faire un CV efficace en 2026",
+        "q0": { "question": "Quel est le format idéal pour un CV en 2026 ?", "answer": "PDF est le format standard. 1 page pour moins de 10 ans d'expérience, 2 pages au maximum. Titre du fichier : Prénom-Nom-CV.pdf. Notre générateur exporte votre CV en PDF instantanément." },
+        "q1": { "question": "Faut-il mettre une photo sur son CV ?", "answer": "En France, la photo est courante mais optionnelle. Elle ne doit pas influencer la décision de recrutement. Si vous en mettez une, choisissez une photo professionnelle et souriante." },
+        "q2": { "question": "Comment faire un CV sans expérience ?", "answer": "Mettez en avant votre formation, vos stages et jobs d'été, vos projets personnels, vos compétences et vos activités extra-professionnelles. Notre IA valorise chaque élément pour compenser le manque d'expérience." },
+        "q3": { "question": "Quelle police et taille de caractères pour un CV ?", "answer": "Police lisible (Arial, Calibri, Garamond) en 10-12pt pour le texte courant, 14-16pt pour le nom. Notre générateur applique automatiquement la bonne typographie selon le template choisi." },
+        "q4": { "question": "Comment adapter son CV à une offre d'emploi ?", "answer": "Analysez l'offre et incluez les mots-clés importants dans votre CV. Réorganisez vos compétences selon les priorités du poste. Notre IA vous aide à optimiser votre CV pour chaque offre." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV maintenant",
+        "description": "Guidé par notre IA, gratuit, export PDF instantané. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV gratuitement"
       }
     },
     "cvCommercialPage": {
@@ -1060,6 +1156,537 @@
         "title": "Créer votre CV ingénieur gratuit maintenant",
         "description": "Gratuit, avec IA, export PDF instantané. Votre CV prêt en 5 minutes.",
         "ctaText": "Créer mon CV ingénieur"
+      }
+    },
+    "cvAssistantPage": {
+      "meta": {
+        "title": "CV Assistant Gratuit 2026 — Modèle CV Secrétaire, Assistant Administratif",
+        "description": "Créez votre CV d'assistant gratuit. Modèles CV pour assistants administratifs, secrétaires, assistants de direction. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Assistant",
+      "hero": {
+        "badgeText": "CV assistant optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Assistant",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur vos compétences organisationnelles et administratives",
+        "description": "Créez votre CV d'assistant gratuit en 5 minutes. Templates modernes optimisés pour les recruteurs, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV assistant",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV assistant",
+        "subtitle": "Vos compétences organisationnelles et votre rigueur font la différence. Mettez-les en avant.",
+        "item0": { "title": "Responsabilités clés en premier", "description": "Mettez en avant vos réalisations administratives, de coordination et de support. Montrez des résultats concrets." },
+        "item1": { "title": "Outils et logiciels", "description": "Listez les outils bureautiques, CRM et logiciels que vous maîtrisez. Ces compétences sont cruciales pour les recruteurs." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates garantissent que votre CV passe les filtres automatiques et atteint les recruteurs." }
+      },
+      "section2": {
+        "title": "Modèles CV assistant gratuits",
+        "subtitle": "Choisissez le template qui représente le mieux votre profil.",
+        "item0": { "title": "CV Assistant de Direction", "keyword": "cv assistant de direction gratuit", "description": "Pour les postes d'assistanat de haut niveau : gestion agenda, coordination et support exécutif." },
+        "item1": { "title": "CV Assistant Administratif", "keyword": "cv assistant administratif gratuit", "description": "Pour la gestion administrative, le secrétariat et les fonctions support en entreprise." },
+        "item2": { "title": "CV Secrétaire", "keyword": "cv secrétaire gratuit", "description": "Pour les postes de secrétariat : accueil, gestion courrier, rédaction et archivage." },
+        "item3": { "title": "CV Assistant RH", "keyword": "cv assistant rh gratuit", "description": "Support aux équipes RH : administration du personnel, gestion des contrats, aide au recrutement." }
+      },
+      "section3": {
+        "title": "5 conseils pour un CV assistant percutant",
+        "tip0": "Mettez en avant votre maîtrise des outils bureautiques : Pack Office, outils collaboratifs, logiciels métier",
+        "tip1": "Précisez votre expérience en gestion d'agenda, organisation d'événements et coordination",
+        "tip2": "Mentionnez votre niveau de discrétion et de confidentialité — essentiel pour l'assistanat de direction",
+        "tip3": "Incluez vos compétences linguistiques, notamment l'anglais, souvent requis pour les postes d'assistanat",
+        "tip4": "Rédigez une accroche qui présente votre profil et vos spécialités en 2-3 lignes"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV assistant",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV assistant efficace",
+        "q0": { "question": "Comment faire un bon CV d'assistant ?", "answer": "Un bon CV d'assistant met en avant vos compétences organisationnelles, votre maîtrise des outils bureautiques et vos expériences concrètes. Précisez les types de missions et vos logiciels maîtrisés. Notre IA vous aide à valoriser chaque expérience." },
+        "q1": { "question": "Quelles compétences mettre dans un CV d'assistant ?", "answer": "Outils bureautiques (Pack Office, Google Workspace), logiciels métier (SAP, Salesforce), compétences rédactionnelles, organisation, gestion d'agenda, accueil téléphonique, langues étrangères." },
+        "q2": { "question": "Quel template CV choisir pour un poste d'assistant ?", "answer": "Le template Classic est idéal pour les secteurs formels. Modern pour les entreprises et startups. ATS-Friendly pour les grandes entreprises avec portails RH." },
+        "q3": { "question": "Comment valoriser une expérience d'assistanat ?", "answer": "Décrivez le contexte, vos missions principales et les résultats (collaborateurs assistés, événements organisés). Notre IA vous aide à formuler chaque expérience de façon impactante." },
+        "q4": { "question": "Comment présenter une progression dans l'assistanat ?", "answer": "Montrez l'évolution de vos responsabilités : d'assistant administratif à assistant de direction. Valorisez les missions de plus grande envergure et les marques de confiance de vos managers." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV assistant maintenant",
+        "description": "Gratuit, avec IA, export PDF instantané. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV assistant"
+      }
+    },
+    "cvChefDeProjetPage": {
+      "meta": {
+        "title": "CV Chef de Projet Gratuit 2026 — Modèle CV Chef de Projet, Manager de Projet",
+        "description": "Créez votre CV de chef de projet gratuit. Modèles CV pour chefs de projet, managers de projet, project managers. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Chef de Projet",
+      "hero": {
+        "badgeText": "CV chef de projet optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Chef de Projet",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur vos compétences en gestion de projet et vos réalisations",
+        "description": "Créez votre CV de chef de projet gratuit en 5 minutes. Templates modernes pour managers de projet, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV chef de projet",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV chef de projet",
+        "subtitle": "Vos compétences en leadership, planification et livraison de projets sont ce qui compte.",
+        "item0": { "title": "Format orienté résultats", "description": "Concentrez-vous sur les projets livrés, les budgets gérés et les équipes pilotées. Utilisez des chiffres pour prouver votre impact." },
+        "item1": { "title": "Méthodologies et outils", "description": "Mettez en avant votre expertise Agile, Waterfall, Scrum, Jira. Ces méthodologies comptent pour les recruteurs." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates garantissent que votre CV passe les filtres ATS et atteint les décideurs." }
+      },
+      "section2": {
+        "title": "Modèles CV chef de projet gratuits",
+        "subtitle": "Choisissez le template adapté à votre niveau d'expérience.",
+        "item0": { "title": "CV Chef de Projet Senior", "keyword": "cv chef de projet senior gratuit", "description": "Pour les PMs expérimentés : design sophistiqué, accent sur les réalisations stratégiques." },
+        "item1": { "title": "CV Chef de Projet Agile", "keyword": "cv chef de projet agile gratuit", "description": "Optimisé pour les Scrum Masters et chefs de projet Agile." },
+        "item2": { "title": "CV Manager de Projet", "keyword": "cv manager de projet gratuit", "description": "Pour la gestion de projet traditionnelle : Gantt, waterfall, gestion des parties prenantes." },
+        "item3": { "title": "CV Chef de Projet Digital", "keyword": "cv chef de projet digital gratuit", "description": "Design moderne mettant l'accent sur l'innovation et la transformation digitale." }
+      },
+      "section3": {
+        "title": "Créez votre CV chef de projet en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Senior, Agile, Traditionnel ou Digital selon votre expérience." },
+        "step1": { "title": "Détaillez vos réalisations", "description": "Notre IA vous aide à quantifier votre impact : projets livrés, budgets, équipes managées." },
+        "step2": { "title": "Mettez en avant vos méthodologies", "description": "Ajoutez vos certifications (PMP, CAPM) et votre maîtrise des outils de gestion de projet." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour votre recherche d'emploi." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV chef de projet",
+        "subtitle": "Créez un CV chef de projet convaincant",
+        "q0": { "question": "Que mettre dans un CV chef de projet ?", "answer": "Les projets clés livrés, la taille des équipes managées, les méthodologies utilisées (Agile, Scrum, Waterfall), les certifications (PMP, CAPM), et les résultats mesurables." },
+        "q1": { "question": "Comment quantifier ses réalisations de chef de projet ?", "answer": "Utilisez des chiffres : '15 projets livrés dans les délais', 'Équipe de 8 développeurs', 'Réduction du délai de 20%', 'Budget annuel géré > 2M€'." },
+        "q2": { "question": "Quelles certifications sont les plus valorisées ?", "answer": "PMP et CAPM sont les plus reconnues, suivies de Scrum Master, Six Sigma, et PRINCE2. Listez-les en bonne position." },
+        "q3": { "question": "Quelle importance pour l'expérience Agile ?", "answer": "Très importante. La plupart des entreprises modernes utilisent Agile. Incluez votre expérience Scrum, Kanban et la gestion des sprints." },
+        "q4": { "question": "Faut-il inclure des compétences techniques ?", "answer": "Oui, listez vos outils : Jira, Asana, Monday, MS Project, Slack. La maîtrise technique vous rend plus attractif." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV chef de projet maintenant",
+        "description": "Gratuit, professionnel, orienté résultats. Décrochez votre prochain poste de PM.",
+        "ctaText": "Créer mon CV chef de projet"
+      }
+    },
+    "cvComptablePage": {
+      "meta": {
+        "title": "CV Comptable Gratuit 2026 — Modèle CV Comptable, Expert-Comptable",
+        "description": "Créez votre CV comptable gratuit. Modèles CV pour comptables, experts-comptables, contrôleurs de gestion. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Comptable",
+      "hero": {
+        "badgeText": "CV comptable optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Comptable",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre expertise comptable et financière",
+        "description": "Créez votre CV comptable gratuit en 5 minutes. Templates modernes pour les profils comptables et finance, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV comptable",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV comptable",
+        "subtitle": "Vos certifications et compétences techniques définissent votre crédibilité.",
+        "item0": { "title": "Certifications en premier", "description": "DSCG, DECF, CAP, DCG — vos diplômes professionnels sont essentiels. Listez-les en bonne position." },
+        "item1": { "title": "Maîtrise des logiciels", "description": "SAP, Sage, Cegid, Excel — ces outils sont incontournables dans tous les services comptables." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates garantissent que votre CV passe les systèmes de recrutement automatisés." }
+      },
+      "section2": {
+        "title": "Modèles CV comptable gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité comptable.",
+        "item0": { "title": "CV Comptable Senior", "keyword": "cv comptable senior gratuit", "description": "Pour les comptables expérimentés : design sobre mettant l'accent sur les bilans et la supervision." },
+        "item1": { "title": "CV Expert-Comptable", "keyword": "cv expert-comptable gratuit", "description": "Pour les experts-comptables avec certification et missions d'audit ou de conseil." },
+        "item2": { "title": "CV Contrôleur de Gestion", "keyword": "cv contrôleur de gestion gratuit", "description": "Pour l'analyse financière, le pilotage budgétaire et le reporting de gestion." },
+        "item3": { "title": "CV Comptable Junior", "keyword": "cv comptable junior gratuit", "description": "Pour les postes de comptabilité en début de carrière et les postes d'aide-comptable." }
+      },
+      "section3": {
+        "title": "Créez votre CV comptable en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Senior, Expert-Comptable, Contrôleur ou Junior selon votre poste." },
+        "step1": { "title": "Mettez en avant vos certifications", "description": "Notre IA vous aide à valoriser vos diplômes et formations continues." },
+        "step2": { "title": "Listez vos compétences techniques", "description": "Ajoutez vos logiciels comptables : SAP, Sage, Cegid, Excel, Access." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV comptable",
+        "subtitle": "Créez un CV comptable professionnel",
+        "q0": { "question": "Quels diplômes mettre en avant dans un CV comptable ?", "answer": "DCG, DSCG, BTS Comptabilité sont les plus valorisés. Mentionnez également vos certifications CAP, les formations continues et les habilitations spécifiques." },
+        "q1": { "question": "Quels logiciels comptables sont les plus importants ?", "answer": "SAP et Oracle pour les grands groupes, Sage et Cegid pour les PME, Excel pour toutes les entreprises, et les logiciels spécialisés comme Hyperion ou Anaplan." },
+        "q2": { "question": "Comment valoriser ses réalisations dans un CV comptable ?", "answer": "Quantifiez : 'Clôtures mensuelles pour 5 filiales', 'Réduction du délai de clôture de 30%', 'Supervision de 3 comptables juniors', 'Déclarations TVA > 50M€ de CA'." },
+        "q3": { "question": "Faut-il préciser ses domaines de comptabilité ?", "answer": "Oui : comptabilité générale, analytique, auxiliaire, consolidation, fiscalité, paie — la spécialisation est importante pour les recruteurs." },
+        "q4": { "question": "Quelle importance d'Excel dans un CV comptable ?", "answer": "Très importante. Précisez votre niveau : TCD, VLOOKUP, macros VBA, modélisation financière, analyse de données." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV comptable maintenant",
+        "description": "Gratuit, professionnel, axé sur vos certifications. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV comptable"
+      }
+    },
+    "cvGraphistePage": {
+      "meta": {
+        "title": "CV Graphiste Gratuit 2026 — Modèle CV Graphiste, Designer Graphique",
+        "description": "Créez votre CV graphiste gratuit. Modèles CV pour graphistes, designers graphiques, directeurs artistiques. Optimisé ATS, export PDF avec liens portfolio."
+      },
+      "breadcrumbName": "CV Graphiste",
+      "hero": {
+        "badgeText": "CV graphiste optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Graphiste",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre portfolio et votre expertise créative",
+        "description": "Créez votre CV graphiste gratuit en 5 minutes. Templates modernes avec intégration portfolio, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV graphiste",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV graphiste",
+        "subtitle": "Votre travail visuel et vos réalisations créatives définissent votre valeur.",
+        "item0": { "title": "Portfolio indispensable", "description": "Montrez vos meilleures créations. Incluez des comparatifs avant/après et l'impact de vos designs." },
+        "item1": { "title": "Maîtrise des logiciels", "description": "Suite Adobe, Figma, Sketch — listez tous vos outils et votre niveau de maîtrise." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates fonctionnent à la fois pour les systèmes ATS et les recruteurs créatifs." }
+      },
+      "section2": {
+        "title": "Modèles CV graphiste gratuits",
+        "subtitle": "Choisissez le template qui représente le mieux votre style créatif.",
+        "item0": { "title": "CV Graphiste Identité de Marque", "keyword": "cv graphiste identité de marque gratuit", "description": "Pour les spécialistes du branding, de l'identité visuelle et du design de logo." },
+        "item1": { "title": "CV Graphiste Print", "keyword": "cv graphiste print gratuit", "description": "Pour le design print, le packaging et la publication." },
+        "item2": { "title": "CV Graphiste Digital", "keyword": "cv graphiste digital gratuit", "description": "Pour le design digital, web et interactif." },
+        "item3": { "title": "CV Directeur Artistique", "keyword": "cv directeur artistique gratuit", "description": "Pour les graphistes seniors et les postes de direction créative." }
+      },
+      "section3": {
+        "title": "Créez votre CV graphiste en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Identité de Marque, Print, Digital ou Directeur Artistique selon votre spécialité." },
+        "step1": { "title": "Présentez votre portfolio", "description": "Notre IA vous aide à présenter vos créations de façon impactante dans votre CV." },
+        "step2": { "title": "Listez vos outils", "description": "Adobe XD, Figma, Illustrator, Photoshop, InDesign et tout logiciel spécialisé." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané avec intégration des liens portfolio." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV graphiste",
+        "subtitle": "Créez un CV graphiste visuellement percutant",
+        "q0": { "question": "Que mettre dans un CV graphiste ?", "answer": "Maîtrise des logiciels, spécialité (branding, print, digital), lien portfolio, clients ou projets notables, et éventuels prix ou distinctions de design." },
+        "q1": { "question": "Comment présenter son travail de graphiste ?", "answer": "Lien vers votre portfolio Behance ou Dribbble. Incluez des études de cas montrant votre processus créatif et les résultats du projet." },
+        "q2": { "question": "Quels logiciels sont les plus importants ?", "answer": "La Suite Adobe est indispensable. Ajoutez Figma, Sketch et tout outil spécialisé selon votre domaine." },
+        "q3": { "question": "Faut-il mentionner sa démarche créative ?", "answer": "Oui, mentionnez brièvement votre philosophie de design, votre compréhension du public cible et votre approche des projets." },
+        "q4": { "question": "Comment mesurer le succès d'un projet créatif ?", "answer": "Incluez des chiffres quand c'est possible : '+50% de notoriété de marque', '+35% d'engagement utilisateur', ou une distinction reçue." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV graphiste maintenant",
+        "description": "Gratuit, créatif, visuellement professionnel. Démarquez-vous en tant que graphiste.",
+        "ctaText": "Créer mon CV graphiste"
+      }
+    },
+    "cvInfirmierPage": {
+      "meta": {
+        "title": "CV Infirmier Gratuit 2026 — Modèle CV Infirmier, Infirmière DE",
+        "description": "Créez votre CV infirmier gratuit. Modèles CV pour infirmiers, infirmières diplômées d'État, cadres de santé. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Infirmier",
+      "hero": {
+        "badgeText": "CV infirmier optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Infirmier",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur vos compétences cliniques et votre expérience en soins",
+        "description": "Créez votre CV infirmier gratuit en 5 minutes. Templates modernes pour les professionnels de santé, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV infirmier",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV infirmier",
+        "subtitle": "Diplômes, spécialisations et résultats de soins aux patients comptent. Mettez-les en avant.",
+        "item0": { "title": "Diplômes et certifications", "description": "IDE, IADE, IBODE, spécialisations — listez tous vos diplômes avec dates d'obtention et renouvellements." },
+        "item1": { "title": "Compétences cliniques", "description": "Évaluation des patients, administration des médicaments, soins des plaies, logiciels de santé — valorisez votre expertise." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates passent les systèmes de recrutement des établissements de santé." }
+      },
+      "section2": {
+        "title": "Modèles CV infirmier gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité infirmière.",
+        "item0": { "title": "CV Infirmier DE", "keyword": "cv infirmier diplômé d'état gratuit", "description": "Pour les IDE en milieu hospitalier et clinique polyvalent." },
+        "item1": { "title": "CV Infirmier Spécialisé", "keyword": "cv infirmier spécialisé gratuit", "description": "Pour les infirmiers en réanimation, urgences, bloc opératoire et autres spécialités." },
+        "item2": { "title": "CV Cadre de Santé", "keyword": "cv cadre de santé gratuit", "description": "Pour les cadres infirmiers et les postes d'encadrement en soins." },
+        "item3": { "title": "CV Infirmier Libéral", "keyword": "cv infirmier libéral gratuit", "description": "Pour l'exercice libéral et les soins à domicile." }
+      },
+      "section3": {
+        "title": "Créez votre CV infirmier en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "IDE, Spécialisé, Cadre de Santé ou Libéral selon votre profil." },
+        "step1": { "title": "Valorisez vos diplômes", "description": "Notre IA vous aide à présenter vos certifications, spécialisations et formations continues." },
+        "step2": { "title": "Détaillez votre expérience clinique", "description": "Ajoutez vos réalisations en soins, votre maîtrise des logiciels de santé et vos spécialités." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures dans les établissements de santé." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV infirmier",
+        "subtitle": "Créez un CV infirmier professionnel",
+        "q0": { "question": "Quels diplômes mettre dans un CV infirmier ?", "answer": "Diplôme d'État Infirmier (IDE), spécialisations (IADE, IBODE, puéricultrice), DU et formations continues. Mentionnez l'établissement de formation et l'année d'obtention." },
+        "q1": { "question": "Comment valoriser son expérience en soins ?", "answer": "Précisez le type de patients pris en charge, le nombre de patients, les actes techniques réalisés, et les protocoles de soins appliqués." },
+        "q2": { "question": "Quels logiciels de santé mentionner ?", "answer": "Crossway, Easily, Osiris, Pharma sont les plus courants. Mentionnez tout logiciel de dossier patient informatisé (DPI) que vous maîtrisez." },
+        "q3": { "question": "Faut-il inclure les soft skills dans un CV infirmier ?", "answer": "Oui, essentiels : communication avec les patients, empathie, travail en équipe, rigueur, gestion du stress en situation d'urgence." },
+        "q4": { "question": "Comment mettre en avant un rôle de leadership infirmier ?", "answer": "Mentionnez : encadrement d'étudiants ou stagiaires, référent d'une unité, participation à des groupes de travail ou à l'amélioration des pratiques." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV infirmier maintenant",
+        "description": "Gratuit, professionnel, adapté aux soins de santé. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV infirmier"
+      }
+    },
+    "cvJuristePage": {
+      "meta": {
+        "title": "CV Juriste Gratuit 2026 — Modèle CV Juriste, Avocat, Juriste d'Entreprise",
+        "description": "Créez votre CV juriste gratuit. Modèles CV pour juristes, avocats, juristes d'entreprise. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Juriste",
+      "hero": {
+        "badgeText": "CV juriste optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Juriste",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre expertise juridique et vos dossiers",
+        "description": "Créez votre CV juriste gratuit en 5 minutes. Templates modernes pour les professionnels du droit, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV juriste",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV juriste",
+        "subtitle": "Admission au barreau, domaines de spécialité et réalisations comptent. Mettez-les en avant.",
+        "item0": { "title": "Qualification et barreau", "description": "CAPA, inscription au barreau, spécialisations — listez tous vos titres juridiques pertinents." },
+        "item1": { "title": "Domaines de droit et spécialités", "description": "Droit des affaires, droit social, propriété intellectuelle, droit fiscal — précisez vos domaines d'expertise." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates passent les filtres des cabinets et directions juridiques." }
+      },
+      "section2": {
+        "title": "Modèles CV juriste gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité juridique.",
+        "item0": { "title": "CV Juriste Droit des Affaires", "keyword": "cv juriste droit des affaires gratuit", "description": "Pour le droit des sociétés, les M&A, les contrats et le conseil aux entreprises." },
+        "item1": { "title": "CV Avocat Contentieux", "keyword": "cv avocat contentieux gratuit", "description": "Pour les avocats plaidants et les spécialistes du contentieux." },
+        "item2": { "title": "CV Juriste Propriété Intellectuelle", "keyword": "cv juriste propriété intellectuelle gratuit", "description": "Pour les spécialistes des brevets, marques et droits d'auteur." },
+        "item3": { "title": "CV Juriste d'Entreprise", "keyword": "cv juriste d'entreprise gratuit", "description": "Pour les directions juridiques et les postes de conseil interne." }
+      },
+      "section3": {
+        "title": "Créez votre CV juriste en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Droit des Affaires, Contentieux, Propriété Intellectuelle ou Juriste d'Entreprise." },
+        "step1": { "title": "Mettez en avant vos dossiers", "description": "Notre IA vous aide à valoriser vos affaires, transactions et impact juridique." },
+        "step2": { "title": "Listez vos admissions au barreau", "description": "Incluez votre CAPA, barreau d'inscription, spécialisations et certifications juridiques." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures juridiques." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV juriste",
+        "subtitle": "Créez un CV juriste professionnel",
+        "q0": { "question": "Quels diplômes mettre dans un CV juriste ?", "answer": "Master 2 Droit, CAPA pour les avocats, inscription au barreau, spécialisation reconnue CNB. Mentionnez l'établissement et l'année d'obtention." },
+        "q1": { "question": "Comment valoriser ses dossiers dans un CV juriste ?", "answer": "Mettez en avant les résultats : 'Dossiers contentieux menés à terme', 'Transactions > 50M€', 'Conseil de 20+ entreprises', sans trahir la confidentialité client." },
+        "q2": { "question": "Quels domaines juridiques sont les plus demandés ?", "answer": "Droit des sociétés/M&A, droit social, propriété intellectuelle, droit des données personnelles (RGPD), et droit de la concurrence sont très recherchés." },
+        "q3": { "question": "Faut-il mentionner ses mentions et distinctions universitaires ?", "answer": "Oui, si récentes ou d'établissements réputés : mention Très Bien, prix de thèse, publications juridiques, participation à des revues." },
+        "q4": { "question": "Comment présenter un dossier complexe dans un CV ?", "answer": "Focalisez sur les résultats : issue du dossier, clients accompagnés, impact juridique et valeur ajoutée, sans détails confidentiels." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV juriste maintenant",
+        "description": "Gratuit, professionnel, prêt pour le droit. Votre CV en 5 minutes.",
+        "ctaText": "Créer mon CV juriste"
+      }
+    },
+    "cvLogistiquePage": {
+      "meta": {
+        "title": "CV Logistique Gratuit 2026 — Modèle CV Logisticien, Supply Chain Manager",
+        "description": "Créez votre CV logistique gratuit. Modèles CV pour logisticiens, responsables supply chain, gestionnaires entrepôt. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Logistique",
+      "hero": {
+        "badgeText": "CV logistique optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Logistique",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre expertise en supply chain et opérations",
+        "description": "Créez votre CV logistique gratuit en 5 minutes. Templates modernes pour les profils supply chain, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV logistique",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV logistique",
+        "subtitle": "Vos performances opérationnelles et votre maîtrise des systèmes comptent.",
+        "item0": { "title": "Gestion de la supply chain", "description": "Approvisionnements, gestion des stocks, distribution, relations fournisseurs — valorisez votre périmètre." },
+        "item1": { "title": "Logiciels et ERP", "description": "SAP, Oracle WMS, TMS, outils de prévision — listez votre maîtrise technique." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates passent les filtres des entreprises logistiques et industrielles." }
+      },
+      "section2": {
+        "title": "Modèles CV logistique gratuits",
+        "subtitle": "Choisissez le template adapté à votre poste logistique.",
+        "item0": { "title": "CV Responsable Supply Chain", "keyword": "cv responsable supply chain gratuit", "description": "Pour la coordination et le management de la chaîne d'approvisionnement." },
+        "item1": { "title": "CV Responsable Entrepôt", "keyword": "cv responsable entrepôt gratuit", "description": "Pour la gestion des opérations entrepôt et la gestion des stocks." },
+        "item2": { "title": "CV Responsable Opérations", "keyword": "cv responsable opérations logistique gratuit", "description": "Pour le pilotage opérationnel et l'amélioration continue des processus." },
+        "item3": { "title": "CV Acheteur / Approvisionneur", "keyword": "cv acheteur approvisionnement gratuit", "description": "Pour les achats, l'approvisionnement et la gestion des fournisseurs." }
+      },
+      "section3": {
+        "title": "Créez votre CV logistique en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Supply Chain, Entrepôt, Opérations ou Acheteur selon votre métier." },
+        "step1": { "title": "Valorisez vos réalisations", "description": "Notre IA vous aide à mettre en avant vos réductions de coûts et gains d'efficacité." },
+        "step2": { "title": "Listez vos logiciels", "description": "ERP (SAP, Oracle), WMS, TMS, outils de prévision et logiciels métier." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures logistiques." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV logistique",
+        "subtitle": "Créez un CV supply chain professionnel",
+        "q0": { "question": "Que mettre dans un CV logistique ?", "answer": "Expérience en supply chain, maîtrise des ERP/WMS, certifications (APICS, Six Sigma), indicateurs de performance et expérience en gestion d'entrepôt ou d'approvisionnement." },
+        "q1": { "question": "Comment valoriser ses réalisations logistiques ?", "answer": "Utilisez des chiffres : 'Réduction des coûts logistiques de 30%', 'Taux de livraison à temps passé de 85% à 98%', 'Optimisation du taux de rotation des stocks de 25%'." },
+        "q2": { "question": "Quels logiciels mentionner dans un CV logistique ?", "answer": "ERP (SAP, Oracle), WMS (Manhattan, Reflex), TMS (Descartes, Hardis), et tout outil de prévision ou d'approvisionnement utilisé." },
+        "q3": { "question": "Les certifications logistiques sont-elles importantes ?", "answer": "Oui, les certifications APICS (CSCP, CPIM) et les habilitations spécifiques (conduite d'engins, ADR) sont très valorisées." },
+        "q4": { "question": "Comment valoriser une expérience en entrepôt ou transport ?", "answer": "Mettez en avant le management d'équipes, les améliorations de processus, les résultats sécurité et toute mise en place d'outils technologiques." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV logistique maintenant",
+        "description": "Gratuit, professionnel, orienté opérations. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV logistique"
+      }
+    },
+    "cvManagerPage": {
+      "meta": {
+        "title": "CV Manager Gratuit 2026 — Modèle CV Manager, Responsable d'Équipe",
+        "description": "Créez votre CV manager gratuit. Modèles CV pour managers, responsables d'équipe, directeurs opérationnels. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Manager",
+      "hero": {
+        "badgeText": "CV manager optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Manager",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre leadership et vos compétences en management d'équipe",
+        "description": "Créez votre CV manager gratuit en 5 minutes. Templates modernes pour les profils management et leadership, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV manager",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV manager",
+        "subtitle": "Votre leadership, votre capacité à développer des équipes et vos résultats business comptent.",
+        "item0": { "title": "Réalisations en leadership", "description": "Croissance des équipes, amélioration des performances, développement de la culture — valorisez votre impact." },
+        "item1": { "title": "Indicateurs business", "description": "Impact sur le CA, réductions de coûts, gains de productivité — chiffrez vos résultats de leadership." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates passent les filtres RH et atteignent les décideurs." }
+      },
+      "section2": {
+        "title": "Modèles CV manager gratuits",
+        "subtitle": "Choisissez le template adapté à votre niveau de management.",
+        "item0": { "title": "CV Responsable Opérationnel", "keyword": "cv responsable opérationnel gratuit", "description": "Pour le management opérationnel et l'optimisation des processus." },
+        "item1": { "title": "CV Responsable d'Équipe", "keyword": "cv responsable d'équipe gratuit", "description": "Pour l'encadrement intermédiaire et le management de proximité." },
+        "item2": { "title": "CV Manager Senior", "keyword": "cv manager senior gratuit", "description": "Pour le management senior et les postes de direction stratégique." },
+        "item3": { "title": "CV Team Lead", "keyword": "cv team lead gratuit", "description": "Pour les premiers postes de management et l'animation d'équipe." }
+      },
+      "section3": {
+        "title": "Créez votre CV manager en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Opérationnel, Responsable, Senior ou Team Lead selon votre niveau." },
+        "step1": { "title": "Valorisez votre impact en leadership", "description": "Notre IA vous aide à valoriser la croissance de vos équipes, vos résultats et votre impact business." },
+        "step2": { "title": "Chiffrez vos réalisations", "description": "Ajoutez CA, économies réalisées, gains d'efficacité et indicateurs de performance d'équipe." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures en management." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV manager",
+        "subtitle": "Créez un CV de leadership convaincant",
+        "q0": { "question": "Sur quoi insister dans un CV manager ?", "answer": "Taille des équipes encadrées, résultats business obtenus, collaborateurs accompagnés, processus améliorés et philosophie de management." },
+        "q1": { "question": "Comment chiffrer son impact de manager ?", "answer": "Utilisez des chiffres : 'Équipe de 15 personnes avec +20% de croissance du CA', 'Réduction des coûts opérationnels de 500K€', 'Amélioration de la rétention des collaborateurs de 40%'." },
+        "q2": { "question": "Faut-il mentionner des certifications en management ?", "answer": "Oui, MBA, PMP, formations en leadership sont valorisantes. Mentionnez-les si vous les possédez." },
+        "q3": { "question": "Comment présenter différents styles de management ?", "answer": "Focalisez sur les résultats. Mentionnez : management situationnel, leadership transformationnel, management agile ou servant leadership." },
+        "q4": { "question": "Comment valoriser un management transversal ?", "answer": "Mettez en avant la collaboration inter-services, la gestion des parties prenantes et les initiatives à portée organisationnelle." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV manager maintenant",
+        "description": "Gratuit, professionnel, axé sur le leadership. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV manager"
+      }
+    },
+    "cvReconversionPage": {
+      "meta": {
+        "title": "CV Reconversion Professionnelle Gratuit 2026 — Modèle CV Reconversion",
+        "description": "Créez votre CV de reconversion professionnelle gratuit. Templates CV pour reconversion, changement de carrière, compétences transférables. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Reconversion",
+      "hero": {
+        "badgeText": "Réussissez votre reconversion",
+        "h1Before": "CV ",
+        "h1Accent": "Reconversion Professionnelle",
+        "h1After": " Gratuit",
+        "subtitle": "Réussir votre transition professionnelle avec confiance",
+        "description": "Créez votre CV de reconversion gratuit en 5 minutes. Mettez en valeur vos compétences transférables, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV de reconversion",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Réussir sa reconversion grâce à un bon CV",
+        "subtitle": "Vos compétences transférables sont votre atout. Montrez comment votre expérience s'applique à votre nouveau métier.",
+        "item0": { "title": "Compétences transférables", "description": "Leadership, gestion de projet, communication, analyse — valorisez les compétences pertinentes pour votre nouveau secteur." },
+        "item1": { "title": "Repositionner son expérience", "description": "Réinterprétez vos anciens postes pour montrer leur pertinence dans votre nouveau domaine." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates aident les personnes en reconversion à atteindre les bonnes opportunités." }
+      },
+      "section2": {
+        "title": "Modèles CV reconversion gratuits",
+        "subtitle": "Adaptés aux transitions vers de nouveaux secteurs ou métiers.",
+        "item0": { "title": "CV Pivot Professionnel", "keyword": "cv reconversion professionnelle gratuit", "description": "Pour les reconversions significatives et les changements de secteur." },
+        "item1": { "title": "CV Compétences", "keyword": "cv compétences reconversion gratuit", "description": "Met en avant les compétences transférables plutôt que le parcours chronologique." },
+        "item2": { "title": "CV Mixte Reconversion", "keyword": "cv mixte reconversion gratuit", "description": "Combine compétences et expériences chronologiques pour les reconversions partielles." },
+        "item3": { "title": "CV Transition Sectorielle", "keyword": "cv transition sectorielle gratuit", "description": "Pour les transitions entre secteurs d'activité proches ou complémentaires." }
+      },
+      "section3": {
+        "title": "Créez votre CV de reconversion en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Pivot, Compétences, Mixte ou Transition selon votre type de reconversion." },
+        "step1": { "title": "Valorisez vos compétences transférables", "description": "Notre IA vous aide à reformuler votre expérience pour votre nouveau secteur." },
+        "step2": { "title": "Expliquez votre transition", "description": "Ajoutez une accroche qui présente votre motivation pour changer de carrière." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures de reconversion." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV de reconversion",
+        "subtitle": "Réussir sa transition professionnelle grâce à un CV adapté",
+        "q0": { "question": "Comment expliquer une reconversion dans un CV ?", "answer": "Utilisez une accroche forte : 'En transition professionnelle de [ancien métier] vers [nouveau métier], en m'appuyant sur [compétences clés transférables]'." },
+        "q1": { "question": "Quelles compétences transférables mettre en avant ?", "answer": "Leadership, gestion de projet, communication, résolution de problèmes, analyse, travail en équipe, relation client — des compétences utiles dans tous les secteurs." },
+        "q2": { "question": "Faut-il inclure toutes ses expériences passées ?", "answer": "Oui, mais reformulez-les. Concentrez-vous sur les réalisations et compétences pertinentes pour votre nouvelle carrière." },
+        "q3": { "question": "Quelle importance pour les formations lors d'une reconversion ?", "answer": "Très importante. Mentionnez bootcamps, certifications, formations en ligne et tout cursus en lien avec votre nouveau métier." },
+        "q4": { "question": "Faut-il utiliser un CV chronologique ou fonctionnel ?", "answer": "Le CV fonctionnel est plus adapté aux reconversions importantes. Le CV mixte est idéal si vous avez déjà quelques expériences dans le nouveau domaine." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV de reconversion maintenant",
+        "description": "Gratuit, professionnel, adapté à votre transition. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV de reconversion"
+      }
+    },
+    "cvRhPage": {
+      "meta": {
+        "title": "CV RH Gratuit 2026 — Modèle CV Responsable RH, Chargé de Recrutement",
+        "description": "Créez votre CV RH gratuit. Modèles CV pour responsables RH, chargés de recrutement, HRBP. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV RH",
+      "hero": {
+        "badgeText": "CV RH optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV RH",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre expertise RH et votre impact humain",
+        "description": "Créez votre CV RH gratuit en 5 minutes. Templates modernes pour les professionnels des ressources humaines, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV RH",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV RH",
+        "subtitle": "Votre expertise RH, votre sens du développement humain et vos indicateurs comptent.",
+        "item0": { "title": "Talent et culture", "description": "Succès en recrutement, rétention des collaborateurs, développement de la culture — valorisez votre impact humain." },
+        "item1": { "title": "Logiciels SIRH et conformité", "description": "Maîtrise des SIRH, droit du travail, administration du personnel — valorisez vos connaissances techniques." },
+        "item2": { "title": "Optimisé ATS", "description": "Nos templates passent les filtres RH et atteignent les décideurs en recrutement." }
+      },
+      "section2": {
+        "title": "Modèles CV RH gratuits",
+        "subtitle": "Choisissez le template adapté à votre poste RH.",
+        "item0": { "title": "CV Responsable RH", "keyword": "cv responsable rh gratuit", "description": "Pour la direction RH et le management du service ressources humaines." },
+        "item1": { "title": "CV Chargé de Recrutement", "keyword": "cv chargé de recrutement gratuit", "description": "Pour les postes d'acquisition de talents et de recrutement." },
+        "item2": { "title": "CV HRBP", "keyword": "cv hrbp business partner gratuit", "description": "Pour les postes stratégiques de partenaire RH." },
+        "item3": { "title": "CV Gestionnaire RH", "keyword": "cv gestionnaire rh gratuit", "description": "Pour l'administration du personnel et la gestion RH opérationnelle." }
+      },
+      "section3": {
+        "title": "Créez votre CV RH en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Responsable RH, Recruteur, HRBP ou Gestionnaire selon votre spécialité." },
+        "step1": { "title": "Valorisez votre impact humain", "description": "Notre IA vous aide à mettre en avant vos succès en recrutement, rétention et culture." },
+        "step2": { "title": "Listez votre expertise RH", "description": "SIRH, logiciels ATS, droit du travail, gestion de la paie, formation." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export qualité instantané, prêt pour vos candidatures RH." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV RH",
+        "subtitle": "Créez un CV ressources humaines professionnel",
+        "q0": { "question": "Sur quoi insister dans un CV RH ?", "answer": "Indicateurs recrutement (délai d'embauche, qualité), taux de rétention, taux d'engagement, programmes de formation mis en place et gestion de la conformité." },
+        "q1": { "question": "Comment chiffrer ses réalisations RH ?", "answer": "Utilisez des chiffres : '100+ recrutements annuels', 'Rétention améliorée de 20%', 'Délai d'embauche réduit de 35%', 'Programme culture déployé auprès de 500 collaborateurs'." },
+        "q2": { "question": "Quelles certifications RH sont valorisées ?", "answer": "Master RH, certifications SHRM ou CIPD pour l'international, habilitations en droit du travail et formations continues en RH." },
+        "q3": { "question": "Quels logiciels RH mentionner ?", "answer": "SIRH : Workday, SAP SuccessFactors, Lucca. ATS : Greenhouse, Lever, Talentsoft. Aussi les outils de paie et de gestion des avantages sociaux." },
+        "q4": { "question": "Quelle importance pour la connaissance du droit du travail ?", "answer": "Très importante. Mettez en avant votre connaissance du droit social, de la conformité RH et des réglementations spécifiques à votre secteur." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV RH maintenant",
+        "description": "Gratuit, professionnel, orienté humain. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV RH"
       }
     }
   },
