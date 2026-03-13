@@ -10,7 +10,7 @@
     "close": "Close",
     "confirm": "Confirm",
     "submit": "Submit",
-    "retry": "Try again",
+    "retry": "Retry",
     "or": "or"
   },
   "nav": {
@@ -19,43 +19,43 @@
     "templates": "Templates",
     "myProfile": "My Profile",
     "settings": "Settings",
-    "logout": "Sign out",
-    "login": "Sign in",
-    "startFree": "Start for free",
-    "backToHome": "Back to home",
+    "logout": "Sign Out",
+    "login": "Sign In",
+    "startFree": "Start Free",
+    "backToHome": "Back to Home",
     "back": "Back"
   },
   "landing": {
     "meta": {
-      "title": "Free Resume Builder – Create a Professional Resume Online | Modern AI CV Generator",
-      "description": "Create a professional resume in minutes with our online resume builder. Modern templates, PDF export and AI assistance to write your resume quickly and for free."
+      "title": "Free CV Builder – Create a Professional Resume Online | Modern AI Resume Generator",
+      "description": "Create a professional resume in minutes with our free online CV builder. Modern templates, PDF export and AI assistance to write your resume quickly and free."
     },
     "badge": "Powered by AI",
     "hero": {
       "title": "Create a Professional Resume Online for Free",
       "titleAccent": "Professional Resume",
       "subtitle": "with artificial intelligence",
-      "description": "Building a resume has never been easier. Our free AI-powered resume builder helps you create a professional CV in 5 minutes: modern templates, ATS optimization and PDF export.",
+      "description": "Making a resume has never been easier. Our free CV generator with AI helps you create a professional resume in 5 minutes: modern templates, ATS optimization and PDF export.",
       "cta": "Create my resume for free",
-      "seeTemplates": "See templates"
+      "seeTemplates": "See all templates"
     },
     "stats": {
       "why": "Why choose us?",
       "atsScore": "ATS Compatibility",
-      "avgTime": "Average time",
-      "templates": "Pro templates",
-      "madeIn": "Made in Rennes by Evan Davison"
+      "avgTime": "Average Time",
+      "templates": "Pro Templates",
+      "madeIn": "Created in Rennes by Evan Davison"
     },
     "features": {
-      "title": "How to build a professional resume easily",
-      "subtitle": "All the tools to create, write and optimize your resume — free",
+      "title": "How to create a professional resume easily",
+      "subtitle": "All the tools to create your resume, write it and optimize it — free and in English",
       "ai": {
         "title": "AI Suggestions",
-        "description": "Our AI analyzes your content and suggests improvements to make your resume more impactful. Rephrasing, keywords, optimized structure."
+        "description": "Our AI analyzes your content and suggests improvements to make your resume more impactful. Rewording, keywords, optimized structure."
       },
       "ats": {
         "title": "ATS Score",
-        "description": "Optimize your resume for automatic screening systems."
+        "description": "Optimize your resume for automated screening systems."
       },
       "templates": {
         "title": "Pro Templates",
@@ -66,12 +66,12 @@
         "description": "Download your resume in high quality, ready to send."
       },
       "secure": {
-        "title": "Secure data",
+        "title": "Secure Data",
         "description": "Your information is protected and encrypted."
       },
       "howItWorks": {
         "title": "How it works",
-        "step1": "Sign up",
+        "step1": "Sign Up",
         "step2": "Info",
         "step3": "AI",
         "step4": "Export"
@@ -79,802 +79,1666 @@
     },
     "cta": {
       "title": "Create your free resume now",
-      "description": "Building your resume online has never been faster. Free resume creation, professional templates and artificial intelligence to land your next job.",
-      "button": "Get started now"
+      "description": "Creating your resume online has never been faster. Free resume creation, professional templates and artificial intelligence to land your next job.",
+      "button": "Get Started Now"
     },
     "footer": {
-      "brand": "Free resume builder with artificial intelligence",
-      "madeIn": "Made in Rennes by",
+      "brand": "Free CV builder with artificial intelligence",
+      "madeIn": "Created in Rennes by",
       "resources": "Resources",
-      "guide": "How to write a resume",
+      "guide": "How to Create a Resume",
       "templates": "Resume Templates",
-      "createFree": "Create a free resume",
+      "createFree": "Create a Free Resume",
       "contact": "Contact",
-      "review": "Leave a review",
-      "cvAlternance": "Work-Study Resume",
+      "review": "Give Feedback",
+      "cvEtudiant": "Student Resume",
+      "cvPdf": "Resume PDF",
+      "cvAlternance": "Internship Resume",
       "cvDeveloppeur": "Developer Resume",
       "cvMinimaliste": "Minimalist Resume",
-      "modeleCvGratuit": "Free CV Template",
+      "modeleCvGratuit": "Free Resume Template",
       "legal": "Legal",
-      "cgv": "Terms of Sale",
+      "cgv": "Terms",
       "mentions": "Legal Notice",
-      "privacy": "Privacy Policy",
+      "privacy": "Privacy",
       "copyright": "© {year} CV Builder — Powered by DVS-Web. All rights reserved.",
-      "modeleCvStage": "CV Stage Template",
-      "cvPremierEmploi": "First Job CV",
-      "cvSimple": "Simple CV",
-      "cvDesign": "Design CV",
-      "cvModerne": "Modern CV",
-      "cvSansExperience": "CV No Experience",
-      "cvDeveloppeurJunior": "Junior Developer CV",
-      "modeleCvAlternance": "Apprenticeship CV",
+      "modeleCvStage": "Internship Resume Template",
+      "cvPremierEmploi": "First Job Resume",
+      "cvSimple": "Simple Resume",
+      "cvDesign": "Design Resume",
+      "cvModerne": "Modern Resume",
+      "cvSansExperience": "Resume Without Experience",
+      "cvDeveloppeurJunior": "Junior Developer Resume",
+      "modeleCvAlternance": "Internship Resume Template",
       "modeleCv": "Resume Template",
-      "exempleCv": "Resume Examples",
-      "commentFaireUnCv": "How to Write a CV",
-      "cvCommercial": "Sales CV",
-      "cvMarketing": "Marketing CV",
-      "cvIngenieur": "Engineer CV",
-      "cvInfirmier": "Nurse CV",
-      "cvReconversion": "Career Change CV",
-      "cvComptable": "Accountant CV",
-      "cvManager": "Manager CV",
-      "cvChefDeProjet": "Project Manager CV",
-      "cvRh": "HR CV",
-      "cvAssistant": "Assistant CV",
-      "cvGraphiste": "Graphic Designer CV",
-      "cvJuriste": "Legal CV",
-      "cvLogistique": "Logistics CV"
+      "exempleCv": "Resume Example",
+      "commentFaireUnCv": "How to Create a Resume",
+      "cvCommercial": "Sales Resume",
+      "cvMarketing": "Marketing Resume",
+      "cvIngenieur": "Engineer Resume",
+      "cvInfirmier": "Nurse Resume",
+      "cvReconversion": "Career Change Resume",
+      "cvComptable": "Accountant Resume",
+      "cvManager": "Manager Resume",
+      "cvChefDeProjet": "Project Manager Resume",
+      "cvRh": "HR Resume",
+      "cvAssistant": "Assistant Resume",
+      "cvGraphiste": "Graphic Designer Resume",
+      "cvJuriste": "Lawyer Resume",
+      "cvLogistique": "Logistics Resume"
+    },
+    "seoPage": {
+      "loginText": "Sign In",
+      "signupText": "Create my free resume",
+      "createThisCv": "Create this Resume",
+      "homeText": "Home",
+      "freeBadge": "Free • No credit card • PDF export"
     },
     "templatesPage": {
       "meta": {
-        "title": "Free Resume Templates 2026 — Modern, Simple, ATS-Friendly CV Templates",
-        "description": "50+ free resume templates: modern CV, simple resume, minimalist CV, design resume, ATS-friendly. Download your resume template in PDF. Student resume, professional CV, creative resume."
+        "title": "Free Resume Templates 2026 — Modern, Simple, ATS-Friendly Resume Templates",
+        "description": "50+ free resume templates: modern resume, simple resume, minimalist resume, design resume, ATS-friendly resume. Download your resume template in PDF. Student resume, professional resume, creative resume."
       }
     },
     "guidePage": {
       "meta": {
-        "title": "How to Write a Resume in 2026 — Complete Guide + Free Examples",
-        "description": "How to write a professional, student, or entry-level resume? Complete 2026 guide: structure, tips, modern resume examples. Create your free resume online in 5 minutes."
+        "title": "How to Create a Resume in 2026 — Complete Guide + Free Examples",
+        "description": "How to create a professional, student, or entry-level resume? Complete 2026 guide: structure, tips, modern resume examples. Create your free resume online in 5 minutes."
       }
     },
     "cvEtudiantPage": {
       "meta": {
-        "title": "Free Student Resume 2026 — Student CV Template, Internship, Work-Study",
-        "description": "Create your free student resume online. Resume templates for internships, work-study programs, first jobs, no experience. AI student resume builder, PDF export."
+        "title": "Free Student Resume 2026 — Student Resume Template, Internship, Apprenticeship",
+        "description": "Create your free student resume online. Resume templates for internship, apprenticeship, first job, no experience. AI-powered student resume generator, PDF export."
       }
     },
     "cvPdfPage": {
       "meta": {
-        "title": "Generate your Resume as PDF for Free — Download PDF Resume Online",
-        "description": "Create and download your resume as PDF for free. Online PDF resume generator: perfect formatting, professional format, instant download."
+        "title": "Generate Your Resume as PDF Free — Download Resume PDF Online",
+        "description": "Create and download your resume as PDF for free. Online PDF resume generator: perfect layout, professional format, instant download."
       }
     },
     "cvAlternancePage": {
       "meta": {
-        "title": "Free Work-Study Resume Template 2026 — Internship, IT",
-        "description": "Create your free work-study resume online. Templates for work-study, internship, IT apprenticeship. AI-powered resume builder, PDF export."
+        "title": "Free Apprenticeship Resume Student Template 2026 — Internship, IT",
+        "description": "Create your free apprenticeship resume online. Apprenticeship resume templates, internship resume, IT apprenticeship resume. AI-powered apprenticeship resume generator, PDF export."
       }
     },
     "cvDeveloppeurPage": {
       "meta": {
-        "title": "Free Developer Resume 2026 — Junior Dev, Web, IT Resume Examples",
-        "description": "Create your free developer resume: junior developer example, web developer CV, IT developer template. ATS-optimized tech resume, PDF export."
+        "title": "Free Developer Resume 2026 — Example Junior Developer, Web, IT Resume",
+        "description": "Create your free developer resume: junior developer resume example, web developer resume, IT developer resume. ATS-optimized tech resume template, PDF export."
       }
     },
     "cvMinimalistePage": {
       "meta": {
-        "title": "Free Minimalist Resume PDF 2026 — Modern, Simple, Design CV Templates",
-        "description": "Download a free minimalist resume template in PDF. Modern, simple and design CV templates. Create your resume online, instant PDF export."
+        "title": "Free Minimalist Resume PDF 2026 — Modern, Simple, Design Template",
+        "description": "Download a free minimalist resume template in PDF. Modern, simple and design resume templates: minimalist resume, modern free resume, simple student resume. Create your resume online, instant PDF export."
       }
     },
     "modeleCvGratuitPage": {
       "meta": {
-        "title": "Free Resume Template 2026 — Download Modern, Minimalist, ATS CV Template",
-        "description": "Download a free resume template in PDF. Choose from modern, minimalist, ATS-friendly CV templates. Create and download your free resume online in 5 minutes."
+        "title": "Free Resume Template 2026 — Download Modern, Minimalist, ATS Resume Template",
+        "description": "Download a free resume template in PDF. Choose from our modern, minimalist, ATS-friendly resume templates. Create and download your free resume online in 5 minutes."
+      },
+      "breadcrumbName": "Free Resume Template",
+      "hero": {
+        "badgeText": "100% free templates",
+        "h1Before": "Free ",
+        "h1Accent": "Resume Template",
+        "h1After": " to Download as PDF",
+        "subtitle": "Modern, minimalist, ATS — all our templates are free",
+        "description": "Choose from our free resume templates and create your professional resume in 5 minutes. Instant PDF export, no credit card required.",
+        "primaryCtaText": "Choose my free template",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Why our resume templates are different",
+        "subtitle": "",
+        "item0": { "title": "All truly free", "description": "No tricks or surprise subscriptions. Download as PDF for free whenever you're ready." },
+        "item1": { "title": "ATS optimized", "description": "Each template is structured to pass recruiters' automated screening systems." },
+        "item2": { "title": "Professional design", "description": "Designed to be modern and timeless, suitable for all sectors: tech, sales, healthcare, education." }
+      },
+      "section2": {
+        "title": "Our free resume templates",
+        "subtitle": "A template for every profile and sector.",
+        "item0": { "title": "Modern Resume Template", "keyword": "modern resume template free", "description": "Our most popular template. Sleek design, subtle color, ATS compatible. Ideal for most applications." },
+        "item1": { "title": "Minimalist Resume Template", "keyword": "minimalist resume template pdf free", "description": "The simplest and most readable. White background, clear typography. Perfect for demanding profiles." },
+        "item2": { "title": "ATS-Friendly Resume Template", "keyword": "free ats resume template", "description": "Optimized structure for automated screening software. Guarantees your information reaches the recruiter intact." },
+        "item3": { "title": "Classic Resume Template", "keyword": "free classic resume template", "description": "Traditional format with a modern twist. Suits all profiles, especially formal sectors." }
+      },
+      "section3": {
+        "title": "Create your resume with our templates in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Modern, Minimal, ATS or Classic — select the template that matches your sector." },
+        "step1": { "title": "Customize with AI", "description": "Our AI optimizes your content: wording, keywords, structure for maximum impact." },
+        "step2": { "title": "Adjust colors and fonts", "description": "Customize each template to your preferences in our intuitive editor." },
+        "step3": { "title": "Download as free PDF", "description": "Instant high-quality export, ready to send to your recruiters." }
+      },
+      "faq": {
+        "title": "Frequently asked questions about resume templates",
+        "subtitle": "Everything you need to know to choose and use our templates",
+        "q0": {
+          "question": "Which resume template should I choose?",
+          "answer": "For most sectors, the Modern template is the most versatile. Choose Minimalist for demanding sectors, ATS-Friendly for large companies with recruitment portals, and Classic for formal fields (banking, administration, law)."
+        },
+        "q1": {
+          "question": "Are the resume templates really free?",
+          "answer": "Yes, the Modern template is completely free including PDF export. No credit card required, no hidden fees. Premium templates are available with an optional subscription."
+        },
+        "q2": {
+          "question": "How do I customize a resume template?",
+          "answer": "In our editor, you can modify colors, fonts, sections and layout of each template. Our AI helps you write optimized content for each section."
+        },
+        "q3": {
+          "question": "Are the templates ATS compatible?",
+          "answer": "Yes, all our templates are tested to be compatible with major ATS software (Workday, Taleo, Greenhouse, Lever). The HTML/PDF structure guarantees perfect reading by these systems."
+        },
+        "q4": {
+          "question": "Can I use one resume template for multiple applications?",
+          "answer": "Absolutely. Create your base resume, then duplicate it and customize it for each job by adding specific keywords. Our AI helps you personalize each version quickly."
+        }
+      },
+      "finalCta": {
+        "title": "Choose your resume template now",
+        "description": "Free, customizable, professional. Your resume ready in 5 minutes.",
+        "ctaText": "Choose my resume template"
       }
     },
     "modeleCvStagePage": {
       "meta": {
-        "title": "Free Internship Resume Template 2026 — Student CV Template PDF",
-        "description": "Create your free internship resume online. Modern CV templates for internship applications, ATS-friendly, PDF export. Get your internship with AI-powered resume builder."
-      }
-    },
-    "cvPremierEmploiPage": {
-      "meta": {
-        "title": "Free First Job Resume 2026 — Entry Level CV Template",
-        "description": "Create your free first job resume. Entry level CV templates for graduates and beginners, ATS-optimized, PDF export. Land your first job in 5 minutes."
-      }
-    },
-    "cvSimplePage": {
-      "meta": {
-        "title": "Simple Resume Template Free 2026 — Download Clean CV PDF",
-        "description": "Create and download a simple resume for free. Clean, minimal CV templates, ATS-friendly. Professional and straightforward for any industry."
-      }
-    },
-    "cvDesignPage": {
-      "meta": {
-        "title": "Creative Resume Template Free 2026 — Modern CV Design PDF",
-        "description": "Create your creative resume design for free. Modern and aesthetic CV templates, PDF export, ATS-compatible. Stand out with a professionally designed resume."
-      }
-    },
-    "cvModernePage": {
-      "meta": {
-        "title": "Modern Resume Template Free 2026 — Download Modern CV PDF",
-        "description": "Download a modern resume template for free. Choose from our 2026 CV templates, ATS-optimized. Create your modern resume in 5 minutes."
-      }
-    },
-    "cvSansExperiencePage": {
-      "meta": {
-        "title": "Resume Without Experience Free 2026 — Student CV No Experience",
-        "description": "Create a free resume with no experience. CV templates for students and beginners. Our AI highlights your education, projects, and skills."
-      }
-    },
-    "cvDeveloppeurJuniorPage": {
-      "meta": {
-        "title": "Junior Developer Resume Free 2026 — Web Developer CV Template",
-        "description": "Create your junior developer resume for free. Templates for frontend, backend, full stack developers. ATS-optimized for tech recruiters."
-      }
-    },
-    "modeleCvAlternancePage": {
-      "meta": {
-        "title": "Apprenticeship Resume Template Free 2026 — Work-Study CV PDF",
-        "description": "Download a free apprenticeship resume template. CV templates for work-study programs, ATS-compatible, PDF export. Create your apprenticeship CV in 5 minutes."
-      }
-    },
-    "modeleCvPage": {
-      "meta": {
-        "title": "Free Resume Template 2026 — Professional CV Template to Download",
-        "description": "Download a free resume template. Choose from modern, minimalist, professional CV templates. Create your free resume online in 5 minutes."
-      }
-    },
-    "exempleCvPage": {
-      "meta": {
-        "title": "Free Resume Examples 2026 — Professional CV Examples to Download",
-        "description": "Browse our free resume examples: professional, student, developer, sales CV. Create your resume based on real-world examples."
-      }
-    },
-    "commentFaireUnCvPage": {
-      "meta": {
-        "title": "How to Write a Resume in 2026 — Complete Guide to Create a Free CV",
-        "description": "How to write a professional resume in 2026? Complete guide: structure, content, layout. Create your CV for free with our online generator."
-      }
-    },
-    "cvCommercialPage": {
-      "meta": {
-        "title": "Free Sales Resume 2026 — CV Template for Sales Representative",
-        "description": "Create your free sales resume. CV templates for sales reps, account managers, business developers. ATS-optimized, PDF export."
-      }
-    },
-    "cvMarketingPage": {
-      "meta": {
-        "title": "Free Marketing Resume 2026 — CV Template Marketing Manager, Digital",
-        "description": "Create your free marketing resume. CV templates for marketing managers, digital project managers, community managers. ATS-optimized, PDF export."
-      }
-    },
-    "cvIngenieurPage": {
-      "meta": {
-        "title": "Free Engineer Resume 2026 — CV Template Software Engineer, Civil",
-        "description": "Create your free engineer resume. CV templates for software, civil, mechanical, electrical engineers. ATS-optimized, PDF export."
-      }
-    },
-    "cvInfirmierPage": {
-      "meta": {
-        "title": "Free Nurse Resume 2026 — CV Template Nurse, Healthcare Worker",
-        "description": "Create your free nurse resume. CV templates for nurses, nursing assistants, healthcare managers. Adapted for hospital sector, PDF export."
-      }
-    },
-    "cvReconversionPage": {
-      "meta": {
-        "title": "Career Change Resume Free 2026 — CV for Professional Reconversion",
-        "description": "Create your career change resume for free. Highlight transferable skills to switch industries. Our AI optimizes your profile."
-      }
-    },
-    "cvComptablePage": {
-      "meta": {
-        "title": "Free Accountant Resume 2026 — CV Template Accountant, CPA, Controller",
-        "description": "Create your free accountant resume. CV templates for accountants, CPAs, financial controllers. ATS-optimized, PDF export in 5 minutes."
-      }
-    },
-    "cvManagerPage": {
-      "meta": {
-        "title": "Free Manager Resume 2026 — CV Template Manager, Team Leader",
-        "description": "Create your free manager resume. CV templates for managers, team leaders, department heads. Showcase your leadership skills, PDF export."
-      }
-    },
-    "cvChefDeProjetPage": {
-      "meta": {
-        "title": "Free Project Manager Resume 2026 — CV Template IT, Marketing Project Manager",
-        "description": "Create your free project manager resume. CV templates for IT, marketing, and construction project managers. ATS-optimized, PDF export."
-      }
-    },
-    "cvRhPage": {
-      "meta": {
-        "title": "Free HR Resume 2026 — CV Template HR Manager, Recruiter, CHRO",
-        "description": "Create your free HR resume. CV templates for HR officers, recruiters, HR managers. ATS-optimized, PDF export in 5 minutes."
+        "title": "Free Internship Resume 2026 — Internship Resume Template, Student",
+        "description": "Create your free internship resume online. Resume templates for internship, first job, no experience. AI-powered internship resume generator, PDF export."
+      },
+      "breadcrumbName": "Internship Resume Template",
+      "hero": {
+        "badgeText": "Land your internship",
+        "h1Before": "Internship ",
+        "h1Accent": "Resume Template",
+        "h1After": " Free for Students",
+        "subtitle": "Land your internship with an optimized resume for recruiters",
+        "description": "Create your internship resume in 5 minutes with AI help. Modern templates for students, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my internship resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Create an effective internship resume",
+        "subtitle": "An internship resume isn't built the same way as a regular resume. Here's what makes the difference.",
+        "item0": { "title": "Education first", "description": "When experience is limited, your education becomes the heart of your resume. Degree, school, specialization — put it all forward." },
+        "item1": { "title": "Projects and activities", "description": "Every academic project, volunteer work or extracurricular activity counts. Our AI helps you write them impactfully." },
+        "item2": { "title": "ATS compatible", "description": "Large companies automatically filter resumes. Our templates are structured to pass these filters and reach the recruiter's desk." }
+      },
+      "section2": {
+        "title": "Our free internship resume templates",
+        "subtitle": "Choose the template that suits your target company and profile.",
+        "item0": { "title": "Modern Internship Template", "keyword": "modern internship resume template", "description": "Sleek and professional design, ideal for most internships. Versatile and effective." },
+        "item1": { "title": "Minimalist Internship Template", "keyword": "simple student internship resume", "description": "Minimalist format to highlight your profile without visual distraction. Perfect for demanding companies." },
+        "item2": { "title": "ATS Internship Template", "keyword": "ats compatible internship resume", "description": "Optimized for automated screening of large companies and recruitment portals." },
+        "item3": { "title": "Classic Internship Template", "keyword": "internship resume bts degree", "description": "Traditional format for internships in formal sectors: finance, consulting, healthcare, public sector." }
+      },
+      "section3": {
+        "title": "Create your internship resume in 4 steps",
+        "step0": { "title": "Create your account for free", "description": "Sign up in 30 seconds, no credit card." },
+        "step1": { "title": "Choose your template", "description": "Modern, Minimal, ATS or Classic based on your target company." },
+        "step2": { "title": "Write with AI", "description": "Our AI suggests optimal content: skills, projects, impactful wording." },
+        "step3": { "title": "Download as PDF", "description": "Free high-quality export, ready to send with your cover letter." }
+      },
+      "faq": {
+        "title": "Frequently asked questions about internship resumes",
+        "subtitle": "Everything you need to know to create an effective internship resume",
+        "q0": {
+          "question": "How do I make a student internship resume?",
+          "answer": "For an internship resume, put your education at the top if you have little experience. Add your projects, technical and soft skills. Use our free generator with AI to create a professional internship resume in 5 minutes."
+        },
+        "q1": {
+          "question": "Which resume format should I choose for an internship?",
+          "answer": "Prefer a Modern or Minimalist format for most internships. ATS-Friendly for large companies and recruitment portals. One page is enough for a student internship resume."
+        },
+        "q2": {
+          "question": "How do I make an internship resume without experience?",
+          "answer": "Highlight your education, academic projects, technical skills and extracurricular activities. Our AI helps you showcase each element even without professional experience."
+        },
+        "q3": {
+          "question": "What length should an internship resume be?",
+          "answer": "A student internship resume should fit on one A4 page. Our templates are designed to respect this constraint automatically while remaining readable and professional."
+        },
+        "q4": {
+          "question": "How do I customize my resume for each internship?",
+          "answer": "Adapt your resume to each offer by integrating job posting keywords in your descriptions. Our AI helps you identify and incorporate important terms for each application."
+        }
+      },
+      "finalCta": {
+        "title": "Create your internship resume now",
+        "description": "Free, AI-guided, ready in 5 minutes. Land the internship you want.",
+        "ctaText": "Create my internship resume"
       }
     },
     "cvAssistantPage": {
       "meta": {
-        "title": "Free Administrative Assistant Resume 2026 — CV Template Office Manager",
-        "description": "Create your free administrative assistant resume. CV templates for admin assistants, executive assistants, office managers. PDF export."
+        "title": "Free Assistant Resume Template 2026 — Administrative, Office Assistant Resume",
+        "description": "Create your free administrative assistant resume online. Assistant resume templates, office assistant resume. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Assistant Resume",
+      "hero": {
+        "badgeText": "AI-powered assistant resume",
+        "h1Before": "Free ",
+        "h1Accent": "Assistant Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your organizational and administrative skills",
+        "description": "Create a professional assistant resume in 5 minutes. Modern templates optimized for recruiter searches, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my assistant resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Stand out as an assistant",
+        "subtitle": "Your organizational abilities and attention to detail matter. Highlight them effectively.",
+        "item0": { "title": "Key responsibilities first", "description": "Emphasize your administrative, coordination and support achievements. Show concrete results." },
+        "item1": { "title": "Tools and software", "description": "List the office tools, CRM systems and software you master. These skills are crucial for recruiters." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume passes automated screening and reaches recruiters." }
+      },
+      "section2": {
+        "title": "Our assistant resume templates",
+        "subtitle": "Choose the template that best represents your profile.",
+        "item0": { "title": "Modern Assistant Template", "keyword": "modern assistant resume template", "description": "Professional and contemporary design, ideal for modern companies." },
+        "item1": { "title": "Executive Assistant Template", "keyword": "executive assistant resume template", "description": "Sophisticated design for executive and senior assistant roles." },
+        "item2": { "title": "Administrative Template", "keyword": "administrative resume template", "description": "Structured for administrative and back-office positions." },
+        "item3": { "title": "Classic Assistant Template", "keyword": "classic assistant resume template", "description": "Timeless format suitable for all assistant positions." }
+      },
+      "section3": {
+        "title": "Create your assistant resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Modern, Executive, Administrative or Classic based on your target role." },
+        "step1": { "title": "Personalize with AI", "description": "Our AI suggests the best way to describe your responsibilities and achievements." },
+        "step2": { "title": "Adjust your design", "description": "Customize colors and fonts to match your style in our editor." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready to send to employers." }
+      },
+      "faq": {
+        "title": "Questions about assistant resumes",
+        "subtitle": "Everything you need to create a winning assistant resume",
+        "q0": {
+          "question": "What should be in an assistant resume?",
+          "answer": "Include your key responsibilities, skills with office software, languages, certifications, and achievements. Highlight your organization and coordination abilities."
+        },
+        "q1": {
+          "question": "How do I highlight my assistant experience?",
+          "answer": "Use numbers and concrete examples: 'Managed calendar for 5 executives' or 'Coordinated 20+ monthly meetings'. Show the impact of your work."
+        },
+        "q2": {
+          "question": "Which template for which assistant position?",
+          "answer": "Modern for startup/tech, Executive for C-suite roles, Administrative for corporate, Classic for all sectors."
+        },
+        "q3": {
+          "question": "Should I include all office software I know?",
+          "answer": "Yes, list all software: Office 365, Google Workspace, Salesforce, SAP, etc. These are valuable skills for recruiters."
+        },
+        "q4": {
+          "question": "How long should an assistant resume be?",
+          "answer": "One to two pages maximum, depending on your experience. Focus on relevant skills and accomplishments."
+        }
+      },
+      "finalCta": {
+        "title": "Create your assistant resume now",
+        "description": "Free, professional, optimized. Stand out from other candidates.",
+        "ctaText": "Create my assistant resume"
+      }
+    },
+    "cvChefDeProjetPage": {
+      "meta": {
+        "title": "Free Project Manager Resume Template 2026 — Project Manager Resume",
+        "description": "Create your free project manager resume online. Project manager resume templates, PM resume. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Project Manager Resume",
+      "hero": {
+        "badgeText": "AI-powered project manager resume",
+        "h1Before": "Free ",
+        "h1Accent": "Project Manager",
+        "h1After": " Resume Template",
+        "subtitle": "Showcase your leadership and project delivery skills",
+        "description": "Create a professional project manager resume in 5 minutes. Modern templates optimized for leadership positions, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my PM resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a winning project manager resume",
+        "subtitle": "Leadership, planning and delivery skills are what matter. Present them strategically.",
+        "item0": { "title": "Results-driven format", "description": "Focus on delivered projects, budgets managed, and team led. Use metrics to prove your impact." },
+        "item1": { "title": "Methodologies and tools", "description": "Highlight your agile, waterfall, Scrum, Jira expertise. These methodologies matter to recruiters." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume passes ATS filters and reaches decision makers." }
+      },
+      "section2": {
+        "title": "Our project manager resume templates",
+        "subtitle": "Choose the template that best suits your experience level.",
+        "item0": { "title": "Senior PM Template", "keyword": "senior project manager resume", "description": "For experienced PMs: sophisticated design, focus on strategic achievements." },
+        "item1": { "title": "Agile PM Template", "keyword": "agile project manager resume", "description": "Optimized for Scrum Masters and Agile project managers." },
+        "item2": { "title": "Project Manager Template", "keyword": "project manager resume template", "description": "For traditional project management: Gantt, waterfall, stakeholder management." },
+        "item3": { "title": "Modern PM Template", "keyword": "modern project manager resume", "description": "Contemporary design emphasizing innovation and digital transformation." }
+      },
+      "section3": {
+        "title": "Create your project manager resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Senior, Agile, Traditional or Modern PM template based on your experience." },
+        "step1": { "title": "Detail your achievements", "description": "Our AI helps you quantify your impact: projects delivered, budgets, teams managed." },
+        "step2": { "title": "Highlight methodologies", "description": "Add your project management certifications and tools expertise." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for your job search." }
+      },
+      "faq": {
+        "title": "Questions about project manager resumes",
+        "subtitle": "Create a compelling PM resume that gets interviews",
+        "q0": {
+          "question": "What should I include in a PM resume?",
+          "answer": "Key projects delivered, team size managed, methodologies used (Agile, Scrum, Waterfall), certifications (PMP, CAPM), and measurable results (budget savings, timeline improvements)."
+        },
+        "q1": {
+          "question": "How do I quantify my PM achievements?",
+          "answer": "Use numbers: 'Delivered 15 projects on time within budget', 'Led team of 8 developers', 'Reduced project timeline by 20%', 'Managed $2M+ annual budget'."
+        },
+        "q2": {
+          "question": "Which certifications are most valuable?",
+          "answer": "PMP and CAPM are most recognized, followed by Scrum Master, Six Sigma, and PRINCE2. List them prominently in your skills section."
+        },
+        "q3": {
+          "question": "How important is Agile experience?",
+          "answer": "Very important. Most modern companies use Agile. Include your Scrum, Kanban, and sprint management experience."
+        },
+        "q4": {
+          "question": "Should I include technical skills?",
+          "answer": "Yes, list tools: Jira, Asana, Monday, MS Project, Slack. Technical knowledge makes you more attractive to tech-focused companies."
+        }
+      },
+      "finalCta": {
+        "title": "Create your project manager resume now",
+        "description": "Free, professional, data-driven. Land your next PM role.",
+        "ctaText": "Create my PM resume"
+      }
+    },
+    "cvCommercialPage": {
+      "meta": {
+        "title": "Free Sales Resume Template 2026 — Sales, Commercial Resume",
+        "description": "Create your free sales resume online. Sales representative resume, commercial resume templates. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Sales Resume",
+      "hero": {
+        "badgeText": "AI-powered sales resume",
+        "h1Before": "Free ",
+        "h1Accent": "Sales Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your sales achievements and customer success",
+        "description": "Create a professional sales resume in 5 minutes. Modern templates optimized for sales roles, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my sales resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a sales resume that sells",
+        "subtitle": "Metrics and results are what matter in sales. Highlight them effectively.",
+        "item0": { "title": "Numbers speak louder", "description": "Revenue generated, quotas exceeded, client retention rates — use metrics to prove your impact." },
+        "item1": { "title": "Client success stories", "description": "Highlight major deals closed, accounts expanded, and customer satisfaction achievements." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume passes automated screening and reaches decision makers." }
+      },
+      "section2": {
+        "title": "Our sales resume templates",
+        "subtitle": "Choose the template that best represents your sales style.",
+        "item0": { "title": "High-Impact Sales Template", "keyword": "sales resume high impact", "description": "Modern design emphasizing your biggest achievements and revenue impact." },
+        "item1": { "title": "Account Executive Template", "keyword": "account executive resume", "description": "For large account management and enterprise sales roles." },
+        "item2": { "title": "Inside Sales Template", "keyword": "inside sales resume template", "description": "Optimized for phone sales, customer service, and remote sales positions." },
+        "item3": { "title": "Classic Sales Template", "keyword": "classic sales resume template", "description": "Traditional format suitable for all sales environments." }
+      },
+      "section3": {
+        "title": "Create your sales resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Impact-focused, Account Exec, Inside Sales or Classic template." },
+        "step1": { "title": "Highlight your metrics", "description": "Our AI helps you showcase revenue, quotas, and conversion rates effectively." },
+        "step2": { "title": "Customize your design", "description": "Personalize colors and fonts to match your brand in our editor." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for sales presentations." }
+      },
+      "faq": {
+        "title": "Questions about sales resumes",
+        "subtitle": "Create a sales resume that gets interviews",
+        "q0": {
+          "question": "What metrics should I include in a sales resume?",
+          "answer": "Total revenue generated, quota attainment %, client retention rate, new accounts opened, deal size average, and sales cycle reduction %."
+        },
+        "q1": {
+          "question": "How do I showcase my sales achievements?",
+          "answer": "Use quantified results: 'Generated $3M in annual revenue', 'Exceeded quota by 150%', 'Increased client retention from 85% to 95%'."
+        },
+        "q2": {
+          "question": "What industries value sales resumes most?",
+          "answer": "Tech, Finance, Insurance, Real Estate, Pharmaceuticals, and SaaS companies. All rely on strong sales teams."
+        },
+        "q3": {
+          "question": "Should I include CRM software skills?",
+          "answer": "Absolutely. List: Salesforce, HubSpot, Pipedrive, Dynamics, etc. CRM expertise is highly valued by employers."
+        },
+        "q4": {
+          "question": "How do I handle gaps in my sales experience?",
+          "answer": "Use transferable skills: negotiation, relationship building, customer service. Our AI helps you position any experience positively."
+        }
+      },
+      "finalCta": {
+        "title": "Create your sales resume now",
+        "description": "Free, metrics-driven, persuasive. Land your next sales role.",
+        "ctaText": "Create my sales resume"
+      }
+    },
+    "cvComptablePage": {
+      "meta": {
+        "title": "Free Accountant Resume Template 2026 — Accounting, Finance Resume",
+        "description": "Create your free accountant resume online. Accounting resume, finance resume templates. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Accountant Resume",
+      "hero": {
+        "badgeText": "AI-powered accountant resume",
+        "h1Before": "Free ",
+        "h1Accent": "Accountant Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your accounting expertise and financial acumen",
+        "description": "Create a professional accountant resume in 5 minutes. Modern templates optimized for accounting roles, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my accountant resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a professional accounting resume",
+        "subtitle": "Technical skills and certifications define your credibility. Highlight them strategically.",
+        "item0": { "title": "Certifications first", "description": "CPA, CMA, CIA, ACCA — your professional credentials are crucial. List them prominently." },
+        "item1": { "title": "Software mastery", "description": "SAP, Oracle, QuickBooks, Excel expertise — these tools matter in every accounting department." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume passes compliance and recruitment systems." }
+      },
+      "section2": {
+        "title": "Our accountant resume templates",
+        "subtitle": "Choose the template that matches your accounting specialty.",
+        "item0": { "title": "Senior Accountant Template", "keyword": "senior accountant resume", "description": "For experienced CPAs: sophisticated design emphasizing leadership and complex audits." },
+        "item1": { "title": "CPA Resume Template", "keyword": "cpa certified public accountant resume", "description": "Optimized for CPAs with focus on certifications and regulatory compliance." },
+        "item2": { "title": "Financial Analyst Template", "keyword": "financial analyst resume template", "description": "For analysis, forecasting and financial planning roles." },
+        "item3": { "title": "Accounting Assistant Template", "keyword": "accounting assistant resume", "description": "For entry-level accounting and bookkeeping positions." }
+      },
+      "section3": {
+        "title": "Create your accountant resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Senior, CPA, Financial Analyst or Assistant template based on your role." },
+        "step1": { "title": "Highlight certifications", "description": "Our AI helps you showcase your credentials and continuing education." },
+        "step2": { "title": "List technical skills", "description": "Add accounting software: SAP, Oracle, QuickBooks, Excel, Access." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for job applications." }
+      },
+      "faq": {
+        "title": "Questions about accountant resumes",
+        "subtitle": "Create a professional accounting resume",
+        "q0": {
+          "question": "What credentials should I list as an accountant?",
+          "answer": "CPA is most important, followed by CMA, CIA, ACCA, or your country's equivalent. List certifications, exam dates, and renewal status."
+        },
+        "q1": {
+          "question": "Which accounting software skills are most important?",
+          "answer": "SAP and Oracle are enterprise standards, QuickBooks for small businesses, Excel for all companies, and specialized software like Hyperion, TM1, or Anaplan."
+        },
+        "q2": {
+          "question": "How do I showcase my accounting achievements?",
+          "answer": "Quantify: 'Managed $50M+ in annual accounts', 'Reduced audit time by 30%', 'Ensured 100% compliance on 20+ tax filings'."
+        },
+        "q3": {
+          "question": "Should I list specific accounting areas?",
+          "answer": "Yes: financial accounting, management accounting, tax accounting, forensic accounting, or internal audit. Specialization matters."
+        },
+        "q4": {
+          "question": "How important is Excel in an accounting resume?",
+          "answer": "Very important. Highlight advanced Excel: pivot tables, VLOOKUP, macros, financial modeling, and data analysis capabilities."
+        }
+      },
+      "finalCta": {
+        "title": "Create your accountant resume now",
+        "description": "Free, professional, credential-focused. Land your next accounting role.",
+        "ctaText": "Create my accountant resume"
+      }
+    },
+    "cvDesignPage": {
+      "meta": {
+        "title": "Free Design Resume Template 2026 — Designer, UX/UI Resume",
+        "description": "Create your free design resume online. Designer resume, UX/UI resume, graphic design resume templates. AI resume generator, ATS-optimized, free PDF export with portfolio links."
+      },
+      "breadcrumbName": "Design Resume",
+      "hero": {
+        "badgeText": "AI-powered design resume",
+        "h1Before": "Free ",
+        "h1Accent": "Design Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your design portfolio and creative skills",
+        "description": "Create a professional design resume in 5 minutes. Modern templates optimized for creatives, ATS compatible, free PDF export with portfolio links.",
+        "primaryCtaText": "Create my design resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Stand out as a designer",
+        "subtitle": "Portfolio links and design tools matter. Highlight them strategically.",
+        "item0": { "title": "Portfolio showcase", "description": "Link to your best work. Include case studies, user feedback, and measurable impact." },
+        "item1": { "title": "Design tools expertise", "description": "Figma, Adobe Creative Suite, Sketch, Prototyping tools — list them all and show proficiency." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume reaches hiring managers while remaining portfolio-friendly." }
+      },
+      "section2": {
+        "title": "Our design resume templates",
+        "subtitle": "Choose the template that best represents your design style.",
+        "item0": { "title": "UX/UI Designer Template", "keyword": "ux ui designer resume template", "description": "Modern design emphasizing user research, wireframes, and user testing." },
+        "item1": { "title": "Graphic Design Template", "keyword": "graphic designer resume template", "description": "Creative design ideal for branding, print, and visual design roles." },
+        "item2": { "title": "Web Design Template", "keyword": "web designer resume template", "description": "Optimized for web design with emphasis on responsive design and user experience." },
+        "item3": { "title": "Creative Director Template", "keyword": "creative director resume template", "description": "For senior designers and creative leaders." }
+      },
+      "section3": {
+        "title": "Create your design resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "UX/UI, Graphic, Web Design or Creative Director template." },
+        "step1": { "title": "Add portfolio links", "description": "Our AI helps you present your best work effectively on your resume." },
+        "step2": { "title": "Highlight design skills", "description": "List design tools, UX methodologies, and design principles you master." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export with clickable portfolio links." }
+      },
+      "faq": {
+        "title": "Questions about design resumes",
+        "subtitle": "Create a compelling design resume",
+        "q0": {
+          "question": "Should I include a portfolio link on my resume?",
+          "answer": "Yes, absolutely. Include links to Behance, Dribbble, or your personal website. Make it easy for recruiters to see your work."
+        },
+        "q1": {
+          "question": "What design tools should I list?",
+          "answer": "Figma, Adobe XD, Sketch, Adobe Creative Suite, Protopie, InVision, and any industry-specific tools for your specialization."
+        },
+        "q2": {
+          "question": "How do I showcase design impact?",
+          "answer": "Use metrics: 'Increased user engagement by 40%', 'Improved conversion rate by 25%', 'Reduced bounce rate from 45% to 30%'."
+        },
+        "q3": {
+          "question": "Should I include design process or methodology?",
+          "answer": "Yes, mention design thinking, human-centered design, agile design, or any proven methodologies you use."
+        },
+        "q4": {
+          "question": "How do I handle a limited design portfolio?",
+          "answer": "Include personal projects, case studies, or academic work. Our AI helps you present any project professionally."
+        }
+      },
+      "finalCta": {
+        "title": "Create your design resume now",
+        "description": "Free, creative, portfolio-ready. Stand out as a designer.",
+        "ctaText": "Create my design resume"
+      }
+    },
+    "cvDeveloppeurJuniorPage": {
+      "meta": {
+        "title": "Free Junior Developer Resume Template 2026 — Entry-level Dev Resume",
+        "description": "Create your free junior developer resume online. Junior dev resume, entry-level programmer resume templates. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Junior Developer Resume",
+      "hero": {
+        "badgeText": "AI-powered junior dev resume",
+        "h1Before": "Free ",
+        "h1Accent": "Junior Developer",
+        "h1After": " Resume Template",
+        "subtitle": "Land your first developer job with a standout resume",
+        "description": "Create a professional junior developer resume in 5 minutes. Modern templates optimized for entry-level devs, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my junior dev resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Stand out as a junior developer",
+        "subtitle": "Programming skills and projects matter most. Showcase them effectively.",
+        "item0": { "title": "Projects and GitHub", "description": "Link to your GitHub, portfolio projects, and code samples. Show your technical growth." },
+        "item1": { "title": "Programming languages", "description": "List all languages: JavaScript, Python, Java, C++, Go, Rust. Include frameworks and libraries." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume reaches tech recruiters and hiring managers." }
+      },
+      "section2": {
+        "title": "Our junior developer resume templates",
+        "subtitle": "Choose the template that matches your tech stack.",
+        "item0": { "title": "Web Developer Template", "keyword": "junior web developer resume", "description": "For front-end and full-stack JavaScript/React developers." },
+        "item1": { "title": "Backend Developer Template", "keyword": "junior backend developer resume", "description": "Optimized for Python, Java, Node.js, and database expertise." },
+        "item2": { "title": "Full-stack Developer Template", "keyword": "full-stack developer resume template", "description": "For developers comfortable with both front-end and back-end technologies." },
+        "item3": { "title": "Mobile Developer Template", "keyword": "junior mobile developer resume", "description": "For iOS, Android, Flutter, or React Native developers." }
+      },
+      "section3": {
+        "title": "Create your junior developer resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Web, Backend, Full-stack, or Mobile Developer template." },
+        "step1": { "title": "List your tech stack", "description": "Our AI helps you present your programming skills clearly and impressively." },
+        "step2": { "title": "Add portfolio links", "description": "Link to GitHub, personal projects, and any open-source contributions." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for applications." }
+      },
+      "faq": {
+        "title": "Questions about junior developer resumes",
+        "subtitle": "Create a technical resume that gets interviews",
+        "q0": {
+          "question": "What should I include as a junior developer?",
+          "answer": "Programming languages, frameworks, tools, bootcamp or degree, GitHub link, 2-3 strong projects, and any internship or volunteer experience."
+        },
+        "q1": {
+          "question": "How do I showcase my coding projects?",
+          "answer": "Link to GitHub with clear READMEs. Include 2-3 projects that demonstrate your best skills. Describe the problem, your solution, and technologies used."
+        },
+        "q2": {
+          "question": "Should I include a GitHub link?",
+          "answer": "Absolutely. Make your GitHub profile professional: good README, documented code, pinned projects. Recruiters check this."
+        },
+        "q3": {
+          "question": "Which programming languages are most valuable?",
+          "answer": "JavaScript, Python, Java are most in-demand. Include any languages you know: TypeScript, Go, Rust, C#. Depth matters more than breadth."
+        },
+        "q4": {
+          "question": "How do I handle lack of professional experience?",
+          "answer": "Highlight bootcamp projects, personal projects, open-source contributions, and academic work. Our AI helps you present any code work professionally."
+        }
+      },
+      "finalCta": {
+        "title": "Create your junior developer resume now",
+        "description": "Free, technical, portfolio-ready. Land your first dev job.",
+        "ctaText": "Create my junior dev resume"
       }
     },
     "cvGraphistePage": {
       "meta": {
-        "title": "Free Graphic Designer Resume 2026 — CV Template Designer, UI/UX",
-        "description": "Create your free graphic designer resume. CV templates for graphic designers, UI/UX designers. Showcase your portfolio, PDF export."
+        "title": "Free Graphic Designer Resume Template 2026 — Graphics, Visual Design Resume",
+        "description": "Create your free graphic designer resume online. Graphic design resume, visual design resume templates. AI resume generator, ATS-optimized, free PDF export with portfolio links."
+      },
+      "breadcrumbName": "Graphic Designer Resume",
+      "hero": {
+        "badgeText": "AI-powered graphic designer resume",
+        "h1Before": "Free ",
+        "h1Accent": "Graphic Designer",
+        "h1After": " Resume Template",
+        "subtitle": "Showcase your design expertise and creative portfolio",
+        "description": "Create a professional graphic designer resume in 5 minutes. Modern templates with portfolio integration, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my graphic design resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Stand out as a graphic designer",
+        "subtitle": "Visual work and creative achievements define your value. Present them strategically.",
+        "item0": { "title": "Portfolio essentials", "description": "Showcase your best visual work. Include before/after comparisons and design impact." },
+        "item1": { "title": "Design software mastery", "description": "Adobe Creative Suite, Figma, Sketch — list all tools and your proficiency level." },
+        "item2": { "title": "ATS optimized", "description": "Our templates work with both ATS systems and design-focused recruiters." }
+      },
+      "section2": {
+        "title": "Our graphic designer resume templates",
+        "subtitle": "Choose the template that represents your design style.",
+        "item0": { "title": "Brand Designer Template", "keyword": "brand designer resume template", "description": "For branding, identity design, and logo design specialists." },
+        "item1": { "title": "Print Designer Template", "keyword": "print designer resume template", "description": "Optimized for print design, packaging, and publication design." },
+        "item2": { "title": "Digital Designer Template", "keyword": "digital designer resume template", "description": "For digital, web, and interactive design specialists." },
+        "item3": { "title": "Creative Director Template", "keyword": "creative director resume template", "description": "For senior designers and creative leadership roles." }
+      },
+      "section3": {
+        "title": "Create your graphic designer resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Brand, Print, Digital Designer or Creative Director template." },
+        "step1": { "title": "Showcase your portfolio", "description": "Our AI helps you present your visual work effectively on your resume." },
+        "step2": { "title": "List design tools", "description": "Adobe XD, Figma, Illustrator, Photoshop, InDesign, and any specialized software." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export with portfolio integration." }
+      },
+      "faq": {
+        "title": "Questions about graphic designer resumes",
+        "subtitle": "Create a visually compelling designer resume",
+        "q0": {
+          "question": "What should I include as a graphic designer?",
+          "answer": "Design software expertise, design specialization (branding, print, digital), portfolio link, notable clients or projects, and any design awards."
+        },
+        "q1": {
+          "question": "How do I showcase my design work?",
+          "answer": "Link to Behance or Dribbble portfolio. Include case studies showing your design process and project results."
+        },
+        "q2": {
+          "question": "Which design tools are most important?",
+          "answer": "Adobe Creative Suite is essential. Add Figma, Sketch, and any industry-specific tools for your specialization."
+        },
+        "q3": {
+          "question": "Should I include design process information?",
+          "answer": "Yes, briefly mention your design philosophy, target audience understanding, and how you approach projects."
+        },
+        "q4": {
+          "question": "How do I measure design success?",
+          "answer": "Include metrics when possible: 'Increased brand recognition by 50%', 'Improved user engagement by 35%', or 'Award-winning design'."
+        }
+      },
+      "finalCta": {
+        "title": "Create your graphic designer resume now",
+        "description": "Free, creative, visually professional. Stand out as a designer.",
+        "ctaText": "Create my graphic design resume"
+      }
+    },
+    "cvInfirmierPage": {
+      "meta": {
+        "title": "Free Nurse Resume Template 2026 — Nursing, Healthcare Resume",
+        "description": "Create your free nurse resume online. Nursing resume, healthcare professional resume templates. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Nurse Resume",
+      "hero": {
+        "badgeText": "AI-powered nurse resume",
+        "h1Before": "Free ",
+        "h1Accent": "Nurse Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your clinical skills and patient care experience",
+        "description": "Create a professional nurse resume in 5 minutes. Modern healthcare templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my nurse resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a strong nursing resume",
+        "subtitle": "Licenses, certifications, and patient outcomes matter. Present them effectively.",
+        "item0": { "title": "Licenses and certifications", "description": "RN, LPN, specializations — list all credentials with renewal dates and certifications." },
+        "item1": { "title": "Clinical competencies", "description": "Patient assessment, medication administration, wound care, EHR systems — showcase your expertise." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass healthcare system screening and reach hiring managers." }
+      },
+      "section2": {
+        "title": "Our nurse resume templates",
+        "subtitle": "Choose the template that matches your nursing specialty.",
+        "item0": { "title": "Registered Nurse Template", "keyword": "registered nurse resume template", "description": "For RNs in various hospital and clinical settings." },
+        "item1": { "title": "Specialized Nurse Template", "keyword": "specialized nurse resume template", "description": "For ICU, ED, OR, and other specialized nursing areas." },
+        "item2": { "title": "Nursing Management Template", "keyword": "nursing manager resume template", "description": "For nurse managers, charge nurses, and nursing leaders." },
+        "item3": { "title": "Long-term Care Template", "keyword": "long-term care nurse resume", "description": "For LTC, assisted living, and senior care settings." }
+      },
+      "section3": {
+        "title": "Create your nurse resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "RN, Specialized, Management, or Long-term Care template." },
+        "step1": { "title": "Highlight credentials", "description": "Our AI helps you showcase licenses, certifications, and specializations effectively." },
+        "step2": { "title": "Detail clinical experience", "description": "Add patient care achievements, EHR proficiency, and specialized skills." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for healthcare facility applications." }
+      },
+      "faq": {
+        "title": "Questions about nurse resumes",
+        "subtitle": "Create a professional nursing resume",
+        "q0": {
+          "question": "What credentials should I list as a nurse?",
+          "answer": "RN or LPN license with state, specialty certifications (CCRN, ACLS, PALS), BScN/ADN degree, and any additional certifications."
+        },
+        "q1": {
+          "question": "How do I highlight patient care experience?",
+          "answer": "Include patient population types, number of patients managed, clinical outcomes, and specialized procedures you perform."
+        },
+        "q2": {
+          "question": "Which EHR systems are most valuable?",
+          "answer": "Epic, Cerner, and Meditech are most common. Include any EHR systems you're proficient in."
+        },
+        "q3": {
+          "question": "Should I include soft skills on a nurse resume?",
+          "answer": "Yes, critical for nursing: patient communication, empathy, teamwork, attention to detail, critical thinking."
+        },
+        "q4": {
+          "question": "How do I showcase leadership as a nurse?",
+          "answer": "Include: mentoring junior nurses, leading quality improvement projects, charge nurse experience, or preceptor roles."
+        }
+      },
+      "finalCta": {
+        "title": "Create your nurse resume now",
+        "description": "Free, professional, healthcare-ready. Advance your nursing career.",
+        "ctaText": "Create my nurse resume"
+      }
+    },
+    "cvIngenieurPage": {
+      "meta": {
+        "title": "Free Engineer Resume Template 2026 — Engineering, Technical Resume",
+        "description": "Create your free engineer resume online. Engineering resume, mechanical/electrical/civil engineer resume templates. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Engineer Resume",
+      "hero": {
+        "badgeText": "AI-powered engineer resume",
+        "h1Before": "Free ",
+        "h1Accent": "Engineer Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your technical expertise and engineering achievements",
+        "description": "Create a professional engineer resume in 5 minutes. Modern engineering templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my engineer resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a technical engineering resume",
+        "subtitle": "Technical skills, projects, and certifications define your value. Present them strategically.",
+        "item0": { "title": "Engineering disciplines", "description": "Mechanical, Electrical, Civil, Software — specify your discipline and specialization clearly." },
+        "item1": { "title": "Technical tools and software", "description": "CAD, MATLAB, Python, Simulink, industry-specific software — list your expertise." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass technical screening and reach hiring managers." }
+      },
+      "section2": {
+        "title": "Our engineer resume templates",
+        "subtitle": "Choose the template for your engineering discipline.",
+        "item0": { "title": "Software Engineer Template", "keyword": "software engineer resume template", "description": "For software and systems engineers." },
+        "item1": { "title": "Mechanical Engineer Template", "keyword": "mechanical engineer resume template", "description": "For mechanical design and manufacturing engineers." },
+        "item2": { "title": "Electrical Engineer Template", "keyword": "electrical engineer resume template", "description": "For electrical, electronics, and power engineers." },
+        "item3": { "title": "Civil Engineer Template", "keyword": "civil engineer resume template", "description": "For civil, structural, and infrastructure engineers." }
+      },
+      "section3": {
+        "title": "Create your engineer resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Software, Mechanical, Electrical, or Civil Engineer template." },
+        "step1": { "title": "Detail technical projects", "description": "Our AI helps you showcase engineering achievements with measurable impact." },
+        "step2": { "title": "List technical tools", "description": "CAD, MATLAB, programming languages, industry software, and certifications." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for engineering applications." }
+      },
+      "faq": {
+        "title": "Questions about engineer resumes",
+        "subtitle": "Create a technical engineer resume",
+        "q0": {
+          "question": "What should I include as an engineer?",
+          "answer": "Degree (BSEE, BSCE, etc.), PE license if applicable, technical skills, CAD tools, programming languages, and significant engineering projects."
+        },
+        "q1": {
+          "question": "How do I showcase engineering achievements?",
+          "answer": "Use metrics: 'Designed system reducing power consumption by 25%', 'Managed $2M infrastructure project', 'Improved efficiency by 40%'."
+        },
+        "q2": {
+          "question": "Which engineering certifications are valuable?",
+          "answer": "PE (Professional Engineer), FE (Fundamentals of Engineering), Project Management certifications, and industry-specific certifications."
+        },
+        "q3": {
+          "question": "What technical tools should I list?",
+          "answer": "CAD: AutoCAD, SolidWorks, CATIA. Analysis: MATLAB, ANSYS, Simulink. Programming: Python, C++, Java."
+        },
+        "q4": {
+          "question": "How do I present complex technical projects?",
+          "answer": "Summarize briefly: project scope, your specific contribution, technologies used, and quantifiable results."
+        }
+      },
+      "finalCta": {
+        "title": "Create your engineer resume now",
+        "description": "Free, technical, professional. Advance your engineering career.",
+        "ctaText": "Create my engineer resume"
       }
     },
     "cvJuristePage": {
       "meta": {
-        "title": "Free Legal CV 2026 — CV Template Lawyer, Paralegal, Legal Counsel",
-        "description": "Create your free legal CV. CV templates for lawyers, legal counsels, paralegals. ATS-optimized for law firms and corporate legal departments."
+        "title": "Free Lawyer Resume Template 2026 — Legal, Attorney Resume",
+        "description": "Create your free lawyer resume online. Lawyer resume, attorney resume templates, legal professional resume. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Lawyer Resume",
+      "hero": {
+        "badgeText": "AI-powered lawyer resume",
+        "h1Before": "Free ",
+        "h1Accent": "Lawyer Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your legal expertise and case achievements",
+        "description": "Create a professional lawyer resume in 5 minutes. Modern legal templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my lawyer resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a professional legal resume",
+        "subtitle": "Bar admission, practice areas, and achievements matter. Present them strategically.",
+        "item0": { "title": "Bar admission status", "description": "License status, jurisdiction, bar memberships — list all relevant legal credentials." },
+        "item1": { "title": "Practice areas and expertise", "description": "Corporate law, litigation, intellectual property, tax law — specify your areas." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass legal firm screening and reach hiring partners." }
+      },
+      "section2": {
+        "title": "Our lawyer resume templates",
+        "subtitle": "Choose the template for your legal specialty.",
+        "item0": { "title": "Corporate Lawyer Template", "keyword": "corporate lawyer resume template", "description": "For corporate law, M&A, and contract specialists." },
+        "item1": { "title": "Litigation Attorney Template", "keyword": "litigation attorney resume template", "description": "For trial lawyers and litigation specialists." },
+        "item2": { "title": "Intellectual Property Template", "keyword": "ip lawyer resume template", "description": "For patent, trademark, and copyright specialists." },
+        "item3": { "title": "In-house Counsel Template", "keyword": "in-house counsel resume template", "description": "For corporate counsel and legal department leaders." }
+      },
+      "section3": {
+        "title": "Create your lawyer resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Corporate, Litigation, IP, or In-house Counsel template." },
+        "step1": { "title": "Highlight legal achievements", "description": "Our AI helps you showcase cases, deals, and legal impact effectively." },
+        "step2": { "title": "List bar admissions", "description": "Include bar status, jurisdiction, admissions, and legal certifications." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for legal applications." }
+      },
+      "faq": {
+        "title": "Questions about lawyer resumes",
+        "subtitle": "Create a professional legal resume",
+        "q0": {
+          "question": "What credentials should I include as a lawyer?",
+          "answer": "Bar admission (state/jurisdiction), law degree (JD), bar exam score if notable, and any additional legal certifications or specializations."
+        },
+        "q1": {
+          "question": "How do I showcase legal achievements?",
+          "answer": "Highlight cases won, deals closed, clients served: 'Successfully defended 15+ cases', 'Negotiated $50M+ in contracts', 'Advised 20+ Fortune 500 clients'."
+        },
+        "q2": {
+          "question": "Which practice areas are most in-demand?",
+          "answer": "Corporate/M&A, litigation, IP, healthcare law, employment law, and technology law are in high demand."
+        },
+        "q3": {
+          "question": "Should I include law school honors?",
+          "answer": "Yes, if recent or from a top-ranked school: Law Review, Moot Court, Dean's List, or honors."
+        },
+        "q4": {
+          "question": "How do I present complex legal work?",
+          "answer": "Focus on outcomes: case results, clients retained, legal impact, and business value delivered."
+        }
+      },
+      "finalCta": {
+        "title": "Create your lawyer resume now",
+        "description": "Free, professional, legal-ready. Advance your law career.",
+        "ctaText": "Create my lawyer resume"
       }
     },
     "cvLogistiquePage": {
       "meta": {
-        "title": "Free Logistics Resume 2026 — CV Template Supply Chain, Logistics Manager",
-        "description": "Create your free logistics resume. CV templates for logistics managers, supply chain specialists, warehouse managers. ATS-optimized, PDF export."
-      }
-    }
-  },
-  "auth": {
-    "login": {
-      "meta": {
-        "title": "Sign In"
+        "title": "Free Logistics Resume Template 2026 — Supply Chain, Logistics Resume",
+        "description": "Create your free logistics resume online. Logistics resume, supply chain resume templates. AI resume generator, ATS-optimized, free PDF export."
       },
-      "title": "Sign In",
-      "subtitle": "Access your resumes and keep improving them",
-      "email": "Email",
-      "password": "Password",
-      "forgotPassword": "Forgot password?",
-      "submit": "Sign in",
-      "submitting": "Signing in...",
-      "noAccount": "Don't have an account?",
-      "signup": "Create an account",
-      "errors": {
-        "invalidCredentials": "Invalid email or password",
-        "generic": "An error occurred. Please try again."
-      }
-    },
-    "signup": {
-      "meta": {
-        "title": "Create Account"
+      "breadcrumbName": "Logistics Resume",
+      "hero": {
+        "badgeText": "AI-powered logistics resume",
+        "h1Before": "Free ",
+        "h1Accent": "Logistics Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your supply chain and operations expertise",
+        "description": "Create a professional logistics resume in 5 minutes. Modern supply chain templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my logistics resume",
+        "secondaryCtaText": "See all templates"
       },
-      "title": "Create an Account",
-      "subtitle": "Start building your professional resume",
-      "name": "Full name",
-      "namePlaceholder": "John Doe",
-      "email": "Email",
-      "emailPlaceholder": "john@example.com",
-      "password": "Password",
-      "passwordHint": "At least 8 characters, one uppercase, one lowercase, one number",
-      "confirm": "Confirm password",
-      "submit": "Create my account",
-      "submitting": "Creating account...",
-      "alreadyAccount": "Already have an account?",
-      "login": "Sign in",
-      "errors": {
-        "emailExists": "This email is already in use",
-        "generic": "An error occurred. Please try again."
-      }
-    },
-    "forgotPassword": {
-      "meta": {
-        "title": "Forgot Password"
+      "section1": {
+        "title": "Build a logistics and supply chain resume",
+        "subtitle": "Operations, efficiency metrics, and systems expertise matter. Present them strategically.",
+        "item0": { "title": "Supply chain management", "description": "Procurement, inventory management, distribution, vendor relations — highlight your scope." },
+        "item1": { "title": "Systems and software", "description": "ERP systems, WMS, TMS, forecasting tools — list your technical proficiency." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass logistics company screening and reach hiring managers." }
       },
-      "title": "Forgot Password",
-      "subtitle": "Enter your email to receive a reset link",
-      "email": "Email",
-      "submit": "Send reset link",
-      "submitting": "Sending...",
-      "success": "If this email exists, you will receive a reset link.",
-      "backToLogin": "Back to sign in"
-    },
-    "resetPassword": {
-      "meta": {
-        "title": "Reset Password"
+      "section2": {
+        "title": "Our logistics resume templates",
+        "subtitle": "Choose the template for your logistics role.",
+        "item0": { "title": "Supply Chain Manager Template", "keyword": "supply chain manager resume", "description": "For supply chain coordination and management." },
+        "item1": { "title": "Warehouse Manager Template", "keyword": "warehouse manager resume template", "description": "For warehouse operations and inventory management." },
+        "item2": { "title": "Operations Manager Template", "keyword": "operations manager resume template", "description": "For operations leadership and process improvement." },
+        "item3": { "title": "Procurement Specialist Template", "keyword": "procurement specialist resume", "description": "For procurement, sourcing, and vendor management." }
       },
-      "title": "New Password",
-      "subtitle": "Choose a new secure password",
-      "password": "New password",
-      "confirm": "Confirm password",
-      "submit": "Reset",
-      "submitting": "Resetting...",
-      "success": "Password reset. You can now sign in.",
-      "errors": {
-        "tokenInvalid": "Invalid or expired link",
-        "mismatch": "Passwords do not match"
+      "section3": {
+        "title": "Create your logistics resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Supply Chain, Warehouse, Operations, or Procurement template." },
+        "step1": { "title": "Highlight logistics achievements", "description": "Our AI helps you showcase cost savings, efficiency gains, and operational improvements." },
+        "step2": { "title": "List software expertise", "description": "ERP systems, WMS, TMS, forecasting, and supply chain management software." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for logistics applications." }
+      },
+      "faq": {
+        "title": "Questions about logistics resumes",
+        "subtitle": "Create a professional supply chain resume",
+        "q0": {
+          "question": "What should I include as a logistics professional?",
+          "answer": "Supply chain experience, ERP/WMS system expertise, certifications (APICS, CSCP), efficiency metrics, and procurement or warehouse management experience."
+        },
+        "q1": {
+          "question": "How do I showcase logistics achievements?",
+          "answer": "Use metrics: 'Reduced logistics costs by 30%', 'Improved on-time delivery from 85% to 98%', 'Optimized inventory turnover by 25%'."
+        },
+        "q2": {
+          "question": "Which systems should I list?",
+          "answer": "ERP (SAP, Oracle), WMS (Manhattan, Blue Yonder), TMS (JDA, Descartes), and any forecasting or procurement software."
+        },
+        "q3": {
+          "question": "Are logistics certifications important?",
+          "answer": "Yes, APICS CSCP, ASCM certifications are highly valued in supply chain roles."
+        },
+        "q4": {
+          "question": "How do I handle warehouse or transportation experience?",
+          "answer": "Highlight team leadership, process improvements, safety records, and any technology implementations."
+        }
+      },
+      "finalCta": {
+        "title": "Create your logistics resume now",
+        "description": "Free, professional, operations-focused. Advance your logistics career.",
+        "ctaText": "Create my logistics resume"
       }
     },
-    "verifyEmail": {
+    "cvManagerPage": {
       "meta": {
-        "title": "Email Verification"
+        "title": "Free Manager Resume Template 2026 — Management, Leadership Resume",
+        "description": "Create your free manager resume online. Manager resume, leadership resume templates. AI resume generator, ATS-optimized, free PDF export."
       },
-      "title": "Verifying your email",
-      "pendingTitle": "Check your inbox",
-      "pendingSubtitle": "A verification link was sent to your email address.",
-      "success": "Email verified successfully!",
-      "errors": {
-        "tokenInvalid": "Invalid or expired link",
-        "generic": "An error occurred"
+      "breadcrumbName": "Manager Resume",
+      "hero": {
+        "badgeText": "AI-powered manager resume",
+        "h1Before": "Free ",
+        "h1Accent": "Manager Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your leadership and team management skills",
+        "description": "Create a professional manager resume in 5 minutes. Modern leadership templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my manager resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a management resume that stands out",
+        "subtitle": "Leadership, team building, and business results matter. Present them strategically.",
+        "item0": { "title": "Leadership achievements", "description": "Team growth, performance improvements, organizational culture — highlight your impact." },
+        "item1": { "title": "Business metrics", "description": "Revenue impact, cost savings, productivity gains — quantify your leadership results." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass HR screening and reach hiring decision makers." }
+      },
+      "section2": {
+        "title": "Our manager resume templates",
+        "subtitle": "Choose the template for your management level.",
+        "item0": { "title": "Operations Manager Template", "keyword": "operations manager resume", "description": "For operations leadership and process optimization." },
+        "item1": { "title": "Department Manager Template", "keyword": "department manager resume template", "description": "For mid-level management and department leadership." },
+        "item2": { "title": "Senior Manager Template", "keyword": "senior manager resume template", "description": "For senior management and strategic leadership roles." },
+        "item3": { "title": "Team Lead Template", "keyword": "team lead resume template", "description": "For first-line management and team leadership." }
+      },
+      "section3": {
+        "title": "Create your manager resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Operations, Department, Senior Manager, or Team Lead template." },
+        "step1": { "title": "Highlight leadership impact", "description": "Our AI helps you showcase team growth, results, and business impact effectively." },
+        "step2": { "title": "Quantify achievements", "description": "Add revenue, cost savings, efficiency gains, and team performance metrics." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for management applications." }
+      },
+      "faq": {
+        "title": "Questions about manager resumes",
+        "subtitle": "Create a compelling leadership resume",
+        "q0": {
+          "question": "What should I emphasize as a manager?",
+          "answer": "Team size managed, business results achieved, direct reports mentored, process improvements led, and leadership philosophy."
+        },
+        "q1": {
+          "question": "How do I quantify management impact?",
+          "answer": "Use metrics: 'Led team of 15 achieving 20% revenue growth', 'Reduced operational costs by $500K annually', 'Improved employee retention by 40%'."
+        },
+        "q2": {
+          "question": "Should I include management certifications?",
+          "answer": "Yes, MBA, PMP, leadership certifications are valuable. Include if you have them."
+        },
+        "q3": {
+          "question": "How do I present different management styles?",
+          "answer": "Focus on results. Mention: servant leadership, agile management, strategic thinking, or transformational leadership."
+        },
+        "q4": {
+          "question": "How do I handle managing across departments?",
+          "answer": "Emphasize cross-functional collaboration, stakeholder management, and organization-wide initiatives you led."
+        }
+      },
+      "finalCta": {
+        "title": "Create your manager resume now",
+        "description": "Free, professional, leadership-focused. Advance your management career.",
+        "ctaText": "Create my manager resume"
       }
     },
-    "verify2fa": {
+    "cvMarketingPage": {
       "meta": {
-        "title": "2FA Verification"
+        "title": "Free Marketing Resume Template 2026 — Marketing Manager, Digital Marketing Resume",
+        "description": "Create your free marketing resume online. Marketing manager resume, digital marketing resume templates. AI resume generator, ATS-optimized, free PDF export."
       },
-      "title": "Two-Factor Authentication",
-      "subtitle": "Enter the code from your authenticator app",
-      "code": "6-digit code",
-      "submit": "Verify",
-      "submitting": "Verifying...",
-      "errors": {
-        "invalidCode": "Invalid or expired code",
-        "generic": "An error occurred"
+      "breadcrumbName": "Marketing Resume",
+      "hero": {
+        "badgeText": "AI-powered marketing resume",
+        "h1Before": "Free ",
+        "h1Accent": "Marketing Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your marketing expertise and campaign success",
+        "description": "Create a professional marketing resume in 5 minutes. Modern marketing templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my marketing resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a marketing resume that converts",
+        "subtitle": "Campaign results, digital expertise, and business impact matter. Present them strategically.",
+        "item0": { "title": "Campaign results", "description": "Lead generation, conversion rates, ROI — showcase the measurable impact of your marketing." },
+        "item1": { "title": "Digital marketing tools", "description": "SEO, SEM, social media, marketing automation, analytics — list your technical skills." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass HR screening and reach marketing decision makers." }
+      },
+      "section2": {
+        "title": "Our marketing resume templates",
+        "subtitle": "Choose the template for your marketing specialty.",
+        "item0": { "title": "Digital Marketing Template", "keyword": "digital marketing resume template", "description": "For digital marketers, SEO specialists, and content creators." },
+        "item1": { "title": "Marketing Manager Template", "keyword": "marketing manager resume template", "description": "For marketing leadership and campaign management roles." },
+        "item2": { "title": "Content Marketing Template", "keyword": "content marketing resume template", "description": "For content creators and content strategy specialists." },
+        "item3": { "title": "Brand Marketing Template", "keyword": "brand marketing resume template", "description": "For brand management and strategic marketing roles." }
+      },
+      "section3": {
+        "title": "Create your marketing resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Digital Marketing, Manager, Content, or Brand template." },
+        "step1": { "title": "Highlight campaign results", "description": "Our AI helps you showcase ROI, lead generation, and campaign success metrics." },
+        "step2": { "title": "List marketing tools", "description": "Google Analytics, HubSpot, Salesforce, SEO tools, social media platforms." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for marketing applications." }
+      },
+      "faq": {
+        "title": "Questions about marketing resumes",
+        "subtitle": "Create a results-driven marketing resume",
+        "q0": {
+          "question": "What should I emphasize as a marketer?",
+          "answer": "Campaign ROI, lead generation numbers, conversion rates, audience growth, and marketing tools expertise."
+        },
+        "q1": {
+          "question": "How do I quantify marketing impact?",
+          "answer": "Use metrics: 'Generated 500+ qualified leads', 'Increased conversion by 45%', 'Grew social followers by 200K', 'Achieved 400% ROI on campaigns'."
+        },
+        "q2": {
+          "question": "Which marketing tools are most valuable?",
+          "answer": "Google Analytics, HubSpot, Salesforce, SEO tools (Semrush, Ahrefs), social media management, email marketing platforms."
+        },
+        "q3": {
+          "question": "Should I include specific campaigns?",
+          "answer": "Yes, highlight 2-3 major campaigns with results: audience, budget, tactics used, and measurable outcomes."
+        },
+        "q4": {
+          "question": "How do I handle different marketing specialties?",
+          "answer": "SEO, SEM, social media, email marketing, content marketing — list your specialties and proficiency levels."
+        }
+      },
+      "finalCta": {
+        "title": "Create your marketing resume now",
+        "description": "Free, results-driven, professional. Advance your marketing career.",
+        "ctaText": "Create my marketing resume"
       }
-    }
-  },
-  "dashboard": {
-    "home": {
-      "meta": {
-        "title": "Dashboard"
-      },
-      "welcome": "Welcome, {name}!",
-      "subtitle": "Manage your resumes and create new ones.",
-      "createNew": "Create a new resume",
-      "myResumes": "My Resumes",
-      "noResumes": "You don't have any resumes yet.",
-      "createFirst": "Create my first resume"
     },
-    "resumes": {
+    "cvModernePage": {
       "meta": {
-        "title": "My Resumes"
+        "title": "Free Modern Resume Template 2026 — Professional, Contemporary Resume Template",
+        "description": "Download a free modern resume template in PDF. Contemporary resume design that's ATS-friendly and professional. Create and download your modern resume in 5 minutes."
       },
-      "title": "My Resumes",
-      "new": "New Resume",
-      "empty": "No resumes yet",
-      "emptySubtitle": "Create your first professional resume",
-      "edit": "Edit",
-      "download": "Download",
-      "delete": "Delete",
-      "deleteConfirm": "Delete resume",
-      "deleteWarning": "Are you sure you want to delete this resume? This action cannot be undone.",
-      "deleteSuccess": "Resume deleted",
-      "deleteError": "Error deleting resume",
-      "duplicate": "Duplicate",
-      "duplicateSuccess": "Resume duplicated successfully",
-      "duplicateError": "Error duplicating resume",
-      "serverError": "Server error",
-      "createdAt": "Created on {date}",
-      "updatedAt": "Updated on {date}",
-      "modifiedAt": "Updated on"
-    },
-    "profile": {
-      "meta": {
-        "title": "My Profile"
+      "breadcrumbName": "Modern Resume Template",
+      "hero": {
+        "badgeText": "Modern, contemporary design",
+        "h1Before": "Free ",
+        "h1Accent": "Modern Resume",
+        "h1After": " Template",
+        "subtitle": "Sleek design that's ATS-friendly",
+        "description": "Download our modern resume template for free. Contemporary design with subtle colors, compatible with ATS systems, instant PDF export.",
+        "primaryCtaText": "Download modern template",
+        "secondaryCtaText": "See all templates"
       },
-      "title": "My Profile",
-      "subtitle": "Your reusable information across all your resumes",
-      "savingInProgress": "Saving...",
-      "unsavedChanges": "Unsaved changes",
-      "saved": "Profile saved",
-      "profilePhoto": "Profile photo",
-      "importFromComputer": "Import from your computer",
-      "choosePhoto": "Choose a photo",
-      "uploading": "Uploading...",
-      "orPasteUrl": "Or paste a URL",
-      "deletePhoto": "Delete photo",
-      "personalInfo": "Personal information",
-      "firstName": "First name",
-      "lastName": "Last name",
-      "phone": "Phone",
-      "jobTitle": "Job title",
-      "birthDate": "Date of birth",
-      "drivingLicenses": "Driving license",
-      "city": "City",
-      "country": "Country",
-      "linkedin": "LinkedIn",
-      "github": "GitHub",
-      "portfolio": "Portfolio",
-      "summary": "Professional summary",
-      "experiences": "Work Experience",
-      "educations": "Education",
-      "projects": "Projects",
-      "certifications": "Certifications",
-      "skills": "Skills",
-      "languages": "Languages",
-      "interests": "Interests",
-      "add": "Add",
-      "saveItem": "Save",
-      "currentJob": "Current position",
-      "currentStudy": "Current studies",
-      "noExperiences": "No experience added",
-      "noEducations": "No education added",
-      "noCertifications": "No certification added",
-      "noProjects": "No project added",
-      "noSkills": "No skill added",
-      "noLanguages": "No language added",
-      "noInterests": "No interest added",
-      "createGroup": "Create group",
-      "addSkill": "Add a skill",
-      "others": "Others",
-      "experienceSaved": "Experience saved",
-      "educationSaved": "Education saved",
-      "certificationSaved": "Certification saved",
-      "projectSaved": "Project saved",
-      "experienceDeleted": "Experience deleted",
-      "educationDeleted": "Education deleted",
-      "certificationDeleted": "Certification deleted",
-      "projectDeleted": "Project deleted",
-      "photoSaved": "Photo uploaded!",
-      "photoUploadError": "Error uploading photo",
-      "serverError": "Server error",
-      "photoFormat": "JPG, PNG (max 2MB)",
-      "present": "Present",
-      "newJob": "New position",
-      "companyPlaceholder": "Company",
-      "newDegree": "New degree",
-      "institutionPlaceholder": "Institution",
-      "newCertification": "New certification",
-      "issuerPlaceholder": "Issuer",
-      "obtainedOn": "Obtained on {date}",
-      "expiresOn": "Expires on {date}",
-      "viewCertificate": "View certificate",
-      "newProject": "New project",
-      "view": "View",
-      "tools": "Tools used",
-      "groupNamePlaceholder": "Group name",
-      "clickToRename": "Click to rename",
-      "skillPlaceholder": "Skill",
-      "languagePlaceholder": "Language",
-      "levelBeginner": "Beginner",
-      "levelIntermediate": "Intermediate",
-      "levelAdvanced": "Advanced",
-      "levelFluent": "Fluent",
-      "levelNative": "Native",
-      "jobTitlePlaceholder": "E.g.: Full Stack Developer",
-      "drivingLicensesPlaceholder": "E.g.: B, A2",
-      "summaryPlaceholder": "Describe yourself in a few sentences...",
-      "toolsPlaceholder": "E.g.: Excel, Canva, React...",
-      "companyInputPlaceholder": "Company",
-      "positionPlaceholder": "Position",
-      "descriptionPlaceholder": "Description",
-      "degreePlaceholder": "Degree",
-      "fieldPlaceholder": "Field",
-      "endDatePlaceholder": "End date",
-      "certificationNamePlaceholder": "Certification name",
-      "issueDatePlaceholder": "Issue date",
-      "expiryDatePlaceholder": "Expiry date (optional)",
-      "credentialIdPlaceholder": "Credential ID (optional)",
-      "credentialUrlPlaceholder": "Verification URL (optional)",
-      "projectNamePlaceholder": "Project name",
-      "projectUrlPlaceholder": "URL (optional)",
-      "projectDescriptionPlaceholder": "Project description",
-      "createGroupBtn": "+ Create group",
-      "addSkillBtn": "+ Add a skill",
-      "addBtn": "+ Add"
-    },
-    "settings": {
-      "meta": {
-        "title": "Settings"
+      "section1": {
+        "title": "Why choose our modern template",
+        "subtitle": "",
+        "item0": { "title": "Contemporary design", "description": "Modern color palette and clean typography that looks professional without being too trendy." },
+        "item1": { "title": "ATS compatible", "description": "Structured for automated screening systems while maintaining visual appeal." },
+        "item2": { "title": "Fully customizable", "description": "Adjust colors, fonts, and sections to match your preferences and industry." }
       },
-      "title": "Settings",
-      "security": "Security",
-      "totp": "Two-factor authentication",
-      "deleteAccount": "Delete account",
-      "deleteWarning": "This action is irreversible. All your resumes will be deleted.",
-      "2faEnabled": "2FA is enabled on your account",
-      "disable2FA": "Disable 2FA",
-      "disable2FADescription": "To disable 2FA, enter a code from your authenticator app.",
-      "confirmDisable2FA": "Confirm deactivation",
-      "setup2FADescription": "Add an extra layer of security to your account by enabling two-factor authentication.",
-      "configure2FA": "Set up 2FA",
-      "setup2FAQrCode": "1. Scan this QR code with your authenticator app (Google Authenticator, Authy, etc.)",
-      "setup2FAManual": "Or enter this code manually:",
-      "setup2FAEnterCode": "2. Enter the 6-digit code displayed in your app",
-      "verificationCode": "Verification code",
-      "enable2FA": "Enable 2FA",
-      "2faEnabledSuccess": "2FA enabled successfully!",
-      "2faDisabledSuccess": "2FA disabled",
-      "invalidCode": "Please enter a 6-digit code",
-      "setupError": "Error during setup",
-      "genericError": "An error occurred"
-    },
-    "templates": {
-      "meta": {
-        "title": "Templates"
+      "section2": {
+        "title": "Perfect for modern companies",
+        "subtitle": "Ideal for tech, startups, creative, and forward-thinking organizations.",
+        "item0": { "title": "Tech Industry", "keyword": "tech resume template modern", "description": "Ideal for software engineers, data scientists, and tech professionals." },
+        "item1": { "title": "Creative Fields", "keyword": "creative professional resume modern", "description": "Perfect for designers, marketers, and creative professionals." },
+        "item2": { "title": "Startup Roles", "keyword": "startup employee resume modern", "description": "Great for startup environments and growth-focused companies." },
+        "item3": { "title": "All Industries", "keyword": "modern resume template any industry", "description": "Versatile enough for any industry and role." }
       },
-      "title": "Templates",
-      "free": "Free",
-      "premium": "Premium",
-      "use": "Use this template"
-    },
-    "checkout": {
-      "success": {
-        "title": "Payment successful!",
-        "subtitle": "Your premium resume is now unlocked.",
-        "cta": "View my resume"
+      "section3": {
+        "title": "Get your modern resume in 4 steps",
+        "step0": { "title": "Download template", "description": "Choose the modern design and customize it instantly." },
+        "step1": { "title": "Add your information", "description": "Fill in your experience, skills, and achievements." },
+        "step2": { "title": "Customize your style", "description": "Adjust colors and fonts to match your preferences." },
+        "step3": { "title": "Export as PDF", "description": "Download instantly and start applying." }
       },
-      "cancel": {
-        "title": "Payment cancelled",
-        "subtitle": "Your payment was cancelled.",
-        "cta": "Back to dashboard"
+      "faq": {
+        "title": "Questions about our modern template",
+        "subtitle": "Everything about the modern resume template",
+        "q0": {
+          "question": "Is the modern template ATS-friendly?",
+          "answer": "Absolutely. Our modern template is specifically designed to be compatible with ATS systems while maintaining a contemporary look."
+        },
+        "q1": {
+          "question": "Can I customize the colors?",
+          "answer": "Yes, completely customizable. Change the color scheme to match your personal brand or company colors."
+        },
+        "q2": {
+          "question": "What industries is this template best for?",
+          "answer": "Tech, startups, creative fields, marketing, design. Also works well for any company with a modern culture."
+        },
+        "q3": {
+          "question": "Is the template one page or two pages?",
+          "answer": "Flexible one-page template that can expand to two pages if needed for more experience."
+        },
+        "q4": {
+          "question": "Can I use this template for all job types?",
+          "answer": "Yes, the modern template works for most positions. Slightly less formal than classic template, more suitable for modern companies."
+        }
+      },
+      "finalCta": {
+        "title": "Download the modern template now",
+        "description": "Free, contemporary, professional. Create your modern resume today.",
+        "ctaText": "Download modern template"
       }
-    }
-  },
-  "editor": {
-    "meta": {
-      "title": "Resume Editor"
     },
-    "save": "Save",
-    "saving": "Saving...",
-    "saved": "Saved",
-    "download": "Download PDF",
-    "downloading": "Generating PDF...",
-    "preview": "Preview",
-    "aiSuggest": "AI Suggestion",
-    "aiImproving": "AI processing...",
-    "addSection": "Add",
-    "removeSection": "Remove section",
-    "addItem": "Add item",
-    "removeItem": "Remove",
-    "dragToReorder": "Drag to reorder",
-    "importProfile": "Import from profile",
-    "importing": "Importing...",
-    "importProfileTitle": "Import from profile",
-    "importProfileDescription": "This will replace all resume data with your profile data. Do you want to continue?",
-    "importProfileButton": "Import",
-    "atsScore": "ATS Score",
-    "atsAnalyzing": "Analyzing...",
-    "atsAnalysis": "ATS Analysis of your resume",
-    "atsGlobalScore": "Global ATS Score",
-    "atsSuggestions": "Improvement suggestions",
-    "atsMatchedKeywords": "Matched keywords",
-    "atsMissingKeywords": "Missing keywords",
-    "atsAnalysisInProgress": "Analysis in progress...",
-    "editTab": "Edit",
-    "previewTab": "Preview",
-    "titleSection": "Resume title",
-    "autoSaving": "Saving...",
-    "unsavedChanges": "Unsaved changes",
-    "savedAt": "Saved at {time}",
-    "savingSuccess": "Resume saved!",
-    "savingError": "Error saving resume",
-    "pdfSuccess": "PDF downloaded!",
-    "pdfError": "Error generating PDF",
-    "importSuccess": "Data imported from profile!",
-    "importError": "Error importing data",
-    "serverError": "Server error",
-    "aiImproveSuccess": "Content improved with AI!",
-    "aiImproveButton": "Improve with AI",
-    "aiAddContent": "Add content before using AI",
-    "currentJob": "Current position",
-    "currentStudy": "Currently studying",
-    "noExperiences": "No experience added",
-    "noEducations": "No education added",
-    "noCertifications": "No certification added",
-    "noProjects": "No project added",
-    "noLanguages": "No language added",
-    "noInterests": "No interest added",
-    "noSkills": "No skill added",
-    "createGroup": "Create group",
-    "addSkill": "Add a skill",
-    "others": "Others",
-    "experienceDeleted": "Experience deleted",
-    "educationDeleted": "Education deleted",
-    "certificationDeleted": "Certification deleted",
-    "projectDeleted": "Project deleted",
-    "validate": "Confirm",
-    "present": "Present",
-    "inProgress": "In progress",
-    "sauvegarder": "Save",
-    "back": "Back",
-    "connectionError": "Connection error",
-    "aiImproveError": "Error improving content",
-    "atsError": "Error calculating ATS score",
-    "atsFormatting": "Formatting",
-    "atsKeywords": "Keywords",
-    "atsStructure": "Structure",
-    "atsContent": "Content",
-    "titlePlaceholder": "Resume title",
-    "firstName": "First name",
-    "firstNamePlaceholder": "John",
-    "lastName": "Last name",
-    "lastNamePlaceholder": "Doe",
-    "emailLabel": "Email",
-    "emailPlaceholder": "john@example.com",
-    "phone": "Phone",
-    "phonePlaceholder": "+1 555 123 4567",
-    "city": "City",
-    "cityPlaceholder": "New York",
-    "country": "Country",
-    "countryPlaceholder": "United States",
-    "linkedin": "LinkedIn",
-    "linkedinLabelPlaceholder": "Display name (e.g. John Doe)",
-    "linkedinUrlPlaceholder": "URL (e.g. https://linkedin.com/in/john-doe)",
-    "github": "GitHub",
-    "githubLabelPlaceholder": "Display name (e.g. @johndoe)",
-    "githubUrlPlaceholder": "URL (e.g. https://github.com/johndoe)",
-    "portfolio": "Portfolio",
-    "portfolioLabelPlaceholder": "Display name (e.g. My Portfolio)",
-    "portfolioUrlPlaceholder": "URL (e.g. https://myportfolio.com)",
-    "summaryLabel": "Professional summary",
-    "summaryPlaceholder": "Describe your profile...",
-    "improving": "Improving...",
-    "add": "Add",
-    "cancelButton": "Cancel",
-    "deleteButton": "Delete",
-    "company": "Company",
-    "companyPlaceholder": "Company name",
-    "position": "Position",
-    "positionPlaceholder": "Job title",
-    "startDate": "Start date",
-    "endDate": "End date",
-    "description": "Description",
-    "experienceDescPlaceholder": "Describe your responsibilities and achievements...",
-    "newPosition": "New position",
-    "newCompany": "Company",
-    "institution": "Institution",
-    "institutionPlaceholder": "Institution name",
-    "degree": "Degree",
-    "degreePlaceholder": "E.g. Master's, Bachelor's...",
-    "field": "Field / Specialization",
-    "fieldPlaceholder": "E.g. Computer Science",
-    "gpa": "Honours / GPA",
-    "gpaPlaceholder": "E.g. Honours, 3.8/4.0",
-    "newDegree": "New degree",
-    "newInstitution": "Institution",
-    "certName": "Certification name",
-    "certNamePlaceholder": "E.g. AWS Solutions Architect",
-    "certIssuer": "Issuing organization",
-    "certIssuerPlaceholder": "E.g. Amazon Web Services",
-    "certIssueDate": "Issue date",
-    "certExpiryDate": "Expiry date (optional)",
-    "certCredentialId": "Credential ID (optional)",
-    "certCredentialIdPlaceholder": "E.g. ABC123XYZ",
-    "certCredentialUrl": "Verification URL (optional)",
-    "certObtainedOn": "Issued on {date}",
-    "certExpiresOn": " • Expires on {date}",
-    "newCertification": "New certification",
-    "newIssuer": "Organization",
-    "projectName": "Project name",
-    "projectNamePlaceholder": "E.g. Management application",
-    "projectUrl": "URL (optional)",
-    "projectDescription": "Description",
-    "projectDescPlaceholder": "Describe the project...",
-    "projectTech": "Tools used",
-    "projectTechPlaceholder": "E.g. Excel, Canva, React...",
-    "projectView": "View",
-    "newProject": "New project",
-    "groupNamePlaceholder": "Group name",
-    "skillPlaceholder": "Skill",
-    "languagePlaceholder": "Language",
-    "interestPlaceholder": "Interest",
-    "premiumBannerMessage": "Unlock premium features (AI suggestions and ATS score) for €4.99.",
-    "modify": "Edit",
-    "langBeginner": "Beginner",
-    "langIntermediate": "Intermediate",
-    "langAdvanced": "Advanced",
-    "langFluent": "Fluent",
-    "langNative": "Native",
-    "clickToRename": "Click to rename",
-    "templateLabel": "Template"
-  },
-  "paywall": {
-    "title": "Resume Locked",
-    "description": "Unlock \"{title}\" to access the full editor and all premium features.",
-    "whatYouGet": "What you get:",
-    "feature1": "Access to all premium templates",
-    "feature2": "AI suggestions to improve your resume",
-    "feature3": "Detailed ATS score with recommendations",
-    "feature4": "High-quality PDF export",
-    "oneTimePayment": "One-time payment • Permanent access",
-    "cgvAccept": "I accept the",
-    "cgvLink": "Terms of Sale",
-    "cgvWaiver": "and I expressly waive my right of withdrawal.",
-    "unlockButton": "Unlock for {price}",
-    "redirecting": "Redirecting...",
-    "backToResumes": "Back to my resumes",
-    "securePayment": "Secure payment by Stripe • Satisfaction guaranteed",
-    "alreadyUsedFree": "You have already used your free resume. Each additional resume requires a one-time payment.",
-    "paymentError": "Error creating payment"
-  },
-  "cvSections": {
-    "personalInfo": "Personal Information",
-    "summary": "Professional Summary",
-    "experience": "Work Experience",
-    "education": "Education",
-    "skills": "Skills",
-    "languages": "Languages",
-    "interests": "Interests",
-    "certifications": "Certifications",
-    "projects": "Projects"
-  },
-  "contact": {
-    "meta": {
-      "title": "Contact"
-    },
-    "title": "Contact Us",
-    "subtitle": "A question, an issue or a suggestion? We reply within 48 business hours.",
-    "name": "Name",
-    "namePlaceholder": "John Doe",
-    "email": "Email",
-    "emailPlaceholder": "john@example.com",
-    "subject": "Subject",
-    "subjectPlaceholder": "Select a subject",
-    "subjects": {
-      "general": "General question",
-      "technical": "Technical issue",
-      "suggestion": "Feature suggestion",
-      "other": "Other"
-    },
-    "message": "Message",
-    "messagePlaceholder": "Describe your request in detail...",
-    "submit": "Send message",
-    "submitting": "Sending...",
-    "success": "Message sent! We'll reply within 48 hours.",
-    "errors": {
-      "generic": "An error occurred. Please try again."
-    }
-  },
-  "legal": {
-    "cgv": {
+    "cvPremierEmploiPage": {
       "meta": {
-        "title": "Terms of Sale"
+        "title": "Free First Job Resume Template 2026 — Entry-Level Resume, No Experience",
+        "description": "Create your free first job resume online. Entry-level resume, resume for first job, resume with no experience. AI resume generator, ATS-optimized, free PDF export."
       },
-      "title": "Terms of Sale"
+      "breadcrumbName": "First Job Resume",
+      "hero": {
+        "badgeText": "Land your first job",
+        "h1Before": "Free ",
+        "h1Accent": "First Job Resume",
+        "h1After": " Template",
+        "subtitle": "Get hired for your first job with a professional resume",
+        "description": "Create a professional resume for your first job in 5 minutes. Entry-level templates, no experience required, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my first job resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Get your first job with a strong resume",
+        "subtitle": "No experience? Highlight your education, skills, and potential.",
+        "item0": { "title": "Education first", "description": "Your degree and school are your strongest point. Highlight GPA, relevant coursework, and achievements." },
+        "item1": { "title": "Skills matter", "description": "Soft skills and technical skills count. Include languages, software, and competencies relevant to the job." },
+        "item2": { "title": "ATS optimized", "description": "Our templates help your first resume pass automated screening and reach hiring managers." }
+      },
+      "section2": {
+        "title": "Our entry-level resume templates",
+        "subtitle": "Perfect for job seekers with no professional experience.",
+        "item0": { "title": "Graduate Resume", "keyword": "recent graduate resume template", "description": "For recent college graduates entering the job market." },
+        "item1": { "title": "Entry-level Resume", "keyword": "entry level resume template", "description": "For first job seekers with minimal experience." },
+        "item2": { "title": "High School Graduate", "keyword": "high school graduate resume", "description": "For high school graduates starting their careers." },
+        "item3": { "title": "Career Changer", "keyword": "career changer resume template", "description": "For people transitioning into a new field." }
+      },
+      "section3": {
+        "title": "Create your first job resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Graduate, Entry-level, High School, or Career Changer template." },
+        "step1": { "title": "Highlight your education", "description": "Our AI helps you showcase your degree and relevant coursework effectively." },
+        "step2": { "title": "Add skills and activities", "description": "Include soft skills, technical skills, internships, volunteer work, and projects." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for your first job applications." }
+      },
+      "faq": {
+        "title": "Questions about entry-level resumes",
+        "subtitle": "Create your first job resume",
+        "q0": {
+          "question": "What should I include with no professional experience?",
+          "answer": "Education (GPA if 3.5+), relevant coursework, internships, volunteer work, projects, skills, languages, and extracurricular activities."
+        },
+        "q1": {
+          "question": "How do I make my resume stand out without work experience?",
+          "answer": "Highlight achievements in school, leadership in clubs, volunteer impact, personal projects, and skills directly relevant to the job."
+        },
+        "q2": {
+          "question": "Should I include GPA on my resume?",
+          "answer": "Yes, if it's 3.5 or higher. If lower, focus on relevant coursework, projects, and other achievements instead."
+        },
+        "q3": {
+          "question": "What skills should I list as an entry-level candidate?",
+          "answer": "Technical: Microsoft Office, software, programming. Soft skills: communication, teamwork, problem-solving, time management."
+        },
+        "q4": {
+          "question": "How important are internships for entry-level resumes?",
+          "answer": "Very important. Any work experience, even unpaid internships or volunteer work, demonstrates real-world experience."
+        }
+      },
+      "finalCta": {
+        "title": "Create your first job resume now",
+        "description": "Free, professional, no experience needed. Land your first job today.",
+        "ctaText": "Create my first job resume"
+      }
     },
-    "mentions": {
+    "cvReconversionPage": {
       "meta": {
-        "title": "Legal Notice"
+        "title": "Free Career Change Resume Template 2026 — Transition Resume, Changing Careers",
+        "description": "Create your free career change resume online. Resume for career changers, transition resume templates. AI resume generator, ATS-optimized, free PDF export."
       },
-      "title": "Legal Notice"
+      "breadcrumbName": "Career Change Resume",
+      "hero": {
+        "badgeText": "Change your career path",
+        "h1Before": "Free ",
+        "h1Accent": "Career Change Resume",
+        "h1After": " Template",
+        "subtitle": "Transition to a new career with confidence",
+        "description": "Create a professional career change resume in 5 minutes. Transition templates, transferable skills highlighted, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my career change resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Make a successful career transition",
+        "subtitle": "Transferable skills matter. Show how your experience applies to your new field.",
+        "item0": { "title": "Transferable skills", "description": "Leadership, project management, communication, analysis — highlight skills relevant to your new career." },
+        "item1": { "title": "Reframing experience", "description": "Reinterpret your past roles to show relevance to your new career path." },
+        "item2": { "title": "ATS optimized", "description": "Our templates help career changers reach the right opportunities." }
+      },
+      "section2": {
+        "title": "Our career change resume templates",
+        "subtitle": "Perfect for transitioning to a new industry or role.",
+        "item0": { "title": "Career Pivot Template", "keyword": "career change resume template", "description": "For significant career transitions and industry switches." },
+        "item1": { "title": "Skills-Based Template", "keyword": "skills based resume template", "description": "Emphasizes transferable skills over chronological work history." },
+        "item2": { "title": "Combination Template", "keyword": "combination resume template", "description": "Blends skills and chronological work experience for career changers." },
+        "item3": { "title": "Professional Pivot", "keyword": "professional resume template career change", "description": "For transitions within professional fields." }
+      },
+      "section3": {
+        "title": "Create your career change resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Pivot, Skills-Based, Combination, or Professional template." },
+        "step1": { "title": "Highlight transferable skills", "description": "Our AI helps you frame your experience for your new career path." },
+        "step2": { "title": "Explain your transition", "description": "Include a professional summary explaining your career change motivation." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for career change applications." }
+      },
+      "faq": {
+        "title": "Questions about career change resumes",
+        "subtitle": "Create a successful career transition resume",
+        "q0": {
+          "question": "How do I explain my career change on a resume?",
+          "answer": "Use a strong professional summary: 'Transitioning from [old career] to [new career] leveraging [key transferable skills]'."
+        },
+        "q1": {
+          "question": "What transferable skills should I highlight?",
+          "answer": "Leadership, project management, communication, problem-solving, analysis, teamwork, customer service — skills valuable in any field."
+        },
+        "q2": {
+          "question": "Should I include all my previous work experience?",
+          "answer": "Yes, but reframe it. Focus on achievements and skills relevant to your new career rather than job duties."
+        },
+        "q3": {
+          "question": "How important is relevant training or certification?",
+          "answer": "Very important for career changers. Include bootcamps, certifications, online courses, or any training relevant to your new field."
+        },
+        "q4": {
+          "question": "Should I use a skills-based or chronological format?",
+          "answer": "Skills-based works better for significant career changes. Combination format is good if you have some relevant experience."
+        }
+      },
+      "finalCta": {
+        "title": "Create your career change resume now",
+        "description": "Free, professional, transition-ready. Start your new career today.",
+        "ctaText": "Create my career change resume"
+      }
     },
-    "privacy": {
+    "cvRhPage": {
       "meta": {
-        "title": "Privacy Policy"
+        "title": "Free HR Resume Template 2026 — Human Resources, HR Manager Resume",
+        "description": "Create your free HR resume online. HR resume, HR manager resume templates, human resources resume. AI resume generator, ATS-optimized, free PDF export."
       },
-      "title": "Privacy Policy"
-    }
-  },
-  "emails": {
-    "resetPassword": {
-      "subject": "Reset your password — CV Builder",
-      "title": "Password Reset",
-      "body": "You requested a password reset for your CV Builder account. Click the button below to create a new password:",
-      "cta": "Reset my password",
-      "expiry": "This link expires in 1 hour. If you did not request this, please ignore this email."
+      "breadcrumbName": "HR Resume",
+      "hero": {
+        "badgeText": "AI-powered HR resume",
+        "h1Before": "Free ",
+        "h1Accent": "HR Resume",
+        "h1After": " Template",
+        "subtitle": "Showcase your human resources expertise and people impact",
+        "description": "Create a professional HR resume in 5 minutes. Modern HR templates, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my HR resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build an HR resume that stands out",
+        "subtitle": "HR expertise, employee development, and people metrics matter. Present them strategically.",
+        "item0": { "title": "Talent and culture", "description": "Recruitment success, employee retention, culture development — showcase your people impact." },
+        "item1": { "title": "HR systems and compliance", "description": "HRIS expertise, labor law compliance, benefits administration — highlight your technical knowledge." },
+        "item2": { "title": "ATS optimized", "description": "Our templates pass HR screening and reach recruitment decision makers." }
+      },
+      "section2": {
+        "title": "Our HR resume templates",
+        "subtitle": "Choose the template for your HR role.",
+        "item0": { "title": "HR Manager Template", "keyword": "hr manager resume template", "description": "For HR management and department leadership." },
+        "item1": { "title": "Recruiter Template", "keyword": "recruiter resume template", "description": "For talent acquisition and recruiting specialists." },
+        "item2": { "title": "HR Business Partner Template", "keyword": "hr business partner resume", "description": "For strategic HR roles and business partnership positions." },
+        "item3": { "title": "Talent Specialist Template", "keyword": "talent specialist resume template", "description": "For employee development and talent management." }
+      },
+      "section3": {
+        "title": "Create your HR resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "HR Manager, Recruiter, Business Partner, or Talent Specialist template." },
+        "step1": { "title": "Highlight people impact", "description": "Our AI helps you showcase hiring success, retention rates, and culture achievements." },
+        "step2": { "title": "List HR expertise", "description": "HRIS systems, ATS platforms, compliance knowledge, benefits administration." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for HR applications." }
+      },
+      "faq": {
+        "title": "Questions about HR resumes",
+        "subtitle": "Create a professional HR resume",
+        "q0": {
+          "question": "What should I emphasize as an HR professional?",
+          "answer": "Hiring metrics (time-to-hire, quality-of-hire), retention rates, employee engagement scores, training programs led, and compliance records."
+        },
+        "q1": {
+          "question": "How do I quantify HR achievements?",
+          "answer": "Use metrics: 'Recruited 100+ employees annually', 'Improved retention by 20%', 'Reduced time-to-hire by 35%', 'Led culture program reaching 500+ employees'."
+        },
+        "q2": {
+          "question": "Which HR certifications are valuable?",
+          "answer": "SHRM-CP, PHR, CIPD are most recognized. Include if you have them, especially for HR management roles."
+        },
+        "q3": {
+          "question": "What HR systems should I list?",
+          "answer": "HRIS: Workday, BambooHR, SAP SuccessFactors. ATS: Greenhouse, Lever, Taleo. Also any payroll or benefits systems."
+        },
+        "q4": {
+          "question": "How important is labor law knowledge?",
+          "answer": "Very important. Highlight your knowledge of employment law, compliance, and HR regulations in your region."
+        }
+      },
+      "finalCta": {
+        "title": "Create your HR resume now",
+        "description": "Free, professional, people-focused. Advance your HR career.",
+        "ctaText": "Create my HR resume"
+      }
     },
-    "verification": {
-      "subject": "Verify your email — CV Builder",
-      "title": "Email Verification",
-      "body": "Click the button below to verify your email address and activate your account:",
-      "cta": "Verify my email",
-      "expiry": "This link expires in 24 hours."
+    "cvSansExperiencePage": {
+      "meta": {
+        "title": "Free Resume Without Experience Template 2026 — No Job Experience Resume",
+        "description": "Create your free resume without experience online. Template for resume with no work experience, student resume. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Resume Without Experience",
+      "hero": {
+        "badgeText": "Land your first job",
+        "h1Before": "Free Resume Template for ",
+        "h1Accent": "No Experience",
+        "h1After": "",
+        "subtitle": "Create a strong resume even without work experience",
+        "description": "Create a professional resume without work experience in 5 minutes. Templates designed for students and first-time job seekers, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my resume now",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build a resume with no experience",
+        "subtitle": "Education, skills, and activities matter. Showcase them strategically.",
+        "item0": { "title": "Education focus", "description": "Your degree is your strength. Highlight GPA (if strong), relevant coursework, honors, and achievements." },
+        "item1": { "title": "Skills and activities", "description": "Languages, technical skills, volunteer work, projects, clubs, leadership — everything counts." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your resume reaches hiring managers despite limited experience." }
+      },
+      "section2": {
+        "title": "Templates for no experience",
+        "subtitle": "Perfect for students and first-time job seekers.",
+        "item0": { "title": "Student Resume", "keyword": "student resume no experience", "description": "For current and recent students entering the job market." },
+        "item1": { "title": "Graduate Resume", "keyword": "recent graduate resume template", "description": "For recent graduates with limited work experience." },
+        "item2": { "title": "Skills-Focus Resume", "keyword": "skills based resume no experience", "description": "Emphasizes skills over job titles for those with no formal experience." },
+        "item3": { "title": "Activity-Based Resume", "keyword": "volunteer experience resume template", "description": "Highlights volunteer work, internships, and extracurricular activities." }
+      },
+      "section3": {
+        "title": "Create your no-experience resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Student, Graduate, Skills-Focus, or Activity-Based template." },
+        "step1": { "title": "List your education", "description": "Our AI helps you present your degree and relevant coursework effectively." },
+        "step2": { "title": "Add skills and activities", "description": "Include volunteer work, internships, projects, languages, and technical skills." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for your job search." }
+      },
+      "faq": {
+        "title": "Questions about resumes without experience",
+        "subtitle": "Create your first resume",
+        "q0": {
+          "question": "What if I really have no work experience?",
+          "answer": "Include education, academic projects, internships, volunteer work, clubs, leadership, languages, technical skills, and any online courses."
+        },
+        "q1": {
+          "question": "How do I fill a resume with no job history?",
+          "answer": "Focus on education, skills, and activities. Be detailed about projects, volunteer work, and achievements in school or volunteer positions."
+        },
+        "q2": {
+          "question": "Should I include volunteer work?",
+          "answer": "Absolutely. Volunteer experience counts as real experience. Include any volunteer positions with descriptions and achievements."
+        },
+        "q3": {
+          "question": "What skills should I list?",
+          "answer": "Technical: software, programming, languages. Soft skills: communication, teamwork, problem-solving, leadership, time management."
+        },
+        "q4": {
+          "question": "How long should my resume be with no experience?",
+          "answer": "One page is ideal. Use all the space to highlight education, skills, projects, activities, and any relevant experience."
+        }
+      },
+      "finalCta": {
+        "title": "Create your no-experience resume now",
+        "description": "Free, professional, opportunity-ready. Start your job search today.",
+        "ctaText": "Create my resume now"
+      }
     },
-    "payment": {
-      "subject": "Payment confirmation — {resumeTitle} | CV Builder",
-      "title": "Payment confirmed!",
-      "body": "Thank you {name}! Your premium resume is now unlocked.",
-      "summary": "Order summary",
-      "resume": "Resume",
-      "amount": "Amount",
-      "date": "Date",
-      "editCta": "Edit my resume"
+    "cvSimplePage": {
+      "meta": {
+        "title": "Free Simple Resume Template 2026 — Minimalist, Clean Resume Template",
+        "description": "Download a free simple resume template in PDF. Minimalist and clean resume design that's ATS-friendly and professional. Create your simple resume in 5 minutes."
+      },
+      "breadcrumbName": "Simple Resume Template",
+      "hero": {
+        "badgeText": "Clean, simple design",
+        "h1Before": "Free ",
+        "h1Accent": "Simple Resume",
+        "h1After": " Template",
+        "subtitle": "Minimalist design that's highly readable",
+        "description": "Download our simple resume template for free. Clean, minimalist design that's ATS-compatible and professional for all industries.",
+        "primaryCtaText": "Download simple template",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Why choose our simple template",
+        "subtitle": "",
+        "item0": { "title": "Clean layout", "description": "Minimalist design that's easy to read. White background and clear typography for maximum readability." },
+        "item1": { "title": "ATS compatible", "description": "Structured for automated screening systems while remaining clean and professional." },
+        "item2": { "title": "Versatile", "description": "Works for any industry and any position. Simplicity is universal." }
+      },
+      "section2": {
+        "title": "Perfect for all professions",
+        "subtitle": "The simple template works well for any role and industry.",
+        "item0": { "title": "Formal Industries", "keyword": "simple resume formal industry", "description": "Ideal for law, finance, and public sector roles." },
+        "item1": { "title": "Corporate Roles", "keyword": "simple professional resume corporate", "description": "Great for traditional corporate positions." },
+        "item2": { "title": "Academic Positions", "keyword": "simple academic resume template", "description": "Perfect for academic and research roles." },
+        "item3": { "title": "All Industries", "keyword": "simple resume any industry", "description": "Versatile for any job and any sector." }
+      },
+      "section3": {
+        "title": "Get your simple resume in 4 steps",
+        "step0": { "title": "Download template", "description": "Choose the simple design and get started." },
+        "step1": { "title": "Add your information", "description": "Fill in your experience, skills, and achievements." },
+        "step2": { "title": "Keep it clean", "description": "The minimalist format helps information stand out clearly." },
+        "step3": { "title": "Export as PDF", "description": "Download instantly and start applying." }
+      },
+      "faq": {
+        "title": "Questions about our simple template",
+        "subtitle": "Everything about the simple resume template",
+        "q0": {
+          "question": "Is the simple template ATS-friendly?",
+          "answer": "Yes, our simple template is designed to be fully ATS-compatible while maintaining clean readability."
+        },
+        "q1": {
+          "question": "Does simplicity hurt my resume?",
+          "answer": "No, simplicity helps. Minimalist design lets your content stand out. Recruiters prefer clear, readable resumes."
+        },
+        "q2": {
+          "question": "What industries is this template best for?",
+          "answer": "All industries. Simple works especially well for formal sectors: law, finance, accounting, government, academia."
+        },
+        "q3": {
+          "question": "Can I customize the simple template?",
+          "answer": "Yes, you can adjust fonts and basic formatting while keeping the clean design."
+        },
+        "q4": {
+          "question": "Is one page enough with the simple template?",
+          "answer": "Yes, the simple template efficiently uses one page. Can expand to two pages if needed for more experience."
+        }
+      },
+      "finalCta": {
+        "title": "Download the simple template now",
+        "description": "Free, clean, professional. Create your simple resume today.",
+        "ctaText": "Download simple template"
+      }
     },
-    "contact": {
-      "notificationSubject": "[CV Builder] New message from {name} — {subject}",
-      "notificationTitle": "New contact message",
-      "confirmationSubject": "Your message has been received — CV Builder",
-      "confirmationTitle": "Your message has been received, {name}!",
-      "confirmationBody": "Thank you for contacting us. We have received your message and will reply within 48 business hours.",
-      "summary": "Summary",
-      "date": "Date",
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message"
+    "modeleCvAlternancePage": {
+      "meta": {
+        "title": "Free Apprenticeship Resume Template 2026 — Alternance, Dual Study Resume",
+        "description": "Create your free apprenticeship resume online. Apprenticeship resume templates for students combining school and work. AI resume generator, ATS-optimized, free PDF export."
+      },
+      "breadcrumbName": "Apprenticeship Resume Template",
+      "hero": {
+        "badgeText": "For apprentices and dual-study students",
+        "h1Before": "Free ",
+        "h1Accent": "Apprenticeship Resume",
+        "h1After": " Template",
+        "subtitle": "Combine academic and professional experience effectively",
+        "description": "Create a professional apprenticeship resume in 5 minutes. Templates for dual-study students, ATS compatible, free PDF export.",
+        "primaryCtaText": "Create my apprenticeship resume",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Build an apprenticeship resume",
+        "subtitle": "Balance both your academic and professional experience. Show employers your dual track success.",
+        "item0": { "title": "School + work combined", "description": "Present both your studies and professional experience. Emphasize how they complement each other." },
+        "item1": { "title": "Practical skills", "description": "Highlight technical skills developed through work-based learning and training." },
+        "item2": { "title": "ATS optimized", "description": "Our templates ensure your dual-track resume passes screening systems." }
+      },
+      "section2": {
+        "title": "Our apprenticeship resume templates",
+        "subtitle": "Choose the template for your apprenticeship program.",
+        "item0": { "title": "Technical Apprenticeship", "keyword": "technical apprenticeship resume", "description": "For technical trades, engineering, IT apprenticeships." },
+        "item1": { "title": "Business Apprenticeship", "keyword": "business apprenticeship resume", "description": "For business, commerce, and management apprenticeships." },
+        "item2": { "title": "Trade Apprenticeship", "keyword": "trade apprenticeship resume", "description": "For skilled trades and vocational programs." },
+        "item3": { "title": "Professional Apprenticeship", "keyword": "professional apprenticeship resume", "description": "For graduate apprenticeships and professional development programs." }
+      },
+      "section3": {
+        "title": "Create your apprenticeship resume in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Technical, Business, Trade, or Professional Apprenticeship template." },
+        "step1": { "title": "Balance school and work", "description": "Our AI helps you present both your academic and professional achievements." },
+        "step2": { "title": "Highlight skills gained", "description": "Include practical skills, certifications, and on-the-job training experiences." },
+        "step3": { "title": "Download as PDF", "description": "Instant quality export, ready for applications." }
+      },
+      "faq": {
+        "title": "Questions about apprenticeship resumes",
+        "subtitle": "Create an effective dual-study resume",
+        "q0": {
+          "question": "How do I balance school and work on a resume?",
+          "answer": "Create two sections: Education (degree/program) and Professional Experience. Show how they complement each other in your summary."
+        },
+        "q1": {
+          "question": "What should I emphasize from my apprenticeship?",
+          "answer": "Skills learned on the job, certifications earned, professional projects completed, and how you applied learning from school."
+        },
+        "q2": {
+          "question": "Should I list my training company as an employer?",
+          "answer": "Yes, absolutely. Your apprenticeship company is professional experience. List it with your role and key accomplishments."
+        },
+        "q3": {
+          "question": "How do I showcase practical skills?",
+          "answer": "Highlight technical skills learned during apprenticeship: software, tools, certifications, or skills from training programs."
+        },
+        "q4": {
+          "question": "Is an apprenticeship enough without other work experience?",
+          "answer": "Yes, apprenticeships are valued professional experience. An effective resume showcasing your apprenticeship counts as real work experience."
+        }
+      },
+      "finalCta": {
+        "title": "Create your apprenticeship resume now",
+        "description": "Free, professional, dual-track focused. Showcase your apprenticeship success.",
+        "ctaText": "Create my apprenticeship resume"
+      }
+    },
+    "modeleCvPage": {
+      "meta": {
+        "title": "Free Resume Template 2026 — Download Template, Modern, Minimalist, ATS",
+        "description": "Download a free resume template in PDF. Choose from our modern, minimalist, ATS-friendly resume templates. Create and download your free resume online in 5 minutes."
+      },
+      "breadcrumbName": "Resume Template",
+      "hero": {
+        "badgeText": "100% free templates",
+        "h1Before": "Free ",
+        "h1Accent": "Resume Template",
+        "h1After": " to Download as PDF",
+        "subtitle": "Modern, minimalist, ATS — all our templates are free",
+        "description": "Choose from our free resume templates and create your professional resume in 5 minutes. Instant PDF export, no credit card required.",
+        "primaryCtaText": "Choose my free template",
+        "secondaryCtaText": "See all templates"
+      },
+      "section1": {
+        "title": "Why our resume templates are different",
+        "subtitle": "",
+        "item0": { "title": "All truly free", "description": "No tricks or surprise subscriptions. Download as PDF for free whenever you're ready." },
+        "item1": { "title": "ATS optimized", "description": "Each template is structured to pass recruiters' automated screening systems." },
+        "item2": { "title": "Professional design", "description": "Designed to be modern and timeless, suitable for all sectors: tech, sales, healthcare, education." }
+      },
+      "section2": {
+        "title": "Our free resume templates",
+        "subtitle": "A template for every profile and sector.",
+        "item0": { "title": "Modern Resume Template", "keyword": "modern resume template free", "description": "Our most popular template. Sleek design, subtle color, ATS compatible. Ideal for most applications." },
+        "item1": { "title": "Minimalist Resume Template", "keyword": "minimalist resume template pdf free", "description": "The simplest and most readable. White background, clear typography. Perfect for demanding profiles." },
+        "item2": { "title": "ATS-Friendly Resume Template", "keyword": "free ats resume template", "description": "Optimized structure for automated screening software. Guarantees your information reaches the recruiter intact." },
+        "item3": { "title": "Classic Resume Template", "keyword": "free classic resume template", "description": "Traditional format with a modern twist. Suits all profiles, especially formal sectors." }
+      },
+      "section3": {
+        "title": "Create your resume with our templates in 4 steps",
+        "step0": { "title": "Choose your template", "description": "Modern, Minimal, ATS or Classic — select the template that matches your sector." },
+        "step1": { "title": "Customize with AI", "description": "Our AI optimizes your content: wording, keywords, structure for maximum impact." },
+        "step2": { "title": "Adjust colors and fonts", "description": "Customize each template to your preferences in our intuitive editor." },
+        "step3": { "title": "Download as free PDF", "description": "Instant high-quality export, ready to send to your recruiters." }
+      },
+      "faq": {
+        "title": "Frequently asked questions about resume templates",
+        "subtitle": "Everything you need to know to choose and use our templates",
+        "q0": {
+          "question": "Which resume template should I choose?",
+          "answer": "For most sectors, the Modern template is the most versatile. Choose Minimalist for demanding sectors, ATS-Friendly for large companies with recruitment portals, and Classic for formal fields (banking, administration, law)."
+        },
+        "q1": {
+          "question": "Are the resume templates really free?",
+          "answer": "Yes, the Modern template is completely free including PDF export. No credit card required, no hidden fees. Premium templates are available with an optional subscription."
+        },
+        "q2": {
+          "question": "How do I customize a resume template?",
+          "answer": "In our editor, you can modify colors, fonts, sections and layout of each template. Our AI helps you write optimized content for each section."
+        },
+        "q3": {
+          "question": "Are the templates ATS compatible?",
+          "answer": "Yes, all our templates are tested to be compatible with major ATS software (Workday, Taleo, Greenhouse, Lever). The HTML/PDF structure guarantees perfect reading by these systems."
+        },
+        "q4": {
+          "question": "Can I use one resume template for multiple applications?",
+          "answer": "Absolutely. Create your base resume, then duplicate it and customize it for each job by adding specific keywords. Our AI helps you personalize each version quickly."
+        }
+      },
+      "finalCta": {
+        "title": "Choose your resume template now",
+        "description": "Free, customizable, professional. Your resume ready in 5 minutes.",
+        "ctaText": "Choose my resume template"
+      }
     }
   }
 }

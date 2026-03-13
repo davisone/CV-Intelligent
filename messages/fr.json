@@ -127,6 +127,13 @@
       "cvJuriste": "CV Juriste",
       "cvLogistique": "CV Logistique"
     },
+    "seoPage": {
+      "loginText": "Connexion",
+      "signupText": "Créer mon CV gratuit",
+      "createThisCv": "Créer ce CV",
+      "homeText": "Accueil",
+      "freeBadge": "Gratuit • Sans carte bancaire • Export PDF"
+    },
     "templatesPage": {
       "meta": {
         "title": "Modèles de CV Gratuits 2026 — Templates CV Modernes, Simples, ATS",
@@ -173,60 +180,533 @@
       "meta": {
         "title": "Modèle CV Gratuit 2026 — Télécharger Template CV Moderne, Minimaliste, ATS",
         "description": "Téléchargez un modèle CV gratuit en PDF. Choisissez parmi nos templates CV modernes, minimalistes, ATS-friendly. Créez et téléchargez votre CV gratuit en ligne en 5 minutes."
+      },
+      "breadcrumbName": "Modèle CV Gratuit",
+      "hero": {
+        "badgeText": "Modèles 100% gratuits",
+        "h1Before": "Modèle de ",
+        "h1Accent": "CV Gratuit",
+        "h1After": " à Télécharger en PDF",
+        "subtitle": "Modern, minimaliste, ATS — tous nos templates sont gratuits",
+        "description": "Choisissez parmi nos modèles de CV gratuits et créez votre CV professionnel en 5 minutes. Export PDF instantané, sans carte bancaire.",
+        "primaryCtaText": "Choisir mon modèle gratuit",
+        "secondaryCtaText": "Voir tous les templates"
+      },
+      "section1": {
+        "title": "Pourquoi nos modèles CV sont différents",
+        "subtitle": "",
+        "item0": { "title": "Tous gratuits, vraiment", "description": "Pas de piège ni d'abonnement surprise. Téléchargez en PDF gratuitement dès que vous êtes prêt." },
+        "item1": { "title": "Optimisés ATS", "description": "Chaque template est structuré pour passer les systèmes de tri automatique des recruteurs." },
+        "item2": { "title": "Design professionnel", "description": "Conçus pour être modernes et intemporels, adaptés à tous les secteurs : tech, commerce, santé, éducation." }
+      },
+      "section2": {
+        "title": "Nos modèles CV gratuits",
+        "subtitle": "",
+        "item0": { "title": "Template Modern", "keyword": "modèle cv moderne gratuit", "description": "Notre modèle phare : design épuré avec une touche de couleur. Idéal pour la majorité des secteurs, du junior au senior." },
+        "item1": { "title": "Template Minimal", "keyword": "modèle cv minimaliste gratuit pdf", "description": "Le plus épuré : fond blanc, typographie claire. Parfait pour les profils exigeants et les secteurs conservateurs." },
+        "item2": { "title": "Template ATS-Friendly", "keyword": "modèle cv ats gratuit", "description": "Optimisé pour les logiciels de tri automatique : structure simple, texte parfaitement parsé par tous les ATS." },
+        "item3": { "title": "Template Classic", "keyword": "modèle cv classique gratuit", "description": "Le format traditionnel remis au goût du jour. Convient à tous les profils, particulièrement les milieux formels." }
+      },
+      "section3": {
+        "title": "Créez votre CV gratuit en 4 étapes",
+        "step0": { "title": "Créez votre compte gratuitement", "description": "Inscription en 30 secondes, sans carte bancaire." },
+        "step1": { "title": "Choisissez votre modèle CV", "description": "Modern, Minimal, ATS-Friendly ou Classic selon votre profil." },
+        "step2": { "title": "Remplissez avec l'aide de l'IA", "description": "Notre IA optimise votre contenu : formulations, mots-clés, structure." },
+        "step3": { "title": "Téléchargez en PDF gratuit", "description": "Export instantané en haute qualité, prêt à envoyer aux recruteurs." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur les modèles CV gratuits",
+        "subtitle": "Tout ce que vous devez savoir pour télécharger et utiliser nos templates CV",
+        "q0": { "question": "Nos modèles CV sont-ils vraiment gratuits ?", "answer": "Oui, le template Modern est entièrement gratuit, export PDF inclus. Pas de carte bancaire requise, pas de frais cachés." },
+        "q1": { "question": "Quel modèle CV choisir ?", "answer": "Minimal ou Modern pour la majorité des secteurs, ATS-Friendly pour les grandes entreprises et les postes tech, Classic pour les milieux formels et traditionnels." },
+        "q2": { "question": "Comment télécharger un modèle CV en PDF gratuitement ?", "answer": "Créez un compte gratuit, choisissez votre template, remplissez votre contenu avec l'aide de l'IA, puis téléchargez en PDF en un clic." },
+        "q3": { "question": "Les modèles CV sont-ils compatibles ATS ?", "answer": "Oui, tous nos templates sont structurés pour être parsés correctement par les logiciels de tri automatique utilisés par les recruteurs." },
+        "q4": { "question": "Peut-on personnaliser les couleurs et la police ?", "answer": "Oui, chaque template est entièrement personnalisable dans l'éditeur : couleurs, polices, mise en page — tout s'adapte à votre profil." }
+      },
+      "finalCta": {
+        "title": "Choisissez votre modèle CV gratuit",
+        "description": "Gratuit, instantané, professionnel. Votre CV prêt en 5 minutes.",
+        "ctaText": "Choisir mon modèle gratuit"
       }
     },
     "modeleCvStagePage": {
       "meta": {
         "title": "Modèle CV Stage Étudiant Gratuit 2026 — Template CV Stage PDF",
         "description": "Créez votre CV de stage étudiant gratuit en ligne. Modèles CV stage modernes, compatibles ATS, export PDF. Notre IA vous aide à décrocher votre stage."
+      },
+      "breadcrumbName": "Modèle CV Stage",
+      "hero": {
+        "badgeText": "Pour décrocher ton stage",
+        "h1Before": "Modèle de ",
+        "h1Accent": "CV Stage",
+        "h1After": " Étudiant Gratuit",
+        "subtitle": "Décrochez votre stage avec un CV optimisé pour les recruteurs",
+        "description": "Créez votre CV de stage en 5 minutes avec l'aide de l'IA. Templates modernes adaptés aux étudiants, compatible ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV de stage",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Créer un CV de stage efficace",
+        "subtitle": "Un CV de stage ne se construit pas comme un CV classique. Voici ce qui fait la différence.",
+        "item0": { "title": "Formation en premier", "description": "Quand l'expérience est limitée, votre formation devient le cœur du CV. Diplôme, établissement, spécialisation — mettez tout en avant." },
+        "item1": { "title": "Projets et activités", "description": "Chaque projet académique, bénévolat ou activité extra-scolaire compte. Notre IA vous aide à les rédiger de façon percutante." },
+        "item2": { "title": "Compatible ATS", "description": "Les grandes entreprises filtrent les CVs automatiquement. Nos templates sont structurés pour passer ces filtres et arriver sur le bureau du recruteur." }
+      },
+      "section2": {
+        "title": "Nos modèles CV stage gratuits",
+        "subtitle": "Choisissez le template adapté à votre entreprise cible et à votre profil.",
+        "item0": { "title": "Template Stage Modern", "keyword": "modèle cv stage moderne", "description": "Design épuré et professionnel, idéal pour la majorité des stages en entreprise. Polyvalent et efficace." },
+        "item1": { "title": "Template Stage Minimal", "keyword": "cv stage étudiant simple", "description": "Format minimaliste pour mettre votre profil en valeur sans distraction visuelle. Parfait pour les entreprises exigeantes." },
+        "item2": { "title": "Template Stage ATS", "keyword": "cv stage ats compatible", "description": "Optimisé pour les logiciels de tri automatique des grandes entreprises et des portails de recrutement." },
+        "item3": { "title": "Template Stage Classic", "keyword": "modèle cv stage bts licence", "description": "Format traditionnel pour les stages dans les secteurs formels : finance, conseil, santé, secteur public." }
+      },
+      "section3": {
+        "title": "Créez votre CV de stage en 4 étapes",
+        "step0": { "title": "Créez votre compte gratuitement", "description": "Inscription en 30 secondes, sans carte bancaire." },
+        "step1": { "title": "Choisissez votre template", "description": "Modern, Minimal, ATS ou Classic selon votre entreprise cible." },
+        "step2": { "title": "Rédigez avec l'IA", "description": "Notre IA suggère le contenu optimal : compétences, projets, formulations percutantes." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export gratuit haute qualité, prêt à envoyer avec votre lettre de motivation." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV de stage",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV de stage efficace",
+        "q0": { "question": "Comment faire un CV de stage étudiant ?", "answer": "Pour un CV de stage, mettez votre formation en tête si vous avez peu d'expérience. Ajoutez vos projets, compétences techniques et soft skills. Utilisez notre générateur gratuit avec IA pour créer un CV de stage professionnel en 5 minutes." },
+        "q1": { "question": "Quel format de CV choisir pour un stage ?", "answer": "Préférez un format Modern ou Minimal pour la majorité des stages. ATS-Friendly pour les grandes entreprises et les portails de recrutement. Une page suffit pour un CV de stage étudiant." },
+        "q2": { "question": "Comment faire un CV de stage sans expérience ?", "answer": "Mettez en avant votre formation, vos projets académiques, vos compétences techniques et vos activités extra-scolaires. Notre IA vous aide à valoriser chaque élément même sans expérience professionnelle." },
+        "q3": { "question": "Quelle longueur pour un CV de stage ?", "answer": "Un CV de stage étudiant doit tenir sur une seule page A4. Nos templates sont conçus pour respecter cette contrainte automatiquement tout en restant lisibles et professionnels." },
+        "q4": { "question": "Comment personnaliser son CV pour chaque stage ?", "answer": "Adaptez votre CV à chaque offre en intégrant les mots-clés de l'annonce dans vos descriptions. Notre IA vous aide à identifier et intégrer les termes importants pour chaque candidature." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV de stage maintenant",
+        "description": "Gratuit, guidé par l'IA, prêt en 5 minutes. Décrochez le stage que vous visez.",
+        "ctaText": "Créer mon CV de stage"
       }
     },
     "cvPremierEmploiPage": {
       "meta": {
         "title": "CV Premier Emploi Gratuit 2026 — Modèle CV Débutant, Jeune Diplômé",
         "description": "Créez votre CV de premier emploi gratuit. Modèles CV pour jeunes diplômés et débutants, optimisés ATS, export PDF. Décrochez votre premier CDI en 5 minutes."
+      },
+      "breadcrumbName": "CV Premier Emploi",
+      "hero": {
+        "badgeText": "Votre carrière commence ici",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Premier Emploi",
+        "h1After": " Gratuit",
+        "subtitle": "De l'étudiant au professionnel — décrochez votre premier CDI ou CDD",
+        "description": "Créez votre CV de premier emploi en 5 minutes. Valorisez vos stages, formations et compétences pour convaincre votre premier employeur.",
+        "primaryCtaText": "Créer mon premier CV",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Réussir son CV de premier emploi",
+        "subtitle": "Sans expérience longue, chaque détail de votre parcours devient un atout.",
+        "item0": { "title": "Valoriser sa formation", "description": "Votre diplôme est votre premier atout. Mettez-le en avant avec les mentions, spécialisations et projets marquants de votre cursus." },
+        "item1": { "title": "Capitaliser sur les stages", "description": "Chaque stage est une expérience professionnelle réelle. Notre IA vous aide à en extraire les accomplissements concrets et les compétences acquises." },
+        "item2": { "title": "Soft skills et projets", "description": "Pour un premier emploi, les soft skills et les projets personnels sont aussi importants que l'expérience. Montrez qui vous êtes." }
+      },
+      "section2": {
+        "title": "Exemples de CV premier emploi",
+        "subtitle": "Choisissez le template adapté à votre secteur cible pour votre premier poste.",
+        "item0": { "title": "CV Premier Emploi Moderne", "keyword": "exemple cv premier emploi moderne", "description": "Design contemporain pour les secteurs dynamiques : tech, marketing, communication, e-commerce." },
+        "item1": { "title": "CV Premier Emploi Simple", "keyword": "cv simple pour premier emploi", "description": "Format épuré et lisible, idéal pour tous les secteurs et tous les profils de jeunes diplômés." },
+        "item2": { "title": "CV Premier Emploi ATS", "keyword": "cv premier emploi ats compatible", "description": "Optimisé pour les grandes entreprises et les portails de recrutement automatisés." },
+        "item3": { "title": "CV Premier Emploi Classic", "keyword": "cv classique premier emploi", "description": "Format traditionnel pour les secteurs formels : finance, conseil, secteur public, grands groupes." }
+      },
+      "section3": {
+        "title": "Décrochez votre premier emploi en 4 étapes",
+        "step0": { "title": "Choisissez votre template", "description": "Sélectionnez le modèle adapté à votre secteur cible." },
+        "step1": { "title": "Structurez votre parcours", "description": "Notre IA vous guide pour présenter stages, formations et projets de façon percutante." },
+        "step2": { "title": "Optimisez pour les ATS", "description": "Intégrez les bons mots-clés pour passer les filtres automatiques des recruteurs." },
+        "step3": { "title": "Téléchargez et postulez", "description": "Export PDF gratuit, prêt à envoyer à vos premiers recruteurs." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV de premier emploi",
+        "subtitle": "Tout ce qu'il faut savoir pour décrocher son premier poste",
+        "q0": { "question": "Comment faire un CV de premier emploi ?", "answer": "Pour un CV de premier emploi, mettez votre formation et vos stages en avant. Ajoutez vos projets personnels, compétences techniques et soft skills. Notre IA vous guide pour rédiger chaque section de façon professionnelle." },
+        "q1": { "question": "Comment valoriser ses stages dans un CV de premier emploi ?", "answer": "Décrivez chaque stage avec des résultats concrets : \"développé une fonctionnalité utilisée par X clients\", \"augmenté le taux de conversion de Y%\". Notre IA vous aide à transformer vos expériences en accomplissements percutants." },
+        "q2": { "question": "Quel template choisir pour un premier emploi ?", "answer": "Le template Modern convient à la majorité des secteurs. ATS-Friendly pour les grandes entreprises. Classic pour les secteurs formels (banque, conseil, secteur public). Évitez les designs très créatifs sauf pour les métiers artistiques." },
+        "q3": { "question": "CV de premier emploi : une page ou deux ?", "answer": "Pour un premier emploi, une page A4 est recommandée si vous avez peu d'expérience. Deux pages sont acceptables si vous avez plusieurs stages significatifs. Nos templates s'adaptent automatiquement." },
+        "q4": { "question": "Comment optimiser son CV pour les ATS en tant que débutant ?", "answer": "Intégrez les mots-clés de l'offre d'emploi dans vos descriptions. Utilisez des intitulés de poste reconnus. Notre IA analyse l'offre et suggère les termes à intégrer pour maximiser votre score ATS." }
+      },
+      "finalCta": {
+        "title": "Décrochez votre premier emploi",
+        "description": "Valorisez chaque expérience, même limitée. Votre CV professionnel prêt en 5 minutes.",
+        "ctaText": "Créer mon premier CV"
       }
     },
     "cvSimplePage": {
       "meta": {
         "title": "CV Simple Gratuit 2026 — Télécharger Template CV Simple PDF",
         "description": "Créez et téléchargez un CV simple gratuit en PDF. Modèles CV simples, épurés, ATS-friendly. Design sobre et professionnel pour tous secteurs."
+      },
+      "breadcrumbName": "CV Simple",
+      "hero": {
+        "badgeText": "Sobre et efficace",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Simple",
+        "h1After": " Gratuit en PDF",
+        "subtitle": "Un CV simple, c'est souvent le plus efficace — lisible, professionnel, sans fioritures",
+        "description": "Créez votre CV simple gratuit en ligne et téléchargez en PDF en 5 minutes. Modèles épurés, clairs et compatibles ATS pour tous les secteurs.",
+        "primaryCtaText": "Créer mon CV simple",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Pourquoi choisir un CV simple ?",
+        "subtitle": "La simplicité est une force, pas un manque d'ambition.",
+        "item0": { "title": "Lecture immédiate", "description": "Un recruteur passe 7 secondes sur un CV. Le format simple garantit que vos informations clés sont vues en premier, sans distraction." },
+        "item1": { "title": "Compatible tous secteurs", "description": "Un CV simple convient à tous les métiers et tous les niveaux d'expérience, du junior au senior, de la tech au secteur public." },
+        "item2": { "title": "Optimisé ATS", "description": "Les formats simples sont les mieux parsés par les logiciels de tri automatique. Vos informations arrivent intactes au recruteur." }
+      },
+      "section2": {
+        "title": "Nos modèles CV simples gratuits",
+        "subtitle": "Quatre déclinaisons sobres et professionnelles pour tous les profils.",
+        "item0": { "title": "CV Simple Modern", "keyword": "cv simple moderne gratuit", "description": "Épuré avec une légère touche de couleur. Le meilleur compromis entre simplicité et modernité pour 2026." },
+        "item1": { "title": "CV Simple Minimal", "keyword": "cv simple minimaliste gratuit pdf", "description": "Le plus sobre : fond blanc, typographie nette. Idéal pour les profils exigeants et les secteurs conservateurs." },
+        "item2": { "title": "CV Simple ATS", "keyword": "cv simple ats gratuit", "description": "Structure ultra-classique optimisée pour les logiciels de tri automatique des grandes entreprises." },
+        "item3": { "title": "CV Simple Classic", "keyword": "cv simple classique gratuit", "description": "Format traditionnel éprouvé, reconnu par tous les recruteurs, adapté à tous les secteurs." }
+      },
+      "section3": {
+        "title": "5 règles pour un CV simple réussi",
+        "tip0": "Limitez-vous à une page pour les profils juniors et deux pages maximum pour les seniors",
+        "tip1": "Utilisez une police lisible : Arial, Calibri ou Open Sans en taille 10-12",
+        "tip2": "Structurez en sections claires : Expériences, Formation, Compétences, Langues",
+        "tip3": "Rédigez des bullets courts (1-2 lignes) avec des verbes d'action au présent",
+        "tip4": "Laissez des marges suffisantes — un CV aéré est plus agréable à lire et plus professionnel"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV simple",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV simple et efficace",
+        "q0": { "question": "Qu'est-ce qu'un CV simple ?", "answer": "Un CV simple est un curriculum vitae au format épuré, sans éléments décoratifs superflus. Il met l'accent sur la lisibilité et la clarté de l'information. C'est le format le plus universel et le plus apprécié des recruteurs." },
+        "q1": { "question": "Comment créer un CV simple gratuitement ?", "answer": "Créez un compte gratuit sur notre plateforme, choisissez un de nos templates simples, remplissez votre contenu avec l'aide de l'IA, et téléchargez en PDF gratuitement. Tout le processus prend moins de 5 minutes." },
+        "q2": { "question": "CV simple ou CV design : lequel choisir ?", "answer": "Choisissez un CV simple pour les secteurs traditionnels (finance, conseil, secteur public, santé) ou si vous n'êtes pas sûr du ton attendu. Optez pour un CV design pour les secteurs créatifs ou digitaux où se démarquer est valorisé." },
+        "q3": { "question": "Comment télécharger un CV simple en PDF gratuitement ?", "answer": "Sur notre plateforme, l'export PDF est inclus gratuitement avec le template Modern. Choisissez votre template, complétez votre CV, et cliquez sur \"Télécharger en PDF\". Le fichier est prêt en quelques secondes." },
+        "q4": { "question": "Un CV simple est-il compatible ATS ?", "answer": "Oui, c'est même l'un de ses principaux avantages. Les formats simples sont les mieux lus par les logiciels ATS car ils utilisent une structure HTML/PDF claire sans tableaux complexes ni zones de texte dans des images." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV simple maintenant",
+        "description": "Sobre, lisible, professionnel. Votre CV simple prêt en 5 minutes.",
+        "ctaText": "Créer mon CV simple"
       }
     },
     "cvDesignPage": {
       "meta": {
         "title": "CV Design Gratuit 2026 — Template CV Créatif & Moderne en PDF",
         "description": "Créez votre CV design gratuit en ligne. Templates CV créatifs et modernes, export PDF, compatibles ATS. Démarquez-vous avec un CV au design soigné."
+      },
+      "breadcrumbName": "CV Design",
+      "hero": {
+        "badgeText": "Design moderne & créatif",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Design",
+        "h1After": " Gratuit en Ligne",
+        "subtitle": "Démarquez-vous avec un CV au design soigné — sans sacrifier la lisibilité",
+        "description": "Créez votre CV design gratuit en ligne en 5 minutes. Templates modernes, esthétiques et compatibles ATS pour tous les secteurs.",
+        "primaryCtaText": "Créer mon CV design",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Pourquoi choisir un CV design ?",
+        "subtitle": "Un CV design bien conçu attire l'œil sans sacrifier l'essentiel.",
+        "item0": { "title": "Première impression mémorable", "description": "Un CV design attire l'œil et laisse une impression durable. Idéal pour les secteurs créatifs, digitaux et tech où se démarquer est valorisé." },
+        "item1": { "title": "ATS-Compatible", "description": "Nos templates design sont conçus pour rester parfaitement lisibles par les logiciels ATS tout en étant visuellement attractifs." },
+        "item2": { "title": "Adapté à votre secteur", "description": "Tech, marketing, communication, design : chaque secteur a ses codes visuels. Nos templates s'adaptent à votre domaine et votre personnalité." }
+      },
+      "section2": {
+        "title": "Nos templates CV design gratuits",
+        "subtitle": "Des designs professionnels pour tous les profils créatifs et digitaux.",
+        "item0": { "title": "CV Design Modern", "keyword": "cv design moderne gratuit", "description": "Notre template phare : couleurs subtiles, hiérarchie visuelle claire, impression professionnelle garantie pour tous les secteurs." },
+        "item1": { "title": "CV Design Créatif", "keyword": "cv design créatif étudiant", "description": "Pour les profils créatifs qui veulent se démarquer tout en restant professionnels. Idéal pour les agences et startups." },
+        "item2": { "title": "CV Design Minimaliste", "keyword": "cv design minimaliste gratuit", "description": "Le design épuré par excellence : chaque élément a sa raison d'être. Élégance et efficacité réunies." },
+        "item3": { "title": "CV Design Tech", "keyword": "cv design développeur informatique", "description": "Optimisé pour les profils tech et développeurs qui veulent un CV moderne, impactant et facilement lisible par les recruteurs IT." }
+      },
+      "section3": {
+        "title": "5 règles pour un CV design réussi",
+        "tip0": "Choisissez 1 à 2 couleurs maximum pour rester sobre et professionnel",
+        "tip1": "Utilisez une typographie claire — beauté et lisibilité ne s'opposent pas",
+        "tip2": "Structurez l'espace visuellement : colonnes, sections bien délimitées, icônes légères",
+        "tip3": "Vérifiez toujours le rendu PDF — l'aperçu écran peut différer légèrement",
+        "tip4": "Restez compatible ATS : évitez les tableaux dans des images ou les zones de texte non sélectionnables"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV design",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV design professionnel",
+        "q0": { "question": "Qu'est-ce qu'un CV design ?", "answer": "Un CV design est un curriculum vitae qui utilise des éléments visuels (couleurs, typographie travaillée, mise en page structurée) pour se démarquer tout en restant lisible et professionnel. Il va au-delà du simple format texte sans pour autant sacrifier la clarté." },
+        "q1": { "question": "Comment créer un CV design gratuit en ligne ?", "answer": "Créez un compte gratuit, choisissez l'un de nos templates design, personnalisez couleurs et contenu avec l'aide de l'IA, et téléchargez en PDF. Tout le processus prend moins de 5 minutes." },
+        "q2": { "question": "Un CV design est-il compatible ATS ?", "answer": "Oui, nos templates design sont spécialement conçus pour être à la fois beaux et compatibles ATS. Nous évitons les éléments qui posent problème aux logiciels de tri (images non sélectionnables, tableaux complexes) tout en maintenant un design soigné." },
+        "q3": { "question": "CV design ou CV simple : lequel choisir ?", "answer": "Choisissez un CV design pour les secteurs créatifs, tech, marketing ou startup. Optez pour un CV simple pour les secteurs plus conservateurs (finance, santé, administration). En cas de doute, le template Modern est un excellent compromis." },
+        "q4": { "question": "Quels secteurs favorisent un CV design ?", "answer": "Les secteurs qui apprécient le plus les CVs design sont : les agences créatives, les startups et scale-ups, les entreprises tech, le marketing digital, la communication, le design lui-même et l'e-commerce." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV design maintenant",
+        "description": "Moderne, esthétique, professionnel. Votre CV design prêt en 5 minutes.",
+        "ctaText": "Créer mon CV design"
       }
     },
     "cvModernePage": {
       "meta": {
         "title": "CV Moderne Gratuit 2026 — Template CV Moderne PDF à Télécharger",
         "description": "Téléchargez un CV moderne gratuit en PDF. Choisissez parmi nos templates CV modernes 2026, optimisés ATS. Créez votre CV moderne en 5 minutes."
+      },
+      "breadcrumbName": "CV Moderne",
+      "hero": {
+        "badgeText": "Templates modernes 2026",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Moderne",
+        "h1After": " Gratuit en PDF",
+        "subtitle": "Un CV aux codes visuels actuels — épuré, impactant, professionnel",
+        "description": "Créez votre CV moderne gratuit en 5 minutes. Téléchargez en PDF, optimisé ATS, adapté à tous les secteurs en 2026.",
+        "primaryCtaText": "Créer mon CV moderne",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les atouts d'un CV moderne",
+        "subtitle": "Modernité ne signifie pas inaccessible — nos templates modernes allient esthétique et efficacité.",
+        "item0": { "title": "Design actuel 2026", "description": "Un CV moderne utilise les codes visuels de 2026 : espaces aérés, typographie contemporaine et hiérarchie visuelle claire." },
+        "item1": { "title": "Compatible ATS", "description": "Moderne ne veut pas dire illisible pour les robots. Tous nos templates modernes sont optimisés pour les logiciels de tri automatique." },
+        "item2": { "title": "Polyvalent", "description": "Un CV moderne convient à la grande majorité des secteurs : tech, finance, marketing, commerce, santé et éducation." }
+      },
+      "section2": {
+        "title": "Nos templates CV modernes gratuits",
+        "subtitle": "Quatre déclinaisons modernes pour tous les profils et secteurs.",
+        "item0": { "title": "CV Modern Pro", "keyword": "cv moderne professionnel gratuit", "description": "Notre template le plus populaire : design épuré, couleur subtile, impact maximal pour tous les secteurs." },
+        "item1": { "title": "CV Modern Étudiant", "keyword": "cv moderne étudiant gratuit pdf", "description": "Adapté aux profils juniors : formation mise en avant, compétences bien valorisées, design actuel." },
+        "item2": { "title": "CV Modern Minimaliste", "keyword": "cv moderne minimaliste gratuit", "description": "L'alliance parfaite entre modernité et sobriété. Idéal pour les profils exigeants qui veulent se distinguer discrètement." },
+        "item3": { "title": "CV Modern ATS", "keyword": "cv moderne ats compatible", "description": "Design moderne optimisé pour les portails de recrutement des grandes entreprises et des cabinets de recrutement." }
+      },
+      "section3": {
+        "title": "Créez votre CV moderne en 4 étapes",
+        "step0": { "title": "Créez votre compte", "description": "Inscription gratuite en 30 secondes, sans carte bancaire." },
+        "step1": { "title": "Choisissez votre template moderne", "description": "4 designs modernes adaptés à votre profil et à votre secteur." },
+        "step2": { "title": "Remplissez avec l'IA", "description": "Notre IA optimise formulations, mots-clés et structure pour un impact maximal." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export haute qualité, prêt à envoyer à vos recruteurs." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV moderne",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV moderne efficace",
+        "q0": { "question": "Qu'est-ce qu'un CV moderne ?", "answer": "Un CV moderne est un curriculum vitae qui adopte les codes visuels et structurels actuels : mise en page épurée, typographie contemporaine, hiérarchie visuelle claire. En 2026, un CV moderne se distingue par sa lisibilité et son aspect professionnel sans être austère." },
+        "q1": { "question": "Comment créer un CV moderne gratuitement ?", "answer": "Sur notre plateforme, créez un compte gratuit, choisissez l'un de nos templates modernes, personnalisez le contenu avec l'aide de l'IA, et téléchargez en PDF gratuitement. Le template Modern est entièrement gratuit." },
+        "q2": { "question": "Un CV moderne est-il compatible ATS ?", "answer": "Oui, nos templates modernes sont conçus pour être à la fois beaux et compatibles ATS. Nous n'utilisons pas d'éléments qui poserait problème aux logiciels de tri automatique tout en maintenant un design contemporain." },
+        "q3": { "question": "Quel template CV moderne choisir en 2026 ?", "answer": "Le template Modern Pro convient à la majorité des secteurs. Modern Étudiant est idéal si vous avez peu d'expérience. Modern Minimaliste pour les secteurs exigeants. Modern ATS pour les grandes entreprises avec des portails de recrutement." },
+        "q4": { "question": "CV moderne ou CV classique : lequel choisir ?", "answer": "En 2026, le CV moderne est recommandé pour la plupart des candidatures. Le CV classique reste préférable dans certains secteurs très formels (administration publique, banque traditionnelle). En cas de doute, notre template Modern est le meilleur compromis." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV moderne maintenant",
+        "description": "Moderne, optimisé, professionnel. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV moderne"
       }
     },
     "cvSansExperiencePage": {
       "meta": {
         "title": "CV Sans Expérience Gratuit 2026 — Modèle CV Étudiant Sans Expérience",
         "description": "Créez votre CV sans expérience gratuit. Modèles CV pour étudiants et débutants sans expérience. Notre IA valorise votre formation, projets et compétences."
+      },
+      "breadcrumbName": "CV Sans Expérience",
+      "hero": {
+        "badgeText": "Même sans expérience, vous avez des atouts",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Sans Expérience",
+        "h1After": " Qui Convainc",
+        "subtitle": "Formation, projets, bénévolat — valorisez chaque atout de votre parcours",
+        "description": "Créez votre CV sans expérience en 5 minutes avec l'IA. Notre générateur valorise votre formation, vos projets et vos compétences pour décrocher un stage ou un premier emploi.",
+        "primaryCtaText": "Créer mon CV sans expérience",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Vos atouts même sans expérience",
+        "subtitle": "L'expérience professionnelle n'est pas le seul critère. Voici ce qui vous distingue.",
+        "item0": { "title": "La formation d'abord", "description": "Diplôme, spécialisation, établissement, mention — votre formation est votre premier argument professionnel quand l'expérience est limitée." },
+        "item1": { "title": "Projets et bénévolat", "description": "Projets académiques, associatifs, personnels, open source : chaque réalisation concrète mérite d'apparaître sur votre CV." },
+        "item2": { "title": "Compétences et soft skills", "description": "Langues, outils informatiques, capacités relationnelles, curiosité — autant d'atouts concrets à valoriser même sans expérience." }
+      },
+      "section2": {
+        "title": "Modèles CV sans expérience",
+        "subtitle": "Des templates optimisés pour les profils débutants et étudiants.",
+        "item0": { "title": "CV Étudiant Sans Expérience", "keyword": "cv étudiant sans expérience gratuit", "description": "Format optimisé pour mettre la formation et les projets en avant quand l'expérience professionnelle est limitée." },
+        "item1": { "title": "CV Stage Sans Expérience", "keyword": "cv stage sans expérience", "description": "Pour votre premier stage : mettez en avant vos projets, compétences et motivation. Parfait pour les candidatures de stage." },
+        "item2": { "title": "CV Premier Emploi Débutant", "keyword": "cv premier emploi sans expérience", "description": "Valorisez vos stages, projets et activités pour décrocher votre premier poste même avec peu d'expérience." },
+        "item3": { "title": "CV Reconversion Débutante", "keyword": "cv reconversion sans expérience", "description": "Pour changer de secteur : montrez vos compétences transférables et présentez clairement votre projet professionnel." }
+      },
+      "section3": {
+        "title": "5 conseils pour un CV sans expérience convaincant",
+        "tip0": "Mettez votre formation en tête de CV — c'est votre principal atout face aux recruteurs",
+        "tip1": "Incluez tous vos projets : académiques, personnels, open source ou associatifs",
+        "tip2": "Ajoutez le bénévolat et les activités extra-scolaires — ils montrent votre engagement",
+        "tip3": "Détaillez vos compétences techniques : logiciels, langages de programmation, certifications",
+        "tip4": "Rédigez une accroche courte et percutante qui présente votre projet professionnel"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV sans expérience",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV convaincant même sans expérience",
+        "q0": { "question": "Comment faire un CV sans expérience ?", "answer": "Pour un CV sans expérience, mettez votre formation en tête, ajoutez vos projets académiques et personnels, listez vos compétences techniques et soft skills, et incluez tout bénévolat ou activité extra-scolaire. Notre IA vous guide pour valoriser chaque élément." },
+        "q1": { "question": "Quoi mettre dans un CV sans expérience ?", "answer": "Formation (diplômes, cours, certifications), projets (académiques, personnels, open source), compétences (techniques et linguistiques), activités (bénévolat, associations, sport), et une accroche présentant votre projet professionnel." },
+        "q2": { "question": "Comment valoriser un projet personnel dans un CV ?", "answer": "Décrivez le contexte, l'objectif, les technologies utilisées et le résultat obtenu. Par exemple : \"Développé une application mobile (React Native) permettant de gérer X, utilisée par Y personnes\". Notre IA vous aide à formuler chaque projet de façon percutante." },
+        "q3": { "question": "CV sans expérience : une page ou deux ?", "answer": "Sans expérience professionnelle significative, une seule page A4 est recommandée. Nos templates s'adaptent automatiquement pour que le contenu soit présenté de façon optimale sur une page." },
+        "q4": { "question": "Comment décrocher un stage sans expérience ?", "answer": "Ciblez votre CV pour chaque stage, mettez en avant vos compétences spécifiques au poste, montrez votre motivation dans l'accroche, et accompagnez d'une lettre de motivation personnalisée. Notre IA vous aide à optimiser chaque candidature." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV sans expérience",
+        "description": "L'IA valorise chaque atout de votre profil. Votre CV professionnel prêt en 5 minutes.",
+        "ctaText": "Créer mon CV sans expérience"
       }
     },
     "cvDeveloppeurJuniorPage": {
       "meta": {
         "title": "CV Développeur Junior Gratuit 2026 — Exemple CV Dev Web Junior",
         "description": "Créez votre CV de développeur junior gratuit. Templates CV dev web, frontend, backend, full stack. Optimisé ATS pour les recruteurs tech."
+      },
+      "breadcrumbName": "CV Développeur Junior",
+      "hero": {
+        "badgeText": "Tech & Web",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Développeur Junior",
+        "h1After": " Gratuit",
+        "subtitle": "Frontend, Backend, Full Stack — un CV développeur junior qui met en valeur vos skills",
+        "description": "Créez votre CV de développeur junior en 5 minutes. Templates modernes adaptés aux profils tech, optimisés ATS pour les recruteurs IT.",
+        "primaryCtaText": "Créer mon CV développeur",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV développeur junior",
+        "subtitle": "Un CV dev junior doit mettre en avant vos skills techniques et vos projets concrets.",
+        "item0": { "title": "Stack technique en avant", "description": "Langages, frameworks, outils, base de données — listez précisément vos compétences techniques dans une section dédiée bien structurée." },
+        "item1": { "title": "Projets et GitHub", "description": "En tant que junior, vos projets personnels et open source sont aussi importants que vos expériences. Liez-les à votre portfolio GitHub." },
+        "item2": { "title": "Optimisé recruteurs IT", "description": "Les recruteurs tech recherchent des mots-clés précis (React, Node.js, Python...). Notre IA les intègre naturellement dans votre CV." }
+      },
+      "section2": {
+        "title": "Exemples de CV développeur junior",
+        "subtitle": "Des templates adaptés à chaque spécialisation tech.",
+        "item0": { "title": "CV Dev Frontend Junior", "keyword": "cv développeur frontend junior", "description": "Spécialisé React, Vue, Angular — mettez en avant vos projets web et vos compétences en UI/UX et JavaScript moderne." },
+        "item1": { "title": "CV Dev Backend Junior", "keyword": "cv développeur backend junior", "description": "Node.js, Python, Java, PHP — valorisez vos API, bases de données et compétences en architecture serveur." },
+        "item2": { "title": "CV Dev Full Stack Junior", "keyword": "cv développeur full stack junior", "description": "Les recruteurs recherchent les profils full stack. Montrez votre maîtrise des deux côtés : client et serveur." },
+        "item3": { "title": "CV Dev Web Junior", "keyword": "exemple cv développeur web junior", "description": "Template généraliste pour les développeurs web juniors en recherche de premier poste ou alternance en entreprise." }
+      },
+      "section3": {
+        "title": "Créez votre CV développeur en 4 étapes",
+        "step0": { "title": "Choisissez votre spécialité", "description": "Frontend, Backend, Full Stack, Mobile — choisissez le template adapté à votre stack." },
+        "step1": { "title": "Listez vos compétences techniques", "description": "Notre IA vous aide à structurer vos skills en niveaux : débutant, intermédiaire, avancé." },
+        "step2": { "title": "Valorisez vos projets", "description": "Ajoutez vos projets GitHub, portfolio et contributions open source directement dans votre CV." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export professionnel optimisé pour les portails de recrutement tech et les ATS IT." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV développeur junior",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV dev junior efficace",
+        "q0": { "question": "Comment faire un CV de développeur junior ?", "answer": "Pour un CV de développeur junior, structurez une section compétences techniques précise (langages, frameworks, outils), listez vos projets avec les technologies utilisées, et ajoutez votre lien GitHub. Notre IA vous aide à rédiger des descriptions percutantes pour chaque expérience." },
+        "q1": { "question": "Quelles compétences mettre dans un CV développeur junior ?", "answer": "Listez vos langages de programmation (JavaScript, Python, Java...), vos frameworks (React, Vue, Django, Spring...), vos outils (Git, Docker, VS Code...) et vos bases de données (PostgreSQL, MongoDB...). Indiquez votre niveau pour chaque technologie." },
+        "q2": { "question": "Comment valoriser des projets personnels dans un CV dev ?", "answer": "Décrivez chaque projet avec : technologies utilisées, problème résolu, résultat concret. Ajoutez le lien GitHub ou l'URL de la démo. Notre IA vous aide à formuler des descriptions techniques qui attirent l'attention des recruteurs IT." },
+        "q3": { "question": "Faut-il mettre GitHub sur son CV de développeur ?", "answer": "Oui, absolument. Pour un développeur junior, GitHub est votre portfolio. Ajoutez votre URL GitHub en haut de votre CV avec vos autres coordonnées. Assurez-vous que vos repos publics sont bien documentés avec un README." },
+        "q4": { "question": "Quel template CV choisir pour un développeur junior ?", "answer": "Optez pour un template Modern ou ATS-Friendly pour la majorité des entreprises tech. Le template Modern est idéal pour les startups et agences. ATS-Friendly pour les grandes entreprises et ESN (anciennement SSII) avec des portails de candidature automatisés." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV développeur junior",
+        "description": "Mettez en valeur vos skills tech et projets. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV développeur"
       }
     },
     "modeleCvAlternancePage": {
       "meta": {
         "title": "Modèle CV Alternance Gratuit 2026 — Template CV Alternance Étudiant PDF",
         "description": "Téléchargez un modèle CV alternance gratuit en PDF. Templates CV alternance pour étudiants, optimisés ATS. Créez votre CV d'alternance en 5 minutes."
+      },
+      "breadcrumbName": "Modèle CV Alternance",
+      "hero": {
+        "badgeText": "Pour décrocher votre alternance",
+        "h1Before": "Modèle ",
+        "h1Accent": "CV Alternance",
+        "h1After": " Gratuit à Télécharger",
+        "subtitle": "Apprentissage, contrat pro, alternance BTS/Licence/Master — un CV qui convainc entreprises et écoles",
+        "description": "Téléchargez un modèle CV alternance gratuit en PDF. Templates optimisés pour l'alternance, compatibles ATS, créés avec l'aide de l'IA en 5 minutes.",
+        "primaryCtaText": "Créer mon CV alternance",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Réussir son CV d'alternance",
+        "subtitle": "Un CV d'alternance s'adresse à la fois à l'entreprise et à l'école. Voici les clés.",
+        "item0": { "title": "Double profil à valoriser", "description": "L'alternance combine étude et travail. Montrez que vous êtes à la fois un bon étudiant et un futur professionnel efficace en entreprise." },
+        "item1": { "title": "Expériences et projets", "description": "Stages, jobs étudiants, projets académiques — chaque expérience renforce votre candidature en alternance. Notre IA les valorise tous." },
+        "item2": { "title": "Optimisé ATS", "description": "Les portails de recrutement des grandes entreprises filtrent automatiquement. Nos templates sont structurés pour passer ces filtres efficacement." }
+      },
+      "section2": {
+        "title": "Nos modèles CV alternance gratuits",
+        "subtitle": "Des templates adaptés à chaque niveau de formation et secteur d'alternance.",
+        "item0": { "title": "CV Alternance BTS", "keyword": "modèle cv alternance bts gratuit", "description": "Format adapté aux candidatures en alternance BTS : structure claire, compétences techniques mises en avant selon votre filière." },
+        "item1": { "title": "CV Alternance Licence/Bachelor", "keyword": "cv alternance licence gratuit", "description": "Pour les alternances en Licence Pro ou Bachelor : valorisez votre double compétence théorique et pratique." },
+        "item2": { "title": "CV Alternance Master", "keyword": "modèle cv alternance master", "description": "Niveau Bac+4/Bac+5 : montrez votre maturité professionnelle et vos compétences avancées pour des postes à responsabilités." },
+        "item3": { "title": "CV Alternance Informatique", "keyword": "modèle cv alternance informatique", "description": "Spécialement adapté aux alternances en développement, data, cybersécurité et systèmes. Stack technique bien mis en valeur." }
+      },
+      "section3": {
+        "title": "Créez votre CV d'alternance en 4 étapes",
+        "step0": { "title": "Créez votre compte", "description": "Inscription gratuite en 30 secondes, sans carte bancaire." },
+        "step1": { "title": "Choisissez votre template", "description": "Modern, Minimal, ATS ou Classic selon votre secteur et votre niveau de formation." },
+        "step2": { "title": "Remplissez avec l'IA", "description": "Notre IA optimise votre contenu pour plaire à la fois aux recruteurs et aux responsables pédagogiques." },
+        "step3": { "title": "Téléchargez en PDF", "description": "Export haute qualité, prêt à envoyer aux entreprises et à votre école." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV d'alternance",
+        "subtitle": "Tout ce qu'il faut savoir pour décrocher votre contrat d'alternance",
+        "q0": { "question": "Comment faire un CV pour une alternance ?", "answer": "Pour un CV d'alternance, montrez que vous êtes à la fois un bon étudiant et un futur collaborateur efficace. Précisez votre rythme d'alternance (ex: 3 jours entreprise / 2 jours école), vos dates de disponibilité et votre formation. Valorisez stages, projets et compétences." },
+        "q1": { "question": "Que mettre dans un CV d'alternance ?", "answer": "Incluez : formation en cours avec le rythme d'alternance et les dates, expériences (stages, jobs), compétences techniques et soft skills, projets académiques ou personnels, et une accroche présentant votre projet professionnel en lien avec l'alternance visée." },
+        "q2": { "question": "Quel modèle de CV choisir pour une alternance ?", "answer": "Le template Modern convient à la majorité des alternances. ATS-Friendly pour les grandes entreprises et les groupes qui utilisent des portails de recrutement. Classic pour les secteurs formels (banque, assurance, secteur public)." },
+        "q3": { "question": "Comment différencier son CV d'alternance d'un CV classique ?", "answer": "Mentionnez clairement votre rythme d'alternance, votre école et votre formation. Ajoutez une section sur votre projet professionnel qui montre le lien entre votre formation et le poste visé. Notre IA vous aide à rédiger une accroche percutante pour chaque candidature." },
+        "q4": { "question": "Les CV d'alternance sont-ils compatibles ATS ?", "answer": "Oui, tous nos templates sont optimisés pour les logiciels de tri automatique utilisés par les grandes entreprises et les portails de recrutement. La structure claire et le texte bien parsé garantissent que votre CV arrive bien au recruteur." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV d'alternance maintenant",
+        "description": "Gratuit, optimisé pour l'alternance, prêt en 5 minutes.",
+        "ctaText": "Créer mon CV alternance"
       }
     },
     "modeleCvPage": {
       "meta": {
         "title": "Modèle de CV Gratuit 2026 — Template CV Professionnel à Télécharger",
         "description": "Téléchargez un modèle de CV gratuit. Choisissez parmi nos templates CV modernes, minimalistes, professionnels. Créez votre CV gratuit en ligne en 5 minutes."
+      },
+      "breadcrumbName": "Modèle de CV",
+      "hero": {
+        "badgeText": "Templates gratuits 2026",
+        "h1Before": "",
+        "h1Accent": "Modèle de CV",
+        "h1After": " Gratuit à Télécharger",
+        "subtitle": "Choisissez parmi nos templates CV modernes, minimalistes et professionnels",
+        "description": "Téléchargez un modèle de CV gratuit et créez votre CV professionnel en 5 minutes. Export PDF instantané, sans carte bancaire, optimisé ATS.",
+        "primaryCtaText": "Choisir mon modèle CV",
+        "secondaryCtaText": "Voir tous les templates"
+      },
+      "section1": {
+        "title": "Pourquoi choisir nos modèles de CV ?",
+        "subtitle": "Des templates conçus pour maximiser vos chances d'être rappelé.",
+        "item0": { "title": "100% gratuits", "description": "Nos modèles de CV sont entièrement gratuits. Pas de frais cachés, pas d'abonnement surprise. Téléchargez en PDF dès que vous êtes prêt." },
+        "item1": { "title": "Optimisés ATS", "description": "Chaque template est structuré pour passer les systèmes de tri automatique utilisés par les recruteurs des grandes entreprises." },
+        "item2": { "title": "Design professionnel", "description": "Conçus par des experts en recrutement et design, nos modèles sont modernes, intemporels et adaptés à tous les secteurs." }
+      },
+      "section2": {
+        "title": "Nos modèles de CV gratuits",
+        "subtitle": "Un template pour chaque profil et chaque secteur.",
+        "item0": { "title": "Modèle CV Modern", "keyword": "modèle cv moderne gratuit", "description": "Notre template le plus populaire. Design épuré, couleur subtile, compatible ATS. Idéal pour la majorité des candidatures." },
+        "item1": { "title": "Modèle CV Minimal", "keyword": "modèle cv minimaliste gratuit pdf", "description": "Le plus sobre et le plus lisible. Fond blanc, typographie claire. Parfait pour les profils exigeants." },
+        "item2": { "title": "Modèle CV ATS-Friendly", "keyword": "modèle cv ats gratuit", "description": "Structure optimisée pour les logiciels de tri automatique. Garantit que vos informations arrivent intactes au recruteur." },
+        "item3": { "title": "Modèle CV Classic", "keyword": "modèle cv classique gratuit", "description": "Le format traditionnel remis au goût du jour. Convient à tous les profils, particulièrement aux milieux formels." }
+      },
+      "section3": {
+        "title": "Créez votre CV avec nos modèles en 4 étapes",
+        "step0": { "title": "Choisissez votre modèle", "description": "Modern, Minimal, ATS ou Classic — sélectionnez le template adapté à votre secteur." },
+        "step1": { "title": "Personnalisez avec l'IA", "description": "Notre IA optimise votre contenu : formulations, mots-clés, structure pour un impact maximal." },
+        "step2": { "title": "Adaptez couleurs et polices", "description": "Personnalisez chaque modèle selon vos préférences dans notre éditeur intuitif." },
+        "step3": { "title": "Téléchargez en PDF gratuit", "description": "Export haute qualité instantané, prêt à envoyer à vos recruteurs." }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur les modèles de CV",
+        "subtitle": "Tout ce qu'il faut savoir pour choisir et utiliser nos templates",
+        "q0": { "question": "Quel modèle de CV choisir ?", "answer": "Pour la plupart des secteurs, le modèle Modern est le plus polyvalent. Choisissez Minimal pour les secteurs exigeants, ATS-Friendly pour les grandes entreprises avec portails de recrutement, et Classic pour les milieux formels (banque, administration, droit)." },
+        "q1": { "question": "Les modèles de CV sont-ils vraiment gratuits ?", "answer": "Oui, le template Modern est entièrement gratuit incluant l'export PDF. Pas de carte bancaire requise, pas de frais cachés. Les templates Premium sont disponibles avec un abonnement optionnel." },
+        "q2": { "question": "Comment personnaliser un modèle de CV ?", "answer": "Dans notre éditeur, vous pouvez modifier les couleurs, polices, sections et mise en page de chaque template. Notre IA vous aide à rédiger le contenu optimisé pour chaque section." },
+        "q3": { "question": "Les modèles sont-ils compatibles ATS ?", "answer": "Oui, tous nos templates sont testés pour être compatibles avec les principaux logiciels ATS (Workday, Taleo, Greenhouse, Lever). La structure HTML/PDF garantit une lecture parfaite par ces systèmes." },
+        "q4": { "question": "Peut-on utiliser un modèle de CV pour plusieurs candidatures ?", "answer": "Absolument. Créez votre CV de base, puis dupliquez-le et adaptez-le pour chaque offre d'emploi en intégrant les mots-clés spécifiques. Notre IA vous aide à personnaliser rapidement chaque version." }
+      },
+      "finalCta": {
+        "title": "Choisissez votre modèle de CV maintenant",
+        "description": "Gratuit, personnalisable, professionnel. Votre CV prêt en 5 minutes.",
+        "ctaText": "Choisir mon modèle CV"
       }
     },
     "exempleCvPage": {
@@ -245,638 +725,163 @@
       "meta": {
         "title": "CV Commercial Gratuit 2026 — Modèle CV Vendeur, Technico-Commercial",
         "description": "Créez votre CV commercial gratuit. Modèles CV pour commerciaux, vendeurs, technico-commerciaux, attachés commerciaux. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Commercial",
+      "hero": {
+        "badgeText": "Commerce & Vente",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Commercial",
+        "h1After": " Gratuit",
+        "subtitle": "Commercial, technico-commercial, attaché commercial — un CV qui met en valeur vos performances",
+        "description": "Créez votre CV commercial gratuit en 5 minutes. Templates adaptés aux profils vente et commerce, optimisés ATS, avec vos chiffres et résultats en avant.",
+        "primaryCtaText": "Créer mon CV commercial",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV commercial",
+        "subtitle": "Un CV commercial doit mettre vos performances chiffrées au premier plan.",
+        "item0": { "title": "Résultats chiffrés", "description": "CA généré, taux de conversion, nombre de clients, objectifs atteints — les recruteurs commerciaux veulent des chiffres. Notre IA vous aide à les mettre en valeur." },
+        "item1": { "title": "Secteurs et clients", "description": "Type de clientèle (B2B, B2C, grands comptes, PME), secteurs couverts, zone géographique — des informations clés pour les recruteurs du commerce." },
+        "item2": { "title": "Optimisé ATS", "description": "Les grandes entreprises et cabinets de recrutement commercial utilisent des logiciels de tri. Nos templates garantissent que votre CV passe ces filtres." }
+      },
+      "section2": {
+        "title": "Modèles CV commercial gratuits",
+        "subtitle": "Des templates adaptés à chaque spécialité commerciale.",
+        "item0": { "title": "CV Commercial B2B", "keyword": "cv commercial b2b gratuit", "description": "Spécialisé vente entreprises : grands comptes, cycle de vente long, négociation, gestion de portefeuille clients." },
+        "item1": { "title": "CV Technico-Commercial", "keyword": "cv technico-commercial gratuit", "description": "Double compétence technique et commerciale : expertise produit, argumentation technique, accompagnement avant-vente." },
+        "item2": { "title": "CV Attaché Commercial", "keyword": "cv attaché commercial gratuit", "description": "Prospection terrain, fidélisation, reporting, gestion de secteur. Template adapté aux postes de représentant commercial." },
+        "item3": { "title": "CV Responsable Commercial", "keyword": "cv responsable commercial gratuit", "description": "Management d'équipe commerciale, définition de stratégie, pilotage des objectifs et développement de la force de vente." }
+      },
+      "section3": {
+        "title": "5 conseils pour un CV commercial percutant",
+        "tip0": "Quantifiez systématiquement vos résultats : CA, taux de conversion, nombre de clients, croissance",
+        "tip1": "Précisez le type de vente : B2B, B2C, grands comptes, PME, vente directe, indirecte",
+        "tip2": "Mentionnez votre zone géographique et les secteurs couverts",
+        "tip3": "Incluez vos outils CRM maîtrisés : Salesforce, HubSpot, Pipedrive...",
+        "tip4": "Rédigez une accroche qui présente votre profil commercial en 2-3 lignes avec vos chiffres clés"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV commercial",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV commercial efficace",
+        "q0": { "question": "Comment faire un bon CV commercial ?", "answer": "Un bon CV commercial met les résultats chiffrés en avant : CA généré, objectifs dépassés, nombre de clients. Précisez le type de vente (B2B/B2C), les secteurs couverts et vos outils CRM. Notre IA vous aide à formuler chaque expérience de façon percutante." },
+        "q1": { "question": "Quels chiffres mettre dans un CV commercial ?", "answer": "CA réalisé ou dépassé, taux d'atteinte des objectifs, nombre de clients gérés, taux de fidélisation, taux de conversion prospects/clients, croissance du portefeuille. Tous ces indicateurs démontrent concrètement votre valeur." },
+        "q2": { "question": "Quel template CV choisir pour un poste commercial ?", "answer": "Le template Modern est idéal pour la majorité des postes commerciaux. Classic pour les secteurs plus formels (banque, assurance, industrie). ATS-Friendly pour les grandes entreprises et les groupes avec portails RH." },
+        "q3": { "question": "Que mettre dans l'accroche d'un CV commercial ?", "answer": "Votre spécialité commerciale, votre secteur d'expertise, vos années d'expérience et 1-2 chiffres clés. Exemple : \"Commercial B2B avec 5 ans d'expérience dans le SaaS, ayant généré 1,2M€ de CA en 2025 avec un taux de rétention client de 92%.\"" },
+        "q4": { "question": "Comment mettre en valeur une progression commerciale dans un CV ?", "answer": "Montrez l'évolution de vos performances d'une année sur l'autre. Si vous avez évolué en responsabilités (commercial → chef des ventes), valorisez cette progression. Notre IA vous aide à structurer votre parcours pour montrer votre développement." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV commercial maintenant",
+        "description": "Mettez vos performances commerciales en avant. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV commercial"
       }
     },
     "cvMarketingPage": {
       "meta": {
         "title": "CV Marketing Gratuit 2026 — Modèle CV Chef de Projet Marketing, Digital",
         "description": "Créez votre CV marketing gratuit. Modèles CV pour responsables marketing, chefs de projet digital, community managers. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Marketing",
+      "hero": {
+        "badgeText": "Marketing & Digital",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Marketing",
+        "h1After": " Gratuit",
+        "subtitle": "Responsable marketing, chef de projet digital, community manager — un CV qui met en valeur votre créativité et vos résultats",
+        "description": "Créez votre CV marketing gratuit en 5 minutes. Templates adaptés aux profils marketing et digital, optimisés ATS, avec vos KPIs et campagnes en avant.",
+        "primaryCtaText": "Créer mon CV marketing",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV marketing",
+        "subtitle": "Un CV marketing doit allier créativité et résultats mesurables.",
+        "item0": { "title": "KPIs et résultats", "description": "Taux de conversion, ROI des campagnes, croissance du trafic, leads générés — les recruteurs marketing veulent des chiffres. Notre IA vous aide à les mettre en valeur." },
+        "item1": { "title": "Compétences digitales", "description": "SEO, SEA, social media, email marketing, analytics — précisez vos outils (Google Analytics, HubSpot, Meta Ads) et vos domaines d'expertise pour vous démarquer." },
+        "item2": { "title": "Optimisé ATS", "description": "Les grandes entreprises utilisent des logiciels de tri. Nos templates garantissent que votre CV passe ces filtres tout en restant visuellement attractif." }
+      },
+      "section2": {
+        "title": "Modèles CV marketing gratuits",
+        "subtitle": "Des templates adaptés à chaque spécialité marketing.",
+        "item0": { "title": "CV Responsable Marketing", "keyword": "cv responsable marketing gratuit", "description": "Stratégie marketing, management d'équipe, pilotage du budget, définition de la roadmap. Template adapté aux postes de direction marketing." },
+        "item1": { "title": "CV Chef de Projet Digital", "keyword": "cv chef de projet digital gratuit", "description": "Gestion de projets web, coordination agences, suivi des KPIs digitaux, optimisation des tunnels de conversion." },
+        "item2": { "title": "CV Community Manager", "keyword": "cv community manager gratuit", "description": "Animation des réseaux sociaux, création de contenu, gestion des communautés, reportings mensuels et croissance des audiences." },
+        "item3": { "title": "CV Traffic Manager", "keyword": "cv traffic manager gratuit", "description": "Gestion des campagnes SEA, retargeting, optimisation des dépenses publicitaires, analyse des performances et reporting." }
+      },
+      "section3": {
+        "title": "5 conseils pour un CV marketing percutant",
+        "tip0": "Quantifiez vos résultats : taux de conversion, croissance du trafic, ROI des campagnes, leads générés",
+        "tip1": "Listez vos outils maîtrisés : Google Analytics, HubSpot, Salesforce, Meta Ads, Mailchimp...",
+        "tip2": "Précisez votre spécialité : SEO, SEA, email marketing, réseaux sociaux, content marketing",
+        "tip3": "Incluez des exemples de campagnes réussies avec les métriques clés obtenues",
+        "tip4": "Rédigez une accroche qui positionne votre expertise marketing en 2-3 lignes avec vos chiffres"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV marketing",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV marketing efficace",
+        "q0": { "question": "Comment faire un bon CV marketing ?", "answer": "Un bon CV marketing allie créativité et résultats mesurables. Mettez en avant vos KPIs (taux de conversion, ROI, croissance du trafic), vos outils digitaux maîtrisés et vos réalisations concrètes. Notre IA vous aide à formuler chaque expérience de façon impactante." },
+        "q1": { "question": "Quels outils marketing mettre dans un CV ?", "answer": "Google Analytics, Google Ads, Meta Business Manager, HubSpot, Salesforce, Mailchimp, Semrush, Ahrefs, Hootsuite, Adobe Creative Suite selon vos compétences. Précisez votre niveau de maîtrise pour chaque outil." },
+        "q2": { "question": "Quel template CV choisir pour un poste marketing ?", "answer": "Le template Modern est idéal pour la plupart des postes marketing : design attractif mais sobre. Pour les postes créatifs (direction artistique, UX), le template Minimal avec une touche de personnalisation. Pour les grandes entreprises : ATS-Friendly." },
+        "q3": { "question": "Comment mettre en valeur des campagnes marketing dans un CV ?", "answer": "Décrivez le contexte (secteur, budget), l'action (type de campagne, canaux utilisés) et le résultat mesurable (+25% de trafic, 150 leads/mois, ROI x3). Notre IA vous aide à structurer chaque expérience avec la méthode STAR." },
+        "q4": { "question": "Comment présenter une reconversion vers le marketing digital ?", "answer": "Mettez en avant vos compétences transférables, vos formations (certifications Google, HubSpot), vos projets personnels et vos premières expériences digitales. Notre IA valorise chaque élément pour repositionner votre profil vers le marketing." }
+      },
+      "finalCta": {
+        "title": "Créez votre CV marketing maintenant",
+        "description": "Mettez vos compétences et résultats marketing en avant. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV marketing"
       }
     },
     "cvIngenieurPage": {
       "meta": {
         "title": "CV Ingénieur Gratuit 2026 — Modèle CV Ingénieur Informatique, Génie Civil",
         "description": "Créez votre CV d'ingénieur gratuit. Modèles CV pour ingénieurs informatique, génie civil, mécanique, électronique. Optimisé ATS, export PDF."
-      }
-    },
-    "cvInfirmierPage": {
-      "meta": {
-        "title": "CV Infirmier Gratuit 2026 — Modèle CV Infirmier, Aide-Soignant",
-        "description": "Créez votre CV infirmier gratuit. Modèles CV pour infirmiers, aides-soignants, cadres de santé. Adapté au secteur hospitalier, export PDF."
-      }
-    },
-    "cvReconversionPage": {
-      "meta": {
-        "title": "CV Reconversion Professionnelle Gratuit 2026 — Changer de Métier",
-        "description": "Créez votre CV de reconversion professionnelle gratuit. Valorisez vos compétences transférables pour changer de secteur. Notre IA optimise votre profil."
-      }
-    },
-    "cvComptablePage": {
-      "meta": {
-        "title": "CV Comptable Gratuit 2026 — Modèle CV Comptable, Expert-Comptable",
-        "description": "Créez votre CV comptable gratuit. Modèles CV pour comptables, experts-comptables, contrôleurs de gestion. Optimisé ATS, export PDF en 5 minutes."
-      }
-    },
-    "cvManagerPage": {
-      "meta": {
-        "title": "CV Manager Gratuit 2026 — Modèle CV Manager, Responsable d'Équipe",
-        "description": "Créez votre CV manager gratuit. Modèles CV pour managers, responsables d'équipe, chefs de service. Valorisez votre leadership, export PDF."
-      }
-    },
-    "cvChefDeProjetPage": {
-      "meta": {
-        "title": "CV Chef de Projet Gratuit 2026 — Modèle CV Chef de Projet IT, Marketing",
-        "description": "Créez votre CV chef de projet gratuit. Modèles CV pour chefs de projet IT, marketing, construction. Optimisé ATS, export PDF en 5 minutes."
-      }
-    },
-    "cvRhPage": {
-      "meta": {
-        "title": "CV RH Gratuit 2026 — Modèle CV Ressources Humaines, Chargé RH",
-        "description": "Créez votre CV RH gratuit. Modèles CV pour chargés RH, responsables recrutement, DRH. Optimisé ATS, export PDF en 5 minutes."
-      }
-    },
-    "cvAssistantPage": {
-      "meta": {
-        "title": "CV Assistant Gratuit 2026 — Modèle CV Assistant Administratif, de Direction",
-        "description": "Créez votre CV assistant gratuit. Modèles CV pour assistants administratifs, assistants de direction, office managers. Export PDF en 5 minutes."
-      }
-    },
-    "cvGraphistePage": {
-      "meta": {
-        "title": "CV Graphiste Gratuit 2026 — Modèle CV Graphiste, Designer, UI/UX",
-        "description": "Créez votre CV graphiste gratuit. Modèles CV pour graphistes, designers, UI/UX designers. Mettez en valeur votre portfolio, export PDF."
-      }
-    },
-    "cvJuristePage": {
-      "meta": {
-        "title": "CV Juriste Gratuit 2026 — Modèle CV Juriste, Avocat, Paralégal",
-        "description": "Créez votre CV juriste gratuit. Modèles CV pour juristes, avocats, paralégaux. Adapté aux métiers du droit, optimisé ATS, export PDF."
-      }
-    },
-    "cvLogistiquePage": {
-      "meta": {
-        "title": "CV Logistique Gratuit 2026 — Modèle CV Responsable Logistique, Supply Chain",
-        "description": "Créez votre CV logistique gratuit. Modèles CV pour responsables logistique, supply chain, gestionnaires de stocks. Optimisé ATS, export PDF."
-      }
-    }
-  },
-  "auth": {
-    "login": {
-      "meta": {
-        "title": "Connexion"
       },
-      "title": "Connexion",
-      "subtitle": "Accédez à vos CV et continuez à les améliorer",
-      "email": "Email",
-      "password": "Mot de passe",
-      "forgotPassword": "Mot de passe oublié ?",
-      "submit": "Se connecter",
-      "submitting": "Connexion...",
-      "noAccount": "Pas encore de compte ?",
-      "signup": "Créer un compte",
-      "errors": {
-        "invalidCredentials": "Email ou mot de passe incorrect",
-        "generic": "Une erreur est survenue. Réessayez."
+      "breadcrumbName": "CV Ingénieur",
+      "hero": {
+        "badgeText": "Ingénierie & Technique",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Ingénieur",
+        "h1After": " Gratuit",
+        "subtitle": "Ingénieur informatique, génie civil, mécanique, électronique — un CV qui valorise vos compétences techniques et vos projets",
+        "description": "Créez votre CV d'ingénieur gratuit en 5 minutes. Templates adaptés aux profils ingénieurs, optimisés ATS, avec vos compétences techniques et projets en avant.",
+        "primaryCtaText": "Créer mon CV ingénieur",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV ingénieur",
+        "subtitle": "Un CV ingénieur doit mettre en avant expertise technique et réalisations concrètes.",
+        "item0": { "title": "Compétences techniques", "description": "Langages, outils, logiciels, normes — précisez votre stack technique et votre niveau de maîtrise. Une section compétences structurée est essentielle pour un profil ingénieur." },
+        "item1": { "title": "Projets et réalisations", "description": "Décrivez vos projets techniques avec leur contexte, les technologies utilisées et les résultats obtenus. Budget géré, délais respectés, innovations apportées — les recruteurs veulent des faits." },
+        "item2": { "title": "Optimisé ATS", "description": "Les grandes entreprises industrielles et ESN utilisent des logiciels de tri. Nos templates garantissent que vos compétences techniques sont correctement parsées par ces systèmes." }
+      },
+      "section2": {
+        "title": "Modèles CV ingénieur gratuits",
+        "subtitle": "Des templates adaptés à chaque spécialité de l'ingénierie.",
+        "item0": { "title": "CV Ingénieur Informatique", "keyword": "cv ingénieur informatique gratuit", "description": "Développement logiciel, architecture système, DevOps, cybersécurité — template avec section compétences techniques détaillée et projets." },
+        "item1": { "title": "CV Ingénieur Génie Civil", "keyword": "cv ingénieur génie civil gratuit", "description": "Construction, BTP, infrastructures — template valorisant vos chantiers, certifications et maîtrise des normes et réglementations." },
+        "item2": { "title": "CV Ingénieur Mécanique", "keyword": "cv ingénieur mécanique gratuit", "description": "Conception, CAO, simulation, industrialisation — template avec projets de R&D, logiciels maîtrisés (SolidWorks, CATIA) et réalisations." },
+        "item3": { "title": "CV Ingénieur Chef de Projet", "keyword": "cv ingénieur chef de projet gratuit", "description": "Management de projets techniques, coordination équipes, suivi budgets et délais, gestion des risques et livrables." }
+      },
+      "section3": {
+        "title": "5 conseils pour un CV ingénieur percutant",
+        "tip0": "Structurez vos compétences techniques par catégories (langages, outils, logiciels, normes)",
+        "tip1": "Décrivez chaque projet avec contexte, technologies utilisées et résultats mesurables",
+        "tip2": "Mentionnez vos certifications et habilitations spécifiques à votre domaine",
+        "tip3": "Incluez vos diplômes d'ingénieur avec le nom de l'école et la spécialité",
+        "tip4": "Précisez votre niveau d'anglais : essentiel dans l'industrie et les ESN internationales"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV ingénieur",
+        "subtitle": "Tout ce qu'il faut savoir pour créer un CV ingénieur efficace",
+        "q0": { "question": "Comment faire un bon CV d'ingénieur ?", "answer": "Un bon CV d'ingénieur met en avant vos compétences techniques structurées, vos projets concrets avec les technologies utilisées et les résultats obtenus. Mentionnez vos diplômes d'ingénieur, certifications et votre niveau d'anglais. Notre IA vous aide à valoriser chaque expérience." },
+        "q1": { "question": "Quelles compétences techniques mettre dans un CV ingénieur ?", "answer": "Listez vos compétences par catégories : langages de programmation, frameworks, outils de développement, logiciels métier (CAO, simulation), normes et certifications. Précisez votre niveau de maîtrise pour chaque compétence." },
+        "q2": { "question": "Comment présenter ses projets dans un CV ingénieur ?", "answer": "Pour chaque projet : contexte et enjeux, technologies et méthodes utilisées, votre rôle, et résultats mesurables (délais, budget, performance technique). Notre IA vous aide à structurer chaque projet de façon concise et impactante." },
+        "q3": { "question": "Quelle formation mettre dans un CV d'ingénieur ?", "answer": "Listez vos diplômes d'ingénieur (Bac+5), formations complémentaires (MBA, MSc, certifications professionnelles) et formations continues. Pour les formations en cours, mentionnez la date attendue de fin. Notre IA vous aide à valoriser chaque formation." },
+        "q4": { "question": "Quelles certifications ajouter au CV ingénieur ?", "answer": "Ajouter vos certifications pertinentes : langues (TOEIC, IELTS), normes (ISO, Six Sigma), certifications cloud (AWS, Azure, Google Cloud), sécurité informatique. Mentionnez la date d'obtention et la date d'expiration si applicable." }
+      },
+      "finalCta": {
+        "title": "Créer votre CV ingénieur gratuit maintenant",
+        "description": "Gratuit, avec IA, export PDF instantané. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV ingénieur"
       }
-    },
-    "signup": {
-      "meta": {
-        "title": "Créer un compte"
-      },
-      "title": "Créer un compte",
-      "subtitle": "Commencez à créer votre CV professionnel",
-      "name": "Nom complet",
-      "namePlaceholder": "Jean Dupont",
-      "email": "Email",
-      "emailPlaceholder": "jean@exemple.fr",
-      "password": "Mot de passe",
-      "passwordHint": "Au moins 8 caractères, une majuscule, une minuscule, un chiffre",
-      "confirm": "Confirmer le mot de passe",
-      "submit": "Créer mon compte",
-      "submitting": "Création en cours...",
-      "alreadyAccount": "Déjà un compte ?",
-      "login": "Se connecter",
-      "errors": {
-        "emailExists": "Cet email est déjà utilisé",
-        "generic": "Une erreur est survenue. Réessayez."
-      }
-    },
-    "forgotPassword": {
-      "meta": {
-        "title": "Mot de passe oublié"
-      },
-      "title": "Mot de passe oublié",
-      "subtitle": "Entrez votre email pour recevoir un lien de réinitialisation",
-      "email": "Email",
-      "submit": "Envoyer le lien",
-      "submitting": "Envoi en cours...",
-      "success": "Si cet email existe, vous recevrez un lien de réinitialisation.",
-      "backToLogin": "Retour à la connexion"
-    },
-    "resetPassword": {
-      "meta": {
-        "title": "Réinitialiser le mot de passe"
-      },
-      "title": "Nouveau mot de passe",
-      "subtitle": "Choisissez un nouveau mot de passe sécurisé",
-      "password": "Nouveau mot de passe",
-      "confirm": "Confirmer le mot de passe",
-      "submit": "Réinitialiser",
-      "submitting": "Réinitialisation...",
-      "success": "Mot de passe réinitialisé. Vous pouvez vous connecter.",
-      "errors": {
-        "tokenInvalid": "Lien invalide ou expiré",
-        "mismatch": "Les mots de passe ne correspondent pas"
-      }
-    },
-    "verifyEmail": {
-      "meta": {
-        "title": "Vérification email"
-      },
-      "title": "Vérification de votre email",
-      "pendingTitle": "Vérifiez votre boîte mail",
-      "pendingSubtitle": "Un lien de vérification a été envoyé à votre adresse email.",
-      "success": "Email vérifié avec succès !",
-      "errors": {
-        "tokenInvalid": "Lien invalide ou expiré",
-        "generic": "Une erreur est survenue"
-      }
-    },
-    "verify2fa": {
-      "meta": {
-        "title": "Vérification 2FA"
-      },
-      "title": "Authentification à deux facteurs",
-      "subtitle": "Entrez le code de votre application d'authentification",
-      "code": "Code à 6 chiffres",
-      "submit": "Vérifier",
-      "submitting": "Vérification...",
-      "errors": {
-        "invalidCode": "Code invalide ou expiré",
-        "generic": "Une erreur est survenue"
-      }
-    }
-  },
-  "dashboard": {
-    "home": {
-      "meta": {
-        "title": "Dashboard"
-      },
-      "welcome": "Bienvenue, {name} !",
-      "subtitle": "Gérez vos CV et créez-en de nouveaux.",
-      "createNew": "Créer un nouveau CV",
-      "myResumes": "Mes CV",
-      "noResumes": "Vous n'avez pas encore de CV.",
-      "createFirst": "Créer mon premier CV"
-    },
-    "resumes": {
-      "meta": {
-        "title": "Mes CV"
-      },
-      "title": "Mes CV",
-      "new": "Nouveau CV",
-      "empty": "Aucun CV pour l'instant",
-      "emptySubtitle": "Créez votre premier CV professionnel",
-      "edit": "Modifier",
-      "download": "Télécharger",
-      "delete": "Supprimer",
-      "deleteConfirm": "Supprimer le CV",
-      "deleteWarning": "Êtes-vous sûr de vouloir supprimer ce CV ? Cette action est irréversible.",
-      "deleteSuccess": "CV supprimé",
-      "deleteError": "Erreur lors de la suppression",
-      "duplicate": "Dupliquer",
-      "duplicateSuccess": "CV dupliqué avec succès",
-      "duplicateError": "Erreur lors de la duplication",
-      "serverError": "Erreur serveur",
-      "createdAt": "Créé le {date}",
-      "updatedAt": "Modifié le {date}",
-      "modifiedAt": "Modifié le"
-    },
-    "profile": {
-      "meta": {
-        "title": "Mon Profil"
-      },
-      "title": "Mon Profil",
-      "subtitle": "Vos informations réutilisables dans tous vos CV",
-      "savingInProgress": "Sauvegarde en cours...",
-      "unsavedChanges": "Modifications non sauvegardées",
-      "saved": "Profil sauvegardé",
-      "profilePhoto": "Photo de profil",
-      "importFromComputer": "Importer depuis votre ordinateur",
-      "choosePhoto": "Choisir une photo",
-      "uploading": "Upload...",
-      "orPasteUrl": "Ou coller une URL",
-      "deletePhoto": "Supprimer la photo",
-      "personalInfo": "Informations personnelles",
-      "firstName": "Prénom",
-      "lastName": "Nom",
-      "phone": "Téléphone",
-      "jobTitle": "Titre professionnel",
-      "birthDate": "Date de naissance",
-      "drivingLicenses": "Permis",
-      "city": "Ville",
-      "country": "Pays",
-      "linkedin": "LinkedIn",
-      "github": "GitHub",
-      "portfolio": "Portfolio",
-      "summary": "Résumé professionnel",
-      "experiences": "Expériences professionnelles",
-      "educations": "Formations",
-      "projects": "Projets",
-      "certifications": "Certifications",
-      "skills": "Compétences",
-      "languages": "Langues",
-      "interests": "Centres d'intérêt",
-      "add": "Ajouter",
-      "saveItem": "Sauvegarder",
-      "currentJob": "Poste actuel",
-      "currentStudy": "Formation actuelle",
-      "noExperiences": "Aucune expérience ajoutée",
-      "noEducations": "Aucune formation ajoutée",
-      "noCertifications": "Aucune certification ajoutée",
-      "noProjects": "Aucun projet ajouté",
-      "noSkills": "Aucune compétence ajoutée",
-      "noLanguages": "Aucune langue ajoutée",
-      "noInterests": "Aucun centre d'intérêt ajouté",
-      "createGroup": "Créer un groupe",
-      "addSkill": "Ajouter une compétence",
-      "others": "Autres",
-      "experienceSaved": "Expérience sauvegardée",
-      "educationSaved": "Formation sauvegardée",
-      "certificationSaved": "Certification sauvegardée",
-      "projectSaved": "Projet sauvegardé",
-      "experienceDeleted": "Expérience supprimée",
-      "educationDeleted": "Formation supprimée",
-      "certificationDeleted": "Certification supprimée",
-      "projectDeleted": "Projet supprimé",
-      "photoSaved": "Photo uploadée !",
-      "photoUploadError": "Erreur lors de l'upload",
-      "serverError": "Erreur serveur",
-      "photoFormat": "JPG, PNG (max 2MB)",
-      "present": "Présent",
-      "newJob": "Nouveau poste",
-      "companyPlaceholder": "Entreprise",
-      "newDegree": "Nouveau diplôme",
-      "institutionPlaceholder": "Établissement",
-      "newCertification": "Nouvelle certification",
-      "issuerPlaceholder": "Organisme",
-      "obtainedOn": "Obtenue le {date}",
-      "expiresOn": "Expire le {date}",
-      "viewCertificate": "Voir le certificat",
-      "newProject": "Nouveau projet",
-      "view": "Voir",
-      "tools": "Outils utilisés",
-      "groupNamePlaceholder": "Nom du groupe",
-      "clickToRename": "Cliquer pour renommer",
-      "skillPlaceholder": "Compétence",
-      "languagePlaceholder": "Langue",
-      "levelBeginner": "Débutant",
-      "levelIntermediate": "Intermédiaire",
-      "levelAdvanced": "Avancé",
-      "levelFluent": "Courant",
-      "levelNative": "Natif",
-      "jobTitlePlaceholder": "Ex: Développeur Full Stack",
-      "drivingLicensesPlaceholder": "Ex: B, A2",
-      "summaryPlaceholder": "Décrivez-vous en quelques phrases...",
-      "toolsPlaceholder": "Ex: Excel, Canva, React...",
-      "companyInputPlaceholder": "Entreprise",
-      "positionPlaceholder": "Poste",
-      "descriptionPlaceholder": "Description",
-      "degreePlaceholder": "Diplôme",
-      "fieldPlaceholder": "Domaine",
-      "endDatePlaceholder": "Date de fin",
-      "certificationNamePlaceholder": "Nom de la certification",
-      "issueDatePlaceholder": "Date d'obtention",
-      "expiryDatePlaceholder": "Date d'expiration (optionnel)",
-      "credentialIdPlaceholder": "ID credential (optionnel)",
-      "credentialUrlPlaceholder": "URL de vérification (optionnel)",
-      "projectNamePlaceholder": "Nom du projet",
-      "projectUrlPlaceholder": "URL (optionnel)",
-      "projectDescriptionPlaceholder": "Description du projet",
-      "createGroupBtn": "+ Créer un groupe",
-      "addSkillBtn": "+ Ajouter une compétence",
-      "addBtn": "+ Ajouter"
-    },
-    "settings": {
-      "meta": {
-        "title": "Paramètres"
-      },
-      "title": "Paramètres",
-      "security": "Sécurité",
-      "totp": "Authentification à deux facteurs",
-      "deleteAccount": "Supprimer le compte",
-      "deleteWarning": "Cette action est irréversible. Tous vos CV seront supprimés.",
-      "2faEnabled": "La 2FA est activée sur votre compte",
-      "disable2FA": "Désactiver la 2FA",
-      "disable2FADescription": "Pour désactiver la 2FA, entrez un code depuis votre application d'authentification.",
-      "confirmDisable2FA": "Confirmer la désactivation",
-      "setup2FADescription": "Ajoutez une couche de sécurité supplémentaire à votre compte en activant l'authentification à deux facteurs.",
-      "configure2FA": "Configurer la 2FA",
-      "setup2FAQrCode": "1. Scannez ce QR code avec votre application d'authentification (Google Authenticator, Authy, etc.)",
-      "setup2FAManual": "Ou entrez ce code manuellement :",
-      "setup2FAEnterCode": "2. Entrez le code à 6 chiffres affiché dans votre application",
-      "verificationCode": "Code de vérification",
-      "enable2FA": "Activer la 2FA",
-      "2faEnabledSuccess": "2FA activée avec succès !",
-      "2faDisabledSuccess": "2FA désactivée",
-      "invalidCode": "Veuillez entrer un code à 6 chiffres",
-      "setupError": "Erreur lors de la configuration",
-      "genericError": "Une erreur est survenue"
-    },
-    "templates": {
-      "meta": {
-        "title": "Templates"
-      },
-      "title": "Templates",
-      "free": "Gratuit",
-      "premium": "Premium",
-      "use": "Utiliser ce template"
-    },
-    "checkout": {
-      "success": {
-        "title": "Paiement réussi !",
-        "subtitle": "Votre CV premium est maintenant débloqué.",
-        "cta": "Voir mon CV"
-      },
-      "cancel": {
-        "title": "Paiement annulé",
-        "subtitle": "Votre paiement a été annulé.",
-        "cta": "Retour au dashboard"
-      }
-    }
-  },
-  "editor": {
-    "meta": {
-      "title": "Éditeur CV"
-    },
-    "save": "Enregistrer",
-    "saving": "Enregistrement...",
-    "saved": "Enregistré",
-    "download": "Télécharger PDF",
-    "downloading": "Génération du PDF...",
-    "preview": "Aperçu",
-    "aiSuggest": "Suggestion IA",
-    "aiImproving": "IA en cours...",
-    "addSection": "Ajouter",
-    "removeSection": "Supprimer la section",
-    "addItem": "Ajouter un élément",
-    "removeItem": "Supprimer",
-    "dragToReorder": "Glisser pour réorganiser",
-    "importProfile": "Importer du profil",
-    "importing": "Import...",
-    "importProfileTitle": "Importer depuis le profil",
-    "importProfileDescription": "Cela va remplacer toutes les données du CV par celles de votre profil. Voulez-vous continuer ?",
-    "importProfileButton": "Importer",
-    "atsScore": "Score ATS",
-    "atsAnalyzing": "Analyse...",
-    "atsAnalysis": "Analyse ATS de votre CV",
-    "atsGlobalScore": "Score ATS global",
-    "atsSuggestions": "Suggestions d'amélioration",
-    "atsMatchedKeywords": "Mots-clés présents",
-    "atsMissingKeywords": "Mots-clés manquants",
-    "atsAnalysisInProgress": "Analyse en cours...",
-    "editTab": "Éditer",
-    "previewTab": "Aperçu",
-    "titleSection": "Titre du CV",
-    "autoSaving": "Sauvegarde...",
-    "unsavedChanges": "Modifications non sauvegardées",
-    "savedAt": "Sauvegardé à {time}",
-    "savingSuccess": "CV sauvegardé !",
-    "savingError": "Erreur lors de la sauvegarde",
-    "pdfSuccess": "PDF téléchargé !",
-    "pdfError": "Erreur lors de la génération du PDF",
-    "importSuccess": "Données importées depuis le profil !",
-    "importError": "Erreur lors de l'importation",
-    "serverError": "Erreur serveur",
-    "aiImproveSuccess": "Contenu amélioré avec l'IA !",
-    "aiImproveButton": "Améliorer avec IA",
-    "aiAddContent": "Ajoutez du contenu avant d'utiliser l'IA",
-    "currentJob": "Poste actuel",
-    "currentStudy": "Formation en cours",
-    "noExperiences": "Aucune expérience ajoutée",
-    "noEducations": "Aucune formation ajoutée",
-    "noCertifications": "Aucune certification ajoutée",
-    "noProjects": "Aucun projet ajouté",
-    "noLanguages": "Aucune langue ajoutée",
-    "noInterests": "Aucun centre d'intérêt ajouté",
-    "noSkills": "Aucune compétence ajoutée",
-    "createGroup": "Créer un groupe",
-    "addSkill": "Ajouter une compétence",
-    "others": "Autres",
-    "experienceDeleted": "Expérience supprimée",
-    "educationDeleted": "Formation supprimée",
-    "certificationDeleted": "Certification supprimée",
-    "projectDeleted": "Projet supprimé",
-    "validate": "Valider",
-    "present": "Présent",
-    "inProgress": "En cours",
-    "sauvegarder": "Sauvegarder",
-    "back": "Retour",
-    "connectionError": "Erreur de connexion",
-    "aiImproveError": "Erreur lors de l'amélioration",
-    "atsError": "Erreur lors du calcul du score ATS",
-    "atsFormatting": "Formatage",
-    "atsKeywords": "Mots-clés",
-    "atsStructure": "Structure",
-    "atsContent": "Contenu",
-    "titlePlaceholder": "Titre du CV",
-    "firstName": "Prénom",
-    "firstNamePlaceholder": "Jean",
-    "lastName": "Nom",
-    "lastNamePlaceholder": "Dupont",
-    "emailLabel": "Email",
-    "emailPlaceholder": "jean@exemple.com",
-    "phone": "Téléphone",
-    "phonePlaceholder": "+33 6 12 34 56 78",
-    "city": "Ville",
-    "cityPlaceholder": "Paris",
-    "country": "Pays",
-    "countryPlaceholder": "France",
-    "linkedin": "LinkedIn",
-    "linkedinLabelPlaceholder": "Titre affiché (ex: Jean Dupont)",
-    "linkedinUrlPlaceholder": "URL (ex: https://linkedin.com/in/jean-dupont)",
-    "github": "GitHub",
-    "githubLabelPlaceholder": "Titre affiché (ex: @jeandupont)",
-    "githubUrlPlaceholder": "URL (ex: https://github.com/jeandupont)",
-    "portfolio": "Portfolio",
-    "portfolioLabelPlaceholder": "Titre affiché (ex: Mon Portfolio)",
-    "portfolioUrlPlaceholder": "URL (ex: https://monportfolio.fr)",
-    "summaryLabel": "Résumé professionnel",
-    "summaryPlaceholder": "Décrivez votre profil...",
-    "improving": "Amélioration...",
-    "add": "Ajouter",
-    "cancelButton": "Annuler",
-    "deleteButton": "Supprimer",
-    "company": "Entreprise",
-    "companyPlaceholder": "Nom de l'entreprise",
-    "position": "Poste",
-    "positionPlaceholder": "Titre du poste",
-    "startDate": "Date de début",
-    "endDate": "Date de fin",
-    "description": "Description",
-    "experienceDescPlaceholder": "Décrivez vos responsabilités et accomplissements...",
-    "newPosition": "Nouveau poste",
-    "newCompany": "Entreprise",
-    "institution": "Établissement",
-    "institutionPlaceholder": "Nom de l'établissement",
-    "degree": "Diplôme",
-    "degreePlaceholder": "Ex: Master, Licence...",
-    "field": "Domaine / Spécialité",
-    "fieldPlaceholder": "Ex: Informatique",
-    "gpa": "Mention / GPA",
-    "gpaPlaceholder": "Ex: Bien, 3.8/4.0",
-    "newDegree": "Nouveau diplôme",
-    "newInstitution": "Établissement",
-    "certName": "Nom de la certification",
-    "certNamePlaceholder": "Ex: AWS Solutions Architect",
-    "certIssuer": "Organisme émetteur",
-    "certIssuerPlaceholder": "Ex: Amazon Web Services",
-    "certIssueDate": "Date d'obtention",
-    "certExpiryDate": "Date d'expiration (optionnel)",
-    "certCredentialId": "ID de la certification (optionnel)",
-    "certCredentialIdPlaceholder": "Ex: ABC123XYZ",
-    "certCredentialUrl": "URL de vérification (optionnel)",
-    "certObtainedOn": "Obtenue le {date}",
-    "certExpiresOn": " • Expire le {date}",
-    "newCertification": "Nouvelle certification",
-    "newIssuer": "Organisme",
-    "projectName": "Nom du projet",
-    "projectNamePlaceholder": "Ex: Application de gestion",
-    "projectUrl": "URL (optionnel)",
-    "projectDescription": "Description",
-    "projectDescPlaceholder": "Décrivez le projet...",
-    "projectTech": "Outils utilisés",
-    "projectTechPlaceholder": "Ex: Excel, Canva, React...",
-    "projectView": "Voir",
-    "newProject": "Nouveau projet",
-    "groupNamePlaceholder": "Nom du groupe",
-    "skillPlaceholder": "Compétence",
-    "languagePlaceholder": "Langue",
-    "interestPlaceholder": "Centre d'intérêt",
-    "premiumBannerMessage": "Débloquez les fonctionnalités premium (suggestions IA et score ATS) pour 4,99 €.",
-    "modify": "Modifier",
-    "langBeginner": "Débutant",
-    "langIntermediate": "Intermédiaire",
-    "langAdvanced": "Avancé",
-    "langFluent": "Courant",
-    "langNative": "Natif",
-    "clickToRename": "Cliquer pour renommer",
-    "templateLabel": "Template"
-  },
-  "paywall": {
-    "title": "CV Verrouillé",
-    "description": "Débloquez \"{title}\" pour accéder à l'éditeur complet et toutes les fonctionnalités premium.",
-    "whatYouGet": "Ce que vous obtenez :",
-    "feature1": "Accès à tous les templates premium",
-    "feature2": "Suggestions IA pour améliorer votre CV",
-    "feature3": "Score ATS détaillé avec recommandations",
-    "feature4": "Export PDF haute qualité",
-    "oneTimePayment": "Paiement unique • Accès permanent",
-    "cgvAccept": "J'accepte les",
-    "cgvLink": "Conditions Générales de Vente",
-    "cgvWaiver": "et je renonce expressément à mon droit de rétractation.",
-    "unlockButton": "Débloquer pour {price}",
-    "redirecting": "Redirection...",
-    "backToResumes": "Retour à mes CV",
-    "securePayment": "Paiement sécurisé par Stripe • Satisfait ou remboursé",
-    "alreadyUsedFree": "Vous avez déjà utilisé votre CV gratuit. Chaque CV supplémentaire nécessite un paiement unique.",
-    "paymentError": "Erreur lors de la création du paiement"
-  },
-  "cvSections": {
-    "personalInfo": "Informations personnelles",
-    "summary": "Résumé professionnel",
-    "experience": "Expériences professionnelles",
-    "education": "Formation",
-    "skills": "Compétences",
-    "languages": "Langues",
-    "interests": "Centres d'intérêt",
-    "certifications": "Certifications",
-    "projects": "Projets"
-  },
-  "contact": {
-    "meta": {
-      "title": "Contact"
-    },
-    "title": "Contactez-nous",
-    "subtitle": "Une question, un problème ou une suggestion ? Nous vous répondons sous 48 heures ouvrées.",
-    "name": "Nom",
-    "namePlaceholder": "Jean Dupont",
-    "email": "Email",
-    "emailPlaceholder": "jean@exemple.fr",
-    "subject": "Sujet",
-    "subjectPlaceholder": "Sélectionnez un sujet",
-    "subjects": {
-      "general": "Question générale",
-      "technical": "Problème technique",
-      "suggestion": "Suggestion d'amélioration",
-      "other": "Autre"
-    },
-    "message": "Message",
-    "messagePlaceholder": "Décrivez votre demande en détail...",
-    "submit": "Envoyer le message",
-    "submitting": "Envoi en cours...",
-    "success": "Message envoyé ! Nous vous répondrons sous 48h.",
-    "errors": {
-      "generic": "Une erreur est survenue. Réessayez dans un moment."
-    }
-  },
-  "legal": {
-    "cgv": {
-      "meta": {
-        "title": "CGV"
-      },
-      "title": "Conditions Générales de Vente"
-    },
-    "mentions": {
-      "meta": {
-        "title": "Mentions légales"
-      },
-      "title": "Mentions légales"
-    },
-    "privacy": {
-      "meta": {
-        "title": "Politique de confidentialité"
-      },
-      "title": "Politique de confidentialité"
-    }
-  },
-  "emails": {
-    "resetPassword": {
-      "subject": "Réinitialisation de votre mot de passe — CV Builder",
-      "title": "Réinitialisation de mot de passe",
-      "body": "Vous avez demandé la réinitialisation de votre mot de passe CV Builder. Cliquez sur le bouton ci-dessous pour créer un nouveau mot de passe :",
-      "cta": "Réinitialiser mon mot de passe",
-      "expiry": "Ce lien expire dans 1 heure. Si vous n'avez pas demandé cette réinitialisation, ignorez cet email."
-    },
-    "verification": {
-      "subject": "Vérifiez votre email — CV Builder",
-      "title": "Vérification de votre email",
-      "body": "Cliquez sur le bouton ci-dessous pour vérifier votre adresse email et activer votre compte :",
-      "cta": "Vérifier mon email",
-      "expiry": "Ce lien expire dans 24 heures."
-    },
-    "payment": {
-      "subject": "Confirmation de paiement — {resumeTitle} | CV Builder",
-      "title": "Paiement confirmé !",
-      "body": "Merci {name} ! Votre CV premium est maintenant débloqué.",
-      "summary": "Récapitulatif de commande",
-      "resume": "CV",
-      "amount": "Montant",
-      "date": "Date",
-      "editCta": "Éditer mon CV"
-    },
-    "contact": {
-      "notificationSubject": "[CV Builder] Nouveau message de {name} — {subject}",
-      "notificationTitle": "Nouveau message de contact",
-      "confirmationSubject": "Votre message a bien été reçu — CV Builder",
-      "confirmationTitle": "Votre message a bien été reçu, {name} !",
-      "confirmationBody": "Merci de nous avoir contacté. Nous avons bien reçu votre message et vous répondrons dans un délai de 48 heures ouvrées.",
-      "summary": "Récapitulatif",
-      "date": "Date",
-      "name": "Nom",
-      "email": "Email",
-      "subject": "Sujet",
-      "message": "Message"
     }
   }
 }
