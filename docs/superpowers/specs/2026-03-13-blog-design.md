@@ -232,14 +232,35 @@ Chaque article inclut :
 
 ---
 
+## Précisions techniques
+
+### next-mdx-remote RSC
+Utiliser `compileMDX` depuis `next-mdx-remote/rsc` (API RSC de la v5+), pas l'ancienne API client-side.
+
+```ts
+import { compileMDX } from 'next-mdx-remote/rsc'
+const { content, frontmatter } = await compileMDX({ source, options: { parseFrontmatter: true } })
+```
+
+### hreflang pour articles unilingues
+`buildAlternates` génère toujours FR + EN. Pour les articles disponibles dans une seule langue, créer `buildBlogAlternates(slug, availableLocales)` dans `lib/blog.ts` qui n'inclut que les locales pour lesquelles le fichier MDX existe.
+
+### Image manquante
+Si `image` n'est pas défini dans le frontmatter → fallback vers `/og-image.png` (image OG générique du site).
+
+### Sitemap async
+`app/sitemap.ts` doit être `async` pour appeler `getAllPosts()` (lecture filesystem).
+
+---
+
 ## Dépendances à ajouter
 
 ```bash
 npm install next-mdx-remote gray-matter
 ```
 
-- `next-mdx-remote` — parsing et rendu MDX côté serveur
-- `gray-matter` — extraction du frontmatter YAML
+- `next-mdx-remote` v5+ — parsing et rendu MDX côté serveur (API RSC)
+- `gray-matter` — extraction du frontmatter YAML (utilisé uniquement dans `getAllPosts` pour lire les métadonnées sans parser le MDX complet)
 
 ---
 
