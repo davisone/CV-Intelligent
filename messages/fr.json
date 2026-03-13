@@ -1149,6 +1149,10 @@
       "createSuccess": "CV créé avec succès !",
       "createBtn": "Créer le CV"
     },
+    "profile": {
+      "title": "Mon Profil",
+      "subtitle": "Gérez vos informations personnelles et professionnelles"
+    },
     "settings": {
       "title": "Paramètres",
       "totp": "Authentification à deux facteurs",
@@ -1172,7 +1176,19 @@
       "enable2FA": "Activer la 2FA",
       "setup2FADescription": "Utilisez une application comme Google Authenticator ou Authy",
       "configure2FA": "Configurer la 2FA",
-      "qrCodeAlt": "QR Code pour 2FA"
+      "qrCodeAlt": "QR Code pour 2FA",
+      "dangerZone": {
+        "title": "Zone dangereuse",
+        "description": "La suppression de votre compte est définitive. Tous vos CV, données et paiements seront effacés.",
+        "deleteButton": "Supprimer mon compte",
+        "warning": "Cette action est irréversible. Tous vos CVs, votre profil et vos données seront supprimés définitivement.",
+        "confirmLabel": "Tapez {phrase} pour confirmer",
+        "confirmPhrase": "je veux supprimer mon compte",
+        "cancel": "Annuler",
+        "confirm": "Supprimer définitivement",
+        "error": "Une erreur est survenue. Réessayez.",
+        "success": "Compte supprimé."
+      }
     },
     "checkout": {
       "success": {

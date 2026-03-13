@@ -1,6 +1,7 @@
 'use client'
 
 import { Link, usePathname } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils/helpers'
 import {
   LayoutDashboard,
@@ -12,41 +13,22 @@ import {
 import { LucideIcon } from 'lucide-react'
 
 interface NavItem {
-  label: string
+  labelKey: string
   href: string
   icon: LucideIcon
 }
 
 const navItems: NavItem[] = [
-  {
-    label: 'Dashboard',
-    href: '/dashboard',
-    icon: LayoutDashboard,
-  },
-  {
-    label: 'Mes CV',
-    href: '/dashboard/resumes',
-    icon: FileText,
-  },
-  {
-    label: 'Templates',
-    href: '/dashboard/templates',
-    icon: Palette,
-  },
-  {
-    label: 'Mon Profil',
-    href: '/dashboard/profile',
-    icon: User,
-  },
-  {
-    label: 'Paramètres',
-    href: '/dashboard/settings',
-    icon: Settings,
-  },
+  { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
+  { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
+  { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
+  { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
 ]
 
 export function Sidebar() {
   const pathname = usePathname()
+  const t = useTranslations('nav')
 
   return (
     <aside className="w-64 border-r border-[#E0D6C8] bg-[#F3EDE5] h-[calc(100vh-4rem)] hidden md:block sticky top-16 overflow-y-auto">
@@ -68,7 +50,7 @@ export function Sidebar() {
               )}
             >
               <Icon className="w-5 h-5" />
-              {item.label}
+              {t(item.labelKey as Parameters<typeof t>[0])}
             </Link>
           )
         })}

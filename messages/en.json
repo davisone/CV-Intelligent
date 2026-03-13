@@ -2006,6 +2006,10 @@
       "createSuccess": "Resume created successfully!",
       "createBtn": "Create resume"
     },
+    "profile": {
+      "title": "My Profile",
+      "subtitle": "Manage your personal and professional information"
+    },
     "settings": {
       "title": "Settings",
       "totp": "Two-factor authentication",
@@ -2029,7 +2033,19 @@
       "enable2FA": "Enable 2FA",
       "setup2FADescription": "Use an app like Google Authenticator or Authy",
       "configure2FA": "Configure 2FA",
-      "qrCodeAlt": "QR Code for 2FA"
+      "qrCodeAlt": "QR Code for 2FA",
+      "dangerZone": {
+        "title": "Danger zone",
+        "description": "Deleting your account is permanent. All your resumes, data and payments will be erased.",
+        "deleteButton": "Delete my account",
+        "warning": "This action is irreversible. All your resumes, profile and data will be permanently deleted.",
+        "confirmLabel": "Type {phrase} to confirm",
+        "confirmPhrase": "i want to delete my account",
+        "cancel": "Cancel",
+        "confirm": "Delete permanently",
+        "error": "An error occurred. Please try again.",
+        "success": "Account deleted."
+      }
     },
     "checkout": {
       "success": {
