@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { BookOpen, CheckCircle, Briefcase } from 'lucide-react'
 import { SeoLandingPage, type SeoLandingConfig } from '@/components/seo/seo-landing-page'
+import { buildAlternates } from '@/lib/seo/metadata'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -9,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('title'),
     description: t('description'),
-    alternates: { canonical: '/modele-cv-alternance' },
+    alternates: buildAlternates('/modele-cv-alternance', locale),
     openGraph: { title: t('title'), description: t('description'), type: 'article' },
   }
 }

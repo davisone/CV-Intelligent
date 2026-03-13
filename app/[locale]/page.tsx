@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { buildAlternates } from '@/lib/seo/metadata'
 import { Link } from '@/i18n/navigation'
 import { Footer } from '@/components/layout/footer'
 import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd, LocalBusinessJsonLd, PersonJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld'
@@ -11,9 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('title'),
     description: t('description'),
-    alternates: {
-      canonical: '/',
-    },
+    alternates: buildAlternates('/', locale),
   }
 }
 

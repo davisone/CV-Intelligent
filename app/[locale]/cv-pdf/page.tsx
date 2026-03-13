@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server'
 import { Footer } from '@/components/layout/footer'
 import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/json-ld'
 import { ArrowRight, Download, FileText, Check, Shield, Sparkles } from 'lucide-react'
+import { buildAlternates } from '@/lib/seo/metadata'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('title'),
     description: t('description'),
-    alternates: { canonical: '/cv-pdf' },
+    alternates: buildAlternates('/cv-pdf', locale),
     openGraph: {
       title: t('title'),
       description: t('description'),
