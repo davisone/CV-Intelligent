@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 
 export default function DashboardError({
   error,
@@ -10,6 +11,8 @@ export default function DashboardError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const t = useTranslations('dashboard.layout')
+
   useEffect(() => {
     console.error('Dashboard error:', error)
   }, [error])
@@ -32,22 +35,22 @@ export default function DashboardError({
             />
           </svg>
         </div>
-        <h1 className="mt-4 text-2xl font-bold text-gray-900">Une erreur est survenue</h1>
+        <h1 className="mt-4 text-2xl font-bold text-gray-900">{t('error')}</h1>
         <p className="mt-2 text-gray-500">
-          Quelque chose s&apos;est mal passé. Veuillez réessayer.
+          {t('errorDetails')}
         </p>
         <div className="mt-6 flex items-center justify-center gap-4">
           <button
             onClick={reset}
             className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
           >
-            Réessayer
+            {t('retry')}
           </button>
           <Link
             href="/dashboard"
             className="rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
           >
-            Tableau de bord
+            {t('backToDashboard')}
           </Link>
         </div>
       </div>

@@ -67,7 +67,7 @@ export default async function DashboardPage() {
           <div className="flex items-center justify-between h-full">
             <div>
               <h3 className="text-2xl font-bold text-[#FBF8F4] mb-2">{t('createNew')}</h3>
-              <p className="text-[#FBF8F4]/70">Commencez avec nos templates professionnels</p>
+              <p className="text-[#FBF8F4]/70">{t('createNewSubtitle')}</p>
             </div>
             <div className="w-16 h-16 bg-[#FBF8F4]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#FBF8F4]/20 transition-colors">
               <Plus className="w-8 h-8 text-[#FBF8F4]" />
@@ -83,7 +83,7 @@ export default async function DashboardPage() {
             </div>
           </div>
           <p className="text-4xl font-bold text-[#1F1A17] mb-1">{resumes.length}</p>
-          <p className="text-sm text-[#6B6560]">CV créés</p>
+          <p className="text-sm text-[#6B6560]">{t('totalResumes')}</p>
         </div>
 
         {/* This Month */}
@@ -94,26 +94,26 @@ export default async function DashboardPage() {
             </div>
           </div>
           <p className="text-4xl font-bold text-[#1F1A17] mb-1">{thisMonth}</p>
-          <p className="text-sm text-[#6B6560]">Ce mois-ci</p>
+          <p className="text-sm text-[#6B6560]">{t('thisMonth')}</p>
         </div>
 
         {/* Quick Actions */}
         <div className="bg-[#F3EDE5] p-6 rounded-2xl border border-[#E0D6C8]">
-          <h3 className="text-sm font-medium text-[#6B6560] mb-4">Actions rapides</h3>
+          <h3 className="text-sm font-medium text-[#6B6560] mb-4">{t('quickActions')}</h3>
           <div className="space-y-2">
             <Link
               href="/dashboard/templates"
               className="flex items-center gap-3 p-3 rounded-xl bg-[#FBF8F4] hover:bg-[#E8E0D5] transition-colors group"
             >
               <Sparkles className="w-4 h-4 text-[#722F37]" />
-              <span className="text-sm text-[#1F1A17] group-hover:text-[#722F37] transition-colors">Voir templates</span>
+              <span className="text-sm text-[#1F1A17] group-hover:text-[#722F37] transition-colors">{t('viewTemplates')}</span>
             </Link>
             <Link
               href="/dashboard/profile"
               className="flex items-center gap-3 p-3 rounded-xl bg-[#FBF8F4] hover:bg-[#E8E0D5] transition-colors group"
             >
               <FileText className="w-4 h-4 text-[#722F37]" />
-              <span className="text-sm text-[#1F1A17] group-hover:text-[#722F37] transition-colors">Mon profil</span>
+              <span className="text-sm text-[#1F1A17] group-hover:text-[#722F37] transition-colors">{t('myProfile')}</span>
             </Link>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default async function DashboardPage() {
         <div className="md:col-span-2 lg:col-span-2 bg-[#F3EDE5] p-6 rounded-2xl border border-[#E0D6C8]">
           <div className="flex items-center gap-3 mb-4">
             <Clock className="w-5 h-5 text-[#722F37]" />
-            <h3 className="text-sm font-medium text-[#6B6560]">Dernière activité</h3>
+            <h3 className="text-sm font-medium text-[#6B6560]">{t('latestActivity')}</h3>
           </div>
           {latestResume ? (
             <Link
@@ -135,7 +135,7 @@ export default async function DashboardPage() {
                     {latestResume.title}
                   </p>
                   <p className="text-sm text-[#6B6560] mt-1">
-                    Modifié {formatRelativeDate(latestResume.updatedAt)}
+                    {t('modifiedAt', { date: formatRelativeDate(latestResume.updatedAt, t) })}
                   </p>
                 </div>
                 <span className="text-xs bg-[#722F37]/10 text-[#722F37] px-3 py-1 rounded-full border border-[#722F37]/20">
@@ -144,7 +144,7 @@ export default async function DashboardPage() {
               </div>
             </Link>
           ) : (
-            <p className="text-[#6B6560] text-sm">Aucune activité récente</p>
+            <p className="text-[#6B6560] text-sm">{t('noActivity')}</p>
           )}
         </div>
 
@@ -156,7 +156,7 @@ export default async function DashboardPage() {
             </div>
           </div>
           <p className="text-4xl font-bold text-[#1F1A17] mb-1">{templatesUsed}</p>
-          <p className="text-sm text-[#6B6560]">Templates utilisés</p>
+          <p className="text-sm text-[#6B6560]">{t('templatesUsed')}</p>
         </div>
 
         {/* Encart avis Google */}
@@ -174,7 +174,7 @@ export default async function DashboardPage() {
             href="/dashboard/resumes"
             className="text-sm text-[#722F37] hover:text-[#8B3A44] transition-colors"
           >
-            Voir tout →
+            {t('viewAll')}
           </Link>
         </div>
 
@@ -188,20 +188,17 @@ export default async function DashboardPage() {
   )
 }
 
-function formatRelativeDate(date: Date): string {
+function formatRelativeDate(date: Date, t: (key: string, values?: Record<string, string | number>) => string): string {
   const now = new Date()
   const diff = now.getTime() - new Date(date).getTime()
   const minutes = Math.floor(diff / 60000)
   const hours = Math.floor(diff / 3600000)
   const days = Math.floor(diff / 86400000)
 
-  if (minutes < 1) return "à l'instant"
-  if (minutes < 60) return `il y a ${minutes}min`
-  if (hours < 24) return `il y a ${hours}h`
-  if (days < 7) return `il y a ${days}j`
+  if (minutes < 1) return t('justNow')
+  if (minutes < 60) return t('minutesAgo', { count: minutes })
+  if (hours < 24) return t('hoursAgo', { count: hours })
+  if (days < 7) return t('daysAgo', { count: days })
 
-  return new Date(date).toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'short',
-  })
+  return new Date(date).toLocaleDateString(undefined, { day: 'numeric', month: 'short' })
 }

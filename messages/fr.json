@@ -1062,5 +1062,145 @@
         "ctaText": "Créer mon CV ingénieur"
       }
     }
+  },
+  "dashboard": {
+    "home": {
+      "welcome": "Bonjour, {name} !",
+      "subtitle": "Voici un aperçu de votre activité",
+      "createNew": "Créer un nouveau CV",
+      "createNewSubtitle": "Commencez avec nos templates professionnels",
+      "totalResumes": "CV créés",
+      "thisMonth": "Ce mois-ci",
+      "quickActions": "Actions rapides",
+      "viewTemplates": "Voir templates",
+      "myProfile": "Mon profil",
+      "latestActivity": "Dernière activité",
+      "modifiedAt": "Modifié {date}",
+      "noActivity": "Aucune activité récente",
+      "templatesUsed": "Templates utilisés",
+      "myResumes": "Mes CV",
+      "viewAll": "Voir tout →",
+      "justNow": "à l'instant",
+      "minutesAgo": "il y a {count}min",
+      "hoursAgo": "il y a {count}h",
+      "daysAgo": "il y a {count}j"
+    },
+    "resumes": {
+      "title": "Mes CV",
+      "count": "{count} CV créé",
+      "new": "Nouveau CV",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "deleteConfirm": "Supprimer ce CV ?",
+      "deleteWarning": "Cette action est irréversible.",
+      "deleteSuccess": "CV supprimé avec succès",
+      "deleteError": "Erreur lors de la suppression",
+      "duplicateSuccess": "CV dupliqué avec succès",
+      "duplicateError": "Erreur lors de la duplication",
+      "empty": "Vous n'avez pas encore de CV",
+      "emptySubtitle": "Créez votre premier CV en cliquant sur le bouton ci-dessus",
+      "serverError": "Erreur serveur",
+      "updatedAt": "Modifié le {date}",
+      "expShort": "exp.",
+      "eduShort": "form.",
+      "skillShort": "comp.",
+      "langShort": "lang.",
+      "intShort": "int."
+    },
+    "templates": {
+      "title": "Choisir un template",
+      "use": "Utiliser",
+      "chooseCv": "Choisissez un template pour créer votre CV",
+      "titleLabel": "Titre du CV",
+      "createCv": "Créer le CV",
+      "titleRequired": "Veuillez entrer un titre",
+      "serverError": "Erreur serveur",
+      "modern": {
+        "description": "Design épuré avec une mise en page contemporaine. Idéal pour les métiers créatifs et tech.",
+        "tag1": "Design coloré", "tag2": "Sections visuelles", "tag3": "Photo de profil"
+      },
+      "classic": {
+        "description": "Style traditionnel et professionnel. Parfait pour les secteurs conventionnels.",
+        "tag1": "Sobre et élégant", "tag2": "Lecture facile", "tag3": "Formel"
+      },
+      "ats": {
+        "description": "Optimisé pour les systèmes de recrutement automatisés. Maximise vos chances d'être sélectionné.",
+        "tag1": "Compatible ATS", "tag2": "Mots-clés optimisés", "tag3": "Format simple"
+      },
+      "minimal": {
+        "description": "Minimaliste et efficace. Laissez votre contenu parler de lui-même.",
+        "tag1": "Ultra-simple", "tag2": "Beaucoup d'espace", "tag3": "Focus contenu"
+      },
+      "creative": {
+        "description": "Audacieux et original. Démarquez-vous avec un design unique.",
+        "tag1": "Design unique", "tag2": "Infographies", "tag3": "Personnalisable"
+      },
+      "createWithTemplate": "Créer un CV avec le template {template}",
+      "paidInfo": "Ce CV nécessitera un paiement de {price} pour être débloqué."
+    },
+    "resumes_new": {
+      "titleLabel": "Titre du CV",
+      "templateLabel": "Template",
+      "templateSubtitle": "Sélectionnez le style visuel de votre CV",
+      "basicInfo": "Informations de base",
+      "subtitle": "Choisissez un titre et un template pour commencer",
+      "titleRequired": "Le titre est requis",
+      "createError": "Erreur lors de la création",
+      "createSuccess": "CV créé avec succès !",
+      "createBtn": "Créer le CV"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "totp": "Authentification à deux facteurs",
+      "profileSection": "Profil",
+      "nameLabel": "Nom",
+      "notFilled": "Non renseigné",
+      "emailLabel": "Email",
+      "setupError": "Erreur lors de la configuration",
+      "genericError": "Une erreur est survenue",
+      "invalidCode": "Code invalide",
+      "2faEnabledSuccess": "Authentification à deux facteurs activée",
+      "2faDisabledSuccess": "Authentification à deux facteurs désactivée",
+      "2faEnabled": "2FA activé",
+      "disable2FA": "Désactiver la 2FA",
+      "disable2FADescription": "Désactiver l'authentification à deux facteurs réduira la sécurité de votre compte.",
+      "verificationCode": "Code de vérification",
+      "confirmDisable2FA": "Confirmer la désactivation",
+      "setup2FAQrCode": "Scannez ce QR Code avec votre application d'authentification",
+      "setup2FAManual": "Ou entrez ce code manuellement",
+      "setup2FAEnterCode": "Entrez le code généré par l'application",
+      "enable2FA": "Activer la 2FA",
+      "setup2FADescription": "Utilisez une application comme Google Authenticator ou Authy",
+      "configure2FA": "Configurer la 2FA",
+      "qrCodeAlt": "QR Code pour 2FA"
+    },
+    "checkout": {
+      "success": {
+        "title": "Paiement confirmé !",
+        "subtitle": "Votre CV premium est maintenant disponible.",
+        "cta": "Modifier mon CV",
+        "featuresTitle": "Fonctionnalités débloquées :",
+        "feature1": "Tous les templates premium",
+        "feature2": "Suggestions IA illimitées",
+        "feature3": "Score ATS détaillé",
+        "pending": "Si le paiement n'est pas encore confirmé, il sera validé sous quelques minutes."
+      },
+      "cancel": {
+        "title": "Paiement annulé",
+        "subtitle": "Votre CV a été sauvegardé.",
+        "cta": "Retour au tableau de bord",
+        "info": "Vous pouvez toujours modifier votre CV. Les fonctionnalités premium (IA, Score ATS, templates avancés) seront disponibles après le paiement.",
+        "retry": "Réessayer le paiement"
+      }
+    },
+    "layout": {
+      "loading": "Chargement...",
+      "error": "Une erreur est survenue",
+      "errorDetails": "Quelque chose s'est mal passé. Veuillez réessayer.",
+      "retry": "Réessayer",
+      "backToDashboard": "Tableau de bord",
+      "notFound": "Page introuvable",
+      "notFoundDetails": "Cette page du tableau de bord n'existe pas."
+    }
   }
 }

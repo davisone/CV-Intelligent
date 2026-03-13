@@ -190,7 +190,7 @@ export function TwoFactorSettings({ initialEnabled }: TwoFactorSettingsProps) {
             <div className="flex justify-center p-4 bg-white rounded-lg border">
               <Image
                 src={qrCode}
-                alt="QR Code pour 2FA"
+                alt={t('qrCodeAlt')}
                 width={200}
                 height={200}
               />

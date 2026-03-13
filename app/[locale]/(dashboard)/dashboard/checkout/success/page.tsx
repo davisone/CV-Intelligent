@@ -81,20 +81,20 @@ export default function CheckoutSuccessPage() {
           {/* Features unlocked */}
           <div className="bg-gray-50 rounded-xl p-4 mb-6">
             <p className="text-sm font-medium text-gray-700 mb-3">
-              Fonctionnalités débloquées :
+              {t('featuresTitle')}
             </p>
             <ul className="space-y-2 text-left">
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <FileText className="w-4 h-4 text-green-500" />
-                Tous les templates premium
+                {t('feature1')}
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <Sparkles className="w-4 h-4 text-green-500" />
-                Suggestions IA illimitées
+                {t('feature2')}
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <BarChart3 className="w-4 h-4 text-green-500" />
-                Score ATS détaillé
+                {t('feature3')}
               </li>
             </ul>
           </div>
@@ -106,7 +106,7 @@ export default function CheckoutSuccessPage() {
 
           {!isSuccess && (
             <p className="text-xs text-gray-400 mt-4">
-              Si le paiement n'est pas encore confirmé, il sera validé sous quelques minutes.
+              {t('pending')}
             </p>
           )}
         </div>

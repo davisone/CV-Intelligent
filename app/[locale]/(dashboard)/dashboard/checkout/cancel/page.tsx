@@ -66,7 +66,7 @@ export default function CheckoutCancelPage() {
           {/* Info */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 text-left">
             <p className="text-sm text-amber-800">
-              Vous pouvez toujours modifier votre CV. Les fonctionnalités premium (IA, Score ATS, templates avancés) seront disponibles après le paiement.
+              {t('info')}
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function CheckoutCancelPage() {
           <div className="space-y-3">
             <Button onClick={handleRetry} className="w-full">
               <CreditCard className="w-4 h-4 mr-2" />
-              Réessayer le paiement
+              {t('retry')}
             </Button>
             <Button variant="outline" onClick={handleGoToEditor} className="w-full">
               <ArrowLeft className="w-4 h-4 mr-2" />

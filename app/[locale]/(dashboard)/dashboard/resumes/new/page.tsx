@@ -10,16 +10,22 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import type { TemplateType } from '@prisma/client'
 
-const templates: { id: TemplateType; name: string; description: string }[] = [
-  { id: 'MODERN', name: 'Modern', description: 'Design épuré et contemporain' },
-  { id: 'CLASSIC', name: 'Classic', description: 'Style traditionnel et professionnel' },
-  { id: 'ATS', name: 'ATS', description: 'Optimisé pour les systèmes de recrutement' },
-]
+const TEMPLATE_IDS: TemplateType[] = ['MODERN', 'CLASSIC', 'ATS']
 
 export default function NewResumePage() {
   const router = useRouter()
-  const t = useTranslations('dashboard.resumes')
+  const t = useTranslations('dashboard.resumes_new')
+  const tTemplates = useTranslations('dashboard.templates')
   const tCommon = useTranslations('common')
+
+  const templates = TEMPLATE_IDS.map((id) => {
+    const key = id.toLowerCase() as 'modern' | 'classic' | 'ats'
+    return {
+      id,
+      name: id === 'ATS' ? 'ATS' : id.charAt(0) + id.slice(1).toLowerCase(),
+      description: tTemplates(`${key}.description`),
+    }
+  })
   const [isLoading, setIsLoading] = useState(false)
   const [title, setTitle] = useState('')
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateType>('MODERN')
@@ -29,7 +35,7 @@ export default function NewResumePage() {
     e.preventDefault()
 
     if (!title.trim()) {
-      setError('Le titre est requis')
+      setError(t('titleRequired'))
       return
     }
 
@@ -49,13 +55,13 @@ export default function NewResumePage() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Erreur lors de la création')
+        throw new Error(data.error || t('createError'))
       }
 
-      toast.success('CV créé avec succès !')
+      toast.success(t('createSuccess'))
       router.push(`/dashboard/resumes/${data.data.id}/edit`)
     } catch (err) {
-      const message = err instanceof Error ? err.message : 'Une erreur est survenue'
+      const message = err instanceof Error ? err.message : t('createError')
       toast.error(message)
       setError(message)
     } finally {
@@ -66,20 +72,20 @@ export default function NewResumePage() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">{t('new')}</h1>
+        <h1 className="text-3xl font-bold">{tTemplates('title')}</h1>
         <p className="text-muted-foreground mt-1">
-          Choisissez un titre et un template pour commencer
+          {t('subtitle')}
         </p>
       </div>
 
       <form onSubmit={handleSubmit}>
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>Informations de base</CardTitle>
+            <CardTitle>{t('basicInfo')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              <Label htmlFor="title">Titre du CV</Label>
+              <Label htmlFor="title">{t('titleLabel')}</Label>
               <Input
                 id="title"
                 placeholder="Ex: CV Développeur Full-Stack 2024"
@@ -97,9 +103,9 @@ export default function NewResumePage() {
 
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>Template</CardTitle>
+            <CardTitle>{t('templateLabel')}</CardTitle>
             <CardDescription>
-              Sélectionnez le style visuel de votre CV
+              {t('templateSubtitle')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -141,7 +147,7 @@ export default function NewResumePage() {
             {tCommon('cancel')}
           </Button>
           <Button type="submit" isLoading={isLoading} className="flex-1">
-            Créer le CV
+            {t('createBtn')}
           </Button>
         </div>
       </form>

@@ -28,47 +28,37 @@ interface Template {
   isFree?: boolean
 }
 
-const templates: Template[] = [
+const TEMPLATE_CONFIGS = [
   {
     id: 'MODERN',
     name: 'Modern',
-    description: 'Design épuré avec une mise en page contemporaine. Idéal pour les métiers créatifs et tech.',
     color: 'from-blue-500 to-purple-600',
     icon: Palette,
-    features: ['Design coloré', 'Sections visuelles', 'Photo de profil'],
     isFree: true,
   },
   {
     id: 'CLASSIC',
     name: 'Classic',
-    description: 'Style traditionnel et professionnel. Parfait pour les secteurs conventionnels.',
     color: 'from-gray-600 to-gray-800',
     icon: ClipboardList,
-    features: ['Sobre et élégant', 'Lecture facile', 'Formel'],
   },
   {
     id: 'ATS',
     name: 'ATS-Friendly',
-    description: 'Optimisé pour les systèmes de recrutement automatisés. Maximise vos chances d\'être sélectionné.',
     color: 'from-green-500 to-teal-600',
     icon: FileCheck,
-    features: ['Compatible ATS', 'Mots-clés optimisés', 'Format simple'],
   },
   {
     id: 'MINIMAL',
     name: 'Minimal',
-    description: 'Minimaliste et efficace. Laissez votre contenu parler de lui-même.',
     color: 'from-slate-400 to-slate-600',
     icon: Sparkles,
-    features: ['Ultra-simple', 'Beaucoup d\'espace', 'Focus contenu'],
   },
   {
     id: 'CREATIVE',
     name: 'Creative',
-    description: 'Audacieux et original. Démarquez-vous avec un design unique.',
     color: 'from-pink-500 to-orange-500',
     icon: Rocket,
-    features: ['Design unique', 'Infographies', 'Personnalisable'],
   },
 ]
 
@@ -76,6 +66,17 @@ export default function TemplatesPage() {
   const router = useRouter()
   const t = useTranslations('dashboard.templates')
   const tCommon = useTranslations('common')
+
+  // Construction des templates avec les traductions
+  const templates: Template[] = TEMPLATE_CONFIGS.map((config) => {
+    const key = config.id.toLowerCase() as 'modern' | 'classic' | 'ats' | 'minimal' | 'creative'
+    return {
+      ...config,
+      description: t(`${key}.description`),
+      features: [t(`${key}.tag1`), t(`${key}.tag2`), t(`${key}.tag3`)],
+    }
+  })
+
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [showModal, setShowModal] = useState(false)
   const [showCheckoutModal, setShowCheckoutModal] = useState(false)
@@ -91,7 +92,7 @@ export default function TemplatesPage() {
 
   const handleCreateCV = async () => {
     if (!title.trim()) {
-      toast.error('Veuillez entrer un titre')
+      toast.error(t('titleRequired'))
       return
     }
 
@@ -119,13 +120,12 @@ export default function TemplatesPage() {
           return
         }
 
-        toast.success('CV créé avec succès !')
         router.push(`/dashboard/resumes/${data.data.id}/edit`)
       } else {
-        toast.error(data.error || 'Erreur lors de la création')
+        toast.error(data.error || t('serverError'))
       }
     } catch {
-      toast.error('Erreur serveur')
+      toast.error(t('serverError'))
     } finally {
       setIsLoading(false)
     }
@@ -146,7 +146,7 @@ export default function TemplatesPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-[#1F1A17]">{t('title')}</h1>
         <p className="text-[#6B6560] mt-1">
-          Choisissez un template pour créer votre CV
+          {t('chooseCv')}
         </p>
       </div>
 
@@ -208,19 +208,19 @@ export default function TemplatesPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-[#FBF8F4] rounded-xl p-6 w-full max-w-md mx-4">
             <h2 className="text-xl font-semibold text-[#1F1A17] mb-2">
-              Créer un CV avec le template {templates.find(t => t.id === selectedTemplate)?.name}
+              {t('createWithTemplate', { template: templates.find(tmpl => tmpl.id === selectedTemplate)?.name ?? '' })}
             </h2>
 
             {/* Info prix */}
             {selectedTemplate && templateRequiresPayment(selectedTemplate) && (
               <p className="text-sm text-amber-600 mb-4">
-                Ce CV nécessitera un paiement de {PRICING.displayPrice} pour être débloqué.
+                {t('paidInfo', { price: PRICING.displayPrice })}
               </p>
             )}
 
             <div className="mb-4">
               <label className="block text-sm text-[#4A4440] mb-1">
-                Titre du CV
+                {t('titleLabel')}
               </label>
               <Input
                 value={title}
@@ -246,7 +246,7 @@ export default function TemplatesPage() {
                 onClick={handleCreateCV}
                 isLoading={isLoading}
               >
-                Créer le CV
+                {t('createCv')}
               </Button>
             </div>
           </div>

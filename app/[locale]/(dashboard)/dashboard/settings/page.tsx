@@ -35,14 +35,14 @@ export default async function SettingsPage() {
       <div className="space-y-6">
         {/* Profile Section */}
         <div className="bg-[#F3EDE5] p-6 rounded-xl border border-[#E0D6C8]">
-          <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">Profil</h2>
+          <h2 className="text-xl font-semibold text-[#1F1A17] mb-4">{t('profileSection')}</h2>
           <div className="space-y-4">
             <div>
-              <label className="text-sm text-[#6B6560]">Nom</label>
-              <p className="text-[#1F1A17]">{user.name || 'Non renseigné'}</p>
+              <label className="text-sm text-[#6B6560]">{t('nameLabel')}</label>
+              <p className="text-[#1F1A17]">{user.name || t('notFilled')}</p>
             </div>
             <div>
-              <label className="text-sm text-[#6B6560]">Email</label>
+              <label className="text-sm text-[#6B6560]">{t('emailLabel')}</label>
               <p className="text-[#1F1A17]">{user.email}</p>
             </div>
           </div>
