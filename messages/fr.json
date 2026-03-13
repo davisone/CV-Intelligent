@@ -3899,6 +3899,1930 @@
         "description": "Créez un CV professionnel qui vous ouvre des portes — même sans expérience. Gratuit, efficace, prêt en quelques minutes.",
         "ctaText": "Créer Mon Premier CV"
       }
+    },
+    "softwareEngineerResumePage": {
+      "meta": {
+        "title": "CV Ingénieur Logiciel — Décrochez Votre Prochain Poste Dev",
+        "description": "Créez un CV ingénieur logiciel professionnel avec nos templates optimisés ATS. Mettez en avant votre stack technique, vos projets GitHub et votre expérience pour impressionner les recruteurs tech."
+      },
+      "breadcrumbName": "CV Ingénieur Logiciel",
+      "hero": {
+        "badgeText": "Pour les Développeurs",
+        "h1Before": "CV Ingénieur ",
+        "h1Accent": "Logiciel",
+        "h1After": " Qui Décrochent des Entretiens",
+        "subtitle": "Templates CV conçus spécifiquement pour les ingénieurs logiciels, développeurs et professionnels tech.",
+        "description": "Démarquez-vous sur un marché tech compétitif avec un CV qui présente clairement vos compétences, projets et impact. Optimisé ATS et approuvé par les recruteurs.",
+        "primaryCtaText": "Créer Mon CV Dev",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Ingénieurs Logiciels",
+        "subtitle": "Des templates qui parlent le langage des recruteurs tech.",
+        "item0": {
+          "title": "Compétences en Avant",
+          "description": "Section compétences techniques dédiée avec espace pour langages, frameworks, outils et certifications."
+        },
+        "item1": {
+          "title": "GitHub & Portfolio",
+          "description": "Placement prominent pour votre GitHub, portfolio et LinkedIn — ce que les recruteurs tech vérifient en premier."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Mise en forme propre qui passe tous les filtres ATS, garantissant que votre CV atteigne les lecteurs humains."
+        }
+      },
+      "section2": {
+        "title": "Templates CV par Spécialité Tech",
+        "subtitle": "Formats adaptés à chaque spécialité d'ingénierie.",
+        "item0": {
+          "title": "CV Développeur Frontend",
+          "keyword": "Frontend",
+          "description": "Mettez en avant React, Vue, TypeScript avec un design qui reflète votre sensibilité frontend."
+        },
+        "item1": {
+          "title": "CV Ingénieur Backend",
+          "keyword": "Backend",
+          "description": "Mettez en valeur le design système, les APIs, les bases de données et l'expérience infrastructure cloud."
+        },
+        "item2": {
+          "title": "CV Développeur Full-Stack",
+          "keyword": "Full-Stack",
+          "description": "Équilibrez compétences front et back dans une mise en page qui démontre votre polyvalence."
+        },
+        "item3": {
+          "title": "CV DevOps / Cloud",
+          "keyword": "DevOps",
+          "description": "Mettez en avant CI/CD, Kubernetes, AWS/GCP/Azure et métriques d'impact infrastructure."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Ingénieur Logiciel",
+        "tip0": "Listez votre stack technique dans une section Compétences dédiée — recruteurs et ATS recherchent des technologies spécifiques.",
+        "tip1": "Quantifiez l'impact : 'Réduit le temps de réponse API de 40%' est bien plus fort que 'amélioré les performances'.",
+        "tip2": "Incluez vos URLs GitHub, portfolio et LinkedIn en évidence dans l'en-tête.",
+        "tip3": "Pour chaque poste, concentrez-vous sur ce que vous avez construit et son impact, pas seulement vos responsabilités.",
+        "tip4": "Limitez votre CV à 1-2 pages maximum. Les ingénieurs seniors avec 10+ ans peuvent utiliser 2 pages."
+      },
+      "faq": {
+        "title": "FAQ CV Ingénieur Logiciel",
+        "subtitle": "Questions techniques sur le CV développeur.",
+        "q0": {
+          "question": "Que doit mettre un ingénieur logiciel sur son CV ?",
+          "answer": "Compétences techniques (langages, frameworks, outils), expérience professionnelle avec impact quantifié, projets (perso et pro), lien GitHub, formation et certifications pertinentes."
+        },
+        "q1": {
+          "question": "Dois-je lister tous les langages de programmation que je connais ?",
+          "answer": "Listez les langages que vous maîtrisez et pouvez discuter en entretien. Organisez par niveau : Expert, Maîtrise, Notions."
+        },
+        "q2": {
+          "question": "Quelle est l'importance de GitHub sur un CV dev ?",
+          "answer": "Très importante. La plupart des recruteurs tech vérifieront votre GitHub. Incluez votre URL de profil et mettez en avant 2-3 repos dans votre section projets."
+        },
+        "q3": {
+          "question": "Dois-je inclure des projets personnels ?",
+          "answer": "Absolument. Les projets personnels démontrent initiative, passion et compétences au-delà de votre travail quotidien — particulièrement précieux pour les juniors."
+        },
+        "q4": {
+          "question": "Quelle longueur doit avoir le CV d'un ingénieur logiciel ?",
+          "answer": "1 page pour les ingénieurs avec moins de 5 ans d'expérience. 2 pages acceptable pour les ingénieurs seniors avec une expérience étendue."
+        }
+      },
+      "finalCta": {
+        "title": "Décrochez Votre Prochain Poste Tech",
+        "description": "Créez un CV ingénieur logiciel qui passe l'ATS et impressionne les tech leads et engineering managers.",
+        "ctaText": "Créer Mon CV Dev"
+      }
+    },
+    "nurseResumeTemplatePage": {
+      "meta": {
+        "title": "CV Infirmier — Template CV Professionnel Soins Infirmiers",
+        "description": "Créez un CV infirmier professionnel avec nos templates gratuits. Formats optimisés ATS pour IDE, IADE et spécialistes en soins. Mettez en avant vos certifications et expériences cliniques."
+      },
+      "breadcrumbName": "CV Infirmier",
+      "hero": {
+        "badgeText": "Pour les Professionnels de Santé",
+        "h1Before": "Templates CV ",
+        "h1Accent": "Infirmier",
+        "h1After": " pour Chaque Spécialité",
+        "subtitle": "Templates CV professionnels conçus spécifiquement pour les infirmiers et professionnels de santé.",
+        "description": "Trouvez un poste plus rapidement avec un CV infirmier qui met en avant vos compétences cliniques, certifications et expérience en soins aux patients.",
+        "primaryCtaText": "Créer Mon CV Infirmier",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels de Santé",
+        "subtitle": "Templates conformes aux standards du recrutement en soins infirmiers.",
+        "item0": {
+          "title": "Certifications Mises en Avant",
+          "description": "Placement prominent pour les diplômes d'État et certifications spécialisées que les recruteurs santé exigent."
+        },
+        "item1": {
+          "title": "Section Compétences Cliniques",
+          "description": "Espace dédié pour les compétences cliniques, soins aux patients et maîtrise des logiciels médicaux."
+        },
+        "item2": {
+          "title": "Format ATS Santé",
+          "description": "Mise en forme compatible ATS santé garantissant que votre CV passe les systèmes de filtrage hospitaliers."
+        }
+      },
+      "section2": {
+        "title": "Templates par Spécialité Infirmière",
+        "subtitle": "Trouvez le bon format pour votre domaine de pratique.",
+        "item0": {
+          "title": "CV IDE Hôpital",
+          "keyword": "Infirmier DE",
+          "description": "Pour les infirmiers diplômés d'État ciblant des postes hospitaliers — réanimation, urgences, médecine générale."
+        },
+        "item1": {
+          "title": "CV Infirmier Intérimaire",
+          "keyword": "Intérim",
+          "description": "Met en avant l'adaptabilité, les environnements cliniques variés et l'expérience multi-établissements."
+        },
+        "item2": {
+          "title": "CV Infirmier Réanimation",
+          "keyword": "Soins Critiques",
+          "description": "Souligne la surveillance avancée, la gestion des ventilateurs et les compétences en soins intensifs."
+        },
+        "item3": {
+          "title": "CV Cadre Infirmier",
+          "keyword": "Cadre de Santé",
+          "description": "Format axé leadership pour les infirmiers cadres, coordinateurs et superviseurs cliniques."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Infirmier",
+        "tip0": "Mentionnez toujours votre diplôme d'État (IDE, IADE, IBODE) avec numéro d'inscription au Conseil de l'Ordre et date de validité.",
+        "tip1": "Incluez toutes les certifications pertinentes : BLS, ACLS, formations spécialisées.",
+        "tip2": "Quantifiez vos soins : 'Prise en charge de 8 patients en unité de soins intensifs de 24 lits'.",
+        "tip3": "Listez clairement vos spécialités cliniques : réanimation, urgences, NICU, oncologie, etc.",
+        "tip4": "Incluez la maîtrise des logiciels DPI/DME (Orbis, DxCare, Easily) — les employeurs le demandent toujours."
+      },
+      "faq": {
+        "title": "FAQ CV Infirmier",
+        "subtitle": "Questions courantes sur le CV infirmier.",
+        "q0": {
+          "question": "Que doit inclure un infirmier dans son CV ?",
+          "answer": "Diplôme et numéro RPPS, certifications, expériences cliniques avec spécialités, ratios patients, maîtrise des logiciels médicaux, formation et toute expérience d'encadrement."
+        },
+        "q1": {
+          "question": "Dois-je inclure mon numéro RPPS sur mon CV ?",
+          "answer": "Oui. Incluez votre numéro RPPS et votre inscription à l'Ordre infirmier. Les employeurs de santé vérifient les diplômes avant l'embauche."
+        },
+        "q2": {
+          "question": "Comment rédiger un CV infirmier sans expérience hospitalière ?",
+          "answer": "Mettez en avant vos stages cliniques, bénévolat, certifications et toute expérience en contact avec des patients. Les programmes infirmiers débutants attendent un niveau d'expérience limité."
+        },
+        "q3": {
+          "question": "Quelle longueur doit avoir un CV infirmier ?",
+          "answer": "1-2 pages. Les nouveaux diplômés visent 1 page. Les infirmiers expérimentés avec plusieurs spécialités peuvent utiliser 2 pages."
+        },
+        "q4": {
+          "question": "Faut-il une photo sur un CV infirmier ?",
+          "answer": "En France, une photo professionnelle est standard et généralement appréciée sur les CV. Assurez-vous qu'elle est professionnelle et récente."
+        }
+      },
+      "finalCta": {
+        "title": "Votre Carrière Infirmière Mérite un Excellent CV",
+        "description": "Créez un CV infirmier professionnel qui met en avant vos compétences et vous aide à décrocher un poste dans l'établissement de votre choix.",
+        "ctaText": "Créer Mon CV Infirmier"
+      }
+    },
+    "teacherResumeTemplatePage": {
+      "meta": {
+        "title": "CV Enseignant — Template CV Professionnel pour l'Éducation",
+        "description": "Créez un CV enseignant professionnel avec nos templates gratuits. Pour les profs du primaire, secondaire et supérieur. Mettez en avant vos certifications, expériences de classe et pédagogie."
+      },
+      "breadcrumbName": "CV Enseignant",
+      "hero": {
+        "badgeText": "Pour les Enseignants",
+        "h1Before": "Templates CV ",
+        "h1Accent": "Enseignant",
+        "h1After": " Qui Convainquent les Recruteurs",
+        "subtitle": "Templates CV professionnels conçus pour les enseignants et professionnels de l'éducation.",
+        "description": "Décrochez un poste dans votre établissement idéal avec un CV enseignant qui présente votre expérience pédagogique, vos certifications et l'impact de votre enseignement.",
+        "primaryCtaText": "Créer Mon CV Enseignant",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Éducateurs",
+        "subtitle": "Templates conformes aux standards du recrutement éducatif.",
+        "item0": {
+          "title": "Certifications en Avant",
+          "description": "Placement prominent pour les CAPES, agrégation, certifications et accréditations pédagogiques."
+        },
+        "item1": {
+          "title": "Pédagogie & Curriculum",
+          "description": "Sections pour mettre en avant votre philosophie pédagogique, développement de curriculum et résultats des élèves."
+        },
+        "item2": {
+          "title": "ATS Éducation National",
+          "description": "Mise en forme optimisée pour passer les systèmes de recrutement des établissements et académies."
+        }
+      },
+      "section2": {
+        "title": "Templates par Niveau d'Enseignement",
+        "subtitle": "Trouvez le bon format pour votre contexte éducatif.",
+        "item0": {
+          "title": "CV Professeur des Écoles",
+          "keyword": "Primaire",
+          "description": "Met en avant la gestion de classe, la pédagogie différenciée et l'expérience en développement de l'enfant."
+        },
+        "item1": {
+          "title": "CV Professeur Collège/Lycée",
+          "keyword": "Secondaire",
+          "description": "Template par matière pour les enseignants du secondaire avec espace pour les activités périscolaires."
+        },
+        "item2": {
+          "title": "CV Enseignant Spécialisé",
+          "keyword": "SEGPA/ULIS",
+          "description": "Souligne le développement de PPS/PAP, les méthodes d'enseignement adaptées et l'expérience en équipe."
+        },
+        "item3": {
+          "title": "CV Maître de Conférences",
+          "keyword": "Supérieur",
+          "description": "Format CV académique pour les MCF, ATER et enseignants-chercheurs avec sections publications et recherche."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Enseignant",
+        "tip0": "Mentionnez toujours votre certification (CAPES, CAPLP, agrégation) avec la discipline, les niveaux enseignés et l'académie.",
+        "tip1": "Quantifiez votre impact en classe : 'Amélioré les résultats au brevet de 22% sur deux ans'.",
+        "tip2": "Incluez les outils numériques pédagogiques maîtrisés : ENT, Pronote, Google Classroom, Moodle, Canva Éducation.",
+        "tip3": "Mettez en avant tout rôle de leadership au-delà de la classe : coordinateur, référent numérique, CPE, responsable de projet.",
+        "tip4": "Mentionnez vos pratiques pédagogiques inclusives et votre expérience avec des publics diversifiés."
+      },
+      "faq": {
+        "title": "FAQ CV Enseignant",
+        "subtitle": "Questions courantes sur le CV dans l'éducation.",
+        "q0": {
+          "question": "Que doit mettre un enseignant dans son CV ?",
+          "answer": "Certification et disciplines, niveaux et matières enseignés, expérience en classe avec résultats des élèves, développement de curriculum, outils technologiques et tout rôle de leadership."
+        },
+        "q1": {
+          "question": "Ai-je besoin d'un portfolio avec mon CV enseignant ?",
+          "answer": "Pour de nombreux postes, un portfolio est très recommandé. Lien vers votre portfolio numérique dans l'en-tête de votre CV."
+        },
+        "q2": {
+          "question": "Quelle longueur doit avoir le CV d'un enseignant ?",
+          "answer": "1-2 pages pour la plupart des postes. Les enseignants-chercheurs peuvent avoir besoin d'un CV académique plus long avec publications et projets de recherche."
+        },
+        "q3": {
+          "question": "Dois-je inclure ma mention de master sur un CV enseignant ?",
+          "answer": "Pour les nouveaux enseignants, oui — surtout si elle est mention Bien ou Très Bien. Pour les enseignants expérimentés, votre bilan en classe compte davantage."
+        },
+        "q4": {
+          "question": "Comment rédiger un CV enseignant sans expérience en classe ?",
+          "answer": "Mettez en avant vos stages de master MEEF, heures de pratique, cours particuliers et tout travail avec des enfants ou des jeunes."
+        }
+      },
+      "finalCta": {
+        "title": "Faites Votre Marque dans l'Éducation",
+        "description": "Créez un CV enseignant professionnel qui vous présente devant les bons directeurs et commissions de recrutement.",
+        "ctaText": "Créer Mon CV Enseignant"
+      }
+    },
+    "projectManagerResumePage": {
+      "meta": {
+        "title": "CV Chef de Projet — Templates pour Professionnels du Management de Projet",
+        "description": "Créez un CV chef de projet professionnel avec nos templates gratuits. Mettez en avant votre certification PMP, vos méthodologies et projets livrés. Optimisé ATS pour les meilleurs postes PM."
+      },
+      "breadcrumbName": "CV Chef de Projet",
+      "hero": {
+        "badgeText": "Pour les Chefs de Projet",
+        "h1Before": "CV Chef de ",
+        "h1Accent": "Projet",
+        "h1After": " Qui Livrent des Résultats",
+        "subtitle": "Templates CV conçus pour les chefs de projet, directeurs de programme et leaders PMO.",
+        "description": "Faites avancer votre carrière avec un CV chef de projet qui quantifie votre bilan de livraison et démontre votre maîtrise des méthodologies PM.",
+        "primaryCtaText": "Créer Mon CV PM",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels du Management de Projet",
+        "subtitle": "Templates qui parlent le langage des recruteurs PM.",
+        "item0": {
+          "title": "Structure Axée Métriques",
+          "description": "Budget, délais, taille d'équipe et métriques de livraison en avant — exactement ce que les intervieweurs PM veulent voir."
+        },
+        "item1": {
+          "title": "Certifications & Méthodes",
+          "description": "Espace clair pour mettre en avant PMP, PRINCE2, Agile, Scrum et autres certifications PM."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Mise en forme riche en mots-clés qui passe les filtres ATS PM dans les secteurs tech, BTP et corporate."
+        }
+      },
+      "section2": {
+        "title": "Templates CV PM par Secteur",
+        "subtitle": "Trouvez le bon format pour votre spécialité PM.",
+        "item0": {
+          "title": "CV Chef de Projet IT",
+          "keyword": "PM Tech",
+          "description": "Pour les PM tech gérant la livraison logicielle, infrastructure et projets de transformation digitale."
+        },
+        "item1": {
+          "title": "CV Chef de Projet BTP",
+          "keyword": "BTP",
+          "description": "Met en avant la gestion de budget, coordination d'entreprises et livraison de planning pour les PM construction."
+        },
+        "item2": {
+          "title": "CV Scrum Master / Agile",
+          "keyword": "Agile",
+          "description": "Vélocité de sprint, gestion du backlog et métriques de performance équipe pour les praticiens Agile."
+        },
+        "item3": {
+          "title": "CV Directeur de Programme",
+          "keyword": "Programme",
+          "description": "Format senior pour la gestion de projets multiples, parties prenantes et budgets programme."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Chef de Projet",
+        "tip0": "Quantifiez toujours : 'Livré projet logiciel de 2M€ dans les délais et 8% sous budget' est infiniment plus percutant que 'géré des projets'.",
+        "tip1": "Listez les certifications en évidence : PMP, CAPM, PMI-ACP, PRINCE2, CSM, SAFe.",
+        "tip2": "Incluez les outils PM clés : JIRA, Asana, MS Project, Smartsheet, Monday.com, Confluence.",
+        "tip3": "Montrez le périmètre : taille d'équipe, budget projet, délai et nombre de parties prenantes gérées.",
+        "tip4": "Mettez en avant le leadership transversal — les PM capables d'aligner des équipes diverses sont très valorisés."
+      },
+      "faq": {
+        "title": "FAQ CV Chef de Projet",
+        "subtitle": "Questions spécifiques PM sur le CV.",
+        "q0": {
+          "question": "Que doit mettre un chef de projet sur son CV ?",
+          "answer": "Projets livrés avec périmètre, budget et résultats ; certifications PM (PMP, PRINCE2) ; expertise méthodo ; maîtrise outils ; et expérience gestion équipe/parties prenantes."
+        },
+        "q1": {
+          "question": "La certification PMP est-elle nécessaire pour un CV PM ?",
+          "answer": "Pas obligatoire, mais très valorisée. Si vous l'avez, listez-la en évidence. Sinon, considérez CAPM ou certifications Agile en alternative."
+        },
+        "q2": {
+          "question": "Comment quantifier l'expérience en gestion de projet ?",
+          "answer": "Utilisez des chiffres précis : budget géré (€), taille d'équipe, durée de projet, nombre de projets, taux de livraison dans les délais et économies réalisées."
+        },
+        "q3": {
+          "question": "Dois-je lister les projets en échec sur mon CV PM ?",
+          "answer": "Listez uniquement les projets que vous avez livrés avec succès. En entretien, vous pourrez discuter des défis et leçons apprises."
+        },
+        "q4": {
+          "question": "Quelle longueur doit avoir le CV d'un chef de projet ?",
+          "answer": "1-2 pages pour la plupart des postes. Les PM seniors et directeurs de programme avec des portfolios étendus peuvent utiliser 2 pages."
+        }
+      },
+      "finalCta": {
+        "title": "Menez Votre Carrière au Niveau Supérieur",
+        "description": "Créez un CV chef de projet qui présente votre bilan de livraison et décroche des entretiens dans les meilleures organisations.",
+        "ctaText": "Créer Mon CV PM"
+      }
+    },
+    "marketingManagerResumePage": {
+      "meta": {
+        "title": "CV Responsable Marketing — Templates pour Professionnels du Marketing",
+        "description": "Créez un CV responsable marketing professionnel avec nos templates gratuits. Mettez en avant vos campagnes, ROI et compétences digitales. Optimisé ATS pour les meilleurs postes marketing."
+      },
+      "breadcrumbName": "CV Responsable Marketing",
+      "hero": {
+        "badgeText": "Pour les Marketeurs",
+        "h1Before": "CV Responsable ",
+        "h1Accent": "Marketing",
+        "h1After": " Qui Convertissent",
+        "subtitle": "Templates CV data-driven pour les responsables marketing et professionnels du marketing digital.",
+        "description": "Commercialisez-vous aussi efficacement que vous commercialisez vos produits. Nos templates vous aident à présenter résultats de campagnes, ROI et compétences que les leaders marketing recherchent.",
+        "primaryCtaText": "Créer Mon CV Marketing",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels du Marketing",
+        "subtitle": "Templates qui mettent en avant les métriques qui comptent.",
+        "item0": {
+          "title": "Focus Résultats & ROI",
+          "description": "Mettez en avant les performances de campagnes, taux de conversion, impact CA et ROAS — les métriques que les recruteurs valorisent."
+        },
+        "item1": {
+          "title": "Expertise Canaux",
+          "description": "Sections claires pour SEO, SEA, réseaux sociaux, email, content et compétences en paid channels."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Mise en forme riche en mots-clés qui passe les filtres ATS marketing dans tous les secteurs."
+        }
+      },
+      "section2": {
+        "title": "Templates par Spécialité Marketing",
+        "subtitle": "Trouvez le bon format pour votre focus marketing.",
+        "item0": {
+          "title": "CV Responsable Marketing Digital",
+          "keyword": "Digital",
+          "description": "Présente paid media, SEO, analytics et expérience de gestion de campagnes digitales full-funnel."
+        },
+        "item1": {
+          "title": "CV Responsable Content",
+          "keyword": "Content",
+          "description": "Met en avant stratégie de contenu, croissance organique, trafic blog et impact pipeline content-driven."
+        },
+        "item2": {
+          "title": "CV Brand Manager",
+          "keyword": "Brand",
+          "description": "Focus sur le positionnement marque, étude de marché, insights consommateurs et exécution go-to-market."
+        },
+        "item3": {
+          "title": "CV Growth Marketing",
+          "keyword": "Growth",
+          "description": "Mise en page data-driven pour les growth hackers avec métriques A/B testing, acquisition et rétention."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Responsable Marketing",
+        "tip0": "Commencez chaque bullet par une métrique : 'Augmenté le trafic organique de 120% en 6 mois via l'optimisation SEO'.",
+        "tip1": "Listez votre stack martech : HubSpot, Salesforce, Google Analytics, Meta Ads, Mailchimp, etc.",
+        "tip2": "Montrez l'expertise par canal explicitement — ne dites pas juste 'géré des campagnes', précisez les canaux.",
+        "tip3": "Incluez le budget géré : 'Géré un budget paid media annuel de 200K€ sur Google et Meta'.",
+        "tip4": "Les certifications comptent : Google Ads, HubSpot, Meta Blueprint, Google Analytics ajoutent de la crédibilité."
+      },
+      "faq": {
+        "title": "FAQ CV Responsable Marketing",
+        "subtitle": "Questions spécifiques marketing sur le CV.",
+        "q0": {
+          "question": "Que doit mettre un responsable marketing sur son CV ?",
+          "answer": "Résultats de campagnes avec métriques, expertise canaux, outils marketing, budget géré, leadership d'équipe et certifications pertinentes."
+        },
+        "q1": {
+          "question": "Comment montrer le ROI sur un CV marketing ?",
+          "answer": "Utilisez des chiffres précis : 'Augmenté le taux de conversion email de 2,1% à 4,7%', 'Généré 300K€ de pipeline via le content marketing'."
+        },
+        "q2": {
+          "question": "Quels outils lister sur un CV marketing ?",
+          "answer": "Incluez votre CRM (HubSpot, Salesforce), analytics (GA4, Tableau), plateformes publicitaires (Google Ads, Meta), outils email et tout martech pertinent."
+        },
+        "q3": {
+          "question": "Dois-je inclure un lien portfolio sur mon CV marketing ?",
+          "answer": "Oui. Liez vers un portfolio, des études de cas ou votre LinkedIn pour donner aux recruteurs des preuves tangibles de vos campagnes."
+        },
+        "q4": {
+          "question": "Quelle longueur doit avoir le CV d'un responsable marketing ?",
+          "answer": "1-2 pages. Concentrez-vous sur les campagnes et résultats les plus impactants plutôt que de tout lister."
+        }
+      },
+      "finalCta": {
+        "title": "Marketer-vous pour le Poste de Vos Rêves",
+        "description": "Créez un CV responsable marketing qui convertit les recruteurs en intervieweurs. Data-driven, ATS-ready et design professionnel.",
+        "ctaText": "Créer Mon CV Marketing"
+      }
+    },
+    "dataScientistResumePage": {
+      "meta": {
+        "title": "CV Data Scientist — Templates pour Professionnels Data & ML",
+        "description": "Créez un CV data scientist professionnel avec nos templates gratuits. Présentez vos compétences Python, modèles ML et impact business. Optimisé ATS pour les meilleurs postes data science et IA."
+      },
+      "breadcrumbName": "CV Data Scientist",
+      "hero": {
+        "badgeText": "Pour les Data Scientists",
+        "h1Before": "CV Data ",
+        "h1Accent": "Scientist",
+        "h1After": " Qui Se Démarquent",
+        "subtitle": "Templates CV techniques pour data scientists, ingénieurs ML et spécialistes IA.",
+        "description": "Transformez votre expertise data en opportunités de carrière avec un CV qui communique clairement votre stack technique, performances de modèles et impact business.",
+        "primaryCtaText": "Créer Mon CV Data Science",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels Data Science",
+        "subtitle": "Templates qui mettent en avant profondeur technique et impact business.",
+        "item0": {
+          "title": "Présentation Stack Technique",
+          "description": "Sections dédiées pour langages de programmation, frameworks ML, bases de données et plateformes cloud."
+        },
+        "item1": {
+          "title": "Mise en Avant Projets & Modèles",
+          "description": "Espace pour décrire les modèles construits, la précision atteinte et les problèmes business résolus."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Mise en forme riche en mots-clés pour les postes data science, passant les filtres Python, SQL, TensorFlow, etc."
+        }
+      },
+      "section2": {
+        "title": "Templates par Rôle Data",
+        "subtitle": "Trouvez le bon format pour votre spécialité data.",
+        "item0": {
+          "title": "CV Data Scientist",
+          "keyword": "Data Science",
+          "description": "Mise en page équilibrée pour modélisation statistique, développement de pipeline ML et génération d'insights business."
+        },
+        "item1": {
+          "title": "CV Ingénieur ML",
+          "keyword": "Machine Learning",
+          "description": "Format orienté ingénierie pour construire, déployer et scaler des systèmes ML en production."
+        },
+        "item2": {
+          "title": "CV Data Analyst",
+          "keyword": "Analytics",
+          "description": "Format business-focused mettant en avant SQL, dashboards, A/B testing et insights actionnables."
+        },
+        "item3": {
+          "title": "CV Chercheur IA",
+          "keyword": "IA / Recherche",
+          "description": "CV hybride académique-technique pour chercheurs en NLP, vision par ordinateur et deep learning."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Data Scientist",
+        "tip0": "Listez votre stack complet : Python, R, SQL, TensorFlow, PyTorch, Spark, AWS/GCP, Tableau, etc.",
+        "tip1": "Quantifiez les performances des modèles : 'Construit un modèle de prédiction de churn atteignant 89% de précision, réduisant le churn de 15%'.",
+        "tip2": "Incluez un lien GitHub ou Kaggle — vos notebooks et projets sont votre portfolio.",
+        "tip3": "Montrez l'impact business, pas seulement la performance technique : 'Le modèle a généré 500K€ de CA supplémentaire'.",
+        "tip4": "Pour les postes ML, précisez l'expérience sur tout le cycle ML : collecte, feature engineering, entraînement, évaluation, déploiement et monitoring."
+      },
+      "faq": {
+        "title": "FAQ CV Data Scientist",
+        "subtitle": "Questions spécifiques data science sur le CV.",
+        "q0": {
+          "question": "Que doit mettre un data scientist sur son CV ?",
+          "answer": "Compétences techniques (Python, SQL, frameworks ML), projets avec métriques modèles et impact business, publications ou rankings Kaggle, lien GitHub, formation et certifications."
+        },
+        "q1": {
+          "question": "Un doctorat est-il nécessaire pour un poste data science ?",
+          "answer": "Pas pour la plupart des postes industrie. Un portfolio solide de projets, des rankings Kaggle et une expérience ML pratique peuvent compenser un PhD pour de nombreux postes."
+        },
+        "q2": {
+          "question": "Dois-je inclure mon profil Kaggle sur mon CV ?",
+          "answer": "Oui, surtout si vous avez des médailles ou des classements élevés. Incluez Kaggle, GitHub et tout article publié ou blog technique."
+        },
+        "q3": {
+          "question": "Comment montrer une expérience data science sans avoir le titre ?",
+          "answer": "Décrivez le travail ML/data que vous avez fait quel que soit votre titre. Si vous avez construit des modèles, analysé des données ou automatisé des insights, c'est de l'expérience data science."
+        },
+        "q4": {
+          "question": "Quelle longueur doit avoir le CV d'un data scientist ?",
+          "answer": "1-2 pages. Concentrez-vous sur vos projets et modèles les plus impactants. Un profil GitHub solide peut compléter un CV concis."
+        }
+      },
+      "finalCta": {
+        "title": "Laissez Vos Données Raconter Votre Carrière",
+        "description": "Créez un CV data science qui démontre votre profondeur technique et impact business. Démarquez-vous sur un marché IA ultra-compétitif.",
+        "ctaText": "Créer Mon CV Data Science"
+      }
+    },
+    "accountantResumeTemplatePage": {
+      "meta": {
+        "title": "CV Comptable — Template CV Professionnel Comptabilité",
+        "description": "Créez un CV comptable professionnel avec nos templates gratuits. Mettez en avant vos diplômes DEC/DSCG, expertise financière et maîtrise des logiciels. Optimisé ATS pour les postes comptables."
+      },
+      "breadcrumbName": "CV Comptable",
+      "hero": {
+        "badgeText": "Pour les Professionnels Comptables",
+        "h1Before": "CV Comptable ",
+        "h1Accent": "Professionnel",
+        "h1After": " Qui Fait la Différence",
+        "subtitle": "Templates CV professionnels pour comptables, experts-comptables et professionnels de la finance.",
+        "description": "Présentez votre expertise comptable avec clarté et assurance. Nos templates mettent en avant vos diplômes, maîtrise des logiciels et bilan de gestion financière.",
+        "primaryCtaText": "Créer Mon CV Comptable",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels Finance & Comptabilité",
+        "subtitle": "Templates conformes aux standards du recrutement en secteur financier.",
+        "item0": {
+          "title": "Diplômes Mis en Évidence",
+          "description": "Placement prominent pour DEC, DSCG, DCG, CPA et autres certifications comptables."
+        },
+        "item1": {
+          "title": "Maîtrise des Logiciels",
+          "description": "Sections claires pour Sage, Cegid, SAP, Oracle, Excel avancé et outils de reporting financier."
+        },
+        "item2": {
+          "title": "ATS Conforme",
+          "description": "Optimisation keywords comptabilité pour passer les filtres ATS des grands cabinets et entreprises."
+        }
+      },
+      "section2": {
+        "title": "Templates par Rôle Comptable",
+        "subtitle": "Trouvez le bon format pour votre spécialité comptable.",
+        "item0": {
+          "title": "CV Comptable Général",
+          "keyword": "Comptabilité Générale",
+          "description": "Pour les comptables gérant la comptabilité générale, clôtures mensuelles et déclarations fiscales."
+        },
+        "item1": {
+          "title": "CV Contrôleur de Gestion",
+          "keyword": "Contrôle de Gestion",
+          "description": "Met en avant budgétisation, prévisions, analyse des coûts et expérience FP&A."
+        },
+        "item2": {
+          "title": "CV Responsable Fiscal",
+          "keyword": "Fiscalité",
+          "description": "Souligne la préparation fiscale, conformité, optimisation et expertise logiciels fiscaux."
+        },
+        "item3": {
+          "title": "CV DAF / Responsable Comptable",
+          "keyword": "DAF",
+          "description": "Format leadership senior pour les DAF et responsables comptables supervisant les équipes finances."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Comptable",
+        "tip0": "Listez vos certifications en évidence : DEC, DSCG, DCG, CPA — placez-les après votre nom dans l'en-tête.",
+        "tip1": "Quantifiez votre impact : 'Réduit le délai de clôture mensuelle de 10 à 5 jours' ou 'Supervisé une comptabilité de 20M€'.",
+        "tip2": "Incluez tous les logiciels pertinents : Sage, Cegid, SAP, Oracle, Excel avancé, NetSuite, Power BI.",
+        "tip3": "Mettez en avant l'expérience audit et conformité — très valorisée par les employeurs et cabinets.",
+        "tip4": "Pour les postes seniors, soulignez le leadership : taille d'équipe encadrée, budgets supervisés et améliorations de process."
+      },
+      "faq": {
+        "title": "FAQ CV Comptable",
+        "subtitle": "Questions spécifiques comptabilité sur le CV.",
+        "q0": {
+          "question": "Que doit mettre un comptable sur son CV ?",
+          "answer": "Diplômes et certifications, maîtrise des logiciels comptables, expérience professionnelle avec métriques financières, formation et compétences techniques (Excel, modélisation financière, ERP)."
+        },
+        "q1": {
+          "question": "Comment rédiger un CV comptable sans expérience ?",
+          "answer": "Mettez en avant vos cours de comptabilité, expériences de stage, maîtrise d'Excel et logiciels comptables, et tout bénévolat en comptabilité ou finance."
+        },
+        "q2": {
+          "question": "Quelle longueur doit avoir le CV d'un comptable ?",
+          "answer": "1 page pour les comptables juniors. 1-2 pages pour les comptables expérimentés et experts-comptables seniors."
+        },
+        "q3": {
+          "question": "Quels logiciels comptables lister sur mon CV ?",
+          "answer": "Listez tous ceux que vous maîtrisez : Sage, Cegid, SAP, Oracle, NetSuite, Microsoft Dynamics, et Excel avancé (tableaux croisés, macros, Power BI)."
+        },
+        "q4": {
+          "question": "Dois-je mentionner mon mémoire d'expertise comptable ?",
+          "answer": "Si vous êtes stagiaire expert-comptable, oui. Mentionnez le titre de votre mémoire et l'avancement de votre stage dans la section Formation."
+        }
+      },
+      "finalCta": {
+        "title": "Équilibrez Votre Carrière Avec un Excellent CV",
+        "description": "Créez un CV comptable professionnel qui met en avant vos diplômes et expertise financière. ATS-ready et approuvé par les recruteurs.",
+        "ctaText": "Créer Mon CV Comptable"
+      }
+    },
+    "salesResumeTemplatePage": {
+      "meta": {
+        "title": "CV Commercial — Template CV Professionnel Vente",
+        "description": "Créez un CV commercial percutant avec nos templates gratuits. Mettez en avant vos objectifs atteints, CA généré et relations clients. Optimisé ATS pour les meilleurs postes commerciaux."
+      },
+      "breadcrumbName": "CV Commercial",
+      "hero": {
+        "badgeText": "Pour les Commerciaux",
+        "h1Before": "CV Commercial ",
+        "h1Accent": "Professionnel",
+        "h1After": " Qui Conclut les Deals",
+        "subtitle": "Templates CV orientés résultats pour les commerciaux de tous niveaux.",
+        "description": "La vente, c'est avant tout des chiffres — et un excellent CV commercial aussi. Nos templates vous aident à présenter votre bilan sur objectifs, impact CA et track record client.",
+        "primaryCtaText": "Créer Mon CV Commercial",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels de la Vente",
+        "subtitle": "Templates qui mettent en avant ce que les directeurs commerciaux veulent voir.",
+        "item0": {
+          "title": "CA & Objectifs en Avant",
+          "description": "Mettez en avant vos chiffres les plus forts : taux d'atteinte des objectifs, CA généré et deals signés."
+        },
+        "item1": {
+          "title": "Secteur & Produits",
+          "description": "Espace pour mettre en avant les secteurs, produits et tailles de deals que vous avez traités."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Mise en forme riche en mots-clés passant les filtres ATS commerciaux en B2B, B2C et grands comptes."
+        }
+      },
+      "section2": {
+        "title": "Templates par Rôle Commercial",
+        "subtitle": "Trouvez le bon format pour votre spécialité commerciale.",
+        "item0": {
+          "title": "CV Business Developer",
+          "keyword": "New Business",
+          "description": "Met en avant le développement de nouveaux comptes, atteinte des objectifs et gestion des deals grands comptes."
+        },
+        "item1": {
+          "title": "CV SDR / Prospecteur",
+          "keyword": "SDR",
+          "description": "Prospection outbound, génération de pipeline et métriques de RDV obtenus pour les postes SDR."
+        },
+        "item2": {
+          "title": "CV Manager Commercial",
+          "keyword": "Manager",
+          "description": "Leadership d'équipe, coaching et atteinte des objectifs de CA pour les responsables commerciaux."
+        },
+        "item3": {
+          "title": "CV KAM / Grand Compte",
+          "keyword": "Grand Compte",
+          "description": "Rétention clients, CA upsell et gestion des relations long terme pour les postes KAM."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Commercial",
+        "tip0": "Mettez toujours en avant votre taux d'atteinte des objectifs : '127% des objectifs en 2024', 'Top 5% de la force de vente nationale'.",
+        "tip1": "Incluez taille des deals et cycle de vente : 'Signé des deals grands comptes à 150K€ de TCV avec cycles de 6 mois'.",
+        "tip2": "Listez votre CRM : Salesforce, HubSpot, Pipedrive, Outreach, ZoomInfo.",
+        "tip3": "Quantifiez votre pipeline : 'Généré 1,2M€ de pipeline qualifié via prospection outbound'.",
+        "tip4": "Prix et classements comptent : 'Club du Directeur 2023', 'Meilleur Nouveau Venu', '#1 SDR T3 2024'."
+      },
+      "faq": {
+        "title": "FAQ CV Commercial",
+        "subtitle": "Questions spécifiques vente sur le CV.",
+        "q0": {
+          "question": "Quels chiffres mettre sur un CV commercial ?",
+          "answer": "Taux d'atteinte des objectifs (%), CA total généré, taille des deals, taux de conversion, pipeline créé et tout classement ou récompense."
+        },
+        "q1": {
+          "question": "Comment rédiger un CV commercial sans expérience formelle en vente ?",
+          "answer": "Mettez en avant l'expérience client, la persuasion et l'impact commercial de tout poste — retail, restauration, collecte de fonds ou service client démontrent tous des compétences commerciales."
+        },
+        "q2": {
+          "question": "Dois-je lister les produits que j'ai vendus ?",
+          "answer": "Oui, surtout si vous postulez dans le même secteur. La connaissance produit et l'expertise domain sont précieuses pour les recruteurs commerciaux."
+        },
+        "q3": {
+          "question": "Quelle longueur doit avoir un CV commercial ?",
+          "answer": "1 page pour la plupart des commerciaux. Les KAM seniors, VP et directeurs commerciaux avec un track record étendu peuvent utiliser 2 pages."
+        },
+        "q4": {
+          "question": "Une lettre de motivation est-elle importante pour un poste commercial ?",
+          "answer": "Oui — et traitez-la comme un pitch commercial. Ouvrez avec un accroche forte et terminez par un appel à l'action clair, ce qui reflète exactement les compétences pour lesquelles vous êtes recruté."
+        }
+      },
+      "finalCta": {
+        "title": "Concluez le Deal sur Votre Prochain Poste",
+        "description": "Créez un CV commercial qui met vos plus belles victoires en avant et vous présente devant les bons directeurs commerciaux.",
+        "ctaText": "Créer Mon CV Commercial"
+      }
+    },
+    "customerServiceResumePage": {
+      "meta": {
+        "title": "CV Service Client — Templates pour Professionnels du Support",
+        "description": "Créez un CV service client professionnel avec nos templates gratuits. Mettez en avant vos scores CSAT, taux de résolution et compétences relationnelles. Optimisé ATS."
+      },
+      "breadcrumbName": "CV Service Client",
+      "hero": {
+        "badgeText": "Pour les Professionnels du Support",
+        "h1Before": "CV Service ",
+        "h1Accent": "Client",
+        "h1After": " Qui Valorise Votre Expertise",
+        "subtitle": "Templates CV professionnels pour les conseillers, téléopérateurs et responsables service client.",
+        "description": "Votre capacité à résoudre les problèmes, créer du lien et dépasser les attentes mérite un CV qui le dit clairement. Nos templates vous aident à vous distinguer sur un marché du support compétitif.",
+        "primaryCtaText": "Créer Mon CV Service Client",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels en Contact Client",
+        "subtitle": "Templates qui mettent en avant l'excellence du service.",
+        "item0": {
+          "title": "Axé sur les Métriques",
+          "description": "Scores CSAT, taux de résolution au premier contact et satisfaction client en premier plan."
+        },
+        "item1": {
+          "title": "Expérience Multi-Canal",
+          "description": "Espace pour l'expérience support téléphonique, email, chat, réseaux sociaux et en présentiel."
+        },
+        "item2": {
+          "title": "Format ATS Conforme",
+          "description": "Mise en forme propre passant les filtres ATS pour les secteurs retail, hôtellerie, SaaS et centres d'appels."
+        }
+      },
+      "section2": {
+        "title": "Templates par Rôle Support",
+        "subtitle": "Trouvez le bon format pour votre spécialité service.",
+        "item0": {
+          "title": "CV Conseiller Support",
+          "keyword": "Support",
+          "description": "Pour les conseillers gérant tickets, chats et appels en contexte B2C et B2B."
+        },
+        "item1": {
+          "title": "CV Customer Success Manager",
+          "keyword": "CSM",
+          "description": "Mise en page axée rétention avec NPS, réduction du churn et métriques upsell pour les postes CSM."
+        },
+        "item2": {
+          "title": "CV Conseiller Boutique/Retail",
+          "keyword": "Retail",
+          "description": "Service en présentiel, maîtrise des caisses et métriques de conversion pour les postes retail."
+        },
+        "item3": {
+          "title": "CV Support Technique",
+          "keyword": "Support Tech",
+          "description": "Résolution de bugs, gestion de tickets et maîtrise des outils techniques pour les postes support N1/N2."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Service Client",
+        "tip0": "Mettez en avant vos métriques service : 'Maintenu un score CSAT de 96% sur plus de 80 interactions hebdomadaires'.",
+        "tip1": "Listez vos outils support : Zendesk, Freshdesk, Intercom, Salesforce Service Cloud, HubSpot.",
+        "tip2": "Mettez en avant l'expérience multi-canal : téléphone, email, chat en direct, support réseaux sociaux.",
+        "tip3": "Montrez vos capacités de résolution : 'Résolu 95% des cas au premier contact sans escalade'.",
+        "tip4": "Pour les postes CSM, incluez métriques rétention et NPS : 'Amélioré le NPS de 42 à 67 en 8 mois'."
+      },
+      "faq": {
+        "title": "FAQ CV Service Client",
+        "subtitle": "Questions spécifiques support sur le CV.",
+        "q0": {
+          "question": "Que doit mettre un conseiller service client sur son CV ?",
+          "answer": "Scores CSAT/NPS, volumes d'appels/tickets traités, outils utilisés (Zendesk, Intercom), langues parlées, taux de résolution au premier contact et tout prix d'excellence service."
+        },
+        "q1": {
+          "question": "Comment rédiger un CV service client sans expérience ?",
+          "answer": "Mettez en avant les compétences de communication, empathie, patience et toute expérience client — retail, restauration, bénévolat ou tutorat comptent tous."
+        },
+        "q2": {
+          "question": "Quelles compétences sont les plus importantes sur un CV service client ?",
+          "answer": "Écoute active, gestion des conflits, empathie, connaissance produit, multitâche et maîtrise des logiciels CRM sont les compétences les plus recherchées."
+        },
+        "q3": {
+          "question": "Quelle longueur doit avoir un CV service client ?",
+          "answer": "1 page pour les postes frontline. Les managers et directeurs service client avec plusieurs années de bilan peuvent utiliser 2 pages."
+        },
+        "q4": {
+          "question": "Dois-je mentionner les langues sur un CV service client ?",
+          "answer": "Absolument. Les professionnels bilingues et multilingues sont très valorisés dans le service client. Précisez clairement vos niveaux de maîtrise."
+        }
+      },
+      "finalCta": {
+        "title": "Transformez un Excellent Service en Opportunités",
+        "description": "Créez un CV service client qui communique votre empathie, compétences et impact. Soyez recruté par les équipes qui valorisent l'excellence du service.",
+        "ctaText": "Créer Mon CV Service Client"
+      }
+    },
+    "productManagerResumePage": {
+      "meta": {
+        "title": "CV Product Manager — Templates pour Professionnels du Produit",
+        "description": "Créez un CV product manager professionnel avec nos templates gratuits. Mettez en avant vos lancements produit, croissance utilisateurs et leadership transversal. Optimisé ATS."
+      },
+      "breadcrumbName": "CV Product Manager",
+      "hero": {
+        "badgeText": "Pour les Product Managers",
+        "h1Before": "CV Product ",
+        "h1Accent": "Manager",
+        "h1After": " Qui Livrent des Résultats",
+        "subtitle": "Templates CV stratégiques pour les product managers, APM et leaders produit.",
+        "description": "Votre instinct produit mérite un CV qui communique vision, exécution et impact. Nos templates vous aident à raconter l'histoire des produits que vous avez construits et des métriques que vous avez améliorées.",
+        "primaryCtaText": "Créer Mon CV PM Produit",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Professionnels Produit",
+        "subtitle": "Templates qui capturent l'état d'esprit PM.",
+        "item0": {
+          "title": "Structure Axée Impact",
+          "description": "Mettez en avant les résultats produit : croissance DAU, impact CA, améliorations de rétention, adoption des fonctionnalités."
+        },
+        "item1": {
+          "title": "Compétences Transversales",
+          "description": "Espace pour mettre en avant la collaboration avec les équipes engineering, design, data et go-to-market."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Mise en forme riche en mots-clés passant les filtres ATS PM dans les meilleures tech companies et startups."
+        }
+      },
+      "section2": {
+        "title": "Templates par Niveau PM",
+        "subtitle": "Trouvez le bon format pour votre stade de carrière PM.",
+        "item0": {
+          "title": "CV Associate PM",
+          "keyword": "APM",
+          "description": "Template PM débutant mettant en avant compétences analytiques, recherche utilisateur et pensée produit."
+        },
+        "item1": {
+          "title": "CV Senior PM",
+          "keyword": "Senior PM",
+          "description": "Mise en page axée ownership avec métriques produit, leadership d'équipe et exemples de prise de décision stratégique."
+        },
+        "item2": {
+          "title": "CV PM Technique",
+          "keyword": "PM Technique",
+          "description": "Template à background engineering pour les PM travaillant étroitement avec les équipes dev sur des produits techniques complexes."
+        },
+        "item3": {
+          "title": "CV Head of Product",
+          "keyword": "Leader Produit",
+          "description": "Mise en page exécutive pour les leaders produit supervisant l'organisation, la stratégie et la roadmap à grande échelle."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Product Manager",
+        "tip0": "Formulez chaque bullet comme un problème produit, une solution et un résultat : 'Led la refonte du flow d'onboarding → amélioration de 34% de la rétention J7'.",
+        "tip1": "Incluez vos métriques produit : MAU, DAU, NPS, taux de churn, taux de conversion, impact ARR.",
+        "tip2": "Listez les outils PM : JIRA, Productboard, Amplitude, Mixpanel, Figma, Notion.",
+        "tip3": "Montrez le leadership transversal : mentionnez la collaboration avec engineering, design, data, marketing et sales.",
+        "tip4": "Les certifications ajoutent de la crédibilité : CSPO, PSPO, certifications Google/Coursera PM."
+      },
+      "faq": {
+        "title": "FAQ CV Product Manager",
+        "subtitle": "Questions spécifiques PM produit sur le CV.",
+        "q0": {
+          "question": "Que doit mettre un product manager sur son CV ?",
+          "answer": "Lancements produit avec métriques, données de croissance et rétention utilisateurs, exemples de leadership transversal, maîtrise des outils PM et certifications ou diplômes pertinents."
+        },
+        "q1": {
+          "question": "Comment obtenir un poste PM sans expérience PM préalable ?",
+          "answer": "Transition depuis des rôles adjacents (engineering, design, data, consulting). Mettez en avant la pensée produit dans votre rôle actuel, construisez un portfolio d'études de cas produit."
+        },
+        "q2": {
+          "question": "Les product managers ont-ils besoin de compétences techniques ?",
+          "answer": "Pas obligatoire mais la culture technique est valorisée. Mentionnez SQL, analyse de données, familiarité API ou outils techniques si pertinents."
+        },
+        "q3": {
+          "question": "Quelle longueur doit avoir le CV d'un product manager ?",
+          "answer": "1 page pour les PM en début de carrière. Les PM seniors et leaders produit peuvent utiliser 2 pages s'ils ont des portfolios produit étendus."
+        },
+        "q4": {
+          "question": "Dois-je inclure un lien vers un portfolio produit ?",
+          "answer": "Oui. Liez vers des études de cas produit, un site personnel ou un portfolio deck qui présente votre pensée produit et vos résultats."
+        }
+      },
+      "finalCta": {
+        "title": "Livrez Votre Carrière au Niveau Supérieur",
+        "description": "Créez un CV product manager qui capture votre vision, exécution et impact. Démarquez-vous dans les meilleures tech companies et startups.",
+        "ctaText": "Créer Mon CV PM Produit"
+      }
+    },
+    "chronologicalResumeTemplatePage": {
+      "meta": {
+        "title": "CV Chronologique — Le Format le Plus Efficace",
+        "description": "Téléchargez un template CV chronologique gratuit. Le format le plus largement accepté par les recruteurs et ATS. Parfait pour les professionnels avec un historique stable. Facile à personnaliser."
+      },
+      "breadcrumbName": "CV Chronologique",
+      "hero": {
+        "badgeText": "Format le Plus Populaire",
+        "h1Before": "CV Chronologique — ",
+        "h1Accent": "Le Standard",
+        "h1After": " Qui Fonctionne",
+        "subtitle": "Le format chronologique inversé est le format CV le plus accepté dans le monde.",
+        "description": "Approuvé par les recruteurs et parsé par chaque ATS, le format chronologique est le choix le plus sûr et efficace pour la plupart des candidats.",
+        "primaryCtaText": "Utiliser un Template Chronologique",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Pourquoi les CV Chronologiques Fonctionnent le Mieux",
+        "subtitle": "Le format que recruteurs et ATS préfèrent.",
+        "item0": {
+          "title": "Préféré des Recruteurs",
+          "description": "Les responsables RH scannent les CV plus vite quand ils suivent l'ordre chronologique inversé familier qu'ils attendent."
+        },
+        "item1": {
+          "title": "ATS Parfait",
+          "description": "La mise en forme chronologique est analysée par les ATS de façon la plus fiable — zéro problème de compatibilité."
+        },
+        "item2": {
+          "title": "Montre la Progression",
+          "description": "Communique clairement votre trajectoire de carrière et évolution dans le temps, ce que les employeurs adorent voir."
+        }
+      },
+      "section2": {
+        "title": "Templates Chronologiques par Niveau",
+        "subtitle": "Trouvez le format adapté à votre niveau de carrière.",
+        "item0": {
+          "title": "Template Jeune Diplômé",
+          "keyword": "0-3 ans",
+          "description": "Mise en page chronologique mettant la formation en avant pour les professionnels en début de carrière."
+        },
+        "item1": {
+          "title": "Template Professionnel Confirmé",
+          "keyword": "3-10 ans",
+          "description": "Mise en page expérience-first montrant la progression de carrière et les responsabilités croissantes."
+        },
+        "item2": {
+          "title": "Template Senior",
+          "keyword": "10+ ans",
+          "description": "Format deux pages concis qui met en avant les réalisations les plus impactantes d'une longue carrière."
+        },
+        "item3": {
+          "title": "Template Cadre Dirigeant",
+          "keyword": "Direction",
+          "description": "Format chronologique axé leadership pour cadres supérieurs et directeurs."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Chronologique",
+        "tip0": "Listez votre poste le plus récent en premier et remontez dans le temps — ne listez jamais les emplois du plus ancien au plus récent.",
+        "tip1": "Pour chaque poste, incluez : entreprise, titre, lieu, dates et 3-5 bullet points de réalisations.",
+        "tip2": "Utilisez un format de dates cohérent tout au long : 'Janv. 2022 – Présent' ou '01/2022 – Présent'.",
+        "tip3": "Les trous dans le parcours doivent être abordés en lettre de motivation ou brièvement en entretien — ne supprimez pas des postes pour masquer des gaps.",
+        "tip4": "Limitez votre historique aux 10-15 dernières années pour la plupart des postes professionnels."
+      },
+      "faq": {
+        "title": "FAQ CV Chronologique",
+        "subtitle": "Questions sur le format CV chronologique.",
+        "q0": {
+          "question": "Qu'est-ce qu'un CV chronologique ?",
+          "answer": "Un CV chronologique (ou chronologique inversé) liste votre expérience en commençant par votre poste le plus récent en remontant dans le temps. C'est le format le plus utilisé et accepté."
+        },
+        "q1": {
+          "question": "Qui doit utiliser le format chronologique ?",
+          "answer": "Toute personne avec un historique professionnel stable et sans gaps importants. C'est le meilleur choix pour la plupart des professionnels dans tous les secteurs."
+        },
+        "q2": {
+          "question": "Quand ne pas utiliser le format chronologique ?",
+          "answer": "Si vous avez des périodes de chômage importantes, changez de secteur, ou avez peu d'expérience. Dans ces cas, un format fonctionnel ou hybride peut mieux fonctionner."
+        },
+        "q3": {
+          "question": "Le CV chronologique est-il meilleur pour l'ATS ?",
+          "answer": "Oui. Le format chronologique inversé est le plus fiablement parsé par les systèmes de suivi des candidatures."
+        },
+        "q4": {
+          "question": "Jusqu'où remonter dans un CV chronologique ?",
+          "answer": "Généralement 10-15 ans est suffisant pour la plupart des professionnels. L'expérience plus ancienne peut être résumée ou omise sauf si spécifiquement pertinente."
+        }
+      },
+      "finalCta": {
+        "title": "Commencez avec le Format qui Fonctionne",
+        "description": "Créez un CV chronologique avec le format que les recruteurs font confiance et les ATS adorent. Professionnel, clair et efficace.",
+        "ctaText": "Utiliser un Template Chronologique"
+      }
+    },
+    "functionalResumeTemplatePage": {
+      "meta": {
+        "title": "CV Fonctionnel — Format par Compétences pour Reconversions",
+        "description": "Téléchargez un template CV fonctionnel gratuit. Parfait pour les reconversions, trous dans le parcours et profils débutants. Mettez vos compétences en avant, pas votre historique."
+      },
+      "breadcrumbName": "CV Fonctionnel",
+      "hero": {
+        "badgeText": "Format par Compétences",
+        "h1Before": "CV Fonctionnel — ",
+        "h1Accent": "Vos Compétences",
+        "h1After": " d'Abord",
+        "subtitle": "Le format CV basé sur les compétences pour les candidats qui veulent mettre en avant leurs capacités, pas leurs titres.",
+        "description": "Si votre historique professionnel ne raconte pas toute l'histoire de vos capacités, un CV fonctionnel vous permet de miser sur vos compétences, aptitudes et réalisations.",
+        "primaryCtaText": "Utiliser un Template Fonctionnel",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Quand un CV Fonctionnel a du Sens",
+        "subtitle": "Le format qui met vos compétences en premier.",
+        "item0": {
+          "title": "Reconversions Professionnelles",
+          "description": "Passez à un nouveau secteur en mettant en avant les compétences transférables plutôt qu'un historique non pertinent."
+        },
+        "item1": {
+          "title": "Trous dans le Parcours",
+          "description": "Minimisez la visibilité des interruptions de carrière en misant sur ce que vous savez faire, pas sur quand vous l'avez fait."
+        },
+        "item2": {
+          "title": "Profils Débutants",
+          "description": "Transformez une expérience professionnelle limitée en une présentation de vos capacités centrée sur vos forces."
+        }
+      },
+      "section2": {
+        "title": "Templates Fonctionnels pour Situations Clés",
+        "subtitle": "Formats adaptés aux circonstances professionnelles spécifiques.",
+        "item0": {
+          "title": "Template Reconversion",
+          "keyword": "Transition",
+          "description": "Met en avant les compétences transférables et reformule l'expérience passée pour un nouveau secteur cible."
+        },
+        "item1": {
+          "title": "Template Retour à l'Emploi",
+          "keyword": "Gap",
+          "description": "Pour les professionnels reprenant après un congé parental, arrêt maladie ou pause personnelle."
+        },
+        "item2": {
+          "title": "Template Militaire vers Civil",
+          "keyword": "Reconversion Militaire",
+          "description": "Traduit l'expérience et le leadership militaires en langage du marché du travail civil."
+        },
+        "item3": {
+          "title": "Template Freelance vers Salarié",
+          "keyword": "Freelance",
+          "description": "Organise le travail freelance et les projets en format cohérent et adapté aux employeurs."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Fonctionnel",
+        "tip0": "Regroupez vos compétences en 3-4 catégories (ex: Leadership, Compétences Techniques, Communication) avec des bullet points sous chacune.",
+        "tip1": "Incluez quand même une section historique professionnel en bas — l'omettre entièrement soulève des questions chez les ATS et recruteurs.",
+        "tip2": "Commencez par un résumé professionnel fort qui fait le lien entre votre passé et le poste cible.",
+        "tip3": "Quantifiez les réalisations dans les catégories de compétences : 'Leadership : Managé des équipes de bénévoles de 10+ personnes sur 3 événements communautaires'.",
+        "tip4": "Utilisez le format hybride/combiné si possible — il équilibre l'emphase compétences avec une section chronologique reconnaissable."
+      },
+      "faq": {
+        "title": "FAQ CV Fonctionnel",
+        "subtitle": "Questions sur le format CV fonctionnel.",
+        "q0": {
+          "question": "Qu'est-ce qu'un CV fonctionnel ?",
+          "answer": "Un CV fonctionnel organise le contenu par compétences et aptitudes plutôt que par historique professionnel. Il déprioritise les titres et dates au profit de ce que vous savez faire."
+        },
+        "q1": {
+          "question": "Les recruteurs aiment-ils les CV fonctionnels ?",
+          "answer": "De nombreux recruteurs sont sceptiques car ils peuvent sembler masquer des trous ou un manque d'expérience. Utilisez un format hybride si possible."
+        },
+        "q2": {
+          "question": "Un CV fonctionnel est-il ATS-friendly ?",
+          "answer": "Moins que les CV chronologiques. Les ATS sont optimisés pour les sections historique professionnel. Inclure un bref historique aide quand même le parsing ATS."
+        },
+        "q3": {
+          "question": "Quand utiliser un CV fonctionnel ?",
+          "answer": "En cas de reconversion, retour après un long gap, ou quand vos compétences sont plus pertinentes que vos titres de poste et employeurs spécifiques."
+        },
+        "q4": {
+          "question": "Quelle est la différence entre CV fonctionnel et CV hybride ?",
+          "answer": "Un CV hybride (combinaison) commence par les compétences mais inclut aussi un historique chronologique complet. C'est généralement préféré au format purement fonctionnel."
+        }
+      },
+      "finalCta": {
+        "title": "Mettez Vos Compétences en Avant",
+        "description": "Créez un CV fonctionnel qui valorise vos meilleures compétences et reformule votre expérience pour n'importe quel poste.",
+        "ctaText": "Créer Mon CV Fonctionnel"
+      }
+    },
+    "onePageResumeTemplatePage": {
+      "meta": {
+        "title": "CV Une Page — Concis, Percutant et Professionnel",
+        "description": "Téléchargez un template CV une page gratuit. Mises en page compactes et bien conçues qui tiennent tout ce que les recruteurs veulent sur une seule page. Optimisé ATS."
+      },
+      "breadcrumbName": "CV Une Page",
+      "hero": {
+        "badgeText": "Une Page Uniquement",
+        "h1Before": "CV Une Page ",
+        "h1Accent": "Percutant",
+        "h1After": " et Professionnel",
+        "subtitle": "Prouvez que vous savez communiquer votre valeur de façon concise avec un CV une page puissant.",
+        "description": "Une page, c'est pas une contrainte — c'est une discipline. Les recruteurs passent en moyenne 6 secondes sur un CV. Un CV une page bien structuré maximise chaque seconde.",
+        "primaryCtaText": "Créer Mon CV Une Page",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Pourquoi Une Page Gagne Souvent",
+        "subtitle": "La science derrière le CV une page.",
+        "item0": {
+          "title": "Facile pour le Recruteur",
+          "description": "Les responsables RH examinent des centaines de CV. Un une-pager qui couvre tous les points clés immédiatement est un gain de temps."
+        },
+        "item1": {
+          "title": "Force la Priorisation",
+          "description": "Tenir votre carrière sur une page vous force à ne mettre en avant que vos réalisations les plus impactantes."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Les CV une page sont parsés proprement par les ATS avec moins de problèmes de mise en forme."
+        }
+      },
+      "section2": {
+        "title": "Templates Une Page par Niveau",
+        "subtitle": "Designs compacts sans compromettre le contenu.",
+        "item0": {
+          "title": "Une Page Diplômé",
+          "keyword": "Diplômé",
+          "description": "Mise en page une page propre mettant la formation en avant pour les nouveaux diplômés entrant sur le marché."
+        },
+        "item1": {
+          "title": "Une Page Professionnel",
+          "keyword": "Mid-Career",
+          "description": "Mise en page efficace pour les professionnels résumant 5-10 ans sur une page lisible."
+        },
+        "item2": {
+          "title": "Une Page Cadre",
+          "keyword": "Cadre",
+          "description": "Une page fort impact pour les professionnels seniors candidatant à des postes de direction."
+        },
+        "item3": {
+          "title": "Une Page Stage",
+          "keyword": "Stage",
+          "description": "Format une page étudiant mettant en avant formation, compétences et premières expériences."
+        }
+      },
+      "section3": {
+        "title": "Conseils CV Une Page",
+        "tip0": "Coupez tout ce qui ne soutient pas directement votre candidature. Aucun remplissage, aucune expérience non pertinente.",
+        "tip1": "Utilisez une police corps 10-11pt et un interligne serré mais lisible pour maximiser la densité de contenu.",
+        "tip2": "Combinez les courtes expériences chez un même employeur si elles représentaient des promotions internes.",
+        "tip3": "Utilisez des bullet points concis — 1-2 lignes maximum par bullet, commençant par un verbe d'action fort.",
+        "tip4": "Réduisez légèrement les marges (1,5cm au lieu de 2,5cm) pour récupérer de l'espace sans sacrifier la lisibilité."
+      },
+      "faq": {
+        "title": "FAQ CV Une Page",
+        "subtitle": "Questions sur la limitation à une page.",
+        "q0": {
+          "question": "Un CV une page est-il vraiment nécessaire ?",
+          "answer": "Pour la plupart des professionnels avec moins de 10 ans d'expérience, oui. Une page démontre la concision et le respect du temps du recruteur."
+        },
+        "q1": {
+          "question": "Un professionnel senior peut-il utiliser un CV une page ?",
+          "answer": "Impressionnant si bien fait, mais deux pages sont acceptables pour les professionnels seniors avec 15+ ans d'expérience. La qualité avant tout."
+        },
+        "q2": {
+          "question": "Que couper pour faire tenir mon CV en une page ?",
+          "answer": "Supprimez : postes de plus de 10 ans, emplois non pertinents, section références, bac (si vous avez un diplôme universitaire) et toutes responsabilités de remplissage."
+        },
+        "q3": {
+          "question": "Dois-je utiliser une police plus petite pour tout faire tenir sur une page ?",
+          "answer": "Seulement jusqu'à 10pt pour le corps de texte. En dessous, la lisibilité souffre. Réduisez d'abord le contenu et ajustez les marges avant de diminuer la taille de police."
+        },
+        "q4": {
+          "question": "Un CV une page est-il meilleur pour l'ATS ?",
+          "answer": "L'ATS ne se préoccupe pas du nombre de pages, mais les CV une page ont généralement moins de complexité de mise en forme, ce qui réduit les erreurs de parsing."
+        }
+      },
+      "finalCta": {
+        "title": "Le Moins c'est Plus — Créez Votre Une Page",
+        "description": "Créez un CV une page ciblé et puissant qui communique toute votre valeur dans le temps qu'un recruteur a réellement.",
+        "ctaText": "Créer Mon CV Une Page"
+      }
+    },
+    "resumeFormat2025Page": {
+      "meta": {
+        "title": "Format CV 2025 — Les Meilleurs Formats CV pour le Marché Actuel",
+        "description": "Découvrez les meilleurs formats CV pour 2025. Tendances ATS, mises en page modernes et conseils design pour démarquer votre CV sur le marché de l'emploi compétitif d'aujourd'hui."
+      },
+      "breadcrumbName": "Format CV 2025",
+      "hero": {
+        "badgeText": "Meilleures Pratiques 2025",
+        "h1Before": "Les Meilleurs ",
+        "h1Accent": "Formats CV en 2025",
+        "h1After": " — Restez en Avance",
+        "subtitle": "Restez à jour avec les formats et tendances design que les recruteurs préfèrent en 2025.",
+        "description": "Le marché de l'emploi en 2025 exige des CV qui fonctionnent pour les humains et les outils de screening IA. Voici ce qui fonctionne — et ce qui ne fonctionne plus.",
+        "primaryCtaText": "Créer un CV Adapté 2025",
+        "secondaryCtaText": "Parcourir les Templates"
+      },
+      "section1": {
+        "title": "Ce Qui Fonctionne en 2025",
+        "subtitle": "Tendances CV et meilleures pratiques ATS pour le marché actuel.",
+        "item0": {
+          "title": "IA & ATS en Premier",
+          "description": "Avec le screening IA maintenant standard, l'optimisation ATS est plus critique que jamais. Les formats propres et riches en mots-clés gagnent."
+        },
+        "item1": {
+          "title": "Concis & Scannable",
+          "description": "Les recruteurs utilisent de plus en plus l'IA pour présélectionner — les CV clairs, structurés et quantifiés performent le mieux."
+        },
+        "item2": {
+          "title": "Format Hybride en Hausse",
+          "description": "Le format combiné (hybride) — résumé de compétences + historique chronologique — est le format le plus performant en 2025."
+        }
+      },
+      "section2": {
+        "title": "Top Formats CV en 2025",
+        "subtitle": "Choisissez le format adapté à votre situation.",
+        "item0": {
+          "title": "Chronologique Inversé",
+          "keyword": "Plus Populaire",
+          "description": "Toujours le choix le plus sûr et le plus largement accepté. Préféré des recruteurs et optimisé pour les ATS."
+        },
+        "item1": {
+          "title": "Hybride / Combinaison",
+          "keyword": "Tendance 2025",
+          "description": "Commence par un résumé de compétences ou profil professionnel, suivi d'un historique chronologique. Le format du moment."
+        },
+        "item2": {
+          "title": "Minimal Optimisé ATS",
+          "keyword": "Tech",
+          "description": "Mises en page ultra-propres à une colonne conçues spécifiquement pour les ATS du secteur tech."
+        },
+        "item3": {
+          "title": "Exécutif / Leadership",
+          "keyword": "Postes Seniors",
+          "description": "Formats axés réalisations pour les professionnels seniors ciblant des postes direction et VP."
+        }
+      },
+      "section3": {
+        "title": "Conseils Format CV 2025",
+        "tip0": "Adaptez votre CV à chaque poste — les outils de screening IA scorent les CV par correspondance de mots-clés avec les offres.",
+        "tip1": "Ajoutez une section Compétences ou Aptitudes Clés en haut pour une reconnaissance rapide des mots-clés ATS.",
+        "tip2": "Évitez graphiques, tableaux de données et icônes dans votre CV principal — les ATS ne peuvent toujours pas les lire fiablement en 2025.",
+        "tip3": "Incluez un résumé professionnel de 2-3 phrases — les outils IA l'utilisent pour comprendre votre profil global.",
+        "tip4": "Le PDF reste le format le plus sûr pour la plupart des candidatures. Vérifiez toujours les exigences de l'offre avant de soumettre."
+      },
+      "faq": {
+        "title": "FAQ Format CV 2025",
+        "subtitle": "Vos questions sur les formats CV modernes.",
+        "q0": {
+          "question": "Quel est le meilleur format CV en 2025 ?",
+          "answer": "Le format chronologique inversé reste le standard. Le format hybride (combinaison) est de plus en plus populaire pour les professionnels mid-career et seniors."
+        },
+        "q1": {
+          "question": "Dois-je utiliser un CV une colonne ou deux colonnes en 2025 ?",
+          "answer": "Une colonne reste le plus sûr pour l'ATS. Certains ATS modernes gèrent les mises en page deux colonnes, mais une colonne garantit la compatibilité partout."
+        },
+        "q2": {
+          "question": "Les CV visuels ou graphiques sont-ils une bonne idée en 2025 ?",
+          "answer": "Pour les postes créatifs et les audiences humaines, potentiellement oui. Pour les processus à fort filtrage ATS, les éléments visuels restent risqués. Ayez les deux versions prêtes."
+        },
+        "q3": {
+          "question": "Dois-je inclure une photo sur mon CV en 2025 ?",
+          "answer": "En France, oui c'est standard. Aux UK et aux US, non. Dans d'autres pays européens, une photo professionnelle reste généralement bienvenue."
+        },
+        "q4": {
+          "question": "Comment l'IA change-t-elle le screening de CV en 2025 ?",
+          "answer": "De nombreuses entreprises utilisent maintenant l'IA pour présélectionner les CV avant qu'un humain ne les voie. L'optimisation des mots-clés, la mise en forme claire et le contenu ciblé sont plus importants que jamais."
+        }
+      },
+      "finalCta": {
+        "title": "Créez un CV Qui Fonctionne en 2025",
+        "description": "Créez un CV moderne et optimisé ATS avec les formats et stratégies qui fonctionnent maintenant sur le marché de l'emploi actuel.",
+        "ctaText": "Créer Mon CV 2025"
+      }
+    },
+    "careerChangeResumePage": {
+      "meta": {
+        "title": "CV Reconversion Professionnelle — Templates pour Réussir Votre Transition",
+        "description": "Créez un CV de reconversion qui met en avant vos compétences transférables. Templates gratuits pour les professionnels changeant de secteur. Mettez en avant votre valeur ajoutée unique."
+      },
+      "breadcrumbName": "CV Reconversion",
+      "hero": {
+        "badgeText": "Pour les Reconversions",
+        "h1Before": "CV de ",
+        "h1Accent": "Reconversion",
+        "h1After": " Qui Ouvre de Nouvelles Portes",
+        "subtitle": "Votre expérience passée est plus pertinente que vous ne le pensez. Laissez-nous vous aider à la reformuler.",
+        "description": "Changer de secteur est un choix courageux qui nécessite une stratégie CV courageuse. Nos templates de reconversion vous aident à traduire votre expérience existante dans le langage de votre nouveau domaine.",
+        "primaryCtaText": "Créer Mon CV Reconversion",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Comment Positionner une Reconversion",
+        "subtitle": "Stratégies qui aident les recruteurs à voir votre potentiel.",
+        "item0": {
+          "title": "Focus Compétences Transférables",
+          "description": "Mettez en avant les capacités qui transcendent les secteurs — leadership, gestion de projet, communication, analyse."
+        },
+        "item1": {
+          "title": "Construire le Pont Narratif",
+          "description": "Un résumé professionnel fort explique votre pivot et fait le lien entre votre expérience passée et votre nouvelle direction."
+        },
+        "item2": {
+          "title": "Nouveau Secteur, Bons Mots-Clés",
+          "description": "Nos templates vous aident à intégrer le vocabulaire de votre secteur cible pour passer les filtres ATS."
+        }
+      },
+      "section2": {
+        "title": "Parcours de Reconversion Courants",
+        "subtitle": "Templates adaptés aux transitions populaires.",
+        "item0": {
+          "title": "Corporate vers Associatif",
+          "keyword": "Impact",
+          "description": "Reformulez le langage d'impact corporate en contributions mission-driven pour les postes associatifs."
+        },
+        "item1": {
+          "title": "Militaire vers Civil",
+          "keyword": "Reconversion Militaire",
+          "description": "Traduisez le leadership, la rigueur et l'expérience logistique militaires en langage employeur civil."
+        },
+        "item2": {
+          "title": "Enseignant vers Entreprise",
+          "keyword": "Éducation → Business",
+          "description": "Repositionnez la gestion de classe, le développement pédagogique et les compétences communication pour les postes business."
+        },
+        "item3": {
+          "title": "Technique vers Management",
+          "keyword": "IC vers Manager",
+          "description": "Transition du poste individuel vers le leadership en mettant en avant le mentoring et la collaboration transversale."
+        }
+      },
+      "section3": {
+        "title": "Étapes du CV de Reconversion",
+        "step0": {
+          "title": "Écrivez un Résumé Percutant",
+          "description": "Ouvrez avec un résumé de 3-4 phrases qui reconnaît votre pivot et argumente de façon convaincante pourquoi votre background est un atout dans votre nouveau domaine."
+        },
+        "step1": {
+          "title": "Mettez une Section Compétences en Avant",
+          "description": "Placez une section aptitudes clés ou compétences en haut, remplie de mots-clés de votre secteur cible."
+        },
+        "step2": {
+          "title": "Reformulez Votre Expérience",
+          "description": "Réécrivez chaque bullet de votre historique pour mettre en avant les compétences transférables et résultats pertinents pour votre nouveau poste cible."
+        },
+        "step3": {
+          "title": "Ajoutez des Certifications du Nouveau Domaine",
+          "description": "Incluez certifications, formations, bootcamps ou bénévolat qui démontrent votre engagement envers le nouveau domaine."
+        }
+      },
+      "faq": {
+        "title": "FAQ CV Reconversion",
+        "subtitle": "Conseils pour les professionnels faisant une transition audacieuse.",
+        "q0": {
+          "question": "Comment rédiger un CV pour changer de secteur ?",
+          "answer": "Utilisez un format hybride mettant en avant les compétences transférables, rédigez un résumé fort expliquant votre pivot, reformulez votre historique dans le langage de votre secteur cible."
+        },
+        "q1": {
+          "question": "Dois-je expliquer ma reconversion dans mon CV ?",
+          "answer": "Abordez-le brièvement dans votre résumé professionnel. Une déclaration de 2-3 phrases bien rédigée qui connecte votre passé à votre avenir peut être très convaincante."
+        },
+        "q2": {
+          "question": "Ai-je besoin de nouvelles qualifications pour changer de secteur ?",
+          "answer": "Pas toujours. Mais des certifications ciblées, bootcamps ou expériences bénévoles dans votre nouveau domaine renforcent considérablement votre dossier."
+        },
+        "q3": {
+          "question": "Comment gérer une reconversion en entretien ?",
+          "answer": "Préparez un récit clair et confiant sur 'pourquoi je change' qui souligne ce que vous apportez de votre domaine précédent et votre enthousiasme sincère pour la nouvelle direction."
+        },
+        "q4": {
+          "question": "Une lettre de motivation est-elle importante pour les reconversions ?",
+          "answer": "Plus que pour la plupart. Votre lettre est l'occasion de raconter l'histoire complète de votre transition et d'argumenter que votre background unique est un avantage compétitif."
+        }
+      },
+      "finalCta": {
+        "title": "Votre Nouvelle Carrière Commence Maintenant",
+        "description": "Créez un CV de reconversion qui reformule votre expérience, parle le langage de votre nouveau domaine et vous donne les meilleures chances dans votre transition.",
+        "ctaText": "Créer Mon CV Reconversion"
+      }
+    },
+    "howToWriteAResumePage": {
+      "meta": {
+        "title": "Comment Faire un CV — Guide Étape par Étape 2025",
+        "description": "Apprenez à faire un CV professionnel avec notre guide complet. De la structure aux mots-clés, de la mise en forme au contenu — tout ce qu'il faut pour créer un CV qui décroche des entretiens."
+      },
+      "breadcrumbName": "Comment Faire un CV",
+      "hero": {
+        "badgeText": "Guide Complet",
+        "h1Before": "Comment Faire un ",
+        "h1Accent": "CV Professionnel",
+        "h1After": " qui Décroche des Entretiens",
+        "subtitle": "Un guide complet, étape par étape, pour créer un CV professionnel de A à Z.",
+        "description": "Que ce soit votre premier CV ou une mise à jour majeure, ce guide vous accompagne dans chaque section, chaque décision et chaque bonne pratique pour créer un CV qui se démarque.",
+        "primaryCtaText": "Commencer Mon CV",
+        "secondaryCtaText": "Utiliser un Template"
+      },
+      "section1": {
+        "title": "Les Blocs Constitutifs d'un Bon CV",
+        "subtitle": "Chaque section, expliquée.",
+        "item0": {
+          "title": "Les Sections Essentielles",
+          "description": "Coordonnées, accroche professionnelle, expérience, formation et compétences sont le cœur de tout CV efficace."
+        },
+        "item1": {
+          "title": "Structure Compatible ATS",
+          "description": "Découvrez comment structurer votre CV pour passer les systèmes de filtrage automatique avant qu'un humain ne le lise."
+        },
+        "item2": {
+          "title": "Contenu qui Convertit",
+          "description": "La différence entre un CV qui décroche des entretiens et un qui ne le fait pas tient à la façon dont vous présentez votre expérience."
+        }
+      },
+      "section2": {
+        "title": "Les Sections d'un CV Professionnel",
+        "subtitle": "Que mettre dans chaque section.",
+        "item0": {
+          "title": "En-Tête & Coordonnées",
+          "keyword": "Commencez Ici",
+          "description": "Nom, téléphone, email pro, LinkedIn, lieu (ville) et lien portfolio ou GitHub."
+        },
+        "item1": {
+          "title": "Accroche / Résumé Pro",
+          "keyword": "2-3 Phrases",
+          "description": "Un aperçu puissant de qui vous êtes, ce que vous offrez et ce que vous cherchez. Adapté à chaque poste."
+        },
+        "item2": {
+          "title": "Expérience Professionnelle",
+          "keyword": "Section Principale",
+          "description": "Liste chronologique inversée des postes avec entreprise, titre, dates et 3-5 bullet points axés réalisations."
+        },
+        "item3": {
+          "title": "Formation & Compétences",
+          "keyword": "Sections Complémentaires",
+          "description": "Diplôme(s), établissement, année d'obtention. Section compétences avec hard skills et soft skills pertinents."
+        }
+      },
+      "section3": {
+        "title": "Comment Faire un CV — Étape par Étape",
+        "step0": {
+          "title": "Choisissez Votre Format",
+          "description": "Sélectionnez chronologique (le plus courant), fonctionnel (par compétences) ou hybride (combinaison). En cas de doute, utilisez le chronologique."
+        },
+        "step1": {
+          "title": "Remplissez Vos Informations",
+          "description": "Commencez par les coordonnées, puis rédigez votre accroche professionnelle en dernier (c'est plus facile une fois le reste fait)."
+        },
+        "step2": {
+          "title": "Rédigez des Bullet Points Axés Réalisations",
+          "description": "Pour chaque poste, rédigez des bullets qui commencent par des verbes d'action et incluent des résultats quantifiés. 'Augmenté X de Y%' pas 'Responsable de X'."
+        },
+        "step3": {
+          "title": "Optimisez pour l'ATS et Adaptez au Poste",
+          "description": "Ajoutez les mots-clés de l'offre d'emploi. Personnalisez votre accroche et vos meilleurs bullets pour chaque candidature."
+        }
+      },
+      "faq": {
+        "title": "FAQ Rédaction CV",
+        "subtitle": "Questions courantes sur la rédaction d'un CV professionnel.",
+        "q0": {
+          "question": "Que mettre en haut de mon CV ?",
+          "answer": "Vos coordonnées (nom, téléphone, email, LinkedIn, lieu) suivies d'une accroche ou résumé professionnel."
+        },
+        "q1": {
+          "question": "Comment rédiger les bullet points de mon CV ?",
+          "answer": "Commencez chaque bullet par un verbe d'action fort (Dirigé, Créé, Augmenté, Géré). Incluez ce que vous avez fait, comment vous l'avez fait et le résultat — idéalement avec un chiffre."
+        },
+        "q2": {
+          "question": "Comment adapter mon CV à un poste spécifique ?",
+          "answer": "Lisez l'offre, identifiez les exigences et mots-clés clés, puis reflétez ce langage dans votre accroche, section compétences et bullet points."
+        },
+        "q3": {
+          "question": "Dois-je mettre les références sur mon CV ?",
+          "answer": "Non. 'Références disponibles sur demande' est obsolète et gaspille de l'espace. Les employeurs demandent les références séparément quand ils en ont besoin."
+        },
+        "q4": {
+          "question": "Quelle longueur doit avoir mon CV ?",
+          "answer": "Une page pour la plupart des professionnels avec moins de 10 ans d'expérience. Deux pages pour les professionnels seniors. Jamais plus de deux pages sauf pour les postes académiques."
+        }
+      },
+      "finalCta": {
+        "title": "Prêt à Rédiger Votre CV ?",
+        "description": "Arrêtez de réfléchir et commencez à construire. Notre créateur de CV vous guide dans chaque section avec des conseils d'experts et des templates prêts à l'emploi.",
+        "ctaText": "Créer Mon CV Maintenant"
+      }
+    },
+    "resumeSummaryExamplesPage": {
+      "meta": {
+        "title": "Exemples d'Accroche CV — Phrases d'Accroche Professionnelles par Secteur",
+        "description": "Inspirez-vous de nos exemples d'accroche CV pour tous les secteurs et niveaux de carrière. Apprenez à rédiger une accroche professionnelle percutante qui captive les recruteurs en quelques secondes."
+      },
+      "breadcrumbName": "Exemples d'Accroche CV",
+      "hero": {
+        "badgeText": "Exemples Éprouvés",
+        "h1Before": "Exemples d'",
+        "h1Accent": "Accroche CV",
+        "h1After": " Qui Captivent Immédiatement",
+        "subtitle": "L'accroche professionnelle est la première chose que lisent les recruteurs — faites-la compter.",
+        "description": "Une accroche CV forte peut faire la différence entre un rappel et un refus. Découvrez des exemples réels par secteur et niveau, et utilisez notre outil pour rédiger la vôtre en quelques minutes.",
+        "primaryCtaText": "Rédiger Mon Accroche CV",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Qu'est-ce qui Fait une Bonne Accroche CV ?",
+        "subtitle": "Les 3 éléments que toute accroche percutante inclut.",
+        "item0": {
+          "title": "Qui Vous Êtes",
+          "description": "Votre identité professionnelle en 5-7 mots : 'Ingénieur logiciel orienté résultats avec 5 ans d'expérience fintech'."
+        },
+        "item1": {
+          "title": "Ce que Vous Offrez",
+          "description": "Vos 2-3 meilleures compétences ou atouts les plus pertinents pour le poste cible."
+        },
+        "item2": {
+          "title": "Ce que Vous Cherchez",
+          "description": "Une déclaration claire de votre orientation professionnelle qui s'aligne avec les besoins de l'employeur."
+        }
+      },
+      "section2": {
+        "title": "Exemples d'Accroches CV par Métier",
+        "subtitle": "Exemples réels que vous pouvez adapter pour votre propre CV.",
+        "item0": {
+          "title": "Accroche Responsable Marketing",
+          "keyword": "Marketing",
+          "description": "Responsable marketing digital orienté résultats avec 7 ans d'expérience en croissance de marques SaaS. Expert en génération de demand, content marketing et paid media avec un track record de ROI x3."
+        },
+        "item1": {
+          "title": "Accroche Développeur Logiciel",
+          "keyword": "Tech",
+          "description": "Développeur full-stack avec 4 ans d'expérience dans la construction d'applications web scalables en React et Node.js. Passionné par le clean code, l'expérience développeur et le delivery de produits appréciés."
+        },
+        "item2": {
+          "title": "Accroche Chef de Projet",
+          "keyword": "PM",
+          "description": "Chef de projet certifié PMP avec 10 ans de livraison de projets IT complexes dans les délais et sous budget. Expert en méthodo Agile avec un track record de livraison dans les délais à 95%+."
+        },
+        "item3": {
+          "title": "Accroche Reconversion",
+          "keyword": "Transition",
+          "description": "Ancienne enseignante en reconversion vers le conseil en formation avec 8 ans de conception pédagogique et animation de formations pour des publics diversifiés. Connue pour transformer des sujets complexes en expériences d'apprentissage engageantes."
+        }
+      },
+      "section3": {
+        "title": "Comment Rédiger une Accroche CV",
+        "tip0": "Rédigez votre accroche EN DERNIER. Remplissez d'abord le reste de votre CV — puis résumez le meilleur en 2-4 phrases.",
+        "tip1": "Adaptez votre accroche à chaque poste. Reflétez les mots-clés de l'offre pour booster la pertinence ATS.",
+        "tip2": "Évitez les affirmations vagues : 'travailleur et esprit d'équipe' ne veut rien dire. Les compétences et réalisations spécifiques, si.",
+        "tip3": "Utilisez des chiffres si possible : '8 ans d'expérience', 'croissance CA x3', 'portefeuille de 2M€ géré'.",
+        "tip4": "Votre accroche doit répondre à : qui êtes-vous, quelle est votre valeur ajoutée la plus forte et pourquoi postulez-vous ?"
+      },
+      "faq": {
+        "title": "FAQ Accroche CV",
+        "subtitle": "Questions sur la rédaction d'une accroche professionnelle.",
+        "q0": {
+          "question": "Quelle est la différence entre accroche et objectif professionnel ?",
+          "answer": "Une accroche décrit votre expérience et ce que vous offrez. Un objectif indique ce que vous cherchez. Les accroches sont préférées pour les professionnels expérimentés ; les objectifs fonctionnent pour les débutants."
+        },
+        "q1": {
+          "question": "Quelle longueur doit faire une accroche CV ?",
+          "answer": "2-4 phrases (40-80 mots). Assez pour communiquer votre proposition de valeur sans prendre trop de place en haut de votre CV."
+        },
+        "q2": {
+          "question": "Doit-on toujours inclure une accroche CV ?",
+          "answer": "Pour la plupart des professionnels, oui. La seule exception concerne les candidats très en début de carrière qui ont peu à résumer — ils peuvent préférer un bref objectif professionnel."
+        },
+        "q3": {
+          "question": "Puis-je copier des exemples d'accroche CV ?",
+          "answer": "Utilisez-les comme inspiration, pas comme copier-coller. Une bonne accroche est spécifique à VOTRE expérience. Personnalisez tout exemple avec vos vraies réalisations et poste cible."
+        },
+        "q4": {
+          "question": "Les ATS lisent-ils l'accroche CV ?",
+          "answer": "Oui. Les ATS scannent tout votre CV y compris l'accroche pour les mots-clés. Assurez-vous que votre accroche contient les mots-clés les plus importants de l'offre ciblée."
+        }
+      },
+      "finalCta": {
+        "title": "Rédigez une Accroche qui Vous Fait Remarquer",
+        "description": "Créez votre CV avec une accroche professionnelle percutante qui donne envie aux recruteurs de continuer à lire.",
+        "ctaText": "Créer Mon CV Maintenant"
+      }
+    },
+    "internshipResumeTemplatePage": {
+      "meta": {
+        "title": "CV Stage — Template CV pour Décrocher Votre Premier Stage",
+        "description": "Créez un CV de stage professionnel avec nos templates gratuits. Conçu pour les étudiants cherchant leur premier stage. Mettez en avant votre formation, projets et compétences."
+      },
+      "breadcrumbName": "CV Stage",
+      "hero": {
+        "badgeText": "Pour les Chercheurs de Stage",
+        "h1Before": "CV Stage ",
+        "h1Accent": "Professionnel",
+        "h1After": " Qui Décroche des Offres",
+        "subtitle": "Templates CV conçus pour aider les étudiants à décrocher leur stage de rêve.",
+        "description": "Votre premier stage peut lancer votre carrière. Nos templates sont conçus pour aider les étudiants avec peu ou pas d'expérience à créer un CV professionnel et convaincant qui impressionne les recruteurs.",
+        "primaryCtaText": "Créer Mon CV Stage",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Conçu pour les Candidats en Stage",
+        "subtitle": "Templates qui fonctionnent même quand l'expérience est limitée.",
+        "item0": {
+          "title": "Formation en Premier",
+          "description": "Mettez votre diplôme, établissement, moyenne et cours pertinents en premier — exactement ce que les recruteurs de stage veulent voir."
+        },
+        "item1": {
+          "title": "Projets & Activités",
+          "description": "Présentez projets académiques, associations, bénévolat et jobs étudiants comme preuves de compétences et d'initiative."
+        },
+        "item2": {
+          "title": "ATS Prêt pour le Recrutement Campus",
+          "description": "Mise en forme propre passant les ATS de recrutement campus des grandes entreprises et cabinets."
+        }
+      },
+      "section2": {
+        "title": "Templates Stage par Secteur",
+        "subtitle": "Trouvez le bon point de départ pour votre stage cible.",
+        "item0": {
+          "title": "CV Stage Tech / Dev",
+          "keyword": "Stage Dev",
+          "description": "Projets GitHub, compétences code et cours pertinents pour les stages en ingénierie logicielle et tech."
+        },
+        "item1": {
+          "title": "CV Stage Business / Finance",
+          "keyword": "Stage Finance",
+          "description": "Maîtrise Excel, études de cas et cours business pour les stages en banque, conseil et finance."
+        },
+        "item2": {
+          "title": "CV Stage Marketing",
+          "keyword": "Stage Marketing",
+          "description": "Réseaux sociaux, création de contenu et toute expérience campagne ou analytics pour les stages marketing."
+        },
+        "item3": {
+          "title": "CV Stage Recherche / Académique",
+          "keyword": "Stage Recherche",
+          "description": "Expérience labo, travaux de thèse et compétences en analyse de données pour les stages recherche et académiques."
+        }
+      },
+      "section3": {
+        "title": "Comment Construire un Solide CV de Stage",
+        "step0": {
+          "title": "Mettez la Formation en Avant",
+          "description": "Université, diplôme, spécialité, date de diplôme prévue, moyenne (si > 13/20) et cours pertinents ou distinctions."
+        },
+        "step1": {
+          "title": "Ajoutez des Projets Académiques",
+          "description": "Décrivez 2-3 projets académiques pertinents pour votre stage cible. Traitez-les comme de vraies expériences professionnelles avec des résultats."
+        },
+        "step2": {
+          "title": "Listez Vos Compétences",
+          "description": "Compétences techniques, logiciels, langages de programmation, langues étrangères — tout ce qui est pertinent pour le stage."
+        },
+        "step3": {
+          "title": "Incluez les Activités Extra-Scolaires",
+          "description": "Associations, sports, délégué étudiant, compétitions et bénévolat montrent initiative et personnalité."
+        }
+      },
+      "faq": {
+        "title": "FAQ CV Stage",
+        "subtitle": "Questions sur la candidature à un premier stage.",
+        "q0": {
+          "question": "Comment créer un CV de stage sans expérience ?",
+          "answer": "Concentrez-vous sur votre formation, projets académiques, activités extra-scolaires, compétences et tout travail étudiant ou bénévolat. Les recruteurs en stage s'attendent à une expérience limitée de la part des étudiants."
+        },
+        "q1": {
+          "question": "Dois-je inclure ma moyenne sur un CV de stage ?",
+          "answer": "Oui, si elle est supérieure à 13/20. De nombreux programmes de stage, notamment en finance et conseil, ont des critères de sélection sur la moyenne."
+        },
+        "q2": {
+          "question": "Quelle longueur doit avoir un CV de stage ?",
+          "answer": "Toujours une page. Vous n'aurez simplement pas assez d'expérience pour justifier plus, et les CV une page sont universellement attendus des étudiants."
+        },
+        "q3": {
+          "question": "Que recherchent les entreprises dans les CV de stage ?",
+          "answer": "Performance académique, cours pertinents, projets personnels ou GitHub, leadership extra-scolaire et les compétences techniques ou analytiques mentionnées dans l'offre de stage."
+        },
+        "q4": {
+          "question": "Dois-je adapter mon CV de stage pour chaque candidature ?",
+          "answer": "Oui. Même pour les stages, adapter votre section compétences et mettre en avant les projets les plus pertinents pour chaque poste améliore significativement vos chances."
+        }
+      },
+      "finalCta": {
+        "title": "Votre Parcours Stage Commence Ici",
+        "description": "Créez un CV de stage professionnel qui impressionne les recruteurs campus et vous ouvre les portes de votre programme idéal.",
+        "ctaText": "Créer Mon CV Stage"
+      }
+    },
+    "resumeSkillsSectionPage": {
+      "meta": {
+        "title": "Compétences CV — Quelles Compétences Mettre sur son CV en 2025",
+        "description": "Apprenez quelles compétences mettre sur votre CV et comment formater votre section compétences pour un impact ATS maximal. Guide complet avec exemples pour tous les secteurs."
+      },
+      "breadcrumbName": "Compétences CV",
+      "hero": {
+        "badgeText": "Compétences qui Recrutent",
+        "h1Before": "La Section ",
+        "h1Accent": "Compétences CV",
+        "h1After": " — Guide Complet",
+        "subtitle": "Sachez exactement quelles compétences lister, comment les organiser et les rendre ATS-friendly.",
+        "description": "Votre section compétences est l'une des premières choses que scannent les ATS et recruteurs. Bien faite, elle confirme que vous correspondez. Mal faite, votre CV est filtré avant d'être lu.",
+        "primaryCtaText": "Créer Mon CV avec Compétences",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Hard Skills vs Soft Skills — Que Mettre",
+        "subtitle": "Comprendre ce qui appartient à votre section compétences.",
+        "item0": {
+          "title": "Hard Skills",
+          "description": "Compétences techniques et mesurables : langages de programmation, outils logiciels, certifications, méthodologies. Incluez-les toujours."
+        },
+        "item1": {
+          "title": "Soft Skills",
+          "description": "Compétences interpersonnelles : communication, leadership, résolution de problèmes. Incluez-les avec parcimonie — montrez-les plutôt via vos réalisations."
+        },
+        "item2": {
+          "title": "Matching Mots-Clés ATS",
+          "description": "Reproduisez les compétences directement issues de l'offre d'emploi. Les ATS scorent votre CV par le nombre de compétences requises que vous listez."
+        }
+      },
+      "section2": {
+        "title": "Compétences par Secteur",
+        "subtitle": "Les compétences les plus valorisées à lister par profession.",
+        "item0": {
+          "title": "Compétences Tech & Dev",
+          "keyword": "Tech",
+          "description": "Python, JavaScript, React, SQL, AWS, Docker, Git, REST APIs, Agile, CI/CD, TypeScript."
+        },
+        "item1": {
+          "title": "Compétences Marketing",
+          "keyword": "Marketing",
+          "description": "Google Analytics, SEO, SEA, HubSpot, Salesforce, A/B testing, stratégie content, Meta Ads, Mailchimp."
+        },
+        "item2": {
+          "title": "Compétences Finance & Comptabilité",
+          "keyword": "Finance",
+          "description": "Excel avancé, Sage, SAP, modélisation financière, normes comptables, analyse des écarts, Power BI."
+        },
+        "item3": {
+          "title": "Compétences Gestion de Projet",
+          "keyword": "PM",
+          "description": "JIRA, Asana, Agile/Scrum, PMP, gestion des risques, communication parties prenantes, MS Project, Confluence."
+        }
+      },
+      "section3": {
+        "title": "Conseils Section Compétences CV",
+        "tip0": "Reproduisez le libellé exact de l'offre — si elle dit 'React.js', utilisez 'React.js' pas seulement 'React'.",
+        "tip1": "Organisez les compétences en catégories : Compétences Techniques, Outils & Logiciels, Langues, Certifications.",
+        "tip2": "Listez uniquement les compétences que vous pouvez discuter avec confiance en entretien. Ne gonfllez pas votre liste.",
+        "tip3": "Pour les postes techniques, envisagez d'ajouter des niveaux de maîtrise : Expert, Maîtrise, Notions.",
+        "tip4": "Mettez à jour votre section compétences pour chaque candidature — différents postes priorisent des compétences différentes."
+      },
+      "faq": {
+        "title": "FAQ Section Compétences CV",
+        "subtitle": "Tout sur la construction d'une excellente section compétences.",
+        "q0": {
+          "question": "Combien de compétences lister sur mon CV ?",
+          "answer": "10-15 compétences pertinentes est optimal. Trop peu semble creux ; trop nombreuses ressemble à du keyword stuffing. Concentrez-vous sur la qualité et la pertinence."
+        },
+        "q1": {
+          "question": "Les soft skills doivent-elles figurer sur un CV ?",
+          "answer": "Utilisez les soft skills avec parcimonie. Plutôt que lister 'leadership', montrez-le dans vos expériences : 'Encadré une équipe de 8 ingénieurs pour livrer X'."
+        },
+        "q2": {
+          "question": "Où mettre la section compétences dans un CV ?",
+          "answer": "Pour la plupart des CV, après l'expérience. Pour les reconversions ou candidats avec peu d'expérience, la placer plus haut (après le résumé) peut être efficace."
+        },
+        "q3": {
+          "question": "Dois-je noter mon niveau de maîtrise des compétences ?",
+          "answer": "Évitez les barres visuelles de compétences — elles sont peu fiables et les ATS ne peuvent pas les lire. Utilisez plutôt des niveaux écrits (Maîtrise, Notions) ou laissez votre expérience parler."
+        },
+        "q4": {
+          "question": "Comment savoir quelles compétences inclure pour un poste spécifique ?",
+          "answer": "Lisez attentivement l'offre. Surlignez chaque compétence mentionnée, vérifiez lesquelles vous avez. Incluez-les — ce sont exactement celles que l'ATS cherche."
+        }
+      },
+      "finalCta": {
+        "title": "Créez une Section Compétences qui Passe l'ATS",
+        "description": "Créez un CV avec une section compétences parfaitement structurée qui correspond à ce que les recruteurs et ATS cherchent pour votre poste cible.",
+        "ctaText": "Créer Mon CV Maintenant"
+      }
+    },
+    "executiveResumeTemplatePage": {
+      "meta": {
+        "title": "CV Cadre Dirigeant — Templates pour Postes Direction et C-Suite",
+        "description": "Créez un CV cadre dirigeant percutant avec nos templates professionnels. Pour PDG, DG, DAF, DSI et dirigeants seniors. Mettez en avant votre leadership stratégique et impact organisationnel."
+      },
+      "breadcrumbName": "CV Cadre Dirigeant",
+      "hero": {
+        "badgeText": "C-Suite & Direction",
+        "h1Before": "CV Cadre ",
+        "h1Accent": "Dirigeant",
+        "h1After": " pour les Leaders Seniors",
+        "subtitle": "Captez l'attention des comités de direction, cabinets de recrutement et DRH avec un CV de haut niveau.",
+        "description": "Au niveau exécutif, votre CV est un brief de leadership — pas une liste de postes. Nos templates cadres vous aident à présenter impact stratégique, leadership organisationnel et réalisations direction avec autorité.",
+        "primaryCtaText": "Créer Mon CV Dirigeant",
+        "secondaryCtaText": "Voir les Templates"
+      },
+      "section1": {
+        "title": "Ce qui Distingue un CV Cadre Dirigeant",
+        "subtitle": "Les CV de haut niveau exigent une approche différente.",
+        "item0": {
+          "title": "Impact Stratégique en Premier",
+          "description": "Mettez en avant vos plus grandes victoires organisationnelles : CA développé, entreprises transformées, marchés conquis, équipes construites."
+        },
+        "item1": {
+          "title": "Présence Conseil & Actionnaires",
+          "description": "Sections pour mettre en avant mandats d'administrateur, relations investisseurs, collaboration CODIR et rôles de conseil."
+        },
+        "item2": {
+          "title": "ATS Entreprise Conforme",
+          "description": "Même les recherches exécutives utilisent ATS et LinkedIn Recruiter. Nos templates garantissent que vous passez tous les filtres."
+        }
+      },
+      "section2": {
+        "title": "Templates Exécutifs par Rôle",
+        "subtitle": "Formats adaptés aux postes de direction.",
+        "item0": {
+          "title": "CV PDG / DG",
+          "keyword": "PDG / DG",
+          "description": "Mise en page orientée vision pour les dirigeants mettant en avant résultats P&L, croissance et relations CA."
+        },
+        "item1": {
+          "title": "CV VP / Directeur",
+          "keyword": "VP / Directeur",
+          "description": "Format axé résultats pour les VP et directeurs avec ownership département et impact transversal."
+        },
+        "item2": {
+          "title": "CV DAF",
+          "keyword": "DAF",
+          "description": "Template de leadership financier mettant en avant allocation de capital, relations investisseurs et transformation financière."
+        },
+        "item3": {
+          "title": "CV DSI / VP Engineering",
+          "keyword": "DSI / VP Eng",
+          "description": "Format leadership technique présentant la scale de plateforme, développement de l'organisation tech et stratégie technologique."
+        }
+      },
+      "section3": {
+        "title": "Étapes du CV Cadre Dirigeant",
+        "step0": {
+          "title": "Ouvrez avec un Résumé Exécutif",
+          "description": "Un résumé de leadership de 4-6 phrases qui encapsule votre périmètre d'impact, philosophie de leadership et réalisations de carrière les plus significatives."
+        },
+        "step1": {
+          "title": "Quantifiez au Niveau Organisationnel",
+          "description": "Pensez P&L, effectifs, CA, parts de marché et périmètre de transformation — pas seulement des métriques département."
+        },
+        "step2": {
+          "title": "Présentez Mandats et Conseils",
+          "description": "Listez mandats d'administrateur, rôles de conseil et relations investisseurs/actionnaires qui démontrent votre présence exécutive."
+        },
+        "step3": {
+          "title": "Curatez, Ne Listez Pas Tout",
+          "description": "Au niveau exécutif, moins c'est plus. N'incluez que les rôles et réalisations démontrant un périmètre croissant et un leadership stratégique."
+        }
+      },
+      "faq": {
+        "title": "FAQ CV Cadre Dirigeant",
+        "subtitle": "Questions sur la stratégie CV au niveau senior.",
+        "q0": {
+          "question": "En quoi un CV cadre diffère-t-il d'un CV standard ?",
+          "answer": "Les CV cadres se concentrent sur l'impact stratégique, le leadership organisationnel, le P&L et l'expérience conseil plutôt que sur des responsabilités opérationnelles."
+        },
+        "q1": {
+          "question": "Quelle longueur doit avoir un CV cadre dirigeant ?",
+          "answer": "2 pages est le standard pour la plupart des postes exécutifs. Un CV 2 pages concis qui couvre chaque réalisation clé est plus puissant qu'un dossier de 4 pages."
+        },
+        "q2": {
+          "question": "Les dirigeants doivent-ils se préoccuper de l'ATS ?",
+          "answer": "Oui, même au niveau senior. Les cabinets de recherche exécutive et beaucoup d'entreprises utilisent des ATS. La mise en forme compatible ATS reste importante."
+        },
+        "q3": {
+          "question": "Un dirigeant doit-il utiliser LinkedIn en plus du CV ?",
+          "answer": "Absolument. Au niveau exécutif, LinkedIn est aussi important que votre CV. Assurez-vous que votre profil est cohérent avec votre CV et l'enrichit."
+        },
+        "q4": {
+          "question": "Un dirigeant doit-il inclure une photo professionnelle sur son CV ?",
+          "answer": "En France, une photo professionnelle est standard quel que soit le niveau. Aux UK et US, les photos sur CV ne sont pas standard même pour les dirigeants."
+        }
+      },
+      "finalCta": {
+        "title": "Dirigez Votre Prochain Chapitre avec Assurance",
+        "description": "Créez un CV cadre dirigeant qui commande le respect, communique la vision stratégique et vous positionne pour les rôles de leadership que vous avez mérités.",
+        "ctaText": "Créer Mon CV Dirigeant"
+      }
     }
   },
   "dashboard": {

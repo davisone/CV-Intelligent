@@ -3976,6 +3976,1930 @@
         "description": "Build a professional resume that gets you in the door — even without experience. Start free, get hired faster.",
         "ctaText": "Build My First Resume"
       }
+    },
+    "softwareEngineerResumePage": {
+      "meta": {
+        "title": "Software Engineer Resume Template — Land Your Next Dev Job",
+        "description": "Create a professional software engineer resume with our ATS-optimized templates. Highlight your tech stack, GitHub projects, and coding experience to impress recruiters."
+      },
+      "breadcrumbName": "Software Engineer Resume",
+      "hero": {
+        "badgeText": "For Developers",
+        "h1Before": "Software Engineer ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Get Interviews",
+        "subtitle": "Purpose-built resume templates for software engineers, developers, and tech professionals.",
+        "description": "Stand out in a competitive tech job market with a resume that showcases your skills, projects, and impact. ATS-optimized and recruiter-approved.",
+        "primaryCtaText": "Build My Dev Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Software Engineers",
+        "subtitle": "Templates that speak the language of tech recruiters.",
+        "item0": {
+          "title": "Skills-Forward Layout",
+          "description": "Dedicated technical skills section with room for languages, frameworks, tools, and certifications."
+        },
+        "item1": {
+          "title": "GitHub & Portfolio Links",
+          "description": "Prominent header placement for your GitHub, portfolio, and LinkedIn — what tech recruiters check first."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Clean formatting that passes every ATS filter, ensuring your resume reaches human reviewers."
+        }
+      },
+      "section2": {
+        "title": "Resume Templates by Tech Role",
+        "subtitle": "Tailored formats for every engineering specialty.",
+        "item0": {
+          "title": "Frontend Developer Resume",
+          "keyword": "Frontend",
+          "description": "Showcase React, Vue, TypeScript skills with a design that reflects your frontend sensibility."
+        },
+        "item1": {
+          "title": "Backend Engineer Resume",
+          "keyword": "Backend",
+          "description": "Highlight system design, APIs, databases, and cloud infrastructure experience."
+        },
+        "item2": {
+          "title": "Full-Stack Developer Resume",
+          "keyword": "Full-Stack",
+          "description": "Balance frontend and backend skills in a layout that demonstrates your versatility."
+        },
+        "item3": {
+          "title": "DevOps / Cloud Resume",
+          "keyword": "DevOps",
+          "description": "Feature CI/CD, Kubernetes, AWS/GCP/Azure skills and infrastructure impact metrics."
+        }
+      },
+      "section3": {
+        "title": "Software Engineer Resume Tips",
+        "tip0": "List your tech stack in a dedicated Skills section — recruiters and ATS scan for specific technologies.",
+        "tip1": "Quantify impact: 'Reduced API response time by 40%' beats 'improved performance' every time.",
+        "tip2": "Include GitHub, portfolio, and LinkedIn URLs prominently in your header.",
+        "tip3": "For each role, focus on what you built and its impact, not just your responsibilities.",
+        "tip4": "Keep your resume to 1-2 pages maximum. Senior engineers with 10+ years can use 2 pages."
+      },
+      "faq": {
+        "title": "Software Engineer Resume FAQ",
+        "subtitle": "Tech-specific resume questions answered.",
+        "q0": {
+          "question": "What should a software engineer put on a resume?",
+          "answer": "Technical skills (languages, frameworks, tools), work experience with quantified impact, projects (personal and professional), GitHub link, education, and relevant certifications."
+        },
+        "q1": {
+          "question": "Should I list every programming language I know?",
+          "answer": "List languages you're proficient in and comfortable discussing in an interview. Organize by proficiency: Expert, Proficient, Familiar."
+        },
+        "q2": {
+          "question": "How important is GitHub on a dev resume?",
+          "answer": "Very important. Most tech recruiters will check your GitHub. Include your profile URL and highlight 2-3 repos in your projects section."
+        },
+        "q3": {
+          "question": "Should I include personal projects?",
+          "answer": "Absolutely. Personal projects demonstrate initiative, passion, and skills beyond your day job — especially valuable for junior engineers."
+        },
+        "q4": {
+          "question": "How long should a software engineer's resume be?",
+          "answer": "1 page for engineers with under 5 years of experience. 2 pages is acceptable for senior engineers with extensive experience."
+        }
+      },
+      "finalCta": {
+        "title": "Land Your Next Tech Role",
+        "description": "Build a software engineer resume that gets past the ATS and impresses tech leads and engineering managers.",
+        "ctaText": "Create My Dev Resume"
+      }
+    },
+    "nurseResumeTemplatePage": {
+      "meta": {
+        "title": "Nurse Resume Template — Free Professional Nursing CV",
+        "description": "Create a professional nurse resume with our free templates. ATS-optimized formats for RNs, LPNs, and nursing specialists. Highlight your certifications, clinical experience, and skills."
+      },
+      "breadcrumbName": "Nurse Resume Template",
+      "hero": {
+        "badgeText": "For Healthcare Professionals",
+        "h1Before": "Nurse Resume ",
+        "h1Accent": "Templates",
+        "h1After": " for Every Specialty",
+        "subtitle": "Professional resume templates designed specifically for nurses and healthcare professionals.",
+        "description": "Get hired faster with a nurse resume that highlights your clinical skills, certifications, and patient care experience. ATS-optimized and ready in minutes.",
+        "primaryCtaText": "Build My Nurse Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Healthcare Professionals",
+        "subtitle": "Templates that meet nursing recruitment standards.",
+        "item0": {
+          "title": "Certifications Highlighted",
+          "description": "Prominent placement for RN, BLS, ACLS, and specialty certifications that healthcare recruiters require."
+        },
+        "item1": {
+          "title": "Clinical Skills Section",
+          "description": "Dedicated space for clinical competencies, patient care skills, and medical software proficiency."
+        },
+        "item2": {
+          "title": "ATS-Compliant Format",
+          "description": "Healthcare ATS-friendly formatting ensures your resume passes hospital and agency screening systems."
+        }
+      },
+      "section2": {
+        "title": "Templates by Nursing Specialty",
+        "subtitle": "Find the right format for your area of practice.",
+        "item0": {
+          "title": "RN Hospital Resume",
+          "keyword": "Registered Nurse",
+          "description": "For registered nurses targeting hospital roles — ICU, ER, med-surg, and general wards."
+        },
+        "item1": {
+          "title": "Travel Nurse Resume",
+          "keyword": "Travel Nursing",
+          "description": "Highlights adaptability, diverse clinical environments, and multiple facility experience."
+        },
+        "item2": {
+          "title": "ICU / Critical Care Nurse",
+          "keyword": "Critical Care",
+          "description": "Emphasizes advanced monitoring, ventilator management, and critical care competencies."
+        },
+        "item3": {
+          "title": "Nursing Management Resume",
+          "keyword": "Nurse Manager",
+          "description": "Leadership-focused layout for charge nurses, nurse managers, and clinical supervisors."
+        }
+      },
+      "section3": {
+        "title": "Nurse Resume Tips",
+        "tip0": "Always list your current nursing license (RN, LPN, NP) with license number and expiration date.",
+        "tip1": "Include all relevant certifications: BLS, ACLS, PALS, NRP, TNCC, and any specialty certs.",
+        "tip2": "Quantify your patient care: 'Managed 6-patient assignments in a 24-bed ICU unit'.",
+        "tip3": "List your clinical specialties clearly: ICU, ER, NICU, Oncology, etc.",
+        "tip4": "Include proficiency in EMR/EHR systems (Epic, Cerner, Meditech) — employers always ask."
+      },
+      "faq": {
+        "title": "Nurse Resume FAQ",
+        "subtitle": "Common nursing resume questions answered.",
+        "q0": {
+          "question": "What should a nurse include on their resume?",
+          "answer": "License details, certifications (BLS, ACLS, etc.), clinical experience with specialties, patient ratios, EMR proficiency, education, and any charge/leadership experience."
+        },
+        "q1": {
+          "question": "Should I include my nursing license number on my resume?",
+          "answer": "Yes. Include your license type (RN, LPN), state, license number, and expiration date. Healthcare employers verify licenses before hiring."
+        },
+        "q2": {
+          "question": "How do I write a nursing resume with no hospital experience?",
+          "answer": "Emphasize clinical rotations, volunteer work, certifications, and any patient-facing experience. New grad nurse programs specifically expect limited experience."
+        },
+        "q3": {
+          "question": "How long should a nurse resume be?",
+          "answer": "1-2 pages. New graduates should aim for 1 page. Experienced nurses with multiple specialties and leadership roles can use 2 pages."
+        },
+        "q4": {
+          "question": "Is a photo needed on a nursing resume?",
+          "answer": "In the US and UK, photos on resumes are not standard. Include a LinkedIn URL instead where you can have a professional photo."
+        }
+      },
+      "finalCta": {
+        "title": "Your Nursing Career Deserves a Great Resume",
+        "description": "Build a professional nurse resume that highlights your skills and gets you hired at your target facility.",
+        "ctaText": "Create My Nurse Resume"
+      }
+    },
+    "teacherResumeTemplatePage": {
+      "meta": {
+        "title": "Teacher Resume Template — Free Professional Teaching CV",
+        "description": "Create a professional teacher resume with our free templates. Designed for K-12, higher education, and tutors. Highlight your teaching philosophy, certifications, and classroom experience."
+      },
+      "breadcrumbName": "Teacher Resume Template",
+      "hero": {
+        "badgeText": "For Educators",
+        "h1Before": "Teacher Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Inspire Hiring Managers",
+        "subtitle": "Professional resume templates designed for teachers, educators, and academic professionals.",
+        "description": "Get hired at your dream school with a teacher resume that showcases your teaching experience, credentials, and classroom impact. ATS-optimized and ready in minutes.",
+        "primaryCtaText": "Build My Teaching Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Educators, by Career Experts",
+        "subtitle": "Templates that meet education sector recruitment standards.",
+        "item0": {
+          "title": "Certifications Front & Center",
+          "description": "Prominent placement for teaching licenses, credentials, and subject endorsements."
+        },
+        "item1": {
+          "title": "Classroom & Curriculum Focus",
+          "description": "Sections to highlight teaching philosophy, curriculum development, and student achievement results."
+        },
+        "item2": {
+          "title": "ATS-Ready for School Districts",
+          "description": "Formatting designed to pass school district and education agency applicant tracking systems."
+        }
+      },
+      "section2": {
+        "title": "Templates by Teaching Level",
+        "subtitle": "Find the right format for your educational context.",
+        "item0": {
+          "title": "Elementary Teacher Resume",
+          "keyword": "K-5",
+          "description": "Highlights classroom management, differentiated instruction, and early childhood development experience."
+        },
+        "item1": {
+          "title": "High School Teacher Resume",
+          "keyword": "Secondary",
+          "description": "Subject-specific template for secondary educators with room for AP/IB course and extracurricular experience."
+        },
+        "item2": {
+          "title": "Special Education Resume",
+          "keyword": "SPED",
+          "description": "Emphasizes IEP development, adaptive teaching methods, and collaborative team experience."
+        },
+        "item3": {
+          "title": "University Lecturer Resume",
+          "keyword": "Higher Ed",
+          "description": "Academic CV format for lecturers, adjuncts, and professors with publication and research sections."
+        }
+      },
+      "section3": {
+        "title": "Teacher Resume Tips",
+        "tip0": "Always list your teaching license(s) with subject area, grade levels, and state — prominently near the top.",
+        "tip1": "Quantify your classroom impact: 'Improved student standardized test scores by 18% year-over-year'.",
+        "tip2": "Include curriculum and lesson planning tools you use (Google Classroom, Canvas, Schoology, Seesaw).",
+        "tip3": "Highlight any leadership beyond the classroom: department head, curriculum committee, coaching, clubs.",
+        "tip4": "Mention inclusive teaching practices and experience with diverse learner populations."
+      },
+      "faq": {
+        "title": "Teacher Resume FAQ",
+        "subtitle": "Common educator resume questions answered.",
+        "q0": {
+          "question": "What should a teacher put on their resume?",
+          "answer": "Teaching license and credentials, subject areas and grade levels taught, classroom experience with student outcomes, curriculum development, technology tools, and any leadership roles."
+        },
+        "q1": {
+          "question": "Do I need a teaching portfolio with my resume?",
+          "answer": "For many education roles, a portfolio is highly recommended. Link your digital portfolio in your resume header alongside your LinkedIn."
+        },
+        "q2": {
+          "question": "How long should a teacher's resume be?",
+          "answer": "1-2 pages for most K-12 positions. University faculty may need a longer academic CV with publications, research, and grants."
+        },
+        "q3": {
+          "question": "Should I include my GPA on a teaching resume?",
+          "answer": "For new teachers, yes — especially if it's strong. For experienced educators, your classroom track record matters more."
+        },
+        "q4": {
+          "question": "How do I write a teacher resume with no classroom experience?",
+          "answer": "Highlight your student teaching placements, practicum hours, tutoring experience, and any work with children or youth programs."
+        }
+      },
+      "finalCta": {
+        "title": "Make Your Mark in Education",
+        "description": "Build a professional teacher resume that gets you in front of the right principals and hiring committees.",
+        "ctaText": "Create My Teaching Resume"
+      }
+    },
+    "projectManagerResumePage": {
+      "meta": {
+        "title": "Project Manager Resume — Templates for PM Professionals",
+        "description": "Create a professional project manager resume with our free templates. Highlight your PMP certification, methodologies, and delivered projects. ATS-optimized for top PM roles."
+      },
+      "breadcrumbName": "Project Manager Resume",
+      "hero": {
+        "badgeText": "For Project Managers",
+        "h1Before": "Project Manager ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Deliver Results",
+        "subtitle": "Resume templates designed for project managers, program managers, and PMO leaders.",
+        "description": "Lead your career forward with a project manager resume that quantifies your delivery track record and demonstrates your mastery of PM methodologies.",
+        "primaryCtaText": "Build My PM Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Project Management Professionals",
+        "subtitle": "Templates that speak the language of PM hiring managers.",
+        "item0": {
+          "title": "Metrics-Driven Layout",
+          "description": "Budget, timeline, team size, and delivery metrics front and center — exactly what PM interviewers want to see."
+        },
+        "item1": {
+          "title": "Methodology Showcase",
+          "description": "Clear space to highlight Agile, Scrum, PMP, PRINCE2, and other PM certifications and methodologies."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Keyword-rich formatting that passes PM-specific ATS filters across tech, construction, and corporate sectors."
+        }
+      },
+      "section2": {
+        "title": "PM Resume Templates by Industry",
+        "subtitle": "Find the right format for your PM specialty.",
+        "item0": {
+          "title": "IT Project Manager Resume",
+          "keyword": "Tech PM",
+          "description": "For tech PMs managing software delivery, infrastructure, and digital transformation projects."
+        },
+        "item1": {
+          "title": "Construction PM Resume",
+          "keyword": "Construction",
+          "description": "Highlights budget management, contractor coordination, and schedule delivery for construction PMs."
+        },
+        "item2": {
+          "title": "Agile / Scrum Master Resume",
+          "keyword": "Agile",
+          "description": "Sprint velocity, backlog management, and team performance metrics for Agile practitioners."
+        },
+        "item3": {
+          "title": "Program Manager Resume",
+          "keyword": "Program",
+          "description": "Senior-level layout for managing multiple projects, stakeholders, and program-level budgets."
+        }
+      },
+      "section3": {
+        "title": "Project Manager Resume Tips",
+        "tip0": "Always quantify: 'Delivered $2M software project on time and 8% under budget' is far more impactful than 'managed projects'.",
+        "tip1": "List certifications prominently: PMP, CAPM, PMI-ACP, PRINCE2, CSM, SAFe.",
+        "tip2": "Include key PM tools: JIRA, Asana, MS Project, Smartsheet, Monday.com, Confluence.",
+        "tip3": "Show scope: team size, project budget, timeline, and number of stakeholders managed.",
+        "tip4": "Highlight cross-functional leadership — PMs who can align diverse teams are highly valued."
+      },
+      "faq": {
+        "title": "Project Manager Resume FAQ",
+        "subtitle": "PM-specific resume questions answered.",
+        "q0": {
+          "question": "What should a project manager put on their resume?",
+          "answer": "Delivered projects with scope, budget, and outcomes; PM certifications (PMP, PRINCE2); methodology expertise; tools proficiency; and team/stakeholder management experience."
+        },
+        "q1": {
+          "question": "Is PMP certification necessary for a PM resume?",
+          "answer": "Not mandatory, but highly valued. If you have it, list it prominently. If not, consider CAPM or Agile certifications as alternatives."
+        },
+        "q2": {
+          "question": "How do I quantify project management experience?",
+          "answer": "Use specific numbers: budget managed ($), team size, project duration, number of projects, on-time delivery rate, and cost savings achieved."
+        },
+        "q3": {
+          "question": "Should I list failed projects on my PM resume?",
+          "answer": "Only list projects you delivered successfully. In interviews, you can discuss challenges and lessons learned from difficult projects."
+        },
+        "q4": {
+          "question": "How long should a PM resume be?",
+          "answer": "1-2 pages for most roles. Senior PMs and program managers with extensive portfolios can use 2 pages with a focused, results-driven approach."
+        }
+      },
+      "finalCta": {
+        "title": "Deliver Your Career to the Next Level",
+        "description": "Build a project manager resume that showcases your delivery track record and wins interviews at top organizations.",
+        "ctaText": "Create My PM Resume"
+      }
+    },
+    "marketingManagerResumePage": {
+      "meta": {
+        "title": "Marketing Manager Resume — Templates for Marketing Professionals",
+        "description": "Create a professional marketing manager resume with our free templates. Highlight your campaigns, ROI metrics, and digital marketing skills. ATS-optimized for top marketing roles."
+      },
+      "breadcrumbName": "Marketing Manager Resume",
+      "hero": {
+        "badgeText": "For Marketers",
+        "h1Before": "Marketing Manager ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Convert",
+        "subtitle": "Data-driven resume templates for marketing managers and digital marketing professionals.",
+        "description": "Market yourself as effectively as you market your products. Our templates help you showcase campaign results, ROI, and the skills that marketing leaders are looking for.",
+        "primaryCtaText": "Build My Marketing Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Marketing Professionals",
+        "subtitle": "Templates that highlight the metrics that matter.",
+        "item0": {
+          "title": "Results & ROI Focus",
+          "description": "Lead with campaign performance, conversion rates, revenue impact, and ROAS — metrics hiring managers care about."
+        },
+        "item1": {
+          "title": "Channel Expertise",
+          "description": "Clear sections for SEO, PPC, social media, email, content, and paid channels expertise."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Keyword-rich formatting that passes marketing-specific ATS filters across industries."
+        }
+      },
+      "section2": {
+        "title": "Templates by Marketing Specialty",
+        "subtitle": "Find the right format for your marketing focus.",
+        "item0": {
+          "title": "Digital Marketing Manager Resume",
+          "keyword": "Digital",
+          "description": "Showcases paid media, SEO, analytics, and full-funnel digital campaign management experience."
+        },
+        "item1": {
+          "title": "Content Marketing Resume",
+          "keyword": "Content",
+          "description": "Highlights content strategy, organic growth, blog traffic, and content-driven pipeline impact."
+        },
+        "item2": {
+          "title": "Brand Manager Resume",
+          "keyword": "Brand",
+          "description": "Focus on brand positioning, market research, consumer insights, and go-to-market execution."
+        },
+        "item3": {
+          "title": "Growth Marketing Resume",
+          "keyword": "Growth",
+          "description": "Data-driven layout for growth hackers with A/B testing, user acquisition, and retention metrics."
+        }
+      },
+      "section3": {
+        "title": "Marketing Manager Resume Tips",
+        "tip0": "Lead every bullet with a metric: 'Grew organic traffic by 120% in 6 months via SEO optimization'.",
+        "tip1": "List your martech stack: HubSpot, Salesforce, Google Analytics, Meta Ads, Klaviyo, etc.",
+        "tip2": "Show channel expertise explicitly — don't just say 'managed campaigns', specify which channels.",
+        "tip3": "Include budget managed: 'Managed $500K annual paid media budget across Google and Meta'.",
+        "tip4": "Certifications matter: Google Ads, HubSpot, Meta Blueprint, and Google Analytics certifications add credibility."
+      },
+      "faq": {
+        "title": "Marketing Manager Resume FAQ",
+        "subtitle": "Marketing-specific resume questions answered.",
+        "q0": {
+          "question": "What should a marketing manager put on their resume?",
+          "answer": "Campaign results with metrics, channel expertise, marketing tools and platforms, budget managed, team leadership, and relevant certifications."
+        },
+        "q1": {
+          "question": "How do I show ROI on a marketing resume?",
+          "answer": "Use specific numbers: 'Increased email conversion rate from 2.1% to 4.7%', 'Generated $800K pipeline from content marketing'."
+        },
+        "q2": {
+          "question": "What tools should I list on a marketing resume?",
+          "answer": "Include your CRM (HubSpot, Salesforce), analytics (GA4, Tableau), ad platforms (Google Ads, Meta), email tools (Mailchimp, Klaviyo), and any relevant martech."
+        },
+        "q3": {
+          "question": "Should I include a portfolio link on my marketing resume?",
+          "answer": "Yes. Link to a portfolio, case studies, or your LinkedIn to give recruiters tangible evidence of your campaigns and creative work."
+        },
+        "q4": {
+          "question": "How long should a marketing manager resume be?",
+          "answer": "1-2 pages. Focus on the most impactful campaigns and results rather than listing every project."
+        }
+      },
+      "finalCta": {
+        "title": "Market Yourself to Your Dream Role",
+        "description": "Build a marketing manager resume that converts recruiters into interviewers. Data-driven, ATS-ready, and professionally designed.",
+        "ctaText": "Create My Marketing Resume"
+      }
+    },
+    "dataScientistResumePage": {
+      "meta": {
+        "title": "Data Scientist Resume — Templates for Data & ML Professionals",
+        "description": "Create a professional data scientist resume with our free templates. Showcase your Python, ML models, and business impact. ATS-optimized for top data science and AI roles."
+      },
+      "breadcrumbName": "Data Scientist Resume",
+      "hero": {
+        "badgeText": "For Data Scientists",
+        "h1Before": "Data Scientist ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Stand Out",
+        "subtitle": "Technical resume templates for data scientists, ML engineers, and AI specialists.",
+        "description": "Turn your data expertise into career opportunities with a resume that clearly communicates your technical stack, model performance, and business impact.",
+        "primaryCtaText": "Build My Data Science Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Data Science Professionals",
+        "subtitle": "Templates that highlight technical depth and business impact.",
+        "item0": {
+          "title": "Technical Stack Showcase",
+          "description": "Dedicated sections for programming languages, ML frameworks, databases, and cloud platforms."
+        },
+        "item1": {
+          "title": "Project & Model Highlights",
+          "description": "Space to describe models built, accuracy achieved, and the business problems they solved."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Keyword-rich formatting for data science roles, passing filters for Python, SQL, TensorFlow, and more."
+        }
+      },
+      "section2": {
+        "title": "Templates by Data Role",
+        "subtitle": "Find the right format for your data specialty.",
+        "item0": {
+          "title": "Data Scientist Resume",
+          "keyword": "Data Science",
+          "description": "Balanced layout for statistical modeling, ML pipeline development, and business insight generation."
+        },
+        "item1": {
+          "title": "ML Engineer Resume",
+          "keyword": "Machine Learning",
+          "description": "Engineering-forward format for building, deploying, and scaling machine learning systems in production."
+        },
+        "item2": {
+          "title": "Data Analyst Resume",
+          "keyword": "Analytics",
+          "description": "Business-focused format highlighting SQL, dashboards, A/B testing, and actionable insights delivered."
+        },
+        "item3": {
+          "title": "AI Researcher Resume",
+          "keyword": "AI / Research",
+          "description": "Academic-technical hybrid for researchers in NLP, computer vision, and deep learning."
+        }
+      },
+      "section3": {
+        "title": "Data Scientist Resume Tips",
+        "tip0": "List your full tech stack: Python, R, SQL, TensorFlow, PyTorch, Spark, AWS/GCP, Tableau, etc.",
+        "tip1": "Quantify model performance: 'Built churn prediction model achieving 89% accuracy, reducing churn by 15%'.",
+        "tip2": "Include a GitHub or Kaggle link — your notebooks and projects are your portfolio.",
+        "tip3": "Show business impact, not just technical output: 'Model generated $2M in additional revenue by reducing false positives'.",
+        "tip4": "For ML roles, specify the full ML lifecycle experience: data collection, feature engineering, training, evaluation, deployment, and monitoring."
+      },
+      "faq": {
+        "title": "Data Scientist Resume FAQ",
+        "subtitle": "Data science-specific resume questions answered.",
+        "q0": {
+          "question": "What should a data scientist put on their resume?",
+          "answer": "Technical skills (Python, SQL, ML frameworks), projects with model metrics and business impact, publications or Kaggle rankings, GitHub link, education, and relevant certifications."
+        },
+        "q1": {
+          "question": "Is a PhD necessary for data science roles?",
+          "answer": "Not for most industry roles. A strong portfolio of projects, Kaggle rankings, and practical ML experience can outweigh a PhD for many positions."
+        },
+        "q2": {
+          "question": "Should I include my Kaggle profile on my resume?",
+          "answer": "Yes, especially if you have competition medals or high rankings. Include Kaggle, GitHub, and any published papers or blog posts."
+        },
+        "q3": {
+          "question": "How do I show data science experience without a data science title?",
+          "answer": "Describe the ML/data work you did under any title. If you built models, analyzed data, or automated insights, that's data science experience."
+        },
+        "q4": {
+          "question": "How long should a data scientist's resume be?",
+          "answer": "1-2 pages. Focus on your most impactful projects and models. A strong GitHub profile can supplement a concise resume."
+        }
+      },
+      "finalCta": {
+        "title": "Let Your Data Tell Your Career Story",
+        "description": "Build a data science resume that demonstrates your technical depth and business impact. Stand out in a competitive AI-driven job market.",
+        "ctaText": "Create My Data Science Resume"
+      }
+    },
+    "accountantResumeTemplatePage": {
+      "meta": {
+        "title": "Accountant Resume Template — Free Professional Accounting CV",
+        "description": "Create a professional accountant resume with our free templates. Highlight your CPA credentials, financial expertise, and software skills. ATS-optimized for accounting and finance roles."
+      },
+      "breadcrumbName": "Accountant Resume Template",
+      "hero": {
+        "badgeText": "For Accounting Professionals",
+        "h1Before": "Accountant Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Balance Results",
+        "subtitle": "Professional resume templates for accountants, CPAs, and finance professionals.",
+        "description": "Present your accounting expertise with clarity and confidence. Our templates highlight your credentials, software proficiency, and financial management track record.",
+        "primaryCtaText": "Build My Accounting Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Finance & Accounting Professionals",
+        "subtitle": "Templates that meet the standards of financial sector recruiters.",
+        "item0": {
+          "title": "Credentials Highlighted",
+          "description": "Prominent placement for CPA, CMA, ACCA, and other accounting certifications."
+        },
+        "item1": {
+          "title": "Software Proficiency",
+          "description": "Clear sections for QuickBooks, SAP, Oracle, NetSuite, Excel, and financial reporting tools."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Accounting-specific keyword optimization to pass big four and corporate finance ATS filters."
+        }
+      },
+      "section2": {
+        "title": "Templates by Accounting Role",
+        "subtitle": "Find the right format for your accounting specialty.",
+        "item0": {
+          "title": "Public Accountant Resume",
+          "keyword": "Public Accounting",
+          "description": "For CPAs in audit, tax, and assurance roles at public accounting firms."
+        },
+        "item1": {
+          "title": "Management Accountant Resume",
+          "keyword": "Management",
+          "description": "Highlights budgeting, forecasting, cost analysis, and financial planning & analysis (FP&A) experience."
+        },
+        "item2": {
+          "title": "Tax Specialist Resume",
+          "keyword": "Tax",
+          "description": "Emphasizes tax preparation, compliance, planning, and software expertise for tax roles."
+        },
+        "item3": {
+          "title": "Financial Controller Resume",
+          "keyword": "Controller",
+          "description": "Senior leadership template for financial controllers overseeing accounting departments."
+        }
+      },
+      "section3": {
+        "title": "Accountant Resume Tips",
+        "tip0": "List your credentials prominently: CPA, CMA, ACCA, EA — place them after your name in the header.",
+        "tip1": "Quantify your impact: 'Reduced month-end close time from 10 days to 5 days' or 'Managed $50M general ledger'.",
+        "tip2": "Include all relevant software: QuickBooks, SAP, Oracle Financials, Excel (advanced), NetSuite.",
+        "tip3": "Highlight audit and compliance experience — regulators and employers value this heavily.",
+        "tip4": "For senior roles, emphasize leadership: team size managed, budgets overseen, and process improvements."
+      },
+      "faq": {
+        "title": "Accountant Resume FAQ",
+        "subtitle": "Accounting-specific resume questions answered.",
+        "q0": {
+          "question": "What should an accountant put on their resume?",
+          "answer": "CPA or other credentials, accounting software proficiency, relevant work experience with financial metrics, education, and technical skills (Excel, financial modeling, ERP systems)."
+        },
+        "q1": {
+          "question": "Should I list my CPA exam scores?",
+          "answer": "Not typically necessary unless you passed all four sections recently. Simply noting 'CPA — Licensed in [State]' is sufficient."
+        },
+        "q2": {
+          "question": "How do I write an accounting resume with no experience?",
+          "answer": "Highlight your accounting coursework, internship experience, Excel and accounting software skills, and any volunteer bookkeeping or finance work."
+        },
+        "q3": {
+          "question": "How long should an accountant's resume be?",
+          "answer": "1 page for entry-level and junior accountants. 1-2 pages for experienced CPAs and senior finance professionals."
+        },
+        "q4": {
+          "question": "What accounting software should I list on my resume?",
+          "answer": "List all you're proficient in: QuickBooks, SAP, Oracle, NetSuite, Sage, Xero, Microsoft Dynamics, and advanced Excel (pivot tables, VLOOKUP, Power BI)."
+        }
+      },
+      "finalCta": {
+        "title": "Balance Your Career With a Great Resume",
+        "description": "Build a professional accountant resume that highlights your credentials and financial expertise. ATS-ready and recruiter-approved.",
+        "ctaText": "Create My Accounting Resume"
+      }
+    },
+    "salesResumeTemplatePage": {
+      "meta": {
+        "title": "Sales Resume Template — Free Professional Sales CV",
+        "description": "Create a powerful sales resume with our free templates. Highlight your quota attainment, revenue generated, and client relationships. ATS-optimized for top sales positions."
+      },
+      "breadcrumbName": "Sales Resume Template",
+      "hero": {
+        "badgeText": "For Sales Professionals",
+        "h1Before": "Sales Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Close Deals",
+        "subtitle": "Results-driven resume templates for sales professionals at every level.",
+        "description": "Sales is all about numbers — and so is a great sales resume. Our templates help you present your quota attainment, revenue impact, and relationship-building track record.",
+        "primaryCtaText": "Build My Sales Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Sales Professionals",
+        "subtitle": "Templates that lead with what sales managers care about most.",
+        "item0": {
+          "title": "Revenue & Quota Focus",
+          "description": "Lead with your biggest numbers: quota attainment %, revenue generated, and deals closed."
+        },
+        "item1": {
+          "title": "Industry & Product Showcase",
+          "description": "Space to highlight the industries, products, and deal sizes you've worked with."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Keyword-rich formatting that passes sales-specific ATS filters across B2B, B2C, and enterprise roles."
+        }
+      },
+      "section2": {
+        "title": "Templates by Sales Role",
+        "subtitle": "Find the right format for your sales specialty.",
+        "item0": {
+          "title": "Account Executive Resume",
+          "keyword": "AE",
+          "description": "Highlights new business development, quota attainment, and enterprise deal management."
+        },
+        "item1": {
+          "title": "SDR / BDR Resume",
+          "keyword": "SDR / BDR",
+          "description": "Outbound prospecting, pipeline generation, and meeting-booked metrics for sales development roles."
+        },
+        "item2": {
+          "title": "Sales Manager Resume",
+          "keyword": "Manager",
+          "description": "Team leadership, coaching, and revenue target achievement for frontline sales managers."
+        },
+        "item3": {
+          "title": "Key Account Manager Resume",
+          "keyword": "KAM",
+          "description": "Client retention, upsell revenue, and long-term relationship management for account management roles."
+        }
+      },
+      "section3": {
+        "title": "Sales Resume Tips",
+        "tip0": "Always lead with your quota attainment: '127% of quota in 2024', 'Top 5% of sales org nationally'.",
+        "tip1": "Include deal size and cycle length: 'Closed enterprise deals averaging $180K ARR with 6-month sales cycles'.",
+        "tip2": "List your CRM expertise: Salesforce, HubSpot, Pipedrive, Outreach, ZoomInfo.",
+        "tip3": "Quantify your pipeline: 'Generated $2.4M in qualified pipeline through outbound prospecting'.",
+        "tip4": "Awards and rankings matter: 'President's Club 2023', 'Rookie of the Year', '#1 SDR Q3 2024'."
+      },
+      "faq": {
+        "title": "Sales Resume FAQ",
+        "subtitle": "Sales-specific resume questions answered.",
+        "q0": {
+          "question": "What numbers should I put on a sales resume?",
+          "answer": "Quota attainment percentage, total revenue generated, deal sizes, conversion rates, pipeline created, and any rankings or awards."
+        },
+        "q1": {
+          "question": "How do I write a sales resume with no formal sales experience?",
+          "answer": "Highlight customer-facing experience, persuasion, and revenue impact from any role — retail, waitstaff, fundraising, or customer service all demonstrate sales skills."
+        },
+        "q2": {
+          "question": "Should I list products I've sold on my resume?",
+          "answer": "Yes, especially if you're applying within the same industry. Product knowledge and domain expertise are valuable to sales hiring managers."
+        },
+        "q3": {
+          "question": "How long should a sales resume be?",
+          "answer": "1 page for most sales reps. Senior AEs, VPs, and directors can use 2 pages if their track record justifies it."
+        },
+        "q4": {
+          "question": "Is a cover letter important for sales roles?",
+          "answer": "Yes — and treat it like a sales pitch. Opening with a strong hook and closing with a clear call to action mirrors the skills you're being hired for."
+        }
+      },
+      "finalCta": {
+        "title": "Close the Deal on Your Next Role",
+        "description": "Build a sales resume that leads with your biggest wins and gets you in front of the right hiring managers.",
+        "ctaText": "Create My Sales Resume"
+      }
+    },
+    "customerServiceResumePage": {
+      "meta": {
+        "title": "Customer Service Resume — Free Templates for Support Professionals",
+        "description": "Create a professional customer service resume with our free templates. Highlight your CSAT scores, resolution rates, and communication skills. ATS-optimized for top support roles."
+      },
+      "breadcrumbName": "Customer Service Resume",
+      "hero": {
+        "badgeText": "For Support Professionals",
+        "h1Before": "Customer Service ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Show Your Value",
+        "subtitle": "Professional resume templates for customer service, support, and client success professionals.",
+        "description": "Your ability to resolve issues, build rapport, and exceed expectations deserves a resume that communicates it clearly. Our templates help you stand out in the competitive support job market.",
+        "primaryCtaText": "Build My CS Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Customer-Facing Professionals",
+        "subtitle": "Templates that highlight service excellence.",
+        "item0": {
+          "title": "Metrics-Driven",
+          "description": "CSAT scores, first-call resolution rates, and customer satisfaction metrics front and center."
+        },
+        "item1": {
+          "title": "Multi-Channel Experience",
+          "description": "Space for phone, email, chat, social, and in-person support experience across channels."
+        },
+        "item2": {
+          "title": "ATS-Compliant Format",
+          "description": "Clean formatting that passes ATS filters for retail, hospitality, SaaS, and BPO sectors."
+        }
+      },
+      "section2": {
+        "title": "Templates by Support Role",
+        "subtitle": "Find the right format for your service specialty.",
+        "item0": {
+          "title": "Customer Support Agent Resume",
+          "keyword": "Support",
+          "description": "For inbound support agents handling tickets, chats, and calls across B2C and B2B contexts."
+        },
+        "item1": {
+          "title": "Customer Success Manager Resume",
+          "keyword": "CSM",
+          "description": "Retention-focused layout with NPS, churn reduction, and upsell metrics for CSM roles."
+        },
+        "item2": {
+          "title": "Retail Customer Service Resume",
+          "keyword": "Retail",
+          "description": "In-person service, POS experience, and sales conversion metrics for retail positions."
+        },
+        "item3": {
+          "title": "Technical Support Resume",
+          "keyword": "Tech Support",
+          "description": "Troubleshooting, ticket resolution, and technical tool proficiency for L1/L2 support roles."
+        }
+      },
+      "section3": {
+        "title": "Customer Service Resume Tips",
+        "tip0": "Lead with service metrics: 'Maintained 96% CSAT score across 80+ weekly customer interactions'.",
+        "tip1": "List your support tools: Zendesk, Freshdesk, Intercom, Salesforce Service Cloud, HubSpot.",
+        "tip2": "Highlight multi-channel experience: phone, email, live chat, social media support.",
+        "tip3": "Show your resolution skills: 'Resolved 95% of cases on first contact without escalation'.",
+        "tip4": "For CS Manager roles, include retention and NPS metrics: 'Improved NPS from 42 to 67 in 8 months'."
+      },
+      "faq": {
+        "title": "Customer Service Resume FAQ",
+        "subtitle": "Support-specific resume questions answered.",
+        "q0": {
+          "question": "What should a customer service rep put on their resume?",
+          "answer": "CSAT/NPS scores, call/ticket volumes handled, tools used (Zendesk, Intercom), languages spoken, first-contact resolution rate, and any awards for service excellence."
+        },
+        "q1": {
+          "question": "How do I write a customer service resume with no experience?",
+          "answer": "Emphasize communication skills, empathy, patience, and any customer-facing experience — retail, food service, volunteering, or tutoring all count."
+        },
+        "q2": {
+          "question": "What skills are most important for a customer service resume?",
+          "answer": "Active listening, conflict resolution, empathy, product knowledge, multitasking, and CRM software proficiency are the top skills employers look for."
+        },
+        "q3": {
+          "question": "How long should a customer service resume be?",
+          "answer": "1 page for frontline support roles. CS Managers and Director-level professionals with multi-year track records can use 2 pages."
+        },
+        "q4": {
+          "question": "Should I include languages on my customer service resume?",
+          "answer": "Absolutely. Bilingual and multilingual support professionals are highly valued. List language proficiency levels clearly."
+        }
+      },
+      "finalCta": {
+        "title": "Turn Great Service Into Great Opportunities",
+        "description": "Build a customer service resume that communicates your empathy, skills, and impact. Get hired by the teams that value service excellence.",
+        "ctaText": "Create My CS Resume"
+      }
+    },
+    "productManagerResumePage": {
+      "meta": {
+        "title": "Product Manager Resume — Templates for PM Professionals",
+        "description": "Create a professional product manager resume with our free templates. Highlight your product launches, user growth, and cross-functional leadership. ATS-optimized for top PM roles."
+      },
+      "breadcrumbName": "Product Manager Resume",
+      "hero": {
+        "badgeText": "For Product Managers",
+        "h1Before": "Product Manager ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Ship Results",
+        "subtitle": "Strategic resume templates for product managers, APMs, and product leaders.",
+        "description": "Your product instincts deserve a resume that communicates vision, execution, and impact. Our templates help you tell the story of the products you've built and the metrics you've moved.",
+        "primaryCtaText": "Build My PM Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Built for Product Professionals",
+        "subtitle": "Templates that capture the PM mindset.",
+        "item0": {
+          "title": "Impact-First Structure",
+          "description": "Lead with product outcomes: DAU growth, revenue impact, retention improvements, and feature adoption."
+        },
+        "item1": {
+          "title": "Cross-Functional Skills",
+          "description": "Space to showcase collaboration with engineering, design, data, and go-to-market teams."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Keyword-rich formatting that passes PM-specific ATS at top tech companies and startups."
+        }
+      },
+      "section2": {
+        "title": "Templates by PM Level",
+        "subtitle": "Find the right format for your PM career stage.",
+        "item0": {
+          "title": "Associate PM Resume",
+          "keyword": "APM",
+          "description": "Entry-level PM template highlighting analytical skills, user research, and product thinking."
+        },
+        "item1": {
+          "title": "Senior PM Resume",
+          "keyword": "Senior PM",
+          "description": "Ownership-focused layout with product metrics, team leadership, and strategic decision-making examples."
+        },
+        "item2": {
+          "title": "Technical PM Resume",
+          "keyword": "Technical PM",
+          "description": "Engineering background template for PMs who work closely with dev teams on complex technical products."
+        },
+        "item3": {
+          "title": "Head of Product Resume",
+          "keyword": "Product Leader",
+          "description": "Executive layout for product leaders overseeing product org, strategy, and roadmap at scale."
+        }
+      },
+      "section3": {
+        "title": "Product Manager Resume Tips",
+        "tip0": "Frame every bullet as a product problem, solution, and outcome: 'Led redesign of onboarding flow → 34% improvement in D7 retention'.",
+        "tip1": "Include your product metrics: MAU, DAU, NPS, churn rate, conversion rate, ARR impact.",
+        "tip2": "List PM tools: JIRA, Productboard, Amplitude, Mixpanel, Figma, Notion, Roadmunk.",
+        "tip3": "Show cross-functional leadership: mention collaboration with engineering, design, data, marketing, and sales.",
+        "tip4": "Certifications add credibility: CSPO, PSPO, PMC, Pragmatic Institute, or relevant Google/Coursera PM certificates."
+      },
+      "faq": {
+        "title": "Product Manager Resume FAQ",
+        "subtitle": "PM-specific resume questions answered.",
+        "q0": {
+          "question": "What should a product manager put on their resume?",
+          "answer": "Product launches with metrics, user growth and retention data, cross-functional leadership examples, PM tools proficiency, and any relevant certifications or degrees."
+        },
+        "q1": {
+          "question": "How do I get a PM job without prior PM experience?",
+          "answer": "Transition from adjacent roles (engineering, design, data, consulting). Highlight product thinking in your current role, build a portfolio of product case studies, and consider APM programs."
+        },
+        "q2": {
+          "question": "Do product managers need technical skills on their resume?",
+          "answer": "Not always, but technical literacy is valued. Mention SQL, data analysis, API familiarity, or technical tools if relevant to the role."
+        },
+        "q3": {
+          "question": "How long should a product manager's resume be?",
+          "answer": "1 page for early-career PMs. Senior PMs and product leaders can use 2 pages if they have extensive product portfolios."
+        },
+        "q4": {
+          "question": "Should I include a product portfolio link?",
+          "answer": "Yes. Link to product case studies, a personal website, or a portfolio deck that showcases your product thinking and outcomes."
+        }
+      },
+      "finalCta": {
+        "title": "Ship Your Career to the Next Level",
+        "description": "Build a product manager resume that captures your vision, execution, and impact. Stand out at top tech companies and startups.",
+        "ctaText": "Create My PM Resume"
+      }
+    },
+    "chronologicalResumeTemplatePage": {
+      "meta": {
+        "title": "Chronological Resume Template — The Most Effective Resume Format",
+        "description": "Download a free chronological resume template. The most widely accepted format by recruiters and ATS. Perfect for professionals with consistent work history. Easy to customize."
+      },
+      "breadcrumbName": "Chronological Resume Template",
+      "hero": {
+        "badgeText": "Most Popular Format",
+        "h1Before": "Chronological Resume ",
+        "h1Accent": "Templates",
+        "h1After": " — The Gold Standard",
+        "subtitle": "The reverse-chronological format is the most accepted resume format worldwide.",
+        "description": "Trusted by recruiters and passed by every ATS, the chronological resume format is the safest and most effective choice for most job seekers.",
+        "primaryCtaText": "Use a Chronological Template",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Why Chronological Resumes Work Best",
+        "subtitle": "The format recruiters and ATS prefer.",
+        "item0": {
+          "title": "Recruiter-Preferred",
+          "description": "Hiring managers scan resumes faster when they follow the familiar reverse-chronological order they expect."
+        },
+        "item1": {
+          "title": "ATS-Perfect",
+          "description": "Chronological formatting is the most reliably parsed by ATS systems — zero compatibility issues."
+        },
+        "item2": {
+          "title": "Shows Career Progression",
+          "description": "Clearly communicates your career trajectory and growth over time, which employers love to see."
+        }
+      },
+      "section2": {
+        "title": "Chronological Templates by Experience Level",
+        "subtitle": "Find the right fit for where you are in your career.",
+        "item0": {
+          "title": "Junior Professional Template",
+          "keyword": "0-3 Years",
+          "description": "Education-prominent chronological layout for early-career professionals."
+        },
+        "item1": {
+          "title": "Mid-Level Professional Template",
+          "keyword": "3-10 Years",
+          "description": "Experience-first layout that showcases career progression and growing responsibilities."
+        },
+        "item2": {
+          "title": "Senior Professional Template",
+          "keyword": "10+ Years",
+          "description": "Concise two-page format that surfaces the most impactful achievements from a long career."
+        },
+        "item3": {
+          "title": "Executive Template",
+          "keyword": "C-Suite",
+          "description": "Leadership-focused chronological format for senior executives and directors."
+        }
+      },
+      "section3": {
+        "title": "Chronological Resume Tips",
+        "tip0": "List your most recent position first and work backwards — never list jobs oldest first.",
+        "tip1": "For each role, include: company, title, location, dates, and 3-5 bullet points of achievements.",
+        "tip2": "Use consistent date formatting throughout: 'Jan 2022 – Present' or '01/2022 – Present'.",
+        "tip3": "Gaps in employment should be addressed in a cover letter or briefly in an interview — don't omit jobs to hide gaps.",
+        "tip4": "Limit your work history to the last 10-15 years for most professional roles."
+      },
+      "faq": {
+        "title": "Chronological Resume FAQ",
+        "subtitle": "Questions about the chronological resume format.",
+        "q0": {
+          "question": "What is a chronological resume?",
+          "answer": "A chronological (or reverse-chronological) resume lists your work experience starting with your most recent job, working backwards. It's the most widely used and accepted format."
+        },
+        "q1": {
+          "question": "Who should use a chronological resume format?",
+          "answer": "Anyone with a consistent work history and no major gaps. It's the best choice for most professionals in any industry."
+        },
+        "q2": {
+          "question": "When should I NOT use a chronological format?",
+          "answer": "If you have significant employment gaps, are changing careers, or have very limited experience. In those cases, a functional or hybrid format may work better."
+        },
+        "q3": {
+          "question": "Is a chronological resume better for ATS?",
+          "answer": "Yes. The reverse-chronological format is the most reliably parsed by applicant tracking systems."
+        },
+        "q4": {
+          "question": "How far back should I go on a chronological resume?",
+          "answer": "Generally 10-15 years is sufficient for most professionals. Older experience can be summarized or omitted unless it's specifically relevant."
+        }
+      },
+      "finalCta": {
+        "title": "Start with the Format That Works",
+        "description": "Build a chronological resume using the format recruiters trust and ATS love. Professional, clear, and effective.",
+        "ctaText": "Use a Chronological Template"
+      }
+    },
+    "functionalResumeTemplatePage": {
+      "meta": {
+        "title": "Functional Resume Template — Skills-Based Format for Career Changers",
+        "description": "Download a free functional resume template. Perfect for career changers, employment gaps, and entry-level candidates. Lead with skills, not work history."
+      },
+      "breadcrumbName": "Functional Resume Template",
+      "hero": {
+        "badgeText": "Skills-Based Format",
+        "h1Before": "Functional Resume ",
+        "h1Accent": "Templates",
+        "h1After": " — Lead with Your Skills",
+        "subtitle": "The skills-based resume format for candidates who want to lead with capabilities, not job titles.",
+        "description": "If your work history doesn't tell the full story of your abilities, a functional resume helps you lead with skills, competencies, and achievements instead.",
+        "primaryCtaText": "Use a Functional Template",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "When a Functional Resume Makes Sense",
+        "subtitle": "The format that puts your skills first.",
+        "item0": {
+          "title": "Career Changers",
+          "description": "Transition to a new industry by emphasizing transferable skills over unrelated work history."
+        },
+        "item1": {
+          "title": "Employment Gaps",
+          "description": "Minimize the visibility of career breaks by leading with what you can do, not when you did it."
+        },
+        "item2": {
+          "title": "Entry-Level Candidates",
+          "description": "Turn limited work experience into a strengths-focused presentation of your capabilities."
+        }
+      },
+      "section2": {
+        "title": "Functional Templates for Key Situations",
+        "subtitle": "Formats tailored to specific career circumstances.",
+        "item0": {
+          "title": "Career Change Template",
+          "keyword": "Transition",
+          "description": "Highlights transferable skills and reframes past experience for a new target industry."
+        },
+        "item1": {
+          "title": "Return to Work Template",
+          "keyword": "Gap Year",
+          "description": "For professionals returning after a career break, parental leave, or personal circumstances."
+        },
+        "item2": {
+          "title": "Military to Civilian Template",
+          "keyword": "Veteran",
+          "description": "Translates military experience and leadership into civilian job market language."
+        },
+        "item3": {
+          "title": "Freelancer to Employee Template",
+          "keyword": "Freelance",
+          "description": "Organizes freelance work and projects into a cohesive, employer-friendly format."
+        }
+      },
+      "section3": {
+        "title": "Functional Resume Tips",
+        "tip0": "Group your skills into 3-4 competency categories (e.g., Leadership, Technical Skills, Communication) with bullet points under each.",
+        "tip1": "Still include a brief work history section at the bottom — omitting it entirely raises red flags for ATS and recruiters.",
+        "tip2": "Lead with a strong professional summary that bridges your past experience and target role.",
+        "tip3": "Quantify achievements within skill categories: 'Leadership: Managed volunteer teams of 10+ across 3 community events'.",
+        "tip4": "Use the hybrid/combination format if possible — it balances skills emphasis with a recognizable chronological section."
+      },
+      "faq": {
+        "title": "Functional Resume FAQ",
+        "subtitle": "Questions about the functional resume format.",
+        "q0": {
+          "question": "What is a functional resume?",
+          "answer": "A functional resume organizes your content by skills and competencies rather than work history. It de-emphasizes job titles and dates in favor of what you can do."
+        },
+        "q1": {
+          "question": "Do recruiters like functional resumes?",
+          "answer": "Many recruiters are skeptical of functional resumes as they can seem to hide career gaps or lack of experience. Use a hybrid format when possible."
+        },
+        "q2": {
+          "question": "Is a functional resume ATS-friendly?",
+          "answer": "Less so than chronological resumes. ATS systems are optimized for work history sections. Including a brief work history still helps with ATS parsing."
+        },
+        "q3": {
+          "question": "When should I use a functional resume?",
+          "answer": "When changing careers, returning from a long gap, or when your skills are more relevant than your specific job titles and employers."
+        },
+        "q4": {
+          "question": "What's the difference between functional and hybrid resume formats?",
+          "answer": "A hybrid (combination) resume leads with skills but also includes a full chronological work history. It's generally preferred over a pure functional format."
+        }
+      },
+      "finalCta": {
+        "title": "Lead with What You Can Do",
+        "description": "Build a functional resume that highlights your strongest skills and reframes your experience for any role.",
+        "ctaText": "Create My Functional Resume"
+      }
+    },
+    "onePageResumeTemplatePage": {
+      "meta": {
+        "title": "One Page Resume Template — Concise, Impactful, Professional",
+        "description": "Download a free one-page resume template. Compact, well-designed layouts that fit everything recruiters need on a single page. ATS-optimized and easy to customize."
+      },
+      "breadcrumbName": "One Page Resume",
+      "hero": {
+        "badgeText": "One Page Only",
+        "h1Before": "One-Page Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Make an Impact",
+        "subtitle": "Prove you can communicate value concisely with a powerful single-page resume.",
+        "description": "One page is not a limitation — it's a discipline. Recruiters spend an average of 6 seconds on a resume. A focused, well-structured one-pager maximizes every second.",
+        "primaryCtaText": "Build My One-Page Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Why One Page Often Wins",
+        "subtitle": "The science behind the single-page resume.",
+        "item0": {
+          "title": "Recruiter-Friendly",
+          "description": "Hiring managers review hundreds of resumes. A one-pager that hits every key point immediately is a gift."
+        },
+        "item1": {
+          "title": "Forces Prioritization",
+          "description": "Fitting your career on one page forces you to highlight only your most impactful achievements."
+        },
+        "item2": {
+          "title": "ATS-Optimized",
+          "description": "Single-page resumes are parsed cleanly by ATS with minimal formatting issues."
+        }
+      },
+      "section2": {
+        "title": "One-Page Templates for Every Level",
+        "subtitle": "Compact designs without compromising content.",
+        "item0": {
+          "title": "Graduate One-Pager",
+          "keyword": "Graduate",
+          "description": "Clean, education-first single-page layout for new graduates entering the job market."
+        },
+        "item1": {
+          "title": "Professional One-Pager",
+          "keyword": "Mid-Career",
+          "description": "Efficient layout for experienced professionals summarizing 5-10 years on a single, scannable page."
+        },
+        "item2": {
+          "title": "Executive One-Pager",
+          "keyword": "Executive",
+          "description": "High-impact single page for senior professionals applying to leadership roles."
+        },
+        "item3": {
+          "title": "Internship One-Pager",
+          "keyword": "Internship",
+          "description": "Student-friendly single-page format highlighting education, skills, and early experience."
+        }
+      },
+      "section3": {
+        "title": "One-Page Resume Tips",
+        "tip0": "Cut anything that doesn't directly support your case for the role. No filler, no irrelevant experience.",
+        "tip1": "Use 10-11pt body font and tight but readable line spacing to maximize content density.",
+        "tip2": "Combine short tenures under one employer entry if they were internal promotions or role changes.",
+        "tip3": "Use concise bullet points — 1-2 lines maximum per bullet, starting with a strong action verb.",
+        "tip4": "Shrink margins slightly (0.5 inch instead of 1 inch) to reclaim space without sacrificing readability."
+      },
+      "faq": {
+        "title": "One-Page Resume FAQ",
+        "subtitle": "Questions about keeping your resume to one page.",
+        "q0": {
+          "question": "Is a one-page resume really necessary?",
+          "answer": "For most professionals with under 10 years of experience, yes. One page demonstrates conciseness and respect for the recruiter's time."
+        },
+        "q1": {
+          "question": "Can a senior professional use a one-page resume?",
+          "answer": "It's impressive if done well, but two pages are acceptable for senior professionals with 15+ years of experience. Quality over quantity always."
+        },
+        "q2": {
+          "question": "What should I cut to make my resume fit one page?",
+          "answer": "Remove: jobs older than 10 years, unrelated positions, references section, high school education (if you have a degree), and any filler responsibilities."
+        },
+        "q3": {
+          "question": "Should I use a smaller font to fit everything on one page?",
+          "answer": "Only down to 10pt for body text. Below that, readability suffers. Instead, trim content and adjust margins before shrinking font size."
+        },
+        "q4": {
+          "question": "Is a one-page resume better for ATS?",
+          "answer": "ATS doesn't care about page count, but single-page resumes typically have less formatting complexity, which reduces parsing errors."
+        }
+      },
+      "finalCta": {
+        "title": "Less is More — Build Your One-Pager",
+        "description": "Create a focused, powerful one-page resume that communicates your full value in the time a recruiter actually has.",
+        "ctaText": "Build My One-Page Resume"
+      }
+    },
+    "resumeFormat2025Page": {
+      "meta": {
+        "title": "Resume Format 2025 — The Best Resume Formats for Today's Job Market",
+        "description": "Discover the best resume formats for 2025. ATS trends, modern layouts, and design tips to make your resume stand out in today's competitive job market. Free templates included."
+      },
+      "breadcrumbName": "Resume Format 2025",
+      "hero": {
+        "badgeText": "2025 Best Practices",
+        "h1Before": "The Best Resume ",
+        "h1Accent": "Formats for 2025",
+        "h1After": " — Stay Ahead",
+        "subtitle": "Stay current with the resume formats and design trends hiring managers prefer in 2025.",
+        "description": "The job market in 2025 demands resumes that work for both humans and AI screening tools. Here's what's working — and what's not.",
+        "primaryCtaText": "Create a 2025-Ready Resume",
+        "secondaryCtaText": "Browse Templates"
+      },
+      "section1": {
+        "title": "What Works in 2025",
+        "subtitle": "Resume trends and ATS best practices for today's market.",
+        "item0": {
+          "title": "AI & ATS First",
+          "description": "With AI-powered screening now standard, ATS-optimization is more critical than ever. Clean, keyword-rich formats win."
+        },
+        "item1": {
+          "title": "Concise & Scannable",
+          "description": "Recruiters increasingly use AI to pre-screen — resumes that are clear, structured, and quantified perform best."
+        },
+        "item2": {
+          "title": "Hybrid Format Rising",
+          "description": "The combination (hybrid) format — skills summary + chronological history — is the top-performing format in 2025."
+        }
+      },
+      "section2": {
+        "title": "Top Resume Formats in 2025",
+        "subtitle": "Choose the format that fits your situation.",
+        "item0": {
+          "title": "Reverse-Chronological",
+          "keyword": "Most Popular",
+          "description": "Still the safest and most widely accepted format. Preferred by recruiters and optimized for ATS."
+        },
+        "item1": {
+          "title": "Hybrid / Combination",
+          "keyword": "Trending 2025",
+          "description": "Leads with a skills summary or professional profile, followed by chronological work history. The format of the moment."
+        },
+        "item2": {
+          "title": "ATS-Optimized Minimal",
+          "keyword": "Tech Companies",
+          "description": "Ultra-clean, single-column layouts designed specifically for tech sector ATS and recruiter screens."
+        },
+        "item3": {
+          "title": "Executive / Leadership",
+          "keyword": "Senior Roles",
+          "description": "Achievement-forward formats for senior professionals targeting C-suite and VP-level positions."
+        }
+      },
+      "section3": {
+        "title": "2025 Resume Tips",
+        "tip0": "Tailor your resume to each role — AI screening tools score resumes by keyword match against job descriptions.",
+        "tip1": "Add a Skills or Core Competencies section near the top for fast ATS keyword recognition.",
+        "tip2": "Avoid graphics, charts, and icons in your main resume — ATS still can't reliably read them in 2025.",
+        "tip3": "Include a professional summary of 2-3 sentences — AI tools use it to understand your overall profile.",
+        "tip4": "PDF remains the safest format for most applications. Always check job posting requirements before submitting."
+      },
+      "faq": {
+        "title": "Resume Format 2025 FAQ",
+        "subtitle": "Your questions about modern resume formats answered.",
+        "q0": {
+          "question": "What is the best resume format in 2025?",
+          "answer": "The reverse-chronological format remains the gold standard. The hybrid (combination) format is increasingly popular for mid-career and senior professionals."
+        },
+        "q1": {
+          "question": "Should I use a one-column or two-column resume in 2025?",
+          "answer": "One-column remains safest for ATS. Some modern ATS systems now handle two-column layouts, but one-column guarantees compatibility across all platforms."
+        },
+        "q2": {
+          "question": "Are visual or graphic resumes a good idea in 2025?",
+          "answer": "For creative roles and human audiences, potentially yes. For ATS-heavy processes, visual elements remain risky. Have both versions ready."
+        },
+        "q3": {
+          "question": "Should I include a photo on my resume in 2025?",
+          "answer": "In the US and UK, no. In France, Germany, and many European countries, a professional headshot remains standard."
+        },
+        "q4": {
+          "question": "How is AI changing resume screening in 2025?",
+          "answer": "Many companies now use AI to pre-screen resumes before a human ever sees them. Keyword optimization, clear formatting, and tailored content are more important than ever."
+        }
+      },
+      "finalCta": {
+        "title": "Build a Resume That Works in 2025",
+        "description": "Create a modern, ATS-optimized resume using the formats and strategies that are working right now in today's job market.",
+        "ctaText": "Create My 2025 Resume"
+      }
+    },
+    "careerChangeResumePage": {
+      "meta": {
+        "title": "Career Change Resume — Templates for Successful Industry Transitions",
+        "description": "Create a career change resume that highlights your transferable skills and makes a compelling case for your transition. Free templates for professionals switching industries."
+      },
+      "breadcrumbName": "Career Change Resume",
+      "hero": {
+        "badgeText": "For Career Changers",
+        "h1Before": "Career Change ",
+        "h1Accent": "Resume Templates",
+        "h1After": " That Open New Doors",
+        "subtitle": "Your past experience is more relevant than you think. Let us help you reframe it.",
+        "description": "Switching industries is a bold move that requires a bold resume strategy. Our career change templates help you translate your existing experience into the language of your new field.",
+        "primaryCtaText": "Build My Career Change Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "How to Position a Career Change",
+        "subtitle": "Strategies that help hiring managers see your potential.",
+        "item0": {
+          "title": "Transferable Skills Focus",
+          "description": "Lead with capabilities that cross industry lines — leadership, project management, communication, analysis."
+        },
+        "item1": {
+          "title": "Bridge Your Narrative",
+          "description": "A strong professional summary explains your pivot and connects your past experience to your new direction."
+        },
+        "item2": {
+          "title": "New Field, Right Keywords",
+          "description": "Our templates help you incorporate the vocabulary of your target industry to pass ATS filters."
+        }
+      },
+      "section2": {
+        "title": "Common Career Change Paths We Support",
+        "subtitle": "Templates tailored to popular transitions.",
+        "item0": {
+          "title": "Corporate to Nonprofit Resume",
+          "keyword": "Purpose-Driven",
+          "description": "Reframe corporate impact language into mission-driven contributions for nonprofit roles."
+        },
+        "item1": {
+          "title": "Military to Civilian Resume",
+          "keyword": "Veteran",
+          "description": "Translate military leadership, discipline, and logistics experience into civilian employer language."
+        },
+        "item2": {
+          "title": "Teacher to Corporate Resume",
+          "keyword": "Education → Business",
+          "description": "Position classroom management, curriculum design, and communication skills for business roles."
+        },
+        "item3": {
+          "title": "Technical to Management Resume",
+          "keyword": "IC to Manager",
+          "description": "Transition from individual contributor to leadership roles by emphasizing mentoring and cross-team collaboration."
+        }
+      },
+      "section3": {
+        "title": "Career Change Resume Steps",
+        "step0": {
+          "title": "Write a Powerful Summary",
+          "description": "Open with a 3-4 sentence summary that acknowledges your pivot and makes the compelling case for why your background is an asset in your new field."
+        },
+        "step1": {
+          "title": "Lead with a Skills Section",
+          "description": "Place a core competencies or skills section near the top, filled with keywords from your target industry."
+        },
+        "step2": {
+          "title": "Reframe Your Experience",
+          "description": "Rewrite each bullet point in your work history to emphasize transferable skills and outcomes relevant to your new target role."
+        },
+        "step3": {
+          "title": "Add New Field Credentials",
+          "description": "Include any certifications, courses, bootcamps, or volunteer work that demonstrate your commitment to the new field."
+        }
+      },
+      "faq": {
+        "title": "Career Change Resume FAQ",
+        "subtitle": "Guidance for professionals making a bold transition.",
+        "q0": {
+          "question": "How do I write a resume when changing careers?",
+          "answer": "Use a hybrid format that leads with transferable skills, write a strong summary explaining your pivot, reframe your work history in the language of your target industry, and add any new credentials."
+        },
+        "q1": {
+          "question": "Should I explain my career change in my resume?",
+          "answer": "Address it briefly in your professional summary. A well-written 2-3 sentence statement that connects your past to your future can be very compelling."
+        },
+        "q2": {
+          "question": "Do I need new qualifications to change careers?",
+          "answer": "Not always. But targeted certifications, bootcamps, or volunteer experience in your new field significantly strengthen your case."
+        },
+        "q3": {
+          "question": "How do I handle a career change in an interview?",
+          "answer": "Prepare a clear, confident 'why I'm making this change' narrative that emphasizes what you bring from your previous field and your genuine enthusiasm for the new direction."
+        },
+        "q4": {
+          "question": "Is a cover letter important for career changers?",
+          "answer": "More important than for most. Your cover letter is your opportunity to tell the full story of your transition and make the case that your unique background is a competitive advantage."
+        }
+      },
+      "finalCta": {
+        "title": "Your New Career Starts Now",
+        "description": "Build a career change resume that reframes your experience, speaks the language of your new field, and gives you the best shot at your transition.",
+        "ctaText": "Create My Career Change Resume"
+      }
+    },
+    "howToWriteAResumePage": {
+      "meta": {
+        "title": "How to Write a Resume — Step-by-Step Guide for 2025",
+        "description": "Learn how to write a professional resume with our complete step-by-step guide. From structure to keywords, formatting to content — everything you need to create a resume that gets interviews."
+      },
+      "breadcrumbName": "How to Write a Resume",
+      "hero": {
+        "badgeText": "Complete Guide",
+        "h1Before": "How to Write a ",
+        "h1Accent": "Resume",
+        "h1After": " That Gets Interviews in 2025",
+        "subtitle": "A complete, step-by-step guide to writing a professional resume from scratch.",
+        "description": "Whether it's your first resume or a major update, this guide walks you through every section, every decision, and every best practice to create a resume that stands out.",
+        "primaryCtaText": "Start Building My Resume",
+        "secondaryCtaText": "Use a Template"
+      },
+      "section1": {
+        "title": "The Building Blocks of a Great Resume",
+        "subtitle": "Every section, explained.",
+        "item0": {
+          "title": "The Essential Sections",
+          "description": "Contact info, professional summary, work experience, education, and skills are the core of every effective resume."
+        },
+        "item1": {
+          "title": "ATS-Ready Structure",
+          "description": "Learn how to structure your resume to pass automated screening systems before a human ever reads it."
+        },
+        "item2": {
+          "title": "Content That Converts",
+          "description": "The difference between a resume that gets interviews and one that doesn't comes down to how you frame your experience."
+        }
+      },
+      "section2": {
+        "title": "The Sections of a Professional Resume",
+        "subtitle": "What to include in each section.",
+        "item0": {
+          "title": "Contact & Header",
+          "keyword": "Start Here",
+          "description": "Name, phone, professional email, LinkedIn, location (city/state), and portfolio or GitHub link."
+        },
+        "item1": {
+          "title": "Professional Summary",
+          "keyword": "2-3 Sentences",
+          "description": "A powerful snapshot of who you are, what you offer, and what you're looking for. Tailored to each role."
+        },
+        "item2": {
+          "title": "Work Experience",
+          "keyword": "Core Section",
+          "description": "Reverse-chronological list of roles with company, title, dates, and 3-5 achievement-focused bullet points each."
+        },
+        "item3": {
+          "title": "Education & Skills",
+          "keyword": "Supporting Sections",
+          "description": "Degree(s), institution, graduation year. Skills section with technical and soft skills relevant to your target role."
+        }
+      },
+      "section3": {
+        "title": "How to Write a Resume — Step by Step",
+        "step0": {
+          "title": "Choose Your Format",
+          "description": "Select reverse-chronological (most common), functional (skills-based), or hybrid (combination). When in doubt, use chronological."
+        },
+        "step1": {
+          "title": "Fill in Your Information",
+          "description": "Start with contact info, then write your professional summary last (it's easier once the rest is done)."
+        },
+        "step2": {
+          "title": "Write Achievement-Focused Bullets",
+          "description": "For each role, write bullets that start with action verbs and include quantified results. 'Increased X by Y%' not 'responsible for X'."
+        },
+        "step3": {
+          "title": "Optimize for ATS and Tailor to the Role",
+          "description": "Add keywords from the job description. Customize your summary and top bullets for each application."
+        }
+      },
+      "faq": {
+        "title": "Resume Writing FAQ",
+        "subtitle": "Common questions about writing a professional resume.",
+        "q0": {
+          "question": "What should I put at the top of my resume?",
+          "answer": "Your contact information (name, phone, email, LinkedIn, location) followed by a professional summary or objective statement."
+        },
+        "q1": {
+          "question": "How do I write resume bullet points?",
+          "answer": "Start each bullet with a strong action verb (Led, Built, Increased, Managed). Include what you did, how you did it, and the result — ideally with a number."
+        },
+        "q2": {
+          "question": "How do I tailor my resume for a specific job?",
+          "answer": "Read the job description, identify the key requirements and keywords, then mirror that language in your summary, skills section, and bullet points."
+        },
+        "q3": {
+          "question": "Should I include references on my resume?",
+          "answer": "No. 'References available upon request' is outdated and wastes space. Employers ask for references separately when they need them."
+        },
+        "q4": {
+          "question": "How long should my resume be?",
+          "answer": "One page for most professionals with under 10 years of experience. Two pages for senior professionals. Never more than two pages unless applying for academic or research positions."
+        }
+      },
+      "finalCta": {
+        "title": "Ready to Write Your Resume?",
+        "description": "Stop overthinking and start building. Our resume builder guides you through every section with expert tips and ready-to-use templates.",
+        "ctaText": "Build My Resume Now"
+      }
+    },
+    "resumeSummaryExamplesPage": {
+      "meta": {
+        "title": "Resume Summary Examples — Professional Summaries for Every Industry",
+        "description": "Get inspired by our resume summary examples for every industry and career level. Learn how to write a powerful professional summary that grabs recruiters in seconds."
+      },
+      "breadcrumbName": "Resume Summary Examples",
+      "hero": {
+        "badgeText": "Proven Examples",
+        "h1Before": "Resume Summary ",
+        "h1Accent": "Examples",
+        "h1After": " That Hook Recruiters Instantly",
+        "subtitle": "The professional summary is the first thing recruiters read — make it count.",
+        "description": "A strong resume summary can be the difference between a callback and a rejection. See real examples by industry and level, and use our builder to write yours in minutes.",
+        "primaryCtaText": "Write My Resume Summary",
+        "secondaryCtaText": "Browse Templates"
+      },
+      "section1": {
+        "title": "What Makes a Great Resume Summary?",
+        "subtitle": "The 3 elements every powerful summary includes.",
+        "item0": {
+          "title": "Who You Are",
+          "description": "Your professional identity in 5-7 words: 'Results-driven software engineer with 5 years of fintech experience'."
+        },
+        "item1": {
+          "title": "What You Offer",
+          "description": "Your top 2-3 skills or strengths most relevant to the target role."
+        },
+        "item2": {
+          "title": "What You're Seeking",
+          "description": "A clear statement of your career direction that aligns with the employer's needs."
+        }
+      },
+      "section2": {
+        "title": "Resume Summary Examples by Profession",
+        "subtitle": "Real examples you can adapt for your own resume.",
+        "item0": {
+          "title": "Marketing Manager Summary",
+          "keyword": "Marketing",
+          "description": "Results-driven digital marketing manager with 7 years of experience scaling SaaS brands. Expert in demand generation, content marketing, and paid media with a track record of 3x ROI."
+        },
+        "item1": {
+          "title": "Software Developer Summary",
+          "keyword": "Tech",
+          "description": "Full-stack developer with 4 years of experience building scalable web applications in React and Node.js. Passionate about clean code, developer experience, and shipping products users love."
+        },
+        "item2": {
+          "title": "Project Manager Summary",
+          "keyword": "PM",
+          "description": "PMP-certified project manager with 10 years delivering complex IT projects on time and under budget. Expert in Agile methodology with a track record of 95%+ on-time delivery."
+        },
+        "item3": {
+          "title": "Career Changer Summary",
+          "keyword": "Transition",
+          "description": "Former educator transitioning to L&D consulting with 8 years of curriculum design and facilitating training for diverse learners. Known for transforming complex topics into engaging learning experiences."
+        }
+      },
+      "section3": {
+        "title": "How to Write a Resume Summary",
+        "tip0": "Write your summary LAST. Fill in the rest of your resume first — then summarize the best of it in 2-4 sentences.",
+        "tip1": "Tailor your summary to each role. Mirror keywords from the job description to boost ATS relevance.",
+        "tip2": "Avoid vague claims: 'hardworking team player' means nothing. Specific skills and achievements do.",
+        "tip3": "Use numbers when possible: '8 years of experience', '3x revenue growth', '$2M portfolio managed'.",
+        "tip4": "Your summary should answer: who are you, what's your strongest value, and why are you applying?"
+      },
+      "faq": {
+        "title": "Resume Summary FAQ",
+        "subtitle": "Questions about writing a professional summary.",
+        "q0": {
+          "question": "What's the difference between a resume summary and objective?",
+          "answer": "A summary describes your experience and what you offer. An objective states what you're looking for. Summaries are preferred for experienced professionals; objectives work for entry-level candidates."
+        },
+        "q1": {
+          "question": "How long should a resume summary be?",
+          "answer": "2-4 sentences (40-80 words). Enough to communicate your value proposition without taking up too much prime real estate at the top of your resume."
+        },
+        "q2": {
+          "question": "Should I always include a resume summary?",
+          "answer": "For most professionals, yes. The only exception is very early-career candidates who have little to summarize — they may prefer a brief objective statement instead."
+        },
+        "q3": {
+          "question": "Can I copy resume summary examples?",
+          "answer": "Use them as inspiration, not copy-paste. A good summary is specific to YOUR experience. Customize any example with your actual achievements, years of experience, and target role."
+        },
+        "q4": {
+          "question": "Do ATS systems read the resume summary?",
+          "answer": "Yes. ATS scans your entire resume including the summary for keywords. Make sure your summary contains the most important keywords from your target job description."
+        }
+      },
+      "finalCta": {
+        "title": "Write a Summary That Gets You Noticed",
+        "description": "Build your resume with a powerful professional summary that makes recruiters want to keep reading.",
+        "ctaText": "Create My Resume Now"
+      }
+    },
+    "internshipResumeTemplatePage": {
+      "meta": {
+        "title": "Internship Resume Template — Land Your First Internship",
+        "description": "Create a professional internship resume with our free templates. Designed for students and recent graduates applying for their first internship. Highlight education, projects, and skills."
+      },
+      "breadcrumbName": "Internship Resume Template",
+      "hero": {
+        "badgeText": "For Internship Seekers",
+        "h1Before": "Internship Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Get You Hired",
+        "subtitle": "Purpose-built resume templates to help students land their dream internship.",
+        "description": "Your first internship can launch your career. Our templates are designed to help students with little to no experience create a compelling, professional resume that impresses recruiters.",
+        "primaryCtaText": "Build My Internship Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Internship Applicants",
+        "subtitle": "Templates that work even when experience is limited.",
+        "item0": {
+          "title": "Education-First Layout",
+          "description": "Lead with your degree, institution, GPA, and relevant coursework — exactly what internship recruiters want to see first."
+        },
+        "item1": {
+          "title": "Projects & Activities",
+          "description": "Showcase academic projects, clubs, volunteering, and any part-time work as evidence of skills and initiative."
+        },
+        "item2": {
+          "title": "ATS-Ready for Campus Recruiting",
+          "description": "Clean formatting that passes campus recruiting ATS systems at top companies and firms."
+        }
+      },
+      "section2": {
+        "title": "Internship Templates by Industry",
+        "subtitle": "Find the right starting point for your target internship.",
+        "item0": {
+          "title": "Tech / Software Internship Resume",
+          "keyword": "SWE Intern",
+          "description": "GitHub projects, coding skills, and relevant coursework for software engineering and tech internships."
+        },
+        "item1": {
+          "title": "Business / Finance Internship Resume",
+          "keyword": "Finance Intern",
+          "description": "Excel skills, case study experience, and business coursework for banking, consulting, and finance internships."
+        },
+        "item2": {
+          "title": "Marketing Internship Resume",
+          "keyword": "Marketing Intern",
+          "description": "Social media, content creation, and any campaign or analytics experience for marketing internships."
+        },
+        "item3": {
+          "title": "Research / Academic Internship Resume",
+          "keyword": "Research Intern",
+          "description": "Lab experience, thesis work, and data analysis skills for research and academic institution internships."
+        }
+      },
+      "section3": {
+        "title": "How to Build a Strong Internship Resume",
+        "step0": {
+          "title": "Lead with Your Education",
+          "description": "University, degree, major, expected graduation date, GPA (if 3.0+), and relevant coursework or honors."
+        },
+        "step1": {
+          "title": "Add Academic Projects",
+          "description": "Describe 2-3 academic projects relevant to your target internship. Treat them like mini work experiences with outcomes."
+        },
+        "step2": {
+          "title": "List Your Skills",
+          "description": "Technical skills, software, programming languages, foreign languages — anything relevant to the internship role."
+        },
+        "step3": {
+          "title": "Include Extracurriculars",
+          "description": "Clubs, sports, student government, competitions, and volunteer work all demonstrate initiative and well-roundedness."
+        }
+      },
+      "faq": {
+        "title": "Internship Resume FAQ",
+        "subtitle": "Questions about applying for your first internship.",
+        "q0": {
+          "question": "How do I make an internship resume with no experience?",
+          "answer": "Focus on your education, academic projects, extracurricular activities, skills, and any volunteer or part-time work. Internship recruiters expect limited experience from students."
+        },
+        "q1": {
+          "question": "Should I include my GPA on an internship resume?",
+          "answer": "Yes, if it's 3.0/4.0 or higher. Many internship programs, especially in finance and consulting, have GPA cutoffs."
+        },
+        "q2": {
+          "question": "How long should an internship resume be?",
+          "answer": "Always one page. You simply won't have enough experience to justify more, and one-page resumes are universally expected from students."
+        },
+        "q3": {
+          "question": "What do companies look for in internship resumes?",
+          "answer": "Academic performance, relevant coursework, personal projects or GitHub, extracurricular leadership, and the specific technical or analytical skills mentioned in the internship posting."
+        },
+        "q4": {
+          "question": "Should I tailor my internship resume for each application?",
+          "answer": "Yes. Even for internships, tailoring your skills section and highlighting the most relevant projects for each position significantly improves your chances."
+        }
+      },
+      "finalCta": {
+        "title": "Your Internship Journey Starts Here",
+        "description": "Build a professional internship resume that impresses campus recruiters and gets you into your dream program.",
+        "ctaText": "Build My Internship Resume"
+      }
+    },
+    "resumeSkillsSectionPage": {
+      "meta": {
+        "title": "Resume Skills Section — What Skills to Put on a Resume in 2025",
+        "description": "Learn what skills to put on your resume and how to format your skills section for maximum ATS impact. Complete guide with examples for every industry."
+      },
+      "breadcrumbName": "Resume Skills Section",
+      "hero": {
+        "badgeText": "Skills That Get Hired",
+        "h1Before": "The Perfect ",
+        "h1Accent": "Resume Skills Section",
+        "h1After": " — A Complete Guide",
+        "subtitle": "Know exactly which skills to list, how to organize them, and how to make them ATS-friendly.",
+        "description": "Your skills section is one of the first things both ATS and recruiters scan. Done right, it confirms you're a match. Done wrong, your resume gets filtered before anyone reads it.",
+        "primaryCtaText": "Build My Resume with Skills",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Hard Skills vs Soft Skills — What to Include",
+        "subtitle": "Understanding what belongs in your skills section.",
+        "item0": {
+          "title": "Hard Skills",
+          "description": "Technical, measurable abilities: programming languages, software tools, certifications, methodologies. Always include these."
+        },
+        "item1": {
+          "title": "Soft Skills",
+          "description": "Interpersonal abilities: communication, leadership, problem-solving. Include selectively — show them through achievements instead."
+        },
+        "item2": {
+          "title": "ATS Keyword Matching",
+          "description": "Mirror skills directly from the job description. ATS scores your resume by how many required skills you list."
+        }
+      },
+      "section2": {
+        "title": "Skills by Industry",
+        "subtitle": "The most valuable skills to list by profession.",
+        "item0": {
+          "title": "Tech & Development Skills",
+          "keyword": "Tech",
+          "description": "Python, JavaScript, React, SQL, AWS, Docker, Git, REST APIs, Agile, CI/CD, TypeScript."
+        },
+        "item1": {
+          "title": "Marketing Skills",
+          "keyword": "Marketing",
+          "description": "Google Analytics, SEO, SEM, HubSpot, Salesforce, A/B testing, content strategy, Meta Ads, Klaviyo."
+        },
+        "item2": {
+          "title": "Finance & Accounting Skills",
+          "keyword": "Finance",
+          "description": "Excel (advanced), QuickBooks, SAP, financial modeling, GAAP, variance analysis, Power BI."
+        },
+        "item3": {
+          "title": "Project Management Skills",
+          "keyword": "PM",
+          "description": "JIRA, Asana, Agile/Scrum, PMP, risk management, stakeholder communication, MS Project, Confluence."
+        }
+      },
+      "section3": {
+        "title": "Resume Skills Section Tips",
+        "tip0": "Mirror the exact wording from the job description — if they say 'React.js', use 'React.js' not just 'React'.",
+        "tip1": "Organize skills into categories: Technical Skills, Tools & Software, Languages, Certifications.",
+        "tip2": "Only list skills you can confidently discuss in an interview. Don't pad your list.",
+        "tip3": "For technical roles, consider adding proficiency levels: Expert, Proficient, Familiar.",
+        "tip4": "Update your skills section for every application — different roles prioritize different skills."
+      },
+      "faq": {
+        "title": "Resume Skills Section FAQ",
+        "subtitle": "Everything about building a great skills section.",
+        "q0": {
+          "question": "How many skills should I list on my resume?",
+          "answer": "10-15 relevant skills is optimal. Too few looks sparse; too many looks like keyword stuffing. Focus on quality and relevance."
+        },
+        "q1": {
+          "question": "Should soft skills be on a resume?",
+          "answer": "Use soft skills sparingly. Instead of just listing 'leadership', show it in your work experience bullets: 'Led a team of 8 engineers to deliver X'."
+        },
+        "q2": {
+          "question": "Where should the skills section go on a resume?",
+          "answer": "For most resumes, after work experience. For career changers or candidates with limited experience, placing it higher (after the summary) can be effective."
+        },
+        "q3": {
+          "question": "Should I rate my skill proficiency on my resume?",
+          "answer": "Avoid visual skill bars or ratings — they're unreliable and ATS can't read them. Instead, use written levels (Proficient, Familiar) or let your experience speak for itself."
+        },
+        "q4": {
+          "question": "How do I know which skills to include for a specific job?",
+          "answer": "Read the job description carefully. Highlight every skill mentioned, then check which ones you have. Include those — they're exactly what the ATS is looking for."
+        }
+      },
+      "finalCta": {
+        "title": "Build a Skills Section That Gets You Past ATS",
+        "description": "Create a resume with a perfectly structured skills section that matches what recruiters and ATS are looking for in your target role.",
+        "ctaText": "Build My Resume Now"
+      }
+    },
+    "executiveResumeTemplatePage": {
+      "meta": {
+        "title": "Executive Resume Template — For C-Suite and Senior Leadership Roles",
+        "description": "Create a powerful executive resume with our professional templates. Designed for CEOs, VPs, directors, and senior leaders. Highlight your leadership impact, board experience, and P&L ownership."
+      },
+      "breadcrumbName": "Executive Resume Template",
+      "hero": {
+        "badgeText": "C-Suite & Senior Leadership",
+        "h1Before": "Executive Resume ",
+        "h1Accent": "Templates",
+        "h1After": " for Senior Leaders",
+        "subtitle": "Command the attention of boards, executive recruiters, and talent acquisition teams with a senior-level resume.",
+        "description": "At the executive level, your resume is a leadership brief — not a job list. Our executive templates help you present strategic impact, organizational leadership, and board-level achievements with gravitas.",
+        "primaryCtaText": "Build My Executive Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "What Makes an Executive Resume Different",
+        "subtitle": "Senior-level resumes require a different approach.",
+        "item0": {
+          "title": "Strategic Impact First",
+          "description": "Lead with your biggest organizational wins: revenue grown, companies transformed, markets entered, teams built."
+        },
+        "item1": {
+          "title": "Board & Stakeholder Presence",
+          "description": "Sections to highlight board memberships, investor relations, C-suite collaboration, and external advisory roles."
+        },
+        "item2": {
+          "title": "Enterprise ATS-Compliant",
+          "description": "Even executive searches now use ATS and LinkedIn Recruiter. Our templates ensure you pass every filter."
+        }
+      },
+      "section2": {
+        "title": "Executive Templates by Role",
+        "subtitle": "Tailored formats for senior leadership positions.",
+        "item0": {
+          "title": "CEO / President Resume",
+          "keyword": "CEO",
+          "description": "Vision-forward layout for chief executives highlighting P&L ownership, company growth, and board relationships."
+        },
+        "item1": {
+          "title": "VP / Director Resume",
+          "keyword": "VP / Director",
+          "description": "Results-driven format for VP and Director-level leaders with department ownership and cross-functional impact."
+        },
+        "item2": {
+          "title": "CFO Resume",
+          "keyword": "CFO",
+          "description": "Finance leadership template highlighting capital allocation, investor relations, and financial transformation."
+        },
+        "item3": {
+          "title": "CTO / VP Engineering Resume",
+          "keyword": "CTO / VP Eng",
+          "description": "Technical leadership format featuring platform scale, engineering org development, and technology strategy."
+        }
+      },
+      "section3": {
+        "title": "Executive Resume Steps",
+        "step0": {
+          "title": "Open with an Executive Summary",
+          "description": "A 4-6 sentence leadership brief that encapsulates your scope of impact, leadership philosophy, and most significant career achievements."
+        },
+        "step1": {
+          "title": "Quantify at the Organizational Level",
+          "description": "Think P&L, headcount, revenue, market share, and transformation scope — not just department-level metrics."
+        },
+        "step2": {
+          "title": "Showcase Board and Advisory Experience",
+          "description": "List board memberships, advisory roles, and investor/stakeholder relationships that demonstrate executive presence."
+        },
+        "step3": {
+          "title": "Curate, Don't List Everything",
+          "description": "At the executive level, less is more. Include only roles and achievements that demonstrate increasing scope and strategic leadership."
+        }
+      },
+      "faq": {
+        "title": "Executive Resume FAQ",
+        "subtitle": "Questions about senior-level resume strategy.",
+        "q0": {
+          "question": "How is an executive resume different from a standard resume?",
+          "answer": "Executive resumes focus on strategic impact, organizational leadership, P&L ownership, and board-level experience rather than task-based responsibilities."
+        },
+        "q1": {
+          "question": "How long should an executive resume be?",
+          "answer": "2 pages is standard for most executive roles. A concise 2-page resume that hits every key achievement is more powerful than a rambling 4-pager."
+        },
+        "q2": {
+          "question": "Do executives need to worry about ATS?",
+          "answer": "Yes, even at the senior level. Executive search firms and many corporations run resumes through ATS or AI screening tools. ATS-friendly formatting remains important."
+        },
+        "q3": {
+          "question": "Should an executive use LinkedIn in addition to a resume?",
+          "answer": "Absolutely. At the executive level, LinkedIn is as important as your resume. Ensure your profile is consistent with, and expands on, your resume."
+        },
+        "q4": {
+          "question": "Should an executive include a professional photo on their resume?",
+          "answer": "In the US and UK, photos on resumes are not standard regardless of seniority. In some European markets and for public-facing roles, a headshot may be appropriate."
+        }
+      },
+      "finalCta": {
+        "title": "Lead Your Next Chapter with Confidence",
+        "description": "Build an executive resume that commands respect, communicates strategic vision, and positions you for the leadership roles you've earned.",
+        "ctaText": "Create My Executive Resume"
+      }
     }
   },
   "dashboard": {
