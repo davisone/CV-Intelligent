@@ -59,6 +59,9 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
           <Link href="/" className="text-2xl font-bold text-[#722F37]">CV Builder</Link>
           <nav className="flex items-center gap-4">
             <LocaleSwitcher />
+            <Link href="/blog" className="text-sm font-medium text-[#1F1A17] hover:text-[#722F37] transition-colors hidden sm:inline">
+              Blog
+            </Link>
             <Link href="/login" className="text-sm font-medium text-[#1F1A17] hover:text-[#722F37] transition-colors">
               {tPage('loginText')}
             </Link>
