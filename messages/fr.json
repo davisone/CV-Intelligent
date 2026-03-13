@@ -335,7 +335,28 @@
       "signupText": "Créer mon CV gratuit",
       "createThisCv": "Créer ce CV",
       "homeText": "Accueil",
-      "freeBadge": "Gratuit • Sans carte bancaire • Export PDF"
+      "freeBadge": "Gratuit • Sans carte bancaire • Export PDF",
+      "relatedTitle": "Explorez d'autres Templates & Guides",
+      "relatedPages": {
+        "free-resume-builder": "Créateur de CV Gratuit",
+        "ats-resume-template": "Template CV ATS",
+        "how-to-write-a-resume": "Comment Faire un CV (EN)",
+        "student-resume-template": "CV Étudiant (EN)",
+        "software-engineer-resume": "CV Développeur (EN)",
+        "resume-format-2025": "Format CV 2025",
+        "career-change-resume": "CV Reconversion (EN)",
+        "entry-level-resume": "CV Débutant (EN)",
+        "modern-resume-template": "CV Moderne (EN)",
+        "executive-resume-template": "CV Cadre (EN)",
+        "internship-resume-template": "CV Stage (EN)",
+        "resume-skills-section": "Compétences CV (EN)",
+        "cv-etudiant": "CV Étudiant",
+        "modele-cv-gratuit": "Modèle CV Gratuit",
+        "comment-faire-un-cv": "Comment Faire un CV",
+        "cv-developpeur": "CV Développeur",
+        "cv-sans-experience": "CV Sans Expérience",
+        "cv-alternance": "CV Alternance"
+      }
     },
     "templatesPage": {
       "meta": {

@@ -335,7 +335,28 @@
       "signupText": "Create my free resume",
       "createThisCv": "Create this Resume",
       "homeText": "Home",
-      "freeBadge": "Free • No credit card • PDF export"
+      "freeBadge": "Free • No credit card • PDF export",
+      "relatedTitle": "Explore More Templates & Guides",
+      "relatedPages": {
+        "free-resume-builder": "Free Resume Builder",
+        "ats-resume-template": "ATS Resume Template",
+        "how-to-write-a-resume": "How to Write a Resume",
+        "student-resume-template": "Student Resume Template",
+        "software-engineer-resume": "Software Engineer Resume",
+        "resume-format-2025": "Resume Format 2025",
+        "career-change-resume": "Career Change Resume",
+        "entry-level-resume": "Entry Level Resume",
+        "modern-resume-template": "Modern Resume Template",
+        "executive-resume-template": "Executive Resume",
+        "internship-resume-template": "Internship Resume",
+        "resume-skills-section": "Resume Skills Guide",
+        "cv-etudiant": "Student CV (FR)",
+        "modele-cv-gratuit": "Free CV Template (FR)",
+        "comment-faire-un-cv": "How to Make a CV (FR)",
+        "cv-developpeur": "Developer CV (FR)",
+        "cv-sans-experience": "CV No Experience (FR)",
+        "cv-alternance": "Work-Study CV (FR)"
+      }
     },
     "templatesPage": {
       "meta": {

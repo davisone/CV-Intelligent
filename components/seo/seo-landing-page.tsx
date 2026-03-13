@@ -196,6 +196,28 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
           </div>
         </section>
 
+        {/* MAILLAGE INTERNE */}
+        <section className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#1F1A17] mb-8 text-center">{tPage('relatedTitle')}</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {(Object.entries(tPage.raw('relatedPages') as Record<string, string>))
+                .filter(([slug]) => slug !== config.canonicalPath.replace('/', ''))
+                .slice(0, 9)
+                .map(([slug, label]) => (
+                  <Link
+                    key={slug}
+                    href={`/${slug}`}
+                    className="flex items-center gap-2 px-4 py-3 bg-[#F3EDE5] border border-[#E0D6C8] rounded-xl text-sm font-medium text-[#1F1A17] hover:border-[#722F37]/40 hover:bg-[#EDE4D8] transition-colors"
+                  >
+                    <FileText className="w-4 h-4 text-[#722F37] shrink-0" />
+                    <span className="truncate">{label}</span>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA FINALE */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
