@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2, FileText, Sparkles } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
-import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd } from '@/components/seo/json-ld'
 import { Footer } from '@/components/layout/footer'
 import { LocaleSwitcher } from '@/components/ui/locale-switcher'
 
@@ -42,6 +42,16 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
         { name: t('breadcrumbName'), url: `${baseUrl}${config.canonicalPath}` },
       ]} />
       <FAQJsonLd questions={faqItems} />
+      {config.section3Type === 'steps' && (
+        <HowToJsonLd
+          name={t('section3.title')}
+          description={t('hero.subtitle')}
+          steps={[0, 1, 2, 3].map((i) => ({
+            name: t(`section3.step${i}.title`),
+            text: t(`section3.step${i}.description`),
+          }))}
+        />
+      )}
 
       {/* Header sticky */}
       <header className="border-b border-[#E0D6C8] bg-[#FBF8F4]/80 backdrop-blur-sm sticky top-0 z-50">

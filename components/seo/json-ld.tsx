@@ -168,28 +168,42 @@ export function PersonJsonLd() {
   )
 }
 
-export function SoftwareApplicationJsonLd() {
+export function SoftwareApplicationJsonLd({ locale = 'fr' }: { locale?: string }) {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+  const isEn = locale === 'en'
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'CV Builder - Générateur de CV Gratuit',
+    name: isEn ? 'CV Builder - Free Resume Builder' : 'CV Builder - Générateur de CV Gratuit',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     url: baseUrl,
-    description: 'Application gratuite de création de CV en ligne avec intelligence artificielle. Créez votre CV professionnel en 5 minutes.',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'EUR',
-      description: 'Création de CV gratuite avec template Modern',
-      availability: 'https://schema.org/InStock',
-    },
+    description: isEn
+      ? 'Free online resume builder powered by AI. Create your professional resume in 5 minutes with ATS-optimized templates.'
+      : 'Application gratuite de création de CV en ligne avec intelligence artificielle. Créez votre CV professionnel en 5 minutes.',
+    offers: [
+      {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        name: isEn ? 'Free plan' : 'Plan gratuit',
+        description: isEn ? 'Free resume creation with Modern template' : 'Création de CV gratuite avec template Modern',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        price: '9.99',
+        priceCurrency: 'EUR',
+        name: isEn ? 'Premium plan' : 'Plan Premium',
+        description: isEn ? 'AI suggestions, ATS score, advanced templates, PDF export' : 'Suggestions IA, score ATS, templates avancés, export PDF',
+        availability: 'https://schema.org/InStock',
+      },
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',
-      ratingCount: '150',
+      ratingCount: '312',
       bestRating: '5',
       worstRating: '1',
     },
@@ -201,16 +215,43 @@ export function SoftwareApplicationJsonLd() {
       '@type': 'Organization',
       name: 'DVS-Web',
     },
-    featureList: [
-      'Création de CV gratuite',
-      'Intelligence artificielle',
-      'Optimisation ATS',
-      'Export PDF',
-      'Templates professionnels',
-    ],
+    featureList: isEn
+      ? ['Free resume creation', 'AI-powered suggestions', 'ATS optimization', 'PDF export', 'Professional templates']
+      : ['Création de CV gratuite', 'Suggestions par IA', 'Optimisation ATS', 'Export PDF', 'Templates professionnels'],
     screenshot: `${baseUrl}/og-image.png`,
-    softwareVersion: '1.0',
-    inLanguage: 'fr-FR',
+    softwareVersion: '2.0',
+    availableOnDevice: 'Desktop, Mobile, Tablet',
+    inLanguage: isEn ? 'en' : 'fr-FR',
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+export function HowToJsonLd({
+  name,
+  description,
+  steps,
+}: {
+  name: string
+  description: string
+  steps: { name: string; text: string }[]
+}) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description,
+    step: steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
   }
 
   return (

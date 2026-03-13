@@ -38,7 +38,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <OrganizationJsonLd />
       <LocalBusinessJsonLd />
       <PersonJsonLd />
-      <SoftwareApplicationJsonLd />
+      <SoftwareApplicationJsonLd locale={locale} />
       <FAQJsonLd questions={faqQuestions} />
 
       {/* Header */}
