@@ -13,6 +13,99 @@
     "retry": "Retry",
     "or": "or"
   },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Enter your credentials to access your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signup": "Create an account",
+      "orContinueWith": "Or continue with",
+      "errors": {
+        "invalidCredentials": "Invalid email or password",
+        "generic": "An error occurred while signing in"
+      }
+    },
+    "signup": {
+      "title": "Create an account",
+      "subtitle": "Sign up to start creating your resumes",
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "password": "Password",
+      "passwordHint": "Minimum 8 characters, 1 uppercase, 1 lowercase, 1 digit",
+      "confirm": "Confirm password",
+      "acceptTerms": "I accept the terms of service and privacy policy",
+      "submit": "Create my account",
+      "alreadyAccount": "Already have an account?",
+      "login": "Sign in",
+      "orContinueWith": "Or continue with",
+      "success": "Account created successfully!",
+      "validation": {
+        "nameRequired": "Name must be at least 2 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "passwordRequired": "Password is required",
+        "passwordTooShort": "Password must be at least 8 characters",
+        "passwordNeedsUppercase": "Password must contain at least one uppercase letter",
+        "passwordNeedsLowercase": "Password must contain at least one lowercase letter",
+        "passwordNeedsDigit": "Password must contain at least one digit",
+        "passwordMismatch": "Passwords do not match"
+      },
+      "errors": {
+        "emailExists": "This email is already in use",
+        "generic": "An error occurred during signup"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email to reset your password",
+      "email": "Email",
+      "submit": "Send reset link",
+      "backToLogin": "Back to login",
+      "successTitle": "Email sent",
+      "success": "A password reset email has been sent",
+      "successNote": "Check your inbox and spam folder.",
+      "rememberPassword": "Remember your password?",
+      "validation": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email"
+      },
+      "errors": {
+        "sent": "Email sent!",
+        "generic": "An error occurred"
+      }
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your new password",
+      "password": "New password",
+      "confirm": "Confirm password",
+      "passwordHint": "Min. 8 characters, 1 uppercase, 1 lowercase, 1 digit",
+      "submit": "Reset",
+      "successTitle": "Password reset",
+      "successMessage": "Your password has been reset successfully",
+      "successButton": "Sign in",
+      "newLinkButton": "Request a new link",
+      "invalidTokenMessage": "This reset link is invalid or has expired.",
+      "validation": {
+        "passwordTooShort": "Password must be at least 8 characters",
+        "passwordNeedsUppercase": "Password must contain an uppercase letter",
+        "passwordNeedsLowercase": "Password must contain a lowercase letter",
+        "passwordNeedsDigit": "Password must contain a digit",
+        "passwordMismatch": "Passwords do not match"
+      },
+      "errors": {
+        "tokenInvalid": "Invalid link",
+        "mismatch": "Passwords do not match",
+        "generic": "An error occurred"
+      }
+    }
+  },
   "nav": {
     "dashboard": "Dashboard",
     "myResumes": "My Resumes",

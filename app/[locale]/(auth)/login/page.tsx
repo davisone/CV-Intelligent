@@ -242,7 +242,7 @@ function LoginForm() {
               </div>
               <div className="relative flex justify-center text-xs uppercase">
                 <span className="bg-[#F3EDE5] px-2 text-[#6B6560]">
-                  Ou continuer avec
+                  {t('orContinueWith')}
                 </span>
               </div>
             </div>

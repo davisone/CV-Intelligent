@@ -20,12 +20,12 @@ export default function ForgotPasswordPage() {
     e.preventDefault()
 
     if (!email) {
-      setError('L\'email est requis')
+      setError(t('validation.emailRequired'))
       return
     }
 
     if (!/\S+@\S+\.\S+/.test(email)) {
-      setError('Email invalide')
+      setError(t('validation.emailInvalid'))
       return
     }
 
@@ -41,14 +41,13 @@ export default function ForgotPasswordPage() {
 
       if (response.ok) {
         setIsSubmitted(true)
-        toast.success('Email envoyé !')
+        toast.success(t('errors.sent'))
       } else {
-        // On affiche toujours un message de succès pour des raisons de sécurité
-        // (ne pas révéler si l'email existe ou non)
+        // Afficher toujours un message de succès pour des raisons de sécurité
         setIsSubmitted(true)
       }
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -63,7 +62,7 @@ export default function ForgotPasswordPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <CardTitle>Email envoyé</CardTitle>
+          <CardTitle>{t('successTitle')}</CardTitle>
           <CardDescription>
             {t('success')}
           </CardDescription>
@@ -71,7 +70,7 @@ export default function ForgotPasswordPage() {
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-[#6B6560] text-center">
-              Vérifiez votre boîte de réception et vos spams.
+              {t('successNote')}
             </p>
             <Link href="/login" className="block">
               <Button variant="outline" className="w-full">
@@ -117,7 +116,7 @@ export default function ForgotPasswordPage() {
         </form>
 
         <p className="mt-6 text-center text-sm text-[#6B6560]">
-          Vous vous souvenez de votre mot de passe ?{' '}
+          {t('rememberPassword')}{' '}
           <Link href="/login" className="text-[#722F37] hover:text-[#8B3A44] hover:underline font-medium">
             {t('backToLogin')}
           </Link>

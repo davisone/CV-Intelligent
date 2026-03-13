@@ -39,29 +39,29 @@ export default function SignupPage() {
     const newErrors: Record<string, string> = {}
 
     if (!formData.name || formData.name.length < 2) {
-      newErrors.name = 'Le nom doit contenir au moins 2 caractères'
+      newErrors.name = t('validation.nameRequired')
     }
 
     if (!formData.email) {
-      newErrors.email = 'L\'email est requis'
+      newErrors.email = t('validation.emailRequired')
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email invalide'
+      newErrors.email = t('validation.emailInvalid')
     }
 
     if (!formData.password) {
-      newErrors.password = 'Le mot de passe est requis'
+      newErrors.password = t('validation.passwordRequired')
     } else if (formData.password.length < 8) {
-      newErrors.password = 'Le mot de passe doit contenir au moins 8 caractères'
+      newErrors.password = t('validation.passwordTooShort')
     } else if (!/[A-Z]/.test(formData.password)) {
-      newErrors.password = 'Le mot de passe doit contenir au moins une majuscule'
+      newErrors.password = t('validation.passwordNeedsUppercase')
     } else if (!/[a-z]/.test(formData.password)) {
-      newErrors.password = 'Le mot de passe doit contenir au moins une minuscule'
+      newErrors.password = t('validation.passwordNeedsLowercase')
     } else if (!/[0-9]/.test(formData.password)) {
-      newErrors.password = 'Le mot de passe doit contenir au moins un chiffre'
+      newErrors.password = t('validation.passwordNeedsDigit')
     }
 
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Les mots de passe ne correspondent pas'
+      newErrors.confirmPassword = t('validation.passwordMismatch')
     }
 
     setErrors(newErrors)
@@ -99,7 +99,7 @@ export default function SignupPage() {
         return
       }
 
-      toast.success('Compte créé avec succès !')
+      toast.success(t('success'))
 
       // Auto-login after signup
       const result = await signIn('credentials', {
@@ -204,7 +204,7 @@ export default function SignupPage() {
           </div>
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-[#F3EDE5] px-2 text-[#6B6560]">
-              Ou continuer avec
+              {t('orContinueWith')}
             </span>
           </div>
         </div>

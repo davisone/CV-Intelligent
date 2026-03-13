@@ -47,10 +47,10 @@ function ResetPasswordForm() {
   const [isSuccess, setIsSuccess] = useState(false)
 
   const validatePassword = (pwd: string) => {
-    if (pwd.length < 8) return 'Le mot de passe doit contenir au moins 8 caractères'
-    if (!/[A-Z]/.test(pwd)) return 'Le mot de passe doit contenir une majuscule'
-    if (!/[a-z]/.test(pwd)) return 'Le mot de passe doit contenir une minuscule'
-    if (!/[0-9]/.test(pwd)) return 'Le mot de passe doit contenir un chiffre'
+    if (pwd.length < 8) return t('validation.passwordTooShort')
+    if (!/[A-Z]/.test(pwd)) return t('validation.passwordNeedsUppercase')
+    if (!/[a-z]/.test(pwd)) return t('validation.passwordNeedsLowercase')
+    if (!/[0-9]/.test(pwd)) return t('validation.passwordNeedsDigit')
     return null
   }
 
@@ -87,15 +87,15 @@ function ResetPasswordForm() {
 
       if (response.ok) {
         setIsSuccess(true)
-        toast.success(t('success'))
+        toast.success(t('successMessage'))
       } else {
-        toast.error(data.error || 'Une erreur est survenue')
+        toast.error(data.error || t('errors.generic'))
         if (data.error?.includes('expiré') || data.error?.includes('invalide')) {
           setErrors({ token: data.error })
         }
       }
     } catch {
-      toast.error('Une erreur est survenue')
+      toast.error(t('errors.generic'))
     } finally {
       setIsLoading(false)
     }
@@ -112,13 +112,13 @@ function ResetPasswordForm() {
           </div>
           <CardTitle>{t('errors.tokenInvalid')}</CardTitle>
           <CardDescription>
-            Ce lien de réinitialisation est invalide ou a expiré.
+            {t('invalidTokenMessage')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Link href="/forgot-password" className="block">
             <Button className="w-full">
-              Demander un nouveau lien
+              {t('newLinkButton')}
             </Button>
           </Link>
         </CardContent>
@@ -135,15 +135,15 @@ function ResetPasswordForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <CardTitle>Mot de passe réinitialisé</CardTitle>
+          <CardTitle>{t('successTitle')}</CardTitle>
           <CardDescription>
-            {t('success')}
+            {t('successMessage')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Link href="/login" className="block">
             <Button className="w-full">
-              Se connecter
+              {t('successButton')}
             </Button>
           </Link>
         </CardContent>
@@ -183,7 +183,7 @@ function ResetPasswordForm() {
               disabled={isLoading}
             />
             <p className="text-xs text-[#6B6560]">
-              Min. 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre
+              {t('passwordHint')}
             </p>
           </div>
 
