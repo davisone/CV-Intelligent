@@ -1,15 +1,15 @@
 import type { MetadataRoute } from 'next'
+import { getAllPosts } from '@/lib/blog'
 
 const locales = ['fr', 'en'] as const
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
 
   const routes = [
     { path: '', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/guide', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/templates', priority: 0.8, changeFrequency: 'weekly' as const },
-    // Pages SEO longue traîne
     { path: '/cv-etudiant', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/modele-cv-gratuit', priority: 0.90, changeFrequency: 'monthly' as const },
     { path: '/modele-cv-stage', priority: 0.85, changeFrequency: 'monthly' as const },
@@ -40,7 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/cv-graphiste', priority: 0.80, changeFrequency: 'monthly' as const },
     { path: '/cv-juriste', priority: 0.80, changeFrequency: 'monthly' as const },
     { path: '/cv-logistique', priority: 0.80, changeFrequency: 'monthly' as const },
-    // Pages longue traîne anglaises — batch 1
     { path: '/free-resume-builder', priority: 0.88, changeFrequency: 'monthly' as const },
     { path: '/ats-resume-template', priority: 0.88, changeFrequency: 'monthly' as const },
     { path: '/professional-cv-maker', priority: 0.85, changeFrequency: 'monthly' as const },
@@ -51,7 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/simple-resume-template', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/creative-resume-template', priority: 0.83, changeFrequency: 'monthly' as const },
     { path: '/resume-no-experience', priority: 0.85, changeFrequency: 'monthly' as const },
-    // Pages longue traîne anglaises — batch 2
     { path: '/software-engineer-resume', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/nurse-resume-template', priority: 0.83, changeFrequency: 'monthly' as const },
     { path: '/teacher-resume-template', priority: 0.83, changeFrequency: 'monthly' as const },
@@ -72,7 +70,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/internship-resume-template', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/resume-skills-section', priority: 0.83, changeFrequency: 'monthly' as const },
     { path: '/executive-resume-template', priority: 0.83, changeFrequency: 'monthly' as const },
-    // Pages utilitaires
     { path: '/login', priority: 0.5, changeFrequency: 'monthly' as const },
     { path: '/signup', priority: 0.6, changeFrequency: 'monthly' as const },
     { path: '/contact', priority: 0.5, changeFrequency: 'monthly' as const },
@@ -81,17 +78,62 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/legal/confidentialite', priority: 0.3, changeFrequency: 'yearly' as const },
   ]
 
-  return locales.flatMap((locale) =>
-    routes.map(({ path, priority, changeFrequency }) => ({
-      url: `${baseUrl}/${locale}${path}`,
+  const frPosts = getAllPosts('fr')
+  const enPosts = getAllPosts('en')
+
+  const blogEntries: MetadataRoute.Sitemap = [
+    ...locales.map((locale) => ({
+      url: `${baseUrl}/${locale}/blog`,
       lastModified: new Date(),
-      changeFrequency,
-      priority,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
       alternates: {
         languages: Object.fromEntries(
-          locales.map((loc) => [loc, `${baseUrl}/${loc}${path}`])
+          locales.map((loc) => [loc, `${baseUrl}/${loc}/blog`])
         ),
       },
-    }))
-  )
+    })),
+    ...frPosts.map((post) => ({
+      url: `${baseUrl}/fr/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+      alternates: {
+        languages: Object.fromEntries(
+          post.availableLocales.map((loc) => [
+            loc,
+            `${baseUrl}/${loc}/blog/${post.slug}`,
+          ])
+        ),
+      },
+    })),
+    ...enPosts
+      .filter((p) => !p.availableLocales.includes('fr'))
+      .map((post) => ({
+        url: `${baseUrl}/en/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.75,
+        alternates: {
+          languages: { en: `${baseUrl}/en/blog/${post.slug}` },
+        },
+      })),
+  ]
+
+  return [
+    ...locales.flatMap((locale) =>
+      routes.map(({ path, priority, changeFrequency }) => ({
+        url: `${baseUrl}/${locale}${path}`,
+        lastModified: new Date(),
+        changeFrequency,
+        priority,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((loc) => [loc, `${baseUrl}/${loc}${path}`])
+          ),
+        },
+      }))
+    ),
+    ...blogEntries,
+  ]
 }

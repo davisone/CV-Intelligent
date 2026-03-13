@@ -311,3 +311,68 @@ export function FAQJsonLd({
     />
   )
 }
+
+export function BlogPostingJsonLd({
+  title,
+  description,
+  date,
+  author,
+  image,
+  url,
+  tags,
+  locale,
+}: {
+  title: string
+  description: string
+  date: string
+  author: string
+  image: string
+  url: string
+  tags: string[]
+  locale: string
+}) {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: author,
+      url: 'https://dvs-web.fr',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'CV Builder',
+      url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/icon-512.png`,
+      },
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: image,
+      width: 1200,
+      height: 630,
+    },
+    url,
+    inLanguage: locale === 'en' ? 'en' : 'fr-FR',
+    keywords: tags.join(', '),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
