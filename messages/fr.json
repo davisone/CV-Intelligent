@@ -175,6 +175,9 @@
     "badge": "Propulsé par l'IA",
     "hero": {
       "title": "Créer un CV Professionnel en Ligne Gratuitement",
+      "h1Before": "Créer un ",
+      "h1Accent": "CV Professionnel",
+      "h1After": " en Ligne Gratuitement",
       "titleAccent": "CV Professionnel",
       "subtitle": "avec l'intelligence artificielle",
       "description": "Faire un CV n'a jamais été aussi simple. Notre générateur de CV gratuit avec IA vous aide à créer un CV professionnel en 5 minutes : modèles modernes, optimisation ATS et export PDF.",
@@ -218,6 +221,40 @@
         "step3": "IA",
         "step4": "Export"
       }
+    },
+    "profiles": {
+      "title": "Un générateur de CV pour chaque profil",
+      "subtitle": "Étudiant, en reconversion, développeur ou cadre — notre IA s'adapte à votre parcours",
+      "student": {
+        "title": "CV Étudiant & Sans Expérience",
+        "description": "CV stage, CV alternance, CV premier emploi — l'IA valorise votre formation et vos projets.",
+        "link": "En savoir plus"
+      },
+      "internship": {
+        "title": "CV Alternance & Stage",
+        "description": "Valorisez votre double profil étudiant-professionnel et convainquez les entreprises d'accueil.",
+        "link": "Créer mon CV"
+      },
+      "professional": {
+        "title": "CV Professionnel & Cadre",
+        "description": "CV cadre, CV manager, CV reconversion — mettez en avant vos réalisations et compétences clés.",
+        "link": "Créer mon CV"
+      },
+      "developer": {
+        "title": "CV Développeur & IT",
+        "description": "CV développeur, CV ingénieur, CV data — optimisé pour les postes tech avec stack, projets GitHub.",
+        "link": "Créer mon CV"
+      }
+    },
+    "faq": {
+      "q0": { "question": "Comment faire un CV gratuit en ligne ?", "answer": "Avec CV Builder, créer un CV gratuit est simple : inscrivez-vous gratuitement, choisissez un template professionnel, remplissez vos informations et laissez notre IA optimiser votre contenu. Vous pouvez télécharger votre CV en PDF en moins de 5 minutes, entièrement gratuitement." },
+      "q1": { "question": "Comment créer son CV rapidement ?", "answer": "Pour créer son CV rapidement : 1) Inscrivez-vous sur CV Builder, 2) Choisissez parmi nos modèles de CV modernes, 3) Remplissez vos informations, 4) Laissez l'IA améliorer votre contenu, 5) Téléchargez votre CV en PDF. La création de CV prend moins de 5 minutes !" },
+      "q2": { "question": "CV Builder est-il vraiment gratuit ?", "answer": "Oui, CV Builder propose la création de CV gratuite avec le template Modern. Vous pouvez créer, éditer et télécharger votre CV en PDF sans frais. Des templates premium sont également disponibles pour plus de personnalisation." },
+      "q3": { "question": "Comment fonctionne le générateur de CV avec IA ?", "answer": "Notre générateur de CV avec intelligence artificielle analyse votre parcours professionnel et vos compétences pour suggérer des améliorations automatiques. L'IA optimise la formulation de vos expériences, propose des mots-clés pertinents pour les recruteurs et améliore la structure de votre CV." },
+      "q4": { "question": "Qu'est-ce que l'optimisation ATS pour CV ?", "answer": "L'optimisation ATS permet à votre CV de passer les filtres automatiques des recruteurs. CV Builder formate votre CV pour être compatible avec ces systèmes, utilise les bons mots-clés et structure votre contenu pour maximiser vos chances d'être sélectionné." },
+      "q5": { "question": "Comment faire un CV étudiant ou un premier CV ?", "answer": "Pour faire un CV étudiant ou un premier CV sans expérience, CV Builder vous guide étape par étape. L'IA vous aide à mettre en valeur vos formations, stages, compétences et centres d'intérêt. Idéal pour un CV alternance, un CV stage ou votre tout premier CV." },
+      "q6": { "question": "Peut-on télécharger son CV en PDF gratuitement ?", "answer": "Oui, vous pouvez télécharger votre CV en PDF gratuitement avec CV Builder. Le CV est généré en haute qualité, prêt à être envoyé aux recruteurs ou téléchargé sur les sites d'emploi." },
+      "q7": { "question": "Comment rédiger un CV professionnel ?", "answer": "Pour rédiger un CV professionnel, concentrez-vous sur une mise en page claire, des expériences bien décrites avec des résultats concrets, et les bons mots-clés pour votre secteur. CV Builder vous accompagne avec des modèles de CV professionnels et une IA qui optimise votre contenu automatiquement." }
     },
     "cta": {
       "title": "Créez votre CV gratuit maintenant",

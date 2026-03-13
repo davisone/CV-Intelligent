@@ -175,6 +175,9 @@
     "badge": "Powered by AI",
     "hero": {
       "title": "Create a Professional Resume Online for Free",
+      "h1Before": "Create a ",
+      "h1Accent": "Professional Resume",
+      "h1After": " Online for Free",
       "titleAccent": "Professional Resume",
       "subtitle": "with artificial intelligence",
       "description": "Making a resume has never been easier. Our free CV generator with AI helps you create a professional resume in 5 minutes: modern templates, ATS optimization and PDF export.",
@@ -218,6 +221,40 @@
         "step3": "AI",
         "step4": "Export"
       }
+    },
+    "profiles": {
+      "title": "A resume builder for every profile",
+      "subtitle": "Student, career changer, developer or executive — our AI adapts to your background",
+      "student": {
+        "title": "Student & Entry-Level Resume",
+        "description": "Internship, apprenticeship, first job resume — AI highlights your education and projects.",
+        "link": "Learn more"
+      },
+      "internship": {
+        "title": "Apprenticeship & Internship Resume",
+        "description": "Highlight your dual student-professional profile and convince host companies.",
+        "link": "Create my resume"
+      },
+      "professional": {
+        "title": "Professional & Executive Resume",
+        "description": "Executive, manager, career change resume — highlight your achievements and key skills.",
+        "link": "Create my resume"
+      },
+      "developer": {
+        "title": "Developer & IT Resume",
+        "description": "Developer, engineer, data resume — optimized for tech positions with stack and GitHub projects.",
+        "link": "Create my resume"
+      }
+    },
+    "faq": {
+      "q0": { "question": "How to create a free resume online?", "answer": "With CV Builder, creating a free resume is simple: sign up for free, choose a professional template, fill in your information and let our AI optimize your content. You can download your resume in PDF in less than 5 minutes, completely free." },
+      "q1": { "question": "How to create a resume quickly?", "answer": "To create a resume quickly: 1) Sign up on CV Builder, 2) Choose from our modern resume templates, 3) Fill in your information, 4) Let the AI improve your content, 5) Download your resume as PDF. Resume creation takes less than 5 minutes!" },
+      "q2": { "question": "Is CV Builder really free?", "answer": "Yes, CV Builder offers free resume creation with the Modern template. You can create, edit and download your resume as PDF at no cost. Premium templates are also available for more customization." },
+      "q3": { "question": "How does the AI resume generator work?", "answer": "Our AI resume generator analyzes your professional background and skills to suggest automatic improvements. AI optimizes the wording of your experiences, suggests relevant keywords for recruiters and improves your resume structure." },
+      "q4": { "question": "What is ATS optimization for resumes?", "answer": "ATS optimization allows your resume to pass recruiters' automatic filters. CV Builder formats your resume to be compatible with these systems, uses the right keywords and structures your content to maximize your chances of being selected." },
+      "q5": { "question": "How to write a student resume or first resume?", "answer": "To write a student resume or first resume without experience, CV Builder guides you step by step. AI helps you highlight your education, internships, skills and interests. Ideal for an apprenticeship, internship or your very first resume." },
+      "q6": { "question": "Can I download my resume as PDF for free?", "answer": "Yes, you can download your resume as PDF for free with CV Builder. The resume is generated in high quality, ready to send to recruiters or upload to job sites." },
+      "q7": { "question": "How to write a professional resume?", "answer": "To write a professional resume, focus on a clear layout, well-described experiences with concrete results, and the right keywords for your sector. CV Builder assists you with professional resume templates and AI that automatically optimizes your content." }
     },
     "cta": {
       "title": "Create your free resume now",

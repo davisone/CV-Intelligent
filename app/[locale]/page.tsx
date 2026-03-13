@@ -17,45 +17,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
-const faqQuestions = [
-  {
-    question: 'Comment faire un CV gratuit en ligne ?',
-    answer: 'Avec CV Builder, créer un CV gratuit est simple : inscrivez-vous gratuitement, choisissez un template professionnel, remplissez vos informations et laissez notre IA optimiser votre contenu. Vous pouvez télécharger votre CV en PDF en moins de 5 minutes, entièrement gratuitement.',
-  },
-  {
-    question: 'Comment créer son CV rapidement ?',
-    answer: 'Pour créer son CV rapidement : 1) Inscrivez-vous sur CV Builder, 2) Choisissez parmi nos modèles de CV modernes, 3) Remplissez vos informations, 4) Laissez l\'IA améliorer votre contenu, 5) Téléchargez votre CV en PDF. La création de CV prend moins de 5 minutes !',
-  },
-  {
-    question: 'CV Builder est-il vraiment gratuit ?',
-    answer: 'Oui, CV Builder propose la création de CV gratuite avec le template Modern. Vous pouvez créer, éditer et télécharger votre CV en PDF sans frais. Des templates premium sont également disponibles pour plus de personnalisation.',
-  },
-  {
-    question: 'Comment fonctionne le générateur de CV avec IA ?',
-    answer: 'Notre générateur de CV avec intelligence artificielle analyse votre parcours professionnel et vos compétences pour suggérer des améliorations automatiques. L\'IA optimise la formulation de vos expériences, propose des mots-clés pertinents pour les recruteurs et améliore la structure de votre CV.',
-  },
-  {
-    question: 'Qu\'est-ce que l\'optimisation ATS pour CV ?',
-    answer: 'L\'optimisation ATS permet à votre CV de passer les filtres automatiques des recruteurs. CV Builder formate votre CV pour être compatible avec ces systèmes, utilise les bons mots-clés et structure votre contenu pour maximiser vos chances d\'être sélectionné.',
-  },
-  {
-    question: 'Comment faire un CV étudiant ou un premier CV ?',
-    answer: 'Pour faire un CV étudiant ou un premier CV sans expérience, CV Builder vous guide étape par étape. L\'IA vous aide à mettre en valeur vos formations, stages, compétences et centres d\'intérêt. Idéal pour un CV alternance, un CV stage ou votre tout premier CV.',
-  },
-  {
-    question: 'Peut-on télécharger son CV en PDF gratuitement ?',
-    answer: 'Oui, vous pouvez télécharger votre CV en PDF gratuitement avec CV Builder. Le CV est généré en haute qualité, prêt à être envoyé aux recruteurs ou téléchargé sur les sites d\'emploi.',
-  },
-  {
-    question: 'Comment rédiger un CV professionnel ?',
-    answer: 'Pour rédiger un CV professionnel, concentrez-vous sur une mise en page claire, des expériences bien décrites avec des résultats concrets, et les bons mots-clés pour votre secteur. CV Builder vous accompagne avec des modèles de CV professionnels et une IA qui optimise votre contenu automatiquement.',
-  },
-]
-
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'landing' })
   const tNav = await getTranslations({ locale, namespace: 'nav' })
+
+  const faqQuestions = [
+    { question: t('faq.q0.question'), answer: t('faq.q0.answer') },
+    { question: t('faq.q1.question'), answer: t('faq.q1.answer') },
+    { question: t('faq.q2.question'), answer: t('faq.q2.answer') },
+    { question: t('faq.q3.question'), answer: t('faq.q3.answer') },
+    { question: t('faq.q4.question'), answer: t('faq.q4.answer') },
+    { question: t('faq.q5.question'), answer: t('faq.q5.answer') },
+    { question: t('faq.q6.question'), answer: t('faq.q6.answer') },
+    { question: t('faq.q7.question'), answer: t('faq.q7.answer') },
+  ]
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
@@ -104,7 +80,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   {t('badge')}
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1A17] mb-2 leading-tight">
-                  Créer un <span className="text-[#722F37]">{t('hero.titleAccent')}</span> en Ligne Gratuitement
+                  {t('hero.h1Before')}<span className="text-[#722F37]">{t('hero.h1Accent')}</span>{t('hero.h1After')}
                 </h1>
                 <p className="text-2xl md:text-3xl font-semibold text-[#6B6560] mb-6">
                   {t('hero.subtitle')}
@@ -260,80 +236,56 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <section className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1F1A17] mb-4">
-              Un générateur de CV pour chaque profil
+              {t('profiles.title')}
             </h2>
             <p className="text-[#6B6560] max-w-xl mx-auto">
-              Étudiant, en reconversion, développeur ou cadre — notre IA s&apos;adapte à votre parcours
+              {t('profiles.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-            {/* Carte 1 - CV Étudiant */}
             <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <GraduationCap className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Étudiant & Sans Expérience</h3>
-              <p className="text-sm text-[#6B6560] mb-4">
-                CV stage, CV alternance, CV premier emploi — l&apos;IA valorise votre formation et vos projets.
-              </p>
-              <Link
-                href="/cv-etudiant"
-                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
-              >
-                En savoir plus <ArrowRight className="w-3 h-3" />
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('profiles.student.title')}</h3>
+              <p className="text-sm text-[#6B6560] mb-4">{t('profiles.student.description')}</p>
+              <Link href="/cv-etudiant" className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1">
+                {t('profiles.student.link')} <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
-            {/* Carte 2 - CV Alternance/Stage */}
             <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <Briefcase className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Alternance & Stage</h3>
-              <p className="text-sm text-[#6B6560] mb-4">
-                Valorisez votre double profil étudiant-professionnel et convainquez les entreprises d&apos;accueil.
-              </p>
-              <Link
-                href="/signup"
-                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
-              >
-                Créer mon CV <ArrowRight className="w-3 h-3" />
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('profiles.internship.title')}</h3>
+              <p className="text-sm text-[#6B6560] mb-4">{t('profiles.internship.description')}</p>
+              <Link href="/signup" className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1">
+                {t('profiles.internship.link')} <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
-            {/* Carte 3 - CV Professionnel/Cadre */}
             <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <Trophy className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Professionnel & Cadre</h3>
-              <p className="text-sm text-[#6B6560] mb-4">
-                CV cadre, CV manager, CV reconversion — mettez en avant vos réalisations et compétences clés.
-              </p>
-              <Link
-                href="/signup"
-                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
-              >
-                Créer mon CV <ArrowRight className="w-3 h-3" />
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('profiles.professional.title')}</h3>
+              <p className="text-sm text-[#6B6560] mb-4">{t('profiles.professional.description')}</p>
+              <Link href="/signup" className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1">
+                {t('profiles.professional.link')} <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
-            {/* Carte 4 - CV Développeur/IT */}
             <div className="bg-[#F3EDE5] p-6 rounded-3xl border border-[#E0D6C8] hover:border-[#722F37]/50 transition-all group shadow-md">
               <div className="w-12 h-12 bg-[#722F37]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#722F37]/20 transition-colors">
                 <Code2 className="w-6 h-6 text-[#722F37]" />
               </div>
-              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">CV Développeur & IT</h3>
-              <p className="text-sm text-[#6B6560] mb-4">
-                CV développeur, CV ingénieur, CV data — optimisé pour les postes tech avec stack, projets GitHub.
-              </p>
-              <Link
-                href="/signup"
-                className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1"
-              >
-                Créer mon CV <ArrowRight className="w-3 h-3" />
+              <h3 className="text-lg font-bold text-[#1F1A17] mb-2">{t('profiles.developer.title')}</h3>
+              <p className="text-sm text-[#6B6560] mb-4">{t('profiles.developer.description')}</p>
+              <Link href="/signup" className="text-sm font-medium text-[#722F37] hover:underline inline-flex items-center gap-1">
+                {t('profiles.developer.link')} <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
