@@ -18,7 +18,7 @@ export default function VerifyEmailPendingPage() {
       const res = await fetch('/api/auth/resend-verification', { method: 'POST' })
       if (res.ok) {
         setSent(true)
-        toast.success('Email de vérification renvoyé !')
+        toast.success(t('resendSent'))
       } else {
         const data = await res.json()
         toast.error(data.error || t('errors.generic'))
@@ -40,7 +40,7 @@ export default function VerifyEmailPendingPage() {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="bg-[#F3EDE5] rounded-lg p-4 text-sm text-[#6B6560]">
-          Vérifiez également vos spams si vous ne trouvez pas l'email.
+          {t('spamNote')}
         </div>
         <Button
           onClick={handleResend}
@@ -49,14 +49,14 @@ export default function VerifyEmailPendingPage() {
           className="w-full"
           variant="outline"
         >
-          {sent ? 'Email renvoyé !' : "Renvoyer l'email"}
+          {sent ? t('resendSuccess') : t('resendButton')}
         </Button>
         <p className="text-center text-sm text-[#6B6560]">
           <button
             onClick={() => signOut({ callbackUrl: '/login' })}
             className="text-[#722F37] hover:underline"
           >
-            Se déconnecter
+            {t('signOut')}
           </button>
         </p>
       </CardContent>

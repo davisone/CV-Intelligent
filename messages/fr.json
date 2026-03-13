@@ -23,6 +23,26 @@
       "submit": "Se connecter",
       "noAccount": "Vous n'avez pas de compte ?",
       "signup": "Créer un compte",
+      "orContinueWith": "Ou continuer avec",
+      "2fa": {
+        "title": "Vérification 2FA",
+        "subtitle": "Entrez le code de votre application d'authentification",
+        "codeLabel": "Code à 6 chiffres",
+        "submit": "Vérifier",
+        "back": "← Retour",
+        "required": "Veuillez entrer votre code 2FA",
+        "invalid": "Code 2FA invalide",
+        "codeRequired": "Le code 2FA est requis"
+      },
+      "validation": {
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Email invalide",
+        "passwordRequired": "Le mot de passe est requis"
+      },
+      "success": "Connexion réussie !",
+      "emailVerified": "Email vérifié ! Vous pouvez maintenant vous connecter.",
+      "oauthAccountLinked": "Un compte existe déjà avec cet email via un autre moyen de connexion",
+      "oauthError": "Erreur de connexion avec le fournisseur, veuillez réessayer",
       "errors": {
         "invalidCredentials": "Email ou mot de passe incorrect",
         "generic": "Une erreur est survenue lors de la connexion"
@@ -76,6 +96,36 @@
       },
       "errors": {
         "sent": "Email envoyé !",
+        "generic": "Une erreur est survenue"
+      }
+    },
+    "verifyEmail": {
+      "title": "Vérification de l'email",
+      "pendingTitle": "Vérification en attente",
+      "pendingSubtitle": "Nous avons envoyé un email de vérification à votre adresse. Cliquez sur le lien pour vérifier votre compte.",
+      "successTitle": "Email vérifié",
+      "successMessage": "Votre adresse email a bien été vérifiée. Redirection vers le dashboard...",
+      "spamNote": "Vérifiez également vos spams si vous ne trouvez pas l'email.",
+      "resendButton": "Renvoyer l'email",
+      "resendSuccess": "Email renvoyé !",
+      "resendSent": "Email de vérification renvoyé !",
+      "signOut": "Se déconnecter",
+      "errors": {
+        "tokenInvalid": "Lien invalide",
+        "generic": "Une erreur est survenue",
+        "resendButton": "Renvoyer un email"
+      }
+    },
+    "verify2fa": {
+      "title": "Vérification 2FA",
+      "subtitle": "Entrez le code de votre application d'authentification",
+      "code": "Code d'authentification",
+      "submit": "Vérifier",
+      "cancel": "Annuler et se déconnecter",
+      "successMessage": "Vérification réussie !",
+      "errors": {
+        "codeRequired": "Veuillez entrer un code à 6 chiffres",
+        "invalidCode": "Code invalide",
         "generic": "Une erreur est survenue"
       }
     },

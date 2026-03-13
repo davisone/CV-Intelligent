@@ -60,10 +60,10 @@ const VerifyEmailContent = () => {
     return (
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="text-green-600">{t('success')}</CardTitle>
+          <CardTitle className="text-green-600">{t('successTitle')}</CardTitle>
         </CardHeader>
         <CardContent className="text-center text-[#6B6560]">
-          <p>Votre adresse email a bien été vérifiée. Redirection vers le dashboard...</p>
+          <p>{t('successMessage')}</p>
         </CardContent>
       </Card>
     )
@@ -80,7 +80,7 @@ const VerifyEmailContent = () => {
           href="/verify-email/pending"
           className="inline-flex items-center justify-center px-4 py-2 bg-[#722F37] text-white rounded-lg font-medium hover:bg-[#8B3A44] transition-colors"
         >
-          Renvoyer un email
+          {t('errors.resendButton')}
         </Link>
       </CardContent>
     </Card>
@@ -89,7 +89,7 @@ const VerifyEmailContent = () => {
 
 export default function VerifyEmailPage() {
   return (
-    <Suspense fallback={<div>Chargement...</div>}>
+    <Suspense fallback={<div>{/* loading */}</div>}>
       <VerifyEmailContent />
     </Suspense>
   )

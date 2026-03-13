@@ -28,7 +28,7 @@ export default function Verify2FAPage() {
     e.preventDefault()
 
     if (!code || code.length !== 6) {
-      setError('Veuillez entrer un code à 6 chiffres')
+      setError(t('errors.codeRequired'))
       return
     }
 
@@ -49,7 +49,7 @@ export default function Verify2FAPage() {
         return
       }
 
-      toast.success('Vérification réussie !')
+      toast.success(t('successMessage'))
       router.push('/dashboard')
       router.refresh()
     } catch {
@@ -104,7 +104,7 @@ export default function Verify2FAPage() {
             onClick={handleCancel}
             className="w-full text-sm text-[#6B6560] hover:text-[#1F1A17] py-2"
           >
-            Annuler et se déconnecter
+            {t('cancel')}
           </button>
         </form>
       </CardContent>

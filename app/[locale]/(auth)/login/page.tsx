@@ -55,9 +55,9 @@ function LoginForm() {
   const oauthError = searchParams.get('error')
   useEffect(() => {
     if (oauthError === 'OAuthAccountNotLinked') {
-      toast.error('Un compte existe déjà avec cet email via un autre moyen de connexion')
+      toast.error(t('oauthAccountLinked'))
     } else if (oauthError === 'OAuthCallback' || oauthError === 'OAuthSignin') {
-      toast.error('Erreur de connexion avec le fournisseur, veuillez réessayer')
+      toast.error(t('oauthError'))
     } else if (oauthError) {
       toast.error(t('errors.generic'))
     }
@@ -66,7 +66,7 @@ function LoginForm() {
   // Afficher le toast si l'email a été vérifié
   useEffect(() => {
     if (searchParams.get('verified') === 'true') {
-      toast.success('Email vérifié ! Vous pouvez maintenant vous connecter.')
+      toast.success(t('emailVerified'))
     }
   }, [searchParams])
 
@@ -87,17 +87,17 @@ function LoginForm() {
     const newErrors: Record<string, string> = {}
 
     if (!formData.email) {
-      newErrors.email = 'L\'email est requis'
+      newErrors.email = t('validation.emailRequired')
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email invalide'
+      newErrors.email = t('validation.emailInvalid')
     }
 
     if (!formData.password) {
-      newErrors.password = 'Le mot de passe est requis'
+      newErrors.password = t('validation.passwordRequired')
     }
 
     if (requires2FA && !formData.totpCode) {
-      newErrors.totpCode = 'Le code 2FA est requis'
+      newErrors.totpCode = t('2fa.codeRequired')
     }
 
     setErrors(newErrors)
@@ -122,16 +122,16 @@ function LoginForm() {
       if (result?.error) {
         if (result.error.includes('2FA_REQUIRED')) {
           setRequires2FA(true)
-          toast.info('Veuillez entrer votre code 2FA')
+          toast.info(t('2fa.required'))
         } else if (result.error.includes('Invalid 2FA')) {
-          toast.error('Code 2FA invalide')
-          setErrors({ totpCode: 'Code 2FA invalide' })
+          toast.error(t('2fa.invalid'))
+          setErrors({ totpCode: t('2fa.invalid') })
         } else {
           toast.error(t('errors.invalidCredentials'))
           setErrors({ password: t('errors.invalidCredentials') })
         }
       } else {
-        toast.success('Connexion réussie !')
+        toast.success(t('success'))
         window.location.href = callbackUrl
       }
     } catch {
@@ -154,10 +154,10 @@ function LoginForm() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle>{requires2FA ? 'Vérification 2FA' : t('title')}</CardTitle>
+        <CardTitle>{requires2FA ? t('2fa.title') : t('title')}</CardTitle>
         <CardDescription>
           {requires2FA
-            ? 'Entrez le code de votre application d\'authentification'
+            ? t('2fa.subtitle')
             : t('subtitle')}
         </CardDescription>
       </CardHeader>
@@ -203,7 +203,7 @@ function LoginForm() {
           ) : (
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="totpCode">Code à 6 chiffres</Label>
+                <Label htmlFor="totpCode">{t('2fa.codeLabel')}</Label>
                 <Input
                   id="totpCode"
                   name="totpCode"
@@ -224,13 +224,13 @@ function LoginForm() {
                 onClick={handleBack}
                 className="text-sm text-[#6B6560] hover:text-[#1F1A17]"
               >
-                ← Retour
+                {t('2fa.back')}
               </button>
             </div>
           )}
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            {requires2FA ? 'Vérifier' : t('submit')}
+            {requires2FA ? t('2fa.submit') : t('submit')}
           </Button>
         </form>
 

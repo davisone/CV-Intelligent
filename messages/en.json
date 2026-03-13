@@ -24,6 +24,25 @@
       "noAccount": "Don't have an account?",
       "signup": "Create an account",
       "orContinueWith": "Or continue with",
+      "2fa": {
+        "title": "2FA Verification",
+        "subtitle": "Enter the code from your authenticator app",
+        "codeLabel": "6-digit code",
+        "submit": "Verify",
+        "back": "← Back",
+        "required": "Please enter your 2FA code",
+        "invalid": "Invalid 2FA code",
+        "codeRequired": "The 2FA code is required"
+      },
+      "validation": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "passwordRequired": "Password is required"
+      },
+      "success": "Signed in successfully!",
+      "emailVerified": "Email verified! You can now sign in.",
+      "oauthAccountLinked": "An account already exists with this email via another sign-in method",
+      "oauthError": "Sign-in error with the provider, please try again",
       "errors": {
         "invalidCredentials": "Invalid email or password",
         "generic": "An error occurred while signing in"
@@ -77,6 +96,36 @@
       },
       "errors": {
         "sent": "Email sent!",
+        "generic": "An error occurred"
+      }
+    },
+    "verifyEmail": {
+      "title": "Email Verification",
+      "pendingTitle": "Verification Pending",
+      "pendingSubtitle": "We've sent a verification email to your address. Click the link to verify your account.",
+      "successTitle": "Email verified",
+      "successMessage": "Your email address has been verified successfully. Redirecting to dashboard...",
+      "spamNote": "Also check your spam folder if you can't find the email.",
+      "resendButton": "Resend email",
+      "resendSuccess": "Email sent!",
+      "resendSent": "Verification email sent!",
+      "signOut": "Sign Out",
+      "errors": {
+        "tokenInvalid": "Invalid link",
+        "generic": "An error occurred",
+        "resendButton": "Send new email"
+      }
+    },
+    "verify2fa": {
+      "title": "2FA Verification",
+      "subtitle": "Enter the code from your authenticator app",
+      "code": "Authentication code",
+      "submit": "Verify",
+      "cancel": "Cancel and sign out",
+      "successMessage": "Verification successful!",
+      "errors": {
+        "codeRequired": "Please enter a 6-digit code",
+        "invalidCode": "Invalid code",
         "generic": "An error occurred"
       }
     },
