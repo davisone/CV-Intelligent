@@ -6088,5 +6088,28 @@
       "notFound": "Page not found",
       "notFoundDetails": "This dashboard page does not exist."
     }
+  },
+  "blog": {
+    "listingTitle": "Resume Blog — Tips, Guides & Templates",
+    "listingDescription": "Expert advice to build a resume that lands interviews. Job-specific guides, ATS tips, template comparisons.",
+    "allCategories": "All",
+    "readMore": "Read article",
+    "minRead": "min read",
+    "publishedOn": "Published on",
+    "by": "by",
+    "relatedArticles": "Related articles",
+    "relatedPages": "Useful pages",
+    "backToBlog": "← Back to blog",
+    "ctaTitle": "Ready to build your resume?",
+    "ctaDescription": "Use our professional templates and AI to create a resume that stands out.",
+    "ctaButton": "Build my resume for free",
+    "categories": {
+      "conseils-cv": "Resume Tips",
+      "par-metier": "By Job Title",
+      "templates": "Templates",
+      "guides": "Guides"
+    },
+    "categoryListingTitle": "Articles: {category}",
+    "categoryListingDescription": "All our articles about {category}."
   }
 }

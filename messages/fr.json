@@ -6011,5 +6011,28 @@
       "notFound": "Page introuvable",
       "notFoundDetails": "Cette page du tableau de bord n'existe pas."
     }
+  },
+  "blog": {
+    "listingTitle": "Blog CV — Conseils, Guides et Templates",
+    "listingDescription": "Conseils d'experts pour créer un CV qui décroche des entretiens. Guides par métier, astuces ATS, comparatifs templates.",
+    "allCategories": "Tous",
+    "readMore": "Lire l'article",
+    "minRead": "min de lecture",
+    "publishedOn": "Publié le",
+    "by": "par",
+    "relatedArticles": "Articles similaires",
+    "relatedPages": "Pages utiles",
+    "backToBlog": "← Retour au blog",
+    "ctaTitle": "Prêt à créer votre CV ?",
+    "ctaDescription": "Utilisez nos templates professionnels et l'IA pour créer un CV qui se démarque.",
+    "ctaButton": "Créer mon CV gratuitement",
+    "categories": {
+      "conseils-cv": "Conseils CV",
+      "par-metier": "Par métier",
+      "templates": "Templates",
+      "guides": "Guides"
+    },
+    "categoryListingTitle": "Articles : {category}",
+    "categoryListingDescription": "Tous nos articles sur le thème {category}."
   }
 }
