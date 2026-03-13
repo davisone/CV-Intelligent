@@ -8,7 +8,7 @@ import { RelatedPosts } from '@/components/blog/related-posts'
 import { Footer } from '@/components/layout/footer'
 import { LocaleSwitcher } from '@/components/ui/locale-switcher'
 import { Link } from '@/i18n/navigation'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd, BlogPostingJsonLd } from '@/components/seo/json-ld'
 import { ArrowRight } from 'lucide-react'
 
 const RELATED_PAGES: Record<string, string[]> = {
@@ -77,6 +77,17 @@ export default async function BlogPostPage({
           { name: t('listingTitle'), url: `${baseUrl}/${locale}/blog` },
           { name: frontmatter.title, url: `${baseUrl}/${locale}/blog/${slug}` },
         ]}
+      />
+
+      <BlogPostingJsonLd
+        title={frontmatter.title}
+        description={frontmatter.description}
+        date={frontmatter.date}
+        author={frontmatter.author}
+        image={`${baseUrl}${frontmatter.image}`}
+        url={`${baseUrl}/${locale}/blog/${slug}`}
+        tags={frontmatter.tags}
+        locale={locale}
       />
 
       <header className="border-b border-[#E0D6C8] bg-[#FBF8F4]/80 backdrop-blur-sm sticky top-0 z-50">
