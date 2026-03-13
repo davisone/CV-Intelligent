@@ -1,9 +1,12 @@
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { ArrowLeft } from 'lucide-react'
 import { Footer } from '@/components/layout/footer'
 import type { ReactNode } from 'react'
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default async function AuthLayout({ children }: { children: ReactNode }) {
+  const t = await getTranslations('nav')
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header minimal */}
@@ -14,7 +17,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
             className="flex items-center gap-2 text-[#6B6560] hover:text-[#1F1A17] transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span className="text-sm">Retour</span>
+            <span className="text-sm">{t('back')}</span>
           </Link>
         </div>
         <Link href="/" className="text-2xl font-bold text-[#722F37] hover:text-[#8B3A44] transition-colors">
