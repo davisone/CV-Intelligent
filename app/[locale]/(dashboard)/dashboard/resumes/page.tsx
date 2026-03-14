@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { getTranslations } from 'next-intl/server'
 import { ResumesList } from './resumes-list'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'dashboard.resumes' })
+  return { title: t('title') }
+}
 
 export default async function ResumesPage() {
   const session = await getServerSession(authOptions)

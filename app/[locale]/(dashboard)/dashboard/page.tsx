@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
@@ -9,6 +10,12 @@ import { WelcomeToast } from './welcome-toast'
 import { EmptyState } from '@/components/ui/empty-state'
 import { ReviewReminder } from '@/components/review-prompt'
 import { Plus, FileText, Sparkles, TrendingUp, Clock } from 'lucide-react'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'dashboard.layout' })
+  return { title: t('backToDashboard') }
+}
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions)

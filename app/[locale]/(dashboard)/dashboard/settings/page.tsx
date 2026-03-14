@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { getTranslations } from 'next-intl/server'
 import { TwoFactorSettings } from './two-factor-settings'
 import { DeleteAccountSection } from '@/components/ui/delete-account-section'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'dashboard.settings' })
+  return { title: t('title') }
+}
 
 export default async function SettingsPage() {
   const session = await getServerSession(authOptions)

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
@@ -8,6 +9,14 @@ import { PaymentWall } from './payment-wall'
 
 interface EditResumePageProps {
   params: Promise<{ id: string }>
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const session = await getServerSession(authOptions)
+  if (!session?.user?.id) return {}
+  const resume = await prisma.resume.findFirst({ where: { id, userId: session.user.id }, select: { title: true } })
+  return { title: resume?.title ?? 'CV' }
 }
 
 export default async function EditResumePage({ params }: EditResumePageProps) {

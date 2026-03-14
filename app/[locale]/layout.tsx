@@ -12,7 +12,7 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const locales = ['fr', 'en'] as const
+const locales = ['fr', 'en', 'es'] as const
 
 export const metadata: Metadata = {
   authors: [{ name: 'Evan Davison', url: 'https://dvs-web.fr' }],
@@ -29,7 +29,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
 
-  if (!locales.includes(locale as 'fr' | 'en')) {
+  if (!locales.includes(locale as 'fr' | 'en' | 'es')) {
     notFound()
   }
 
