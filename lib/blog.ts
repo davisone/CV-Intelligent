@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 const DEFAULT_CONTENT_DIR = path.join(process.cwd(), 'content/blog')
 const FALLBACK_IMAGE = '/og-image.png'
-const LOCALES = ['fr', 'en'] as const
+const LOCALES = ['fr', 'en', 'es'] as const
 
 export interface BlogPost {
   slug: string

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 
-const locales = ['fr', 'en'] as const
+const locales = ['fr', 'en', 'es'] as const
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
@@ -80,6 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const frPosts = getAllPosts('fr')
   const enPosts = getAllPosts('en')
+  const esPosts = getAllPosts('es')
 
   const blogEntries: MetadataRoute.Sitemap = [
     ...locales.map((locale) => ({
@@ -116,6 +117,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.75,
         alternates: {
           languages: { en: `${baseUrl}/en/blog/${post.slug}` },
+        },
+      })),
+    ...esPosts
+      .filter((p) => !p.availableLocales.includes('fr') && !p.availableLocales.includes('en'))
+      .map((post) => ({
+        url: `${baseUrl}/es/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.75,
+        alternates: {
+          languages: { es: `${baseUrl}/es/blog/${post.slug}` },
         },
       })),
   ]

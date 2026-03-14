@@ -1,4 +1,4 @@
-const locales = ['fr', 'en'] as const
+const locales = ['fr', 'en', 'es'] as const
 
 /**
  * Génère les balises alternates (canonical + hreflang) pour une page SEO.

@@ -6,8 +6,8 @@ import { routing } from './i18n/routing'
 
 const handleI18nRouting = createIntlMiddleware(routing)
 
-const PROTECTED_PATTERN = /^\/(fr|en)\/(dashboard|profile|resumes)/
-const AUTH_PAGE_PATTERN = /^\/(fr|en)\/(login|signup)$/
+const PROTECTED_PATTERN = /^\/(fr|en|es)\/(dashboard|profile|resumes)/
+const AUTH_PAGE_PATTERN = /^\/(fr|en|es)\/(login|signup)$/
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
