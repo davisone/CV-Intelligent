@@ -132,6 +132,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       })),
   ]
 
+  const esOnlyRoutes = [
+    { path: '/curriculum-vitae-gratis', priority: 0.90 },
+    { path: '/plantilla-cv-gratis', priority: 0.88 },
+    { path: '/creador-de-curriculum', priority: 0.88 },
+    { path: '/curriculum-vitae-ats', priority: 0.88 },
+    { path: '/curriculum-sin-experiencia-laboral', priority: 0.85 },
+    { path: '/plantilla-curriculum-moderno', priority: 0.85 },
+    { path: '/plantilla-curriculum-simple', priority: 0.85 },
+    { path: '/plantilla-curriculum-creativo', priority: 0.83 },
+    { path: '/curriculum-estudiante', priority: 0.88 },
+    { path: '/curriculum-primer-empleo', priority: 0.85 },
+    { path: '/curriculum-enfermero', priority: 0.83 },
+    { path: '/curriculum-profesor', priority: 0.83 },
+    { path: '/curriculum-jefe-proyecto', priority: 0.85 },
+    { path: '/curriculum-director-marketing', priority: 0.83 },
+    { path: '/curriculum-cientifico-datos', priority: 0.83 },
+    { path: '/curriculum-contable', priority: 0.80 },
+    { path: '/curriculum-comercial', priority: 0.83 },
+    { path: '/curriculum-atencion-cliente', priority: 0.80 },
+    { path: '/curriculum-product-manager', priority: 0.85 },
+    { path: '/curriculum-cronologico', priority: 0.83 },
+    { path: '/curriculum-funcional', priority: 0.80 },
+    { path: '/curriculum-una-pagina', priority: 0.83 },
+    { path: '/formato-curriculum-2025', priority: 0.88 },
+    { path: '/cambio-carrera-curriculum', priority: 0.83 },
+    { path: '/como-hacer-un-curriculum', priority: 0.90 },
+    { path: '/ejemplos-perfil-profesional', priority: 0.83 },
+    { path: '/curriculum-practicas', priority: 0.85 },
+    { path: '/habilidades-en-el-curriculum', priority: 0.83 },
+    { path: '/curriculum-ejecutivo', priority: 0.83 },
+    { path: '/curriculum-ingeniero-software', priority: 0.85 },
+  ]
+
   return [
     ...locales.flatMap((locale) =>
       routes.map(({ path, priority, changeFrequency }) => ({
@@ -146,6 +179,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
       }))
     ),
+    ...esOnlyRoutes.map(({ path, priority }) => ({
+      url: `${baseUrl}/es${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority,
+      alternates: {
+        languages: { es: `${baseUrl}/es${path}` },
+      },
+    })),
     ...blogEntries,
   ]
 }
