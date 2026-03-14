@@ -28,6 +28,7 @@ export async function GET(request: Request, { params }: RouteParams) {
   try {
     const session = await getServerSession(authOptions)
     const { id } = await params
+    const locale = new URL(request.url).searchParams.get('locale') ?? 'fr'
 
     if (!session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -99,7 +100,7 @@ export async function GET(request: Request, { params }: RouteParams) {
         || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
         || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
         || `http://localhost:${process.env.PORT || 3000}`
-      const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}`
+      const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}&locale=${locale}`
 
       // Pré-accepter les cookies pour éviter le bandeau
       await page.evaluateOnNewDocument(() => {

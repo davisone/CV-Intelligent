@@ -1,5 +1,7 @@
 'use client'
 
+import { getCvLabels } from './cv-labels'
+
 interface CVData {
   personalInfo: {
     firstName: string
@@ -27,7 +29,8 @@ interface CVData {
   interests?: any[]
 }
 
-export function CreativeTemplate({ data }: { data: CVData }) {
+export function CreativeTemplate({ data, locale }: { data: CVData; locale?: string }) {
+  const L = getCvLabels(locale)
   const formatDate = (date: Date | string) => {
     const d = new Date(date)
     return d.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' })
@@ -290,7 +293,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </span>
-                Expérience
+              {L.experience}
               </h2>
               <div className="space-y-6 pl-10">
                 {data.experiences.map((exp: any, i: number) => (
@@ -299,7 +302,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <div className="flex justify-between items-start mb-1">
                       <h3 className="font-bold text-gray-900">{exp.position}</h3>
                       <span className="text-sm text-purple-600 font-medium whitespace-nowrap ml-4">
-                        {formatDate(exp.startDate)} - {exp.current ? 'Présent' : exp.endDate ? formatDate(exp.endDate) : ''}
+                        {formatDate(exp.startDate)} - {exp.current ? L.present : exp.endDate ? formatDate(exp.endDate) : ''}
                       </span>
                     </div>
                     <p className="text-gray-600 font-medium">{exp.company}</p>
@@ -322,7 +325,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                   </svg>
                 </span>
-                Formation
+              {L.education}
               </h2>
               <div className="space-y-4 pl-10">
                 {data.educations.map((edu: any, i: number) => (
@@ -331,7 +334,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <div className="flex justify-between items-start mb-1">
                       <h3 className="font-bold text-gray-900">{edu.degree}</h3>
                       <span className="text-sm text-purple-600 font-medium whitespace-nowrap ml-4">
-                        {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
+                        {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : L.present}
                       </span>
                     </div>
                     <p className="text-gray-600">{edu.institution}</p>
@@ -351,7 +354,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </span>
-                Projets
+              {L.projects}
               </h2>
               <div className="space-y-4 pl-10">
                 {data.projects.map((project: any, i: number) => (
@@ -392,7 +395,7 @@ export function CreativeTemplate({ data }: { data: CVData }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </span>
-                Certifications
+              {L.certifications}
               </h2>
               <div className="space-y-4 pl-10">
                 {data.certifications.map((cert: any, i: number) => (

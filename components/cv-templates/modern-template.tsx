@@ -1,5 +1,7 @@
 'use client'
 
+import { getCvLabels } from './cv-labels'
+
 interface CVData {
   personalInfo: {
     firstName: string
@@ -27,7 +29,8 @@ interface CVData {
   interests?: any[]
 }
 
-export function ModernTemplate({ data }: { data: CVData }) {
+export function ModernTemplate({ data, locale }: { data: CVData; locale?: string }) {
+  const L = getCvLabels(locale)
   const formatDate = (date: Date | string) => {
     const d = new Date(date)
     return d.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
@@ -171,7 +174,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.experiences.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Expérience Professionnelle
+                  {L.experiencePro}
                 </h2>
                 <div className="space-y-3">
                   {data.experiences.map((exp: any, i: number) => (
@@ -180,7 +183,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
                       <div className="flex justify-between items-start mb-1">
                         <h3 className="font-bold text-slate-900">{exp.position}</h3>
                         <span className="text-sm text-slate-500 whitespace-nowrap">
-                          {formatDate(exp.startDate)} — {exp.current ? 'Présent' : exp.endDate ? formatDate(exp.endDate) : ''}
+                          {formatDate(exp.startDate)} — {exp.current ? L.present : exp.endDate ? formatDate(exp.endDate) : ''}
                         </span>
                       </div>
                       <p className="text-slate-600 font-medium">{exp.company}</p>
@@ -197,7 +200,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.educations.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Formation
+              {L.education}
                 </h2>
                 <div className="space-y-3">
                   {data.educations.map((edu: any, i: number) => (
@@ -210,7 +213,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
                           {edu.field && <p className="text-sm text-slate-500">{edu.field}</p>}
                         </div>
                         <span className="text-sm text-slate-500">
-                          {formatDate(edu.startDate)} — {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
+                          {formatDate(edu.startDate)} — {edu.endDate ? formatDate(edu.endDate) : L.present}
                         </span>
                       </div>
                     </div>
@@ -223,7 +226,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.projects && data.projects.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Projets
+              {L.projects}
                 </h2>
                 <div className="space-y-3">
                   {data.projects.map((project: any, i: number) => (
@@ -259,7 +262,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.certifications && data.certifications.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Certifications
+              {L.certifications}
                 </h2>
                 <div className="space-y-4">
                   {data.certifications.map((cert: any, i: number) => (
@@ -291,7 +294,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.skills.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Compétences
+                  {L.skills}
                 </h2>
                 {(() => {
                   const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
@@ -329,7 +332,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.languages.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Langues
+                  {L.languages}
                 </h2>
                 <div className="space-y-2">
                   {data.languages.map((lang: any, i: number) => (
@@ -348,7 +351,7 @@ export function ModernTemplate({ data }: { data: CVData }) {
             {data.interests && data.interests.length > 0 && (
               <section>
                 <h2 className="text-lg font-bold text-slate-800 uppercase tracking-wider border-b-2 border-slate-800 pb-1 mb-3">
-                  Centres d'intérêt
+              {L.interests}
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {data.interests.map((interest: any, i: number) => (

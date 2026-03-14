@@ -1,5 +1,7 @@
 'use client'
 
+import { getCvLabels } from './cv-labels'
+
 interface CVData {
   personalInfo: {
     firstName: string
@@ -27,7 +29,8 @@ interface CVData {
   interests?: any[]
 }
 
-export function MinimalTemplate({ data }: { data: CVData }) {
+export function MinimalTemplate({ data, locale }: { data: CVData; locale?: string }) {
+  const L = getCvLabels(locale)
   const formatDate = (date: Date | string) => {
     const d = new Date(date)
     return d.toLocaleDateString('fr-FR', { year: 'numeric' })
@@ -136,7 +139,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
         {data.experiences.length > 0 && (
           <section className="mb-12">
             <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-              Expérience
+              {L.experience}
             </h2>
             <div className="space-y-8">
               {data.experiences.map((exp: any, i: number) => (
@@ -144,7 +147,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
                   <div className="text-sm text-gray-400">
                     {formatDate(exp.startDate)}
                     <br />
-                    {exp.current ? 'Présent' : exp.endDate ? formatDate(exp.endDate) : ''}
+                    {exp.current ? L.present : exp.endDate ? formatDate(exp.endDate) : ''}
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">{exp.position}</h3>
@@ -163,7 +166,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
         {data.educations.length > 0 && (
           <section className="mb-12">
             <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-              Formation
+              {L.education}
             </h2>
             <div className="space-y-6">
               {data.educations.map((edu: any, i: number) => (
@@ -171,7 +174,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
                   <div className="text-sm text-gray-400">
                     {formatDate(edu.startDate)}
                     <br />
-                    {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
+                    {edu.endDate ? formatDate(edu.endDate) : L.present}
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">{edu.degree}</h3>
@@ -188,7 +191,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
         {data.projects && data.projects.length > 0 && (
           <section className="mb-12">
             <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-              Projets
+              {L.projects}
             </h2>
             <div className="space-y-6">
               {data.projects.map((project: any, i: number) => (
@@ -221,7 +224,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
         {data.certifications && data.certifications.length > 0 && (
           <section className="mb-12">
             <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-              Certifications
+              {L.certifications}
             </h2>
             <div className="space-y-6">
               {data.certifications.map((cert: any, i: number) => (
@@ -252,7 +255,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
           {data.skills.length > 0 && (
             <section>
               <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-                Compétences
+                  {L.skills}
               </h2>
               {(() => {
                 const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
@@ -290,7 +293,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
           {data.languages.length > 0 && (
             <section>
               <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-                Langues
+                  {L.languages}
               </h2>
               <div className="space-y-2">
                 {data.languages.map((lang: any, i: number) => (
@@ -308,7 +311,7 @@ export function MinimalTemplate({ data }: { data: CVData }) {
         {data.interests && data.interests.length > 0 && (
           <section className="mt-16">
             <h2 className="text-xs font-medium text-gray-400 uppercase tracking-[0.2em] mb-6">
-              Centres d'intérêt
+              {L.interests}
             </h2>
             <div className="flex flex-wrap gap-3">
               {data.interests.map((interest: any, i: number) => (

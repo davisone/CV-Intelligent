@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -118,6 +118,7 @@ interface ResumeEditorProps {
 
 export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requiresPayment = false }: ResumeEditorProps) {
   const router = useRouter()
+  const locale = useLocale()
   const t = useTranslations('editor')
   const tSections = useTranslations('cvSections')
   const [isLoading, setIsLoading] = useState(false)
@@ -585,7 +586,7 @@ ${interests.map(i => i.name).join(', ')}
   const downloadPDF = async () => {
     setIsGeneratingPdf(true)
     try {
-      const response = await fetch(`/api/resumes/${resume.id}/pdf`)
+      const response = await fetch(`/api/resumes/${resume.id}/pdf?locale=${locale}`)
       if (!response.ok) {
         const error = await response.json().catch(() => null)
         throw new Error(error?.error || t('pdfError'))
@@ -1229,7 +1230,7 @@ ${interests.map(i => i.name).join(', ')}
               {(() => {
                 const templateKey = (resume.template as TemplateType) || 'MODERN'
                 const TemplateComponent = templates[templateKey] || templates.MODERN
-                return <TemplateComponent data={cvData} />
+                return <TemplateComponent data={cvData} locale={locale} />
               })()}
             </div>
           </div>

@@ -1,5 +1,7 @@
 'use client'
 
+import { getCvLabels } from './cv-labels'
+
 interface CVData {
   personalInfo: {
     firstName: string
@@ -27,7 +29,8 @@ interface CVData {
   interests?: any[]
 }
 
-export function ATSTemplate({ data }: { data: CVData }) {
+export function ATSTemplate({ data, locale }: { data: CVData; locale?: string }) {
+  const L = getCvLabels(locale)
   const formatDate = (date: Date | string) => {
     const d = new Date(date)
     return d.toLocaleDateString('fr-FR', { month: '2-digit', year: 'numeric' })
@@ -98,7 +101,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.personalInfo.summary && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              RÉSUMÉ PROFESSIONNEL
+              {L.summary.toUpperCase()}
             </h2>
             <p className="text-sm text-black leading-relaxed text-justify">
               {data.personalInfo.summary}
@@ -110,7 +113,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.experiences.length > 0 && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              EXPÉRIENCE PROFESSIONNELLE
+              {L.experiencePro.toUpperCase()}
             </h2>
             <div className="space-y-4">
               {data.experiences.map((exp: any, i: number) => (
@@ -119,7 +122,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
                     {exp.position}
                   </div>
                   <div className="text-sm text-black">
-                    {exp.company} | {formatDate(exp.startDate)} - {exp.current ? 'Présent' : exp.endDate ? formatDate(exp.endDate) : ''}
+                    {exp.company} | {formatDate(exp.startDate)} - {exp.current ? L.present : exp.endDate ? formatDate(exp.endDate) : ''}
                   </div>
                   {exp.description && (
                     <p className="text-sm text-black mt-1 whitespace-pre-line">{exp.description}</p>
@@ -134,7 +137,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.educations.length > 0 && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              FORMATION
+              {L.education.toUpperCase()}
             </h2>
             <div className="space-y-3">
               {data.educations.map((edu: any, i: number) => (
@@ -143,9 +146,9 @@ export function ATSTemplate({ data }: { data: CVData }) {
                     {edu.degree}{edu.field ? `, ${edu.field}` : ''}
                   </div>
                   <div className="text-sm text-black">
-                    {edu.institution} | {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
+                    {edu.institution} | {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : L.present}
                   </div>
-                  {edu.gpa && <div className="text-sm text-black">Mention: {edu.gpa}</div>}
+                  {edu.gpa && <div className="text-sm text-black">{L.mention}: {edu.gpa}</div>}
                 </div>
               ))}
             </div>
@@ -156,7 +159,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.projects && data.projects.length > 0 && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              PROJETS
+              {L.projects.toUpperCase()}
             </h2>
             <div className="space-y-3">
               {data.projects.map((project: any, i: number) => (
@@ -183,7 +186,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.certifications && data.certifications.length > 0 && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              CERTIFICATIONS
+              {L.certifications.toUpperCase()}
             </h2>
             <div className="space-y-3">
               {data.certifications.map((cert: any, i: number) => (
@@ -204,7 +207,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.skills.length > 0 && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              COMPÉTENCES
+              {L.skills.toUpperCase()}
             </h2>
             {(() => {
               const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
@@ -232,7 +235,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.languages.length > 0 && (
           <section className="mb-5">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              LANGUES
+              {L.languages.toUpperCase()}
             </h2>
             <p className="text-sm text-black">
               {data.languages.map((lang: any) =>
@@ -246,7 +249,7 @@ export function ATSTemplate({ data }: { data: CVData }) {
         {data.interests && data.interests.length > 0 && (
           <section className="mb-5 mt-2">
             <h2 className="text-base font-bold text-black uppercase mb-2">
-              CENTRES D'INTÉRÊT
+              {L.interests.toUpperCase()}
             </h2>
             <p className="text-sm text-black">
               {data.interests.map((interest: any) => interest.name).join(' • ')}

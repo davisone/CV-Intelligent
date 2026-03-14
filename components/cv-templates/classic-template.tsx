@@ -1,5 +1,7 @@
 'use client'
 
+import { getCvLabels } from './cv-labels'
+
 interface CVData {
   personalInfo: {
     firstName: string
@@ -27,7 +29,8 @@ interface CVData {
   interests?: any[]
 }
 
-export function ClassicTemplate({ data }: { data: CVData }) {
+export function ClassicTemplate({ data, locale }: { data: CVData; locale?: string }) {
+  const L = getCvLabels(locale)
   const formatDate = (date: Date | string) => {
     const d = new Date(date)
     return d.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
@@ -153,7 +156,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
         {data.experiences.length > 0 && (
           <section className="mb-6">
             <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-              Expérience Professionnelle
+                  {L.experiencePro}
             </h2>
             <div className="space-y-4">
               {data.experiences.map((exp: any, i: number) => (
@@ -161,7 +164,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
                   <div className="flex justify-between items-baseline">
                     <h3 className="font-semibold text-gray-900">{exp.position}</h3>
                     <span className="text-sm text-gray-500 italic">
-                      {formatDate(exp.startDate)} - {exp.current ? 'Présent' : exp.endDate ? formatDate(exp.endDate) : ''}
+                      {formatDate(exp.startDate)} - {exp.current ? L.present : exp.endDate ? formatDate(exp.endDate) : ''}
                     </span>
                   </div>
                   <p className="text-gray-700 italic">{exp.company}</p>
@@ -178,7 +181,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
         {data.educations.length > 0 && (
           <section className="mb-6">
             <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-              Formation
+              {L.education}
             </h2>
             <div className="space-y-3">
               {data.educations.map((edu: any, i: number) => (
@@ -186,7 +189,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
                   <div className="flex justify-between items-baseline">
                     <h3 className="font-semibold text-gray-900">{edu.degree}</h3>
                     <span className="text-sm text-gray-500 italic">
-                      {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Présent'}
+                      {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : L.present}
                     </span>
                   </div>
                   <p className="text-gray-700 italic">{edu.institution}</p>
@@ -201,7 +204,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
         {data.projects && data.projects.length > 0 && (
           <section className="mb-6">
             <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-              Projets
+              {L.projects}
             </h2>
             <div className="space-y-3">
               {data.projects.map((project: any, i: number) => (
@@ -232,7 +235,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
         {data.certifications && data.certifications.length > 0 && (
           <section className="mb-6">
             <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-              Certifications
+              {L.certifications}
             </h2>
             <div className="space-y-3">
               {data.certifications.map((cert: any, i: number) => (
@@ -258,7 +261,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
           {data.skills.length > 0 && (
             <section>
               <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-                Compétences
+                  {L.skills}
               </h2>
               {(() => {
                 const categories = Array.from(new Set(data.skills.filter((s: any) => s.category).map((s: any) => s.category as string)))
@@ -296,7 +299,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
           {data.languages.length > 0 && (
             <section>
               <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-                Langues
+                  {L.languages}
               </h2>
               <ul className="space-y-1">
                 {data.languages.map((lang: any, i: number) => (
@@ -314,7 +317,7 @@ export function ClassicTemplate({ data }: { data: CVData }) {
         {data.interests && data.interests.length > 0 && (
           <section className="mt-8">
             <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3 border-b border-gray-300 pb-1">
-              Centres d'intérêt
+              {L.interests}
             </h2>
             <p className="text-sm text-gray-700">
               {data.interests.map((interest: any) => interest.name).join(' • ')}

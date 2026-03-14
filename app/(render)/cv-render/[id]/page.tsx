@@ -6,7 +6,7 @@ import { AutoFitPage } from '@/components/cv-templates/auto-fit-page'
 
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams: Promise<{ token?: string; ts?: string }>
+  searchParams: Promise<{ token?: string; ts?: string; locale?: string }>
 }
 
 // Vérifie le token HMAC pour protéger la page de rendu interne
@@ -57,7 +57,7 @@ function buildCvData(resume: Record<string, unknown>) {
 
 export default async function CvRenderPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { token, ts } = await searchParams
+  const { token, ts, locale } = await searchParams
 
   if (!token || !ts || !verifyToken(id, token, ts)) {
     notFound()
@@ -86,7 +86,7 @@ export default async function CvRenderPage({ params, searchParams }: PageProps) 
   return (
     <AutoFitPage>
       <div data-cv-container>
-        <TemplateComponent data={cvData} />
+        <TemplateComponent data={cvData} locale={locale} />
       </div>
     </AutoFitPage>
   )
