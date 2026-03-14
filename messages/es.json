@@ -46,6 +46,9 @@
       "errors": {
         "invalidCredentials": "Email o contraseña incorrectos",
         "generic": "Ha ocurrido un error al iniciar sesión"
+      },
+      "meta": {
+        "title": "Iniciar sesión — Resume Forge"
       }
     },
     "signup": {
@@ -78,6 +81,9 @@
       "errors": {
         "emailExists": "Este email ya está en uso",
         "generic": "Ha ocurrido un error al registrarse"
+      },
+      "meta": {
+        "title": "Crear una cuenta — Resume Forge"
       }
     },
     "forgotPassword": {
@@ -97,6 +103,9 @@
       "errors": {
         "sent": "¡Email enviado!",
         "generic": "Ha ocurrido un error"
+      },
+      "meta": {
+        "title": "Contraseña olvidada — Resume Forge"
       }
     },
     "verifyEmail": {
@@ -152,6 +161,9 @@
         "tokenInvalid": "Enlace inválido",
         "mismatch": "Las contraseñas no coinciden",
         "generic": "Ha ocurrido un error"
+      },
+      "meta": {
+        "title": "Restablecer contraseña — Resume Forge"
       }
     }
   },
