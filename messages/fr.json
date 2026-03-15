@@ -5881,6 +5881,1056 @@
         "description": "Créez un CV cadre dirigeant qui commande le respect, communique la vision stratégique et vous positionne pour les rôles de leadership que vous avez mérités.",
         "ctaText": "Créer Mon CV Dirigeant"
       }
+    },
+    "cvBanquierPage": {
+      "meta": {
+        "title": "CV Banquier Gratuit 2026 — Modèle CV Banque, Conseiller Bancaire",
+        "description": "Créez votre CV banquier gratuit. Modèles CV pour banquiers, conseillers bancaires, chargés de clientèle. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Banquier",
+      "hero": {
+        "badgeText": "CV banquier optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Banquier",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre expertise financière et bancaire",
+        "description": "Créez votre CV banquier gratuit en 5 minutes. Templates modernes pour les profils bancaires et financiers, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV banquier",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV banquier",
+        "subtitle": "Vos certifications financières et votre portefeuille client définissent votre valeur.",
+        "item0": {
+          "title": "Certifications financières",
+          "description": "AMF, CFA, CESB — vos habilitations réglementaires sont indispensables dans le secteur bancaire."
+        },
+        "item1": {
+          "title": "Portefeuille clients",
+          "description": "Mentionnez la taille et la nature de vos portefeuilles gérés : particuliers, professionnels, entreprises."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les systèmes de recrutement automatisés des grandes banques."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV banquier gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité bancaire.",
+        "item0": {
+          "title": "CV Conseiller Bancaire",
+          "keyword": "cv conseiller bancaire gratuit",
+          "description": "Pour les conseillers de clientèle particuliers et professionnels en agence."
+        },
+        "item1": {
+          "title": "CV Chargé d'Affaires",
+          "keyword": "cv chargé d'affaires banque gratuit",
+          "description": "Pour les chargés d'affaires entreprises et le financement professionnel."
+        },
+        "item2": {
+          "title": "CV Analyste Crédit",
+          "keyword": "cv analyste crédit gratuit",
+          "description": "Pour l'analyse des risques crédit, scoring et décisions de financement."
+        },
+        "item3": {
+          "title": "CV Trader / Back Office",
+          "keyword": "cv trader back office banque gratuit",
+          "description": "Pour les postes de trading, salle des marchés et opérations bancaires."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV banquier en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Conseiller, Chargé d'affaires, Analyste crédit ou Back office selon votre poste."
+        },
+        "step1": {
+          "title": "Mettez en avant vos habilitations",
+          "description": "Notre IA vous aide à valoriser vos certifications AMF, CFA et formations réglementaires."
+        },
+        "step2": {
+          "title": "Quantifiez vos résultats",
+          "description": "Portefeuille géré, taux de satisfaction client, objectifs commerciaux atteints."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en ligne et en agence."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV banquier",
+        "subtitle": "Créez un CV banquier professionnel et convaincant",
+        "q0": {
+          "question": "Quelles certifications mettre en avant dans un CV banquier ?",
+          "answer": "L'habilitation AMF est obligatoire pour vendre des produits financiers. Ajoutez également : CFA, CESB, diplôme CGPC, et toute formation réglementaire MiFID II ou RGPD bancaire."
+        },
+        "q1": {
+          "question": "Comment valoriser son portefeuille clients dans un CV banque ?",
+          "answer": "Précisez le type (particuliers, professionnels, entreprises), le volume (nombre de clients, encours gérés en M€), et les produits commercialisés (épargne, crédit, assurance-vie)."
+        },
+        "q2": {
+          "question": "Quels logiciels mettre sur un CV banquier ?",
+          "answer": "Bancaires : Amplitude, Thémis, Laser Banque, Sopra. CRM : Salesforce, Microsoft Dynamics. Bureautique : Excel avancé, PowerPoint pour les présentations clients."
+        },
+        "q3": {
+          "question": "Faut-il mentionner ses objectifs commerciaux atteints ?",
+          "answer": "Oui, c'est essentiel. Ex : 'Objectifs commerciaux dépassés de 120% sur 3 années consécutives', 'Ouverture de 200 nouveaux comptes par an', 'Taux de fidélisation : 94%'."
+        },
+        "q4": {
+          "question": "Quelle longueur pour un CV de banquier ?",
+          "answer": "1 page pour les profils juniors (moins de 5 ans). 2 pages maximum pour les cadres et directeurs d'agence. La concision est valorisée dans le secteur bancaire."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV banquier maintenant",
+        "description": "Gratuit, professionnel, axé sur vos certifications et résultats commerciaux. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV banquier"
+      }
+    },
+    "cvArchitectePage": {
+      "meta": {
+        "title": "CV Architecte Gratuit 2026 — Modèle CV Architecte, DPLG, HMONP",
+        "description": "Créez votre CV architecte gratuit. Modèles CV pour architectes, urbanistes, architectes d'intérieur. Design créatif optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Architecte",
+      "hero": {
+        "badgeText": "CV architecte optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Architecte",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez vos projets architecturaux et votre maîtrise technique",
+        "description": "Créez votre CV architecte gratuit en 5 minutes. Templates créatifs et professionnels pour architectes DPLG et HMONP, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV architecte",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV architecte",
+        "subtitle": "Vos projets réalisés et vos logiciels maîtrisés sont vos atouts majeurs.",
+        "item0": {
+          "title": "Portefeuille de projets",
+          "description": "Mettez en avant vos réalisations : type de bâtiments, surfaces, budgets et rôle sur chaque projet."
+        },
+        "item1": {
+          "title": "Logiciels de conception",
+          "description": "AutoCAD, Revit, SketchUp, ArchiCAD, Rhino, Adobe Creative Suite — indispensables selon les agences."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres ATS tout en restant visuellement soigné."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV architecte gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité.",
+        "item0": {
+          "title": "CV Architecte DPLG/HMONP",
+          "keyword": "cv architecte DPLG gratuit",
+          "description": "Pour les architectes diplômés avec habilitation à la maîtrise d'œuvre en leur nom propre."
+        },
+        "item1": {
+          "title": "CV Architecte d'Intérieur",
+          "keyword": "cv architecte intérieur gratuit",
+          "description": "Pour les projets d'aménagement intérieur, décoration et rénovation résidentielle ou commerciale."
+        },
+        "item2": {
+          "title": "CV Urbaniste / Paysagiste",
+          "keyword": "cv urbaniste paysagiste gratuit",
+          "description": "Pour les projets d'aménagement urbain, espaces publics et développement territorial."
+        },
+        "item3": {
+          "title": "CV Chef de Projet BIM",
+          "keyword": "cv chef projet BIM gratuit",
+          "description": "Pour les coordinateurs BIM, managers de maquettes numériques et projets en BIM."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV architecte en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "DPLG/HMONP, Intérieur, Urbanisme ou BIM selon votre orientation professionnelle."
+        },
+        "step1": {
+          "title": "Présentez vos projets phares",
+          "description": "Notre IA vous aide à décrire vos réalisations avec les mots-clés adaptés au recrutement."
+        },
+        "step2": {
+          "title": "Listez vos logiciels",
+          "description": "Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Lumion — classés par niveau de maîtrise."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en agence ou en maîtrise d'ouvrage."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV architecte",
+        "subtitle": "Créez un CV architecte qui met en valeur vos projets",
+        "q0": {
+          "question": "Faut-il joindre un book à son CV architecte ?",
+          "answer": "Oui, un portfolio (book) est quasi obligatoire en architecture. Mentionnez dans votre CV 'Book disponible sur demande' ou joignez un lien vers votre portfolio en ligne."
+        },
+        "q1": {
+          "question": "Quels logiciels sont incontournables sur un CV architecte ?",
+          "answer": "AutoCAD et Revit pour la conception 2D/3D, SketchUp pour la modélisation rapide, ArchiCAD pour les agences structurées BIM, Adobe Photoshop/InDesign pour les rendus et dossiers."
+        },
+        "q2": {
+          "question": "Comment présenter ses projets dans un CV architecte ?",
+          "answer": "Pour chaque projet : nom et type (logements, ERP, tertiaire), surface, budget, votre rôle (maîtrise d'œuvre, conception, suivi de chantier), et si possible une image ou référence."
+        },
+        "q3": {
+          "question": "L'inscription à l'Ordre des Architectes est-elle à mentionner ?",
+          "answer": "Absolument. L'inscription à l'Ordre est obligatoire pour le titre d'architecte en France. Mentionnez votre numéro d'inscription et votre région (ex : 'Architecte DPLG — Ordre de Bretagne')."
+        },
+        "q4": {
+          "question": "Quelle photo mettre sur son CV architecte ?",
+          "answer": "Une photo professionnelle est recommandée en France. En contexte créatif/agence design, elle valorise votre image. Évitez les photos informelles et optez pour un fond neutre."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV architecte maintenant",
+        "description": "Gratuit, professionnel et créatif. Mettez en valeur vos projets et compétences techniques en 5 minutes.",
+        "ctaText": "Créer mon CV architecte"
+      }
+    },
+    "cvCuisinierPage": {
+      "meta": {
+        "title": "CV Cuisinier Gratuit 2026 — Modèle CV Cuisinier, Chef de Partie, Commis",
+        "description": "Créez votre CV cuisinier gratuit. Modèles CV pour cuisiniers, chefs de cuisine, commis, pâtissiers. Design professionnel optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Cuisinier",
+      "hero": {
+        "badgeText": "CV cuisinier optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Cuisinier",
+        "h1After": " Gratuit",
+        "subtitle": "Mettez en valeur votre savoir-faire culinaire et vos expériences en restauration",
+        "description": "Créez votre CV cuisinier gratuit en 5 minutes. Templates professionnels pour cuisiniers et métiers de bouche, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV cuisinier",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV cuisinier",
+        "subtitle": "Vos techniques maîtrisées et vos établissements de référence font votre réputation.",
+        "item0": {
+          "title": "Techniques culinaires",
+          "description": "Précisez vos spécialités : cuisine française, italienne, asiatique, pâtisserie, traiteur, gastronomique."
+        },
+        "item1": {
+          "title": "Établissements de prestige",
+          "description": "Étoiles Michelin, Bib Gourmand, restaurants gastronomiques — ces références valorisent votre profil."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres des groupes hôteliers et agences de recrutement."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV cuisinier gratuits",
+        "subtitle": "Choisissez le template adapté à votre niveau et spécialité.",
+        "item0": {
+          "title": "CV Chef de Cuisine",
+          "keyword": "cv chef de cuisine gratuit",
+          "description": "Pour les chefs exécutifs, directeurs de cuisine et responsables de brigade."
+        },
+        "item1": {
+          "title": "CV Chef de Partie",
+          "keyword": "cv chef de partie gratuit",
+          "description": "Pour les postes de chef de partie : poissons, viandes, pâtisserie, entrées, garde-manger."
+        },
+        "item2": {
+          "title": "CV Commis de Cuisine",
+          "keyword": "cv commis de cuisine gratuit",
+          "description": "Pour les commis et jeunes cuisiniers en début de carrière ou en apprentissage."
+        },
+        "item3": {
+          "title": "CV Pâtissier",
+          "keyword": "cv pâtissier gratuit",
+          "description": "Pour les pâtissiers de restaurant, de boutique et les spécialistes en desserts créatifs."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV cuisinier en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Chef exécutif, Chef de partie, Commis ou Pâtissier selon votre niveau d'expérience."
+        },
+        "step1": {
+          "title": "Listez vos expériences en restauration",
+          "description": "Notre IA vous aide à valoriser chaque poste avec les termes recherchés par les recruteurs."
+        },
+        "step2": {
+          "title": "Précisez vos techniques et spécialités",
+          "description": "Cuisine sous vide, pasteurisation, techniques pâtissières, allergènes, HACCP."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en restauration et hôtellerie."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV cuisinier",
+        "subtitle": "Créez un CV cuisinier qui met en valeur votre savoir-faire",
+        "q0": {
+          "question": "Quels diplômes mettre en avant dans un CV cuisinier ?",
+          "answer": "CAP Cuisine, BAC Pro Cuisine, BTS Hôtellerie-Restauration, Mention Complémentaire. Si vous avez un titre professionnel ou une formation chez un chef étoilé, mettez-le en évidence."
+        },
+        "q1": {
+          "question": "Comment présenter ses expériences dans un CV de restauration ?",
+          "answer": "Pour chaque poste : nom et étoilement de l'établissement, type de cuisine, votre poste en brigade, le volume de couverts, et les techniques spécifiques mises en œuvre."
+        },
+        "q2": {
+          "question": "Faut-il mentionner la formation HACCP dans un CV cuisinier ?",
+          "answer": "Oui, c'est valorisé et souvent exigé. Mentionnez votre attestation HACCP (hygiène alimentaire) et toute formation en gestion des allergènes, traçabilité et sécurité alimentaire."
+        },
+        "q3": {
+          "question": "Quelle importance des langues pour un cuisinier ?",
+          "answer": "L'anglais est un plus important pour les établissements internationaux, hôtels de luxe et yachts. Précisez votre niveau si vous êtes à l'aise pour communiquer en cuisine internationale."
+        },
+        "q4": {
+          "question": "Comment se démarquer avec un CV cuisinier sans étoile Michelin ?",
+          "answer": "Mettez en avant la diversité de vos expériences, vos techniques maîtrisées, le volume de couverts géré, et vos initiatives : créations de plats, gestion des stocks, encadrement de stagiaires."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV cuisinier maintenant",
+        "description": "Gratuit, professionnel, valorisant votre savoir-faire culinaire. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV cuisinier"
+      }
+    },
+    "cvElectricienPage": {
+      "meta": {
+        "title": "CV Électricien Gratuit 2026 — Modèle CV Électricien, Technicien Électrique",
+        "description": "Créez votre CV électricien gratuit. Modèles CV pour électriciens, techniciens électriques, automaticiens. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Électricien",
+      "hero": {
+        "badgeText": "CV électricien optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Électricien",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez vos habilitations électriques et vos chantiers réalisés",
+        "description": "Créez votre CV électricien gratuit en 5 minutes. Templates professionnels pour électriciens et techniciens du bâtiment, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV électricien",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV électricien",
+        "subtitle": "Vos habilitations et certifications sont les premières choses qu'un recruteur vérifie.",
+        "item0": {
+          "title": "Habilitations électriques",
+          "description": "B1, B2, BR, BC, H0, H1 — listez toutes vos habilitations CONSUEL et leur niveau de tension."
+        },
+        "item1": {
+          "title": "Types de chantiers",
+          "description": "Résidentiel, tertiaire, industriel, courants forts/faibles — précisez vos domaines d'intervention."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres des entreprises du BTP et du génie électrique."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV électricien gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité.",
+        "item0": {
+          "title": "CV Électricien Bâtiment",
+          "keyword": "cv électricien bâtiment gratuit",
+          "description": "Pour les électriciens en installation résidentielle, rénovation et tertiaire."
+        },
+        "item1": {
+          "title": "CV Électricien Industriel",
+          "keyword": "cv électricien industriel gratuit",
+          "description": "Pour les électriciens en maintenance industrielle, automatisme et ligne de production."
+        },
+        "item2": {
+          "title": "CV Chef de Chantier Électrique",
+          "keyword": "cv chef chantier électrique gratuit",
+          "description": "Pour les conducteurs de travaux et chefs de chantier en génie électrique."
+        },
+        "item3": {
+          "title": "CV Domotique / Smart Home",
+          "keyword": "cv électricien domotique gratuit",
+          "description": "Pour les installateurs de systèmes domotiques, KNX, GTB et bâtiment intelligent."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV électricien en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Bâtiment, Industriel, Chef de chantier ou Domotique selon votre spécialité."
+        },
+        "step1": {
+          "title": "Listez vos habilitations",
+          "description": "Notre IA vous aide à présenter vos certifications électriques et les normes maîtrisées."
+        },
+        "step2": {
+          "title": "Précisez vos chantiers",
+          "description": "Types de travaux, puissances, normes NF C 15-100, IRVE, photovoltaïque, éclairage LED."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en entreprise de BTP ou d'industrie."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV électricien",
+        "subtitle": "Créez un CV électricien complet et professionnel",
+        "q0": {
+          "question": "Quelles habilitations électriques mettre en avant sur son CV ?",
+          "answer": "Listez toutes vos habilitations : B0, B1, B2, BR, BC pour le basse tension ; H0, H1, H2, HC pour la haute tension. Indiquez également vos CACES, permis de conduire et formations PRAP."
+        },
+        "q1": {
+          "question": "Comment présenter ses chantiers dans un CV électricien ?",
+          "answer": "Pour chaque poste ou projet : type de chantier (résidentiel, tertiaire, industrie), type de travaux (installation, maintenance, automatisme), puissance et votre rôle (pose, câblage, mise en service)."
+        },
+        "q2": {
+          "question": "Quelles normes mentionner sur un CV électricien ?",
+          "answer": "NF C 15-100 (installations basse tension), NF C 15-150 (courants faibles), IRVE (bornes de recharge VE), RT2020, IEC 60204 pour l'industrie. Ces références rassurent les employeurs."
+        },
+        "q3": {
+          "question": "Faut-il mentionner ses formations SST et sécurité ?",
+          "answer": "Oui, le SST (Sauveteur Secouriste du Travail), la formation travaux en hauteur, le port du harnais et les formations risques électriques sont très valorisés dans le BTP."
+        },
+        "q4": {
+          "question": "Comment valoriser la domotique dans un CV électricien ?",
+          "answer": "Précisez les protocoles maîtrisés : KNX, Modbus, BACnet, Zigbee. Mentionnez les marques : Schneider, Legrand, Hager, ABB, Somfy. Les installateurs domotique sont très recherchés."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV électricien maintenant",
+        "description": "Gratuit, professionnel, axé sur vos habilitations et réalisations. Votre CV prêt en 5 minutes.",
+        "ctaText": "Créer mon CV électricien"
+      }
+    },
+    "cvSecretairePage": {
+      "meta": {
+        "title": "CV Secrétaire Gratuit 2026 — Modèle CV Secrétaire, Assistante Administrative",
+        "description": "Créez votre CV secrétaire gratuit. Modèles CV pour secrétaires, assistantes administratives, secrétaires médicales. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Secrétaire",
+      "hero": {
+        "badgeText": "CV secrétaire optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Secrétaire",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez vos compétences organisationnelles et relationnelles",
+        "description": "Créez votre CV secrétaire gratuit en 5 minutes. Templates professionnels pour secrétaires et assistantes administratives, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV secrétaire",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV secrétaire",
+        "subtitle": "Votre maîtrise des outils bureautiques et votre organisation définissent votre valeur.",
+        "item0": {
+          "title": "Maîtrise bureautique",
+          "description": "Word, Excel, PowerPoint, Outlook, Teams — votre niveau de maîtrise de la suite Office est essentiel."
+        },
+        "item1": {
+          "title": "Organisation et polyvalence",
+          "description": "Gestion d'agenda, accueil, rédaction, classement — valorisez votre capacité à gérer plusieurs tâches."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les systèmes de recrutement de tous les secteurs."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV secrétaire gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité.",
+        "item0": {
+          "title": "CV Secrétaire Administrative",
+          "keyword": "cv secrétaire administrative gratuit",
+          "description": "Pour les postes de secrétariat général en entreprise, mairie ou association."
+        },
+        "item1": {
+          "title": "CV Secrétaire Médicale",
+          "keyword": "cv secrétaire médicale gratuit",
+          "description": "Pour les secrétaires médicales en cabinet médical, clinique ou hôpital."
+        },
+        "item2": {
+          "title": "CV Assistante de Direction",
+          "keyword": "cv assistante de direction gratuit",
+          "description": "Pour les assistantes de haut niveau gérant l'agenda et les déplacements de dirigeants."
+        },
+        "item3": {
+          "title": "CV Secrétaire Juridique",
+          "keyword": "cv secrétaire juridique gratuit",
+          "description": "Pour les secrétaires en cabinet d'avocats, notariat ou services juridiques d'entreprise."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV secrétaire en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Administrative, Médicale, Direction ou Juridique selon votre spécialité."
+        },
+        "step1": {
+          "title": "Listez vos compétences bureautiques",
+          "description": "Notre IA vous aide à valoriser votre maîtrise des logiciels et outils collaboratifs."
+        },
+        "step2": {
+          "title": "Mettez en avant votre organisation",
+          "description": "Gestion d'agenda, accueil téléphonique, rédaction de courriers, gestion documentaire."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures dans tous les secteurs."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV secrétaire",
+        "subtitle": "Créez un CV secrétaire professionnel et organisé",
+        "q0": {
+          "question": "Quelles compétences mettre en avant dans un CV secrétaire ?",
+          "answer": "La maîtrise de la suite Office (Word, Excel, PowerPoint), la gestion d'agenda, l'accueil, la rédaction de courriers professionnels, la saisie rapide et la gestion documentaire."
+        },
+        "q1": {
+          "question": "Quels logiciels mettre sur un CV de secrétaire médicale ?",
+          "answer": "Doctolib, Mediboard, Logosw, Crossway — les logiciels de gestion médicale. Ajoutez aussi la maîtrise de la terminologie médicale et des démarches administratives CPAM."
+        },
+        "q2": {
+          "question": "Faut-il préciser sa vitesse de frappe dans un CV secrétaire ?",
+          "answer": "Oui si elle est élevée (plus de 60 mots/min). Vous pouvez mentionner 'Frappe rapide : 80 mots/min' ou 'Dactylo confirmée'. La dictée et la prise de notes peuvent aussi être valorisées."
+        },
+        "q3": {
+          "question": "Les langues sont-elles importantes dans un CV secrétaire ?",
+          "answer": "L'anglais professionnel est un atout important pour les secrétaires en entreprise internationale. Précisez votre niveau (B2, courant) et si vous gérez des correspondances en anglais."
+        },
+        "q4": {
+          "question": "Comment valoriser ses expériences en secrétariat sur un CV ?",
+          "answer": "Quantifiez : 'Gestion de l'agenda de 3 directeurs', 'Accueil de 50 appels/jour', 'Organisation de 2 réunions mensuelles', 'Saisie de 100 factures/semaine'. Les chiffres parlent d'eux-mêmes."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV secrétaire maintenant",
+        "description": "Gratuit, professionnel, valorisant votre organisation et vos compétences bureautiques. Prêt en 5 minutes.",
+        "ctaText": "Créer mon CV secrétaire"
+      }
+    },
+    "cvDeveloppeurWebPage": {
+      "meta": {
+        "title": "CV Développeur Web Gratuit 2026 — Modèle CV Dev Web, Frontend, Backend",
+        "description": "Créez votre CV développeur web gratuit. Modèles CV pour développeurs frontend, backend, fullstack, React, Node.js. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Développeur Web",
+      "hero": {
+        "badgeText": "CV développeur web optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Développeur Web",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez votre stack technique et vos projets web réalisés",
+        "description": "Créez votre CV développeur web gratuit en 5 minutes. Templates modernes pour les développeurs frontend, backend et fullstack, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV dev web",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV développeur web",
+        "subtitle": "Votre stack technique et vos projets GitHub parlent pour vous.",
+        "item0": {
+          "title": "Stack technique claire",
+          "description": "Langages, frameworks, bases de données, outils DevOps — listez tout de façon structurée et honnête."
+        },
+        "item1": {
+          "title": "Projets concrets",
+          "description": "GitHub, portfolio, projets open source — vos réalisations concrètes sont votre meilleure carte de visite."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres des startups et entreprises tech."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV développeur web gratuits",
+        "subtitle": "Choisissez le template adapté à votre profil.",
+        "item0": {
+          "title": "CV Développeur Frontend",
+          "keyword": "cv développeur frontend gratuit",
+          "description": "Pour les développeurs React, Vue.js, Angular et spécialistes UI/UX côté client."
+        },
+        "item1": {
+          "title": "CV Développeur Backend",
+          "keyword": "cv développeur backend gratuit",
+          "description": "Pour les développeurs Node.js, Python, PHP, Java et experts en API et bases de données."
+        },
+        "item2": {
+          "title": "CV Développeur Fullstack",
+          "keyword": "cv développeur fullstack gratuit",
+          "description": "Pour les développeurs polyvalents maîtrisant le frontend et le backend de bout en bout."
+        },
+        "item3": {
+          "title": "CV Développeur Mobile",
+          "keyword": "cv développeur mobile gratuit",
+          "description": "Pour les développeurs React Native, Flutter, iOS (Swift) et Android (Kotlin)."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV développeur web en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Frontend, Backend, Fullstack ou Mobile selon votre spécialité et expérience."
+        },
+        "step1": {
+          "title": "Structurez votre stack technique",
+          "description": "Notre IA vous aide à organiser vos technologies par catégorie et niveau de maîtrise."
+        },
+        "step2": {
+          "title": "Ajoutez vos projets phares",
+          "description": "Liens GitHub, portfolio, projets open source, missions freelance significatives."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en startup ou ESN."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV développeur web",
+        "subtitle": "Créez un CV dev web qui convertit",
+        "q0": {
+          "question": "Faut-il mettre son GitHub sur son CV de développeur web ?",
+          "answer": "Oui, si votre profil GitHub est actif et public. Ajoutez l'URL directement dans l'en-tête de votre CV. Un profil GitHub avec des projets réels est souvent plus convaincant qu'une liste de compétences."
+        },
+        "q1": {
+          "question": "Comment structurer la section compétences techniques sur un CV dev web ?",
+          "answer": "Organisez par catégories : Langages (JavaScript, Python, TypeScript), Frameworks (React, Next.js, Node.js), Bases de données (PostgreSQL, MongoDB, Redis), DevOps (Docker, CI/CD, AWS)."
+        },
+        "q2": {
+          "question": "Faut-il préciser son niveau pour chaque technologie ?",
+          "answer": "Oui, soyez honnête. Utilisez des indicateurs simples : Expert, Confirmé, Notions. Évitez les barres de progression visuelles subjectives. Les recruteurs techniques testeront votre niveau."
+        },
+        "q3": {
+          "question": "Comment présenter ses projets personnels sur un CV de développeur ?",
+          "answer": "Pour chaque projet : nom, description en une phrase, technologies utilisées, lien GitHub ou démo live. Privilégiez 3-5 projets représentatifs plutôt qu'une liste exhaustive."
+        },
+        "q4": {
+          "question": "Faut-il un portfolio en plus du CV pour un développeur web ?",
+          "answer": "Fortement recommandé. Un portfolio personnel (site web) montre vos compétences en action. Pour les développeurs frontend et fullstack, c'est souvent le premier critère de présélection."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV développeur web maintenant",
+        "description": "Gratuit, structuré, optimisé pour mettre en valeur votre stack et vos projets. Prêt en 5 minutes.",
+        "ctaText": "Créer mon CV développeur web"
+      }
+    },
+    "cvMedecinPage": {
+      "meta": {
+        "title": "CV Médecin Gratuit 2026 — Modèle CV Médecin Généraliste, Spécialiste",
+        "description": "Créez votre CV médecin gratuit. Modèles CV pour médecins généralistes, spécialistes, internes et chefs de clinique. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Médecin",
+      "hero": {
+        "badgeText": "CV médecin optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Médecin",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez vos formations, spécialisations et expériences cliniques",
+        "description": "Créez votre CV médecin gratuit en 5 minutes. Templates professionnels pour médecins généralistes et spécialistes, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV médecin",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV médecin",
+        "subtitle": "Vos titres, spécialisations et publications définissent votre parcours médical.",
+        "item0": {
+          "title": "Titres et qualifications",
+          "description": "Doctorat en médecine, DES, DESC, DU, capacités — listez tous vos diplômes et spécialisations."
+        },
+        "item1": {
+          "title": "Expériences cliniques",
+          "description": "Hôpitaux, services, stages — précisez vos postes, les pathologies et les techniques maîtrisées."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres des hôpitaux et cliniques recruteurs."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV médecin gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité médicale.",
+        "item0": {
+          "title": "CV Médecin Généraliste",
+          "keyword": "cv médecin généraliste gratuit",
+          "description": "Pour les médecins de ville, généralistes et médecins coordonnateurs en EHPAD."
+        },
+        "item1": {
+          "title": "CV Médecin Spécialiste",
+          "keyword": "cv médecin spécialiste gratuit",
+          "description": "Pour les spécialistes (cardiologue, pneumologue, chirurgien) en CHU ou clinique."
+        },
+        "item2": {
+          "title": "CV Interne en Médecine",
+          "keyword": "cv interne médecine gratuit",
+          "description": "Pour les internes en DES, avec une présentation structurée des stages hospitaliers."
+        },
+        "item3": {
+          "title": "CV Médecin Urgentiste",
+          "keyword": "cv médecin urgentiste gratuit",
+          "description": "Pour les urgentistes SAMU, SMUR et médecins de garde aux urgences."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV médecin en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Généraliste, Spécialiste, Interne ou Urgentiste selon votre parcours médical."
+        },
+        "step1": {
+          "title": "Listez vos diplômes et spécialisations",
+          "description": "Notre IA vous aide à structurer votre cursus : de la PCEM au DES en passant par les DU."
+        },
+        "step2": {
+          "title": "Décrivez vos expériences cliniques",
+          "description": "Stages, services, pathologies traitées, actes réalisés et compétences techniques acquises."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures hospitalières ou en cabinet."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV médecin",
+        "subtitle": "Créez un CV médecin structuré et professionnel",
+        "q0": {
+          "question": "Comment structurer un CV de médecin en France ?",
+          "answer": "L'ordre recommandé : état civil et coordonnées, diplômes (du plus récent au plus ancien), postes et expériences hospitalières, activité libérale, formations complémentaires, publications et communications, langues."
+        },
+        "q1": {
+          "question": "Faut-il mentionner son numéro RPPS sur un CV médecin ?",
+          "answer": "Oui, le numéro RPPS (Répertoire Partagé des Professionnels de Santé) est recommandé sur les CV médicaux. Il confirme votre inscription à l'Ordre des Médecins et votre droit à exercer."
+        },
+        "q2": {
+          "question": "Comment présenter ses publications sur un CV médecin ?",
+          "answer": "Selon les normes Vancouver : Auteurs, Titre de l'article, Revue (en italique), Année, Volume, Numéro, Pages. Distinguez les articles originaux, reviews, abstracts et communications orales/affichées."
+        },
+        "q3": {
+          "question": "Quelle longueur pour un CV de médecin spécialiste ?",
+          "answer": "Un CV médecin académique peut être long (5-10 pages) pour un professeur des universités. Pour un poste hospitalier, 2-4 pages avec publications. Pour la médecine libérale, 1-2 pages suffisent."
+        },
+        "q4": {
+          "question": "Comment valoriser une expérience humanitaire sur un CV médecin ?",
+          "answer": "Mentionnez l'ONG, le pays, la période, les pathologies rencontrées et le nombre de patients pris en charge. Une mission MSF, Médecins du Monde ou MDM est très valorisée pour les postes hospitaliers."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV médecin maintenant",
+        "description": "Gratuit, structuré selon les standards médicaux, export PDF instantané. Prêt en 5 minutes.",
+        "ctaText": "Créer mon CV médecin"
+      }
+    },
+    "lettreDeMotiPage": {
+      "meta": {
+        "title": "Lettre de Motivation Gratuite 2026 — Modèle Lettre de Motivation Professionnelle",
+        "description": "Créez votre lettre de motivation gratuite. Modèles de lettres de motivation professionnelles pour tous les secteurs. Personnalisable, export PDF, optimisé ATS."
+      },
+      "breadcrumbName": "Lettre de Motivation",
+      "hero": {
+        "badgeText": "Lettre de motivation optimisée par IA",
+        "h1Before": "Créer une ",
+        "h1Accent": "Lettre de Motivation",
+        "h1After": " Gratuite",
+        "subtitle": "Rédigez une lettre de motivation percutante qui complète votre CV",
+        "description": "Créez votre lettre de motivation gratuite en 5 minutes. Templates professionnels pour tous les métiers, personnalisables, export PDF gratuit.",
+        "primaryCtaText": "Créer ma lettre de motivation",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les clés d'une lettre de motivation efficace",
+        "subtitle": "Une lettre bien construite peut faire la différence sur des centaines de candidatures.",
+        "item0": {
+          "title": "Structure claire",
+          "description": "Accroche, corps (pourquoi vous, pourquoi eux), conclusion et appel à l'action — respectez les codes."
+        },
+        "item1": {
+          "title": "Personnalisation maximale",
+          "description": "Chaque lettre doit être adaptée à l'offre et à l'entreprise. Les recruteurs repèrent les lettres génériques."
+        },
+        "item2": {
+          "title": "Compatible ATS",
+          "description": "Nos templates garantissent que votre lettre est lisible par les systèmes de traitement automatique."
+        }
+      },
+      "section2": {
+        "title": "Modèles de lettres de motivation gratuits",
+        "subtitle": "Choisissez le template adapté à votre situation.",
+        "item0": {
+          "title": "Lettre de Motivation CDI",
+          "keyword": "lettre de motivation CDI gratuite",
+          "description": "Pour les candidatures en contrat à durée indéterminée dans tous les secteurs d'activité."
+        },
+        "item1": {
+          "title": "Lettre de Motivation Stage",
+          "keyword": "lettre de motivation stage gratuite",
+          "description": "Pour les étudiants et jeunes diplômés cherchant un stage en entreprise ou administration."
+        },
+        "item2": {
+          "title": "Lettre de Motivation Spontanée",
+          "keyword": "lettre de motivation spontanée gratuite",
+          "description": "Pour les candidatures non sollicitées adressées directement aux entreprises cibles."
+        },
+        "item3": {
+          "title": "Lettre de Motivation Reconversion",
+          "keyword": "lettre de motivation reconversion gratuite",
+          "description": "Pour les profils en changement de secteur ou de métier souhaitant valoriser leurs compétences transférables."
+        }
+      },
+      "section3": {
+        "title": "Rédigez votre lettre de motivation en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "CDI, Stage, Spontanée ou Reconversion selon votre situation et votre objectif."
+        },
+        "step1": {
+          "title": "Personnalisez le contenu",
+          "description": "Notre IA vous aide à adapter chaque paragraphe à l'offre et à l'entreprise ciblée."
+        },
+        "step2": {
+          "title": "Relisez et ajustez le ton",
+          "description": "Professionnel mais authentique — trouvez le bon équilibre entre formalisme et personnalité."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt à être joint à votre CV et envoyé à votre recruteur."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur la lettre de motivation",
+        "subtitle": "Tout ce que vous devez savoir pour rédiger une lettre efficace",
+        "q0": {
+          "question": "Quelle est la structure idéale d'une lettre de motivation ?",
+          "answer": "Une lettre de motivation se compose de 3 parties : 1) Accroche — pourquoi ce poste vous intéresse ; 2) Corps — ce que vous pouvez apporter à l'entreprise (compétences + expériences) ; 3) Conclusion — formule de politesse et appel à entretien."
+        },
+        "q1": {
+          "question": "Quelle longueur doit faire une lettre de motivation ?",
+          "answer": "Une page maximum, en général 300-400 mots. Les recruteurs lisent rarement au-delà. Soyez concis, percutant et spécifique à l'offre. Chaque mot doit avoir un objectif."
+        },
+        "q2": {
+          "question": "Faut-il répéter ce qui est déjà dans le CV ?",
+          "answer": "Non. La lettre complète le CV, elle ne le répète pas. Utilisez-la pour expliquer votre motivation, donner du contexte à vos expériences et montrer votre personnalité et votre connaissance de l'entreprise."
+        },
+        "q3": {
+          "question": "Comment commencer une lettre de motivation sans 'Je me permets de...' ?",
+          "answer": "Commencez par une accroche directe et originale : une réalisation pertinente, une problématique de l'entreprise que vous pouvez résoudre, ou votre enthousiasme pour la mission précise du poste."
+        },
+        "q4": {
+          "question": "Une lettre de motivation est-elle encore utile en 2026 ?",
+          "answer": "Oui, surtout pour les postes à forte concurrence ou en candidature spontanée. 45% des recruteurs la lisent systématiquement, et une bonne lettre peut compenser un CV moins parfait."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre lettre de motivation maintenant",
+        "description": "Gratuit, professionnel, personnalisable à chaque candidature. Prête en 5 minutes.",
+        "ctaText": "Créer ma lettre de motivation"
+      }
+    },
+    "cvTechnicienPage": {
+      "meta": {
+        "title": "CV Technicien Gratuit 2026 — Modèle CV Technicien de Maintenance, SAV",
+        "description": "Créez votre CV technicien gratuit. Modèles CV pour techniciens de maintenance, SAV, informatique, industrie. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Technicien",
+      "hero": {
+        "badgeText": "CV technicien optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Technicien",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez vos compétences techniques et vos certifications professionnelles",
+        "description": "Créez votre CV technicien gratuit en 5 minutes. Templates professionnels pour techniciens de maintenance, SAV et industrie, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV technicien",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV technicien",
+        "subtitle": "Vos certifications techniques et votre expertise terrain font votre crédibilité.",
+        "item0": {
+          "title": "Certifications techniques",
+          "description": "Habilitations, CACES, licences frigoristes — vos certifications prouvent votre expertise et votre conformité."
+        },
+        "item1": {
+          "title": "Maîtrise des équipements",
+          "description": "Listez les marques et types d'équipements maîtrisés : diagnostic, maintenance préventive et curative."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres des entreprises industrielles et de services."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV technicien gratuits",
+        "subtitle": "Choisissez le template adapté à votre domaine technique.",
+        "item0": {
+          "title": "CV Technicien de Maintenance",
+          "keyword": "cv technicien de maintenance gratuit",
+          "description": "Pour la maintenance préventive et curative des équipements industriels et tertiaires."
+        },
+        "item1": {
+          "title": "CV Technicien SAV",
+          "keyword": "cv technicien SAV gratuit",
+          "description": "Pour le service après-vente, les interventions chez les clients et la hotline technique."
+        },
+        "item2": {
+          "title": "CV Technicien Informatique",
+          "keyword": "cv technicien informatique gratuit",
+          "description": "Pour la maintenance des parcs informatiques, le support N1/N2 et l'administration réseau."
+        },
+        "item3": {
+          "title": "CV Technicien Frigoriste",
+          "keyword": "cv technicien frigoriste gratuit",
+          "description": "Pour les techniciens en génie climatique, CVC, froid commercial et industriel."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV technicien en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Maintenance, SAV, Informatique ou Frigoriste selon votre domaine d'expertise."
+        },
+        "step1": {
+          "title": "Listez vos certifications",
+          "description": "Notre IA vous aide à présenter vos habilitations, CACES et formations techniques."
+        },
+        "step2": {
+          "title": "Précisez vos équipements maîtrisés",
+          "description": "Marques, types de machines, outils de diagnostic, logiciels GMAO, protocoles de maintenance."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en industrie ou société de services."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV technicien",
+        "subtitle": "Créez un CV technicien complet et convaincant",
+        "q0": {
+          "question": "Quelles certifications mettre en avant sur un CV technicien ?",
+          "answer": "Selon le domaine : CACES (chariots, nacelles), habilitations électriques (B1/BR/BC), attestation d'aptitude catégorie I/II/III pour le froid, ATEX pour les zones explosives, et les certifications constructeurs (Schneider, Siemens...)."
+        },
+        "q1": {
+          "question": "Comment présenter ses compétences techniques sur un CV technicien ?",
+          "answer": "Organisez par domaines : Électricité, Mécanique, Automatisme, Hydraulique, Pneumatique. Pour chaque domaine, précisez les équipements (marques), les outils de diagnostic et votre niveau d'intervention."
+        },
+        "q2": {
+          "question": "Faut-il mentionner les logiciels GMAO sur un CV technicien ?",
+          "answer": "Oui, c'est important. Mentionnez : SAP PM, Maximo, Coswin, Infor EAM, Excel maintenance. Les entreprises industrielles utilisent systématiquement un logiciel de GMAO pour la gestion des équipements."
+        },
+        "q3": {
+          "question": "Comment valoriser une expérience en astreinte dans un CV technicien ?",
+          "answer": "Mentionnez explicitement : 'Astreinte 1 semaine/mois', 'Intervention 24h/7j', 'Taux de disponibilité machines maintenu à 97%'. La disponibilité et la réactivité sont très valorisées en maintenance."
+        },
+        "q4": {
+          "question": "Faut-il indiquer ses mobilités géographiques sur un CV technicien itinérant ?",
+          "answer": "Absolument. Pour les postes itinérants ou SAV terrain, précisez : 'Mobilité nationale', 'Zone de déplacement : Grand Ouest', 'Permis B + véhicule de fonction'. Cela rassure les employeurs sur votre disponibilité."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV technicien maintenant",
+        "description": "Gratuit, professionnel, mettant en valeur vos certifications et compétences techniques. Prêt en 5 minutes.",
+        "ctaText": "Créer mon CV technicien"
+      }
+    },
+    "cvPharmacienPage": {
+      "meta": {
+        "title": "CV Pharmacien Gratuit 2026 — Modèle CV Pharmacien, Préparateur en Pharmacie",
+        "description": "Créez votre CV pharmacien gratuit. Modèles CV pour pharmaciens d'officine, hospitaliers, préparateurs. Optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Pharmacien",
+      "hero": {
+        "badgeText": "CV pharmacien optimisé par IA",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Pharmacien",
+        "h1After": " Gratuit",
+        "subtitle": "Valorisez votre formation pharmaceutique et votre expertise médicament",
+        "description": "Créez votre CV pharmacien gratuit en 5 minutes. Templates professionnels pour pharmaciens d'officine, hospitaliers et préparateurs, compatibles ATS, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV pharmacien",
+        "secondaryCtaText": "Voir les templates"
+      },
+      "section1": {
+        "title": "Les spécificités du CV pharmacien",
+        "subtitle": "Votre diplôme, votre inscription à l'Ordre et votre expertise médicament sont essentiels.",
+        "item0": {
+          "title": "Diplôme et inscription à l'Ordre",
+          "description": "Doctorat en pharmacie, DES, inscriptions à l'Ordre des Pharmaciens — la réglementation prime."
+        },
+        "item1": {
+          "title": "Expertise médicament",
+          "description": "Pharmacovigilance, conseil en automédication, gestion des stupéfiants, préparations magistrales."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Nos templates garantissent que votre CV passe les filtres des officines, cliniques et groupes pharmaceutiques."
+        }
+      },
+      "section2": {
+        "title": "Modèles CV pharmacien gratuits",
+        "subtitle": "Choisissez le template adapté à votre spécialité.",
+        "item0": {
+          "title": "CV Pharmacien d'Officine",
+          "keyword": "cv pharmacien officine gratuit",
+          "description": "Pour les pharmaciens titulaires ou adjoints en pharmacie de ville et para-pharmacie."
+        },
+        "item1": {
+          "title": "CV Pharmacien Hospitalier",
+          "keyword": "cv pharmacien hospitalier gratuit",
+          "description": "Pour les PH et internes en pharmacie hospitalière, pharmacotechnie et pharmacovigilance."
+        },
+        "item2": {
+          "title": "CV Préparateur en Pharmacie",
+          "keyword": "cv préparateur en pharmacie gratuit",
+          "description": "Pour les préparateurs en pharmacie et étudiants en BTS préparateur."
+        },
+        "item3": {
+          "title": "CV Pharmacien Industrie",
+          "keyword": "cv pharmacien industrie gratuit",
+          "description": "Pour les pharmaciens en affaires réglementaires, développement clinique ou pharmacovigilance."
+        }
+      },
+      "section3": {
+        "title": "Créez votre CV pharmacien en 4 étapes",
+        "step0": {
+          "title": "Choisissez votre template",
+          "description": "Officine, Hospitalier, Préparateur ou Industrie selon votre orientation professionnelle."
+        },
+        "step1": {
+          "title": "Mettez en avant votre diplôme",
+          "description": "Notre IA vous aide à valoriser votre cursus : de la PACES au Doctorat en pharmacie."
+        },
+        "step2": {
+          "title": "Précisez vos compétences",
+          "description": "Logiciels officine, préparations, conseil patient, gestion des stocks et stupéfiants."
+        },
+        "step3": {
+          "title": "Téléchargez en PDF",
+          "description": "Export qualité instantané, prêt pour vos candidatures en officine, hôpital ou industrie."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV pharmacien",
+        "subtitle": "Créez un CV pharmacien structuré et conforme",
+        "q0": {
+          "question": "Quels diplômes mentionner sur un CV pharmacien ?",
+          "answer": "Doctorat en pharmacie (obligatoire), DES de spécialité, DU complémentaires (phytothérapie, homéopathie, dermocosmétologie), formations FMCPF et numéro d'inscription à l'Ordre des Pharmaciens."
+        },
+        "q1": {
+          "question": "Quels logiciels mettre sur un CV pharmacien d'officine ?",
+          "answer": "Winpharma, PharmaLand, LGPI, Sigm@t, Axisanté — les logiciels de gestion officinale. Mentionnez aussi votre maîtrise des télétransmissions CPAM, de Sesam-Vitale et des interfaces avec les caisses."
+        },
+        "q2": {
+          "question": "Faut-il mentionner son inscription à l'Ordre des Pharmaciens ?",
+          "answer": "Oui, c'est obligatoire pour exercer en France. Mentionnez votre section (A pour officine, E pour hospitalier, B pour industrie...) et votre numéro de professionnel de santé RPPS."
+        },
+        "q3": {
+          "question": "Comment valoriser la relation patient dans un CV pharmacien ?",
+          "answer": "Mentionnez : entretiens pharmaceutiques (asthme, anticoagulants), bilan partagé de médication, conseil en automédication, suivi des patients chroniques et vaccinations réalisées."
+        },
+        "q4": {
+          "question": "Comment se différencier avec un CV pharmacien en reconversion industrie ?",
+          "answer": "Mettez en avant : vos compétences en réglementation (AMM, GMP/BPF), les formations spécifiques (affaires réglementaires, essais cliniques, pharmacovigilance) et toute expérience en délégation médicale."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV pharmacien maintenant",
+        "description": "Gratuit, professionnel, conforme aux exigences du secteur pharmaceutique. Prêt en 5 minutes.",
+        "ctaText": "Créer mon CV pharmacien"
+      }
     }
   },
   "dashboard": {

@@ -5958,6 +5958,1056 @@
         "description": "Build an executive resume that commands respect, communicates strategic vision, and positions you for the leadership roles you've earned.",
         "ctaText": "Create My Executive Resume"
       }
+    },
+    "bankerResumePage": {
+      "meta": {
+        "title": "Banker Resume Template — Free Banking & Finance CV 2026",
+        "description": "Create a professional banker resume with our free templates. Highlight your financial certifications, client portfolio, and banking expertise. ATS-optimized for banking roles."
+      },
+      "breadcrumbName": "Banker Resume Template",
+      "hero": {
+        "badgeText": "For Banking Professionals",
+        "h1Before": "Banker Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Open Doors",
+        "subtitle": "Professional resume templates for bankers, financial advisors, and banking professionals.",
+        "description": "Present your banking expertise with confidence. Our templates highlight your certifications, client portfolio, and financial performance track record.",
+        "primaryCtaText": "Build My Banking Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Banking Professionals",
+        "subtitle": "Templates that meet the standards of financial sector recruiters.",
+        "item0": {
+          "title": "Licenses & Certifications",
+          "description": "Prominent placement for Series 7, Series 63, CFA, CFP, and other banking and financial licenses."
+        },
+        "item1": {
+          "title": "Client Portfolio Metrics",
+          "description": "Clear sections for AUM, client count, revenue generated, and portfolio performance results."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Banking-specific keyword optimization to pass recruitment filters at major banks and financial institutions."
+        }
+      },
+      "section2": {
+        "title": "Templates by Banking Role",
+        "subtitle": "Find the right format for your banking specialty.",
+        "item0": {
+          "title": "Retail Banker Resume",
+          "keyword": "Retail Banking",
+          "description": "For personal bankers, branch managers, and customer-facing banking professionals."
+        },
+        "item1": {
+          "title": "Investment Banker Resume",
+          "keyword": "Investment Banking",
+          "description": "Highlights deal experience, valuation skills, M&A transactions, and financial modeling."
+        },
+        "item2": {
+          "title": "Credit Analyst Resume",
+          "keyword": "Credit Analysis",
+          "description": "Emphasizes credit risk assessment, underwriting, loan portfolio management, and compliance."
+        },
+        "item3": {
+          "title": "Wealth Manager Resume",
+          "keyword": "Wealth Management",
+          "description": "For private bankers and wealth advisors managing high-net-worth client portfolios."
+        }
+      },
+      "section3": {
+        "title": "Build Your Banker Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Retail, Investment, Credit, or Wealth Management — select the format for your specialty."
+        },
+        "step1": {
+          "title": "Highlight your licenses",
+          "description": "Our AI helps you showcase Series 7, CFA, CFP, and regulatory certifications prominently."
+        },
+        "step2": {
+          "title": "Quantify your results",
+          "description": "AUM managed, revenue generated, client acquisition rates, and performance metrics."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for online applications and bank recruiting portals."
+        }
+      },
+      "faq": {
+        "title": "Banker Resume FAQ",
+        "subtitle": "Banking-specific resume questions answered.",
+        "q0": {
+          "question": "What licenses should a banker put on their resume?",
+          "answer": "Series 7, Series 63, Series 65/66 for investment roles. CFA for portfolio management. CFP for financial planning. CAMS for compliance and anti-money laundering roles."
+        },
+        "q1": {
+          "question": "How do I show AUM on a banking resume?",
+          "answer": "State it clearly: 'Managed $50M in client assets across 120 high-net-worth accounts' or 'Grew AUM from $30M to $75M over 3 years through referrals and performance'."
+        },
+        "q2": {
+          "question": "What banking software should I list on my resume?",
+          "answer": "Bloomberg Terminal, Reuters Eikon, Salesforce, Temenos, Finastra, core banking systems (FIS, Fiserv), and advanced Excel for financial modeling."
+        },
+        "q3": {
+          "question": "Should I include deal experience on an investment banking resume?",
+          "answer": "Absolutely. List transaction types (M&A, IPO, debt financing), deal sizes, and your role. Even tombstones or league table credits add credibility."
+        },
+        "q4": {
+          "question": "How long should a banker's resume be?",
+          "answer": "1 page for entry-level and associate roles. 1-2 pages for VPs and directors. Managing Directors may use 2 pages, but concision is valued across all banking levels."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Banking Resume Today",
+        "description": "Professional, ATS-optimized, and designed to showcase your financial expertise and certifications.",
+        "ctaText": "Create My Banking Resume"
+      }
+    },
+    "architectResumePage": {
+      "meta": {
+        "title": "Architect Resume Template — Free Architecture CV 2026",
+        "description": "Create a professional architect resume with our free templates. Showcase your projects, BIM skills, and design software expertise. ATS-optimized for architecture firms."
+      },
+      "breadcrumbName": "Architect Resume Template",
+      "hero": {
+        "badgeText": "For Architecture Professionals",
+        "h1Before": "Architect Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Stand Out",
+        "subtitle": "Professional resume templates for architects, urban designers, and interior architects.",
+        "description": "Present your architectural projects with clarity and impact. Our templates highlight your design portfolio, technical skills, and project experience.",
+        "primaryCtaText": "Build My Architecture Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Architecture Professionals",
+        "subtitle": "Templates that balance creativity and ATS compliance.",
+        "item0": {
+          "title": "Project Portfolio",
+          "description": "Showcase your key projects: building types, square footage, budget, and your specific role."
+        },
+        "item1": {
+          "title": "Design Software Skills",
+          "description": "Clear sections for AutoCAD, Revit, SketchUp, Rhino, ArchiCAD, and Adobe Creative Suite."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Architecture-specific keyword optimization to pass recruiting filters at top architecture firms."
+        }
+      },
+      "section2": {
+        "title": "Templates by Architecture Specialty",
+        "subtitle": "Find the right format for your architecture specialty.",
+        "item0": {
+          "title": "Licensed Architect Resume",
+          "keyword": "Licensed Architect",
+          "description": "For AIA members, NCARB-licensed architects, and project architects leading design teams."
+        },
+        "item1": {
+          "title": "Interior Architect Resume",
+          "keyword": "Interior Architecture",
+          "description": "For interior space design, commercial fit-outs, and residential renovation projects."
+        },
+        "item2": {
+          "title": "Urban Planner Resume",
+          "keyword": "Urban Planning",
+          "description": "For urban design, city planning, zoning, and public space development roles."
+        },
+        "item3": {
+          "title": "BIM Manager Resume",
+          "keyword": "BIM Manager",
+          "description": "For BIM coordinators managing digital models, Revit workflows, and BIM implementation."
+        }
+      },
+      "section3": {
+        "title": "Build Your Architect Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Licensed, Interior, Urban, or BIM — select the format matching your specialty."
+        },
+        "step1": {
+          "title": "Present your key projects",
+          "description": "Our AI helps you describe your projects with the right architecture industry keywords."
+        },
+        "step2": {
+          "title": "List your software skills",
+          "description": "Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Lumion — ranked by proficiency level."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for firm applications and RFQ submissions."
+        }
+      },
+      "faq": {
+        "title": "Architect Resume FAQ",
+        "subtitle": "Architecture-specific resume questions answered.",
+        "q0": {
+          "question": "Should I include a portfolio link on my architect resume?",
+          "answer": "Yes — it's essential in architecture. Include a link to your online portfolio (Behance, personal website, or PDF portfolio). Mention 'Portfolio available upon request' if needed."
+        },
+        "q1": {
+          "question": "What software skills are most important for an architect resume?",
+          "answer": "Revit (BIM), AutoCAD (drafting), SketchUp (3D modeling), Rhino (parametric), Lumion (rendering), and Adobe Suite (presentations). List your proficiency level for each."
+        },
+        "q2": {
+          "question": "How do I describe projects on an architect resume?",
+          "answer": "For each project: project type (residential, commercial, civic), scale (sq ft/m²), budget, your specific role (design lead, project architect, CA), and completion date."
+        },
+        "q3": {
+          "question": "Should I include my AIA membership or licensure on my resume?",
+          "answer": "Absolutely. State your licensure clearly: 'Licensed Architect — [State], AIA Member' or 'NCARB Certified'. These are key differentiators for senior roles."
+        },
+        "q4": {
+          "question": "How long should an architect's resume be?",
+          "answer": "1-2 pages for most architects. Focus on key projects, skills, and education. Keep it concise — your portfolio does the heavy lifting for showing design talent."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Architecture Resume Today",
+        "description": "Professional, creative, and ATS-ready. Showcase your projects and design skills in minutes.",
+        "ctaText": "Create My Architecture Resume"
+      }
+    },
+    "chefResumePage": {
+      "meta": {
+        "title": "Chef Resume Template — Free Cook & Culinary CV 2026",
+        "description": "Create a professional chef resume with our free templates. Highlight your culinary techniques, kitchen experience, and prestigious establishments. ATS-optimized for food service roles."
+      },
+      "breadcrumbName": "Chef Resume Template",
+      "hero": {
+        "badgeText": "For Culinary Professionals",
+        "h1Before": "Chef Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Impress",
+        "subtitle": "Professional resume templates for chefs, cooks, and culinary professionals.",
+        "description": "Present your culinary expertise with impact. Our templates highlight your kitchen experience, techniques, and prestigious establishments worked at.",
+        "primaryCtaText": "Build My Chef Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Culinary Professionals",
+        "subtitle": "Templates that showcase your kitchen experience and culinary skills.",
+        "item0": {
+          "title": "Culinary Techniques",
+          "description": "Highlight your specialties: French cuisine, pastry, butchery, farm-to-table, fusion, and fine dining."
+        },
+        "item1": {
+          "title": "Prestigious Establishments",
+          "description": "Michelin-starred restaurants, luxury hotels, and acclaimed venues are powerful resume credentials."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Culinary-specific keyword optimization to pass hotel groups and restaurant recruitment filters."
+        }
+      },
+      "section2": {
+        "title": "Templates by Culinary Role",
+        "subtitle": "Find the right format for your culinary specialty.",
+        "item0": {
+          "title": "Executive Chef Resume",
+          "keyword": "Executive Chef",
+          "description": "For head chefs, executive chefs, and culinary directors leading kitchen teams."
+        },
+        "item1": {
+          "title": "Sous Chef Resume",
+          "keyword": "Sous Chef",
+          "description": "For sous chefs managing kitchen operations, menu development, and staff training."
+        },
+        "item2": {
+          "title": "Line Cook Resume",
+          "keyword": "Line Cook",
+          "description": "For line cooks, prep cooks, and culinary professionals in station cooking roles."
+        },
+        "item3": {
+          "title": "Pastry Chef Resume",
+          "keyword": "Pastry Chef",
+          "description": "For pastry chefs, dessert specialists, and bakery professionals in restaurant or retail settings."
+        }
+      },
+      "section3": {
+        "title": "Build Your Chef Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Executive Chef, Sous Chef, Line Cook, or Pastry Chef — select your role and level."
+        },
+        "step1": {
+          "title": "List your restaurant experience",
+          "description": "Our AI helps you present each establishment with the right culinary industry keywords."
+        },
+        "step2": {
+          "title": "Highlight your techniques",
+          "description": "Sous vide, charcuterie, pastry techniques, allergen management, HACCP compliance."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for restaurant and hospitality job applications."
+        }
+      },
+      "faq": {
+        "title": "Chef Resume FAQ",
+        "subtitle": "Culinary-specific resume questions answered.",
+        "q0": {
+          "question": "What culinary training should I include on a chef resume?",
+          "answer": "Culinary school (CIA, Le Cordon Bleu, ICE), apprenticeships, stage experiences, and any notable training under recognized chefs. Include certifications like ServSafe and food handler permits."
+        },
+        "q1": {
+          "question": "How do I describe restaurant experience on a chef resume?",
+          "answer": "For each role: restaurant name (and Michelin stars if applicable), cuisine type, your position in the brigade, covers per service, and specific techniques or responsibilities."
+        },
+        "q2": {
+          "question": "Should I include food safety certifications on my chef resume?",
+          "answer": "Yes — ServSafe, Food Handler's Certificate, and HACCP training are valued and often required. List them in your certifications or education section."
+        },
+        "q3": {
+          "question": "How do I list my culinary specialties on a resume?",
+          "answer": "Create a 'Culinary Skills' section: cuisine types (French, Italian, Japanese), cooking techniques (butchery, pastry, fermentation), and equipment expertise (combi oven, blast chiller)."
+        },
+        "q4": {
+          "question": "What makes a chef resume stand out without Michelin experience?",
+          "answer": "Emphasize your range of experience, volume (covers per service), team leadership, menu development contributions, and any accolades or press mentions your kitchen received."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Culinary Resume Today",
+        "description": "Professional, ATS-ready, and designed to showcase your culinary skills and kitchen experience.",
+        "ctaText": "Create My Chef Resume"
+      }
+    },
+    "electricianResumePage": {
+      "meta": {
+        "title": "Electrician Resume Template — Free Electrical CV 2026",
+        "description": "Create a professional electrician resume with our free templates. Highlight your electrical licenses, certifications, and project experience. ATS-optimized for electrical and construction roles."
+      },
+      "breadcrumbName": "Electrician Resume Template",
+      "hero": {
+        "badgeText": "For Electrical Professionals",
+        "h1Before": "Electrician Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Get Hired",
+        "subtitle": "Professional resume templates for electricians, electrical technicians, and contractors.",
+        "description": "Present your electrical expertise with confidence. Our templates highlight your licenses, certifications, and the range of projects you've completed.",
+        "primaryCtaText": "Build My Electrician Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Electrical Professionals",
+        "subtitle": "Templates that showcase your licenses, skills, and project experience.",
+        "item0": {
+          "title": "Licenses & Certifications",
+          "description": "Prominent placement for journeyman, master electrician license, OSHA certifications, and NICET credentials."
+        },
+        "item1": {
+          "title": "Project Experience",
+          "description": "Clear sections for residential, commercial, industrial, and specialty electrical work."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Electrical industry keyword optimization to pass filters at contractors, utilities, and industrial employers."
+        }
+      },
+      "section2": {
+        "title": "Templates by Electrical Specialty",
+        "subtitle": "Find the right format for your electrical specialty.",
+        "item0": {
+          "title": "Residential Electrician Resume",
+          "keyword": "Residential Electrician",
+          "description": "For electricians installing and maintaining electrical systems in homes and apartment buildings."
+        },
+        "item1": {
+          "title": "Industrial Electrician Resume",
+          "keyword": "Industrial Electrician",
+          "description": "For industrial electricians maintaining production equipment, PLC systems, and factory automation."
+        },
+        "item2": {
+          "title": "Master Electrician Resume",
+          "keyword": "Master Electrician",
+          "description": "For licensed master electricians supervising crews and overseeing electrical projects."
+        },
+        "item3": {
+          "title": "Low Voltage / Smart Home Resume",
+          "keyword": "Low Voltage",
+          "description": "For electricians specializing in smart home systems, networking, and low-voltage installations."
+        }
+      },
+      "section3": {
+        "title": "Build Your Electrician Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Residential, Industrial, Master Electrician, or Low Voltage — select your specialty."
+        },
+        "step1": {
+          "title": "List your licenses and certifications",
+          "description": "Our AI helps you present your electrical licenses, OSHA training, and NEC knowledge."
+        },
+        "step2": {
+          "title": "Detail your project experience",
+          "description": "Types of work, voltage levels, NEC compliance, EV charging, solar, and panel upgrades."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for contractor and utility company applications."
+        }
+      },
+      "faq": {
+        "title": "Electrician Resume FAQ",
+        "subtitle": "Electrical industry resume questions answered.",
+        "q0": {
+          "question": "What licenses should an electrician put on their resume?",
+          "answer": "Journeyman Electrician License, Master Electrician License (state-specific), Electrical Contractor License, OSHA 10 or OSHA 30, and NICET certifications for specialty work."
+        },
+        "q1": {
+          "question": "How do I list electrical project experience on a resume?",
+          "answer": "For each role: project types (residential, commercial, industrial), voltage levels worked with, NEC code compliance, and specific tasks (panel upgrades, service calls, new construction wiring)."
+        },
+        "q2": {
+          "question": "What electrical codes should I mention on my resume?",
+          "answer": "NEC (National Electrical Code), local amendments, and NFPA 70E for electrical safety. For industrial, mention IEC standards and PLC/HMI experience if applicable."
+        },
+        "q3": {
+          "question": "Should I include OSHA training on my electrician resume?",
+          "answer": "Yes — OSHA 10 and OSHA 30 are widely required and highly valued. Also list fall protection, lockout/tagout (LOTO), and confined space entry training."
+        },
+        "q4": {
+          "question": "How do I show EV charging and solar experience on a resume?",
+          "answer": "List EVSE installations, Level 2 and Level 3 chargers, solar PV system wiring (rooftop, commercial), inverter types, and any NABCEP or EVITP certification you hold."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Electrician Resume Today",
+        "description": "Professional, ATS-ready, and designed to showcase your electrical licenses and project experience.",
+        "ctaText": "Create My Electrician Resume"
+      }
+    },
+    "secretaryResumePage": {
+      "meta": {
+        "title": "Secretary Resume Template — Free Administrative Assistant CV 2026",
+        "description": "Create a professional secretary resume with our free templates. Highlight your organizational skills, office software, and administrative experience. ATS-optimized for office roles."
+      },
+      "breadcrumbName": "Secretary Resume Template",
+      "hero": {
+        "badgeText": "For Administrative Professionals",
+        "h1Before": "Secretary Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Organize Success",
+        "subtitle": "Professional resume templates for secretaries, administrative assistants, and office managers.",
+        "description": "Present your administrative skills with professionalism. Our templates highlight your office software, organizational abilities, and communication skills.",
+        "primaryCtaText": "Build My Secretary Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Administrative Professionals",
+        "subtitle": "Templates that showcase your organizational and communication skills.",
+        "item0": {
+          "title": "Office Software Skills",
+          "description": "Prominent placement for Microsoft 365, Google Workspace, scheduling tools, and CRM systems."
+        },
+        "item1": {
+          "title": "Organizational Abilities",
+          "description": "Calendar management, travel coordination, filing systems, and multi-tasking capabilities."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Administrative role keyword optimization to pass filters across industries and company sizes."
+        }
+      },
+      "section2": {
+        "title": "Templates by Administrative Role",
+        "subtitle": "Find the right format for your administrative specialty.",
+        "item0": {
+          "title": "Administrative Secretary Resume",
+          "keyword": "Administrative Secretary",
+          "description": "For secretaries handling general administrative duties in offices, schools, or organizations."
+        },
+        "item1": {
+          "title": "Medical Secretary Resume",
+          "keyword": "Medical Secretary",
+          "description": "For medical secretaries managing patient scheduling, medical records, and billing in healthcare settings."
+        },
+        "item2": {
+          "title": "Executive Assistant Resume",
+          "keyword": "Executive Assistant",
+          "description": "For high-level assistants supporting C-suite executives with scheduling and strategic coordination."
+        },
+        "item3": {
+          "title": "Legal Secretary Resume",
+          "keyword": "Legal Secretary",
+          "description": "For legal secretaries in law firms managing court filings, client communications, and legal documents."
+        }
+      },
+      "section3": {
+        "title": "Build Your Secretary Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Administrative, Medical, Executive, or Legal — select the format matching your specialty."
+        },
+        "step1": {
+          "title": "List your software skills",
+          "description": "Our AI helps you present your Microsoft 365, Google Workspace, and industry-specific software."
+        },
+        "step2": {
+          "title": "Highlight your organizational strengths",
+          "description": "Calendar management, travel booking, correspondence, filing, and event coordination."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for applications across all industries and sectors."
+        }
+      },
+      "faq": {
+        "title": "Secretary Resume FAQ",
+        "subtitle": "Administrative role resume questions answered.",
+        "q0": {
+          "question": "What skills should a secretary put on their resume?",
+          "answer": "Microsoft Office (Word, Excel, Outlook, PowerPoint), calendar management, multi-line phone systems, typing speed, professional correspondence, filing, and any industry-specific software."
+        },
+        "q1": {
+          "question": "Should I include my typing speed on a secretary resume?",
+          "answer": "Yes, if it's strong (60+ WPM). State it directly: 'Typing speed: 75 WPM' or 'Professional typing — 80 WPM'. This is valued for data entry and transcription-heavy roles."
+        },
+        "q2": {
+          "question": "What software should a medical secretary list on their resume?",
+          "answer": "EHR/EMR systems (Epic, Cerner, Meditech), medical billing software (AdvancedMD, Kareo), scheduling platforms, ICD-10 coding knowledge, and HIPAA compliance experience."
+        },
+        "q3": {
+          "question": "How do I make my secretary resume stand out?",
+          "answer": "Quantify your impact: 'Managed calendar for 4 executives', 'Handled 60 inbound calls daily', 'Organized 12 board meetings per year', 'Maintained filing system for 500+ client files'."
+        },
+        "q4": {
+          "question": "Are language skills important on a secretary resume?",
+          "answer": "Yes, especially for international companies. Professional English plus a second language (Spanish, French, German) is a strong differentiator for executive assistant and corporate secretary roles."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Secretary Resume Today",
+        "description": "Professional, ATS-ready, and designed to showcase your organizational and administrative skills.",
+        "ctaText": "Create My Secretary Resume"
+      }
+    },
+    "webDeveloperResumePage": {
+      "meta": {
+        "title": "Web Developer Resume — Free Frontend & Backend CV Template 2026",
+        "description": "Create a professional web developer resume with our free templates. Showcase your tech stack, GitHub projects, and coding skills. ATS-optimized for dev and tech roles."
+      },
+      "breadcrumbName": "Web Developer Resume",
+      "hero": {
+        "badgeText": "For Web Developers",
+        "h1Before": "Web Developer Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Convert",
+        "subtitle": "Professional resume templates for frontend, backend, and fullstack web developers.",
+        "description": "Present your tech stack and projects with clarity. Our templates highlight your coding skills, GitHub portfolio, and development experience.",
+        "primaryCtaText": "Build My Dev Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Web Developers",
+        "subtitle": "Templates that showcase your technical skills and project experience.",
+        "item0": {
+          "title": "Clear Tech Stack",
+          "description": "Structured sections for languages, frameworks, databases, and DevOps tools — organized by proficiency."
+        },
+        "item1": {
+          "title": "GitHub & Projects",
+          "description": "Dedicated space for GitHub profile, live demos, open source contributions, and portfolio links."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Tech-specific keyword optimization to pass filters at startups, agencies, and enterprise companies."
+        }
+      },
+      "section2": {
+        "title": "Templates by Developer Specialty",
+        "subtitle": "Find the right format for your development specialty.",
+        "item0": {
+          "title": "Frontend Developer Resume",
+          "keyword": "Frontend Developer",
+          "description": "For React, Vue, Angular, and Next.js developers focused on UI and user experience."
+        },
+        "item1": {
+          "title": "Backend Developer Resume",
+          "keyword": "Backend Developer",
+          "description": "For Node.js, Python, Go, and Java developers building APIs, databases, and server infrastructure."
+        },
+        "item2": {
+          "title": "Fullstack Developer Resume",
+          "keyword": "Fullstack Developer",
+          "description": "For versatile developers comfortable across the entire web stack, from database to UI."
+        },
+        "item3": {
+          "title": "Mobile Developer Resume",
+          "keyword": "Mobile Developer",
+          "description": "For React Native, Flutter, iOS (Swift), and Android (Kotlin) developers."
+        }
+      },
+      "section3": {
+        "title": "Build Your Web Developer Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Frontend, Backend, Fullstack, or Mobile — select the format matching your specialty."
+        },
+        "step1": {
+          "title": "Structure your tech stack",
+          "description": "Our AI helps you organize your technologies by category and proficiency level."
+        },
+        "step2": {
+          "title": "Add your key projects",
+          "description": "GitHub links, live demos, open source projects, and significant freelance work."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for startup, agency, and enterprise applications."
+        }
+      },
+      "faq": {
+        "title": "Web Developer Resume FAQ",
+        "subtitle": "Tech industry resume questions answered.",
+        "q0": {
+          "question": "Should I include my GitHub on a web developer resume?",
+          "answer": "Absolutely. Include your GitHub URL in the header. An active GitHub profile with real projects is often more convincing to technical recruiters than a list of self-rated skills."
+        },
+        "q1": {
+          "question": "How should I structure the technical skills section on a dev resume?",
+          "answer": "Organize by category: Languages (JavaScript, Python, TypeScript), Frameworks (React, Next.js, Node.js), Databases (PostgreSQL, MongoDB, Redis), DevOps (Docker, AWS, CI/CD)."
+        },
+        "q2": {
+          "question": "Should I rate my proficiency for each technology?",
+          "answer": "Be honest and specific. Use clear labels: Expert, Proficient, Familiar. Avoid subjective visual progress bars. Technical interviewers will probe your stated skill levels."
+        },
+        "q3": {
+          "question": "How do I present personal projects on a developer resume?",
+          "answer": "For each project: name, one-line description, tech stack used, and GitHub/live link. Aim for 3-5 representative projects rather than an exhaustive list."
+        },
+        "q4": {
+          "question": "Do I need a portfolio in addition to my developer resume?",
+          "answer": "Strongly recommended, especially for frontend and fullstack roles. A personal website demonstrates your skills in action and is often the first selection criterion for creative tech roles."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Web Developer Resume Today",
+        "description": "Professional, ATS-ready, and structured to showcase your tech stack and project portfolio.",
+        "ctaText": "Create My Dev Resume"
+      }
+    },
+    "doctorResumePage": {
+      "meta": {
+        "title": "Doctor Resume Template — Free Medical CV 2026",
+        "description": "Create a professional doctor resume with our free templates. Highlight your medical qualifications, clinical experience, and specializations. ATS-optimized for healthcare roles."
+      },
+      "breadcrumbName": "Doctor Resume Template",
+      "hero": {
+        "badgeText": "For Medical Professionals",
+        "h1Before": "Doctor Resume ",
+        "h1Accent": "Templates",
+        "h1After": " Built for Medicine",
+        "subtitle": "Professional resume templates for physicians, specialists, residents, and healthcare professionals.",
+        "description": "Present your medical qualifications and clinical experience with structure and clarity. Our templates highlight your credentials, specializations, and patient care experience.",
+        "primaryCtaText": "Build My Medical Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Medical Professionals",
+        "subtitle": "Templates structured to meet healthcare recruiter and hospital standards.",
+        "item0": {
+          "title": "Credentials & Licensure",
+          "description": "Prominent sections for MD degree, board certifications, state licenses, and DEA registration."
+        },
+        "item1": {
+          "title": "Clinical Experience",
+          "description": "Clear sections for residency, fellowships, hospital affiliations, and patient care settings."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Medical specialty keyword optimization to pass filters at hospitals, clinics, and healthcare groups."
+        }
+      },
+      "section2": {
+        "title": "Templates by Medical Specialty",
+        "subtitle": "Find the right format for your medical specialty.",
+        "item0": {
+          "title": "Primary Care Physician Resume",
+          "keyword": "Primary Care",
+          "description": "For family medicine, general practitioners, and internists in private practice or hospital settings."
+        },
+        "item1": {
+          "title": "Specialist Physician Resume",
+          "keyword": "Specialist",
+          "description": "For cardiologists, neurologists, surgeons, and other specialists with board certifications."
+        },
+        "item2": {
+          "title": "Resident / Fellow Resume",
+          "keyword": "Resident",
+          "description": "For medical residents and fellows presenting clinical rotations and research experience."
+        },
+        "item3": {
+          "title": "Emergency Medicine Resume",
+          "keyword": "Emergency Medicine",
+          "description": "For emergency physicians, hospitalists, and critical care doctors in acute care settings."
+        }
+      },
+      "section3": {
+        "title": "Build Your Medical Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Primary Care, Specialist, Resident, or Emergency Medicine — select your specialty."
+        },
+        "step1": {
+          "title": "List your degrees and certifications",
+          "description": "Our AI helps you structure your MD, board certifications, and fellowship training."
+        },
+        "step2": {
+          "title": "Detail your clinical experience",
+          "description": "Hospital affiliations, patient population, conditions treated, and procedures performed."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for hospital applications and physician group submissions."
+        }
+      },
+      "faq": {
+        "title": "Doctor Resume FAQ",
+        "subtitle": "Medical resume questions answered.",
+        "q0": {
+          "question": "What should a physician include on their resume or CV?",
+          "answer": "Education (medical school, residency, fellowship), board certifications, state licensure and DEA number, hospital affiliations, clinical experience, research and publications, and CME credits."
+        },
+        "q1": {
+          "question": "Should a doctor use a CV or a resume?",
+          "answer": "Physicians typically use a curriculum vitae (CV) rather than a resume. A medical CV is longer (often 3-10 pages) and includes publications, presentations, grants, and teaching experience."
+        },
+        "q2": {
+          "question": "How do I list publications on a medical CV?",
+          "answer": "Use Vancouver citation style: Authors, Title, Journal, Year, Volume, Issue, Pages. Separate peer-reviewed articles, review papers, book chapters, abstracts, and oral presentations."
+        },
+        "q3": {
+          "question": "What board certifications should I list on my medical CV?",
+          "answer": "ABIM, ABFM, ABEM, ABNS, or specialty board as relevant. Include certification date, expiration, and MOC (Maintenance of Certification) status. Include state licenses with license numbers."
+        },
+        "q4": {
+          "question": "How do I describe my clinical experience on a medical resume?",
+          "answer": "For each role: hospital/clinic name, department, dates, patient volume (average patients/day), clinical setting (inpatient, outpatient, ICU, ED), and key conditions/procedures managed."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Medical CV Today",
+        "description": "Professional, structured for healthcare, and designed to showcase your clinical training and expertise.",
+        "ctaText": "Create My Medical CV"
+      }
+    },
+    "coverLetterPage": {
+      "meta": {
+        "title": "Cover Letter Template — Free Professional Cover Letter 2026",
+        "description": "Create a professional cover letter with our free templates. Tailored for any job application, ATS-optimized, and easy to customize. Export to PDF instantly."
+      },
+      "breadcrumbName": "Cover Letter Template",
+      "hero": {
+        "badgeText": "AI-powered cover letter builder",
+        "h1Before": "Cover Letter ",
+        "h1Accent": "Templates",
+        "h1After": " That Get Interviews",
+        "subtitle": "Create a compelling cover letter that makes your application stand out.",
+        "description": "Build your professional cover letter in minutes. Customizable templates for every industry, ATS-optimized, and free PDF export.",
+        "primaryCtaText": "Create My Cover Letter",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "What Makes a Great Cover Letter",
+        "subtitle": "A well-structured cover letter can be the difference between an interview and the trash bin.",
+        "item0": {
+          "title": "Clear Structure",
+          "description": "Opening hook, value proposition (why you + why them), and a confident closing call to action."
+        },
+        "item1": {
+          "title": "Personalization",
+          "description": "Each cover letter must be tailored to the specific role and company. Recruiters instantly spot generic templates."
+        },
+        "item2": {
+          "title": "ATS-Compatible",
+          "description": "Our templates ensure your cover letter passes automated applicant tracking system filters."
+        }
+      },
+      "section2": {
+        "title": "Cover Letter Templates for Every Situation",
+        "subtitle": "Choose the template that fits your job search situation.",
+        "item0": {
+          "title": "Professional Cover Letter",
+          "keyword": "Professional Cover Letter",
+          "description": "For full-time positions across all industries — structured, confident, and results-focused."
+        },
+        "item1": {
+          "title": "Internship Cover Letter",
+          "keyword": "Internship Cover Letter",
+          "description": "For students and recent graduates applying for internships and entry-level positions."
+        },
+        "item2": {
+          "title": "Speculative Cover Letter",
+          "keyword": "Speculative Cover Letter",
+          "description": "For cold outreach and unsolicited applications directly targeting companies you admire."
+        },
+        "item3": {
+          "title": "Career Change Cover Letter",
+          "keyword": "Career Change Cover Letter",
+          "description": "For professionals transitioning industries who need to reframe their transferable skills."
+        }
+      },
+      "section3": {
+        "title": "Write Your Cover Letter in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Professional, Internship, Speculative, or Career Change — pick the right format."
+        },
+        "step1": {
+          "title": "Customize the content",
+          "description": "Our AI helps you tailor each paragraph to the specific job and company."
+        },
+        "step2": {
+          "title": "Review and refine your tone",
+          "description": "Professional but authentic — strike the right balance between formality and personality."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready to pair with your resume and send to recruiters."
+        }
+      },
+      "faq": {
+        "title": "Cover Letter FAQ",
+        "subtitle": "Everything you need to know to write an effective cover letter.",
+        "q0": {
+          "question": "What is the ideal structure for a cover letter?",
+          "answer": "A cover letter has 3 parts: 1) Opening — why this role interests you; 2) Body — what you bring to the company (skills + experience + value); 3) Closing — professional sign-off and call to action."
+        },
+        "q1": {
+          "question": "How long should a cover letter be?",
+          "answer": "One page maximum — typically 250-400 words. Recruiters rarely read beyond one page. Be concise, specific to the role, and make every sentence count."
+        },
+        "q2": {
+          "question": "Should my cover letter repeat what's already in my resume?",
+          "answer": "No. The cover letter complements the resume, not repeats it. Use it to explain your motivation, add context to your experience, and show your personality and company knowledge."
+        },
+        "q3": {
+          "question": "How do I start a cover letter without 'I am writing to...'?",
+          "answer": "Start with a strong hook: a relevant achievement, a specific challenge the company faces that you can solve, or genuine enthusiasm for the exact role and mission."
+        },
+        "q4": {
+          "question": "Are cover letters still necessary in 2026?",
+          "answer": "Yes, especially for competitive roles and cold applications. About 40% of recruiters read them consistently, and a strong cover letter can compensate for a less-than-perfect resume."
+        }
+      },
+      "finalCta": {
+        "title": "Create Your Cover Letter Today",
+        "description": "Free, professional, and customizable for every application. Ready in 5 minutes.",
+        "ctaText": "Create My Cover Letter"
+      }
+    },
+    "technicianResumePage": {
+      "meta": {
+        "title": "Technician Resume Template — Free Technical CV 2026",
+        "description": "Create a professional technician resume with our free templates. Highlight your technical certifications, equipment expertise, and maintenance experience. ATS-optimized."
+      },
+      "breadcrumbName": "Technician Resume Template",
+      "hero": {
+        "badgeText": "For Technical Professionals",
+        "h1Before": "Technician Resume ",
+        "h1Accent": "Templates",
+        "h1After": " That Get Results",
+        "subtitle": "Professional resume templates for maintenance technicians, field service, and technical specialists.",
+        "description": "Present your technical expertise with clarity. Our templates highlight your certifications, equipment knowledge, and hands-on maintenance experience.",
+        "primaryCtaText": "Build My Technician Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Technical Professionals",
+        "subtitle": "Templates that showcase your certifications, skills, and hands-on expertise.",
+        "item0": {
+          "title": "Technical Certifications",
+          "description": "Prominent sections for industry licenses, manufacturer certifications, and safety credentials."
+        },
+        "item1": {
+          "title": "Equipment Expertise",
+          "description": "Clear sections for equipment brands, diagnostic tools, maintenance procedures, and technical systems."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Technical industry keyword optimization to pass filters at manufacturing, utilities, and service companies."
+        }
+      },
+      "section2": {
+        "title": "Templates by Technician Specialty",
+        "subtitle": "Find the right format for your technical specialty.",
+        "item0": {
+          "title": "Maintenance Technician Resume",
+          "keyword": "Maintenance Technician",
+          "description": "For industrial and facilities maintenance technicians handling preventive and corrective work orders."
+        },
+        "item1": {
+          "title": "Field Service Technician Resume",
+          "keyword": "Field Service",
+          "description": "For field service engineers and on-site technicians supporting customers and servicing equipment."
+        },
+        "item2": {
+          "title": "IT Technician Resume",
+          "keyword": "IT Technician",
+          "description": "For desktop support, helpdesk, network technicians, and IT infrastructure professionals."
+        },
+        "item3": {
+          "title": "HVAC Technician Resume",
+          "keyword": "HVAC Technician",
+          "description": "For HVAC, refrigeration, and mechanical system technicians with EPA 608 certification."
+        }
+      },
+      "section3": {
+        "title": "Build Your Technician Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Maintenance, Field Service, IT, or HVAC — select the format matching your specialty."
+        },
+        "step1": {
+          "title": "List your certifications",
+          "description": "Our AI helps you present your licenses, manufacturer certs, and safety credentials."
+        },
+        "step2": {
+          "title": "Detail your equipment expertise",
+          "description": "Equipment brands, diagnostic tools, CMMS software, and maintenance protocols."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for industrial and field service job applications."
+        }
+      },
+      "faq": {
+        "title": "Technician Resume FAQ",
+        "subtitle": "Technical industry resume questions answered.",
+        "q0": {
+          "question": "What certifications should a technician include on their resume?",
+          "answer": "EPA 608 for HVAC/refrigeration, OSHA 10 or OSHA 30, forklift operator license, manufacturer certifications (Siemens, Allen-Bradley, Schneider), and any relevant trade licenses for your specialty."
+        },
+        "q1": {
+          "question": "How should I list technical skills on a technician resume?",
+          "answer": "Organize by category: Electrical (PLC, motor controls), Mechanical (hydraulics, pneumatics), Diagnostic (oscilloscopes, thermal cameras), and Software (SAP PM, Maximo, AutoCAD)."
+        },
+        "q2": {
+          "question": "Should I mention CMMS experience on my technician resume?",
+          "answer": "Yes — CMMS (Computerized Maintenance Management Systems) experience is highly valued. List the systems you've used: SAP PM, IBM Maximo, Infor EAM, UpKeep, Fiix, or Limble."
+        },
+        "q3": {
+          "question": "How do I show on-call availability on a technician resume?",
+          "answer": "State it clearly: 'Available for 24/7 on-call rotations', 'On-call one week per month', 'Maintained 97% equipment uptime through rapid response'. Availability is highly valued in maintenance roles."
+        },
+        "q4": {
+          "question": "Should I include travel availability on a field service technician resume?",
+          "answer": "Absolutely. For field service and travelling roles, state: 'Willing to travel up to 80%', 'Regional territory: Southeast', 'Valid driver's license + clean MVR'. Employers want clear expectations set upfront."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Technician Resume Today",
+        "description": "Professional, ATS-ready, and designed to highlight your technical certifications and hands-on expertise.",
+        "ctaText": "Create My Technician Resume"
+      }
+    },
+    "pharmacistResumePage": {
+      "meta": {
+        "title": "Pharmacist Resume Template — Free Pharmacy CV 2026",
+        "description": "Create a professional pharmacist resume with our free templates. Highlight your pharmacy degree, clinical skills, and pharmacy software. ATS-optimized for pharmacy roles."
+      },
+      "breadcrumbName": "Pharmacist Resume Template",
+      "hero": {
+        "badgeText": "For Pharmacy Professionals",
+        "h1Before": "Pharmacist Resume ",
+        "h1Accent": "Templates",
+        "h1After": " Built for Pharmacy",
+        "subtitle": "Professional resume templates for pharmacists, pharmacy technicians, and clinical pharmacy specialists.",
+        "description": "Present your pharmacy credentials and clinical expertise with confidence. Our templates highlight your licensure, drug knowledge, and patient care experience.",
+        "primaryCtaText": "Build My Pharmacist Resume",
+        "secondaryCtaText": "See Templates"
+      },
+      "section1": {
+        "title": "Designed for Pharmacy Professionals",
+        "subtitle": "Templates that meet pharmacy recruiter and healthcare employer standards.",
+        "item0": {
+          "title": "Licensure & Credentials",
+          "description": "Prominent placement for PharmD degree, state pharmacy license, DEA number, and board certifications."
+        },
+        "item1": {
+          "title": "Clinical Expertise",
+          "description": "Clear sections for drug therapy management, patient counseling, MTM services, and specialty areas."
+        },
+        "item2": {
+          "title": "ATS-Compliant",
+          "description": "Pharmacy-specific keyword optimization to pass filters at retail chains, hospitals, and PBMs."
+        }
+      },
+      "section2": {
+        "title": "Templates by Pharmacy Role",
+        "subtitle": "Find the right format for your pharmacy specialty.",
+        "item0": {
+          "title": "Retail Pharmacist Resume",
+          "keyword": "Retail Pharmacist",
+          "description": "For community pharmacists at chain pharmacies, independent pharmacies, and grocery stores."
+        },
+        "item1": {
+          "title": "Clinical Pharmacist Resume",
+          "keyword": "Clinical Pharmacist",
+          "description": "For hospital clinical pharmacists, rounding with medical teams and managing complex drug regimens."
+        },
+        "item2": {
+          "title": "Pharmacy Technician Resume",
+          "keyword": "Pharmacy Technician",
+          "description": "For certified pharmacy technicians (CPhT) in retail, hospital, and compounding settings."
+        },
+        "item3": {
+          "title": "Pharmaceutical Industry Resume",
+          "keyword": "Pharmaceutical Industry",
+          "description": "For pharmacists in regulatory affairs, clinical trials, medical affairs, and pharmacovigilance."
+        }
+      },
+      "section3": {
+        "title": "Build Your Pharmacist Resume in 4 Steps",
+        "step0": {
+          "title": "Choose your template",
+          "description": "Retail, Clinical, Pharmacy Technician, or Industry — select the format for your specialty."
+        },
+        "step1": {
+          "title": "Highlight your licensure",
+          "description": "Our AI helps you present your PharmD, state license, DEA number, and board certifications."
+        },
+        "step2": {
+          "title": "Detail your pharmacy skills",
+          "description": "Drug therapy management, clinical software, patient counseling, and specialty services."
+        },
+        "step3": {
+          "title": "Download as PDF",
+          "description": "Instant high-quality export, ready for retail chain, hospital, and industry applications."
+        }
+      },
+      "faq": {
+        "title": "Pharmacist Resume FAQ",
+        "subtitle": "Pharmacy-specific resume questions answered.",
+        "q0": {
+          "question": "What credentials should a pharmacist include on their resume?",
+          "answer": "PharmD degree, state pharmacy license (with license number), DEA registration, Board of Pharmacy Specialties (BPS) certifications, and NAPLEX/MPJE pass dates for new graduates."
+        },
+        "q1": {
+          "question": "What pharmacy software should I list on my resume?",
+          "answer": "Retail: Rx30, QS/1, ScriptPro. Hospital: Epic Willow, Cerner FirstNet, Pyxis, Omnicell. PBM: Magellan, Express Scripts. List systems by setting and your proficiency level."
+        },
+        "q2": {
+          "question": "Should I include MTM (Medication Therapy Management) on my resume?",
+          "answer": "Yes — MTM services, comprehensive medication reviews, and patient counseling are valued in retail and clinical pharmacy. Quantify: 'Conducted 50+ MTM consultations per month'."
+        },
+        "q3": {
+          "question": "How do I describe patient counseling experience on a pharmacist resume?",
+          "answer": "Be specific: 'Counseled patients on 50+ new prescriptions daily', 'Provided diabetes management consultations', 'Led smoking cessation program with 30% success rate'."
+        },
+        "q4": {
+          "question": "How do I transition from retail to hospital pharmacy on my resume?",
+          "answer": "Highlight transferable skills: drug knowledge, patient counseling, clinical rotations from pharmacy school, any ASHP residency, and clinical certifications like BCPS or BCPP."
+        }
+      },
+      "finalCta": {
+        "title": "Build Your Pharmacist Resume Today",
+        "description": "Professional, ATS-ready, and designed to showcase your pharmacy credentials and clinical expertise.",
+        "ctaText": "Create My Pharmacist Resume"
+      }
     }
   },
   "dashboard": {

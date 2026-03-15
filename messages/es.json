@@ -6163,6 +6163,1056 @@
         "description": "Crea un CV directivo que inspire respeto, comunique visión estratégica y te posicione para los roles de liderazgo que has ganado.",
         "ctaText": "Crear Mi CV Directivo"
       }
+    },
+    "curriculumBanqueroPage": {
+      "meta": {
+        "title": "Curriculum Banquero Gratis 2026 — Modelo CV para Banca y Finanzas",
+        "description": "Crea tu curriculum de banquero gratis. Plantillas CV para banqueros, asesores financieros y gestores de banca. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Banquero",
+      "hero": {
+        "badgeText": "Para profesionales de la banca",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Banquero",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tu experiencia financiera y bancaria con plantillas profesionales.",
+        "description": "Crea tu curriculum de banquero gratis en 5 minutos. Plantillas modernas para perfiles bancarios y financieros, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de banquero",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de banquero",
+        "subtitle": "Tus certificaciones financieras y cartera de clientes definen tu perfil.",
+        "item0": {
+          "title": "Certificaciones financieras",
+          "description": "EFPA, CFA, CIP — tus habilitaciones regulatorias son imprescindibles en el sector bancario."
+        },
+        "item1": {
+          "title": "Cartera de clientes",
+          "description": "Indica el tipo (particulares, empresas, banca privada), el volumen y los productos gestionados."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan que tu curriculum supere los filtros de selección de los grandes bancos."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum banquero gratis",
+        "subtitle": "Elige la plantilla adaptada a tu especialidad bancaria.",
+        "item0": {
+          "title": "Curriculum Asesor Bancario",
+          "keyword": "curriculum asesor bancario gratis",
+          "description": "Para asesores de clientes particulares y profesionales en oficina bancaria."
+        },
+        "item1": {
+          "title": "Curriculum Analista de Crédito",
+          "keyword": "curriculum analista de crédito gratis",
+          "description": "Para el análisis de riesgos crediticios, scoring y decisiones de financiación."
+        },
+        "item2": {
+          "title": "Curriculum Gestor de Banca Privada",
+          "keyword": "curriculum gestor banca privada gratis",
+          "description": "Para gestores de patrimonios y clientes de alto valor en banca privada."
+        },
+        "item3": {
+          "title": "Curriculum Director de Sucursal",
+          "keyword": "curriculum director sucursal bancaria gratis",
+          "description": "Para directores de oficina bancaria con gestión de equipos y objetivos comerciales."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de banquero en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Asesor, Analista, Banca privada o Director de sucursal según tu perfil."
+        },
+        "step1": {
+          "title": "Destaca tus certificaciones",
+          "description": "Nuestra IA te ayuda a presentar tus habilitaciones EFPA, CFA y formación regulatoria."
+        },
+        "step2": {
+          "title": "Cuantifica tus resultados",
+          "description": "Cartera gestionada, objetivos superados, captación de nuevos clientes y volumen de negocio."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, listo para enviar a bancos y portales de empleo."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de banquero",
+        "subtitle": "Crea un curriculum bancario profesional y convincente",
+        "q0": {
+          "question": "¿Qué certificaciones debe incluir un banquero en su curriculum?",
+          "answer": "La certificación EFPA (EFA o EFP) es muy valorada en España. También: CFA para gestión de inversiones, CIP para seguros bancarios, y cualquier formación MiFID II y normativa CNMV."
+        },
+        "q1": {
+          "question": "¿Cómo presentar mi cartera de clientes en el curriculum?",
+          "answer": "Especifica el tipo (particulares, empresas, banca privada), el volumen (número de clientes, activos gestionados en M€) y los productos: fondos, planes de pensiones, seguros, créditos."
+        },
+        "q2": {
+          "question": "¿Qué software incluir en un curriculum bancario?",
+          "answer": "Sistemas bancarios: T24 (Temenos), SAP Banking, Finacle. CRM: Salesforce, Microsoft Dynamics. Herramientas: Bloomberg, Reuters, Excel avanzado para análisis financiero."
+        },
+        "q3": {
+          "question": "¿Es importante incluir los objetivos comerciales alcanzados?",
+          "answer": "Sí, es fundamental. Ej: 'Superé los objetivos comerciales en un 115% durante 3 años consecutivos', 'Capté 80 nuevos clientes empresa en 2025', 'Ratio de fidelización: 96%'."
+        },
+        "q4": {
+          "question": "¿Cuánto debe medir un curriculum de banquero?",
+          "answer": "1 página para perfiles junior (menos de 5 años). Máximo 2 páginas para directores y gestores senior. La concisión es muy valorada en el sector financiero."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de banquero ahora",
+        "description": "Gratis, profesional y orientado a tus certificaciones y resultados comerciales. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de banquero"
+      }
+    },
+    "curriculumArquitectoPage": {
+      "meta": {
+        "title": "Curriculum Arquitecto Gratis 2026 — Modelo CV para Arquitectura",
+        "description": "Crea tu curriculum de arquitecto gratis. Plantillas CV para arquitectos, diseñadores de interiores y urbanistas. Diseño creativo optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Arquitecto",
+      "hero": {
+        "badgeText": "Para profesionales de la arquitectura",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Arquitecto",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tus proyectos arquitectónicos y dominio técnico.",
+        "description": "Crea tu curriculum de arquitecto gratis en 5 minutos. Plantillas creativas y profesionales para arquitectos, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de arquitecto",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de arquitecto",
+        "subtitle": "Tus proyectos realizados y el software dominado son tus grandes activos.",
+        "item0": {
+          "title": "Portafolio de proyectos",
+          "description": "Presenta tus obras: tipo de edificio, superficie, presupuesto y tu rol en cada proyecto."
+        },
+        "item1": {
+          "title": "Software de diseño",
+          "description": "AutoCAD, Revit, SketchUp, ArchiCAD, Rhino, Adobe Creative Suite — imprescindibles en los estudios."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros ATS sin sacrificar el aspecto visual."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum arquitecto gratis",
+        "subtitle": "Elige la plantilla adaptada a tu especialidad.",
+        "item0": {
+          "title": "Curriculum Arquitecto Colegiado",
+          "keyword": "curriculum arquitecto colegiado gratis",
+          "description": "Para arquitectos con colegiación y habilitación para la dirección de obras."
+        },
+        "item1": {
+          "title": "Curriculum Arquitecto de Interiores",
+          "keyword": "curriculum arquitecto de interiores gratis",
+          "description": "Para proyectos de diseño de interiores, decoración y renovación residencial o comercial."
+        },
+        "item2": {
+          "title": "Curriculum Urbanista",
+          "keyword": "curriculum urbanista gratis",
+          "description": "Para proyectos de planeamiento urbano, diseño de espacios públicos y desarrollo territorial."
+        },
+        "item3": {
+          "title": "Curriculum Coordinador BIM",
+          "keyword": "curriculum coordinador BIM gratis",
+          "description": "Para coordinadores BIM, gestores de modelos digitales y proyectos en metodología BIM."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de arquitecto en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Colegiado, Interiores, Urbanismo o BIM según tu orientación profesional."
+        },
+        "step1": {
+          "title": "Presenta tus proyectos destacados",
+          "description": "Nuestra IA te ayuda a describir tus obras con las palabras clave adecuadas."
+        },
+        "step2": {
+          "title": "Lista tu software",
+          "description": "Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Lumion — ordenados por nivel de dominio."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para enviar a estudios de arquitectura."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de arquitecto",
+        "subtitle": "Crea un curriculum de arquitecto que destaque tus proyectos",
+        "q0": {
+          "question": "¿Debo adjuntar un portafolio a mi curriculum de arquitecto?",
+          "answer": "Sí, es casi imprescindible en arquitectura. Incluye un enlace a tu portafolio online (Behance, web personal) o menciona 'Portafolio disponible bajo solicitud'."
+        },
+        "q1": {
+          "question": "¿Qué software es más importante en un curriculum de arquitecto?",
+          "answer": "AutoCAD y Revit para diseño 2D/3D, SketchUp para modelado rápido, ArchiCAD para estudios con BIM, Adobe Photoshop e InDesign para presentaciones y memorias de proyecto."
+        },
+        "q2": {
+          "question": "¿Cómo presentar mis proyectos en el curriculum?",
+          "answer": "Para cada proyecto: nombre, tipo (vivienda, terciario, equipamiento), superficie, presupuesto, tu rol (proyecto, dirección de obra, coordinación) y año de finalización."
+        },
+        "q3": {
+          "question": "¿Debo incluir la colegiación en el curriculum?",
+          "answer": "Sí, es obligatorio mencionar tu colegiación en el Colegio Oficial de Arquitectos. Indica también tu comunidad y número de colegiado si es relevante para el puesto."
+        },
+        "q4": {
+          "question": "¿Cuánto debe medir un curriculum de arquitecto?",
+          "answer": "1-2 páginas para la mayoría. Concéntrate en proyectos clave, software y formación. Tu portafolio ya demuestra tu talento de diseño, el curriculum debe ser conciso."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de arquitecto ahora",
+        "description": "Gratis, profesional y creativo. Destaca tus proyectos y competencias técnicas en 5 minutos.",
+        "ctaText": "Crear mi curriculum de arquitecto"
+      }
+    },
+    "curriculumCocineroPage": {
+      "meta": {
+        "title": "Curriculum Cocinero Gratis 2026 — Modelo CV para Cocina y Gastronomía",
+        "description": "Crea tu curriculum de cocinero gratis. Plantillas CV para cocineros, chefs, jefes de partida y pasteleros. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Cocinero",
+      "hero": {
+        "badgeText": "Para profesionales de la gastronomía",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Cocinero",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tu experiencia culinaria y los establecimientos donde has trabajado.",
+        "description": "Crea tu curriculum de cocinero gratis en 5 minutos. Plantillas profesionales para cocineros y hostelería, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de cocinero",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de cocinero",
+        "subtitle": "Tus técnicas culinarias y los restaurantes donde has trabajado definen tu perfil.",
+        "item0": {
+          "title": "Técnicas culinarias",
+          "description": "Detalla tus especialidades: cocina española, italiana, asiática, repostería, cocina de vanguardia."
+        },
+        "item1": {
+          "title": "Establecimientos de referencia",
+          "description": "Restaurantes con estrellas Michelin, hoteles de lujo y establecimientos reconocidos potencian tu perfil."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros ATS de cadenas hoteleras y agencias de RRHH."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum cocinero gratis",
+        "subtitle": "Elige la plantilla adaptada a tu nivel y especialidad.",
+        "item0": {
+          "title": "Curriculum Jefe de Cocina",
+          "keyword": "curriculum jefe de cocina gratis",
+          "description": "Para jefes de cocina y directores culinarios que lideran brigadas y gestionan menús."
+        },
+        "item1": {
+          "title": "Curriculum Jefe de Partida",
+          "keyword": "curriculum jefe de partida gratis",
+          "description": "Para jefes de partida en cocinas estructuradas: pescados, carnes, pastelería, entrantes."
+        },
+        "item2": {
+          "title": "Curriculum Ayudante de Cocina",
+          "keyword": "curriculum ayudante de cocina gratis",
+          "description": "Para cocineros en prácticas, ayudantes y profesionales al inicio de su carrera."
+        },
+        "item3": {
+          "title": "Curriculum Pastelero",
+          "keyword": "curriculum pastelero gratis",
+          "description": "Para pasteleros de restaurante, obrador y especialistas en postres creativos."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de cocinero en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Jefe de cocina, Jefe de partida, Ayudante o Pastelero según tu nivel."
+        },
+        "step1": {
+          "title": "Lista tus experiencias en hostelería",
+          "description": "Nuestra IA te ayuda a destacar cada puesto con los términos que buscan los reclutadores."
+        },
+        "step2": {
+          "title": "Detalla tus técnicas y especialidades",
+          "description": "Cocina al vacío, técnicas de pastelería, alérgenos, APPCC (HACCP), gestión de stocks."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, listo para enviar a restaurantes y hoteles."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de cocinero",
+        "subtitle": "Crea un curriculum de cocinero que destaque tu talento",
+        "q0": {
+          "question": "¿Qué títulos incluir en un curriculum de cocinero?",
+          "answer": "Ciclo Formativo de Grado Medio/Superior en Cocina y Gastronomía, Grado en Ciencias Culinarias, o formación en escuelas reconocidas como Basque Culinary Center o Le Cordon Bleu."
+        },
+        "q1": {
+          "question": "¿Cómo presentar la experiencia en restaurantes en el curriculum?",
+          "answer": "Para cada puesto: nombre del restaurante (y estrellas Michelin si aplica), tipo de cocina, tu posición en la brigada, número de cubiertos por servicio y técnicas empleadas."
+        },
+        "q2": {
+          "question": "¿Es importante el carnet de manipulador de alimentos?",
+          "answer": "Sí, es obligatorio en España y muy valorado. Incluye también formación en alérgenos (Reglamento 1169/2011) y APPCC si la tienes."
+        },
+        "q3": {
+          "question": "¿Cómo incluir las especialidades culinarias en el curriculum?",
+          "answer": "Crea una sección de 'Habilidades culinarias': tipos de cocina, técnicas (sous vide, fermentación, charcutería) y equipos que dominas (Thermomix profesional, abatidor, Roner)."
+        },
+        "q4": {
+          "question": "¿Cómo destacar sin estrellas Michelin en el curriculum?",
+          "answer": "Destaca la variedad de experiencias, el volumen de cubiertos gestionados, el trabajo en equipo, el desarrollo de menús y cualquier reconocimiento o mención en prensa que haya recibido tu restaurante."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de cocinero ahora",
+        "description": "Gratis, profesional y orientado a tu experiencia culinaria. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de cocinero"
+      }
+    },
+    "curriculumElectricistaPage": {
+      "meta": {
+        "title": "Curriculum Electricista Gratis 2026 — Modelo CV para Electricistas",
+        "description": "Crea tu curriculum de electricista gratis. Plantillas CV para electricistas, técnicos eléctricos y instaladores. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Electricista",
+      "hero": {
+        "badgeText": "Para profesionales de la electricidad",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Electricista",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tus habilitaciones eléctricas y la experiencia en instalaciones.",
+        "description": "Crea tu curriculum de electricista gratis en 5 minutos. Plantillas profesionales para electricistas e instaladores, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de electricista",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de electricista",
+        "subtitle": "Tus habilitaciones y certificados son lo primero que revisan los reclutadores.",
+        "item0": {
+          "title": "Habilitaciones eléctricas",
+          "description": "Carnet de instalador eléctrico (REBT), categorías A y B — lista tus habilitaciones y renovaciones."
+        },
+        "item1": {
+          "title": "Tipos de instalaciones",
+          "description": "Residencial, terciario, industrial, baja/alta tensión — especifica tus ámbitos de actuación."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros de empresas constructoras e industriales."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum electricista gratis",
+        "subtitle": "Elige la plantilla adaptada a tu especialidad.",
+        "item0": {
+          "title": "Curriculum Electricista de Edificios",
+          "keyword": "curriculum electricista edificios gratis",
+          "description": "Para electricistas en instalaciones residenciales, oficinas y locales comerciales."
+        },
+        "item1": {
+          "title": "Curriculum Electricista Industrial",
+          "keyword": "curriculum electricista industrial gratis",
+          "description": "Para electricistas en mantenimiento industrial, automatización y líneas de producción."
+        },
+        "item2": {
+          "title": "Curriculum Jefe de Equipo Eléctrico",
+          "keyword": "curriculum jefe equipo eléctrico gratis",
+          "description": "Para jefes de cuadrilla y encargados en obras de instalaciones eléctricas."
+        },
+        "item3": {
+          "title": "Curriculum Instalador Fotovoltaico",
+          "keyword": "curriculum instalador fotovoltaico gratis",
+          "description": "Para instaladores de paneles solares fotovoltaicos y sistemas de autoconsumo."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de electricista en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Edificios, Industrial, Jefe de equipo o Fotovoltaica según tu especialidad."
+        },
+        "step1": {
+          "title": "Lista tus habilitaciones",
+          "description": "Nuestra IA te ayuda a presentar tu carnet REBT, habilitaciones y normativas dominadas."
+        },
+        "step2": {
+          "title": "Detalla tus instalaciones",
+          "description": "Tipos de obras, tensiones, cumplimiento REBT, recarga de vehículos eléctricos, solar fotovoltaica."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para enviar a empresas instaladoras y constructoras."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de electricista",
+        "subtitle": "Crea un curriculum de electricista completo y profesional",
+        "q0": {
+          "question": "¿Qué habilitaciones debe incluir un electricista en su curriculum?",
+          "answer": "El carnet de instalador eléctrico (categorías A, B, C según REBT) es imprescindible. Añade también: PRL eléctrica, trabajos en altura, primeros auxilios y cualquier habilitación para alta tensión."
+        },
+        "q1": {
+          "question": "¿Cómo presentar la experiencia en instalaciones eléctricas?",
+          "answer": "Para cada puesto: tipo de instalación (viviendas, industria, terciario), tensión de trabajo, normativas aplicadas (REBT, ITC-BT), tu rol y los sistemas o equipos instalados."
+        },
+        "q2": {
+          "question": "¿Qué normativas debo mencionar en el curriculum?",
+          "answer": "REBT (Reglamento Electrotécnico de Baja Tensión) y sus ITC-BT son fundamentales. Para industria: normativa IEC. Para instalaciones de telecomunicaciones: ICT. Para fotovoltaica: RD 244/2019."
+        },
+        "q3": {
+          "question": "¿Es importante incluir la formación en PRL en el curriculum?",
+          "answer": "Sí, es muy valorado. Incluye: formación en PRL eléctrica (20h mínimo), trabajos en altura y andamios, primeros auxilios y cualquier coordinación de seguridad en obra."
+        },
+        "q4": {
+          "question": "¿Cómo destacar la experiencia en instalaciones fotovoltaicas?",
+          "answer": "Menciona: paneles instalados (kWp), inversores (Fronius, SMA, Huawei), configuraciones (autoconsumo, vertido a red), certificado SEER y cualquier proyecto de instalación con baterías."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de electricista ahora",
+        "description": "Gratis, profesional y centrado en tus habilitaciones y experiencia. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de electricista"
+      }
+    },
+    "curriculumSecretariaPage": {
+      "meta": {
+        "title": "Curriculum Secretaria Gratis 2026 — Modelo CV Secretaria Administrativa",
+        "description": "Crea tu curriculum de secretaria gratis. Plantillas CV para secretarias, auxiliares administrativas y asistentes de dirección. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Secretaria",
+      "hero": {
+        "badgeText": "Para profesionales de la administración",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Secretaria",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tus habilidades organizativas y dominio de herramientas ofimáticas.",
+        "description": "Crea tu curriculum de secretaria gratis en 5 minutos. Plantillas profesionales para secretarias y auxiliares administrativas, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de secretaria",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de secretaria",
+        "subtitle": "Tu dominio de la ofimática y tu capacidad organizativa definen tu perfil.",
+        "item0": {
+          "title": "Dominio de ofimática",
+          "description": "Word, Excel, PowerPoint, Outlook, Teams — tu nivel con las herramientas Office es fundamental."
+        },
+        "item1": {
+          "title": "Organización y polivalencia",
+          "description": "Gestión de agendas, atención al cliente, redacción, archivo — valora tu multitarea."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros de selección en todos los sectores."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum secretaria gratis",
+        "subtitle": "Elige la plantilla adaptada a tu especialidad.",
+        "item0": {
+          "title": "Curriculum Secretaria Administrativa",
+          "keyword": "curriculum secretaria administrativa gratis",
+          "description": "Para puestos de secretariado general en empresas, administración pública o asociaciones."
+        },
+        "item1": {
+          "title": "Curriculum Secretaria de Dirección",
+          "keyword": "curriculum secretaria de dirección gratis",
+          "description": "Para asistentes de alto nivel que gestionan la agenda y desplazamientos de directivos."
+        },
+        "item2": {
+          "title": "Curriculum Auxiliar Administrativo",
+          "keyword": "curriculum auxiliar administrativo gratis",
+          "description": "Para puestos de apoyo administrativo en empresas de todos los sectores."
+        },
+        "item3": {
+          "title": "Curriculum Secretaria Jurídica",
+          "keyword": "curriculum secretaria jurídica gratis",
+          "description": "Para secretarias en despachos de abogados, notarías y departamentos jurídicos."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de secretaria en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Administrativa, Dirección, Auxiliar o Jurídica según tu especialidad."
+        },
+        "step1": {
+          "title": "Lista tus competencias informáticas",
+          "description": "Nuestra IA te ayuda a presentar tu dominio de Office, Google Workspace y software específico."
+        },
+        "step2": {
+          "title": "Destaca tu organización",
+          "description": "Gestión de agenda, atención telefónica, redacción de correspondencia, archivo documental."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para enviar a empresas de todos los sectores."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de secretaria",
+        "subtitle": "Crea un curriculum de secretaria profesional y organizado",
+        "q0": {
+          "question": "¿Qué habilidades debe incluir una secretaria en su curriculum?",
+          "answer": "Dominio de Microsoft Office (Word, Excel, PowerPoint, Outlook), gestión de agendas, atención al cliente y telefónica, redacción profesional, archivo y gestión documental."
+        },
+        "q1": {
+          "question": "¿Debo incluir la velocidad de mecanografía en mi curriculum?",
+          "answer": "Sí, si es elevada (más de 60 palabras/min). Indica: 'Mecanografía: 70 ppm' o 'Taquigrafía'. Es valorado en puestos con mucha introducción de datos o transcripción."
+        },
+        "q2": {
+          "question": "¿Qué software específico incluir en un curriculum de secretaria médica?",
+          "answer": "Software de gestión de citas (DocDoc, Medigest), historia clínica electrónica, facturación médica, conocimiento de terminología clínica y protocolos de confidencialidad (LOPD)."
+        },
+        "q3": {
+          "question": "¿Cómo destacar en un curriculum de secretaria sin mucha experiencia?",
+          "answer": "Cuantifica lo que puedas: 'Gestioné la agenda de 2 directores', 'Atendí 40 llamadas diarias', 'Organicé 6 reuniones mensuales'. Y destaca cursos de ofimática, idiomas y formación reglada."
+        },
+        "q4": {
+          "question": "¿Son importantes los idiomas en un curriculum de secretaria?",
+          "answer": "Sí, especialmente en empresas internacionales. El inglés profesional (B2 o superior) más un tercer idioma (francés, alemán) es un diferenciador muy valorado para puestos de secretaria de dirección."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de secretaria ahora",
+        "description": "Gratis, profesional y orientado a tus habilidades organizativas y ofimáticas. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de secretaria"
+      }
+    },
+    "curriculumDesarrolladorWebPage": {
+      "meta": {
+        "title": "Curriculum Desarrollador Web Gratis 2026 — Modelo CV para Programadores",
+        "description": "Crea tu curriculum de desarrollador web gratis. Plantillas CV para desarrolladores frontend, backend y fullstack. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Desarrollador Web",
+      "hero": {
+        "badgeText": "Para desarrolladores web",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Desarrollador Web",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tu stack tecnológico y los proyectos web que has desarrollado.",
+        "description": "Crea tu curriculum de desarrollador web gratis en 5 minutos. Plantillas modernas para desarrolladores frontend, backend y fullstack, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de programador",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de desarrollador web",
+        "subtitle": "Tu stack técnico y tus proyectos en GitHub hablan por ti.",
+        "item0": {
+          "title": "Stack técnico claro",
+          "description": "Lenguajes, frameworks, bases de datos, herramientas DevOps — lista todo de forma estructurada y honesta."
+        },
+        "item1": {
+          "title": "Proyectos reales",
+          "description": "GitHub, portfolio, proyectos open source — tus trabajos concretos son tu mejor carta de presentación."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros de startups y empresas tecnológicas."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum desarrollador web gratis",
+        "subtitle": "Elige la plantilla adaptada a tu perfil.",
+        "item0": {
+          "title": "Curriculum Desarrollador Frontend",
+          "keyword": "curriculum desarrollador frontend gratis",
+          "description": "Para desarrolladores React, Vue.js, Angular y especialistas en UI/UX del lado cliente."
+        },
+        "item1": {
+          "title": "Curriculum Desarrollador Backend",
+          "keyword": "curriculum desarrollador backend gratis",
+          "description": "Para desarrolladores Node.js, Python, PHP, Java y expertos en APIs y bases de datos."
+        },
+        "item2": {
+          "title": "Curriculum Desarrollador Fullstack",
+          "keyword": "curriculum desarrollador fullstack gratis",
+          "description": "Para desarrolladores polivalentes que dominan el frontend y el backend de extremo a extremo."
+        },
+        "item3": {
+          "title": "Curriculum Desarrollador Móvil",
+          "keyword": "curriculum desarrollador móvil gratis",
+          "description": "Para desarrolladores React Native, Flutter, iOS (Swift) y Android (Kotlin)."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de desarrollador web en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Frontend, Backend, Fullstack o Móvil según tu especialidad y experiencia."
+        },
+        "step1": {
+          "title": "Estructura tu stack técnico",
+          "description": "Nuestra IA te ayuda a organizar tus tecnologías por categoría y nivel de dominio."
+        },
+        "step2": {
+          "title": "Añade tus proyectos destacados",
+          "description": "Links de GitHub, demos en vivo, proyectos open source y trabajos freelance importantes."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para enviar a startups, agencias y empresas."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de desarrollador web",
+        "subtitle": "Crea un curriculum de programador que destaque",
+        "q0": {
+          "question": "¿Debo incluir mi perfil de GitHub en el curriculum?",
+          "answer": "Sí, inclúyelo en la cabecera. Un perfil GitHub activo con proyectos reales es más convincente para reclutadores técnicos que una lista de habilidades autopuntuadas."
+        },
+        "q1": {
+          "question": "¿Cómo estructurar las habilidades técnicas en un curriculum de programador?",
+          "answer": "Organiza por categorías: Lenguajes (JavaScript, Python, TypeScript), Frameworks (React, Next.js, Node.js), Bases de datos (PostgreSQL, MongoDB, Redis), DevOps (Docker, AWS, CI/CD)."
+        },
+        "q2": {
+          "question": "¿Debo indicar mi nivel en cada tecnología?",
+          "answer": "Sí, sé honesto. Usa etiquetas claras: Experto, Avanzado, Básico. Evita las barras de progreso visuales subjetivas. Los entrevistadores técnicos pondrán a prueba tu nivel."
+        },
+        "q3": {
+          "question": "¿Cómo presentar proyectos personales en el curriculum de desarrollador?",
+          "answer": "Para cada proyecto: nombre, descripción en una frase, tecnologías usadas y link a GitHub o demo. Prioriza 3-5 proyectos representativos en lugar de una lista exhaustiva."
+        },
+        "q4": {
+          "question": "¿Necesito un portfolio además del curriculum para desarrollador web?",
+          "answer": "Muy recomendable, especialmente para frontend y fullstack. Un sitio web personal demuestra tus habilidades en acción y suele ser el primer criterio de preselección en empresas creativas."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de desarrollador web ahora",
+        "description": "Gratis, estructurado y optimizado para destacar tu stack y tus proyectos. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de programador"
+      }
+    },
+    "curriculumMedicoPage": {
+      "meta": {
+        "title": "Curriculum Médico Gratis 2026 — Modelo CV para Médicos y Especialistas",
+        "description": "Crea tu curriculum de médico gratis. Plantillas CV para médicos de familia, especialistas, residentes y urgenciólogos. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Médico",
+      "hero": {
+        "badgeText": "Para profesionales de la medicina",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Médico",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tu formación, especialización y experiencia clínica.",
+        "description": "Crea tu curriculum de médico gratis en 5 minutos. Plantillas profesionales para médicos y especialistas, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de médico",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de médico",
+        "subtitle": "Tus títulos, especializaciones y experiencia clínica definen tu trayectoria.",
+        "item0": {
+          "title": "Títulos y especialización",
+          "description": "Licenciatura/Grado en Medicina, MIR, especialidades, subespecialidades y diplomas de acreditación."
+        },
+        "item1": {
+          "title": "Experiencia clínica",
+          "description": "Hospitales, servicios, rotaciones — especifica tus puestos, patologías y técnicas dominadas."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros de hospitales, clínicas y grupos sanitarios."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum médico gratis",
+        "subtitle": "Elige la plantilla adaptada a tu especialidad médica.",
+        "item0": {
+          "title": "Curriculum Médico de Familia",
+          "keyword": "curriculum médico de familia gratis",
+          "description": "Para médicos de atención primaria, medicina familiar y comunitaria en centros de salud."
+        },
+        "item1": {
+          "title": "Curriculum Médico Especialista",
+          "keyword": "curriculum médico especialista gratis",
+          "description": "Para especialistas (cardiólogo, neurólogo, cirujano) en hospitales o clínicas privadas."
+        },
+        "item2": {
+          "title": "Curriculum Médico Residente (MIR)",
+          "keyword": "curriculum médico residente MIR gratis",
+          "description": "Para residentes MIR en proceso de formación especializada, con rotaciones estructuradas."
+        },
+        "item3": {
+          "title": "Curriculum Médico de Urgencias",
+          "keyword": "curriculum médico urgencias gratis",
+          "description": "Para urgenciólogos y médicos de guardia en servicios de urgencias hospitalarias y extrahospitalarias."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de médico en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Médico de familia, Especialista, Residente MIR o Urgencias según tu perfil."
+        },
+        "step1": {
+          "title": "Lista tu formación y especialización",
+          "description": "Nuestra IA te ayuda a estructurar tu historial académico: Licenciatura, MIR, especialidad, másteres."
+        },
+        "step2": {
+          "title": "Describe tu experiencia clínica",
+          "description": "Hospitales, servicios, patologías atendidas, técnicas realizadas y carga asistencial."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para solicitudes hospitalarias o de consulta privada."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de médico",
+        "subtitle": "Crea un curriculum médico estructurado y profesional",
+        "q0": {
+          "question": "¿Cómo estructurar un curriculum vitae de médico en España?",
+          "answer": "Orden recomendado: datos personales y número de colegiado, formación académica (de la más reciente), formación especializada (MIR), experiencia clínica, actividad docente e investigadora, publicaciones, idiomas."
+        },
+        "q1": {
+          "question": "¿Debo incluir el número de colegiado en el curriculum médico?",
+          "answer": "Sí, es muy recomendable. El número de colegiado en el Colegio Oficial de Médicos confirma tu habilitación para ejercer. También incluye el número de especialista si tienes título MIR."
+        },
+        "q2": {
+          "question": "¿Cómo presentar las publicaciones en un curriculum de médico?",
+          "answer": "Usa el estilo Vancouver: Autores, Título, Revista (en cursiva), Año, Volumen, Número, Páginas. Separa artículos originales, revisiones, capítulos de libro, comunicaciones y ponencias."
+        },
+        "q3": {
+          "question": "¿Qué extensión debe tener un curriculum de médico especialista?",
+          "answer": "Un CV médico académico puede ser largo (5-10 páginas) para profesores o investigadores. Para puestos hospitalarios: 2-4 páginas con publicaciones. Para medicina privada: 1-2 páginas son suficientes."
+        },
+        "q4": {
+          "question": "¿Cómo valorizar una experiencia de cooperación en un curriculum médico?",
+          "answer": "Menciona la ONG (MSF, Médicos del Mundo, Cruz Roja), el país y periodo, las patologías atendidas y el número de pacientes. Una misión humanitaria es muy valorada en oposiciones y puestos hospitalarios."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de médico ahora",
+        "description": "Gratis, estructurado según los estándares médicos, exporta en PDF al instante. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de médico"
+      }
+    },
+    "cartaPresentacionPage": {
+      "meta": {
+        "title": "Carta de Presentación Gratis 2026 — Modelo Carta de Presentación Profesional",
+        "description": "Crea tu carta de presentación gratis. Plantillas de cartas de presentación profesionales para todos los sectores. Personalizable, exporta en PDF, optimizado para ATS."
+      },
+      "breadcrumbName": "Carta de Presentación",
+      "hero": {
+        "badgeText": "Carta de presentación con IA",
+        "h1Before": "Carta de ",
+        "h1Accent": "Presentación",
+        "h1After": " Gratis",
+        "subtitle": "Redacta una carta de presentación convincente que complemente tu curriculum.",
+        "description": "Crea tu carta de presentación gratis en 5 minutos. Plantillas profesionales para todos los sectores, personalizables, exporta en PDF gratis.",
+        "primaryCtaText": "Crear mi carta de presentación",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Las claves de una carta de presentación efectiva",
+        "subtitle": "Una carta bien construida puede marcar la diferencia entre cientos de candidaturas.",
+        "item0": {
+          "title": "Estructura clara",
+          "description": "Apertura, cuerpo (por qué tú, por qué ellos), cierre y llamada a la acción — respeta los estándares."
+        },
+        "item1": {
+          "title": "Personalización máxima",
+          "description": "Cada carta debe adaptarse a la oferta y la empresa. Los reclutadores detectan las cartas genéricas al instante."
+        },
+        "item2": {
+          "title": "Compatible con ATS",
+          "description": "Nuestras plantillas garantizan que tu carta sea legible por los sistemas de selección automatizados."
+        }
+      },
+      "section2": {
+        "title": "Plantillas de carta de presentación gratis",
+        "subtitle": "Elige la plantilla adaptada a tu situación.",
+        "item0": {
+          "title": "Carta de Presentación para Empleo",
+          "keyword": "carta de presentación empleo gratis",
+          "description": "Para candidaturas a puestos indefinidos en todos los sectores y tamaños de empresa."
+        },
+        "item1": {
+          "title": "Carta de Presentación para Prácticas",
+          "keyword": "carta de presentación prácticas gratis",
+          "description": "Para estudiantes y recién titulados que buscan prácticas en empresas o instituciones."
+        },
+        "item2": {
+          "title": "Carta de Presentación Espontánea",
+          "keyword": "carta de presentación espontánea gratis",
+          "description": "Para candidaturas no solicitadas dirigidas directamente a empresas de tu sector objetivo."
+        },
+        "item3": {
+          "title": "Carta de Presentación Cambio de Sector",
+          "keyword": "carta de presentación cambio sector gratis",
+          "description": "Para profesionales que cambian de sector y necesitan reencuadrar sus competencias transferibles."
+        }
+      },
+      "section3": {
+        "title": "Redacta tu carta de presentación en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Empleo, Prácticas, Espontánea o Cambio de sector según tu situación y objetivo."
+        },
+        "step1": {
+          "title": "Personaliza el contenido",
+          "description": "Nuestra IA te ayuda a adaptar cada párrafo a la oferta y la empresa en concreto."
+        },
+        "step2": {
+          "title": "Revisa y ajusta el tono",
+          "description": "Profesional pero auténtico — encuentra el equilibrio entre formalidad y personalidad."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para adjuntar a tu curriculum y enviar."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre la carta de presentación",
+        "subtitle": "Todo lo que necesitas saber para redactar una carta efectiva",
+        "q0": {
+          "question": "¿Cuál es la estructura ideal de una carta de presentación?",
+          "answer": "Una carta de presentación tiene 3 partes: 1) Apertura — por qué te interesa este puesto; 2) Cuerpo — qué aportas a la empresa (habilidades + experiencia + valor); 3) Cierre — despedida profesional y llamada a la entrevista."
+        },
+        "q1": {
+          "question": "¿Qué extensión debe tener una carta de presentación?",
+          "answer": "Máximo una página, generalmente 250-350 palabras. Los reclutadores raramente leen más. Sé conciso, específico a la oferta y que cada frase tenga un propósito claro."
+        },
+        "q2": {
+          "question": "¿Debo repetir lo que ya está en el curriculum?",
+          "answer": "No. La carta complementa el curriculum, no lo repite. Úsala para explicar tu motivación, dar contexto a tu experiencia y mostrar tu personalidad y conocimiento de la empresa."
+        },
+        "q3": {
+          "question": "¿Cómo empezar una carta de presentación de forma original?",
+          "answer": "Empieza con un gancho directo: un logro relevante, un reto específico de la empresa que puedas resolver, o entusiasmo genuino por la misión y el puesto concreto."
+        },
+        "q4": {
+          "question": "¿Sigue siendo útil la carta de presentación en 2026?",
+          "answer": "Sí, especialmente para puestos muy competitivos o candidaturas espontáneas. Alrededor del 40% de los reclutadores la leen sistemáticamente, y una buena carta puede compensar un curriculum menos perfecto."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu carta de presentación ahora",
+        "description": "Gratis, profesional y personalizable para cada candidatura. Lista en 5 minutos.",
+        "ctaText": "Crear mi carta de presentación"
+      }
+    },
+    "curriculumTecnicoPage": {
+      "meta": {
+        "title": "Curriculum Técnico Gratis 2026 — Modelo CV Técnico de Mantenimiento y SAT",
+        "description": "Crea tu curriculum de técnico gratis. Plantillas CV para técnicos de mantenimiento, SAT, informática e industria. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Técnico",
+      "hero": {
+        "badgeText": "Para profesionales técnicos",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Técnico",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tus competencias técnicas y certificaciones profesionales.",
+        "description": "Crea tu curriculum de técnico gratis en 5 minutos. Plantillas profesionales para técnicos de mantenimiento, SAT e informática, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de técnico",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de técnico",
+        "subtitle": "Tus certificaciones y experiencia en campo son tu mejor aval.",
+        "item0": {
+          "title": "Certificaciones técnicas",
+          "description": "Carnets profesionales, certificaciones de fabricante — tus habilitaciones prueban tu competencia."
+        },
+        "item1": {
+          "title": "Equipos y sistemas dominados",
+          "description": "Lista las marcas y tipos de equipos: diagnóstico, mantenimiento preventivo y correctivo."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros de empresas industriales y de servicios."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum técnico gratis",
+        "subtitle": "Elige la plantilla adaptada a tu área técnica.",
+        "item0": {
+          "title": "Curriculum Técnico de Mantenimiento",
+          "keyword": "curriculum técnico mantenimiento gratis",
+          "description": "Para el mantenimiento preventivo y correctivo de equipos industriales y terciarios."
+        },
+        "item1": {
+          "title": "Curriculum Técnico de SAT",
+          "keyword": "curriculum técnico SAT gratis",
+          "description": "Para el servicio de asistencia técnica, intervenciones en cliente y soporte técnico."
+        },
+        "item2": {
+          "title": "Curriculum Técnico Informático",
+          "keyword": "curriculum técnico informático gratis",
+          "description": "Para el mantenimiento de equipos, soporte N1/N2 y administración de redes y sistemas."
+        },
+        "item3": {
+          "title": "Curriculum Técnico Frigorista",
+          "keyword": "curriculum técnico frigorista gratis",
+          "description": "Para técnicos en climatización, frío industrial y comercial, y sistemas HVAC."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de técnico en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Mantenimiento, SAT, Informático o Frigorista según tu área de especialización."
+        },
+        "step1": {
+          "title": "Lista tus certificaciones",
+          "description": "Nuestra IA te ayuda a presentar tus habilitaciones, carnets y formaciones técnicas."
+        },
+        "step2": {
+          "title": "Detalla los equipos que dominas",
+          "description": "Marcas, tipos de máquinas, herramientas de diagnóstico, software GMAO y protocolos."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para enviar a empresas industriales y de servicios."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de técnico",
+        "subtitle": "Crea un curriculum de técnico completo y convincente",
+        "q0": {
+          "question": "¿Qué certificaciones debe incluir un técnico en su curriculum?",
+          "answer": "Según el área: carnet de instalador frigorista (F-gas), habilitaciones eléctricas (BT/AT), certificados de fabricante (Siemens, Schneider, ABB), PRL básico/superior y cualquier formación ATEX o trabajos en altura."
+        },
+        "q1": {
+          "question": "¿Cómo presentar las habilidades técnicas en un curriculum de técnico?",
+          "answer": "Organiza por áreas: Electricidad (PLCs, variadores), Mecánica (hidráulica, neumática), Diagnóstico (osciloscopios, cámaras termográficas) y Software (SAP PM, Maximo, AutoCAD)."
+        },
+        "q2": {
+          "question": "¿Es importante mencionar el software de GMAO en el curriculum?",
+          "answer": "Sí, es muy valorado. Lista los sistemas que has usado: SAP PM, IBM Maximo, Prisma (Infor), UpKeep, Infraspeak. Las empresas industriales usan GMAO de forma sistemática."
+        },
+        "q3": {
+          "question": "¿Cómo destacar la disponibilidad para guardias en el curriculum de técnico?",
+          "answer": "Indícalo claramente: 'Disponible para guardia 1 semana/mes', 'Intervenciones 24/7', 'OEE de instalaciones mantenido al 96% gracias a respuesta rápida'. La disponibilidad es clave en mantenimiento."
+        },
+        "q4": {
+          "question": "¿Debo indicar mi disponibilidad para viajar en el curriculum de técnico itinerante?",
+          "answer": "Sí, es fundamental. Para puestos de SAT o técnico itinerante indica: 'Disponible para desplazamientos nacionales', 'Zona de actuación: Levante', 'Carnet de conducir B + vehículo propio/de empresa'."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de técnico ahora",
+        "description": "Gratis, profesional y orientado a tus certificaciones y experiencia técnica. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de técnico"
+      }
+    },
+    "curriculumFarmaceuticoPage": {
+      "meta": {
+        "title": "Curriculum Farmacéutico Gratis 2026 — Modelo CV para Farmacéuticos",
+        "description": "Crea tu curriculum de farmacéutico gratis. Plantillas CV para farmacéuticos comunitarios, hospitalarios y técnicos de farmacia. Optimizado para ATS, exporta en PDF."
+      },
+      "breadcrumbName": "Curriculum Farmacéutico",
+      "hero": {
+        "badgeText": "Para profesionales de la farmacia",
+        "h1Before": "Curriculum de ",
+        "h1Accent": "Farmacéutico",
+        "h1After": " Gratis",
+        "subtitle": "Destaca tu formación farmacéutica y tu experiencia en el medicamento.",
+        "description": "Crea tu curriculum de farmacéutico gratis en 5 minutos. Plantillas profesionales para farmacéuticos comunitarios, hospitalarios y técnicos, compatibles con ATS, exporta en PDF.",
+        "primaryCtaText": "Crear mi curriculum de farmacéutico",
+        "secondaryCtaText": "Ver plantillas"
+      },
+      "section1": {
+        "title": "Lo esencial en un curriculum de farmacéutico",
+        "subtitle": "Tu título, colegiación y experiencia con el medicamento son fundamentales.",
+        "item0": {
+          "title": "Título y colegiación",
+          "description": "Licenciatura/Grado en Farmacia, número de colegiado en el COF — la colegiación es obligatoria."
+        },
+        "item1": {
+          "title": "Experiencia con el medicamento",
+          "description": "Dispensación, formulación magistral, consejo farmacéutico, gestión de estupefacientes."
+        },
+        "item2": {
+          "title": "Optimizado para ATS",
+          "description": "Nuestras plantillas garantizan superar los filtros de farmacias, hospitales y laboratorios."
+        }
+      },
+      "section2": {
+        "title": "Plantillas curriculum farmacéutico gratis",
+        "subtitle": "Elige la plantilla adaptada a tu especialidad.",
+        "item0": {
+          "title": "Curriculum Farmacéutico Comunitario",
+          "keyword": "curriculum farmacéutico comunitario gratis",
+          "description": "Para farmacéuticos titulares o adjuntos en farmacia comunitaria y parafarmacia."
+        },
+        "item1": {
+          "title": "Curriculum Farmacéutico Hospitalario",
+          "keyword": "curriculum farmacéutico hospitalario gratis",
+          "description": "Para farmacéuticos de hospital, farmacotecnia y atención farmacéutica especializada."
+        },
+        "item2": {
+          "title": "Curriculum Técnico de Farmacia",
+          "keyword": "curriculum técnico de farmacia gratis",
+          "description": "Para técnicos en farmacia y parafarmacia con titulación de Grado Medio o Superior."
+        },
+        "item3": {
+          "title": "Curriculum Farmacéutico Industria",
+          "keyword": "curriculum farmacéutico industria farmacéutica gratis",
+          "description": "Para farmacéuticos en asuntos regulatorios, farmacovigilancia o desarrollo clínico."
+        }
+      },
+      "section3": {
+        "title": "Crea tu curriculum de farmacéutico en 4 pasos",
+        "step0": {
+          "title": "Elige tu plantilla",
+          "description": "Comunitario, Hospitalario, Técnico o Industria según tu perfil profesional."
+        },
+        "step1": {
+          "title": "Destaca tu titulación y colegiación",
+          "description": "Nuestra IA te ayuda a presentar tu formación: Grado en Farmacia, posgrados, MIR/FIR."
+        },
+        "step2": {
+          "title": "Detalla tus competencias",
+          "description": "Software de gestión, formulación, consejo al paciente, gestión de stocks y estupefacientes."
+        },
+        "step3": {
+          "title": "Descarga en PDF",
+          "description": "Exportación instantánea de alta calidad, lista para enviar a farmacias, hospitales o laboratorios."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre el curriculum de farmacéutico",
+        "subtitle": "Crea un curriculum de farmacéutico estructurado y completo",
+        "q0": {
+          "question": "¿Qué títulos incluir en un curriculum de farmacéutico?",
+          "answer": "Grado en Farmacia (obligatorio), especialidad vía FIR si la tienes, másteres complementarios (farmacia clínica, tecnología farmacéutica, cosmetología, fitoterapia) y número de colegiado en el COF."
+        },
+        "q1": {
+          "question": "¿Qué software de gestión incluir en un curriculum de farmacéutico?",
+          "answer": "Farmatic, Nixfarma, Botika, Unycop — los principales sistemas de gestión farmacéutica en España. Menciona también tu manejo de la facturación al SNS, receta electrónica y SIGRE."
+        },
+        "q2": {
+          "question": "¿Es obligatorio mencionar la colegiación en el curriculum?",
+          "answer": "Sí, la colegiación en el Colegio Oficial de Farmacéuticos es obligatoria para ejercer. Indica tu colegio provincial y número de colegiado. Para hospitalarios, incluye también tu número de EFA si procede."
+        },
+        "q3": {
+          "question": "¿Cómo valorizar la atención farmacéutica en el curriculum?",
+          "answer": "Menciona: SPD (Sistemas Personalizados de Dosificación), seguimiento farmacoterapéutico, consultas de automedicación, educación sanitaria, programa de metadona o atención a pacientes VIH si aplica."
+        },
+        "q4": {
+          "question": "¿Cómo diferenciarse en un curriculum de farmacéutico para la industria?",
+          "answer": "Destaca: formación en asuntos regulatorios (legislación UE, AEMPS), BPF (GMP), ensayos clínicos, farmacovigilancia, inglés científico fluido y cualquier experiencia en visita médica o medical affairs."
+        }
+      },
+      "finalCta": {
+        "title": "Crea tu curriculum de farmacéutico ahora",
+        "description": "Gratis, profesional y adaptado a las exigencias del sector farmacéutico. Listo en 5 minutos.",
+        "ctaText": "Crear mi curriculum de farmacéutico"
+      }
     }
   },
   "editor": {

@@ -148,6 +148,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/competences-cv', priority: 0.83 },
     { path: '/exemples-profil-professionnel', priority: 0.83 },
     { path: '/cv-professeur', priority: 0.83 },
+    { path: '/cv-banquier', priority: 0.85 },
+    { path: '/cv-architecte', priority: 0.85 },
+    { path: '/cv-cuisinier', priority: 0.85 },
+    { path: '/cv-electricien', priority: 0.85 },
+    { path: '/cv-secretaire', priority: 0.85 },
+    { path: '/cv-developpeur-web', priority: 0.85 },
+    { path: '/cv-medecin', priority: 0.85 },
+    { path: '/lettre-de-motivation', priority: 0.85 },
+    { path: '/cv-technicien', priority: 0.85 },
+    { path: '/cv-pharmacien', priority: 0.85 },
   ]
 
   // Pages EN uniquement (slug anglais, pas de version multilingue avec ce slug)
@@ -160,6 +170,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/minimal-resume-template', priority: 0.80 },
     { path: '/resume-pdf-template', priority: 0.75 },
     { path: '/hr-resume-template', priority: 0.85 },
+    { path: '/banker-resume-template', priority: 0.85 },
+    { path: '/architect-resume-template', priority: 0.85 },
+    { path: '/chef-resume-template', priority: 0.85 },
+    { path: '/electrician-resume-template', priority: 0.85 },
+    { path: '/secretary-resume-template', priority: 0.85 },
+    { path: '/web-developer-resume', priority: 0.85 },
+    { path: '/doctor-resume-template', priority: 0.85 },
+    { path: '/cover-letter-template', priority: 0.85 },
+    { path: '/technician-resume-template', priority: 0.85 },
+    { path: '/pharmacist-resume-template', priority: 0.85 },
   ]
 
   // Pages ES uniquement (slug espagnol, pas de version multilingue avec ce slug)
@@ -202,6 +222,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/plantilla-curriculum-minimalista', priority: 0.80 },
     { path: '/curriculum-pdf', priority: 0.75 },
     { path: '/curriculum-recursos-humanos', priority: 0.85 },
+    { path: '/curriculum-banquero', priority: 0.85 },
+    { path: '/curriculum-arquitecto', priority: 0.85 },
+    { path: '/curriculum-cocinero', priority: 0.85 },
+    { path: '/curriculum-electricista', priority: 0.85 },
+    { path: '/curriculum-secretaria', priority: 0.85 },
+    { path: '/curriculum-desarrollador-web', priority: 0.85 },
+    { path: '/curriculum-medico', priority: 0.85 },
+    { path: '/carta-de-presentacion', priority: 0.85 },
+    { path: '/curriculum-tecnico', priority: 0.85 },
+    { path: '/curriculum-farmaceutico', priority: 0.85 },
   ]
 
   return [
