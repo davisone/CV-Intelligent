@@ -132,6 +132,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       })),
   ]
 
+  // Pages FR uniquement (slug français, pas de version multilingue avec ce slug)
+  const frOnlyRoutes = [
+    { path: '/cv-ats', priority: 0.88 },
+    { path: '/cv-chronologique', priority: 0.83 },
+    { path: '/cv-creatif', priority: 0.83 },
+    { path: '/cv-service-client', priority: 0.80 },
+    { path: '/cv-data-scientist', priority: 0.83 },
+    { path: '/cv-cadre', priority: 0.83 },
+    { path: '/cv-fonctionnel', priority: 0.80 },
+    { path: '/cv-une-page', priority: 0.83 },
+    { path: '/cv-product-manager', priority: 0.85 },
+    { path: '/createur-cv', priority: 0.85 },
+    { path: '/format-cv-2025', priority: 0.88 },
+    { path: '/competences-cv', priority: 0.83 },
+    { path: '/exemples-profil-professionnel', priority: 0.83 },
+    { path: '/cv-professeur', priority: 0.83 },
+  ]
+
+  // Pages EN uniquement (slug anglais, pas de version multilingue avec ce slug)
+  const enOnlyRoutes = [
+    { path: '/assistant-resume-template', priority: 0.85 },
+    { path: '/graphic-designer-resume', priority: 0.80 },
+    { path: '/lawyer-resume-template', priority: 0.80 },
+    { path: '/logistics-resume-template', priority: 0.80 },
+    { path: '/manager-resume-template', priority: 0.85 },
+    { path: '/minimal-resume-template', priority: 0.80 },
+    { path: '/resume-pdf-template', priority: 0.75 },
+    { path: '/hr-resume-template', priority: 0.85 },
+  ]
+
+  // Pages ES uniquement (slug espagnol, pas de version multilingue avec ce slug)
   const esOnlyRoutes = [
     { path: '/curriculum-vitae-gratis', priority: 0.90 },
     { path: '/plantilla-cv-gratis', priority: 0.88 },
@@ -163,6 +194,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/habilidades-en-el-curriculum', priority: 0.83 },
     { path: '/curriculum-ejecutivo', priority: 0.83 },
     { path: '/curriculum-ingeniero-software', priority: 0.85 },
+    { path: '/curriculum-asistente', priority: 0.85 },
+    { path: '/curriculum-disenador-grafico', priority: 0.80 },
+    { path: '/curriculum-abogado', priority: 0.80 },
+    { path: '/curriculum-logistica', priority: 0.80 },
+    { path: '/curriculum-gerente', priority: 0.85 },
+    { path: '/plantilla-curriculum-minimalista', priority: 0.80 },
+    { path: '/curriculum-pdf', priority: 0.75 },
+    { path: '/curriculum-recursos-humanos', priority: 0.85 },
   ]
 
   return [
@@ -179,6 +218,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
       }))
     ),
+    ...frOnlyRoutes.map(({ path, priority }) => ({
+      url: `${baseUrl}/fr${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority,
+      alternates: {
+        languages: { fr: `${baseUrl}/fr${path}` },
+      },
+    })),
+    ...enOnlyRoutes.map(({ path, priority }) => ({
+      url: `${baseUrl}/en${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority,
+      alternates: {
+        languages: { en: `${baseUrl}/en${path}` },
+      },
+    })),
     ...esOnlyRoutes.map(({ path, priority }) => ({
       url: `${baseUrl}/es${path}`,
       lastModified: new Date(),
