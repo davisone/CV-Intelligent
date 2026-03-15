@@ -6,6 +6,11 @@ const DEFAULT_CONTENT_DIR = path.join(process.cwd(), 'content/blog')
 const FALLBACK_IMAGE = '/og-image.png'
 const LOCALES = ['fr', 'en', 'es'] as const
 
+export interface HowToStep {
+  name: string
+  text: string
+}
+
 export interface BlogPost {
   slug: string
   locale: string
@@ -18,6 +23,7 @@ export interface BlogPost {
   image: string
   readingTime: number
   availableLocales: string[]
+  steps?: HowToStep[]
 }
 
 export interface BlogPostWithSource {
@@ -52,6 +58,7 @@ function parsePost(
     image: data.image ?? FALLBACK_IMAGE,
     readingTime: data.readingTime ?? estimateReadingTime(content),
     availableLocales,
+    steps: Array.isArray(data.steps) ? data.steps : undefined,
   }
 }
 
