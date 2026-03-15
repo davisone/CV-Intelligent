@@ -341,7 +341,15 @@
       "cvGraphiste": "CV Graphiste",
       "cvJuriste": "CV Juriste",
       "cvLogistique": "CV Logistique",
-      "allRights": "Tous droits réservés."
+      "allRights": "Tous droits réservés.",
+      "cvMedecin": "CV Médecin",
+      "cvArchitecte": "CV Architecte",
+      "cvAts": "CV ATS",
+      "lettreDeMoti": "Lettre de Motivation",
+      "sectionMetier": "Par métier",
+      "sectionFormat": "Par format",
+      "sectionProfil": "Par profil",
+      "sectionRessources": "Ressources"
     },
     "seoPage": {
       "loginText": "Connexion",

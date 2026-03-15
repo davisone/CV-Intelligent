@@ -623,7 +623,15 @@
       "cvGraphiste": "CV Diseñador Gráfico",
       "cvJuriste": "CV Jurista",
       "cvLogistique": "CV Logística",
-      "allRights": "Todos los derechos reservados."
+      "allRights": "Todos los derechos reservados.",
+      "cvMedecin": "Curriculum Médico",
+      "cvArchitecte": "Curriculum Arquitecto",
+      "cvAts": "Curriculum ATS",
+      "lettreDeMoti": "Carta de Presentación",
+      "sectionMetier": "Por profesión",
+      "sectionFormat": "Por formato",
+      "sectionProfil": "Por perfil",
+      "sectionRessources": "Recursos"
     },
     "seoPage": {
       "loginText": "Iniciar sesión",

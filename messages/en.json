@@ -341,7 +341,15 @@
       "cvGraphiste": "Graphic Designer Resume",
       "cvJuriste": "Lawyer Resume",
       "cvLogistique": "Logistics Resume",
-      "allRights": "All rights reserved."
+      "allRights": "All rights reserved.",
+      "cvMedecin": "Doctor Resume",
+      "cvArchitecte": "Architect Resume",
+      "cvAts": "ATS Resume",
+      "lettreDeMoti": "Cover Letter",
+      "sectionMetier": "By Job",
+      "sectionFormat": "By Format",
+      "sectionProfil": "By Profile",
+      "sectionRessources": "Resources"
     },
     "seoPage": {
       "loginText": "Sign In",
