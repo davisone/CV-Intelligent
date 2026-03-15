@@ -340,7 +340,8 @@
       "cvAssistant": "CV Assistant",
       "cvGraphiste": "CV Graphiste",
       "cvJuriste": "CV Juriste",
-      "cvLogistique": "CV Logistique"
+      "cvLogistique": "CV Logistique",
+      "allRights": "Tous droits réservés."
     },
     "seoPage": {
       "loginText": "Connexion",

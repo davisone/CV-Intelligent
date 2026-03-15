@@ -26,7 +26,7 @@ export function Footer() {
                   href="https://dvs-web.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#722F37] hover:text-[#8B3A44] transition-colors font-medium"
+                  className="text-[#722F37] hover:text-[#8B3A44] transition-colors font-medium underline"
                 >
                   Evan Davison
                 </a>
@@ -87,11 +87,11 @@ export function Footer() {
               href="https://dvs-web.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#722F37] hover:text-[#8B3A44] transition-colors"
+              className="text-[#722F37] hover:text-[#8B3A44] transition-colors underline"
             >
               DVS-Web
             </a>
-            {' '}— Tous droits réservés.
+            {' '}— {t('allRights')}
           </p>
           <LocaleSwitcher />
         </div>

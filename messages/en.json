@@ -340,7 +340,8 @@
       "cvAssistant": "Assistant Resume",
       "cvGraphiste": "Graphic Designer Resume",
       "cvJuriste": "Lawyer Resume",
-      "cvLogistique": "Logistics Resume"
+      "cvLogistique": "Logistics Resume",
+      "allRights": "All rights reserved."
     },
     "seoPage": {
       "loginText": "Sign In",
