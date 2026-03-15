@@ -352,23 +352,47 @@
       "relatedPages": {
         "free-resume-builder": "Free Resume Builder",
         "ats-resume-template": "ATS Resume Template",
-        "how-to-write-a-resume": "How to Write a Resume",
-        "student-resume-template": "Student Resume Template",
+        "assistant-resume-template": "Assistant Resume",
+        "student-resume-template": "Student Resume",
         "software-engineer-resume": "Software Engineer Resume",
-        "resume-format-2025": "Resume Format 2025",
+        "resume-format-2025": "Resume Format 2026",
         "career-change-resume": "Career Change Resume",
         "entry-level-resume": "Entry Level Resume",
         "modern-resume-template": "Modern Resume Template",
         "executive-resume-template": "Executive Resume",
         "internship-resume-template": "Internship Resume",
-        "resume-skills-section": "Resume Skills Guide",
-        "cv-etudiant": "Student CV (FR)",
-        "modele-cv-gratuit": "Free CV Template (FR)",
-        "comment-faire-un-cv": "How to Make a CV (FR)",
-        "cv-developpeur": "Developer CV (FR)",
-        "cv-sans-experience": "CV No Experience (FR)",
-        "cv-alternance": "Work-Study CV (FR)"
-      }
+        "resume-skills-section": "Resume Skills Section",
+        "cv-etudiant": "CV Étudiant (FR)",
+        "modele-cv-gratuit": "Modèle CV Gratuit (FR)",
+        "comment-faire-un-cv": "Comment Faire un CV (FR)",
+        "cv-developpeur": "CV Développeur (FR)",
+        "cv-sans-experience": "CV Sans Expérience (FR)",
+        "cv-alternance": "CV Alternance (FR)"
+      },
+      "socialProof": "⭐ 4.8/5 · 1,200+ resumes created this month",
+      "midCtaTitle": "Create your resume in under 5 minutes",
+      "midCtaButton": "Get started for free",
+      "testimonialsTitle": "They landed their dream job",
+      "testimonials": [
+        {
+          "quote": "I got an interview 3 days after sending the resume I built here. The modern design truly made the difference.",
+          "name": "Sophie M.",
+          "role": "Frontend Developer",
+          "stars": 5
+        },
+        {
+          "quote": "Finally a tool that understands ATS requirements. My response rate tripled in one month.",
+          "name": "Karim B.",
+          "role": "Project Manager",
+          "stars": 5
+        },
+        {
+          "quote": "Simple, fast, and professional. I built my resume in 10 minutes flat for my career change.",
+          "name": "Lucie T.",
+          "role": "Communications Manager",
+          "stars": 5
+        }
+      ]
     },
     "templatesPage": {
       "meta": {

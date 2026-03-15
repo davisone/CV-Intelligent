@@ -352,10 +352,10 @@
       "relatedPages": {
         "free-resume-builder": "Créateur de CV Gratuit",
         "ats-resume-template": "Template CV ATS",
-        "how-to-write-a-resume": "Comment Faire un CV (EN)",
+        "cv-ats": "CV ATS Optimisé",
         "student-resume-template": "CV Étudiant (EN)",
         "software-engineer-resume": "CV Développeur (EN)",
-        "resume-format-2025": "Format CV 2025",
+        "resume-format-2025": "Format CV 2026",
         "career-change-resume": "CV Reconversion (EN)",
         "entry-level-resume": "CV Débutant (EN)",
         "modern-resume-template": "CV Moderne (EN)",
@@ -368,7 +368,31 @@
         "cv-developpeur": "CV Développeur",
         "cv-sans-experience": "CV Sans Expérience",
         "cv-alternance": "CV Alternance"
-      }
+      },
+      "socialProof": "⭐ 4.8/5 · Plus de 1 200 CVs créés ce mois",
+      "midCtaTitle": "Créez votre CV en moins de 5 minutes",
+      "midCtaButton": "Commencer gratuitement",
+      "testimonialsTitle": "Ils ont trouvé leur emploi",
+      "testimonials": [
+        {
+          "quote": "J'ai décroché un entretien 3 jours après avoir envoyé mon CV généré ici. Le design moderne a vraiment fait la différence.",
+          "name": "Sophie M.",
+          "role": "Développeuse Frontend",
+          "stars": 5
+        },
+        {
+          "quote": "Enfin un outil qui comprend les exigences ATS. Mon taux de réponse a triplé en un mois.",
+          "name": "Karim B.",
+          "role": "Chef de projet",
+          "stars": 5
+        },
+        {
+          "quote": "Simple, rapide et professionnel. J'ai créé mon CV en 10 minutes chrono pour ma reconversion.",
+          "name": "Lucie T.",
+          "role": "Chargée de communication",
+          "stars": 5
+        }
+      ]
     },
     "templatesPage": {
       "meta": {

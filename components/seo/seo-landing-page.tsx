@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, FileText, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle2, FileText, Sparkles, Star } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd } from '@/components/seo/json-ld'
@@ -33,6 +33,8 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
     question: t(`faq.q${i}.question`),
     answer: t(`faq.q${i}.answer`),
   }))
+
+  const testimonials = tPage.raw('testimonials') as Array<{ quote: string; name: string; role: string; stars: number }>
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
@@ -98,6 +100,9 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
                 {t('hero.secondaryCtaText')}
               </Link>
             </div>
+            {/* Trust badges + preuve sociale */}
+            <p className="mt-4 text-sm text-[#6B6560]">{tPage('freeBadge')}</p>
+            <p className="mt-2 text-sm font-medium text-[#722F37]">{tPage('socialProof')}</p>
           </div>
         </section>
 
@@ -118,6 +123,19 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
                   <p className="text-[#6B6560] text-sm">{t(`section1.item${index}.description`)}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* BANDE MID-PAGE CTA */}
+        <section className="container mx-auto px-4 pb-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#722F37]/5 border border-[#722F37]/20 rounded-2xl px-6 py-4">
+              <p className="font-semibold text-[#1F1A17] text-center sm:text-left">{tPage('midCtaTitle')}</p>
+              <Link href="/signup" className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#722F37] hover:bg-[#8B3A44] font-bold text-sm rounded-xl transition-all hover:scale-[1.02]" style={{ color: '#FFFFFF' }}>
+                {tPage('midCtaButton')}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -186,6 +204,29 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
           </div>
         </section>
 
+        {/* TÉMOIGNAGES */}
+        <section className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#1F1A17] mb-12 text-center">{tPage('testimonialsTitle')}</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map((item, i) => (
+                <div key={i} className="p-6 bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] flex flex-col gap-4">
+                  <div className="flex gap-1">
+                    {Array.from({ length: item.stars }).map((_, s) => (
+                      <Star key={s} className="w-4 h-4 fill-[#722F37] text-[#722F37]" />
+                    ))}
+                  </div>
+                  <p className="text-[#6B6560] text-sm italic flex-1">&ldquo;{item.quote}&rdquo;</p>
+                  <div>
+                    <p className="font-bold text-[#1F1A17] text-sm">{item.name}</p>
+                    <p className="text-xs text-[#6B6560]">{item.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
@@ -241,7 +282,7 @@ export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
                 {t('finalCta.ctaText')}
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <p className="mt-4 text-sm text-white/80">{tPage('freeBadge')}</p>
+              <p className="mt-4 text-sm text-white/60">{tPage('freeBadge')}</p>
             </div>
           </div>
         </section>

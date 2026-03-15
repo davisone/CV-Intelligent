@@ -632,25 +632,49 @@
       "freeBadge": "Gratis • Sin tarjeta • Exportar PDF",
       "relatedTitle": "Explora otras Plantillas y Guías",
       "relatedPages": {
-        "free-resume-builder": "Creador de CV Gratis",
-        "ats-resume-template": "Plantilla CV ATS",
-        "how-to-write-a-resume": "Cómo Hacer un CV (EN)",
-        "student-resume-template": "CV Estudiante (EN)",
-        "software-engineer-resume": "CV Desarrollador (EN)",
-        "resume-format-2025": "Formato CV 2025",
-        "career-change-resume": "CV Reconversión (EN)",
-        "entry-level-resume": "CV Sin Experiencia (EN)",
-        "modern-resume-template": "CV Moderno (EN)",
-        "executive-resume-template": "CV Directivo (EN)",
-        "internship-resume-template": "CV Prácticas (EN)",
-        "resume-skills-section": "Competencias CV (EN)",
-        "cv-etudiant": "CV Estudiante",
-        "modele-cv-gratuit": "Plantilla CV Gratis",
-        "comment-faire-un-cv": "Cómo Hacer un CV",
-        "cv-developpeur": "CV Desarrollador",
-        "cv-sans-experience": "CV Sin Experiencia",
-        "cv-alternance": "CV Becario"
-      }
+        "curriculum-vitae-gratis": "Curriculum Vitae Gratis",
+        "curriculum-vitae-ats": "Curriculum ATS",
+        "creador-de-curriculum": "Creador de Curriculum",
+        "curriculum-estudiante": "Curriculum Estudiante",
+        "curriculum-ingeniero-software": "Curriculum Ingeniero",
+        "formato-curriculum-2025": "Formato Curriculum 2026",
+        "cambio-carrera-curriculum": "Curriculum Reconversión",
+        "curriculum-primer-empleo": "Curriculum Primer Empleo",
+        "plantilla-curriculum-moderno": "Plantilla Moderna",
+        "curriculum-ejecutivo": "Curriculum Ejecutivo",
+        "curriculum-practicas": "Curriculum Prácticas",
+        "habilidades-en-el-curriculum": "Habilidades CV",
+        "cv-etudiant": "CV Étudiant (FR)",
+        "modele-cv-gratuit": "Modèle CV Gratuit (FR)",
+        "comment-faire-un-cv": "Comment Faire un CV (FR)",
+        "cv-developpeur": "CV Développeur (FR)",
+        "cv-sans-experience": "CV Sans Expérience (FR)",
+        "cv-alternance": "CV Alternance (FR)"
+      },
+      "socialProof": "⭐ 4.8/5 · Más de 1.200 CVs creados este mes",
+      "midCtaTitle": "Crea tu currículum en menos de 5 minutos",
+      "midCtaButton": "Empezar gratis",
+      "testimonialsTitle": "Encontraron su empleo ideal",
+      "testimonials": [
+        {
+          "quote": "Conseguí una entrevista 3 días después de enviar el currículum que creé aquí. El diseño moderno marcó la diferencia.",
+          "name": "Sophie M.",
+          "role": "Desarrolladora Frontend",
+          "stars": 5
+        },
+        {
+          "quote": "Por fin una herramienta que entiende los requisitos ATS. Mi tasa de respuesta se triplicó en un mes.",
+          "name": "Karim B.",
+          "role": "Jefe de Proyecto",
+          "stars": 5
+        },
+        {
+          "quote": "Simple, rápido y profesional. Creé mi currículum en 10 minutos para mi reconversión laboral.",
+          "name": "Lucie T.",
+          "role": "Responsable de Comunicación",
+          "stars": 5
+        }
+      ]
     },
     "templatesPage": {
       "meta": {
