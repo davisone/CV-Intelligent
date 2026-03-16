@@ -42,7 +42,6 @@ export async function generateMetadata({
       description: frontmatter.description,
       publishedTime: frontmatter.date,
       authors: [frontmatter.author],
-      images: [{ url: `${baseUrl}${frontmatter.image}`, width: 1200, height: 630 }],
     },
   }
 }
