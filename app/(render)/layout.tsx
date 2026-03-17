@@ -1,3 +1,7 @@
 export default function RenderLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <html>
+      <body>{children}</body>
+    </html>
+  )
 }
