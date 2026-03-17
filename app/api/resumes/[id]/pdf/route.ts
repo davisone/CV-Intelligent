@@ -109,15 +109,30 @@ export async function GET(request: Request, { params }: RouteParams) {
 
       await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
 
-      // Attendre que l'auto-fit ait fini de scaler le contenu
-      await page.waitForSelector('[data-auto-fit-ready="true"]', { timeout: 10_000 })
-
-      // Supprimer tout élément fixed/sticky résiduel (toaster, overlays, etc.)
+      // Appliquer le scaling auto-fit + nettoyage directement via Puppeteer
+      // (sans dépendre du useEffect client-side qui peut ne pas s'exécuter en headless)
       await page.evaluate(() => {
+        const A4_RATIO = 29.7 / 21
+
+        const wrapper = document.querySelector('[data-auto-fit-wrapper]') as HTMLElement | null
+        const content = wrapper?.firstElementChild as HTMLElement | null
+        if (wrapper && content) {
+          const pageWidth = content.offsetWidth
+          const pageHeight = pageWidth * A4_RATIO
+          const contentHeight = content.scrollHeight
+          if (contentHeight > pageHeight + 2) {
+            const scale = Math.max(pageHeight / contentHeight, 0.65)
+            content.style.width = `${pageWidth / scale}px`
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ;(content.style as any).zoom = `${scale}`
+          }
+        }
+
+        // Supprimer tout élément fixed/sticky résiduel (toaster, overlays, etc.)
         document.querySelectorAll('*').forEach(el => {
           const style = getComputedStyle(el)
           if (style.position === 'fixed' || style.position === 'sticky') {
-            el.remove()
+            (el as HTMLElement).remove()
           }
         })
       })

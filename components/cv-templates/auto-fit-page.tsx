@@ -34,5 +34,5 @@ export const AutoFitPage = ({ children }: { children: ReactNode }) => {
     }
   }, [])
 
-  return <div ref={wrapperRef} style={{ width: '21cm', margin: '0 auto' }}>{children}</div>
+  return <div ref={wrapperRef} data-auto-fit-wrapper style={{ width: '21cm', margin: '0 auto' }}>{children}</div>
 }
