@@ -39,12 +39,7 @@ function buildHtml(name: string, locale: 'fr' | 'en', dashboardUrl: string): str
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f5f5f5; padding: 20px; margin: 0;">
   <div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; padding: 40px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <div style="text-align: center; margin-bottom: 32px;">
-      <div style="display: inline-block; background-color: #10b981; border-radius: 50%; width: 56px; height: 56px; line-height: 56px; text-align: center;">
-        <span style="color: white; font-size: 24px;">✓</span>
-      </div>
-    </div>
-    <h1 style="color: #1a1a1a; font-size: 22px; margin-bottom: 8px; text-align: center;">${c.title}</h1>
+    <h1 style="color: #1a1a1a; font-size: 22px; margin-bottom: 24px; text-align: center;">${c.title}</h1>
     <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Bonjour ${firstName},</p>
     <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">${c.body}</p>
     <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">${c.detail}</p>
