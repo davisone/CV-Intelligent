@@ -96,7 +96,7 @@ export async function POST(request: Request) {
       .map(u => {
         const locale = 'fr' as const
         const dashboardUrl = `${appUrl}/${locale}/dashboard`
-        const name = u.name || u.email!.split('@')[0]
+        const name = u.name ?? u.email!.split('@')[0] ?? u.email!
         return {
           from: FROM_EMAIL,
           to: u.email!,
