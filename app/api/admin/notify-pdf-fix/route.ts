@@ -60,7 +60,7 @@ function buildHtml(name: string, locale: 'fr' | 'en', dashboardUrl: string): str
 export async function POST(request: Request) {
   // Protection par secret admin
   const authHeader = request.headers.get('Authorization')
-  const adminSecret = process.env.ADMIN_SECRET
+  const adminSecret = process.env.ADMIN_SECRET?.trim()
   if (!adminSecret || authHeader !== `Bearer ${adminSecret}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
