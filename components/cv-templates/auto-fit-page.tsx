@@ -12,24 +12,26 @@ export const AutoFitPage = ({ children }: { children: ReactNode }) => {
     const wrapper = wrapperRef.current
     if (!wrapper) return
 
-    const content = wrapper.firstElementChild as HTMLElement
-    if (!content) return
+    try {
+      const content = wrapper.firstElementChild as HTMLElement
+      if (content) {
+        // Calculer la hauteur A4 en pixels à partir de la largeur réelle du contenu
+        const pageWidth = content.offsetWidth
+        const pageHeight = pageWidth * A4_RATIO
+        const contentHeight = content.scrollHeight
 
-    // Calculer la hauteur A4 en pixels à partir de la largeur réelle du contenu
-    const pageWidth = content.offsetWidth
-    const pageHeight = pageWidth * A4_RATIO
-    const contentHeight = content.scrollHeight
-
-    if (contentHeight > pageHeight + 2) {
-      // Zoom minimum de 0.65 pour garder la lisibilité
-      const scale = Math.max(pageHeight / contentHeight, 0.65)
-      // Compenser la réduction de largeur causée par le zoom
-      content.style.width = `${pageWidth / scale}px`
-      content.style.zoom = `${scale}`
+        if (contentHeight > pageHeight + 2) {
+          // Zoom minimum de 0.65 pour garder la lisibilité
+          const scale = Math.max(pageHeight / contentHeight, 0.65)
+          // Compenser la réduction de largeur causée par le zoom
+          content.style.width = `${pageWidth / scale}px`
+          content.style.zoom = `${scale}`
+        }
+      }
+    } finally {
+      // Signal pour Puppeteer que le scaling est terminé (toujours posé)
+      wrapper.setAttribute('data-auto-fit-ready', 'true')
     }
-
-    // Signal pour Puppeteer que le scaling est terminé
-    wrapper.setAttribute('data-auto-fit-ready', 'true')
   }, [])
 
   return <div ref={wrapperRef} style={{ width: '21cm', margin: '0 auto' }}>{children}</div>

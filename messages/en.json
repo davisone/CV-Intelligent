@@ -7316,6 +7316,7 @@
     "savingSuccess": "Saved",
     "savingError": "Save error",
     "unsavedChanges": "Unsaved changes",
+    "savedAt": "Saved at {time}",
     "connectionError": "Connection error",
     "serverError": "Server error",
     "importProfile": "Import from my profile",
