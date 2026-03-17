@@ -7239,6 +7239,7 @@
     "savingSuccess": "Guardado",
     "savingError": "Error al guardar",
     "unsavedChanges": "Cambios sin guardar",
+    "savedAt": "Guardado a las {time}",
     "connectionError": "Error de conexión",
     "serverError": "Error del servidor",
     "importProfile": "Importar desde mi perfil",

@@ -7239,6 +7239,7 @@
     "savingSuccess": "Sauvegardé",
     "savingError": "Erreur de sauvegarde",
     "unsavedChanges": "Modifications non sauvegardées",
+    "savedAt": "Sauvegardé à {time}",
     "connectionError": "Erreur de connexion",
     "serverError": "Erreur serveur",
     "importProfile": "Importer depuis mon profil",
