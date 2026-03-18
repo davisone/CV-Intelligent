@@ -5,6 +5,17 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
 
 const nextConfig: NextConfig = {
   serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium-min'],
+  async redirects() {
+    const locales = ['fr', 'en', 'es']
+    const slugsToRedirect = ['ats-friendly-resume-tips', 'how-to-beat-ats-2025']
+    return locales.flatMap((locale) =>
+      slugsToRedirect.map((slug) => ({
+        source: `/${locale}/blog/${slug}`,
+        destination: `/${locale}/blog/optimiser-cv-ats`,
+        permanent: true,
+      }))
+    )
+  },
   async headers() {
     return [
       {
