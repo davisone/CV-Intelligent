@@ -3,8 +3,11 @@ import { getAllPosts } from '@/lib/blog'
 
 const locales = ['fr', 'en', 'es'] as const
 
+// Date de dernière mise à jour du contenu statique (mettre à jour lors de refonte majeure)
+const STATIC_LAST_MODIFIED = new Date('2026-03-01')
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://cv-builder.fr'
 
   const routes = [
     { path: '', priority: 1, changeFrequency: 'weekly' as const },
@@ -238,7 +241,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...locales.flatMap((locale) =>
       routes.map(({ path, priority, changeFrequency }) => ({
         url: `${baseUrl}/${locale}${path}`,
-        lastModified: new Date(),
+        lastModified: STATIC_LAST_MODIFIED,
         changeFrequency,
         priority,
         alternates: {
@@ -250,7 +253,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ),
     ...frOnlyRoutes.map(({ path, priority }) => ({
       url: `${baseUrl}/fr${path}`,
-      lastModified: new Date(),
+      lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'monthly' as const,
       priority,
       alternates: {
@@ -259,7 +262,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...enOnlyRoutes.map(({ path, priority }) => ({
       url: `${baseUrl}/en${path}`,
-      lastModified: new Date(),
+      lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'monthly' as const,
       priority,
       alternates: {
@@ -268,7 +271,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...esOnlyRoutes.map(({ path, priority }) => ({
       url: `${baseUrl}/es${path}`,
-      lastModified: new Date(),
+      lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'monthly' as const,
       priority,
       alternates: {

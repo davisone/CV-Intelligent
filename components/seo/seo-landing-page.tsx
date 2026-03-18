@@ -25,7 +25,7 @@ export interface SeoLandingConfig {
 export async function SeoLandingPage({ config }: { config: SeoLandingConfig }) {
   const t = await getTranslations(config.namespace)
   const tPage = await getTranslations('landing.seoPage')
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://cv-builder.fr'
 
   const [Icon0, Icon1, Icon2] = config.section1Icons
 

@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
+  twitter: {
+    card: 'summary_large_image',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

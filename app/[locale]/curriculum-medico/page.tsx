@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('description'),
     alternates: buildAlternates('/curriculum-medico', locale),
-    openGraph: { title: t('title'), description: t('description'), type: 'article' },
+    openGraph: { title: t('title'), description: t('description'), type: 'website' },
   }
 }
 
