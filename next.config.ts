@@ -8,13 +8,22 @@ const nextConfig: NextConfig = {
   async redirects() {
     const locales = ['fr', 'en', 'es']
     const slugsToRedirect = ['ats-friendly-resume-tips', 'how-to-beat-ats-2025']
-    return locales.flatMap((locale) =>
-      slugsToRedirect.map((slug) => ({
-        source: `/${locale}/blog/${slug}`,
-        destination: `/${locale}/blog/optimiser-cv-ats`,
+    return [
+      // Redirections avec préfixe de locale (1 saut)
+      ...locales.flatMap((locale) =>
+        slugsToRedirect.map((slug) => ({
+          source: `/${locale}/blog/${slug}`,
+          destination: `/${locale}/blog/optimiser-cv-ats`,
+          permanent: true,
+        }))
+      ),
+      // Redirections sans préfixe de locale (court-circuite la chaîne next-intl + next.config)
+      ...slugsToRedirect.map((slug) => ({
+        source: `/blog/${slug}`,
+        destination: `/fr/blog/optimiser-cv-ats`,
         permanent: true,
-      }))
-    )
+      })),
+    ]
   },
   async headers() {
     return [
