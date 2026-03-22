@@ -17,21 +17,27 @@ function parseNames(fullName: string | null): { firstName: string; lastName?: st
   }
 }
 
-export async function addContact(email: string, name: string | null, locale = 'fr') {
+export async function addContact(email: string, name: string | null, locale = 'fr'): Promise<boolean> {
   const audienceId = getAudienceId(locale)
-  if (!audienceId || !process.env.RESEND_API_KEY) return
+  if (!audienceId || !process.env.RESEND_API_KEY) {
+    console.warn(`[RESEND_CONTACTS] Audience ID manquant pour locale "${locale}"`)
+    return false
+  }
 
   const { firstName, lastName } = parseNames(name)
 
-  try {
-    await resend.contacts.create({
-      audienceId,
-      email,
-      firstName,
-      lastName,
-      unsubscribed: false,
-    })
-  } catch (err) {
-    console.error('[RESEND_CONTACTS] Erreur ajout contact:', err)
+  const { error } = await resend.contacts.create({
+    audienceId,
+    email,
+    firstName,
+    lastName,
+    unsubscribed: false,
+  })
+
+  if (error) {
+    console.error(`[RESEND_CONTACTS] Erreur pour ${email}:`, error)
+    return false
   }
+
+  return true
 }

@@ -22,12 +22,9 @@ export async function POST(request: Request) {
   let failed = 0
 
   for (const user of users) {
-    try {
-      await addContact(user.email!, user.name, user.locale)
-      synced++
-    } catch {
-      failed++
-    }
+    const ok = await addContact(user.email!, user.name, user.locale)
+    if (ok) synced++
+    else failed++
   }
 
   console.log(`[SYNC_CONTACTS] Terminé — synchronisés: ${synced}, échecs: ${failed}`)
