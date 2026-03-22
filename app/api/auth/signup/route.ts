@@ -4,6 +4,7 @@ import crypto from 'crypto'
 import { prisma } from '@/lib/db/prisma'
 import { signUpSchema } from '@/lib/validations/resume.schema'
 import { sendVerificationEmail } from '@/lib/email/resend'
+import { addContact } from '@/lib/email/resend-contacts'
 import { checkRateLimit, AUTH_RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {
@@ -75,6 +76,11 @@ export async function POST(request: Request) {
     // Envoyer l'email de vérification (non bloquant)
     sendVerificationEmail(email, verificationToken, locale).catch((error) => {
       console.error('[VERIFICATION_EMAIL_ERROR]:', error)
+    })
+
+    // Ajouter à l'audience marketing Resend (non bloquant)
+    addContact(email, name, locale).catch((error) => {
+      console.error('[RESEND_CONTACTS_ERROR]:', error)
     })
 
     return NextResponse.json(
