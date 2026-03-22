@@ -53,9 +53,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: createError }, { status: 500 })
     }
 
-    const { data: sendData, error: sendError } = await resend.broadcasts.send({
-      broadcastId: broadcast.id,
-    })
+    const { data: sendData, error: sendError } = await resend.broadcasts.send(broadcast.id)
 
     if (sendError) {
       console.error('[BROADCAST] Erreur envoi:', sendError)
