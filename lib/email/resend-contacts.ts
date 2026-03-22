@@ -12,7 +12,7 @@ function parseNames(fullName: string | null): { firstName: string; lastName?: st
   if (!fullName) return { firstName: '' }
   const parts = fullName.trim().split(' ')
   return {
-    firstName: parts[0],
+    firstName: parts[0] ?? '',
     lastName: parts.length > 1 ? parts.slice(1).join(' ') : undefined,
   }
 }
