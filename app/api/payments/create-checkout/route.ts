@@ -88,7 +88,7 @@ export async function POST(request: Request) {
     // Récupérer ou créer le customer Stripe
     const user = await prisma.user.findUnique({
       where: { id: session.user.id },
-      select: { stripeCustomerId: true },
+      select: { stripeCustomerId: true, locale: true },
     })
 
     let customerId = user?.stripeCustomerId
@@ -111,6 +111,7 @@ export async function POST(request: Request) {
 
     // Créer la session Checkout
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+    const locale = user?.locale ?? 'fr'
 
     const checkoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -142,8 +143,8 @@ export async function POST(request: Request) {
         userId: session.user.id,
         resumeId: resumeId,
       },
-      success_url: `${appUrl}/dashboard/checkout/success?session_id={CHECKOUT_SESSION_ID}&resume_id=${resumeId}`,
-      cancel_url: `${appUrl}/dashboard/checkout/cancel?resume_id=${resumeId}`,
+      success_url: `${appUrl}/${locale}/dashboard/checkout/success?session_id={CHECKOUT_SESSION_ID}&resume_id=${resumeId}`,
+      cancel_url: `${appUrl}/${locale}/dashboard/checkout/cancel?resume_id=${resumeId}`,
       expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // 30 minutes
     })
 
