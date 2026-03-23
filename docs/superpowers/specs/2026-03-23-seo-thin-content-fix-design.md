@@ -39,6 +39,9 @@ L'objectif est de corriger le thin content sur toutes les versions linguistiques
 **Travail :** Ajouter les clés manquantes dans `fr.json`, `en.json`, `es.json`. Aucune modification de composant.
 
 **Structure requise par page (section3Type: tips) :**
+
+Note : `breadcrumbName` est obligatoire — utilisé par `SeoLandingPage` ligne 44 pour le JSON-LD BreadcrumbList.
+
 ```json
 {
   "meta": { "title": "...", "description": "..." },
@@ -115,11 +118,26 @@ L'objectif est de corriger le thin content sur toutes les versions linguistiques
 - Hero : badge, h1, subtitle, description, 2 CTA
 - Section avantages : titre, sous-titre, 3 avantages (title + description)
 - Section étapes : titre, sous-titre, 4 étapes (title + description)
-- Section features : titre, 3 features (texte)
+- Section features : titre + 3 features individuels avec clés `feature0`, `feature1`, `feature2`
 - Section FAQ : titre, sous-titre, 4 FAQ (question + answer)
 - Section CTA finale : titre, description, bouton
 
-**Modification composant :** Remplacer les tableaux statiques (`pdfAdvantages`, `exportSteps`, `faqItems`) et tous les textes hardcodés par des appels `getTranslations('landing.cvPdfPage')`. La structure JSX ne change pas.
+**Modification composant :**
+- Convertir `CvPdfPage` en `async function` pour permettre `await getTranslations('landing.cvPdfPage')`.
+- `pdfAdvantages` : les icônes Lucide (`FileText`, `Shield`, `Check`) **restent en dur** dans le composant sous forme de tableau local d'icônes indexé. Seuls `title` et `description` passent dans les fichiers JSON et sont lus via `t.raw()`. Le rendu JSX combine le tableau d'icônes local avec les textes traduits par index.
+- `exportSteps` et `faqItems` : pas d'icônes, migration complète vers `t.raw()`.
+- Remplacer les textes hardcodés (hero, titres de sections, CTA) par des appels `t()`.
+- La structure JSX ne change pas.
+
+Structure JSON pour la section features :
+```json
+"features": {
+  "title": "...",
+  "feature0": "...",
+  "feature1": "...",
+  "feature2": "..."
+}
+```
 
 ---
 
@@ -138,7 +156,11 @@ L'objectif est de corriger le thin content sur toutes les versions linguistiques
 - Section FAQ (10 questions) : titre, sous-titre, 10 × (question + answer)
 - Section CTA finale : titre, description, bouton, badge
 
-**Modification composant :** La structure JSX reste identique. Les tableaux statiques deviennent des données lues depuis les traductions (via `t.raw()`).
+**Modification composant :**
+- Convertir `GuidePage` en `async function` pour permettre `await getTranslations('landing.guidePage')`.
+- Les icônes Lucide (`Target`, `FileText`, `Sparkles`, etc.) **restent en dur** dans le composant sous forme de tableau d'icônes indexé — elles ne peuvent pas être dans les fichiers JSON.
+- Les textes (`title`, `description`) de chaque step sont lus via `t.raw()`.
+- La structure JSX reste identique.
 
 #### `/templates` (`'use client'`)
 
@@ -151,7 +173,37 @@ L'objectif est de corriger le thin content sur toutes les versions linguistiques
 - Paragraphe SEO : 2 phrases
 - CTA : utilise déjà `landing.cta.title` et `landing.hero.cta` → à conserver
 
-**Modification composant :** Remplacer les données statiques par `useTranslations`. Le state React (`selectedTemplate`) et la structure JSX ne changent pas.
+**Modification composant :**
+- `id` et `color` (gradient Tailwind) **restent en dur** dans le composant — non traduisibles.
+- Les noms de templates (`Modern`, `Classic`, etc.) sont des noms propres conservés tels quels en tant que valeurs dans les traductions.
+- Le composant doit avoir **deux hooks** `useTranslations` :
+  - `const t = useTranslations('landing')` — pour les CTA existants (`t('hero.cta')`, `t('cta.title')`, `t('cta.description')`)
+  - `const tPage = useTranslations('landing.templatesPage')` — pour toutes les nouvelles clés
+- Le state React (`selectedTemplate`) et la structure JSX ne changent pas.
+
+Structure JSON pour les templates :
+```json
+"templates": {
+  "template0": {
+    "name": "Modern",
+    "description": "...",
+    "feature0": "...",
+    "feature1": "...",
+    "feature2": "..."
+  },
+  "template1": { ... },
+  "template2": { ... },
+  "template3": { ... },
+  "template4": { ... }
+}
+```
+
+Pour l'itération, utiliser un tableau de clés statiques typées pour respecter TypeScript strict :
+```ts
+const templateKeys = ['template0', 'template1', 'template2', 'template3', 'template4'] as const
+templateKeys.map((key, index) => ({ ...tPage.raw(key), id: templates[index].id, color: templates[index].color }))
+```
+Le paramètre `index` dans `.map` permet de combiner les textes traduits avec les données `id`/`color` du tableau statique existant.
 
 ---
 
