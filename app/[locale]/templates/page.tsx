@@ -5,48 +5,30 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
 
-const templates = [
-  {
-    id: 'modern',
-    name: 'Modern',
-    description: 'Design épuré avec une touche de couleur',
-    color: 'from-blue-500 to-blue-600',
-    features: ['En-tête coloré', 'Mise en page moderne', 'Icônes sociales'],
-  },
-  {
-    id: 'classic',
-    name: 'Classic',
-    description: 'Format traditionnel et professionnel',
-    color: 'from-gray-600 to-gray-700',
-    features: ['Structure classique', 'Sobre et élégant', 'Polyvalent'],
-  },
-  {
-    id: 'ats',
-    name: 'ATS-Friendly',
-    description: 'Optimisé pour les systèmes de tri automatique',
-    color: 'from-green-500 to-green-600',
-    features: ['100% compatible ATS', 'Sans colonnes', 'Texte simple'],
-  },
-  {
-    id: 'minimal',
-    name: 'Minimal',
-    description: 'Simplicité et élégance',
-    color: 'from-slate-500 to-slate-600',
-    features: ['Design minimaliste', 'Beaucoup d\'espace', 'Focus sur le contenu'],
-  },
-  {
-    id: 'creative',
-    name: 'Creative',
-    description: 'Pour les profils créatifs et audacieux',
-    color: 'from-pink-500 to-purple-600',
-    features: ['Sidebar colorée', 'Photo de profil', 'Design unique'],
-  },
+const templatesMeta = [
+  { id: 'modern', color: 'from-blue-500 to-blue-600' },
+  { id: 'classic', color: 'from-gray-600 to-gray-700' },
+  { id: 'ats', color: 'from-green-500 to-green-600' },
+  { id: 'minimal', color: 'from-slate-500 to-slate-600' },
+  { id: 'creative', color: 'from-pink-500 to-purple-600' },
 ]
+
+const templateKeys = ['template0', 'template1', 'template2', 'template3', 'template4'] as const
 
 export default function PublicTemplatesPage() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const t = useTranslations('landing')
   const tNav = useTranslations('nav')
+  const tPage = useTranslations('landing.templatesPage')
+
+  const templates = templateKeys.map((key, index) => {
+    const meta = templatesMeta[index]!
+    return {
+      ...(tPage.raw(key) as { name: string; description: string; feature0: string; feature1: string; feature2: string }),
+      id: meta.id,
+      color: meta.color,
+    }
+  })
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
@@ -78,9 +60,9 @@ export default function PublicTemplatesPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-[#1F1A17] mb-4">Nos Templates de CV</h1>
+            <h1 className="text-4xl font-bold text-[#1F1A17] mb-4">{tPage('hero.h1')}</h1>
             <p className="text-xl text-[#6B6560] max-w-2xl mx-auto">
-              Choisissez parmi nos templates professionnels et créez votre CV en quelques minutes
+              {tPage('hero.subtitle')}
             </p>
           </div>
 
@@ -106,7 +88,7 @@ export default function PublicTemplatesPage() {
                   <p className="text-[#6B6560] text-sm mb-4">{template.description}</p>
 
                   <div className="space-y-2">
-                    {template.features.map((feature, i) => (
+                    {[template.feature0, template.feature1, template.feature2].map((feature, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-[#6B6560]">
                         <svg className="w-4 h-4 text-[#722F37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -131,87 +113,39 @@ export default function PublicTemplatesPage() {
           {/* Section descriptions SEO des templates */}
           <div className="mt-16 max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold text-[#1F1A17] mb-8 text-center">
-              Nos modèles de CV gratuits en détail
+              {tPage('seoSection.title')}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
-                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Modern</h3>
-                <p className="text-sm text-[#6B6560]">
-                  Le template Modern est notre modèle de CV le plus populaire. Design épuré avec accent coloré,
-                  idéal pour la plupart des secteurs : marketing, tech, communication, commerce. Gratuit et optimisé ATS.
-                </p>
-              </div>
-              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
-                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Classic</h3>
-                <p className="text-sm text-[#6B6560]">
-                  Le template Classic adopte un format traditionnel sobre et professionnel. Parfait pour les secteurs
-                  conservateurs : banque, droit, finance, administration. Structure claire et lecture facile.
-                </p>
-              </div>
-              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
-                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV ATS-Friendly</h3>
-                <p className="text-sm text-[#6B6560]">
-                  Ce modèle de CV est conçu pour passer les filtres ATS des grandes entreprises. 100% compatible
-                  avec les logiciels de tri automatique, sans colonnes ni éléments graphiques complexes.
-                </p>
-              </div>
-              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
-                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Minimal</h3>
-                <p className="text-sm text-[#6B6560]">
-                  Le template Minimal mise sur la simplicité et l&apos;élégance. Beaucoup d&apos;espace blanc, focus sur le
-                  contenu. Idéal pour les profils qui veulent un CV sobre et moderne, tous secteurs.
-                </p>
-              </div>
-              <div className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
-                <h3 className="font-bold text-[#1F1A17] mb-2">Template CV Creative</h3>
-                <p className="text-sm text-[#6B6560]">
-                  Le template Creative se démarque avec une sidebar colorée et une photo de profil. Parfait pour
-                  les graphistes, designers, UX/UI, photographes et profils créatifs en général.
-                </p>
-              </div>
+              {([0, 1, 2, 3, 4] as const).map(i => (
+                <div key={i} className="bg-[#F3EDE5] rounded-2xl border border-[#E0D6C8] p-5">
+                  <h3 className="font-bold text-[#1F1A17] mb-2">
+                    Template CV {templates[i]!.name}
+                  </h3>
+                  <p className="text-sm text-[#6B6560]">
+                    {tPage(`seoSection.desc${i}`)}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <div className="bg-[#F3EDE5] rounded-3xl border border-[#E0D6C8] p-8 mb-8">
-              <h2 className="text-2xl font-bold text-[#1F1A17] mb-6">Comment choisir son modèle de CV ?</h2>
+              <h2 className="text-2xl font-bold text-[#1F1A17] mb-6">{tPage('choiceGuide.title')}</h2>
               <div className="grid md:grid-cols-2 gap-4 text-sm text-[#6B6560]">
-                <div>
-                  <p className="font-semibold text-[#1F1A17] mb-1">Pour un secteur traditionnel (banque, droit, finance)</p>
-                  <p>→ Choisissez Classic ou ATS-Friendly pour une présentation sobre et professionnelle.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#1F1A17] mb-1">Pour la tech et le numérique</p>
-                  <p>→ Modern ou Minimal conviennent parfaitement, avec une mise en page claire et moderne.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#1F1A17] mb-1">Pour les métiers créatifs (design, art, communication)</p>
-                  <p>→ Creative vous permet de montrer votre sens du design dès le premier regard.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#1F1A17] mb-1">Pour les grandes entreprises et les ATS</p>
-                  <p>→ ATS-Friendly garantit que votre CV sera bien parsé par les logiciels de recrutement.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#1F1A17] mb-1">Pour un CV étudiant ou premier emploi</p>
-                  <p>→ Modern ou Minimal sont idéaux : professionnels sans être trop austères.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#1F1A17] mb-1">Pour un CV cadre ou manager</p>
-                  <p>→ Classic ou Modern avec un contenu riche en réalisations chiffrées.</p>
-                </div>
+                {([0, 1, 2, 3, 4, 5] as const).map(i => {
+                  const item = tPage.raw(`choiceGuide.item${i}`) as { label: string; advice: string }
+                  return (
+                    <div key={i}>
+                      <p className="font-semibold text-[#1F1A17] mb-1">{item.label}</p>
+                      <p>→ {item.advice}</p>
+                    </div>
+                  )
+                })}
               </div>
             </div>
 
             <div className="text-center max-w-3xl mx-auto mb-8 text-[#6B6560]">
-              <p className="mb-3">
-                Tous nos <strong className="text-[#1F1A17]">modèles de CV gratuits</strong> sont disponibles
-                en ligne et téléchargeables en PDF. Chaque <strong className="text-[#1F1A17]">template CV professionnel</strong> est
-                optimisé pour les ATS, responsive et adapté à tous les secteurs.
-              </p>
-              <p>
-                Que vous cherchiez un <strong className="text-[#1F1A17]">CV étudiant</strong>,
-                un <strong className="text-[#1F1A17]">CV professionnel</strong> ou un <strong className="text-[#1F1A17]">CV créatif</strong>,
-                notre générateur de CV gratuit avec IA vous aide à créer le CV parfait en moins de 5 minutes.
-              </p>
+              <p className="mb-3">{tPage('seoParagraph.p0')}</p>
+              <p>{tPage('seoParagraph.p1')}</p>
             </div>
           </div>
 

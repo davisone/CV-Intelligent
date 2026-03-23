@@ -21,74 +21,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
-// Avantages du format PDF
-const pdfAdvantages = [
-  {
-    icon: FileText,
-    title: 'Format universel',
-    description:
-      'Le PDF s\'affiche identiquement sur tous les appareils, systèmes et logiciels de recrutement. Aucune surprise à l\'ouverture.',
-  },
-  {
-    icon: Shield,
-    title: 'Mise en page préservée',
-    description:
-      'Contrairement au Word ou ODT, le PDF conserve votre design à la perfection. Polices, espacements, couleurs — tout reste intact.',
-  },
-  {
-    icon: Check,
-    title: 'Format standard des recruteurs',
-    description:
-      '95% des recruteurs demandent un CV en PDF : c\'est le format professionnel de référence, attendu par les cabinets et les ATS.',
-  },
-]
+const advantageIcons = [FileText, Shield, Check] as const
 
-// Étapes pour exporter son CV en PDF
-const exportSteps = [
-  {
-    title: 'Créez un compte gratuitement sur CV Builder',
-    description: 'Inscription en 30 secondes, sans carte bancaire. Votre espace de création est immédiatement disponible.',
-  },
-  {
-    title: 'Choisissez votre template de CV',
-    description: 'Modern, Classic, ATS, Minimal ou Creative — sélectionnez le modèle adapté à votre profil et au poste visé.',
-  },
-  {
-    title: 'Remplissez vos informations',
-    description: 'Laissez notre IA vous guider et optimiser votre contenu : formulations, mots-clés, structure — tout est suggéré.',
-  },
-  {
-    title: 'Cliquez sur "Télécharger PDF"',
-    description: 'Votre CV est généré instantanément en haute qualité. Téléchargement immédiat, prêt à envoyer.',
-  },
-]
-
-// Questions fréquentes sur le CV en PDF
-const faqItems = [
-  {
-    question: 'Peut-on télécharger son CV en PDF gratuitement ?',
-    answer:
-      'Oui, CV Builder permet de télécharger votre CV en PDF gratuitement avec le template Modern. Le PDF est généré en haute qualité et prêt à être envoyé aux recruteurs ou téléchargé sur les sites d\'emploi.',
-  },
-  {
-    question: 'Quel format choisir pour son CV : PDF ou Word ?',
-    answer:
-      'Le PDF est toujours préférable pour un CV. Il préserve la mise en page, est lisible sur tous les appareils et est demandé par la grande majorité des recruteurs. Word peut être modifié accidentellement et s\'affiche différemment selon les versions.',
-  },
-  {
-    question: 'Comment générer son CV en PDF en ligne ?',
-    answer:
-      'Avec CV Builder : créez un compte gratuit, choisissez votre template, remplissez vos informations avec l\'aide de l\'IA, puis cliquez sur \'Télécharger PDF\'. Le PDF est généré instantanément, sans logiciel à installer.',
-  },
-  {
-    question: 'Le CV PDF est-il compatible avec les ATS ?',
-    answer:
-      'Oui, nos CVs PDF sont optimisés pour les systèmes de suivi des candidatures (ATS). Notre template ATS-Friendly est particulièrement conçu pour être parsé correctement par ces logiciels, en utilisant une structure claire et des polices standards.',
-  },
-]
-
-export default function CvPdfPage() {
+export default async function CvPdfPage() {
+  const t = await getTranslations('landing.cvPdfPage')
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://resumeforge.fr'
+
+  const pdfAdvantages = ([0, 1, 2] as const).map(i => ({
+    icon: advantageIcons[i],
+    ...(t.raw(`advantages.item${i}`) as { title: string; description: string }),
+  }))
+
+  const exportSteps = ([0, 1, 2, 3] as const).map(i =>
+    t.raw(`steps.item${i}`) as { title: string; description: string }
+  )
+
+  const faqItems = ([0, 1, 2, 3] as const).map(i =>
+    t.raw(`faq.item${i}`) as { question: string; answer: string }
+  )
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF8F4]">
@@ -132,21 +82,20 @@ export default function CvPdfPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#722F37]/10 border border-[#722F37]/20 rounded-full text-[#722F37] text-sm mb-6">
               <Download className="w-4 h-4" />
-              Export PDF haute qualité
+              {t('hero.badge')}
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1F1A17] mb-6">
-              Créer et Télécharger son{' '}
-              <span className="text-[#722F37]">CV en PDF</span>
+              {t('hero.h1Before')}{' '}
+              <span className="text-[#722F37]">{t('hero.h1Accent')}</span>
             </h1>
 
             <p className="text-xl text-[#6B6560] mb-4 max-w-2xl mx-auto font-medium">
-              Format universel, mise en page parfaite, téléchargement instantané — gratuit
+              {t('hero.subtitle')}
             </p>
 
             <p className="text-base text-[#6B6560] mb-10 max-w-2xl mx-auto">
-              Notre générateur de CV avec intelligence artificielle crée votre CV en PDF haute qualité
-              en quelques minutes. Compatible avec tous les recruteurs, tous les ATS, tous les appareils.
+              {t('hero.description')}
             </p>
 
             {/* CTAs principaux */}
@@ -156,14 +105,14 @@ export default function CvPdfPage() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#722F37] hover:bg-[#8B3A44] font-bold rounded-xl transition-all hover:scale-[1.02]"
                 style={{ color: '#FFFFFF' }}
               >
-                Créer mon CV PDF gratuit
+                {t('hero.primaryCta')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/guide"
                 className="inline-flex items-center justify-center px-6 py-3 border border-[#E0D6C8] text-[#1F1A17] font-medium rounded-xl hover:bg-[#F3EDE5] transition-colors"
               >
-                Comment faire un CV ?
+                {t('hero.secondaryCta')}
               </Link>
             </div>
           </div>
@@ -173,10 +122,10 @@ export default function CvPdfPage() {
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#1F1A17] mb-4 text-center">
-              Pourquoi le PDF est le meilleur format pour un CV ?
+              {t('advantages.title')}
             </h2>
             <p className="text-[#6B6560] text-center mb-12 max-w-2xl mx-auto">
-              Le format de votre CV peut faire la différence avant même que le recruteur le lise
+              {t('advantages.subtitle')}
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -200,10 +149,10 @@ export default function CvPdfPage() {
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#1F1A17] mb-4 text-center">
-              Comment télécharger son CV en PDF avec CV Builder ?
+              {t('steps.title')}
             </h2>
             <p className="text-[#6B6560] text-center mb-12 max-w-2xl mx-auto">
-              4 étapes simples pour obtenir un CV PDF professionnel en quelques minutes
+              {t('steps.subtitle')}
             </p>
 
             <div className="space-y-6">
@@ -235,7 +184,7 @@ export default function CvPdfPage() {
                 <Sparkles className="w-5 h-5 text-[#722F37]" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-[#1F1A17] mb-8 text-center">
-                Un PDF professionnel généré en quelques secondes
+                {t('features.title')}
               </h2>
               <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
                 <div className="flex flex-col items-center text-center gap-3 p-4 bg-white rounded-2xl border border-[#E0D6C8]">
@@ -243,7 +192,7 @@ export default function CvPdfPage() {
                     <Check className="w-5 h-5 text-[#722F37]" />
                   </div>
                   <p className="text-sm font-medium text-[#1F1A17]">
-                    Haute résolution, prêt pour l&apos;impression et l&apos;envoi
+                    {t('features.feature0')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center gap-3 p-4 bg-white rounded-2xl border border-[#E0D6C8]">
@@ -251,7 +200,7 @@ export default function CvPdfPage() {
                     <Shield className="w-5 h-5 text-[#722F37]" />
                   </div>
                   <p className="text-sm font-medium text-[#1F1A17]">
-                    Compatible avec tous les ATS (systèmes de tri des recruteurs)
+                    {t('features.feature1')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center gap-3 p-4 bg-white rounded-2xl border border-[#E0D6C8]">
@@ -259,7 +208,7 @@ export default function CvPdfPage() {
                     <FileText className="w-5 h-5 text-[#722F37]" />
                   </div>
                   <p className="text-sm font-medium text-[#1F1A17]">
-                    Nommage automatique du fichier (Prénom-Nom-CV.pdf)
+                    {t('features.feature2')}
                   </p>
                 </div>
               </div>
@@ -271,10 +220,10 @@ export default function CvPdfPage() {
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#1F1A17] mb-4 text-center">
-              Questions fréquentes sur le CV en PDF
+              {t('faq.title')}
             </h2>
             <p className="text-[#6B6560] text-center mb-12 max-w-2xl mx-auto">
-              Tout ce que vous devez savoir sur le format PDF pour votre CV
+              {t('faq.subtitle')}
             </p>
 
             <div className="space-y-4">
@@ -301,20 +250,20 @@ export default function CvPdfPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-[#722F37] to-[#5A252C] rounded-3xl p-8 md:p-12 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Téléchargez votre CV en PDF maintenant
+                {t('finalCta.title')}
               </h2>
               <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                Gratuit, instantané, professionnel. Votre CV PDF prêt en 5 minutes.
+                {t('finalCta.description')}
               </p>
               <Link
                 href="/signup"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-[#FBF8F4] text-[#722F37] font-bold text-lg rounded-xl transition-all hover:scale-[1.02]"
               >
-                Créer mon CV gratuit
+                {t('finalCta.ctaText')}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <p className="mt-4 text-sm text-white/80">
-                Gratuit • Sans carte bancaire • PDF haute qualité
+                {t('finalCta.badge')}
               </p>
             </div>
           </div>

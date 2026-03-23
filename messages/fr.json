@@ -407,42 +407,729 @@
       "meta": {
         "title": "Modèles de CV Gratuits 2026 — Templates CV Modernes, Simples, ATS",
         "description": "50+ modèles de CV gratuits : CV moderne, CV simple, CV minimaliste, CV design, CV ATS-friendly. Téléchargez votre template CV en PDF. CV étudiant, CV professionnel, CV créatif."
+      },
+      "hero": {
+        "h1": "Nos Templates de CV",
+        "subtitle": "Choisissez parmi nos templates professionnels et créez votre CV en quelques minutes"
+      },
+      "templates": {
+        "template0": {
+          "name": "Modern",
+          "description": "Design épuré avec une touche de couleur",
+          "feature0": "En-tête coloré",
+          "feature1": "Mise en page moderne",
+          "feature2": "Icônes sociales"
+        },
+        "template1": {
+          "name": "Classic",
+          "description": "Format traditionnel et professionnel",
+          "feature0": "Structure classique",
+          "feature1": "Sobre et élégant",
+          "feature2": "Polyvalent"
+        },
+        "template2": {
+          "name": "ATS-Friendly",
+          "description": "Optimisé pour les systèmes de tri automatique",
+          "feature0": "100% compatible ATS",
+          "feature1": "Sans colonnes",
+          "feature2": "Texte simple"
+        },
+        "template3": {
+          "name": "Minimal",
+          "description": "Simplicité et élégance",
+          "feature0": "Design minimaliste",
+          "feature1": "Beaucoup d'espace",
+          "feature2": "Focus sur le contenu"
+        },
+        "template4": {
+          "name": "Creative",
+          "description": "Pour les profils créatifs et audacieux",
+          "feature0": "Sidebar colorée",
+          "feature1": "Photo de profil",
+          "feature2": "Design unique"
+        }
+      },
+      "seoSection": {
+        "title": "Nos modèles de CV gratuits en détail",
+        "desc0": "Le template Modern est notre modèle de CV le plus populaire. Design épuré avec accent coloré, idéal pour la plupart des secteurs : marketing, tech, communication, commerce. Gratuit et optimisé ATS.",
+        "desc1": "Le template Classic adopte un format traditionnel sobre et professionnel. Parfait pour les secteurs conservateurs : banque, droit, finance, administration. Structure claire et lecture facile.",
+        "desc2": "Ce modèle de CV est conçu pour passer les filtres ATS des grandes entreprises. 100% compatible avec les logiciels de tri automatique, sans colonnes ni éléments graphiques complexes.",
+        "desc3": "Le template Minimal mise sur la simplicité et l'élégance. Beaucoup d'espace blanc, focus sur le contenu. Idéal pour les profils qui veulent un CV sobre et moderne, tous secteurs.",
+        "desc4": "Le template Creative se démarque avec une sidebar colorée et une photo de profil. Parfait pour les graphistes, designers, UX/UI, photographes et profils créatifs en général."
+      },
+      "choiceGuide": {
+        "title": "Comment choisir son modèle de CV ?",
+        "item0": {
+          "label": "Pour un secteur traditionnel (banque, droit, finance)",
+          "advice": "Choisissez Classic ou ATS-Friendly pour une présentation sobre et professionnelle."
+        },
+        "item1": {
+          "label": "Pour la tech et le numérique",
+          "advice": "Modern ou Minimal conviennent parfaitement, avec une mise en page claire et moderne."
+        },
+        "item2": {
+          "label": "Pour les métiers créatifs (design, art, communication)",
+          "advice": "Creative vous permet de montrer votre sens du design dès le premier regard."
+        },
+        "item3": {
+          "label": "Pour les grandes entreprises et les ATS",
+          "advice": "ATS-Friendly garantit que votre CV sera bien parsé par les logiciels de recrutement."
+        },
+        "item4": {
+          "label": "Pour un CV étudiant ou premier emploi",
+          "advice": "Modern ou Minimal sont idéaux : professionnels sans être trop austères."
+        },
+        "item5": {
+          "label": "Pour un CV cadre ou manager",
+          "advice": "Classic ou Modern avec un contenu riche en réalisations chiffrées."
+        }
+      },
+      "seoParagraph": {
+        "p0": "Tous nos modèles de CV gratuits sont disponibles en ligne et téléchargeables en PDF. Chaque template CV professionnel est optimisé pour les ATS, responsive et adapté à tous les secteurs.",
+        "p1": "Que vous cherchiez un CV étudiant, un CV professionnel ou un CV créatif, notre générateur de CV gratuit avec IA vous aide à créer le CV parfait en moins de 5 minutes."
       }
     },
     "guidePage": {
       "meta": {
         "title": "Comment Faire un CV en 2026 — Guide Complet + Exemples Gratuits",
         "description": "Comment faire un CV professionnel, étudiant, ou sans expérience ? Guide complet 2026 : structure, conseils, exemples de CV modernes. Créez votre CV gratuit en ligne en 5 minutes."
+      },
+      "hero": {
+        "badge": "Guide complet 2026",
+        "h1Before": "Comment faire un",
+        "h1Accent": "CV parfait",
+        "h1After": " ?",
+        "subtitle": "Découvrez notre guide complet pour créer un CV professionnel qui attire l'attention des recruteurs. Conseils, structure, exemples et générateur gratuit avec IA.",
+        "primaryCta": "Créer mon CV maintenant",
+        "secondaryCta": "Lire le guide"
+      },
+      "steps": {
+        "title": "Les 6 étapes pour créer un CV professionnel",
+        "subtitle": "Suivez ces étapes pour rédiger un CV qui vous démarque des autres candidats",
+        "item0": {
+          "title": "Définir son objectif",
+          "description": "Identifiez le poste visé et adaptez votre CV en conséquence. Chaque CV doit être personnalisé pour l'offre d'emploi."
+        },
+        "item1": {
+          "title": "Choisir le bon format",
+          "description": "CV chronologique, fonctionnel ou mixte ? Le format chronologique inversé est le plus recommandé et le mieux accepté par les ATS."
+        },
+        "item2": {
+          "title": "Rédiger un titre accrocheur",
+          "description": "Votre titre doit résumer votre profil en une ligne : métier, spécialité, années d'expérience."
+        },
+        "item3": {
+          "title": "Détailler les expériences",
+          "description": "Pour chaque poste : entreprise, dates, missions et résultats chiffrés. Utilisez des verbes d'action."
+        },
+        "item4": {
+          "title": "Mettre en avant les compétences",
+          "description": "Listez vos compétences techniques et soft skills pertinentes pour le poste visé."
+        },
+        "item5": {
+          "title": "Exporter et envoyer",
+          "description": "Téléchargez votre CV en PDF pour conserver la mise en page. Nommez le fichier professionnellement."
+        }
+      },
+      "tips": {
+        "title": "8 conseils pour un CV réussi",
+        "tip0": "Limitez votre CV à une ou deux pages maximum",
+        "tip1": "Utilisez une police lisible (Arial, Calibri, Helvetica)",
+        "tip2": "Évitez les fautes d'orthographe à tout prix",
+        "tip3": "Incluez des mots-clés de l'offre d'emploi",
+        "tip4": "Ajoutez une photo professionnelle (optionnel en France)",
+        "tip5": "Mettez vos coordonnées à jour",
+        "tip6": "Quantifiez vos réalisations avec des chiffres",
+        "tip7": "Adaptez chaque CV à l'offre d'emploi"
+      },
+      "structure": {
+        "title": "Structure idéale d'un CV",
+        "subtitle": "Un CV bien structuré facilite la lecture pour les recruteurs",
+        "block0": {
+          "title": "En-tête",
+          "item0": "Prénom et Nom",
+          "item1": "Titre professionnel",
+          "item2": "Coordonnées (email, téléphone)",
+          "item3": "Ville de résidence",
+          "item4": "LinkedIn (optionnel)"
+        },
+        "block1": {
+          "title": "Profil / Résumé",
+          "item0": "3-4 lignes maximum",
+          "item1": "Vos points forts",
+          "item2": "Votre valeur ajoutée",
+          "item3": "Objectif professionnel"
+        },
+        "block2": {
+          "title": "Expériences",
+          "item0": "Ordre chronologique inversé",
+          "item1": "Poste, entreprise, dates",
+          "item2": "Missions principales",
+          "item3": "Résultats chiffrés"
+        },
+        "block3": {
+          "title": "Formation & Compétences",
+          "item0": "Diplômes obtenus",
+          "item1": "Établissements, années",
+          "item2": "Compétences techniques",
+          "item3": "Langues et niveaux"
+        }
+      },
+      "profiles": {
+        "title": "Créer un CV selon votre profil",
+        "subtitle": "Les conseils varient selon votre situation : étudiant, jeune diplômé ou professionnel expérimenté",
+        "profile0": {
+          "title": "CV Étudiant, CV Stage et CV Alternance",
+          "description": "Pour un CV étudiant, un CV de stage ou un CV d'alternance, mettez votre formation en tête de CV. Ajoutez tous vos stages, projets universitaires, activités associatives et compétences. Notre IA vous aide à valoriser chaque expérience, même courte.",
+          "linkText": "Guide CV étudiant complet"
+        },
+        "profile1": {
+          "title": "CV Sans Expérience et Premier CV",
+          "description": "Créer un CV sans expérience est possible : misez sur vos formations, compétences, projets personnels, bénévolat et centres d'intérêt. Pour un CV premier emploi ou un CV jeune diplômé, l'honnêteté et la motivation compensent le manque d'expérience.",
+          "linkText": "Créer un CV sans expérience"
+        },
+        "profile2": {
+          "title": "CV Professionnel, CV Cadre et CV Développeur",
+          "description": "Pour un CV professionnel ou un CV cadre, mettez en avant vos réalisations chiffrées, votre leadership et votre valeur ajoutée. Pour un CV développeur ou un CV IT, incluez votre stack technique, vos projets GitHub et vos contributions open source.",
+          "linkText": "Créer mon CV professionnel"
+        }
+      },
+      "ia": {
+        "title": "Créer son CV avec l'Intelligence Artificielle",
+        "subtitle": "Notre générateur de CV avec IA analyse votre parcours et optimise automatiquement votre contenu pour maximiser vos chances de décrocher un entretien.",
+        "feature0": {
+          "title": "Suggestions IA",
+          "description": "L'IA reformule vos expériences avec des verbes d'action percutants et des mots-clés optimisés ATS."
+        },
+        "feature1": {
+          "title": "Score ATS automatique",
+          "description": "Mesurez la compatibilité de votre CV avec les systèmes de tri automatique des recruteurs."
+        },
+        "feature2": {
+          "title": "CV optimisé en 5 min",
+          "description": "De 0 à un CV avec IA professionnel et prêt à envoyer en moins de 5 minutes."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur la création de CV",
+        "subtitle": "Tout ce que vous devez savoir pour créer un CV parfait",
+        "item0": {
+          "question": "Comment faire un CV étudiant ?",
+          "answer": "Pour faire un CV étudiant, placez votre formation en premier si vous avez peu d'expérience professionnelle. Ajoutez tous vos stages, projets, activités associatives et compétences. Utilisez notre générateur de CV gratuit avec IA pour créer un CV étudiant professionnel en 5 minutes."
+        },
+        "item1": {
+          "question": "Comment faire un CV sans expérience ?",
+          "answer": "Un CV sans expérience mise sur la formation, les projets personnels, le bénévolat, les compétences techniques et les soft skills. L'IA de CV Builder vous aide à valoriser chaque élément de votre parcours pour créer un CV convaincant, même pour un premier emploi."
+        },
+        "item2": {
+          "question": "Comment créer un CV pour une alternance ?",
+          "answer": "Pour un CV d'alternance, montrez votre double profil : étudiant sérieux et futur professionnel motivé. Précisez le rythme de votre alternance et vos dates de disponibilité. Valorisez vos compétences, votre projet professionnel et vos expériences, même courtes."
+        },
+        "item3": {
+          "question": "Comment optimiser son CV pour les ATS ?",
+          "answer": "Pour passer les filtres ATS, utilisez les mots-clés de l'offre d'emploi dans votre CV, évitez les tableaux et colonnes complexes, choisissez une police standard et structurez clairement vos sections. Le score ATS de CV Builder vous indique en temps réel votre taux de compatibilité."
+        },
+        "item4": {
+          "question": "Quel format de CV choisir ?",
+          "answer": "Le format PDF est toujours recommandé pour envoyer un CV : il préserve la mise en page et est lisible sur tous les appareils. Pour la structure, le format chronologique inversé (expériences récentes en premier) est le plus adapté et le mieux accepté par les recruteurs."
+        },
+        "item5": {
+          "question": "Comment télécharger son CV en PDF ?",
+          "answer": "Avec CV Builder, télécharger son CV en PDF est simple : créez votre CV, cliquez sur 'Télécharger PDF' et votre CV est généré instantanément en haute qualité. Le PDF est gratuit avec le template Modern et optimisé pour l'impression et l'envoi par email."
+        },
+        "item6": {
+          "question": "Comment créer un CV avec l'IA ?",
+          "answer": "Créer un CV avec l'IA sur CV Builder : inscrivez-vous gratuitement, remplissez vos informations, puis cliquez sur 'Suggestion IA' pour chaque section. L'intelligence artificielle reformule vos expériences, propose des mots-clés pertinents et optimise la structure de votre CV."
+        },
+        "item7": {
+          "question": "Combien de temps pour créer un CV ?",
+          "answer": "Avec CV Builder et notre générateur de CV avec IA, vous pouvez créer un CV professionnel en 5 minutes. Si vous remplissez toutes les sections en détail, comptez 15 à 30 minutes pour un CV complet et optimisé."
+        },
+        "item8": {
+          "question": "Quel modèle de CV choisir ?",
+          "answer": "Le choix du modèle de CV dépend de votre secteur : Modern pour la plupart des métiers, Classic pour les secteurs traditionnels (banque, droit, finance), ATS-Friendly pour les grandes entreprises, Minimal pour les métiers créatifs sobres, Creative pour les graphistes et UX designers."
+        },
+        "item9": {
+          "question": "CV chronologique ou fonctionnel ?",
+          "answer": "Le CV chronologique inversé (expériences de la plus récente à la plus ancienne) est recommandé dans la grande majorité des cas. Le CV fonctionnel (organisé par compétences) est utile en cas de reconversion ou de longues périodes d'inactivité, mais est moins apprécié des recruteurs."
+        }
+      },
+      "finalCta": {
+        "badge": "5 minutes seulement",
+        "title": "Prêt à créer votre CV ?",
+        "description": "Utilisez notre générateur de CV gratuit avec intelligence artificielle. Créez un CV professionnel en quelques minutes, sans compétences en design.",
+        "ctaText": "Créer mon CV gratuit",
+        "subtext": "Gratuit • Sans carte bancaire • Export PDF"
       }
     },
     "cvEtudiantPage": {
       "meta": {
         "title": "CV Étudiant Gratuit 2026 — Modèle CV Étudiant, Stage, Alternance",
         "description": "Créez votre CV étudiant gratuit en ligne. Modèles CV pour stage, alternance, premier emploi, sans expérience. Générateur de CV étudiant avec IA, export PDF."
+      },
+      "breadcrumbName": "CV Étudiant",
+      "hero": {
+        "badgeText": "CV Étudiant 100% gratuit",
+        "h1Before": "Créer son ",
+        "h1Accent": "CV Étudiant",
+        "h1After": " Gratuit en ligne",
+        "subtitle": "Stage, alternance, premier emploi — votre CV prêt en 5 minutes",
+        "description": "Générez un CV étudiant professionnel avec l'IA, même sans expérience. Templates dédiés aux étudiants, export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV étudiant",
+        "secondaryCtaText": "Voir les exemples"
+      },
+      "section1": {
+        "title": "Tout ce dont un étudiant a besoin",
+        "subtitle": "",
+        "item0": {
+          "title": "Mise en valeur de la formation",
+          "description": "Votre diplôme et votre parcours académique mis en avant dès le premier regard, même sans expérience professionnelle."
+        },
+        "item1": {
+          "title": "Adapté aux stages et alternances",
+          "description": "Nos templates sont pensés pour les candidatures étudiantes : stage, alternance, premier emploi, VIE."
+        },
+        "item2": {
+          "title": "IA pour valoriser chaque expérience",
+          "description": "Même courte, chaque expérience (bénévolat, projet, job étudiant) est valorisée par notre IA."
+        }
+      },
+      "section2": {
+        "title": "Rubriques indispensables pour un CV étudiant",
+        "subtitle": "",
+        "item0": {
+          "title": "Formation",
+          "keyword": "cv étudiant sans expérience",
+          "description": "Diplôme en cours, établissement, spécialité, mention — à placer en tête si peu d'expérience professionnelle."
+        },
+        "item1": {
+          "title": "Stages et jobs",
+          "keyword": "cv étudiant stage",
+          "description": "Chaque stage, job étudiant et mission freelance compte. Mentionnez vos missions et résultats, même modestes."
+        },
+        "item2": {
+          "title": "Projets et associations",
+          "keyword": "cv étudiant alternance",
+          "description": "Projets universitaires, hackathons, associations étudiantes — autant d'expériences qui enrichissent votre CV."
+        },
+        "item3": {
+          "title": "Compétences et langues",
+          "keyword": "modèle cv étudiant gratuit",
+          "description": "Listez vos compétences techniques, logiciels maîtrisés et niveaux de langue pour vous démarquer."
+        }
+      },
+      "section3": {
+        "title": "5 conseils pour un CV étudiant réussi",
+        "tip0": "Placez votre formation en tête si vous avez peu d'expérience professionnelle",
+        "tip1": "Incluez tous vos stages, même courts — chaque expérience compte",
+        "tip2": "Mettez en avant vos projets universitaires et activités associatives",
+        "tip3": "Adaptez votre CV à chaque offre : modifiez l'accroche et les mots-clés",
+        "tip4": "Limitez votre CV à une page, sauf si vous avez plus de 2 ans d'expérience"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV étudiant",
+        "subtitle": "Tout ce que vous devez savoir pour créer un CV étudiant qui fonctionne",
+        "q0": {
+          "question": "Comment faire un CV étudiant sans expérience ?",
+          "answer": "Mettez votre formation en avant, ajoutez vos projets universitaires, stages, bénévolat et compétences. Notre IA vous aide à formuler chaque élément de façon professionnelle, même pour un premier CV."
+        },
+        "q1": {
+          "question": "Quelle est la bonne longueur pour un CV étudiant ?",
+          "answer": "Une page suffit pour la plupart des étudiants. Passez à deux pages uniquement si vous avez plusieurs stages significatifs ou plus de 2 ans d'expérience cumulée."
+        },
+        "q2": {
+          "question": "Faut-il mettre une photo sur un CV étudiant ?",
+          "answer": "En France, la photo est optionnelle et non obligatoire. Si vous en ajoutez une, choisissez une photo professionnelle, bien éclairée. Notre template Creative la supporte parfaitement."
+        },
+        "q3": {
+          "question": "Quel template choisir pour un CV étudiant ?",
+          "answer": "Le template Modern est idéal pour la plupart des secteurs. Choisissez Classic pour les milieux formels (banque, droit), ATS-Friendly pour les grandes entreprises, ou Creative pour les profils créatifs."
+        },
+        "q4": {
+          "question": "Comment mentionner une alternance sur son CV ?",
+          "answer": "Indiquez le titre du poste, l'entreprise, les dates et précisez 'Alternance' ou 'Apprentissage'. Décrivez vos missions et résultats. Mentionnez également votre école et la formation associée."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV étudiant gratuit maintenant",
+        "description": "Rejoignez des milliers d'étudiants qui ont trouvé un stage ou une alternance grâce à CV Builder.",
+        "ctaText": "Créer mon CV étudiant"
       }
     },
     "cvPdfPage": {
       "meta": {
         "title": "Générer son CV en PDF Gratuit — Télécharger CV PDF en Ligne",
         "description": "Créez et téléchargez votre CV en PDF gratuitement. Générateur de CV PDF en ligne : mise en page parfaite, format professionnel, téléchargement instantané."
+      },
+      "hero": {
+        "badge": "Export PDF haute qualité",
+        "h1Before": "Créer et Télécharger son",
+        "h1Accent": "CV en PDF",
+        "subtitle": "Format universel, mise en page parfaite, téléchargement instantané — gratuit",
+        "description": "Notre générateur de CV avec intelligence artificielle crée votre CV en PDF haute qualité en quelques minutes. Compatible avec tous les recruteurs, tous les ATS, tous les appareils.",
+        "primaryCta": "Créer mon CV PDF gratuit",
+        "secondaryCta": "Comment faire un CV ?"
+      },
+      "advantages": {
+        "title": "Pourquoi le PDF est le meilleur format pour un CV ?",
+        "subtitle": "Le format de votre CV peut faire la différence avant même que le recruteur le lise",
+        "item0": {
+          "title": "Format universel",
+          "description": "Le PDF s'affiche identiquement sur tous les appareils, systèmes et logiciels de recrutement. Aucune surprise à l'ouverture."
+        },
+        "item1": {
+          "title": "Mise en page préservée",
+          "description": "Contrairement au Word ou ODT, le PDF conserve votre design à la perfection. Polices, espacements, couleurs — tout reste intact."
+        },
+        "item2": {
+          "title": "Format standard des recruteurs",
+          "description": "95% des recruteurs demandent un CV en PDF : c'est le format professionnel de référence, attendu par les cabinets et les ATS."
+        }
+      },
+      "steps": {
+        "title": "Comment télécharger son CV en PDF avec CV Builder ?",
+        "subtitle": "4 étapes simples pour obtenir un CV PDF professionnel en quelques minutes",
+        "item0": {
+          "title": "Créez un compte gratuitement sur CV Builder",
+          "description": "Inscription en 30 secondes, sans carte bancaire. Votre espace de création est immédiatement disponible."
+        },
+        "item1": {
+          "title": "Choisissez votre template de CV",
+          "description": "Modern, Classic, ATS, Minimal ou Creative — sélectionnez le modèle adapté à votre profil et au poste visé."
+        },
+        "item2": {
+          "title": "Remplissez vos informations",
+          "description": "Laissez notre IA vous guider et optimiser votre contenu : formulations, mots-clés, structure — tout est suggéré."
+        },
+        "item3": {
+          "title": "Cliquez sur \"Télécharger PDF\"",
+          "description": "Votre CV est généré instantanément en haute qualité. Téléchargement immédiat, prêt à envoyer."
+        }
+      },
+      "features": {
+        "title": "Un PDF professionnel généré en quelques secondes",
+        "feature0": "Haute résolution, prêt pour l'impression et l'envoi",
+        "feature1": "Compatible avec tous les ATS (systèmes de tri des recruteurs)",
+        "feature2": "Nommage automatique du fichier (Prénom-Nom-CV.pdf)"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV en PDF",
+        "subtitle": "Tout ce que vous devez savoir sur le format PDF pour votre CV",
+        "item0": {
+          "question": "Peut-on télécharger son CV en PDF gratuitement ?",
+          "answer": "Oui, CV Builder permet de télécharger votre CV en PDF gratuitement avec le template Modern. Le PDF est généré en haute qualité et prêt à être envoyé aux recruteurs ou téléchargé sur les sites d'emploi."
+        },
+        "item1": {
+          "question": "Quel format choisir pour son CV : PDF ou Word ?",
+          "answer": "Le PDF est toujours préférable pour un CV. Il préserve la mise en page, est lisible sur tous les appareils et est demandé par la grande majorité des recruteurs. Word peut être modifié accidentellement et s'affiche différemment selon les versions."
+        },
+        "item2": {
+          "question": "Comment générer son CV en PDF en ligne ?",
+          "answer": "Avec CV Builder : créez un compte gratuit, choisissez votre template, remplissez vos informations avec l'aide de l'IA, puis cliquez sur 'Télécharger PDF'. Le PDF est généré instantanément, sans logiciel à installer."
+        },
+        "item3": {
+          "question": "Le CV PDF est-il compatible avec les ATS ?",
+          "answer": "Oui, nos CVs PDF sont optimisés pour les systèmes de suivi des candidatures (ATS). Notre template ATS-Friendly est particulièrement conçu pour être parsé correctement par ces logiciels, en utilisant une structure claire et des polices standards."
+        }
+      },
+      "finalCta": {
+        "title": "Téléchargez votre CV en PDF maintenant",
+        "description": "Gratuit, instantané, professionnel. Votre CV PDF prêt en 5 minutes.",
+        "ctaText": "Créer mon CV gratuit",
+        "badge": "Gratuit • Sans carte bancaire • PDF haute qualité"
       }
     },
     "cvAlternancePage": {
       "meta": {
         "title": "Modèle CV Alternance Étudiant Gratuit 2026 — Stage, Informatique",
         "description": "Créez votre CV d'alternance gratuit en ligne. Modèles CV alternance étudiant, CV stage, CV alternance informatique. Générateur de CV pour l'alternance avec IA, export PDF."
+      },
+      "breadcrumbName": "CV Alternance",
+      "hero": {
+        "badgeText": "CV Alternance gratuit",
+        "h1Before": "Créer son ",
+        "h1Accent": "CV Alternance",
+        "h1After": " qui décroche un contrat",
+        "subtitle": "Valorisez votre double profil étudiant-professionnel en quelques minutes",
+        "description": "Notre générateur de CV avec IA crée un CV d'alternance optimisé pour convaincre les employeurs et les CFA. Export PDF gratuit.",
+        "primaryCtaText": "Créer mon CV alternance",
+        "secondaryCtaText": "Voir les exemples"
+      },
+      "section1": {
+        "title": "Ce qui fait un bon CV d'alternance",
+        "subtitle": "",
+        "item0": {
+          "title": "Double profil valorisé",
+          "description": "Votre parcours académique et vos expériences professionnelles mis en avant pour convaincre employeurs et écoles."
+        },
+        "item1": {
+          "title": "Adapté à votre secteur",
+          "description": "Commerce, informatique, RH, finance — nos templates s'adaptent à tous les domaines d'alternance."
+        },
+        "item2": {
+          "title": "Optimisé ATS",
+          "description": "Votre CV d'alternance passe les filtres automatiques des grandes entreprises et des plateformes d'emploi."
+        }
+      },
+      "section2": {
+        "title": "Les rubriques clés d'un CV d'alternance",
+        "subtitle": "",
+        "item0": {
+          "title": "Projet professionnel",
+          "keyword": "cv alternance informatique",
+          "description": "Précisez votre secteur visé, le type de contrat souhaité et vos dates de disponibilité dès le début du CV."
+        },
+        "item1": {
+          "title": "Formation en cours",
+          "keyword": "cv alternance étudiant",
+          "description": "Mentionnez votre école, votre formation, le niveau visé (Bac+2, Bac+3...) et le rythme d'alternance prévu."
+        },
+        "item2": {
+          "title": "Expériences et stages",
+          "keyword": "modèle cv alternance gratuit",
+          "description": "Chaque stage, job étudiant ou mission compte. Décrivez vos missions et résultats avec précision."
+        },
+        "item3": {
+          "title": "Compétences techniques",
+          "keyword": "cv pour alternance",
+          "description": "Logiciels, langages, certifications — listez vos compétences techniques en lien avec le poste visé."
+        }
+      },
+      "section3": {
+        "title": "5 conseils pour décrocher votre alternance",
+        "tip0": "Précisez votre rythme d'alternance et vos dates de disponibilité dès l'accroche",
+        "tip1": "Mentionnez le niveau de votre formation et l'école associée clairement",
+        "tip2": "Adaptez votre CV à chaque offre en incluant les mots-clés de l'annonce",
+        "tip3": "Montrez votre motivation avec une accroche personnalisée pour chaque candidature",
+        "tip4": "Incluez vos projets, bénévolats et centres d'intérêt pour compenser le manque d'expérience"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV d'alternance",
+        "subtitle": "Tout ce que vous devez savoir pour créer un CV d'alternance efficace",
+        "q0": {
+          "question": "Qu'est-ce qu'un CV d'alternance ?",
+          "answer": "Un CV d'alternance est un CV étudiant adapté aux contrats d'apprentissage ou de professionnalisation. Il met en avant votre formation en cours, votre projet professionnel et vos disponibilités en plus de vos expériences."
+        },
+        "q1": {
+          "question": "Que mettre dans un CV d'alternance sans expérience ?",
+          "answer": "Mettez en avant votre formation, vos projets universitaires, vos compétences techniques, votre maîtrise des logiciels et vos soft skills. Mentionnez aussi vos activités associatives, sportives ou bénévoles."
+        },
+        "q2": {
+          "question": "Comment mentionner le rythme d'alternance sur un CV ?",
+          "answer": "Ajoutez votre rythme d'alternance (ex : 3 jours école / 2 jours entreprise) dans l'accroche ou dans la section formation. Précisez aussi vos dates de début et de fin de contrat disponibles."
+        },
+        "q3": {
+          "question": "Quel format choisir pour un CV d'alternance informatique ?",
+          "answer": "Pour un CV d'alternance en informatique, privilégiez le template Modern ou ATS-Friendly. Ajoutez une section compétences techniques avec vos langages, frameworks et outils maîtrisés."
+        },
+        "q4": {
+          "question": "Combien de pages pour un CV d'alternance ?",
+          "answer": "Une page suffit pour un CV d'alternance étudiant. Si vous avez plusieurs stages significatifs ou des projets à mettre en avant, vous pouvez aller jusqu'à deux pages, mais une page reste recommandée."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV d'alternance gratuit maintenant",
+        "description": "Des milliers d'étudiants ont décroché leur alternance avec CV Builder. À vous de jouer.",
+        "ctaText": "Créer mon CV alternance"
       }
     },
     "cvDeveloppeurPage": {
       "meta": {
         "title": "CV Développeur Gratuit 2026 — Exemple CV Dev Junior, Web, Informatique",
         "description": "Créez votre CV développeur gratuit : exemple CV développeur junior, CV développeur web, CV développeur informatique. Template CV tech optimisé ATS, export PDF."
+      },
+      "breadcrumbName": "CV Développeur",
+      "hero": {
+        "badgeText": "CV tech optimisé ATS",
+        "h1Before": "Créer son ",
+        "h1Accent": "CV Développeur",
+        "h1After": " Gratuit et Optimisé",
+        "subtitle": "Frontend, backend, fullstack — votre stack mis en valeur en 5 minutes",
+        "description": "Notre générateur de CV avec IA crée un CV développeur professionnel et optimisé ATS. Mettez en avant votre stack technique, vos projets GitHub et vos contributions.",
+        "primaryCtaText": "Créer mon CV dev",
+        "secondaryCtaText": "Voir les exemples"
+      },
+      "section1": {
+        "title": "Un CV pensé pour les profils tech",
+        "subtitle": "",
+        "item0": {
+          "title": "Stack technique mis en avant",
+          "description": "Langages, frameworks, outils, bases de données — votre expertise technique présentée clairement dès le premier regard."
+        },
+        "item1": {
+          "title": "Projets GitHub et contributions",
+          "description": "Valorisez vos projets personnels, open source et vos repos GitHub : ils comptent autant que vos expériences pro."
+        },
+        "item2": {
+          "title": "Compatible ATS et recruteurs tech",
+          "description": "Structure optimisée pour passer les filtres automatiques des grandes entreprises tech et des cabinets de recrutement IT."
+        }
+      },
+      "section2": {
+        "title": "Ce que doit contenir votre CV développeur",
+        "subtitle": "",
+        "item0": {
+          "title": "Stack technique",
+          "keyword": "cv développeur junior",
+          "description": "Listez vos langages (JavaScript, Python, Java...), frameworks (React, Node, Django...) et outils (Git, Docker, CI/CD) maîtrisés."
+        },
+        "item1": {
+          "title": "Projets personnels",
+          "keyword": "cv développeur web",
+          "description": "Décrivez vos projets : contexte, technologies utilisées, résultats mesurables. Ajoutez vos liens GitHub et démos."
+        },
+        "item2": {
+          "title": "Expériences pro",
+          "keyword": "cv développeur fullstack",
+          "description": "Détaillez vos missions avec les technologies utilisées et vos impacts : performance, couverture de tests, fonctionnalités livrées."
+        },
+        "item3": {
+          "title": "Formation et certifications",
+          "keyword": "modèle cv développeur gratuit",
+          "description": "Diplôme, bootcamp, certifications AWS/GCP/Azure, cours en ligne — tout ce qui valide votre expertise technique compte."
+        }
+      },
+      "section3": {
+        "title": "Comment créer votre CV développeur en 4 étapes",
+        "step0": {
+          "title": "Listez votre stack technique",
+          "description": "Commencez par répertorier tous vos langages, frameworks et outils, en distinguant ceux maîtrisés de ceux en apprentissage."
+        },
+        "step1": {
+          "title": "Choisissez votre template",
+          "description": "Modern ou ATS-Friendly pour les postes en entreprise, Minimal pour les startups et environnements créatifs."
+        },
+        "step2": {
+          "title": "Rédigez avec l'aide de l'IA",
+          "description": "Notre IA reformule vos expériences avec des verbes techniques précis et intègre les mots-clés recherchés par les recruteurs IT."
+        },
+        "step3": {
+          "title": "Exportez en PDF et candidatez",
+          "description": "Téléchargez votre CV développeur en PDF haute qualité. Prêt pour LinkedIn, GitHub, Indeed et les candidatures directes."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV développeur",
+        "subtitle": "Tout ce que vous devez savoir pour créer un CV de développeur efficace",
+        "q0": {
+          "question": "Comment présenter sa stack technique sur un CV ?",
+          "answer": "Créez une section 'Compétences techniques' structurée par catégories : Langages, Frameworks, Bases de données, Outils/DevOps. Indiquez votre niveau pour chaque technologie et placez cette section dans la première moitié du CV."
+        },
+        "q1": {
+          "question": "Faut-il mettre ses projets GitHub sur son CV ?",
+          "answer": "Oui, absolument. Vos projets GitHub montrent votre capacité à coder en dehors du cadre professionnel. Ajoutez le lien vers votre profil et mentionnez vos projets les plus significatifs avec une brève description."
+        },
+        "q2": {
+          "question": "Quelle longueur pour un CV développeur junior ?",
+          "answer": "Une page suffit pour un développeur junior. Concentrez-vous sur votre stack, vos projets personnels et votre formation. Si vous avez des projets significatifs à détailler, deux pages sont acceptables."
+        },
+        "q3": {
+          "question": "Comment optimiser son CV développeur pour les ATS ?",
+          "answer": "Utilisez les termes exacts de l'offre d'emploi, évitez les colonnes et tableaux complexes, utilisez des mots-clés techniques standard (JavaScript, pas JS). Notre score ATS intégré vous indique votre taux de compatibilité en temps réel."
+        },
+        "q4": {
+          "question": "Quel template choisir pour un CV développeur ?",
+          "answer": "ATS-Friendly ou Modern pour les postes en grande entreprise ou SSII, Minimal pour les startups et agences créatives. Évitez les templates trop graphiques qui peuvent mal passer les ATS."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV développeur gratuit maintenant",
+        "description": "Rejoignez les développeurs qui ont décroché leur poste grâce à un CV tech optimisé et professionnel.",
+        "ctaText": "Créer mon CV dev"
       }
     },
     "cvMinimalistePage": {
       "meta": {
         "title": "CV Minimaliste Gratuit PDF 2026 — Template CV Moderne, Simple, Design",
         "description": "Téléchargez un modèle CV minimaliste gratuit en PDF. Templates CV modernes, simples et design : CV minimaliste, CV moderne gratuit, CV simple étudiant. Créez votre CV en ligne, export PDF instantané."
+      },
+      "breadcrumbName": "CV Minimaliste",
+      "hero": {
+        "badgeText": "Design minimaliste épuré",
+        "h1Before": "Créer un ",
+        "h1Accent": "CV Minimaliste",
+        "h1After": " Gratuit en PDF",
+        "subtitle": "Élégance, lisibilité et impact — le CV sobre qui séduit les recruteurs",
+        "description": "Notre générateur de CV crée un CV minimaliste moderne et professionnel en quelques minutes. Export PDF gratuit, optimisé ATS.",
+        "primaryCtaText": "Créer mon CV minimaliste",
+        "secondaryCtaText": "Voir le template"
+      },
+      "section1": {
+        "title": "Pourquoi choisir un CV minimaliste",
+        "subtitle": "",
+        "item0": {
+          "title": "Le contenu avant tout",
+          "description": "Un design épuré met en valeur vos compétences et expériences sans distraction visuelle inutile."
+        },
+        "item1": {
+          "title": "Polyvalent et intemporel",
+          "description": "Le CV minimaliste convient à tous les secteurs et ne vieillit pas : tech, finance, santé, commerce, éducation."
+        },
+        "item2": {
+          "title": "Parfaitement compatible ATS",
+          "description": "Sa structure simple et son texte clair passent tous les filtres automatiques des logiciels de recrutement."
+        }
+      },
+      "section2": {
+        "title": "Les clés d'un CV minimaliste efficace",
+        "subtitle": "",
+        "item0": {
+          "title": "Espacement généreux",
+          "keyword": "cv minimaliste gratuit",
+          "description": "Beaucoup d'espace blanc pour une lecture fluide et un rendu aéré qui repose les yeux du recruteur."
+        },
+        "item1": {
+          "title": "Typographie claire",
+          "keyword": "cv simple gratuit",
+          "description": "Une seule police, deux tailles maximum. La hiérarchie visuelle se fait par le poids et la couleur, pas par l'ornement."
+        },
+        "item2": {
+          "title": "Couleur subtile",
+          "keyword": "cv moderne gratuit pdf",
+          "description": "Un accent coloré discret (ligne, titre) suffit à personnaliser votre CV minimaliste sans le surcharger."
+        },
+        "item3": {
+          "title": "Structure limpide",
+          "keyword": "template cv minimaliste",
+          "description": "Sections clairement délimitées, rubriques dans le bon ordre — le recruteur trouve l'info cherchée en 6 secondes."
+        }
+      },
+      "section3": {
+        "title": "5 règles du CV minimaliste parfait",
+        "tip0": "Supprimez tout ce qui n'apporte pas de valeur : photos déco, bordures inutiles, icônes superflues",
+        "tip1": "Limitez-vous à deux polices maximum, idéalement une seule famille typographique",
+        "tip2": "Utilisez un seul accent coloré et évitez les fonds colorés sur toute la page",
+        "tip3": "Espacez bien vos sections — un CV aéré se lit beaucoup mieux qu'un CV compact",
+        "tip4": "Choisissez des verbes d'action forts : le contenu doit compenser la sobriété du design"
+      },
+      "faq": {
+        "title": "Questions fréquentes sur le CV minimaliste",
+        "subtitle": "Tout ce que vous devez savoir pour créer un CV minimaliste efficace",
+        "q0": {
+          "question": "Qu'est-ce qu'un CV minimaliste ?",
+          "answer": "Un CV minimaliste est un CV épuré avec beaucoup d'espace blanc, une typographie simple et peu d'éléments décoratifs. Il met le contenu au premier plan et facilite la lecture rapide par les recruteurs."
+        },
+        "q1": {
+          "question": "Pour quel secteur choisir un CV minimaliste ?",
+          "answer": "Le CV minimaliste convient à presque tous les secteurs : tech, finance, consulting, santé, éducation. Il est particulièrement apprécié dans les environnements professionnels qui valorisent la clarté et l'efficacité."
+        },
+        "q2": {
+          "question": "Un CV minimaliste passe-t-il les ATS ?",
+          "answer": "Oui, le CV minimaliste est l'un des meilleurs formats pour les ATS car sa structure simple et son texte clair sont facilement parsés. Évitez les tableaux et colonnes complexes pour une compatibilité maximale."
+        },
+        "q3": {
+          "question": "Peut-on ajouter de la couleur sur un CV minimaliste ?",
+          "answer": "Oui, un accent coloré subtil (titres de section, ligne de séparation) est parfaitement compatible avec un design minimaliste. L'important est de ne pas surcharger et de rester cohérent sur tout le document."
+        },
+        "q4": {
+          "question": "Comment télécharger un CV minimaliste en PDF gratuit ?",
+          "answer": "Créez un compte gratuit sur CV Builder, choisissez le template Minimal ou Modern, remplissez vos informations avec l'aide de l'IA, puis téléchargez votre CV en PDF en un clic. Gratuit, sans carte bancaire."
+        }
+      },
+      "finalCta": {
+        "title": "Créez votre CV minimaliste gratuit maintenant",
+        "description": "Simple, élégant, efficace. Créez votre CV minimaliste professionnel en 5 minutes avec notre IA.",
+        "ctaText": "Créer mon CV minimaliste"
       }
     },
     "modeleCvGratuitPage": {

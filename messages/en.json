@@ -407,42 +407,729 @@
       "meta": {
         "title": "Free Resume Templates 2026 — Modern, Simple, ATS-Friendly Resume Templates",
         "description": "50+ free resume templates: modern resume, simple resume, minimalist resume, design resume, ATS-friendly resume. Download your resume template in PDF. Student resume, professional resume, creative resume."
+      },
+      "hero": {
+        "h1": "Our Resume Templates",
+        "subtitle": "Choose from our professional templates and create your resume in minutes"
+      },
+      "templates": {
+        "template0": {
+          "name": "Modern",
+          "description": "Clean design with a touch of color",
+          "feature0": "Colored header",
+          "feature1": "Modern layout",
+          "feature2": "Social icons"
+        },
+        "template1": {
+          "name": "Classic",
+          "description": "Traditional and professional format",
+          "feature0": "Classic structure",
+          "feature1": "Sober and elegant",
+          "feature2": "Versatile"
+        },
+        "template2": {
+          "name": "ATS-Friendly",
+          "description": "Optimized for automatic sorting systems",
+          "feature0": "100% ATS compatible",
+          "feature1": "No columns",
+          "feature2": "Plain text"
+        },
+        "template3": {
+          "name": "Minimal",
+          "description": "Simplicity and elegance",
+          "feature0": "Minimalist design",
+          "feature1": "Lots of space",
+          "feature2": "Content focused"
+        },
+        "template4": {
+          "name": "Creative",
+          "description": "For creative and bold profiles",
+          "feature0": "Colored sidebar",
+          "feature1": "Profile photo",
+          "feature2": "Unique design"
+        }
+      },
+      "seoSection": {
+        "title": "Our free resume templates in detail",
+        "desc0": "The Modern template is our most popular resume template. Clean design with a colored accent, ideal for most sectors: marketing, tech, communications, sales. Free and ATS optimized.",
+        "desc1": "The Classic template adopts a traditional, sober and professional format. Perfect for conservative sectors: banking, law, finance, administration. Clear structure and easy reading.",
+        "desc2": "This resume template is designed to pass the ATS filters of large companies. 100% compatible with automatic sorting software, without columns or complex graphic elements.",
+        "desc3": "The Minimal template focuses on simplicity and elegance. Lots of white space, content focused. Ideal for profiles who want a clean, modern resume, all sectors.",
+        "desc4": "The Creative template stands out with a colored sidebar and profile photo. Perfect for graphic designers, UX/UI designers, photographers and creative profiles in general."
+      },
+      "choiceGuide": {
+        "title": "How to choose your resume template?",
+        "item0": {
+          "label": "For a traditional sector (banking, law, finance)",
+          "advice": "Choose Classic or ATS-Friendly for a sober and professional presentation."
+        },
+        "item1": {
+          "label": "For tech and digital",
+          "advice": "Modern or Minimal work perfectly, with a clear and modern layout."
+        },
+        "item2": {
+          "label": "For creative jobs (design, art, communications)",
+          "advice": "Creative lets you show your design sense at first glance."
+        },
+        "item3": {
+          "label": "For large companies and ATS",
+          "advice": "ATS-Friendly ensures your resume is correctly parsed by recruitment software."
+        },
+        "item4": {
+          "label": "For a student or entry-level resume",
+          "advice": "Modern or Minimal are ideal: professional without being too austere."
+        },
+        "item5": {
+          "label": "For an executive or manager resume",
+          "advice": "Classic or Modern with content rich in quantified achievements."
+        }
+      },
+      "seoParagraph": {
+        "p0": "All our free resume templates are available online and downloadable in PDF. Each professional resume template is ATS optimized, responsive and suitable for all sectors.",
+        "p1": "Whether you're looking for a student resume, a professional resume or a creative resume, our free AI resume generator helps you create the perfect resume in less than 5 minutes."
       }
     },
     "guidePage": {
       "meta": {
         "title": "How to Create a Resume in 2026 — Complete Guide + Free Examples",
         "description": "How to create a professional, student, or entry-level resume? Complete 2026 guide: structure, tips, modern resume examples. Create your free resume online in 5 minutes."
+      },
+      "hero": {
+        "badge": "Complete 2026 guide",
+        "h1Before": "How to write a",
+        "h1Accent": "perfect resume",
+        "h1After": "?",
+        "subtitle": "Discover our complete guide to creating a professional resume that attracts recruiters' attention. Tips, structure, examples and free AI generator.",
+        "primaryCta": "Create my resume now",
+        "secondaryCta": "Read the guide"
+      },
+      "steps": {
+        "title": "6 steps to create a professional resume",
+        "subtitle": "Follow these steps to write a resume that sets you apart from other candidates",
+        "item0": {
+          "title": "Define your objective",
+          "description": "Identify the target position and tailor your resume accordingly. Every resume should be personalized for the job offer."
+        },
+        "item1": {
+          "title": "Choose the right format",
+          "description": "Chronological, functional or combination? The reverse chronological format is most recommended and best accepted by ATS."
+        },
+        "item2": {
+          "title": "Write a compelling headline",
+          "description": "Your headline should summarize your profile in one line: job title, specialty, years of experience."
+        },
+        "item3": {
+          "title": "Detail your experience",
+          "description": "For each position: company, dates, responsibilities and quantified results. Use action verbs."
+        },
+        "item4": {
+          "title": "Highlight your skills",
+          "description": "List your technical skills and soft skills relevant to the target position."
+        },
+        "item5": {
+          "title": "Export and send",
+          "description": "Download your resume in PDF to preserve the layout. Name the file professionally."
+        }
+      },
+      "tips": {
+        "title": "8 tips for a successful resume",
+        "tip0": "Limit your resume to one or two pages maximum",
+        "tip1": "Use a readable font (Arial, Calibri, Helvetica)",
+        "tip2": "Avoid spelling mistakes at all costs",
+        "tip3": "Include keywords from the job listing",
+        "tip4": "Add a professional photo (optional depending on country)",
+        "tip5": "Keep your contact information up to date",
+        "tip6": "Quantify your achievements with numbers",
+        "tip7": "Tailor each resume to the job offer"
+      },
+      "structure": {
+        "title": "Ideal resume structure",
+        "subtitle": "A well-structured resume makes reading easier for recruiters",
+        "block0": {
+          "title": "Header",
+          "item0": "First and last name",
+          "item1": "Professional title",
+          "item2": "Contact details (email, phone)",
+          "item3": "City of residence",
+          "item4": "LinkedIn (optional)"
+        },
+        "block1": {
+          "title": "Profile / Summary",
+          "item0": "3-4 lines maximum",
+          "item1": "Your strengths",
+          "item2": "Your added value",
+          "item3": "Professional objective"
+        },
+        "block2": {
+          "title": "Experience",
+          "item0": "Reverse chronological order",
+          "item1": "Position, company, dates",
+          "item2": "Main responsibilities",
+          "item3": "Quantified results"
+        },
+        "block3": {
+          "title": "Education & Skills",
+          "item0": "Degrees obtained",
+          "item1": "Institutions, years",
+          "item2": "Technical skills",
+          "item3": "Languages and levels"
+        }
+      },
+      "profiles": {
+        "title": "Create a resume based on your profile",
+        "subtitle": "Advice varies depending on your situation: student, recent graduate or experienced professional",
+        "profile0": {
+          "title": "Student Resume, Internship and Apprenticeship",
+          "description": "For a student resume, internship resume or apprenticeship resume, put your education at the top. Add all your internships, university projects, extracurricular activities and skills. Our AI helps you showcase every experience, even short ones.",
+          "linkText": "Complete student resume guide"
+        },
+        "profile1": {
+          "title": "No Experience Resume and First Resume",
+          "description": "Creating a resume with no experience is possible: focus on your education, skills, personal projects, volunteering and interests. For a first job or recent graduate resume, honesty and motivation compensate for the lack of experience.",
+          "linkText": "Create a no experience resume"
+        },
+        "profile2": {
+          "title": "Professional Resume, Executive and Developer",
+          "description": "For a professional or executive resume, highlight your quantified achievements, leadership and added value. For a developer or IT resume, include your tech stack, GitHub projects and open source contributions.",
+          "linkText": "Create my professional resume"
+        }
+      },
+      "ia": {
+        "title": "Create your resume with Artificial Intelligence",
+        "subtitle": "Our AI resume generator analyzes your background and automatically optimizes your content to maximize your chances of landing an interview.",
+        "feature0": {
+          "title": "AI suggestions",
+          "description": "AI rephrases your experience with impactful action verbs and ATS-optimized keywords."
+        },
+        "feature1": {
+          "title": "Automatic ATS score",
+          "description": "Measure your resume's compatibility with recruiters' automatic sorting systems."
+        },
+        "feature2": {
+          "title": "Optimized resume in 5 min",
+          "description": "From 0 to a professional AI-powered resume ready to send in less than 5 minutes."
+        }
+      },
+      "faq": {
+        "title": "Frequently asked questions about resume writing",
+        "subtitle": "Everything you need to know to create a perfect resume",
+        "item0": {
+          "question": "How to write a student resume?",
+          "answer": "To write a student resume, place your education first if you have little professional experience. Add all your internships, projects, extracurricular activities and skills. Use our free AI resume generator to create a professional student resume in 5 minutes."
+        },
+        "item1": {
+          "question": "How to write a resume with no experience?",
+          "answer": "A no-experience resume focuses on education, personal projects, volunteering, technical skills and soft skills. CV Builder's AI helps you highlight every element of your background to create a convincing resume, even for a first job."
+        },
+        "item2": {
+          "question": "How to create a resume for an apprenticeship?",
+          "answer": "For an apprenticeship resume, show your dual profile: serious student and motivated future professional. Specify your work-study schedule and availability dates. Highlight your skills, career objective and experience, even short ones."
+        },
+        "item3": {
+          "question": "How to optimize your resume for ATS?",
+          "answer": "To pass ATS filters, use keywords from the job listing in your resume, avoid complex tables and columns, choose a standard font and clearly structure your sections. CV Builder's ATS score shows your compatibility rate in real time."
+        },
+        "item4": {
+          "question": "Which resume format to choose?",
+          "answer": "PDF format is always recommended for sending a resume: it preserves the layout and is readable on all devices. For structure, the reverse chronological format (most recent experience first) is the most suitable and best accepted by recruiters."
+        },
+        "item5": {
+          "question": "How to download your resume as PDF?",
+          "answer": "With CV Builder, downloading your resume as PDF is simple: create your resume, click 'Download PDF' and your resume is generated instantly in high quality. PDF is free with the Modern template and optimized for printing and email."
+        },
+        "item6": {
+          "question": "How to create a resume with AI?",
+          "answer": "Create a resume with AI on CV Builder: sign up for free, fill in your information, then click 'AI Suggestion' for each section. The artificial intelligence rephrases your experience, suggests relevant keywords and optimizes your resume structure."
+        },
+        "item7": {
+          "question": "How long to create a resume?",
+          "answer": "With CV Builder and our AI resume generator, you can create a professional resume in 5 minutes. If you fill in all sections in detail, allow 15 to 30 minutes for a complete, optimized resume."
+        },
+        "item8": {
+          "question": "Which resume template to choose?",
+          "answer": "The choice of resume template depends on your sector: Modern for most jobs, Classic for traditional sectors (banking, law, finance), ATS-Friendly for large companies, Minimal for sober creative jobs, Creative for graphic designers and UX designers."
+        },
+        "item9": {
+          "question": "Chronological or functional resume?",
+          "answer": "The reverse chronological resume (experiences from most recent to oldest) is recommended in the vast majority of cases. The functional resume (organized by skills) is useful for career changes or long periods of inactivity, but is less appreciated by recruiters."
+        }
+      },
+      "finalCta": {
+        "badge": "5 minutes only",
+        "title": "Ready to create your resume?",
+        "description": "Use our free AI resume generator. Create a professional resume in minutes, no design skills needed.",
+        "ctaText": "Create my free resume",
+        "subtext": "Free • No credit card • PDF export"
       }
     },
     "cvEtudiantPage": {
       "meta": {
         "title": "Free Student Resume 2026 — Student Resume Template, Internship, Apprenticeship",
         "description": "Create your free student resume online. Resume templates for internship, apprenticeship, first job, no experience. AI-powered student resume generator, PDF export."
+      },
+      "breadcrumbName": "Student Resume",
+      "hero": {
+        "badgeText": "100% free student resume",
+        "h1Before": "Create your ",
+        "h1Accent": "Student Resume",
+        "h1After": " Free Online",
+        "subtitle": "Internship, apprenticeship, first job — your resume ready in 5 minutes",
+        "description": "Generate a professional student resume with AI, even with no experience. Student-focused templates, free PDF export.",
+        "primaryCtaText": "Create my student resume",
+        "secondaryCtaText": "View examples"
+      },
+      "section1": {
+        "title": "Everything a student needs",
+        "subtitle": "",
+        "item0": {
+          "title": "Education front and center",
+          "description": "Your degree and academic background highlighted from the first glance, even without professional experience."
+        },
+        "item1": {
+          "title": "Built for internships and apprenticeships",
+          "description": "Our templates are designed for student applications: internship, apprenticeship, first job, international programs."
+        },
+        "item2": {
+          "title": "AI to boost every experience",
+          "description": "Even short, every experience (volunteering, project, student job) is enhanced by our AI."
+        }
+      },
+      "section2": {
+        "title": "Key sections for a student resume",
+        "subtitle": "",
+        "item0": {
+          "title": "Education",
+          "keyword": "student resume no experience",
+          "description": "Degree in progress, institution, specialty, honors — place it first if you have little professional experience."
+        },
+        "item1": {
+          "title": "Internships and jobs",
+          "keyword": "student internship resume",
+          "description": "Every internship, student job and freelance mission counts. Mention your tasks and results, even modest ones."
+        },
+        "item2": {
+          "title": "Projects and societies",
+          "keyword": "student apprenticeship resume",
+          "description": "University projects, hackathons, student societies — experiences that enrich your resume."
+        },
+        "item3": {
+          "title": "Skills and languages",
+          "keyword": "free student resume template",
+          "description": "List your technical skills, software proficiency and language levels to stand out."
+        }
+      },
+      "section3": {
+        "title": "5 tips for a great student resume",
+        "tip0": "Place your education first if you have little professional experience",
+        "tip1": "Include all internships, even short ones — every experience matters",
+        "tip2": "Highlight your university projects and extracurricular activities",
+        "tip3": "Tailor your resume to each application: update your summary and keywords",
+        "tip4": "Keep your resume to one page, unless you have more than 2 years of experience"
+      },
+      "faq": {
+        "title": "Frequently asked questions about student resumes",
+        "subtitle": "Everything you need to know to create a student resume that works",
+        "q0": {
+          "question": "How to write a student resume with no experience?",
+          "answer": "Highlight your education, add university projects, internships, volunteering and skills. Our AI helps you phrase each element professionally, even for a first resume."
+        },
+        "q1": {
+          "question": "What is the right length for a student resume?",
+          "answer": "One page is enough for most students. Switch to two pages only if you have several significant internships or more than 2 years of cumulative experience."
+        },
+        "q2": {
+          "question": "Should I include a photo on my student resume?",
+          "answer": "A photo is optional in most countries. If you add one, choose a professional, well-lit headshot. Our Creative template supports it perfectly."
+        },
+        "q3": {
+          "question": "Which template should I choose for a student resume?",
+          "answer": "The Modern template works for most industries. Choose Classic for formal sectors (banking, law), ATS-Friendly for large companies, or Creative for creative profiles."
+        },
+        "q4": {
+          "question": "How do I mention an apprenticeship on my resume?",
+          "answer": "State the job title, company, dates and note 'Apprenticeship' or 'Work-Study'. Describe your tasks and results. Also mention your school and the associated training program."
+        }
+      },
+      "finalCta": {
+        "title": "Create your free student resume now",
+        "description": "Join thousands of students who found an internship or job thanks to CV Builder.",
+        "ctaText": "Create my student resume"
       }
     },
     "cvPdfPage": {
       "meta": {
         "title": "Generate Your Resume as PDF Free — Download Resume PDF Online",
         "description": "Create and download your resume as PDF for free. Online PDF resume generator: perfect layout, professional format, instant download."
+      },
+      "hero": {
+        "badge": "High-quality PDF export",
+        "h1Before": "Create and Download your",
+        "h1Accent": "Resume as PDF",
+        "subtitle": "Universal format, perfect layout, instant download — free",
+        "description": "Our AI-powered resume generator creates your high-quality PDF resume in minutes. Compatible with all recruiters, all ATS, all devices.",
+        "primaryCta": "Create my free PDF resume",
+        "secondaryCta": "How to write a resume?"
+      },
+      "advantages": {
+        "title": "Why PDF is the best format for a resume?",
+        "subtitle": "Your resume format can make a difference before the recruiter even reads it",
+        "item0": {
+          "title": "Universal format",
+          "description": "PDF displays identically on all devices, systems and recruitment software. No surprises when opened."
+        },
+        "item1": {
+          "title": "Layout preserved",
+          "description": "Unlike Word or ODT, PDF preserves your design perfectly. Fonts, spacing, colors — everything stays intact."
+        },
+        "item2": {
+          "title": "Recruiters' standard format",
+          "description": "95% of recruiters request a resume in PDF: it is the professional reference format, expected by agencies and ATS."
+        }
+      },
+      "steps": {
+        "title": "How to download your resume as PDF with CV Builder?",
+        "subtitle": "4 simple steps to get a professional PDF resume in minutes",
+        "item0": {
+          "title": "Create a free account on CV Builder",
+          "description": "Sign up in 30 seconds, no credit card required. Your creation space is immediately available."
+        },
+        "item1": {
+          "title": "Choose your resume template",
+          "description": "Modern, Classic, ATS, Minimal or Creative — select the template suited to your profile and target position."
+        },
+        "item2": {
+          "title": "Fill in your information",
+          "description": "Let our AI guide and optimize your content: phrasing, keywords, structure — everything is suggested."
+        },
+        "item3": {
+          "title": "Click \"Download PDF\"",
+          "description": "Your resume is generated instantly in high quality. Immediate download, ready to send."
+        }
+      },
+      "features": {
+        "title": "A professional PDF generated in seconds",
+        "feature0": "High resolution, ready for printing and sending",
+        "feature1": "Compatible with all ATS (recruiters' filtering systems)",
+        "feature2": "Automatic file naming (FirstName-LastName-Resume.pdf)"
+      },
+      "faq": {
+        "title": "Frequently asked questions about PDF resumes",
+        "subtitle": "Everything you need to know about the PDF format for your resume",
+        "item0": {
+          "question": "Can I download my resume as PDF for free?",
+          "answer": "Yes, CV Builder lets you download your resume as PDF for free with the Modern template. The PDF is generated in high quality and ready to be sent to recruiters or uploaded to job sites."
+        },
+        "item1": {
+          "question": "Which format for a resume: PDF or Word?",
+          "answer": "PDF is always preferable for a resume. It preserves the layout, is readable on all devices and is requested by the vast majority of recruiters. Word can be accidentally modified and displays differently depending on the version."
+        },
+        "item2": {
+          "question": "How to generate a resume as PDF online?",
+          "answer": "With CV Builder: create a free account, choose your template, fill in your information with AI help, then click 'Download PDF'. The PDF is generated instantly, no software to install."
+        },
+        "item3": {
+          "question": "Is a PDF resume ATS compatible?",
+          "answer": "Yes, our PDF resumes are optimized for applicant tracking systems (ATS). Our ATS-Friendly template is specifically designed to be correctly parsed by these software, using a clear structure and standard fonts."
+        }
+      },
+      "finalCta": {
+        "title": "Download your resume as PDF now",
+        "description": "Free, instant, professional. Your PDF resume ready in 5 minutes.",
+        "ctaText": "Create my free resume",
+        "badge": "Free • No credit card • High-quality PDF"
       }
     },
     "cvAlternancePage": {
       "meta": {
         "title": "Free Apprenticeship Resume Student Template 2026 — Internship, IT",
         "description": "Create your free apprenticeship resume online. Apprenticeship resume templates, internship resume, IT apprenticeship resume. AI-powered apprenticeship resume generator, PDF export."
+      },
+      "breadcrumbName": "Apprenticeship Resume",
+      "hero": {
+        "badgeText": "Free apprenticeship resume",
+        "h1Before": "Create your ",
+        "h1Accent": "Apprenticeship Resume",
+        "h1After": " that lands a contract",
+        "subtitle": "Showcase your student-professional dual profile in just a few minutes",
+        "description": "Our AI resume generator creates an optimized apprenticeship resume to convince employers and training centers. Free PDF export.",
+        "primaryCtaText": "Create my apprenticeship resume",
+        "secondaryCtaText": "View examples"
+      },
+      "section1": {
+        "title": "What makes a great apprenticeship resume",
+        "subtitle": "",
+        "item0": {
+          "title": "Dual profile highlighted",
+          "description": "Your academic background and professional experience highlighted to convince both employers and schools."
+        },
+        "item1": {
+          "title": "Adapted to your sector",
+          "description": "Business, IT, HR, finance — our templates adapt to all apprenticeship fields."
+        },
+        "item2": {
+          "title": "ATS optimized",
+          "description": "Your apprenticeship resume passes the automatic filters of large companies and job platforms."
+        }
+      },
+      "section2": {
+        "title": "Key sections of an apprenticeship resume",
+        "subtitle": "",
+        "item0": {
+          "title": "Career objective",
+          "keyword": "IT apprenticeship resume",
+          "description": "Specify your target sector, the type of contract you want and your availability dates at the start of the resume."
+        },
+        "item1": {
+          "title": "Current training",
+          "keyword": "student apprenticeship resume",
+          "description": "Mention your school, your program, the target level (Bachelor, Master...) and your planned schedule."
+        },
+        "item2": {
+          "title": "Experiences and internships",
+          "keyword": "free apprenticeship resume template",
+          "description": "Every internship, student job or mission counts. Describe your tasks and results precisely."
+        },
+        "item3": {
+          "title": "Technical skills",
+          "keyword": "apprenticeship resume",
+          "description": "Software, languages, certifications — list your technical skills related to the target position."
+        }
+      },
+      "section3": {
+        "title": "5 tips to land your apprenticeship",
+        "tip0": "Specify your work-study schedule and availability dates in your summary",
+        "tip1": "Clearly mention your training level and associated school",
+        "tip2": "Tailor your resume to each offer by including keywords from the listing",
+        "tip3": "Show your motivation with a personalized summary for each application",
+        "tip4": "Include projects, volunteering and interests to compensate for lack of experience"
+      },
+      "faq": {
+        "title": "Frequently asked questions about apprenticeship resumes",
+        "subtitle": "Everything you need to know to create an effective apprenticeship resume",
+        "q0": {
+          "question": "What is an apprenticeship resume?",
+          "answer": "An apprenticeship resume is a student resume adapted for work-study contracts. It highlights your ongoing training, your career objective and your availability in addition to your experiences."
+        },
+        "q1": {
+          "question": "What to put in an apprenticeship resume with no experience?",
+          "answer": "Highlight your training, university projects, technical skills, software proficiency and soft skills. Also mention your extracurricular, sports or volunteering activities."
+        },
+        "q2": {
+          "question": "How to mention the work-study schedule on a resume?",
+          "answer": "Add your schedule (e.g. 3 days school / 2 days company) in the summary or in the education section. Also specify your available contract start and end dates."
+        },
+        "q3": {
+          "question": "Which format for an IT apprenticeship resume?",
+          "answer": "For an IT apprenticeship resume, prefer the Modern or ATS-Friendly template. Add a technical skills section with your languages, frameworks and tools."
+        },
+        "q4": {
+          "question": "How many pages for an apprenticeship resume?",
+          "answer": "One page is enough for a student apprenticeship resume. If you have significant internships or projects to highlight, two pages are acceptable, but one page is recommended."
+        }
+      },
+      "finalCta": {
+        "title": "Create your free apprenticeship resume now",
+        "description": "Thousands of students have landed their apprenticeship with CV Builder. Your turn.",
+        "ctaText": "Create my apprenticeship resume"
       }
     },
     "cvDeveloppeurPage": {
       "meta": {
         "title": "Free Developer Resume 2026 — Example Junior Developer, Web, IT Resume",
         "description": "Create your free developer resume: junior developer resume example, web developer resume, IT developer resume. ATS-optimized tech resume template, PDF export."
+      },
+      "breadcrumbName": "Developer Resume",
+      "hero": {
+        "badgeText": "ATS-optimized tech resume",
+        "h1Before": "Create your ",
+        "h1Accent": "Developer Resume",
+        "h1After": " Free and Optimized",
+        "subtitle": "Frontend, backend, fullstack — your tech stack showcased in 5 minutes",
+        "description": "Our AI resume generator creates a professional, ATS-optimized developer resume. Highlight your tech stack, GitHub projects and contributions.",
+        "primaryCtaText": "Create my dev resume",
+        "secondaryCtaText": "View examples"
+      },
+      "section1": {
+        "title": "A resume built for tech profiles",
+        "subtitle": "",
+        "item0": {
+          "title": "Tech stack highlighted",
+          "description": "Languages, frameworks, tools, databases — your technical expertise presented clearly from the first glance."
+        },
+        "item1": {
+          "title": "GitHub projects and contributions",
+          "description": "Showcase your personal, open source projects and GitHub repos: they matter as much as your professional experience."
+        },
+        "item2": {
+          "title": "ATS and tech recruiter friendly",
+          "description": "Structure optimized to pass the automatic filters of large tech companies and IT recruitment agencies."
+        }
+      },
+      "section2": {
+        "title": "What your developer resume must include",
+        "subtitle": "",
+        "item0": {
+          "title": "Tech stack",
+          "keyword": "junior developer resume",
+          "description": "List your languages (JavaScript, Python, Java...), frameworks (React, Node, Django...) and tools (Git, Docker, CI/CD) you master."
+        },
+        "item1": {
+          "title": "Personal projects",
+          "keyword": "web developer resume",
+          "description": "Describe your projects: context, technologies used, measurable results. Add your GitHub links and demos."
+        },
+        "item2": {
+          "title": "Professional experience",
+          "keyword": "fullstack developer resume",
+          "description": "Detail your missions with the technologies used and your impact: performance, test coverage, features delivered."
+        },
+        "item3": {
+          "title": "Education and certifications",
+          "keyword": "free developer resume template",
+          "description": "Degree, bootcamp, AWS/GCP/Azure certifications, online courses — everything that validates your technical expertise counts."
+        }
+      },
+      "section3": {
+        "title": "How to create your developer resume in 4 steps",
+        "step0": {
+          "title": "List your tech stack",
+          "description": "Start by listing all your languages, frameworks and tools, distinguishing those you master from those you are learning."
+        },
+        "step1": {
+          "title": "Choose your template",
+          "description": "Modern or ATS-Friendly for corporate positions, Minimal for startups and creative environments."
+        },
+        "step2": {
+          "title": "Write with AI assistance",
+          "description": "Our AI rephrases your experience with precise technical action verbs and integrates the keywords sought by IT recruiters."
+        },
+        "step3": {
+          "title": "Export to PDF and apply",
+          "description": "Download your developer resume in high-quality PDF. Ready for LinkedIn, GitHub, Indeed and direct applications."
+        }
+      },
+      "faq": {
+        "title": "Frequently asked questions about developer resumes",
+        "subtitle": "Everything you need to know to create an effective developer resume",
+        "q0": {
+          "question": "How to present your tech stack on a resume?",
+          "answer": "Create a 'Technical Skills' section structured by categories: Languages, Frameworks, Databases, Tools/DevOps. Indicate your level for each technology and place this section in the first half of the resume."
+        },
+        "q1": {
+          "question": "Should I put GitHub projects on my resume?",
+          "answer": "Yes, absolutely. Your GitHub projects show your ability to code outside the professional framework. Add a link to your profile and mention your most significant projects with a brief description."
+        },
+        "q2": {
+          "question": "What length for a junior developer resume?",
+          "answer": "One page is enough for a junior developer. Focus on your stack, personal projects and education. If you have significant projects to detail, two pages are acceptable."
+        },
+        "q3": {
+          "question": "How to optimize your developer resume for ATS?",
+          "answer": "Use the exact terms from the job offer, avoid complex columns and tables, use standard technical keywords (JavaScript, not JS). Our built-in ATS score shows your compatibility rate in real time."
+        },
+        "q4": {
+          "question": "Which template for a developer resume?",
+          "answer": "ATS-Friendly or Modern for positions in large companies or consulting firms, Minimal for startups and creative agencies. Avoid overly graphic templates that may not pass ATS."
+        }
+      },
+      "finalCta": {
+        "title": "Create your free developer resume now",
+        "description": "Join developers who landed their job with an optimized, professional tech resume.",
+        "ctaText": "Create my dev resume"
       }
     },
     "cvMinimalistePage": {
       "meta": {
         "title": "Free Minimalist Resume PDF 2026 — Modern, Simple, Design Template",
         "description": "Download a free minimalist resume template in PDF. Modern, simple and design resume templates: minimalist resume, modern free resume, simple student resume. Create your resume online, instant PDF export."
+      },
+      "breadcrumbName": "Minimalist Resume",
+      "hero": {
+        "badgeText": "Clean minimalist design",
+        "h1Before": "Create a ",
+        "h1Accent": "Minimalist Resume",
+        "h1After": " Free in PDF",
+        "subtitle": "Elegance, readability and impact — the clean resume that impresses recruiters",
+        "description": "Our resume generator creates a modern, professional minimalist resume in minutes. Free PDF export, ATS optimized.",
+        "primaryCtaText": "Create my minimalist resume",
+        "secondaryCtaText": "View template"
+      },
+      "section1": {
+        "title": "Why choose a minimalist resume",
+        "subtitle": "",
+        "item0": {
+          "title": "Content first",
+          "description": "A clean design highlights your skills and experience without unnecessary visual distraction."
+        },
+        "item1": {
+          "title": "Versatile and timeless",
+          "description": "The minimalist resume suits all sectors and never goes out of style: tech, finance, healthcare, commerce, education."
+        },
+        "item2": {
+          "title": "Perfectly ATS compatible",
+          "description": "Its simple structure and clear text pass all automatic filters of recruitment software."
+        }
+      },
+      "section2": {
+        "title": "Keys to an effective minimalist resume",
+        "subtitle": "",
+        "item0": {
+          "title": "Generous spacing",
+          "keyword": "free minimalist resume",
+          "description": "Plenty of white space for smooth reading and an airy result that is easy on the recruiter's eyes."
+        },
+        "item1": {
+          "title": "Clear typography",
+          "keyword": "simple free resume",
+          "description": "One font, two sizes maximum. Visual hierarchy is achieved through weight and color, not ornamentation."
+        },
+        "item2": {
+          "title": "Subtle color",
+          "keyword": "free modern resume pdf",
+          "description": "A discreet color accent (line, title) is enough to personalize your minimalist resume without overloading it."
+        },
+        "item3": {
+          "title": "Crystal-clear structure",
+          "keyword": "minimalist resume template",
+          "description": "Clearly delineated sections, sections in the right order — the recruiter finds the information in 6 seconds."
+        }
+      },
+      "section3": {
+        "title": "5 rules for the perfect minimalist resume",
+        "tip0": "Remove everything that adds no value: decorative photos, unnecessary borders, superfluous icons",
+        "tip1": "Limit yourself to two fonts maximum, ideally a single typeface family",
+        "tip2": "Use a single color accent and avoid colored backgrounds across the whole page",
+        "tip3": "Space out your sections well — an airy resume reads much better than a compact one",
+        "tip4": "Choose strong action verbs: content must compensate for the sobriety of the design"
+      },
+      "faq": {
+        "title": "Frequently asked questions about minimalist resumes",
+        "subtitle": "Everything you need to know to create an effective minimalist resume",
+        "q0": {
+          "question": "What is a minimalist resume?",
+          "answer": "A minimalist resume is a clean resume with plenty of white space, simple typography and few decorative elements. It puts content first and facilitates quick reading by recruiters."
+        },
+        "q1": {
+          "question": "Which sector should choose a minimalist resume?",
+          "answer": "The minimalist resume suits almost all sectors: tech, finance, consulting, healthcare, education. It is particularly appreciated in professional environments that value clarity and efficiency."
+        },
+        "q2": {
+          "question": "Does a minimalist resume pass ATS?",
+          "answer": "Yes, the minimalist resume is one of the best formats for ATS because its simple structure and clear text are easily parsed. Avoid complex tables and columns for maximum compatibility."
+        },
+        "q3": {
+          "question": "Can I add color to a minimalist resume?",
+          "answer": "Yes, a subtle color accent (section titles, separator line) is perfectly compatible with a minimalist design. The key is not to overload and to remain consistent throughout the document."
+        },
+        "q4": {
+          "question": "How to download a minimalist resume in PDF for free?",
+          "answer": "Create a free account on CV Builder, choose the Minimal or Modern template, fill in your information with AI assistance, then download your resume in PDF with one click. Free, no credit card required."
+        }
+      },
+      "finalCta": {
+        "title": "Create your free minimalist resume now",
+        "description": "Simple, elegant, effective. Create your professional minimalist resume in 5 minutes with our AI.",
+        "ctaText": "Create my minimalist resume"
       }
     },
     "modeleCvGratuitPage": {
