@@ -9,7 +9,7 @@ import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
 import { EmptyState } from '@/components/ui/empty-state'
 import { ReviewReminder } from '@/components/review-prompt'
-import { Plus, FileText, Sparkles, TrendingUp, Clock } from 'lucide-react'
+import { Plus, FileText, Sparkles, TrendingUp, Clock, Eye } from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -25,17 +25,25 @@ export default async function DashboardPage() {
     return null
   }
 
-  const resumes = await prisma.resume.findMany({
-    where: { userId: session.user.id },
-    orderBy: { updatedAt: 'desc' },
-    select: {
-      id: true,
-      title: true,
-      template: true,
-      updatedAt: true,
-      isPaid: true,
-    },
-  })
+  const [resumes, viewStats] = await Promise.all([
+    prisma.resume.findMany({
+      where: { userId: session.user.id },
+      orderBy: { updatedAt: 'desc' },
+      select: {
+        id: true,
+        title: true,
+        template: true,
+        updatedAt: true,
+        isPaid: true,
+      },
+    }),
+    prisma.resume.aggregate({
+      where: { userId: session.user.id, isPublic: true },
+      _sum: { viewCount: true },
+    }),
+  ])
+
+  const totalViews = viewStats._sum.viewCount ?? 0
 
   const thisMonth = resumes.filter(r => {
     const now = new Date()
@@ -164,6 +172,17 @@ export default async function DashboardPage() {
           </div>
           <p className="text-4xl font-bold text-[#1F1A17] mb-1">{templatesUsed}</p>
           <p className="text-sm text-[#6B6560]">{t('templatesUsed')}</p>
+        </div>
+
+        {/* Total Views */}
+        <div className="bg-[#F3EDE5] p-6 rounded-2xl border border-[#E0D6C8] hover:border-[#722F37]/30 transition-colors">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-[#722F37]/10 rounded-xl flex items-center justify-center">
+              <Eye className="w-5 h-5 text-[#722F37]" />
+            </div>
+          </div>
+          <p className="text-4xl font-bold text-[#1F1A17] mb-1">{totalViews}</p>
+          <p className="text-sm text-[#6B6560]">{t('totalViews')}</p>
         </div>
 
         {/* Encart avis Google */}

@@ -53,6 +53,8 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
   const [duplicatingId, setDuplicatingId] = useState<string | null>(null)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [resumeToDelete, setResumeToDelete] = useState<string | null>(null)
+  const [editingTitleId, setEditingTitleId] = useState<string | null>(null)
+  const [editingTitleValue, setEditingTitleValue] = useState('')
 
   const openDeleteDialog = (id: string) => {
     setResumeToDelete(id)
@@ -102,6 +104,39 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
     }
   }
 
+  const startEditingTitle = (resume: Resume) => {
+    setEditingTitleId(resume.id)
+    setEditingTitleValue(resume.title)
+  }
+
+  const saveTitle = async (id: string) => {
+    const newTitle = editingTitleValue.trim()
+    setEditingTitleId(null)
+
+    const currentResume = resumes.find(r => r.id === id)
+    if (!newTitle || newTitle === currentResume?.title) return
+
+    setResumes(prev => prev.map(r => r.id === id ? { ...r, title: newTitle } : r))
+
+    try {
+      const res = await fetch(`/api/resumes/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: newTitle }),
+      })
+
+      if (res.ok) {
+        toast.success(t('renameSuccess'))
+      } else {
+        setResumes(prev => prev.map(r => r.id === id ? { ...r, title: currentResume!.title } : r))
+        toast.error(t('renameError'))
+      }
+    } catch {
+      setResumes(prev => prev.map(r => r.id === id ? { ...r, title: currentResume!.title } : r))
+      toast.error(t('serverError'))
+    }
+  }
+
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString('fr-FR', {
       day: 'numeric',
@@ -147,9 +182,27 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
             <div className="p-5">
               {/* Title */}
-              <h3 className="font-semibold text-gray-900 text-lg mb-1 truncate">
-                {resume.title}
-              </h3>
+              {editingTitleId === resume.id ? (
+                <input
+                  autoFocus
+                  className="font-semibold text-gray-900 text-lg mb-1 w-full border-b border-[#722F37] outline-none bg-transparent"
+                  value={editingTitleValue}
+                  onChange={e => setEditingTitleValue(e.target.value)}
+                  onBlur={() => saveTitle(resume.id)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') saveTitle(resume.id)
+                    if (e.key === 'Escape') setEditingTitleId(null)
+                  }}
+                />
+              ) : (
+                <h3
+                  className="font-semibold text-gray-900 text-lg mb-1 truncate cursor-pointer hover:text-[#722F37] transition-colors"
+                  onClick={() => startEditingTitle(resume)}
+                  title="Cliquer pour renommer"
+                >
+                  {resume.title}
+                </h3>
+              )}
 
               {/* Name if available */}
               {resume.personalInfo && (
@@ -188,7 +241,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                   variant="outline"
                   onClick={() => handleDuplicate(resume.id)}
                   disabled={duplicatingId === resume.id}
-                  title={t('edit')}
+                  title={t('duplicate')}
                   className="px-3"
                 >
                   {duplicatingId === resume.id ? (
