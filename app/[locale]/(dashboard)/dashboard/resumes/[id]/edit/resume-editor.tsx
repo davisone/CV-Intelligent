@@ -1308,7 +1308,7 @@ ${interests.map(i => i.name).join(', ')}
                       </div>
                       {viewCount > 0 && (
                         <p className="text-xs text-[#6B6560]">
-                          👁 {t('shareViews', { count: viewCount })}
+                          {t('shareViews', { count: viewCount })}
                         </p>
                       )}
                     </div>

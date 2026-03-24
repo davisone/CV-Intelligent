@@ -33,26 +33,17 @@ export function UpdateAnnouncementModal({ version }: UpdateAnnouncementModalProp
 
         {/* Changelog */}
         <div className="px-6 py-5 space-y-4">
-          <div className="flex gap-3">
-            <span className="text-2xl shrink-0">🔗</span>
-            <div>
-              <p className="font-semibold text-[#1F1A17] text-sm">Partage public de CV</p>
-              <p className="text-[#6B6560] text-xs mt-0.5">Partagez votre CV via un lien unique directement aux recruteurs, sans qu&apos;ils aient besoin de créer un compte.</p>
-            </div>
+          <div>
+            <p className="font-semibold text-[#1F1A17] text-sm">Partage public de CV</p>
+            <p className="text-[#6B6560] text-xs mt-0.5">Partagez votre CV via un lien unique directement aux recruteurs, sans qu&apos;ils aient besoin de créer un compte.</p>
           </div>
-          <div className="flex gap-3">
-            <span className="text-2xl shrink-0">👁</span>
-            <div>
-              <p className="font-semibold text-[#1F1A17] text-sm">Compteur de vues</p>
-              <p className="text-[#6B6560] text-xs mt-0.5">Sachez combien de fois votre CV public a été consulté. Le compteur s&apos;affiche dans votre éditeur et sur la page partagée.</p>
-            </div>
+          <div>
+            <p className="font-semibold text-[#1F1A17] text-sm">Compteur de vues</p>
+            <p className="text-[#6B6560] text-xs mt-0.5">Sachez combien de fois votre CV public a été consulté. Le compteur s&apos;affiche dans votre éditeur et sur la page partagée.</p>
           </div>
-          <div className="flex gap-3">
-            <span className="text-2xl shrink-0">📱</span>
-            <div>
-              <p className="font-semibold text-[#1F1A17] text-sm">Page CV adaptée mobile</p>
-              <p className="text-[#6B6560] text-xs mt-0.5">La page publique de votre CV s&apos;adapte maintenant aux téléphones et tablettes automatiquement.</p>
-            </div>
+          <div>
+            <p className="font-semibold text-[#1F1A17] text-sm">Page CV adaptée mobile</p>
+            <p className="text-[#6B6560] text-xs mt-0.5">La page publique de votre CV s&apos;adapte maintenant aux téléphones et tablettes automatiquement.</p>
           </div>
         </div>
 
