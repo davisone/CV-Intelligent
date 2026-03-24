@@ -36,4 +36,5 @@ export {
   Lock,               // Premium/Locked feature
   CreditCard,         // Payment
   BarChart3,          // Charts/Stats
+  Globe,              // Partage public
 } from 'lucide-react'

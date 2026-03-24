@@ -34,6 +34,8 @@ import {
   CheckCircle,
   XCircle,
   Lock,
+  Globe,
+  Copy,
 } from '@/components/ui/icons'
 
 // Types pour les données du CV
@@ -136,6 +138,10 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
     matchedKeywords: string[]
   } | null>(null)
   const [isAtsLoading, setIsAtsLoading] = useState(false)
+  const [isPublic, setIsPublic] = useState<boolean>(resume.isPublic ?? false)
+  const [publicSlug, setPublicSlug] = useState<string | null>(resume.publicSlug ?? null)
+  const [isSharing, setIsSharing] = useState(false)
+  const [showSharePanel, setShowSharePanel] = useState(false)
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit')
   const previewContainerRef = useRef<HTMLDivElement>(null)
   const [previewScale, setPreviewScale] = useState(1)
@@ -608,6 +614,29 @@ ${interests.map(i => i.name).join(', ')}
     }
   }
 
+  const toggleShare = async () => {
+    setIsSharing(true)
+    try {
+      const res = await fetch(`/api/resumes/${resume.id}/share`, { method: 'POST' })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error)
+      setIsPublic(json.data.isPublic)
+      setPublicSlug(json.data.publicSlug)
+      toast.success(json.data.isPublic ? t('shareEnabled') : t('shareDisabled'))
+    } catch {
+      toast.error(t('shareError'))
+    } finally {
+      setIsSharing(false)
+    }
+  }
+
+  const copyShareLink = () => {
+    if (!publicSlug) return
+    const url = `${window.location.origin}/${locale}/cv/${publicSlug}`
+    navigator.clipboard.writeText(url)
+    toast.success(t('shareLinkCopied'))
+  }
+
   const cvData = {
     personalInfo,
     experiences,
@@ -640,6 +669,19 @@ ${interests.map(i => i.name).join(', ')}
     window.addEventListener('resize', updateScale)
     return () => window.removeEventListener('resize', updateScale)
   }, [activeTab])
+
+  // Fermer le panneau de partage en cliquant en dehors
+  useEffect(() => {
+    if (!showSharePanel) return
+    const handler = (e: MouseEvent) => {
+      const panel = document.getElementById('share-panel')
+      if (panel && !panel.contains(e.target as Node)) {
+        setShowSharePanel(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [showSharePanel])
 
   return (
     <div>
@@ -1201,7 +1243,7 @@ ${interests.map(i => i.name).join(', ')}
       ) : (
         /* Preview */
         <div className="bg-gray-100 p-4 md:p-8 rounded-xl">
-          <div className="mb-4 flex justify-end">
+          <div className="mb-4 flex justify-end gap-2">
             <Button onClick={downloadPDF} disabled={isGeneratingPdf}>
               {isGeneratingPdf ? (
                 <>
@@ -1215,6 +1257,61 @@ ${interests.map(i => i.name).join(', ')}
                 </>
               )}
             </Button>
+
+            <div className="relative">
+              <Button
+                variant="outline"
+                onClick={() => setShowSharePanel(v => !v)}
+                className={isPublic ? 'border-green-500 text-green-700' : ''}
+              >
+                <Globe className="w-4 h-4 mr-2" />
+                {isPublic ? t('sharePublic') : t('sharePrivate')}
+              </Button>
+
+              {showSharePanel && (
+                <div id="share-panel" className="absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-lg border border-[#E0D6C8] p-4 z-50">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-medium text-[#1F1A17]">
+                      {t('shareTitle')}
+                    </span>
+                    <button
+                      onClick={toggleShare}
+                      disabled={isSharing}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                        isPublic ? 'bg-[#722F37]' : 'bg-[#E0D6C8]'
+                      }`}
+                    >
+                      <span
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                          isPublic ? 'translate-x-6' : 'translate-x-1'
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {isPublic && publicSlug && (
+                    <div className="flex items-center gap-2 mt-2">
+                      <input
+                        readOnly
+                        value={`${window.location.origin}/${locale}/cv/${publicSlug}`}
+                        className="flex-1 text-xs bg-[#F3EDE5] rounded px-2 py-1.5 text-[#6B6560] border border-[#E0D6C8] truncate"
+                      />
+                      <button
+                        onClick={copyShareLink}
+                        className="p-1.5 rounded hover:bg-[#F3EDE5] text-[#722F37]"
+                        title={t('shareCopy')}
+                      >
+                        <Copy className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+
+                  {!isPublic && (
+                    <p className="text-xs text-[#6B6560] mt-1">{t('shareDescription')}</p>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
           {/* Container avec scale adaptatif pour l'aperçu A4 (mobile-friendly) */}
           <div className="overflow-hidden" ref={previewContainerRef}>
