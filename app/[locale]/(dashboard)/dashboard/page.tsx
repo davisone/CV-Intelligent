@@ -7,6 +7,7 @@ import { prisma } from '@/lib/db/prisma'
 import { getTranslations } from 'next-intl/server'
 import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
+import { OnboardingTour } from '@/components/ui/onboarding-tour'
 import { EmptyState } from '@/components/ui/empty-state'
 import { ReviewReminder } from '@/components/review-prompt'
 import { Plus, FileText, Sparkles, TrendingUp, Clock, Eye } from 'lucide-react'
@@ -25,7 +26,9 @@ export default async function DashboardPage() {
     return null
   }
 
-  const [resumes, viewStats] = await Promise.all([
+  const ONBOARDING_CUTOFF = new Date('2026-03-24T00:00:00Z')
+
+  const [resumes, viewStats, user] = await Promise.all([
     prisma.resume.findMany({
       where: { userId: session.user.id },
       orderBy: { updatedAt: 'desc' },
@@ -41,7 +44,13 @@ export default async function DashboardPage() {
       where: { userId: session.user.id, isPublic: true },
       _sum: { viewCount: true },
     }),
+    prisma.user.findUnique({
+      where: { id: session.user.id },
+      select: { createdAt: true },
+    }),
   ])
+
+  const isNewUser = user?.createdAt ? user.createdAt >= ONBOARDING_CUTOFF : false
 
   const totalViews = viewStats._sum.viewCount ?? 0
 
@@ -60,6 +69,43 @@ export default async function DashboardPage() {
       <Suspense fallback={null}>
         <WelcomeToast />
       </Suspense>
+      {isNewUser && (
+        <OnboardingTour
+          storageKey="tour_v2_dashboard"
+          steps={[
+            {
+              id: 'onboarding-create-cv',
+              title: '👋 Bienvenue !',
+              description: 'Cliquez ici pour créer votre premier CV avec l\'un de nos templates professionnels.',
+              side: 'bottom',
+            },
+            {
+              id: 'onboarding-templates',
+              title: 'Choisir un template',
+              description: 'Parcourez nos 5 templates : Moderne, Classique, ATS, Minimaliste et Créatif.',
+              side: 'bottom',
+            },
+            {
+              id: 'onboarding-profile',
+              title: 'Votre profil maître',
+              description: 'Renseignez vos informations une seule fois — elles pré-rempliront automatiquement tous vos futurs CVs.',
+              side: 'right',
+            },
+            {
+              id: 'onboarding-my-resumes',
+              title: 'Vos CVs',
+              description: 'Accédez à vos CVs, dupliquez-les, renommez-les et partagez-les avec les recruteurs.',
+              side: 'right',
+            },
+            {
+              id: 'onboarding-whats-new',
+              title: 'Nouveautés',
+              description: 'Retrouvez les dernières mises à jour ici. Un badge vous avertira à chaque nouvelle version.',
+              side: 'right',
+            },
+          ]}
+        />
+      )}
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-[#1F1A17]">
