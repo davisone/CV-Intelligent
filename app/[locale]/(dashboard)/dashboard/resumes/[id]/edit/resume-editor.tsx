@@ -141,6 +141,9 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const [isPublic, setIsPublic] = useState<boolean>(resume.isPublic ?? false)
   const [publicSlug, setPublicSlug] = useState<string | null>(resume.publicSlug ?? null)
   const [viewCount] = useState<number>(resume.viewCount ?? 0)
+  const [expiresAt, setExpiresAt] = useState<string>(
+    resume.publicShareExpiresAt ? new Date(resume.publicShareExpiresAt).toISOString().substring(0, 10) : ''
+  )
   const [isSharing, setIsSharing] = useState(false)
   const [showSharePanel, setShowSharePanel] = useState(false)
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit')
@@ -636,6 +639,19 @@ ${interests.map(i => i.name).join(', ')}
     const url = `${window.location.origin}/${locale}/cv/${publicSlug}`
     navigator.clipboard.writeText(url)
     toast.success(t('shareLinkCopied'))
+  }
+
+  const saveExpiry = async (value: string) => {
+    try {
+      await fetch(`/api/resumes/${resume.id}/share/expiry`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ expiresAt: value || null }),
+      })
+      toast.success(value ? t('shareExpirySaved') : t('shareExpiryRemoved'))
+    } catch {
+      toast.error(t('shareError'))
+    }
   }
 
   const cvData = {
@@ -1311,6 +1327,29 @@ ${interests.map(i => i.name).join(', ')}
                           {t('shareViews', { count: viewCount })}
                         </p>
                       )}
+
+                      {/* Expiration */}
+                      <div className="pt-1 border-t border-[#E0D6C8]">
+                        <p className="text-xs text-[#6B6560] mb-1">{t('shareExpiryLabel')}</p>
+                        <div className="flex items-center gap-2">
+                          <input
+                            type="date"
+                            value={expiresAt}
+                            min={new Date().toISOString().split('T')[0]}
+                            onChange={e => setExpiresAt(e.target.value)}
+                            onBlur={e => saveExpiry(e.target.value)}
+                            className="flex-1 text-xs bg-[#F3EDE5] rounded px-2 py-1.5 text-[#6B6560] border border-[#E0D6C8]"
+                          />
+                          {expiresAt && (
+                            <button
+                              onClick={() => { setExpiresAt(''); saveExpiry('') }}
+                              className="text-xs text-[#722F37] hover:underline shrink-0"
+                            >
+                              {t('shareExpiryRemove')}
+                            </button>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   )}
 

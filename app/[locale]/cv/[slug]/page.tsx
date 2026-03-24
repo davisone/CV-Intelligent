@@ -51,6 +51,22 @@ export default async function PublicCvPage({ params }: PageProps) {
 
   const t = await getTranslations({ locale, namespace: 'publicCv' })
 
+  // Vérifier si le lien a expiré
+  const isExpired = resume.publicShareExpiresAt && new Date(resume.publicShareExpiresAt) < new Date()
+  if (isExpired) {
+    return (
+      <div className="min-h-screen bg-[#F3EDE5] flex items-center justify-center p-6">
+        <div className="text-center max-w-sm">
+          <div className="w-16 h-16 bg-[#722F37]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🔒</span>
+          </div>
+          <h1 className="text-xl font-bold text-[#1F1A17] mb-2">{t('expiredTitle')}</h1>
+          <p className="text-[#6B6560] text-sm">{t('expiredDescription')}</p>
+        </div>
+      </div>
+    )
+  }
+
   // Incrémenter le compteur sauf si le visiteur est le propriétaire
   let displayCount = resume.viewCount
   if (!session || session.user?.id !== resume.userId) {

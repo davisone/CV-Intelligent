@@ -212,9 +212,10 @@ model Resume {
   userId          String
   title           String
   template        TemplateType    @default(MODERN)
-  isPublic        Boolean         @default(false)
-  publicSlug      String?         @unique
-  viewCount       Int             @default(0)
+  isPublic             Boolean         @default(false)
+  publicSlug           String?         @unique
+  publicShareExpiresAt DateTime?
+  viewCount            Int             @default(0)
   // Payment
   isPaid          Boolean         @default(false)
   paidAt          DateTime?

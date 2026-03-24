@@ -37,4 +37,5 @@ export {
   CreditCard,         // Payment
   BarChart3,          // Charts/Stats
   Globe,              // Partage public
+  Pencil,             // Renommer
 } from 'lucide-react'

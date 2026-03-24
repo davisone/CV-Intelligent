@@ -8144,6 +8144,11 @@
     "shareCopy": "Copy link",
     "shareDescription": "Enable sharing to get a public link to send to recruiters.",
     "shareViews": "{count} view(s)",
+    "shareExpiryLabel": "Link expiration",
+    "shareExpiryPlaceholder": "No expiration",
+    "shareExpiryRemove": "Remove",
+    "shareExpirySaved": "Expiration date saved",
+    "shareExpiryRemoved": "Expiration removed",
     "premiumBannerMessage": "Unlock all premium features to maximize your chances."
   },
   "cvSections": {
@@ -8159,6 +8164,8 @@
   "publicCv": {
     "bannerTagline": "This resume was created with our free tool",
     "bannerCta": "Create mine →",
-    "bannerViews": "views"
+    "bannerViews": "views",
+    "expiredTitle": "This link has expired",
+    "expiredDescription": "The owner of this resume has disabled sharing or set an expiration date."
   }
 }

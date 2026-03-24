@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/confirm-dialog'
 import { EmptyState } from '@/components/ui/empty-state'
-import { FileText, Copy, Trash2, Plus, Loader2 } from '@/components/ui/icons'
+import { FileText, Copy, Trash2, Plus, Loader2, Pencil } from '@/components/ui/icons'
 
 interface Resume {
   id: string
@@ -195,13 +195,15 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                   }}
                 />
               ) : (
-                <h3
-                  className="font-semibold text-gray-900 text-lg mb-1 truncate cursor-pointer hover:text-[#722F37] transition-colors"
+                <div
+                  className="flex items-center gap-1.5 group/title cursor-pointer mb-1"
                   onClick={() => startEditingTitle(resume)}
-                  title="Cliquer pour renommer"
                 >
-                  {resume.title}
-                </h3>
+                  <h3 className="font-semibold text-gray-900 text-lg truncate group-hover/title:text-[#722F37] transition-colors">
+                    {resume.title}
+                  </h3>
+                  <Pencil className="w-3.5 h-3.5 text-[#722F37] opacity-0 group-hover/title:opacity-100 transition-opacity shrink-0" />
+                </div>
               )}
 
               {/* Name if available */}

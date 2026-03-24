@@ -8067,6 +8067,11 @@
     "shareCopy": "Copiar enlace",
     "shareDescription": "Activa el uso compartido para obtener un enlace público para enviar a los reclutadores.",
     "shareViews": "{count} visita(s)",
+    "shareExpiryLabel": "Expiración del enlace",
+    "shareExpiryPlaceholder": "Sin expiración",
+    "shareExpiryRemove": "Quitar",
+    "shareExpirySaved": "Fecha de expiración guardada",
+    "shareExpiryRemoved": "Expiración eliminada",
     "premiumBannerMessage": "Desbloquea todas las funciones premium para maximizar tus posibilidades."
   },
   "cvSections": {
@@ -8082,6 +8087,8 @@
   "publicCv": {
     "bannerTagline": "Este CV fue creado con nuestra herramienta gratuita",
     "bannerCta": "Crear el mío →",
-    "bannerViews": "visitas"
+    "bannerViews": "visitas",
+    "expiredTitle": "Este enlace ha expirado",
+    "expiredDescription": "El propietario de este CV ha desactivado el uso compartido o establecido una fecha de expiración."
   }
 }
