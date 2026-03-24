@@ -8052,6 +8052,15 @@
     "atsMissingKeywords": "Mots-clés manquants",
     "atsSuggestions": "Suggestions",
     "atsError": "Erreur lors de l'analyse ATS",
+    "shareTitle": "Partage public",
+    "sharePublic": "Public",
+    "sharePrivate": "Privé",
+    "shareEnabled": "CV partagé publiquement",
+    "shareDisabled": "CV rendu privé",
+    "shareError": "Erreur lors du changement de visibilité",
+    "shareLinkCopied": "Lien copié !",
+    "shareCopy": "Copier le lien",
+    "shareDescription": "Activez le partage pour obtenir un lien public à envoyer aux recruteurs.",
     "premiumBannerMessage": "Débloquez toutes les fonctionnalités premium pour maximiser vos chances."
   },
   "cvSections": {

@@ -8129,6 +8129,15 @@
     "atsMissingKeywords": "Missing keywords",
     "atsSuggestions": "Suggestions",
     "atsError": "ATS analysis error",
+    "shareTitle": "Public sharing",
+    "sharePublic": "Public",
+    "sharePrivate": "Private",
+    "shareEnabled": "Resume shared publicly",
+    "shareDisabled": "Resume set to private",
+    "shareError": "Error changing visibility",
+    "shareLinkCopied": "Link copied!",
+    "shareCopy": "Copy link",
+    "shareDescription": "Enable sharing to get a public link to send to recruiters.",
     "premiumBannerMessage": "Unlock all premium features to maximize your chances."
   },
   "cvSections": {
