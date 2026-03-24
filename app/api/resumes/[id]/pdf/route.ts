@@ -114,9 +114,17 @@ export async function GET(request: Request, { params }: RouteParams) {
       await page.evaluate(() => {
         const A4_RATIO = 29.7 / 21
 
+        // Forcer html/body à ne pas dépasser la largeur A4
+        document.documentElement.style.margin = '0'
+        document.documentElement.style.padding = '0'
+        document.body.style.margin = '0'
+        document.body.style.padding = '0'
+        document.body.style.background = 'white'
+
         const wrapper = document.querySelector('[data-auto-fit-wrapper]') as HTMLElement | null
         const content = wrapper?.firstElementChild as HTMLElement | null
         if (wrapper && content) {
+          wrapper.style.margin = '0'
           const pageWidth = content.offsetWidth
           const pageHeight = pageWidth * A4_RATIO
           const contentHeight = content.scrollHeight
@@ -140,7 +148,6 @@ export async function GET(request: Request, { params }: RouteParams) {
       const pdfBuffer = await page.pdf({
         format: 'A4',
         printBackground: true,
-        preferCSSPageSize: true,
         margin: { top: 0, right: 0, bottom: 0, left: 0 },
       })
 
