@@ -36,7 +36,7 @@ export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
     { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText, id: 'onboarding-my-resumes' },
     { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
     { labelKey: 'myProfile', href: '/dashboard/profile', icon: User, id: 'onboarding-profile' },
-    { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge },
+    { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge, id: 'onboarding-whats-new' },
     { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
   ]
 

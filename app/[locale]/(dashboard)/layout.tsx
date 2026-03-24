@@ -7,7 +7,6 @@ import { Header } from '@/components/layout/header'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Footer } from '@/components/layout/footer'
 import { UpdateAnnouncementModal } from '@/components/ui/update-announcement-modal'
-import { OnboardingTour } from '@/components/ui/onboarding-tour'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
@@ -34,14 +33,13 @@ export default async function DashboardLayout({
   const [user, latestSlug] = await Promise.all([
     prisma.user.findUnique({
       where: { id: session.user.id },
-      select: { lastSeenUpdateVersion: true, lastSeenChangelogSlug: true, onboardingCompleted: true },
+      select: { lastSeenUpdateVersion: true, lastSeenChangelogSlug: true },
     }),
     Promise.resolve(getLatestChangelogSlug()),
   ])
 
   const showUpdateModal = user?.lastSeenUpdateVersion !== CURRENT_VERSION
   const hasUnreadChangelog = !!latestSlug && user?.lastSeenChangelogSlug !== latestSlug
-  const showOnboarding = user?.onboardingCompleted === false
 
   return (
     <div className="min-h-screen bg-[#FBF8F4] flex flex-col">
@@ -54,7 +52,6 @@ export default async function DashboardLayout({
       </div>
       <Footer />
       {showUpdateModal && <UpdateAnnouncementModal version={CURRENT_VERSION} />}
-      <OnboardingTour show={showOnboarding} />
     </div>
   )
 }

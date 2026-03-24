@@ -1,71 +1,85 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { driver } from 'driver.js'
 import 'driver.js/dist/driver.css'
 
-interface OnboardingTourProps {
-  show: boolean
+export interface TourStep {
+  id: string
+  title: string
+  description: string
+  side: 'top' | 'bottom' | 'left' | 'right'
 }
 
-export function OnboardingTour({ show }: OnboardingTourProps) {
+interface OnboardingTourProps {
+  storageKey: string
+  steps: TourStep[]
+  delay?: number
+}
+
+export function OnboardingTour({ storageKey, steps, delay = 700 }: OnboardingTourProps) {
+  const currentStepRef = useRef(0)
+  const cleanupFnsRef = useRef<(() => void)[]>([])
+
   useEffect(() => {
-    if (!show) return
+    if (typeof window === 'undefined') return
+    if (localStorage.getItem(storageKey) === 'done') return
 
     const driverObj = driver({
       showProgress: true,
       progressText: '{{current}} / {{total}}',
-      nextBtnText: 'Suivant →',
-      prevBtnText: '← Précédent',
-      doneBtnText: 'Terminer',
       allowClose: true,
-      onDestroyStarted: async () => {
-        await fetch('/api/user/complete-onboarding', { method: 'POST' })
+      onDestroyStarted: () => {
+        localStorage.setItem(storageKey, 'done')
         driverObj.destroy()
       },
-      steps: [
-        {
-          element: '#onboarding-create-cv',
-          popover: {
-            title: 'Créer votre premier CV',
-            description: 'Cliquez ici pour créer un nouveau CV. Choisissez parmi nos templates professionnels et personnalisez-le à votre image.',
-            side: 'bottom',
-            align: 'start',
-          },
+      steps: steps.map((step, index) => ({
+        element: `#${step.id}`,
+        popover: {
+          title: step.title,
+          description: `${step.description}<br><small style="color:#aaa;display:block;margin-top:8px">Cliquez sur l'élément surligné pour continuer</small>`,
+          side: step.side,
+          align: 'start' as const,
+          showButtons: ['close'] as ('close')[],
+          closeBtnText: index === steps.length - 1 ? 'Terminer' : 'Passer',
         },
-        {
-          element: '#onboarding-profile',
-          popover: {
-            title: 'Votre profil maître',
-            description: 'Remplissez votre profil une seule fois pour pré-remplir automatiquement tous vos CVs.',
-            side: 'right',
-            align: 'start',
-          },
-        },
-        {
-          element: '#onboarding-templates',
-          popover: {
-            title: 'Choisir un template',
-            description: 'Parcourez nos templates professionnels pour trouver celui qui correspond à votre style et votre secteur.',
-            side: 'bottom',
-            align: 'start',
-          },
-        },
-        {
-          element: '#onboarding-my-resumes',
-          popover: {
-            title: 'Vos CVs',
-            description: 'Retrouvez tous vos CVs ici. Dupliquez-les, renommez-les et partagez-les directement avec les recruteurs.',
-            side: 'right',
-            align: 'start',
-          },
-        },
-      ],
+      })),
     })
 
-    const timer = setTimeout(() => driverObj.drive(), 600)
-    return () => clearTimeout(timer)
-  }, [show])
+    const setupHandlers = () => {
+      steps.forEach((step, index) => {
+        const el = document.getElementById(step.id)
+        if (!el) return
+
+        const handler = (e: MouseEvent) => {
+          if (currentStepRef.current !== index) return
+          e.preventDefault()
+          e.stopPropagation()
+          if (index === steps.length - 1) {
+            driverObj.destroy()
+          } else {
+            currentStepRef.current = index + 1
+            driverObj.moveNext()
+          }
+        }
+
+        el.addEventListener('click', handler, true)
+        cleanupFnsRef.current.push(() => el.removeEventListener('click', handler, true))
+      })
+    }
+
+    currentStepRef.current = 0
+    const timer = setTimeout(() => {
+      driverObj.drive()
+      setupHandlers()
+    }, delay)
+
+    return () => {
+      clearTimeout(timer)
+      cleanupFnsRef.current.forEach(fn => fn())
+      cleanupFnsRef.current = []
+    }
+  }, [storageKey, steps, delay])
 
   return null
 }

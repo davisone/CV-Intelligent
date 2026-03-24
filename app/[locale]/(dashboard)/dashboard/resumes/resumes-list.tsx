@@ -9,6 +9,28 @@ import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/confirm-dialog'
 import { EmptyState } from '@/components/ui/empty-state'
 import { FileText, Copy, Trash2, Plus, Loader2, Pencil } from '@/components/ui/icons'
+import { OnboardingTour, type TourStep } from '@/components/ui/onboarding-tour'
+
+const RESUMES_TOUR_STEPS: TourStep[] = [
+  {
+    id: 'tour-resumes-new',
+    title: 'Créer un CV',
+    description: '<b>Cliquez ici</b> pour créer un nouveau CV depuis un template.',
+    side: 'bottom',
+  },
+  {
+    id: 'tour-resumes-first-title',
+    title: 'Renommer un CV',
+    description: '<b>Cliquez sur le titre</b> d\'un CV pour le renommer directement sans ouvrir l\'éditeur.',
+    side: 'bottom',
+  },
+  {
+    id: 'tour-resumes-first-actions',
+    title: 'Actions disponibles',
+    description: 'Depuis chaque CV : <b>Modifier</b> pour éditer, l\'<b>icône copie</b> pour dupliquer, la <b>corbeille</b> pour supprimer.',
+    side: 'top',
+  },
+]
 
 interface Resume {
   id: string
@@ -160,9 +182,11 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
   return (
     <div className="space-y-4">
+      <OnboardingTour storageKey="tour_v1_resumes" steps={RESUMES_TOUR_STEPS} />
+
       {/* Action bar */}
       <div className="flex justify-end">
-        <Link href="/dashboard/templates">
+        <Link href="/dashboard/templates" id="tour-resumes-new">
           <Button>
             <Plus className="w-4 h-4 mr-2" />
             {t('new')}
@@ -172,7 +196,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
       {/* Resumes grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {resumes.map((resume) => (
+        {resumes.map((resume, index) => (
           <div
             key={resume.id}
             className="bg-white rounded-xl border overflow-hidden hover:shadow-md transition-shadow"
@@ -196,6 +220,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
                 />
               ) : (
                 <div
+                  id={index === 0 ? 'tour-resumes-first-title' : undefined}
                   className="flex items-center gap-1.5 group/title cursor-pointer mb-1"
                   onClick={() => startEditingTitle(resume)}
                 >
@@ -233,7 +258,7 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
               </p>
 
               {/* Actions */}
-              <div className="flex gap-2">
+              <div id={index === 0 ? 'tour-resumes-first-actions' : undefined} className="flex gap-2">
                 <Link href={`/dashboard/resumes/${resume.id}/edit`} className="flex-1">
                   <Button variant="outline" className="w-full">
                     {t('edit')}

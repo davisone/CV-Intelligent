@@ -12,6 +12,7 @@ import { SortableList, DragHandle, DragHandleProps } from '@/components/ui/sorta
 import { CheckoutModal } from '@/components/payments/checkout-modal'
 import { ReviewPromptModal } from '@/components/review-prompt'
 import { PaymentRequired } from '@/components/payments/payment-required'
+import { OnboardingTour, type TourStep } from '@/components/ui/onboarding-tour'
 import { useAutoSave } from '@/hooks/useAutoSave'
 import { useUnsavedChangesWarning } from '@/hooks/useUnsavedChangesWarning'
 import { templates, TemplateType } from '@/components/cv-templates'
@@ -111,6 +112,33 @@ const formatDate = (date: Date | string | null | undefined, format: 'input' | 'd
 
 // Générer un ID unique
 const generateId = () => `temp-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+
+const EDITOR_TOUR_STEPS: TourStep[] = [
+  {
+    id: 'tour-editor-sync',
+    title: 'Importer votre profil',
+    description: '<b>Cliquez ici</b> pour importer vos informations depuis votre profil maître et pré-remplir le CV en un clic.',
+    side: 'bottom',
+  },
+  {
+    id: 'tour-editor-ats',
+    title: 'Score ATS',
+    description: '<b>Cliquez ici</b> pour analyser votre CV et obtenir un score de compatibilité avec les logiciels de recrutement.',
+    side: 'bottom',
+  },
+  {
+    id: 'tour-editor-save',
+    title: 'Sauvegarder',
+    description: '<b>Cliquez ici</b> pour sauvegarder. La <b>sauvegarde automatique</b> fonctionne aussi toutes les 30 secondes.',
+    side: 'bottom',
+  },
+  {
+    id: 'tour-editor-share',
+    title: 'Partager votre CV',
+    description: '<b>Cliquez ici</b> pour activer le lien public de votre CV et le partager directement avec les recruteurs.',
+    side: 'bottom',
+  },
+]
 
 interface ResumeEditorProps {
   resume: any
@@ -702,6 +730,8 @@ ${interests.map(i => i.name).join(', ')}
 
   return (
     <div>
+      <OnboardingTour storageKey="tour_v1_editor" steps={EDITOR_TOUR_STEPS} />
+
       {/* Header - Responsive */}
       <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
@@ -732,7 +762,7 @@ ${interests.map(i => i.name).join(', ')}
             <ArrowLeft className="w-4 h-4 mr-2" />
             <span className="hidden sm:inline">{t('back')}</span>
           </Button>
-          <Button variant="outline" onClick={handleSyncProfile} disabled={isSyncing}>
+          <Button id="tour-editor-sync" variant="outline" onClick={handleSyncProfile} disabled={isSyncing}>
             {isSyncing ? (
               <Loader2 className="w-4 h-4 animate-spin sm:mr-2" />
             ) : (
@@ -740,7 +770,7 @@ ${interests.map(i => i.name).join(', ')}
             )}
             <span className="hidden sm:inline">{isSyncing ? t('importing') : t('importProfile')}</span>
           </Button>
-          <Button variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
+          <Button id="tour-editor-ats" variant="outline" onClick={calculateATS} disabled={isAtsLoading}>
             {isAtsLoading ? (
               <Loader2 className="w-4 h-4 animate-spin sm:mr-2" />
             ) : !canAccessPremiumFeatures ? (
@@ -750,7 +780,7 @@ ${interests.map(i => i.name).join(', ')}
             )}
             <span className="hidden sm:inline">{isAtsLoading ? t('atsAnalyzing') : t('atsScore')}</span>
           </Button>
-          <Button onClick={handleSave} isLoading={isLoading}>
+          <Button id="tour-editor-save" onClick={handleSave} isLoading={isLoading}>
             <Save className="w-4 h-4 sm:mr-2" />
             <span className="hidden sm:inline">{t('sauvegarder')}</span>
           </Button>
@@ -1277,6 +1307,7 @@ ${interests.map(i => i.name).join(', ')}
 
             <div className="relative">
               <Button
+                id="tour-editor-share"
                 variant="outline"
                 onClick={() => setShowSharePanel(v => !v)}
                 className={isPublic ? 'border-green-500 text-green-700' : ''}
