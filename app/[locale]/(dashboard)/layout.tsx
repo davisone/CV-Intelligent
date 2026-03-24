@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/header'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Footer } from '@/components/layout/footer'
 import { UpdateAnnouncementModal } from '@/components/ui/update-announcement-modal'
+import { DashboardOnboardingTour } from '@/components/layout/dashboard-onboarding-tour'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
@@ -30,19 +31,24 @@ export default async function DashboardLayout({
     redirect(`/${locale}/login`)
   }
 
+  // Date de déploiement du tour d'onboarding — seuls les utilisateurs inscrits après cette date le voient
+  const ONBOARDING_TOUR_CUTOFF = new Date('2026-03-24T00:00:00Z')
+
   const [user, latestSlug] = await Promise.all([
     prisma.user.findUnique({
       where: { id: session.user.id },
-      select: { lastSeenUpdateVersion: true, lastSeenChangelogSlug: true },
+      select: { lastSeenUpdateVersion: true, lastSeenChangelogSlug: true, createdAt: true },
     }),
     Promise.resolve(getLatestChangelogSlug()),
   ])
 
   const showUpdateModal = user?.lastSeenUpdateVersion !== CURRENT_VERSION
   const hasUnreadChangelog = !!latestSlug && user?.lastSeenChangelogSlug !== latestSlug
+  const isNewUser = user?.createdAt ? user.createdAt >= ONBOARDING_TOUR_CUTOFF : false
 
   return (
     <div className="min-h-screen bg-[#FBF8F4] flex flex-col">
+      {isNewUser && <DashboardOnboardingTour />}
       <Header />
       <div className="flex flex-1">
         <Sidebar hasUnreadChangelog={hasUnreadChangelog} />

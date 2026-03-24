@@ -7,40 +7,6 @@ import { prisma } from '@/lib/db/prisma'
 import { getTranslations } from 'next-intl/server'
 import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
-import { OnboardingTour } from '@/components/ui/onboarding-tour'
-
-const DASHBOARD_TOUR_STEPS = [
-  {
-    id: 'onboarding-create-cv',
-    title: '👋 Bienvenue !',
-    description: '<b>Cliquez ici</b> pour créer votre premier CV avec l\'un de nos templates professionnels.',
-    side: 'bottom' as const,
-  },
-  {
-    id: 'onboarding-profile',
-    title: 'Votre profil maître',
-    description: '<b>Cliquez sur Mon profil</b> pour renseigner vos informations une seule fois — elles pré-rempliront automatiquement tous vos futurs CVs.',
-    side: 'right' as const,
-  },
-  {
-    id: 'onboarding-templates',
-    title: 'Choisir un template',
-    description: '<b>Cliquez ici</b> pour parcourir nos 5 templates : Moderne, Classique, ATS, Minimaliste et Créatif.',
-    side: 'bottom' as const,
-  },
-  {
-    id: 'onboarding-my-resumes',
-    title: 'Vos CVs',
-    description: '<b>Cliquez sur Mes CVs</b> pour accéder à vos CVs, les dupliquer, les renommer et les partager avec les recruteurs.',
-    side: 'right' as const,
-  },
-  {
-    id: 'onboarding-whats-new',
-    title: 'Nouveautés',
-    description: '<b>Cliquez ici</b> pour découvrir les dernières mises à jour. Un badge vous avertira à chaque nouvelle version.',
-    side: 'right' as const,
-  },
-]
 import { EmptyState } from '@/components/ui/empty-state'
 import { ReviewReminder } from '@/components/review-prompt'
 import { Plus, FileText, Sparkles, TrendingUp, Clock, Eye } from 'lucide-react'
@@ -94,8 +60,6 @@ export default async function DashboardPage() {
       <Suspense fallback={null}>
         <WelcomeToast />
       </Suspense>
-      <OnboardingTour storageKey="tour_v1_dashboard" steps={DASHBOARD_TOUR_STEPS} />
-
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-[#1F1A17]">
