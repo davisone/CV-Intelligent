@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils/helpers'
@@ -27,14 +28,15 @@ interface SidebarProps {
 export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
   const pathname = usePathname()
   const t = useTranslations('nav')
+  const [showChangelogBadge, setShowChangelogBadge] = useState(hasUnreadChangelog)
 
   const navItems: NavItem[] = [
     { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
     { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
     { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
     { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
+    { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge },
     { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
-    { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: hasUnreadChangelog },
   ]
 
   return (
@@ -49,6 +51,7 @@ export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
             <Link
               key={item.href}
               href={item.href}
+              onClick={item.badge ? () => setShowChangelogBadge(false) : undefined}
               className={cn(
                 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                 isActive
