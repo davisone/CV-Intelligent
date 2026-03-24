@@ -23,6 +23,7 @@
     "@upstash/redis": "^1.36.4",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
+    "driver.js": "^1.4.0",
     "gray-matter": "^4.0.3",
     "isomorphic-dompurify": "^2.35.0",
     "lucide-react": "^0.563.0",

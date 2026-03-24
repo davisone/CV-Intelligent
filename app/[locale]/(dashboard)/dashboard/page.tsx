@@ -76,6 +76,7 @@ export default async function DashboardPage() {
 
         {/* Create New - Large */}
         <Link
+          id="onboarding-create-cv"
           href="/dashboard/resumes/new"
           className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#722F37] to-[#5A252C] p-6 rounded-2xl group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
         >
@@ -117,6 +118,7 @@ export default async function DashboardPage() {
           <h3 className="text-sm font-medium text-[#6B6560] mb-4">{t('quickActions')}</h3>
           <div className="space-y-2">
             <Link
+              id="onboarding-templates"
               href="/dashboard/templates"
               className="flex items-center gap-3 p-3 rounded-xl bg-[#FBF8F4] hover:bg-[#E8E0D5] transition-colors group"
             >

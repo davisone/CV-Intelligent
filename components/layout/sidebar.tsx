@@ -19,6 +19,7 @@ interface NavItem {
   href: string
   icon: LucideIcon
   badge?: boolean
+  id?: string
 }
 
 interface SidebarProps {
@@ -32,9 +33,9 @@ export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
 
   const navItems: NavItem[] = [
     { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
-    { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
+    { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText, id: 'onboarding-my-resumes' },
     { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
-    { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
+    { labelKey: 'myProfile', href: '/dashboard/profile', icon: User, id: 'onboarding-profile' },
     { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge },
     { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
   ]
@@ -51,6 +52,7 @@ export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
             <Link
               key={item.href}
               href={item.href}
+              id={item.id}
               onClick={item.badge ? () => setShowChangelogBadge(false) : undefined}
               className={cn(
                 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
