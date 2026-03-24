@@ -230,6 +230,9 @@ export function Footer() {
             </a>
             {' '}— {t('allRights')}
           </p>
+          <p className="text-[#A89F96] text-xs">
+            v{process.env.NEXT_PUBLIC_APP_VERSION}
+          </p>
           <LocaleSwitcher />
         </div>
       </div>

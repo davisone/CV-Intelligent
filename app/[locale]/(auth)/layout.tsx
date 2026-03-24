@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { ArrowLeft } from 'lucide-react'
-import { Footer } from '@/components/layout/footer'
 import type { ReactNode } from 'react'
 
 export default async function AuthLayout({ children }: { children: ReactNode }) {
@@ -31,7 +30,6 @@ export default async function AuthLayout({ children }: { children: ReactNode }) 
         {children}
       </main>
 
-      <Footer />
     </div>
   )
 }

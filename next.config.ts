@@ -4,6 +4,9 @@ import createNextIntlPlugin from 'next-intl/plugin'
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_APP_VERSION: process.env.npm_package_version,
+  },
   serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium-min'],
   async redirects() {
     const locales = ['fr', 'en', 'es']
