@@ -1,14 +1,20 @@
-# CV View Counter — Design Spec
+# Page CV Public — Améliorations : Compteur de vues, Bannière & Mobile
 
 **Date :** 2026-03-24
 
 ## Objectif
 
-Permettre aux utilisateurs de voir combien de fois leur CV public a été consulté. Le compteur s'incrémente à chaque visite de la page publique, sauf si le visiteur est le propriétaire du CV. Le total est affiché à deux endroits : dans le panel de partage de l'éditeur et sur la page publique elle-même.
+Trois améliorations sur la page publique de partage de CV (`app/[locale]/cv/[slug]/page.tsx`) :
+
+1. **Compteur de vues** — afficher combien de fois le CV a été consulté (sans compter l'owner)
+2. **Redesign de la bannière CTA** — meilleure lisibilité et impact visuel
+3. **Adaptation mobile** — le CV ne doit plus déborder sur les petits écrans
 
 ---
 
-## Schéma de données
+## 1. Compteur de vues
+
+### Schéma de données
 
 Ajout d'un champ sur le modèle `Resume` :
 
@@ -18,9 +24,7 @@ viewCount Int @default(0)
 
 Migration : `prisma db push` (non-destructif, valeur par défaut 0 pour tous les CV existants).
 
----
-
-## Logique d'incrément
+### Logique d'incrément
 
 **Fichier :** `app/[locale]/cv/[slug]/page.tsx`
 
@@ -37,64 +41,149 @@ La page publique est un Server Component dynamique. Au moment du rendu :
    })
    const displayCount = updated.viewCount
    ```
-4. Si le visiteur EST l'owner → ne pas incrémenter, afficher `resume.viewCount` tel quel
-5. Utiliser `displayCount` pour l'affichage sur la page
+4. Si le visiteur EST l'owner → ne pas incrémenter, `displayCount = resume.viewCount`
+5. Utiliser `displayCount` pour l'affichage
 
 **Notes :**
-- L'opération `{ increment: 1 }` de Prisma génère un `UPDATE SET viewCount = viewCount + 1` SQL atomique — pas de race condition.
-- Pas de rate-limiting par IP (hors scope, YAGNI à cette échelle).
-- Le propriétaire qui visite sa propre page publique voit le compteur réel sans le modifier.
+- `{ increment: 1 }` Prisma génère `UPDATE SET viewCount = viewCount + 1` — atomique, pas de race condition.
+- Pas de rate-limiting par IP (hors scope, YAGNI).
+- Le propriétaire voit le compteur réel sans le modifier.
 
----
+### Affichage du compteur
 
-## Affichage
+- **Page publique** : dans la bannière CTA (voir section 2), afficher `• X vues` à droite uniquement si `displayCount > 0`.
+- **Panel de partage dans l'éditeur** : sous le lien à copier, afficher `👁 X vues` uniquement si `isPublic === true` ET `viewCount > 0`.
+- Si `viewCount === 0` → ne rien afficher nulle part (évite "0 vues" décourageant pour un CV nouvellement partagé).
 
-### Page publique (`app/[locale]/cv/[slug]/page.tsx`)
+### Traductions i18n (compteur)
 
-Dans la bannière CTA bordeaux existante, ajouter le compteur à droite :
-
-```
-CV créé avec CV Builder — Créez le vôtre gratuitement        • 142 vues
-```
-
-Affiché uniquement si `displayCount > 0`. Si `displayCount === 0`, la bannière reste sans compteur.
-
-### Panel de partage dans l'éditeur (`resume-editor.tsx`)
-
-Le composant `ResumeEditor` reçoit déjà le `resume` en prop. Comme `viewCount` est un champ du modèle `Resume`, il sera automatiquement inclus dans la query existante qui charge le CV pour l'éditeur.
-
-Dans le panel de partage, sous le lien à copier, afficher uniquement si `isPublic === true` ET `viewCount > 0` :
-
-```
-👁 142 vues
-```
-
-Si `viewCount === 0` → ne rien afficher (un CV nouvellement partagé n'affiche pas de compteur tant qu'il n'a pas eu de visite externe).
-
-Clé i18n : `shareViews`
-
----
-
-## Traductions i18n
-
-Ajouter dans l'objet `editor` des fichiers `messages/fr.json`, `messages/en.json`, `messages/es.json` :
+Dans l'objet `editor` de `messages/fr.json`, `en.json`, `es.json` :
 
 - FR : `"shareViews": "{count} vue(s)"`
 - EN : `"shareViews": "{count} view(s)"`
 - ES : `"shareViews": "{count} visita(s)"`
 
-L'interpolation `{count}` est gérée par next-intl v4 avec single braces : `t('shareViews', { count: viewCount })`. C'est la syntaxe officielle next-intl (ICU message format avec `{variableName}` en accolades simples).
+Syntaxe next-intl v4 : `t('shareViews', { count: viewCount })` avec accolades simples `{count}`.
 
-**Comportement "0 vues" intentionnel :** Un CV nouvellement partagé n'affiche aucun compteur tant qu'aucun visiteur externe ne l'a ouvert. C'est voulu — évite d'afficher "0 vues" qui serait décourageant pour l'owner.
+---
+
+## 2. Redesign de la bannière CTA
+
+**Fichier :** `app/[locale]/cv/[slug]/page.tsx`
+
+### Design retenu : Bordeaux redesigné
+
+Remplacer la bannière actuelle par un gradient bordeaux avec badge logo, tagline et bouton CTA blanc inversé :
+
+```tsx
+<div className="bg-gradient-to-r from-[#722F37] to-[#8B3A44] py-2.5 px-4 flex items-center justify-between gap-4">
+  {/* Gauche : badge + tagline */}
+  <div className="flex items-center gap-3 min-w-0">
+    <div className="bg-white/15 rounded px-2 py-0.5 shrink-0">
+      <span className="text-white font-black text-xs tracking-wide">CV BUILDER</span>
+    </div>
+    <span className="text-white/75 text-xs hidden sm:block truncate">
+      {t('bannerTagline')}
+    </span>
+  </div>
+
+  {/* Droite : compteur + CTA */}
+  <div className="flex items-center gap-3 shrink-0">
+    {displayCount > 0 && (
+      <span className="text-white/60 text-xs hidden sm:block">
+        • {displayCount} {t('bannerViews')}
+      </span>
+    )}
+    <Link
+      href="/signup"
+      className="bg-white text-[#722F37] text-xs font-bold px-3 py-1.5 rounded whitespace-nowrap hover:bg-white/90 transition-colors"
+    >
+      {t('bannerCta')}
+    </Link>
+  </div>
+</div>
+```
+
+### Traductions i18n (bannière)
+
+Nouveau namespace `publicCv` dans `messages/fr.json`, `en.json`, `es.json` :
+
+| Clé | FR | EN | ES |
+|-----|----|----|-----|
+| `bannerTagline` | `"Ce CV a été créé avec notre outil gratuit"` | `"This resume was created with our free tool"` | `"Este CV fue creado con nuestra herramienta gratuita"` |
+| `bannerCta` | `"Créer le mien →"` | `"Create mine →"` | `"Crear el mío →"` |
+| `bannerViews` | `"vues"` | `"views"` | `"visitas"` |
+
+Le compteur est rendu directement (`{displayCount}`) suivi du mot traduit — pas d'interpolation ICU nécessaire ici.
+
+---
+
+## 3. Adaptation mobile
+
+### Design retenu : Zoom automatique CSS
+
+Le CV (format A4, 794px de large) est mis à l'échelle via CSS `transform: scale()` pour tenir dans l'écran mobile. L'utilisateur peut pincer pour zoomer nativement.
+
+### Composant client de scaling
+
+Créer `app/[locale]/cv/[slug]/cv-scaler.tsx` — petit composant `"use client"` qui applique le scale au montage :
+
+```tsx
+'use client'
+import { useEffect, useRef } from 'react'
+
+export function CvScaler({ children }: { children: React.ReactNode }) {
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = wrapperRef.current
+    if (!el) return
+    const cvWidth = 794
+    const screenWidth = window.innerWidth
+    if (screenWidth < cvWidth) {
+      const scale = screenWidth / cvWidth
+      el.style.transform = `scale(${scale})`
+      el.style.transformOrigin = 'top center'
+      el.style.marginBottom = `${(scale - 1) * el.offsetHeight}px`
+    }
+  }, [])
+
+  return (
+    <div ref={wrapperRef} data-cv-container style={{ width: '794px' }}>
+      {children}
+    </div>
+  )
+}
+```
+
+### Utilisation dans la page
+
+```tsx
+<div className="min-h-screen bg-[#F3EDE5] overflow-x-hidden">
+  {/* Bannière */}
+  ...
+  {/* CV centré */}
+  <div className="py-6 flex justify-center">
+    <CvScaler>
+      <TemplateComponent data={cvData} locale={locale} />
+    </CvScaler>
+  </div>
+</div>
+```
+
+**Notes :**
+- `overflow-x: hidden` sur le parent évite tout débordement résiduel sur mobile.
+- `marginBottom` négatif compense l'espace laissé par `transform: scale()` (CSS transform ne réduit pas le flux du document).
+- Le composant ne fait rien sur desktop (screenWidth >= 794px → pas de scale appliqué).
 
 ---
 
 ## Ce qui n'est PAS dans le scope
 
 - Historique des vues par jour/semaine
-- Déduplication par IP (trop complexe, YAGNI)
-- Notifications email quand le CV est consulté
-- Compteur de vues unique (session-based)
+- Déduplication par IP
+- Notifications email au propriétaire
+- Vue "liste" ou "résumé" simplifiée pour mobile
 
 ---
 
@@ -102,9 +191,10 @@ L'interpolation `{count}` est gérée par next-intl v4 avec single braces : `t('
 
 | Action | Fichier |
 |--------|---------|
-| Modifier | `prisma/schema.prisma` |
-| Modifier | `app/[locale]/cv/[slug]/page.tsx` |
-| Modifier | `app/[locale]/(dashboard)/dashboard/resumes/[id]/edit/resume-editor.tsx` — le panel de partage (`showSharePanel`) a été ajouté en Task 3 du partage public |
-| Modifier | `messages/fr.json` |
-| Modifier | `messages/en.json` |
-| Modifier | `messages/es.json` |
+| Modifier | `prisma/schema.prisma` — ajout `viewCount` |
+| Modifier | `app/[locale]/cv/[slug]/page.tsx` — incrément, bannière redesignée, intégration CvScaler |
+| Créer | `app/[locale]/cv/[slug]/cv-scaler.tsx` — composant client de scaling mobile |
+| Modifier | `app/[locale]/(dashboard)/dashboard/resumes/[id]/edit/resume-editor.tsx` — affichage `viewCount` dans le panel de partage |
+| Modifier | `messages/fr.json` — clé `shareViews` (objet `editor`) + namespace `publicCv` |
+| Modifier | `messages/en.json` — idem |
+| Modifier | `messages/es.json` — idem |
