@@ -140,6 +140,7 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const [isAtsLoading, setIsAtsLoading] = useState(false)
   const [isPublic, setIsPublic] = useState<boolean>(resume.isPublic ?? false)
   const [publicSlug, setPublicSlug] = useState<string | null>(resume.publicSlug ?? null)
+  const [viewCount] = useState<number>(resume.viewCount ?? 0)
   const [isSharing, setIsSharing] = useState(false)
   const [showSharePanel, setShowSharePanel] = useState(false)
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit')
@@ -1290,19 +1291,26 @@ ${interests.map(i => i.name).join(', ')}
                   </div>
 
                   {isPublic && publicSlug && (
-                    <div className="flex items-center gap-2 mt-2">
-                      <input
-                        readOnly
-                        value={`${window.location.origin}/${locale}/cv/${publicSlug}`}
-                        className="flex-1 text-xs bg-[#F3EDE5] rounded px-2 py-1.5 text-[#6B6560] border border-[#E0D6C8] truncate"
-                      />
-                      <button
-                        onClick={copyShareLink}
-                        className="p-1.5 rounded hover:bg-[#F3EDE5] text-[#722F37]"
-                        title={t('shareCopy')}
-                      >
-                        <Copy className="w-4 h-4" />
-                      </button>
+                    <div className="mt-2 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <input
+                          readOnly
+                          value={`${window.location.origin}/${locale}/cv/${publicSlug}`}
+                          className="flex-1 text-xs bg-[#F3EDE5] rounded px-2 py-1.5 text-[#6B6560] border border-[#E0D6C8] truncate"
+                        />
+                        <button
+                          onClick={copyShareLink}
+                          className="p-1.5 rounded hover:bg-[#F3EDE5] text-[#722F37]"
+                          title={t('shareCopy')}
+                        >
+                          <Copy className="w-4 h-4" />
+                        </button>
+                      </div>
+                      {viewCount > 0 && (
+                        <p className="text-xs text-[#6B6560]">
+                          👁 {t('shareViews', { count: viewCount })}
+                        </p>
+                      )}
                     </div>
                   )}
 

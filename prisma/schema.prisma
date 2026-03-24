@@ -211,6 +211,7 @@ model Resume {
   template        TemplateType    @default(MODERN)
   isPublic        Boolean         @default(false)
   publicSlug      String?         @unique
+  viewCount       Int             @default(0)
   // Payment
   isPaid          Boolean         @default(false)
   paidAt          DateTime?

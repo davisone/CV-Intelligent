@@ -8138,6 +8138,7 @@
     "shareLinkCopied": "Link copied!",
     "shareCopy": "Copy link",
     "shareDescription": "Enable sharing to get a public link to send to recruiters.",
+    "shareViews": "{count} view(s)",
     "premiumBannerMessage": "Unlock all premium features to maximize your chances."
   },
   "cvSections": {
@@ -8149,5 +8150,10 @@
     "interests": "Interests",
     "certifications": "Certifications",
     "projects": "Projects"
+  },
+  "publicCv": {
+    "bannerTagline": "This resume was created with our free tool",
+    "bannerCta": "Create mine →",
+    "bannerViews": "views"
   }
 }

@@ -1,7 +1,11 @@
 import { notFound } from 'next/navigation'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { templates, TemplateType } from '@/components/cv-templates'
 import { Link } from '@/i18n/navigation'
+import { getTranslations } from 'next-intl/server'
+import { CvScaler } from './cv-scaler'
 import type { Metadata } from 'next'
 
 interface PageProps {
@@ -26,21 +30,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function PublicCvPage({ params }: PageProps) {
   const { slug, locale } = await params
 
-  const resume = await prisma.resume.findFirst({
-    where: { publicSlug: slug, isPublic: true },
-    include: {
-      personalInfo: true,
-      experiences: { orderBy: { order: 'asc' } },
-      educations: { orderBy: { order: 'asc' } },
-      certifications: { orderBy: { order: 'asc' } },
-      skills: { orderBy: { order: 'asc' } },
-      languages: { orderBy: { order: 'asc' } },
-      projects: { orderBy: { order: 'asc' } },
-      interests: { orderBy: { order: 'asc' } },
-    },
-  })
+  const [session, resume] = await Promise.all([
+    getServerSession(authOptions),
+    prisma.resume.findFirst({
+      where: { publicSlug: slug, isPublic: true },
+      include: {
+        personalInfo: true,
+        experiences: { orderBy: { order: 'asc' } },
+        educations: { orderBy: { order: 'asc' } },
+        certifications: { orderBy: { order: 'asc' } },
+        skills: { orderBy: { order: 'asc' } },
+        languages: { orderBy: { order: 'asc' } },
+        projects: { orderBy: { order: 'asc' } },
+        interests: { orderBy: { order: 'asc' } },
+      },
+    }),
+  ])
 
   if (!resume) notFound()
+
+  const t = await getTranslations({ locale, namespace: 'publicCv' })
+
+  // Incrémenter le compteur sauf si le visiteur est le propriétaire
+  let displayCount = resume.viewCount
+  if (!session || session.user?.id !== resume.userId) {
+    const updated = await prisma.resume.update({
+      where: { id: resume.id },
+      data: { viewCount: { increment: 1 } },
+      select: { viewCount: true },
+    })
+    displayCount = updated.viewCount
+  }
 
   const templateKey = (resume.template as TemplateType) || 'MODERN'
   const TemplateComponent = templates[templateKey] || templates.MODERN
@@ -73,24 +93,37 @@ export default async function PublicCvPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#F3EDE5]">
-      {/* Bannière CTA */}
-      <div className="bg-[#722F37] text-white py-2 px-4 text-center text-sm">
-        <span>CV créé avec </span>
-        <Link href="/" className="font-semibold underline hover:text-white/80">
-          CV Builder
-        </Link>
-        <span> — </span>
-        <Link href="/signup" className="font-semibold underline hover:text-white/80">
-          Créez le vôtre gratuitement
-        </Link>
+    <div className="min-h-screen bg-[#F3EDE5] overflow-x-hidden">
+      {/* Bannière CTA redesignée */}
+      <div className="bg-gradient-to-r from-[#722F37] to-[#8B3A44] py-2.5 px-4 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="bg-white/15 rounded px-2 py-0.5 shrink-0">
+            <span className="text-white font-black text-xs tracking-wide">CV BUILDER</span>
+          </div>
+          <span className="text-white/75 text-xs hidden sm:block truncate">
+            {t('bannerTagline')}
+          </span>
+        </div>
+        <div className="flex items-center gap-3 shrink-0">
+          {displayCount > 0 && (
+            <span className="text-white/60 text-xs hidden sm:block">
+              • {displayCount} {t('bannerViews')}
+            </span>
+          )}
+          <Link
+            href="/signup"
+            className="bg-white text-[#722F37] text-xs font-bold px-3 py-1.5 rounded whitespace-nowrap hover:bg-white/90 transition-colors"
+          >
+            {t('bannerCta')}
+          </Link>
+        </div>
       </div>
 
-      {/* CV centré */}
-      <div className="py-8 px-4 flex justify-center">
-        <div data-cv-container>
+      {/* CV centré avec scaling mobile */}
+      <div className="py-6 flex justify-center">
+        <CvScaler>
           <TemplateComponent data={cvData} locale={locale} />
-        </div>
+        </CvScaler>
       </div>
     </div>
   )

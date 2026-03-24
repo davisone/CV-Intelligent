@@ -8061,6 +8061,7 @@
     "shareLinkCopied": "¡Enlace copiado!",
     "shareCopy": "Copiar enlace",
     "shareDescription": "Activa el uso compartido para obtener un enlace público para enviar a los reclutadores.",
+    "shareViews": "{count} visita(s)",
     "premiumBannerMessage": "Desbloquea todas las funciones premium para maximizar tus posibilidades."
   },
   "cvSections": {
@@ -8072,5 +8073,10 @@
     "interests": "Intereses",
     "certifications": "Certificaciones",
     "projects": "Proyectos"
+  },
+  "publicCv": {
+    "bannerTagline": "Este CV fue creado con nuestra herramienta gratuita",
+    "bannerCta": "Crear el mío →",
+    "bannerViews": "visitas"
   }
 }
