@@ -106,7 +106,9 @@ Remplacer la bannière actuelle par un gradient bordeaux avec badge logo, taglin
 
 ### Traductions i18n (bannière)
 
-Nouveau namespace `publicCv` dans `messages/fr.json`, `en.json`, `es.json` :
+**Namespace `publicCv`** — nouveau namespace dédié à la page publique, distinct du namespace `editor` (utilisé dans l'éditeur de CV). Cette séparation est logique : `editor` concerne l'interface de l'éditeur, `publicCv` concerne la page publique visitée par les recruteurs.
+
+Ajouter dans `messages/fr.json`, `en.json`, `es.json` un objet `publicCv` :
 
 | Clé | FR | EN | ES |
 |-----|----|----|-----|
@@ -114,7 +116,11 @@ Nouveau namespace `publicCv` dans `messages/fr.json`, `en.json`, `es.json` :
 | `bannerCta` | `"Créer le mien →"` | `"Create mine →"` | `"Crear el mío →"` |
 | `bannerViews` | `"vues"` | `"views"` | `"visitas"` |
 
-Le compteur est rendu directement (`{displayCount}`) suivi du mot traduit — pas d'interpolation ICU nécessaire ici.
+**Rendu du compteur dans la bannière :** `{displayCount} {t('bannerViews')}` — le chiffre est rendu comme nœud JSX (`{displayCount}`), le mot est traduit séparément. Pas d'interpolation ICU nécessaire ici car c'est une composition JSX directe.
+
+**Pourquoi deux approches d'interpolation ?**
+- `shareViews` (namespace `editor`, dans `resume-editor.tsx`) : rendu via `t('shareViews', { count: viewCount })` — interpolation ICU car la clé contient une chaîne complète avec le chiffre intégré.
+- `bannerViews` (namespace `publicCv`, dans `page.tsx`) : rendu via `{displayCount} {t('bannerViews')}` — composition JSX directe car le chiffre et le mot sont des nœuds séparés dans le JSX. Les deux approches sont valides et cohérentes avec leurs contextes respectifs.
 
 ---
 
