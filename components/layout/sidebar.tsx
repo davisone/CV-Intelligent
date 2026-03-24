@@ -62,7 +62,7 @@ export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
               <Icon className="w-5 h-5" />
               <span className="flex-1">{t(item.labelKey as Parameters<typeof t>[0])}</span>
               {item.badge && (
-                <span className="w-2 h-2 rounded-full bg-[#722F37] shrink-0" />
+                <span className="min-w-[1.1rem] h-[1.1rem] rounded-full bg-[#722F37] text-white text-[10px] font-bold flex items-center justify-center shrink-0">1</span>
               )}
             </Link>
           )
