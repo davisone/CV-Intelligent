@@ -6,15 +6,12 @@ import { getLatestChangelogSlug } from '@/lib/changelog'
 import { Header } from '@/components/layout/header'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Footer } from '@/components/layout/footer'
-import { UpdateAnnouncementModal } from '@/components/ui/update-announcement-modal'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
-
-const CURRENT_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? '1.4.0'
 
 export default async function DashboardLayout({
   children,
@@ -33,17 +30,16 @@ export default async function DashboardLayout({
   const [user, latestSlug] = await Promise.all([
     prisma.user.findUnique({
       where: { id: session.user.id },
-      select: { lastSeenUpdateVersion: true, lastSeenChangelogSlug: true },
+      select: { lastSeenChangelogSlug: true },
     }),
     Promise.resolve(getLatestChangelogSlug()),
   ])
 
-  const showUpdateModal = user?.lastSeenUpdateVersion !== CURRENT_VERSION
   const hasUnreadChangelog = !!latestSlug && user?.lastSeenChangelogSlug !== latestSlug
 
   return (
     <div className="min-h-screen bg-[#FBF8F4] flex flex-col">
-      <Header />
+      <Header hasUnreadChangelog={hasUnreadChangelog} />
       <div className="flex flex-1">
         <Sidebar hasUnreadChangelog={hasUnreadChangelog} />
         <main className="flex-1 p-6">
@@ -51,7 +47,6 @@ export default async function DashboardLayout({
         </main>
       </div>
       <Footer />
-      {showUpdateModal && <UpdateAnnouncementModal version={CURRENT_VERSION} />}
     </div>
   )
 }

@@ -8090,5 +8090,14 @@
     "bannerViews": "visitas",
     "expiredTitle": "Este enlace ha expirado",
     "expiredDescription": "El propietario de este CV ha desactivado el uso compartido o establecido una fecha de expiración."
+  },
+  "review": {
+    "reminderTitle": "¿Te gusta CV Builder?",
+    "reminderText": "¡Tu reseña en Google nos ayuda a darnos a conocer y a mejorar!",
+    "leaveReview": "Dejar una reseña",
+    "modalTitle": "¡Tu opinión importa!",
+    "modalText": "Acabas de descargar tu CV. Si la experiencia te gustó, ¡una reseña rápida en Google nos ayudaría mucho!",
+    "later": "Más tarde",
+    "neverShow": "No mostrar más"
   }
 }

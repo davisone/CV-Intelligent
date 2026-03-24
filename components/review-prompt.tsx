@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Star, X } from 'lucide-react'
+import { Star } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 
 const GOOGLE_REVIEW_URL = 'https://g.page/r/CcSyetXUJJrpEAE/review'
@@ -33,7 +34,7 @@ interface ReviewPromptModalProps {
 }
 
 export const ReviewPromptModal = ({ onClose }: ReviewPromptModalProps) => {
-  // null = pas encore vérifié, true/false = résultat du check localStorage
+  const t = useTranslations('review')
   const [visible, setVisible] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -91,10 +92,10 @@ export const ReviewPromptModal = ({ onClose }: ReviewPromptModalProps) => {
           id="review-modal-title"
           className="text-xl font-semibold text-[#1F1A17] text-center mb-2"
         >
-          Votre avis compte !
+          {t('modalTitle')}
         </h2>
         <p className="text-[#6B6560] text-center text-sm mb-6">
-          Vous venez de télécharger votre CV. Si l&apos;expérience vous a plu, un petit avis sur Google nous aiderait beaucoup !
+          {t('modalText')}
         </p>
 
         {/* Actions */}
@@ -104,20 +105,20 @@ export const ReviewPromptModal = ({ onClose }: ReviewPromptModalProps) => {
             className="w-full bg-[#722F37] hover:bg-[#5A252C] text-white"
           >
             <Star className="w-4 h-4 fill-white" />
-            Laisser un avis
+            {t('leaveReview')}
           </Button>
           <Button
             variant="outline"
             onClick={handleDismiss}
             className="w-full"
           >
-            Plus tard
+            {t('later')}
           </Button>
           <button
             onClick={handleNeverShow}
             className="text-xs text-[#6B6560]/60 hover:text-[#6B6560] transition-colors mt-1"
           >
-            Ne plus demander
+            {t('neverShow')}
           </button>
         </div>
       </div>
@@ -127,6 +128,8 @@ export const ReviewPromptModal = ({ onClose }: ReviewPromptModalProps) => {
 
 // Encart permanent pour le dashboard
 export const ReviewReminder = () => {
+  const t = useTranslations('review')
+
   const handleLeaveReview = () => {
     window.open(GOOGLE_REVIEW_URL, '_blank')
   }
@@ -146,10 +149,10 @@ export const ReviewReminder = () => {
         </div>
 
         <h3 className="text-base font-semibold text-[#1F1A17] mb-1">
-          Vous aimez CV Builder ?
+          {t('reminderTitle')}
         </h3>
         <p className="text-sm text-[#6B6560] mb-4">
-          Votre avis sur Google nous aide à nous faire connaître et à nous améliorer !
+          {t('reminderText')}
         </p>
 
         <button
@@ -157,7 +160,7 @@ export const ReviewReminder = () => {
           className="inline-flex items-center gap-2 px-4 py-2 bg-[#722F37] hover:bg-[#5A252C] text-white text-sm font-medium rounded-xl transition-colors"
         >
           <Star className="w-4 h-4 fill-white" />
-          Laisser un avis
+          {t('leaveReview')}
         </button>
       </div>
     </div>

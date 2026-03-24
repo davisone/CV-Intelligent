@@ -16,6 +16,7 @@ import {
   Settings,
   Menu,
   X,
+  Sparkles,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -23,21 +24,28 @@ interface NavItem {
   labelKey: string
   href: string
   icon: LucideIcon
+  badge?: boolean
 }
 
-const navItems: NavItem[] = [
-  { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
-  { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
-  { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
-  { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
-]
+interface HeaderProps {
+  hasUnreadChangelog?: boolean
+}
 
-export function Header() {
+export function Header({ hasUnreadChangelog = false }: HeaderProps) {
   const { data: session } = useSession()
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [showChangelogBadge, setShowChangelogBadge] = useState(hasUnreadChangelog)
   const t = useTranslations('nav')
+
+  const navItems: NavItem[] = [
+    { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
+    { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
+    { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
+    { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
+    { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge },
+    { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
+  ]
 
   return (
     <header className="h-16 border-b border-[#E0D6C8] bg-[#F3EDE5] flex items-center justify-between px-6 sticky top-0 z-40">
@@ -87,7 +95,10 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    if (item.badge) setShowChangelogBadge(false)
+                  }}
                   className={cn(
                     'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                     isActive
@@ -96,7 +107,10 @@ export function Header() {
                   )}
                 >
                   <Icon className="w-5 h-5" />
-                  {t(item.labelKey as Parameters<typeof t>[0])}
+                  <span className="flex-1">{t(item.labelKey as Parameters<typeof t>[0])}</span>
+                  {item.badge && (
+                    <span className="min-w-[1.1rem] h-[1.1rem] rounded-full bg-[#722F37] text-white text-[10px] font-bold flex items-center justify-center shrink-0">1</span>
+                  )}
                 </Link>
               )
             })}
