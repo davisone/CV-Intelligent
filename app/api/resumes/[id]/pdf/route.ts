@@ -114,17 +114,29 @@ export async function GET(request: Request, { params }: RouteParams) {
       await page.evaluate(() => {
         const A4_RATIO = 29.7 / 21
 
-        // Forcer html/body à ne pas dépasser la largeur A4
-        document.documentElement.style.margin = '0'
-        document.documentElement.style.padding = '0'
-        document.body.style.margin = '0'
-        document.body.style.padding = '0'
-        document.body.style.background = 'white'
+        // Forcer html/body sans marges
+        document.documentElement.style.cssText = 'margin:0!important;padding:0!important;'
+        document.body.style.cssText = 'margin:0!important;padding:0!important;background:white!important;'
 
+        // Forcer le wrapper et le template à prendre 100% de la largeur
+        // au lieu de 21cm (évite le décalage cm↔px en mode print)
         const wrapper = document.querySelector('[data-auto-fit-wrapper]') as HTMLElement | null
+        if (wrapper) {
+          wrapper.style.width = '100%'
+          wrapper.style.margin = '0'
+        }
+
+        // Forcer le template div (enfant de cv-container) à 100%
+        const cvContainer = document.querySelector('[data-cv-container]') as HTMLElement | null
+        const templateDiv = cvContainer?.firstElementChild as HTMLElement | null
+        if (templateDiv) {
+          templateDiv.style.width = '100%'
+          templateDiv.style.margin = '0'
+        }
+
+        // Auto-fit : scaler si le contenu dépasse la hauteur A4
         const content = wrapper?.firstElementChild as HTMLElement | null
         if (wrapper && content) {
-          wrapper.style.margin = '0'
           const pageWidth = content.offsetWidth
           const pageHeight = pageWidth * A4_RATIO
           const contentHeight = content.scrollHeight
