@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
+import { getLatestChangelogSlug } from '@/lib/changelog'
 import { Header } from '@/components/layout/header'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Footer } from '@/components/layout/footer'
@@ -29,18 +30,22 @@ export default async function DashboardLayout({
     redirect(`/${locale}/login`)
   }
 
-  const user = await prisma.user.findUnique({
-    where: { id: session.user.id },
-    select: { lastSeenUpdateVersion: true },
-  })
+  const [user, latestSlug] = await Promise.all([
+    prisma.user.findUnique({
+      where: { id: session.user.id },
+      select: { lastSeenUpdateVersion: true, lastSeenChangelogSlug: true },
+    }),
+    Promise.resolve(getLatestChangelogSlug()),
+  ])
 
   const showUpdateModal = user?.lastSeenUpdateVersion !== CURRENT_VERSION
+  const hasUnreadChangelog = !!latestSlug && user?.lastSeenChangelogSlug !== latestSlug
 
   return (
     <div className="min-h-screen bg-[#FBF8F4] flex flex-col">
       <Header />
       <div className="flex flex-1">
-        <Sidebar />
+        <Sidebar hasUnreadChangelog={hasUnreadChangelog} />
         <main className="flex-1 p-6">
           {children}
         </main>

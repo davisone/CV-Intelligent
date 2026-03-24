@@ -9,6 +9,7 @@ import {
   Palette,
   User,
   Settings,
+  Sparkles,
 } from '@/components/ui/icons'
 import { LucideIcon } from 'lucide-react'
 
@@ -16,19 +17,25 @@ interface NavItem {
   labelKey: string
   href: string
   icon: LucideIcon
+  badge?: boolean
 }
 
-const navItems: NavItem[] = [
-  { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
-  { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
-  { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
-  { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
-]
+interface SidebarProps {
+  hasUnreadChangelog?: boolean
+}
 
-export function Sidebar() {
+export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
   const pathname = usePathname()
   const t = useTranslations('nav')
+
+  const navItems: NavItem[] = [
+    { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
+    { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
+    { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
+    { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
+    { labelKey: 'settings', href: '/dashboard/settings', icon: Settings },
+    { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: hasUnreadChangelog },
+  ]
 
   return (
     <aside className="w-64 border-r border-[#E0D6C8] bg-[#F3EDE5] h-[calc(100vh-4rem)] hidden md:block sticky top-16 overflow-y-auto">
@@ -50,7 +57,10 @@ export function Sidebar() {
               )}
             >
               <Icon className="w-5 h-5" />
-              {t(item.labelKey as Parameters<typeof t>[0])}
+              <span className="flex-1">{t(item.labelKey as Parameters<typeof t>[0])}</span>
+              {item.badge && (
+                <span className="w-2 h-2 rounded-full bg-[#722F37] shrink-0" />
+              )}
             </Link>
           )
         })}
