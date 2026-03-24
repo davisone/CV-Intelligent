@@ -64,6 +64,8 @@ export async function POST(request: Request) {
         verificationToken,
         verificationTokenExpiry,
         locale,
+        lastSeenUpdateVersion: process.env.NEXT_PUBLIC_APP_VERSION ?? '1.4.0',
+        lastSeenChangelogSlug: (await import('@/lib/changelog')).getLatestChangelogSlug() ?? undefined,
       },
       select: {
         id: true,
