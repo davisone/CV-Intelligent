@@ -91,7 +91,7 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
               href="https://g.page/r/CcSyetXUJJrpEAE/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold bg-[#722F37] text-white rounded-lg px-4 py-2 hover:bg-[#5a2329] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold bg-[#722F37] !text-white rounded-lg px-4 py-2 hover:bg-[#5a2329] transition-colors"
             >
               {t('reviewButton')}
             </a>
