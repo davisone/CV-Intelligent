@@ -11,26 +11,6 @@ import { EmptyState } from '@/components/ui/empty-state'
 import { FileText, Copy, Trash2, Plus, Loader2, Pencil } from '@/components/ui/icons'
 import { OnboardingTour, type TourStep } from '@/components/ui/onboarding-tour'
 
-const RESUMES_TOUR_STEPS: TourStep[] = [
-  {
-    id: 'tour-resumes-new',
-    title: 'Créer un CV',
-    description: '<b>Cliquez ici</b> pour créer un nouveau CV depuis un template.',
-    side: 'bottom',
-  },
-  {
-    id: 'tour-resumes-first-title',
-    title: 'Renommer un CV',
-    description: '<b>Cliquez sur le titre</b> d\'un CV pour le renommer directement sans ouvrir l\'éditeur.',
-    side: 'bottom',
-  },
-  {
-    id: 'tour-resumes-first-actions',
-    title: 'Actions disponibles',
-    description: 'Depuis chaque CV : <b>Modifier</b> pour éditer, l\'<b>icône copie</b> pour dupliquer, la <b>corbeille</b> pour supprimer.',
-    side: 'top',
-  },
-]
 
 interface Resume {
   id: string
@@ -70,6 +50,11 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
   const router = useRouter()
   const t = useTranslations('dashboard.resumes')
   const tCommon = useTranslations('common')
+  const tourSteps: TourStep[] = [
+    { id: 'tour-resumes-new', title: t('tour.step1.title'), description: t('tour.step1.description'), side: 'bottom' },
+    { id: 'tour-resumes-first-title', title: t('tour.step2.title'), description: t('tour.step2.description'), side: 'bottom' },
+    { id: 'tour-resumes-first-actions', title: t('tour.step3.title'), description: t('tour.step3.description'), side: 'top' },
+  ]
   const [resumes, setResumes] = useState(initialResumes)
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [duplicatingId, setDuplicatingId] = useState<string | null>(null)
@@ -182,7 +167,11 @@ export function ResumesList({ initialResumes }: { initialResumes: Resume[] }) {
 
   return (
     <div className="space-y-4">
-      <OnboardingTour storageKey="tour_v1_resumes" steps={RESUMES_TOUR_STEPS} />
+      <OnboardingTour
+        storageKey="tour_v1_resumes"
+        steps={tourSteps}
+        labels={{ next: t('tour.next'), prev: t('tour.prev'), done: t('tour.done') }}
+      />
 
       {/* Action bar */}
       <div className="flex justify-end">

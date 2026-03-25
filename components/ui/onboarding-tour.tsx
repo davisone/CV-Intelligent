@@ -11,13 +11,24 @@ export interface TourStep {
   side: 'top' | 'bottom' | 'left' | 'right'
 }
 
+export interface TourLabels {
+  next: string
+  prev: string
+  done: string
+}
+
 interface OnboardingTourProps {
   storageKey: string
   steps: TourStep[]
   delay?: number
+  labels?: TourLabels
 }
 
-export function OnboardingTour({ storageKey, steps, delay = 700 }: OnboardingTourProps) {
+export function OnboardingTour({ storageKey, steps, delay = 700, labels }: OnboardingTourProps) {
+  const nextBtn = labels?.next ?? 'Suivant →'
+  const prevBtn = labels?.prev ?? '← Précédent'
+  const doneBtn = labels?.done ?? 'Terminer'
+
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (localStorage.getItem(storageKey) === 'done') return
@@ -26,9 +37,9 @@ export function OnboardingTour({ storageKey, steps, delay = 700 }: OnboardingTou
       showProgress: true,
       progressText: '{{current}} / {{total}}',
       allowClose: true,
-      nextBtnText: 'Suivant →',
-      prevBtnText: '← Précédent',
-      doneBtnText: 'Terminer',
+      nextBtnText: nextBtn,
+      prevBtnText: prevBtn,
+      doneBtnText: doneBtn,
       onDestroyStarted: () => {
         localStorage.setItem(storageKey, 'done')
         driverObj.destroy()
@@ -49,7 +60,7 @@ export function OnboardingTour({ storageKey, steps, delay = 700 }: OnboardingTou
       clearTimeout(timer)
       driverObj.destroy()
     }
-  }, [storageKey, steps, delay])
+  }, [storageKey, steps, delay, nextBtn, prevBtn, doneBtn])
 
   return null
 }

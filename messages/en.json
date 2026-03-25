@@ -7727,7 +7727,17 @@
       "justNow": "just now",
       "minutesAgo": "{count}min ago",
       "hoursAgo": "{count}h ago",
-      "daysAgo": "{count}d ago"
+      "daysAgo": "{count}d ago",
+      "tour": {
+        "next": "Next →",
+        "prev": "← Back",
+        "done": "Finish",
+        "step1": { "title": "Welcome!", "description": "Click here to create your first resume using one of our professional templates." },
+        "step2": { "title": "Choose a template", "description": "Browse our 5 templates: Modern, Classic, ATS, Minimalist and Creative." },
+        "step3": { "title": "Your master profile", "description": "Fill in your information once — it will automatically pre-fill all your future resumes." },
+        "step4": { "title": "Your resumes", "description": "Access your resumes, duplicate them, rename them and share them with recruiters." },
+        "step5": { "title": "What's new", "description": "Find the latest updates here. A badge will notify you with each new version." }
+      }
     },
     "resumes": {
       "title": "My Resumes",
@@ -7752,7 +7762,15 @@
       "eduShort": "edu.",
       "skillShort": "skills",
       "langShort": "lang.",
-      "intShort": "int."
+      "intShort": "int.",
+      "tour": {
+        "next": "Next →",
+        "prev": "← Back",
+        "done": "Finish",
+        "step1": { "title": "Create a resume", "description": "<b>Click here</b> to create a new resume from a template." },
+        "step2": { "title": "Rename a resume", "description": "<b>Click on the title</b> of a resume to rename it directly without opening the editor." },
+        "step3": { "title": "Available actions", "description": "From each resume: <b>Edit</b> to modify, the <b>copy icon</b> to duplicate, the <b>trash icon</b> to delete." }
+      }
     },
     "templates": {
       "title": "Choose a template",
@@ -8149,7 +8167,16 @@
     "shareExpiryRemove": "Remove",
     "shareExpirySaved": "Expiration date saved",
     "shareExpiryRemoved": "Expiration removed",
-    "premiumBannerMessage": "Unlock all premium features to maximize your chances."
+    "premiumBannerMessage": "Unlock all premium features to maximize your chances.",
+    "tour": {
+      "next": "Next →",
+      "prev": "← Back",
+      "done": "Finish",
+      "step1": { "title": "Import your profile", "description": "<b>Click here</b> to import your information from your master profile and pre-fill the resume in one click." },
+      "step2": { "title": "ATS Score", "description": "<b>Click here</b> to analyze your resume and get a compatibility score with recruitment software." },
+      "step3": { "title": "Save", "description": "<b>Click here</b> to save. <b>Auto-save</b> also works every 30 seconds." },
+      "step4": { "title": "Share your resume", "description": "<b>Click here</b> to enable the public link for your resume and share it directly with recruiters." }
+    }
   },
   "cvSections": {
     "personalInfo": "Personal Information",

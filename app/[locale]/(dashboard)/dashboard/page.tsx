@@ -72,35 +72,36 @@ export default async function DashboardPage() {
       {isNewUser && (
         <OnboardingTour
           storageKey="tour_v2_dashboard"
+          labels={{ next: t('tour.next'), prev: t('tour.prev'), done: t('tour.done') }}
           steps={[
             {
               id: 'onboarding-create-cv',
-              title: '👋 Bienvenue !',
-              description: 'Cliquez ici pour créer votre premier CV avec l\'un de nos templates professionnels.',
+              title: t('tour.step1.title'),
+              description: t('tour.step1.description'),
               side: 'bottom',
             },
             {
               id: 'onboarding-templates',
-              title: 'Choisir un template',
-              description: 'Parcourez nos 5 templates : Moderne, Classique, ATS, Minimaliste et Créatif.',
+              title: t('tour.step2.title'),
+              description: t('tour.step2.description'),
               side: 'bottom',
             },
             {
               id: 'onboarding-profile',
-              title: 'Votre profil maître',
-              description: 'Renseignez vos informations une seule fois — elles pré-rempliront automatiquement tous vos futurs CVs.',
+              title: t('tour.step3.title'),
+              description: t('tour.step3.description'),
               side: 'right',
             },
             {
               id: 'onboarding-my-resumes',
-              title: 'Vos CVs',
-              description: 'Accédez à vos CVs, dupliquez-les, renommez-les et partagez-les avec les recruteurs.',
+              title: t('tour.step4.title'),
+              description: t('tour.step4.description'),
               side: 'right',
             },
             {
               id: 'onboarding-whats-new',
-              title: 'Nouveautés',
-              description: 'Retrouvez les dernières mises à jour ici. Un badge vous avertira à chaque nouvelle version.',
+              title: t('tour.step5.title'),
+              description: t('tour.step5.description'),
               side: 'right',
             },
           ]}

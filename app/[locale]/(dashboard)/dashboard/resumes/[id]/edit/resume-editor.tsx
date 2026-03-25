@@ -113,32 +113,6 @@ const formatDate = (date: Date | string | null | undefined, format: 'input' | 'd
 // Générer un ID unique
 const generateId = () => `temp-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
 
-const EDITOR_TOUR_STEPS: TourStep[] = [
-  {
-    id: 'tour-editor-sync',
-    title: 'Importer votre profil',
-    description: '<b>Cliquez ici</b> pour importer vos informations depuis votre profil maître et pré-remplir le CV en un clic.',
-    side: 'bottom',
-  },
-  {
-    id: 'tour-editor-ats',
-    title: 'Score ATS',
-    description: '<b>Cliquez ici</b> pour analyser votre CV et obtenir un score de compatibilité avec les logiciels de recrutement.',
-    side: 'bottom',
-  },
-  {
-    id: 'tour-editor-save',
-    title: 'Sauvegarder',
-    description: '<b>Cliquez ici</b> pour sauvegarder. La <b>sauvegarde automatique</b> fonctionne aussi toutes les 30 secondes.',
-    side: 'bottom',
-  },
-  {
-    id: 'tour-editor-share',
-    title: 'Partager votre CV',
-    description: '<b>Cliquez ici</b> pour activer le lien public de votre CV et le partager directement avec les recruteurs.',
-    side: 'bottom',
-  },
-]
 
 interface ResumeEditorProps {
   resume: any
@@ -151,6 +125,12 @@ export function ResumeEditor({ resume, canAccessPremiumFeatures = true, requires
   const locale = useLocale()
   const t = useTranslations('editor')
   const tSections = useTranslations('cvSections')
+  const editorTourSteps: TourStep[] = [
+    { id: 'tour-editor-sync', title: t('tour.step1.title'), description: t('tour.step1.description'), side: 'bottom' },
+    { id: 'tour-editor-ats', title: t('tour.step2.title'), description: t('tour.step2.description'), side: 'bottom' },
+    { id: 'tour-editor-save', title: t('tour.step3.title'), description: t('tour.step3.description'), side: 'bottom' },
+    { id: 'tour-editor-share', title: t('tour.step4.title'), description: t('tour.step4.description'), side: 'bottom' },
+  ]
   const [isLoading, setIsLoading] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
@@ -730,7 +710,11 @@ ${interests.map(i => i.name).join(', ')}
 
   return (
     <div>
-      <OnboardingTour storageKey="tour_v1_editor" steps={EDITOR_TOUR_STEPS} />
+      <OnboardingTour
+        storageKey="tour_v1_editor"
+        steps={editorTourSteps}
+        labels={{ next: t('tour.next'), prev: t('tour.prev'), done: t('tour.done') }}
+      />
 
       {/* Header - Responsive */}
       <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">

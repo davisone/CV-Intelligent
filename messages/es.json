@@ -224,7 +224,17 @@
       "justNow": "ahora mismo",
       "minutesAgo": "hace {count}min",
       "hoursAgo": "hace {count}h",
-      "daysAgo": "hace {count}d"
+      "daysAgo": "hace {count}d",
+      "tour": {
+        "next": "Siguiente →",
+        "prev": "← Anterior",
+        "done": "Terminar",
+        "step1": { "title": "¡Bienvenido!", "description": "Haz clic aquí para crear tu primer CV con una de nuestras plantillas profesionales." },
+        "step2": { "title": "Elegir una plantilla", "description": "Explora nuestras 5 plantillas: Moderno, Clásico, ATS, Minimalista y Creativo." },
+        "step3": { "title": "Tu perfil maestro", "description": "Rellena tu información una sola vez — se completará automáticamente en todos tus futuros CV." },
+        "step4": { "title": "Tus CV", "description": "Accede a tus CV, duplícalos, renómbralos y compártelos con los reclutadores." },
+        "step5": { "title": "Novedades", "description": "Encuentra las últimas actualizaciones aquí. Un badge te avisará con cada nueva versión." }
+      }
     },
     "resumes": {
       "title": "Mis CV",
@@ -249,7 +259,15 @@
       "eduShort": "form.",
       "skillShort": "comp.",
       "langShort": "idiom.",
-      "intShort": "inter."
+      "intShort": "inter.",
+      "tour": {
+        "next": "Siguiente →",
+        "prev": "← Anterior",
+        "done": "Terminar",
+        "step1": { "title": "Crear un CV", "description": "<b>Haz clic aquí</b> para crear un nuevo CV desde una plantilla." },
+        "step2": { "title": "Renombrar un CV", "description": "<b>Haz clic en el título</b> de un CV para renombrarlo directamente sin abrir el editor." },
+        "step3": { "title": "Acciones disponibles", "description": "Desde cada CV: <b>Editar</b> para modificar, el <b>icono copiar</b> para duplicar, la <b>papelera</b> para eliminar." }
+      }
     },
     "templates": {
       "title": "Elegir una plantilla",
@@ -8072,7 +8090,16 @@
     "shareExpiryRemove": "Quitar",
     "shareExpirySaved": "Fecha de expiración guardada",
     "shareExpiryRemoved": "Expiración eliminada",
-    "premiumBannerMessage": "Desbloquea todas las funciones premium para maximizar tus posibilidades."
+    "premiumBannerMessage": "Desbloquea todas las funciones premium para maximizar tus posibilidades.",
+    "tour": {
+      "next": "Siguiente →",
+      "prev": "← Anterior",
+      "done": "Terminar",
+      "step1": { "title": "Importar tu perfil", "description": "<b>Haz clic aquí</b> para importar tu información desde tu perfil maestro y rellenar el CV en un clic." },
+      "step2": { "title": "Puntuación ATS", "description": "<b>Haz clic aquí</b> para analizar tu CV y obtener una puntuación de compatibilidad con los programas de selección." },
+      "step3": { "title": "Guardar", "description": "<b>Haz clic aquí</b> para guardar. El <b>guardado automático</b> también funciona cada 30 segundos." },
+      "step4": { "title": "Compartir tu CV", "description": "<b>Haz clic aquí</b> para activar el enlace público de tu CV y compartirlo directamente con los reclutadores." }
+    }
   },
   "cvSections": {
     "personalInfo": "Información personal",

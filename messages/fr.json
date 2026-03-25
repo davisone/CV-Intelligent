@@ -7650,7 +7650,17 @@
       "justNow": "à l'instant",
       "minutesAgo": "il y a {count}min",
       "hoursAgo": "il y a {count}h",
-      "daysAgo": "il y a {count}j"
+      "daysAgo": "il y a {count}j",
+      "tour": {
+        "next": "Suivant →",
+        "prev": "← Précédent",
+        "done": "Terminer",
+        "step1": { "title": "Bienvenue !", "description": "Cliquez ici pour créer votre premier CV avec l'un de nos templates professionnels." },
+        "step2": { "title": "Choisir un template", "description": "Parcourez nos 5 templates : Moderne, Classique, ATS, Minimaliste et Créatif." },
+        "step3": { "title": "Votre profil maître", "description": "Renseignez vos informations une seule fois — elles pré-rempliront automatiquement tous vos futurs CVs." },
+        "step4": { "title": "Vos CVs", "description": "Accédez à vos CVs, dupliquez-les, renommez-les et partagez-les avec les recruteurs." },
+        "step5": { "title": "Nouveautés", "description": "Retrouvez les dernières mises à jour ici. Un badge vous avertira à chaque nouvelle version." }
+      }
     },
     "resumes": {
       "title": "Mes CV",
@@ -7675,7 +7685,15 @@
       "eduShort": "form.",
       "skillShort": "comp.",
       "langShort": "lang.",
-      "intShort": "int."
+      "intShort": "int.",
+      "tour": {
+        "next": "Suivant →",
+        "prev": "← Précédent",
+        "done": "Terminer",
+        "step1": { "title": "Créer un CV", "description": "<b>Cliquez ici</b> pour créer un nouveau CV depuis un template." },
+        "step2": { "title": "Renommer un CV", "description": "<b>Cliquez sur le titre</b> d'un CV pour le renommer directement sans ouvrir l'éditeur." },
+        "step3": { "title": "Actions disponibles", "description": "Depuis chaque CV : <b>Modifier</b> pour éditer, l'<b>icône copie</b> pour dupliquer, la <b>corbeille</b> pour supprimer." }
+      }
     },
     "templates": {
       "title": "Choisir un template",
@@ -8072,7 +8090,16 @@
     "shareExpiryRemove": "Retirer",
     "shareExpirySaved": "Date d'expiration enregistrée",
     "shareExpiryRemoved": "Expiration supprimée",
-    "premiumBannerMessage": "Débloquez toutes les fonctionnalités premium pour maximiser vos chances."
+    "premiumBannerMessage": "Débloquez toutes les fonctionnalités premium pour maximiser vos chances.",
+    "tour": {
+      "next": "Suivant →",
+      "prev": "← Précédent",
+      "done": "Terminer",
+      "step1": { "title": "Importer votre profil", "description": "<b>Cliquez ici</b> pour importer vos informations depuis votre profil maître et pré-remplir le CV en un clic." },
+      "step2": { "title": "Score ATS", "description": "<b>Cliquez ici</b> pour analyser votre CV et obtenir un score de compatibilité avec les logiciels de recrutement." },
+      "step3": { "title": "Sauvegarder", "description": "<b>Cliquez ici</b> pour sauvegarder. La <b>sauvegarde automatique</b> fonctionne aussi toutes les 30 secondes." },
+      "step4": { "title": "Partager votre CV", "description": "<b>Cliquez ici</b> pour activer le lien public de votre CV et le partager directement avec les recruteurs." }
+    }
   },
   "cvSections": {
     "personalInfo": "Informations personnelles",
