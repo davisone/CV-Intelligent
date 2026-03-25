@@ -69,6 +69,21 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
             <div>{renderContent(entry.content)}</div>
           </div>
         ))}
+
+        <div className="bg-[#FBF8F4] rounded-xl border border-[#E0D6C8] p-5">
+          <h2 className="text-base font-bold text-[#1F1A17] mb-2">Un mot de ma part</h2>
+          <p className="text-sm text-[#6B6560] mb-4 leading-relaxed">
+            Je développe CV Builder seul, dans le cadre de mon lancement en freelance. Chaque avis Google compte énormément pour moi — c&apos;est ce qui me permet de gagner en crédibilité et de continuer à améliorer l&apos;outil. Si l&apos;application vous a aidé, même une petite note me ferait vraiment plaisir.
+          </p>
+          <a
+            href="https://g.page/r/CcSyetXUJJrpEAE/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-sm font-semibold text-[#722F37] border border-[#722F37] rounded-lg px-4 py-2 hover:bg-[#722F37] hover:text-white transition-colors"
+          >
+            Laisser un avis Google
+          </a>
+        </div>
       </div>
     </div>
   )
