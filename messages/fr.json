@@ -8126,5 +8126,12 @@
     "modalText": "Vous venez de télécharger votre CV. Si l'expérience vous a plu, un petit avis sur Google nous aiderait beaucoup !",
     "later": "Plus tard",
     "neverShow": "Ne plus demander"
+  },
+  "whatsNew": {
+    "title": "Nouveautés",
+    "empty": "Aucune mise à jour pour l'instant.",
+    "reviewTitle": "Un mot de ma part",
+    "reviewText": "Je développe CV Builder seul, dans le cadre de mon lancement en freelance. Chaque avis Google compte énormément pour moi — c'est ce qui me permet de gagner en crédibilité et de continuer à améliorer l'outil. Si l'application vous a aidé, même une petite note me ferait vraiment plaisir.",
+    "reviewButton": "Laisser un avis Google"
   }
 }

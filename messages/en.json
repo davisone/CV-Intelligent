@@ -8203,5 +8203,12 @@
     "modalText": "You just downloaded your resume. If you enjoyed the experience, a quick Google review would help us a lot!",
     "later": "Later",
     "neverShow": "Don't show again"
+  },
+  "whatsNew": {
+    "title": "What's New",
+    "empty": "No updates yet.",
+    "reviewTitle": "A word from me",
+    "reviewText": "I'm building CV Builder on my own as part of launching my freelance business. Every Google review matters a lot to me — it helps me build credibility and keep improving the app. If it's been useful to you, even a short note would mean a great deal.",
+    "reviewButton": "Leave a Google review"
   }
 }

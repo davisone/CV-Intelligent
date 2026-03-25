@@ -8126,5 +8126,12 @@
     "modalText": "Acabas de descargar tu CV. Si la experiencia te gustó, ¡una reseña rápida en Google nos ayudaría mucho!",
     "later": "Más tarde",
     "neverShow": "No mostrar más"
+  },
+  "whatsNew": {
+    "title": "Novedades",
+    "empty": "Sin actualizaciones por ahora.",
+    "reviewTitle": "Una palabra de mi parte",
+    "reviewText": "Desarrollo CV Builder solo, como parte del lanzamiento de mi actividad freelance. Cada reseña en Google es muy importante para mí — me ayuda a ganar credibilidad y a seguir mejorando la herramienta. Si la aplicación te ha sido útil, incluso una nota breve me haría muy feliz.",
+    "reviewButton": "Dejar una reseña en Google"
   }
 }

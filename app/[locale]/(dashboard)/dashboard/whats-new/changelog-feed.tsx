@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
 import type { ChangelogEntry } from '@/lib/changelog'
 
 function renderContent(content: string) {
@@ -34,6 +35,9 @@ function renderContent(content: string) {
 }
 
 export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
+  const t = useTranslations('whatsNew')
+  const locale = useLocale()
+
   useEffect(() => {
     fetch('/api/user/mark-changelog-read', { method: 'POST' })
   }, [])
@@ -41,15 +45,15 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
   if (entries.length === 0) {
     return (
       <div className="max-w-2xl">
-        <h1 className="text-2xl font-bold text-[#1F1A17] mb-2">Nouveautés</h1>
-        <p className="text-[#6B6560] text-sm">Aucune mise à jour pour l&apos;instant.</p>
+        <h1 className="text-2xl font-bold text-[#1F1A17] mb-2">{t('title')}</h1>
+        <p className="text-[#6B6560] text-sm">{t('empty')}</p>
       </div>
     )
   }
 
   return (
     <div className="max-w-2xl">
-      <h1 className="text-2xl font-bold text-[#1F1A17] mb-6">Nouveautés</h1>
+      <h1 className="text-2xl font-bold text-[#1F1A17] mb-6">{t('title')}</h1>
       <div className="space-y-6">
         {entries.map(entry => (
           <div key={entry.slug} className="bg-white rounded-xl border border-[#E0D6C8] p-5">
@@ -58,7 +62,7 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
                 v{entry.version}
               </span>
               <span className="text-[#A89F96] text-xs">
-                {new Date(entry.date).toLocaleDateString('fr-FR', {
+                {new Date(entry.date).toLocaleDateString(locale, {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
@@ -71,17 +75,15 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
         ))}
 
         <div className="bg-[#FBF8F4] rounded-xl border border-[#E0D6C8] p-5">
-          <h2 className="text-base font-bold text-[#1F1A17] mb-2">Un mot de ma part</h2>
-          <p className="text-sm text-[#6B6560] mb-4 leading-relaxed">
-            Je développe CV Builder seul, dans le cadre de mon lancement en freelance. Chaque avis Google compte énormément pour moi — c&apos;est ce qui me permet de gagner en crédibilité et de continuer à améliorer l&apos;outil. Si l&apos;application vous a aidé, même une petite note me ferait vraiment plaisir.
-          </p>
+          <h2 className="text-base font-bold text-[#1F1A17] mb-2">{t('reviewTitle')}</h2>
+          <p className="text-sm text-[#6B6560] mb-4 leading-relaxed">{t('reviewText')}</p>
           <a
             href="https://g.page/r/CcSyetXUJJrpEAE/review"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-sm font-semibold text-[#722F37] border border-[#722F37] rounded-lg px-4 py-2 hover:bg-[#722F37] hover:text-white transition-colors"
           >
-            Laisser un avis Google
+            {t('reviewButton')}
           </a>
         </div>
       </div>
