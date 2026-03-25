@@ -72,7 +72,7 @@ export function Header({ hasUnreadChangelog = false }: HeaderProps) {
       </div>
 
       <button
-        className="md:hidden p-2"
+        className="md:hidden p-2 relative"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Menu"
       >
@@ -80,6 +80,9 @@ export function Header({ hasUnreadChangelog = false }: HeaderProps) {
           <X className="w-6 h-6 text-[#722F37]" />
         ) : (
           <Menu className="w-6 h-6 text-[#722F37]" />
+        )}
+        {showChangelogBadge && !isMenuOpen && (
+          <span className="absolute top-0 right-0 min-w-[1.1rem] h-[1.1rem] rounded-full bg-[#722F37] text-white text-[10px] font-bold flex items-center justify-center">1</span>
         )}
       </button>
 
