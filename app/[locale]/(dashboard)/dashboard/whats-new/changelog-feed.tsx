@@ -55,6 +55,19 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
     <div className="max-w-2xl">
       <h1 className="text-2xl font-bold text-[#1F1A17] mb-6">{t('title')}</h1>
       <div className="space-y-6">
+        <div className="bg-[#FBF8F4] rounded-xl border border-[#E0D6C8] p-5">
+          <h2 className="text-base font-bold text-[#1F1A17] mb-2">{t('reviewTitle')}</h2>
+          <p className="text-sm text-[#6B6560] mb-4 leading-relaxed">{t('reviewText')}</p>
+          <a
+            href="https://g.page/r/CcSyetXUJJrpEAE/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-sm font-semibold text-[#722F37] border border-[#722F37] rounded-lg px-4 py-2 hover:bg-[#722F37] hover:text-white transition-colors"
+          >
+            {t('reviewButton')}
+          </a>
+        </div>
+
         {entries.map(entry => (
           <div key={entry.slug} className="bg-white rounded-xl border border-[#E0D6C8] p-5">
             <div className="flex items-center gap-3 mb-3">
@@ -73,19 +86,6 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
             <div>{renderContent(entry.content)}</div>
           </div>
         ))}
-
-        <div className="bg-[#FBF8F4] rounded-xl border border-[#E0D6C8] p-5">
-          <h2 className="text-base font-bold text-[#1F1A17] mb-2">{t('reviewTitle')}</h2>
-          <p className="text-sm text-[#6B6560] mb-4 leading-relaxed">{t('reviewText')}</p>
-          <a
-            href="https://g.page/r/CcSyetXUJJrpEAE/review"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-sm font-semibold text-[#722F37] border border-[#722F37] rounded-lg px-4 py-2 hover:bg-[#722F37] hover:text-white transition-colors"
-          >
-            {t('reviewButton')}
-          </a>
-        </div>
       </div>
     </div>
   )
