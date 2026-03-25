@@ -12,16 +12,20 @@ export interface ChangelogEntry {
 
 const CHANGELOG_DIR = path.join(process.cwd(), 'content/changelog')
 
-export function getChangelogEntries(): ChangelogEntry[] {
-  if (!fs.existsSync(CHANGELOG_DIR)) return []
+export function getChangelogEntries(locale = 'fr'): ChangelogEntry[] {
+  const localeDir = path.join(CHANGELOG_DIR, locale)
+  const fallbackDir = path.join(CHANGELOG_DIR, 'fr')
+  const dir = fs.existsSync(localeDir) ? localeDir : fallbackDir
 
-  const files = fs.readdirSync(CHANGELOG_DIR)
+  if (!fs.existsSync(dir)) return []
+
+  const files = fs.readdirSync(dir)
     .filter(f => f.endsWith('.md'))
     .sort()
-    .reverse() // Plus récent en premier
+    .reverse()
 
   return files.map(filename => {
-    const filePath = path.join(CHANGELOG_DIR, filename)
+    const filePath = path.join(dir, filename)
     const raw = fs.readFileSync(filePath, 'utf-8')
     const { data, content } = matter(raw)
 
@@ -36,6 +40,6 @@ export function getChangelogEntries(): ChangelogEntry[] {
 }
 
 export function getLatestChangelogSlug(): string | null {
-  const entries = getChangelogEntries()
+  const entries = getChangelogEntries('fr')
   return entries[0]?.slug ?? null
 }
