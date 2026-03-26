@@ -544,7 +544,7 @@
       "generateAILoading": "Generando...",
       "generateAISuccess": "Carta generada con éxito",
       "generateAIError": "Error al generar la carta",
-      "generateAIFree": "Generación IA gratuita (CV desbloqueado)",
+      "generateAIFree": "Generar con IA",
       "generateAIPaid": "Generación IA — {price}",
       "generateAIConfirm": "¿Generar carta con IA por {price}?",
       "generateAIConfirmDesc": "La IA usará el contenido de tu CV para redactar una carta personalizada.",

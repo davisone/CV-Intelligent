@@ -8047,7 +8047,7 @@
       "generateAILoading": "Generating...",
       "generateAISuccess": "Letter generated successfully",
       "generateAIError": "Error generating letter",
-      "generateAIFree": "Free AI generation (resume unlocked)",
+      "generateAIFree": "Generate with AI",
       "generateAIPaid": "AI generation — {price}",
       "generateAIConfirm": "Generate letter with AI for {price}?",
       "generateAIConfirmDesc": "The AI will use your resume content to write a personalized letter.",

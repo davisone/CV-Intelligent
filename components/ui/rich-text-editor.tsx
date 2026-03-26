@@ -6,6 +6,11 @@ import Underline from '@tiptap/extension-underline'
 import TextAlign from '@tiptap/extension-text-align'
 import Placeholder from '@tiptap/extension-placeholder'
 import { cn } from '@/lib/utils/helpers'
+import { forwardRef, useImperativeHandle } from 'react'
+
+export interface RichTextEditorRef {
+  setContent: (html: string) => void
+}
 
 // Icons inline pour éviter des imports lourds
 function ToolbarButton({
@@ -50,7 +55,8 @@ interface RichTextEditorProps {
   placeholder?: string
 }
 
-export function RichTextEditor({ content, onChange, placeholder }: RichTextEditorProps) {
+export const RichTextEditor = forwardRef<RichTextEditorRef, RichTextEditorProps>(
+function RichTextEditor({ content, onChange, placeholder }, ref) {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -73,6 +79,12 @@ export function RichTextEditor({ content, onChange, placeholder }: RichTextEdito
       },
     },
   })
+
+  useImperativeHandle(ref, () => ({
+    setContent: (html: string) => {
+      editor?.commands.setContent(html)
+    },
+  }))
 
   if (!editor) return null
 
@@ -280,4 +292,4 @@ export function RichTextEditor({ content, onChange, placeholder }: RichTextEdito
       `}</style>
     </div>
   )
-}
+})

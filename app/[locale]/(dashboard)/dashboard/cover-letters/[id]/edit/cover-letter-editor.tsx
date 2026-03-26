@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { useTranslations, useLocale } from 'next-intl'
@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select } from '@/components/ui/select'
-import { RichTextEditor } from '@/components/ui/rich-text-editor'
+import { RichTextEditor, type RichTextEditorRef } from '@/components/ui/rich-text-editor'
 import { ArrowLeft, Save, Sparkles, FileDown, Loader2 } from '@/components/ui/icons'
 import { COVER_LETTER_AI_PRICING } from '@/lib/config/pricing'
 
@@ -55,6 +55,7 @@ export function CoverLetterEditor({ coverLetter, resumes, aiJustUnlocked }: Prop
   const [aiGenerationsUsed, setAiGenerationsUsed] = useState(coverLetter.aiGenerationsUsed)
   const aiGenerationsRemaining = COVER_LETTER_AI_PRICING.maxGenerations - aiGenerationsUsed
 
+  const editorRef = useRef<RichTextEditorRef>(null)
   const selectedResume = resumes.find(r => r.id === resumeId)
   const aiIsFree = selectedResume?.isPaid || isAIPaid
 
@@ -128,6 +129,7 @@ export function CoverLetterEditor({ coverLetter, resumes, aiJustUnlocked }: Prop
       const data = await res.json()
       if (!res.ok) throw new Error(data.error)
       setContent(data.data.content)
+      editorRef.current?.setContent(data.data.content)
       setAiGenerationsUsed(data.data.aiGenerationsUsed)
       toast.success(t('generateAISuccess'))
     } catch {
@@ -277,6 +279,7 @@ export function CoverLetterEditor({ coverLetter, resumes, aiJustUnlocked }: Prop
             </div>
           </div>
           <RichTextEditor
+            ref={editorRef}
             content={content}
             onChange={setContent}
             placeholder={t('contentPlaceholder')}

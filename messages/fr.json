@@ -7970,7 +7970,7 @@
       "generateAILoading": "Génération en cours...",
       "generateAISuccess": "Lettre générée avec succès",
       "generateAIError": "Erreur lors de la génération",
-      "generateAIFree": "Génération IA gratuite (CV débloqué)",
+      "generateAIFree": "Générer avec l'IA",
       "generateAIPaid": "Génération IA — {price}",
       "generateAIConfirm": "Générer la lettre avec l'IA pour {price} ?",
       "generateAIConfirmDesc": "L'IA utilisera le contenu de votre CV pour rédiger une lettre personnalisée.",
