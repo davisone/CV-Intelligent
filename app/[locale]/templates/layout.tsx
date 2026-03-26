@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { buildAlternates } from '@/lib/seo/metadata'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
@@ -8,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('title'),
     description: t('description'),
-    alternates: { canonical: '/templates' },
+    alternates: buildAlternates('/templates', locale),
     openGraph: {
       title: t('title'),
       description: t('description'),

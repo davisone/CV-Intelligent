@@ -7,7 +7,7 @@ const locales = ['fr', 'en', 'es'] as const
 const STATIC_LAST_MODIFIED = new Date('2026-03-01')
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://cv-builder.fr'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.cv-builder.fr'
 
   // Pages vraiment multilingues (même slug dans toutes les langues)
   const routes = [
