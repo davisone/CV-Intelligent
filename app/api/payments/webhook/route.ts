@@ -70,7 +70,17 @@ export async function POST(request: Request) {
 }
 
 async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
-  const { userId, resumeId } = session.metadata || {}
+  const { userId, resumeId, coverLetterId, type } = session.metadata || {}
+
+  // Paiement IA pour lettre de motivation
+  if (type === 'cover_letter_ai' && coverLetterId) {
+    await prisma.coverLetter.update({
+      where: { id: coverLetterId },
+      data: { isAIPaid: true, aiPaidAt: new Date() },
+    })
+    console.log(`[WEBHOOK] Cover letter AI unlocked: ${coverLetterId}`)
+    return
+  }
 
   if (!userId || !resumeId) {
     console.error('[WEBHOOK] Missing metadata in session:', session.id)

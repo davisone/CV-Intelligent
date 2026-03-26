@@ -178,7 +178,8 @@
     "login": "Iniciar sesión",
     "startFree": "Empezar gratis",
     "backToHome": "Volver al inicio",
-    "back": "Volver"
+    "back": "Volver",
+    "coverLetters": "Cartas de presentación"
   },
   "blog": {
     "listingTitle": "Blog CV — Consejos, Guías y Plantillas",
@@ -229,11 +230,26 @@
         "next": "Siguiente →",
         "prev": "← Anterior",
         "done": "Terminar",
-        "step1": { "title": "¡Bienvenido!", "description": "Haz clic aquí para crear tu primer CV con una de nuestras plantillas profesionales." },
-        "step2": { "title": "Elegir una plantilla", "description": "Explora nuestras 5 plantillas: Moderno, Clásico, ATS, Minimalista y Creativo." },
-        "step3": { "title": "Tu perfil maestro", "description": "Rellena tu información una sola vez — se completará automáticamente en todos tus futuros CV." },
-        "step4": { "title": "Tus CV", "description": "Accede a tus CV, duplícalos, renómbralos y compártelos con los reclutadores." },
-        "step5": { "title": "Novedades", "description": "Encuentra las últimas actualizaciones aquí. Un badge te avisará con cada nueva versión." }
+        "step1": {
+          "title": "¡Bienvenido!",
+          "description": "Haz clic aquí para crear tu primer CV con una de nuestras plantillas profesionales."
+        },
+        "step2": {
+          "title": "Elegir una plantilla",
+          "description": "Explora nuestras 5 plantillas: Moderno, Clásico, ATS, Minimalista y Creativo."
+        },
+        "step3": {
+          "title": "Tu perfil maestro",
+          "description": "Rellena tu información una sola vez — se completará automáticamente en todos tus futuros CV."
+        },
+        "step4": {
+          "title": "Tus CV",
+          "description": "Accede a tus CV, duplícalos, renómbralos y compártelos con los reclutadores."
+        },
+        "step5": {
+          "title": "Novedades",
+          "description": "Encuentra las últimas actualizaciones aquí. Un badge te avisará con cada nueva versión."
+        }
       }
     },
     "resumes": {
@@ -264,9 +280,18 @@
         "next": "Siguiente →",
         "prev": "← Anterior",
         "done": "Terminar",
-        "step1": { "title": "Crear un CV", "description": "<b>Haz clic aquí</b> para crear un nuevo CV desde una plantilla." },
-        "step2": { "title": "Renombrar un CV", "description": "<b>Haz clic en el título</b> de un CV para renombrarlo directamente sin abrir el editor." },
-        "step3": { "title": "Acciones disponibles", "description": "Desde cada CV: <b>Editar</b> para modificar, el <b>icono copiar</b> para duplicar, la <b>papelera</b> para eliminar." }
+        "step1": {
+          "title": "Crear un CV",
+          "description": "<b>Haz clic aquí</b> para crear un nuevo CV desde una plantilla."
+        },
+        "step2": {
+          "title": "Renombrar un CV",
+          "description": "<b>Haz clic en el título</b> de un CV para renombrarlo directamente sin abrir el editor."
+        },
+        "step3": {
+          "title": "Acciones disponibles",
+          "description": "Desde cada CV: <b>Editar</b> para modificar, el <b>icono copiar</b> para duplicar, la <b>papelera</b> para eliminar."
+        }
       }
     },
     "templates": {
@@ -482,6 +507,51 @@
       "backToDashboard": "Panel",
       "notFound": "Página no encontrada",
       "notFoundDetails": "Esta página del panel no existe."
+    },
+    "coverLetters": {
+      "title": "Mis cartas de presentación",
+      "count": "{count} carta creada",
+      "count_plural": "{count} cartas creadas",
+      "new": "Nueva carta",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "deleteConfirm": "¿Eliminar esta carta?",
+      "deleteWarning": "Esta acción no se puede deshacer.",
+      "deleteSuccess": "Carta eliminada con éxito",
+      "deleteError": "Error al eliminar la carta",
+      "empty": "Aún no tienes cartas de presentación",
+      "emptySubtitle": "Crea tu primera carta haciendo clic en el botón de arriba",
+      "serverError": "Error del servidor",
+      "updatedAt": "Actualizada el {date}",
+      "linkedTo": "Vinculada al CV",
+      "titleLabel": "Título de la carta",
+      "titlePlaceholder": "Ej: Candidatura desarrollador React",
+      "jobTitleLabel": "Puesto deseado",
+      "jobTitlePlaceholder": "Ej: Desarrollador Full Stack",
+      "companyLabel": "Empresa",
+      "companyPlaceholder": "Ej: Acme Corp",
+      "contentLabel": "Contenido",
+      "contentPlaceholder": "Escribe tu carta de presentación aquí...",
+      "resumeLabel": "CV asociado",
+      "resumePlaceholder": "Seleccionar un CV",
+      "save": "Guardar",
+      "saveSuccess": "Carta guardada",
+      "saveError": "Error al guardar la carta",
+      "exportPdf": "Exportar como PDF",
+      "exportPdfLoading": "Generando PDF...",
+      "exportPdfError": "Error al generar el PDF",
+      "generateAI": "Generar con IA",
+      "generateAILoading": "Generando...",
+      "generateAISuccess": "Carta generada con éxito",
+      "generateAIError": "Error al generar la carta",
+      "generateAIFree": "Generación IA gratuita (CV desbloqueado)",
+      "generateAIPaid": "Generación IA — {price}",
+      "generateAIConfirm": "¿Generar carta con IA por {price}?",
+      "generateAIConfirmDesc": "La IA usará el contenido de tu CV para redactar una carta personalizada.",
+      "noResumeSelected": "Selecciona un CV para activar la generación IA",
+      "createTitle": "Nueva carta de presentación",
+      "editTitle": "Editar carta",
+      "backToList": "Volver a las cartas"
     }
   },
   "landing": {
@@ -8095,10 +8165,22 @@
       "next": "Siguiente →",
       "prev": "← Anterior",
       "done": "Terminar",
-      "step1": { "title": "Importar tu perfil", "description": "<b>Haz clic aquí</b> para importar tu información desde tu perfil maestro y rellenar el CV en un clic." },
-      "step2": { "title": "Puntuación ATS", "description": "<b>Haz clic aquí</b> para analizar tu CV y obtener una puntuación de compatibilidad con los programas de selección." },
-      "step3": { "title": "Guardar", "description": "<b>Haz clic aquí</b> para guardar. El <b>guardado automático</b> también funciona cada 30 segundos." },
-      "step4": { "title": "Compartir tu CV", "description": "<b>Haz clic aquí</b> para activar el enlace público de tu CV y compartirlo directamente con los reclutadores." }
+      "step1": {
+        "title": "Importar tu perfil",
+        "description": "<b>Haz clic aquí</b> para importar tu información desde tu perfil maestro y rellenar el CV en un clic."
+      },
+      "step2": {
+        "title": "Puntuación ATS",
+        "description": "<b>Haz clic aquí</b> para analizar tu CV y obtener una puntuación de compatibilidad con los programas de selección."
+      },
+      "step3": {
+        "title": "Guardar",
+        "description": "<b>Haz clic aquí</b> para guardar. El <b>guardado automático</b> también funciona cada 30 segundos."
+      },
+      "step4": {
+        "title": "Compartir tu CV",
+        "description": "<b>Haz clic aquí</b> para activar el enlace público de tu CV y compartirlo directamente con los reclutadores."
+      }
     }
   },
   "cvSections": {

@@ -178,7 +178,8 @@
     "login": "Sign In",
     "startFree": "Start Free",
     "backToHome": "Back to Home",
-    "back": "Back"
+    "back": "Back",
+    "coverLetters": "Cover Letters"
   },
   "landing": {
     "meta": {
@@ -7732,11 +7733,26 @@
         "next": "Next →",
         "prev": "← Back",
         "done": "Finish",
-        "step1": { "title": "Welcome!", "description": "Click here to create your first resume using one of our professional templates." },
-        "step2": { "title": "Choose a template", "description": "Browse our 5 templates: Modern, Classic, ATS, Minimalist and Creative." },
-        "step3": { "title": "Your master profile", "description": "Fill in your information once — it will automatically pre-fill all your future resumes." },
-        "step4": { "title": "Your resumes", "description": "Access your resumes, duplicate them, rename them and share them with recruiters." },
-        "step5": { "title": "What's new", "description": "Find the latest updates here. A badge will notify you with each new version." }
+        "step1": {
+          "title": "Welcome!",
+          "description": "Click here to create your first resume using one of our professional templates."
+        },
+        "step2": {
+          "title": "Choose a template",
+          "description": "Browse our 5 templates: Modern, Classic, ATS, Minimalist and Creative."
+        },
+        "step3": {
+          "title": "Your master profile",
+          "description": "Fill in your information once — it will automatically pre-fill all your future resumes."
+        },
+        "step4": {
+          "title": "Your resumes",
+          "description": "Access your resumes, duplicate them, rename them and share them with recruiters."
+        },
+        "step5": {
+          "title": "What's new",
+          "description": "Find the latest updates here. A badge will notify you with each new version."
+        }
       }
     },
     "resumes": {
@@ -7767,9 +7783,18 @@
         "next": "Next →",
         "prev": "← Back",
         "done": "Finish",
-        "step1": { "title": "Create a resume", "description": "<b>Click here</b> to create a new resume from a template." },
-        "step2": { "title": "Rename a resume", "description": "<b>Click on the title</b> of a resume to rename it directly without opening the editor." },
-        "step3": { "title": "Available actions", "description": "From each resume: <b>Edit</b> to modify, the <b>copy icon</b> to duplicate, the <b>trash icon</b> to delete." }
+        "step1": {
+          "title": "Create a resume",
+          "description": "<b>Click here</b> to create a new resume from a template."
+        },
+        "step2": {
+          "title": "Rename a resume",
+          "description": "<b>Click on the title</b> of a resume to rename it directly without opening the editor."
+        },
+        "step3": {
+          "title": "Available actions",
+          "description": "From each resume: <b>Edit</b> to modify, the <b>copy icon</b> to duplicate, the <b>trash icon</b> to delete."
+        }
       }
     },
     "templates": {
@@ -7985,6 +8010,51 @@
       "backToDashboard": "Dashboard",
       "notFound": "Page not found",
       "notFoundDetails": "This dashboard page does not exist."
+    },
+    "coverLetters": {
+      "title": "My Cover Letters",
+      "count": "{count} letter created",
+      "count_plural": "{count} letters created",
+      "new": "New Letter",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Delete this letter?",
+      "deleteWarning": "This action cannot be undone.",
+      "deleteSuccess": "Letter deleted successfully",
+      "deleteError": "Error deleting letter",
+      "empty": "You have no cover letters yet",
+      "emptySubtitle": "Create your first letter by clicking the button above",
+      "serverError": "Server error",
+      "updatedAt": "Updated on {date}",
+      "linkedTo": "Linked to resume",
+      "titleLabel": "Letter title",
+      "titlePlaceholder": "e.g. Application for React Developer",
+      "jobTitleLabel": "Target position",
+      "jobTitlePlaceholder": "e.g. Full Stack Developer",
+      "companyLabel": "Company",
+      "companyPlaceholder": "e.g. Acme Corp",
+      "contentLabel": "Content",
+      "contentPlaceholder": "Write your cover letter here...",
+      "resumeLabel": "Linked resume",
+      "resumePlaceholder": "Select a resume",
+      "save": "Save",
+      "saveSuccess": "Letter saved",
+      "saveError": "Error saving letter",
+      "exportPdf": "Export as PDF",
+      "exportPdfLoading": "Generating PDF...",
+      "exportPdfError": "Error generating PDF",
+      "generateAI": "Generate with AI",
+      "generateAILoading": "Generating...",
+      "generateAISuccess": "Letter generated successfully",
+      "generateAIError": "Error generating letter",
+      "generateAIFree": "Free AI generation (resume unlocked)",
+      "generateAIPaid": "AI generation — {price}",
+      "generateAIConfirm": "Generate letter with AI for {price}?",
+      "generateAIConfirmDesc": "The AI will use your resume content to write a personalized letter.",
+      "noResumeSelected": "Please select a resume to enable AI generation",
+      "createTitle": "New Cover Letter",
+      "editTitle": "Edit Letter",
+      "backToList": "Back to letters"
     }
   },
   "blog": {
@@ -8172,10 +8242,22 @@
       "next": "Next →",
       "prev": "← Back",
       "done": "Finish",
-      "step1": { "title": "Import your profile", "description": "<b>Click here</b> to import your information from your master profile and pre-fill the resume in one click." },
-      "step2": { "title": "ATS Score", "description": "<b>Click here</b> to analyze your resume and get a compatibility score with recruitment software." },
-      "step3": { "title": "Save", "description": "<b>Click here</b> to save. <b>Auto-save</b> also works every 30 seconds." },
-      "step4": { "title": "Share your resume", "description": "<b>Click here</b> to enable the public link for your resume and share it directly with recruiters." }
+      "step1": {
+        "title": "Import your profile",
+        "description": "<b>Click here</b> to import your information from your master profile and pre-fill the resume in one click."
+      },
+      "step2": {
+        "title": "ATS Score",
+        "description": "<b>Click here</b> to analyze your resume and get a compatibility score with recruitment software."
+      },
+      "step3": {
+        "title": "Save",
+        "description": "<b>Click here</b> to save. <b>Auto-save</b> also works every 30 seconds."
+      },
+      "step4": {
+        "title": "Share your resume",
+        "description": "<b>Click here</b> to enable the public link for your resume and share it directly with recruiters."
+      }
     }
   },
   "cvSections": {

@@ -17,6 +17,7 @@ import {
   Menu,
   X,
   Sparkles,
+  PenLine,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -41,6 +42,7 @@ export function Header({ hasUnreadChangelog = false }: HeaderProps) {
   const navItems: NavItem[] = [
     { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
     { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText },
+    { labelKey: 'coverLetters', href: '/dashboard/cover-letters', icon: PenLine },
     { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
     { labelKey: 'myProfile', href: '/dashboard/profile', icon: User },
     { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge },

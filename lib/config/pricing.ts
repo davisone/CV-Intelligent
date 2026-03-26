@@ -9,6 +9,13 @@ export const PRICING = {
   displayPrice: '4,99 €',
 } as const
 
+export const COVER_LETTER_AI_PRICING = {
+  amount: 299, // 2.99 EUR en centimes
+  currency: 'eur',
+  displayPrice: '2,99 €',
+  maxGenerations: 3,
+} as const
+
 export function isPremiumTemplate(template: TemplateType): boolean {
   return PREMIUM_TEMPLATES.includes(template)
 }

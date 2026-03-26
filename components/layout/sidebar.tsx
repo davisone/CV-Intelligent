@@ -11,6 +11,7 @@ import {
   User,
   Settings,
   Sparkles,
+  PenLine,
 } from '@/components/ui/icons'
 import { LucideIcon } from 'lucide-react'
 
@@ -34,6 +35,7 @@ export function Sidebar({ hasUnreadChangelog = false }: SidebarProps) {
   const navItems: NavItem[] = [
     { labelKey: 'dashboard', href: '/dashboard', icon: LayoutDashboard },
     { labelKey: 'myResumes', href: '/dashboard/resumes', icon: FileText, id: 'onboarding-my-resumes' },
+    { labelKey: 'coverLetters', href: '/dashboard/cover-letters', icon: PenLine },
     { labelKey: 'templates', href: '/dashboard/templates', icon: Palette },
     { labelKey: 'myProfile', href: '/dashboard/profile', icon: User, id: 'onboarding-profile' },
     { labelKey: 'whatsNew', href: '/dashboard/whats-new', icon: Sparkles, badge: showChangelogBadge, id: 'onboarding-whats-new' },
