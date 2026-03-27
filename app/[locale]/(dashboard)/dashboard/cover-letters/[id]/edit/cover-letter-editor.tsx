@@ -12,6 +12,7 @@ import { Select } from '@/components/ui/select'
 import { RichTextEditor, type RichTextEditorRef } from '@/components/ui/rich-text-editor'
 import { ArrowLeft, Save, Sparkles, FileDown, Loader2 } from '@/components/ui/icons'
 import { COVER_LETTER_AI_PRICING } from '@/lib/config/pricing'
+import { ReviewPromptModal } from '@/components/review-prompt'
 
 interface Resume {
   id: string
@@ -51,6 +52,7 @@ export function CoverLetterEditor({ coverLetter, resumes, aiJustUnlocked }: Prop
   const [saving, setSaving] = useState(false)
   const [generatingAI, setGeneratingAI] = useState(false)
   const [exportingPdf, setExportingPdf] = useState(false)
+  const [showReviewPrompt, setShowReviewPrompt] = useState(false)
   const [isAIPaid, setIsAIPaid] = useState(coverLetter.isAIPaid)
   const [aiGenerationsUsed, setAiGenerationsUsed] = useState(coverLetter.aiGenerationsUsed)
   const aiGenerationsRemaining = COVER_LETTER_AI_PRICING.maxGenerations - aiGenerationsUsed
@@ -153,6 +155,7 @@ export function CoverLetterEditor({ coverLetter, resumes, aiJustUnlocked }: Prop
       a.download = `${title.replace(/\s+/g, '_')}_lettre.pdf`
       a.click()
       URL.revokeObjectURL(url)
+      setShowReviewPrompt(true)
     } catch {
       toast.error(t('exportPdfError'))
     } finally {
@@ -286,6 +289,9 @@ export function CoverLetterEditor({ coverLetter, resumes, aiJustUnlocked }: Prop
           />
         </div>
       </div>
+      {showReviewPrompt && (
+        <ReviewPromptModal onClose={() => setShowReviewPrompt(false)} />
+      )}
     </div>
   )
 }
