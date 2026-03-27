@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { stripe } from '@/lib/stripe/client'
-import { PRICING } from '@/lib/config/pricing'
+import { PRICING, getActivePrice } from '@/lib/config/pricing'
 import { createCheckoutSchema } from '@/lib/validations/payment.schema'
 import { checkRateLimit, PAYMENT_RATE_LIMITS } from '@/lib/rate-limit'
 
@@ -112,6 +112,7 @@ export async function POST(request: Request) {
     // Créer la session Checkout
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
     const locale = user?.locale ?? 'fr'
+    const activePrice = getActivePrice()
 
     const checkoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -124,7 +125,7 @@ export async function POST(request: Request) {
               name: `CV Premium - ${resume.title}`,
               description: 'Accès complet: tous les templates, IA, score ATS, export DOCX',
             },
-            unit_amount: PRICING.perCV,
+            unit_amount: activePrice.perCV,
           },
           quantity: 1,
         },
@@ -155,7 +156,7 @@ export async function POST(request: Request) {
           userId: session.user.id,
           resumeId: resumeId,
           stripeSessionId: checkoutSession.id,
-          amount: PRICING.perCV,
+          amount: activePrice.perCV,
           currency: PRICING.currency,
           status: 'PENDING',
         },

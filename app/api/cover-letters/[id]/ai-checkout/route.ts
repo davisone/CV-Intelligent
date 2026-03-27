@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { stripe } from '@/lib/stripe/client'
-import { COVER_LETTER_AI_PRICING } from '@/lib/config/pricing'
+import { COVER_LETTER_AI_PRICING, getActiveCoverLetterPrice } from '@/lib/config/pricing'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -75,6 +75,7 @@ export async function POST(_req: Request, { params }: RouteParams) {
 
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
     const locale = user?.locale ?? 'fr'
+    const activeCLPrice = getActiveCoverLetterPrice()
 
     const checkoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -87,7 +88,7 @@ export async function POST(_req: Request, { params }: RouteParams) {
               name: `Génération IA — ${coverLetter.title}`,
               description: 'Génération de lettre de motivation par intelligence artificielle',
             },
-            unit_amount: COVER_LETTER_AI_PRICING.amount,
+            unit_amount: activeCLPrice.amount,
           },
           quantity: 1,
         },

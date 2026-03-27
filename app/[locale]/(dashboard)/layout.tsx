@@ -6,6 +6,7 @@ import { getLatestChangelogSlug } from '@/lib/changelog'
 import { Header } from '@/components/layout/header'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Footer } from '@/components/layout/footer'
+import { PromoPopup } from '@/components/ui/promo-popup'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
@@ -39,6 +40,7 @@ export default async function DashboardLayout({
 
   return (
     <div className="min-h-screen bg-[#FBF8F4] flex flex-col">
+      <PromoPopup />
       <Header hasUnreadChangelog={hasUnreadChangelog} />
       <div className="flex flex-1">
         <Sidebar hasUnreadChangelog={hasUnreadChangelog} />
