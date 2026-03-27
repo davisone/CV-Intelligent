@@ -485,8 +485,8 @@
         "title": "¡Pago confirmado!",
         "subtitle": "Tu CV premium ya está disponible.",
         "cta": "Editar mi CV",
-        "featuresTitle": "Funcionalidades desbloqueadas:",
-        "feature1": "Todas las plantillas premium",
+        "featuresTitle": "Funcionalidades desbloqueadas para este CV:",
+        "feature1": "Todas las plantillas premium (para este CV)",
         "feature2": "Sugerencias IA ilimitadas",
         "feature3": "Puntuación ATS detallada",
         "pending": "Si el pago aún no está confirmado, se validará en unos minutos."
@@ -8221,8 +8221,8 @@
   "paywall": {
     "title": "Desbloquea tu CV Premium",
     "description": "Este CV ({title}) requiere un pago único para acceder a todas las funciones.",
-    "whatYouGet": "Lo que obtienes:",
-    "feature1": "Todas las plantillas premium",
+    "whatYouGet": "Lo que obtienes para este CV:",
+    "feature1": "Todas las plantillas premium (para este CV)",
     "feature2": "Sugerencias de IA ilimitadas",
     "feature3": "Puntuación ATS detallada",
     "feature4": "Exportación DOCX",

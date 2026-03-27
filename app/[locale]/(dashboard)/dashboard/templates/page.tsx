@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { PriceBadge } from '@/components/payments/price-badge'
 import { CheckoutModal } from '@/components/payments/checkout-modal'
-import { FREE_TEMPLATE, PRICING } from '@/lib/config/pricing'
+import { FREE_TEMPLATE, getActivePrice } from '@/lib/config/pricing'
 import {
   Palette,
   ClipboardList,
@@ -214,7 +214,7 @@ export default function TemplatesPage() {
             {/* Info prix */}
             {selectedTemplate && templateRequiresPayment(selectedTemplate) && (
               <p className="text-sm text-amber-600 mb-4">
-                {t('paidInfo', { price: PRICING.displayPrice })}
+                {t('paidInfo', { price: getActivePrice().displayPrice })}
               </p>
             )}
 

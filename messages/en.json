@@ -7988,8 +7988,8 @@
         "title": "Payment confirmed!",
         "subtitle": "Your premium resume is now available.",
         "cta": "Edit my resume",
-        "featuresTitle": "Unlocked features:",
-        "feature1": "All premium templates",
+        "featuresTitle": "Unlocked features for this resume:",
+        "feature1": "All premium templates (for this resume)",
         "feature2": "Unlimited AI suggestions",
         "feature3": "Detailed ATS score",
         "pending": "If the payment is not yet confirmed, it will be validated within a few minutes."
@@ -8298,8 +8298,8 @@
   "paywall": {
     "title": "Unlock your Premium Resume",
     "description": "This resume ({title}) requires a one-time payment to access all features.",
-    "whatYouGet": "What you get:",
-    "feature1": "All premium templates",
+    "whatYouGet": "What you get for this resume:",
+    "feature1": "All premium templates (for this resume)",
     "feature2": "Unlimited AI suggestions",
     "feature3": "Detailed ATS score",
     "feature4": "DOCX export",
