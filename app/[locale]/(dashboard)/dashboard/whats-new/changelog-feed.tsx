@@ -46,13 +46,6 @@ function ClockIcon() {
   )
 }
 
-function StarIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  )
-}
 
 export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
   const t = useTranslations('whatsNew')
@@ -74,30 +67,6 @@ export function ChangelogFeed({ entries }: { entries: ChangelogEntry[] }) {
   return (
     <div className="max-w-2xl">
       <h1 className="text-2xl font-bold text-[#1F1A17] mb-8">{t('title')}</h1>
-
-      {/* Bloc avis */}
-      <div className="relative flex gap-4 mb-8">
-        <div className="flex flex-col items-center">
-          <div className="w-9 h-9 rounded-full bg-[#722F37] text-white flex items-center justify-center shrink-0 z-10">
-            <StarIcon />
-          </div>
-          <div className="w-px flex-1 bg-[#E0D6C8] mt-2" />
-        </div>
-        <div className="flex-1 pb-8">
-          <div className="bg-[#FBF8F4] border border-[#E0D6C8] rounded-xl p-5">
-            <p className="text-xs font-semibold text-[#722F37] uppercase tracking-wider mb-1">{t('reviewTitle')}</p>
-            <p className="text-sm text-[#6B6560] leading-relaxed mb-4">{t('reviewText')}</p>
-            <a
-              href="https://g.page/r/CcSyetXUJJrpEAE/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold bg-[#722F37] !text-white rounded-lg px-4 py-2 hover:bg-[#5a2329] transition-colors"
-            >
-              {t('reviewButton')}
-            </a>
-          </div>
-        </div>
-      </div>
 
       {/* Entrées changelog */}
       {entries.map((entry, entryIndex) => {
