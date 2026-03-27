@@ -2,7 +2,7 @@
 
 import { Lock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { PRICING } from '@/lib/config/pricing'
+import { getActivePrice } from '@/lib/config/pricing'
 import { cn } from '@/lib/utils/helpers'
 
 interface PaymentRequiredProps {
@@ -72,7 +72,7 @@ export function PaymentRequired({
           <p className="mt-1 text-sm text-gray-600">{message}</p>
           <div className="mt-4 flex items-center gap-4">
             <Button onClick={onUnlock}>
-              Débloquer pour {PRICING.displayPrice}
+              Débloquer pour {getActivePrice().displayPrice}
             </Button>
             <span className="text-sm text-gray-500">Paiement unique</span>
           </div>

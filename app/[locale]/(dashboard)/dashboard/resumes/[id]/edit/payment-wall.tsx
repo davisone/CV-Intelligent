@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
-import { PRICING } from '@/lib/config/pricing'
+import { getActivePrice } from '@/lib/config/pricing'
 import {
   Lock,
   ArrowLeft,
@@ -28,6 +28,7 @@ interface PaymentWallProps {
 export function PaymentWall({ resume }: PaymentWallProps) {
   const router = useRouter()
   const t = useTranslations('paywall')
+  const activePrice = getActivePrice()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [acceptedCGV, setAcceptedCGV] = useState(false)
@@ -106,7 +107,7 @@ export function PaymentWall({ resume }: PaymentWallProps) {
 
           {/* Price */}
           <div className="text-center py-4 border-t border-b border-gray-100 mb-6">
-            <p className="text-4xl font-bold text-gray-900">{PRICING.displayPrice}</p>
+            <p className="text-4xl font-bold text-gray-900">{activePrice.displayPrice}</p>
             <p className="text-sm text-gray-500 mt-1">{t('oneTimePayment')}</p>
           </div>
 
@@ -152,7 +153,7 @@ export function PaymentWall({ resume }: PaymentWallProps) {
                 </>
               ) : (
                 <>
-                  {t('unlockButton', { price: PRICING.displayPrice })}
+                  {t('unlockButton', { price: activePrice.displayPrice })}
                 </>
               )}
             </Button>

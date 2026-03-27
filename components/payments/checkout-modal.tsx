@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/helpers'
-import { PRICING } from '@/lib/config/pricing'
+import { getActivePrice } from '@/lib/config/pricing'
 import { Lock, Sparkles, FileText, BarChart3, Download, Check } from 'lucide-react'
 
 interface CheckoutModalProps {
@@ -23,6 +23,7 @@ export function CheckoutModal({
   const dialogRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const activePrice = getActivePrice()
   const [acceptedCGV, setAcceptedCGV] = useState(false)
 
   const handleCheckout = async () => {
@@ -134,7 +135,7 @@ export function CheckoutModal({
 
         {/* Price */}
         <div className="text-center py-4 border-t border-b border-gray-100 mb-4">
-          <p className="text-3xl font-bold text-gray-900">{PRICING.displayPrice}</p>
+          <p className="text-3xl font-bold text-gray-900">{activePrice.displayPrice}</p>
           <p className="text-sm text-gray-500">Paiement unique, accès permanent</p>
         </div>
 
@@ -182,7 +183,7 @@ export function CheckoutModal({
             disabled={!acceptedCGV}
             isLoading={isLoading}
           >
-            Payer {PRICING.displayPrice}
+            Payer {activePrice.displayPrice}
           </Button>
         </div>
 

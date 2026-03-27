@@ -1,11 +1,15 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import { X } from 'lucide-react'
 import { WEEKEND_PROMO, isPromoActive } from '@/lib/config/pricing'
 
 export function PromoPopup() {
   const [visible, setVisible] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+  const locale = pathname.split('/')[1] ?? 'fr'
 
   useEffect(() => {
     if (!isPromoActive()) return
@@ -16,6 +20,11 @@ export function PromoPopup() {
   function dismiss() {
     localStorage.setItem(WEEKEND_PROMO.slug, '1')
     setVisible(false)
+  }
+
+  function claimOffer() {
+    dismiss()
+    router.push(`/${locale}/dashboard/templates`)
   }
 
   if (!visible) return null
@@ -76,7 +85,7 @@ export function PromoPopup() {
           </div>
 
           <button
-            onClick={dismiss}
+            onClick={claimOffer}
             className="w-full bg-[#722F37] hover:bg-[#5a252c] text-white font-semibold py-3 rounded-xl transition-colors"
           >
             J'en profite

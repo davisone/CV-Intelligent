@@ -8294,5 +8294,24 @@
     "reviewButton": "Leave a Google review",
     "latestUpdate": "Latest update",
     "previousUpdate": "Previous update"
+  },
+  "paywall": {
+    "title": "Unlock your Premium Resume",
+    "description": "This resume ({title}) requires a one-time payment to access all features.",
+    "whatYouGet": "What you get:",
+    "feature1": "All premium templates",
+    "feature2": "Unlimited AI suggestions",
+    "feature3": "Detailed ATS score",
+    "feature4": "DOCX export",
+    "oneTimePayment": "One-time payment, permanent access",
+    "cgvAccept": "I accept the",
+    "cgvLink": "Terms and Conditions",
+    "cgvWaiver": "and I expressly waive my right of withdrawal in accordance with article L221-28 of the Consumer Code.",
+    "redirecting": "Redirecting...",
+    "unlockButton": "Pay {price}",
+    "backToResumes": "Back to my resumes",
+    "securePayment": "Secure payment via Stripe",
+    "alreadyUsedFree": "Your content is saved and will remain accessible.",
+    "paymentError": "An error occurred during payment."
   }
 }

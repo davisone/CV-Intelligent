@@ -8217,5 +8217,24 @@
     "reviewButton": "Dejar una reseña en Google",
     "latestUpdate": "Última actualización",
     "previousUpdate": "Actualización anterior"
+  },
+  "paywall": {
+    "title": "Desbloquea tu CV Premium",
+    "description": "Este CV ({title}) requiere un pago único para acceder a todas las funciones.",
+    "whatYouGet": "Lo que obtienes:",
+    "feature1": "Todas las plantillas premium",
+    "feature2": "Sugerencias de IA ilimitadas",
+    "feature3": "Puntuación ATS detallada",
+    "feature4": "Exportación DOCX",
+    "oneTimePayment": "Pago único, acceso permanente",
+    "cgvAccept": "Acepto los",
+    "cgvLink": "Términos y Condiciones",
+    "cgvWaiver": "y renuncio expresamente a mi derecho de desistimiento de conformidad con el artículo L221-28 del Código de Consumo.",
+    "redirecting": "Redirigiendo...",
+    "unlockButton": "Pagar {price}",
+    "backToResumes": "Volver a mis CVs",
+    "securePayment": "Pago seguro vía Stripe",
+    "alreadyUsedFree": "Tu contenido está guardado y seguirá siendo accesible.",
+    "paymentError": "Se produjo un error durante el pago."
   }
 }
