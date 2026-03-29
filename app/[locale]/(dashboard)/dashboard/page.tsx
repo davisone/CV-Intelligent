@@ -8,6 +8,7 @@ import { getTranslations } from 'next-intl/server'
 import { ResumeList } from './resume-list'
 import { WelcomeToast } from './welcome-toast'
 import { OnboardingTour } from '@/components/ui/onboarding-tour'
+import { WEEKEND_PROMO, isPromoActive } from '@/lib/config/pricing'
 import { EmptyState } from '@/components/ui/empty-state'
 import { ReviewReminder } from '@/components/review-prompt'
 import { Plus, FileText, Sparkles, TrendingUp, Clock, Eye } from 'lucide-react'
@@ -73,6 +74,7 @@ export default async function DashboardPage() {
         <OnboardingTour
           storageKey="tour_v2_dashboard"
           labels={{ next: t('tour.next'), prev: t('tour.prev'), done: t('tour.done') }}
+          waitForLocalStorageKey={isPromoActive() ? WEEKEND_PROMO.slug : undefined}
           steps={[
             {
               id: 'onboarding-create-cv',

@@ -22,9 +22,10 @@ interface OnboardingTourProps {
   steps: TourStep[]
   delay?: number
   labels?: TourLabels
+  waitForLocalStorageKey?: string
 }
 
-export function OnboardingTour({ storageKey, steps, delay = 700, labels }: OnboardingTourProps) {
+export function OnboardingTour({ storageKey, steps, delay = 700, labels, waitForLocalStorageKey }: OnboardingTourProps) {
   const nextBtn = labels?.next ?? 'Suivant →'
   const prevBtn = labels?.prev ?? '← Précédent'
   const doneBtn = labels?.done ?? 'Terminer'
@@ -55,12 +56,32 @@ export function OnboardingTour({ storageKey, steps, delay = 700, labels }: Onboa
       })),
     })
 
-    const timer = setTimeout(() => driverObj.drive(), delay)
+    let timer: ReturnType<typeof setTimeout> | null = null
+    let interval: ReturnType<typeof setInterval> | null = null
+
+    function launchAfterDelay() {
+      timer = setTimeout(() => driverObj.drive(), delay)
+    }
+
+    // Si une popup doit être fermée en premier, on attend qu'elle le soit
+    if (waitForLocalStorageKey && !localStorage.getItem(waitForLocalStorageKey)) {
+      interval = setInterval(() => {
+        if (localStorage.getItem(waitForLocalStorageKey)) {
+          clearInterval(interval!)
+          interval = null
+          launchAfterDelay()
+        }
+      }, 300)
+    } else {
+      launchAfterDelay()
+    }
+
     return () => {
-      clearTimeout(timer)
+      if (timer) clearTimeout(timer)
+      if (interval) clearInterval(interval)
       driverObj.destroy()
     }
-  }, [storageKey, steps, delay, nextBtn, prevBtn, doneBtn])
+  }, [storageKey, steps, delay, nextBtn, prevBtn, doneBtn, waitForLocalStorageKey])
 
   return null
 }
