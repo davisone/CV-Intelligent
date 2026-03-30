@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { renderToStaticMarkup } from 'react-dom/server'
-import React from 'react'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { checkResumeAccess } from '@/lib/payments/feature-check'
@@ -82,6 +80,8 @@ export async function GET(request: Request, { params }: RouteParams) {
     }
 
     // Rendu du template React en HTML statique — élimine la requête vers /cv-render
+    const { renderToStaticMarkup } = await import('react-dom/server')
+    const React = (await import('react')).default
     const templateKey = (resume.template as TemplateType) || 'MODERN'
     const TemplateComponent = templates[templateKey] || templates.MODERN
     const cvData = buildCvData(resume as unknown as Record<string, unknown>)
