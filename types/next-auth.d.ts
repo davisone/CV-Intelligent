@@ -10,6 +10,7 @@ declare module 'next-auth' {
       totpEnabled?: boolean
       twoFactorVerified?: boolean
       emailVerified?: boolean
+      isAdmin?: boolean
     }
   }
 }
@@ -20,5 +21,6 @@ declare module 'next-auth/jwt' {
     totpEnabled?: boolean
     twoFactorVerified?: boolean
     emailVerified?: boolean
+    isAdmin?: boolean
   }
 }

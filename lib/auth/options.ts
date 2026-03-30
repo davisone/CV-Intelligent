@@ -101,6 +101,7 @@ export const authOptions: NextAuthOptions = {
         session.user.totpEnabled = token.totpEnabled
         session.user.twoFactorVerified = token.twoFactorVerified
         session.user.emailVerified = token.emailVerified as boolean
+        session.user.isAdmin = token.isAdmin
       }
       return session
     },
@@ -121,11 +122,12 @@ export const authOptions: NextAuthOptions = {
         // Fetch 2FA status from database
         const dbUser = await prisma.user.findUnique({
           where: { id: user.id },
-          select: { totpEnabled: true, emailVerified: true },
+          select: { totpEnabled: true, emailVerified: true, isAdmin: true },
         })
 
         token.totpEnabled = dbUser?.totpEnabled ?? false
         token.emailVerified = !!dbUser?.emailVerified
+        token.isAdmin = dbUser?.isAdmin ?? false
 
         // For credentials login, 2FA was already verified in authorize()
         // For OAuth login, 2FA needs to be verified if enabled

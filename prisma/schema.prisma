@@ -56,6 +56,7 @@ model User {
   // Stripe & Payment
   stripeCustomerId String?   @unique
   freeCVUsed       Boolean   @default(false)
+  isAdmin          Boolean   @default(false)
   accounts         Account[]
   sessions         Session[]
   resumes          Resume[]

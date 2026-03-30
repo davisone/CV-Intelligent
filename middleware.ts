@@ -7,6 +7,7 @@ import { routing } from './i18n/routing'
 const handleI18nRouting = createIntlMiddleware(routing)
 
 const PROTECTED_PATTERN = /^\/(fr|en|es)\/(dashboard|profile|resumes)/
+const ADMIN_PATTERN = /^\/(fr|en|es)\/admin/
 const AUTH_PAGE_PATTERN = /^\/(fr|en|es)\/(login|signup)$/
 
 export async function middleware(request: NextRequest) {
@@ -48,7 +49,14 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // 3. Pages auth : si déjà connecté → redirige vers dashboard
+  // 3. Routes admin : réservé aux admins uniquement (404 pour ne pas révéler l'existence)
+  if (ADMIN_PATTERN.test(pathname)) {
+    if (!token || !token.isAdmin) {
+      return NextResponse.rewrite(new URL('/not-found', request.url))
+    }
+  }
+
+  // 4. Pages auth : si déjà connecté → redirige vers dashboard
   if (AUTH_PAGE_PATTERN.test(pathname) && token) {
     const needs2FA = token.totpEnabled === true && token.twoFactorVerified !== true
     const needsEmailVerification = token.emailVerified === false
