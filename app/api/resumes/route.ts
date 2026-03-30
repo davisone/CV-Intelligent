@@ -94,30 +94,15 @@ export async function POST(request: Request) {
       )
     }
 
-    // Récupérer le profil de l'utilisateur pour pré-remplir
-    const userProfile = await prisma.userProfile.findUnique({
-      where: { userId: session.user.id },
-    })
-    const userExperiences = await prisma.userExperience.findMany({
-      where: { userId: session.user.id },
-      orderBy: { order: 'asc' },
-    })
-    const userEducations = await prisma.userEducation.findMany({
-      where: { userId: session.user.id },
-      orderBy: { order: 'asc' },
-    })
-    const userSkills = await prisma.userSkill.findMany({
-      where: { userId: session.user.id },
-      orderBy: { order: 'asc' },
-    })
-    const userLanguages = await prisma.userLanguage.findMany({
-      where: { userId: session.user.id },
-      orderBy: { order: 'asc' },
-    })
-    const userInterests = await prisma.userInterest.findMany({
-      where: { userId: session.user.id },
-      orderBy: { order: 'asc' },
-    })
+    // Récupérer le profil de l'utilisateur pour pré-remplir (requêtes parallèles)
+    const [userProfile, userExperiences, userEducations, userSkills, userLanguages, userInterests] = await Promise.all([
+      prisma.userProfile.findUnique({ where: { userId: session.user.id } }),
+      prisma.userExperience.findMany({ where: { userId: session.user.id }, orderBy: { order: 'asc' } }),
+      prisma.userEducation.findMany({ where: { userId: session.user.id }, orderBy: { order: 'asc' } }),
+      prisma.userSkill.findMany({ where: { userId: session.user.id }, orderBy: { order: 'asc' } }),
+      prisma.userLanguage.findMany({ where: { userId: session.user.id }, orderBy: { order: 'asc' } }),
+      prisma.userInterest.findMany({ where: { userId: session.user.id }, orderBy: { order: 'asc' } }),
+    ])
 
     // Créer le CV avec les données pré-remplies
     const resume = await prisma.resume.create({

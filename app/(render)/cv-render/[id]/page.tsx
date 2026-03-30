@@ -4,6 +4,9 @@ import { prisma } from '@/lib/db/prisma'
 import { templates, TemplateType } from '@/components/cv-templates'
 import { AutoFitPage } from '@/components/cv-templates/auto-fit-page'
 
+// Cache la page 5 minutes — les previews n'ont pas besoin d'être temps réel
+export const revalidate = 300
+
 interface PageProps {
   params: Promise<{ id: string }>
   searchParams: Promise<{ token?: string; ts?: string; locale?: string }>

@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { createHmac } from 'crypto'
+import { renderToStaticMarkup } from 'react-dom/server'
+import React from 'react'
 import { authOptions } from '@/lib/auth/options'
 import { prisma } from '@/lib/db/prisma'
 import { checkResumeAccess } from '@/lib/payments/feature-check'
+import { templates, TemplateType } from '@/components/cv-templates'
 
 export const maxDuration = 60
 
@@ -11,17 +13,34 @@ interface RouteParams {
   params: Promise<{ id: string }>
 }
 
-// Génère un token HMAC pour accéder à la page de rendu interne
-function generateRenderToken(resumeId: string): { token: string; ts: string } {
-  const secret = process.env.NEXTAUTH_SECRET
-  if (!secret) throw new Error('NEXTAUTH_SECRET non configuré')
-
-  const ts = Date.now().toString()
-  const token = createHmac('sha256', secret)
-    .update(`${resumeId}:${ts}`)
-    .digest('hex')
-
-  return { token, ts }
+function buildCvData(resume: Record<string, unknown>) {
+  const personalInfo = resume.personalInfo as Record<string, unknown> | null
+  return {
+    personalInfo: {
+      firstName: (personalInfo?.firstName as string) ?? '',
+      lastName: (personalInfo?.lastName as string) ?? '',
+      email: (personalInfo?.email as string) ?? '',
+      phone: (personalInfo?.phone as string) ?? '',
+      city: (personalInfo?.city as string) ?? '',
+      country: (personalInfo?.country as string) ?? '',
+      linkedin: (personalInfo?.linkedin as string) ?? '',
+      linkedinLabel: (personalInfo?.linkedinLabel as string) ?? '',
+      github: (personalInfo?.github as string) ?? '',
+      githubLabel: (personalInfo?.githubLabel as string) ?? '',
+      portfolio: (personalInfo?.portfolio as string) ?? '',
+      portfolioLabel: (personalInfo?.portfolioLabel as string) ?? '',
+      summary: (personalInfo?.summary as string) ?? '',
+      photoUrl: (personalInfo?.photoUrl as string) ?? '',
+      drivingLicenses: (personalInfo?.drivingLicenses as string) ?? '',
+    },
+    experiences: (resume.experiences as unknown[]) ?? [],
+    educations: (resume.educations as unknown[]) ?? [],
+    certifications: (resume.certifications as unknown[]) ?? [],
+    projects: (resume.projects as unknown[]) ?? [],
+    skills: (resume.skills as unknown[]) ?? [],
+    languages: (resume.languages as unknown[]) ?? [],
+    interests: (resume.interests as unknown[]) ?? [],
+  }
 }
 
 export async function GET(request: Request, { params }: RouteParams) {
@@ -34,7 +53,6 @@ export async function GET(request: Request, { params }: RouteParams) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    // Vérifier l'accès
     const access = await checkResumeAccess(id, session.user.id)
     if (access.requiresPayment && !access.canAccess) {
       return NextResponse.json(
@@ -43,17 +61,49 @@ export async function GET(request: Request, { params }: RouteParams) {
       )
     }
 
-    // Vérifier que le CV existe et appartient à l'utilisateur
+    // Récupère toutes les données en une seule requête DB
+    // (remplace les deux requêtes : findFirst titre + goto /cv-render qui refaisait un findUnique)
     const resume = await prisma.resume.findFirst({
       where: { id, userId: session.user.id },
-      select: { id: true, title: true },
+      include: {
+        personalInfo: true,
+        experiences: { orderBy: { order: 'asc' } },
+        educations: { orderBy: { order: 'asc' } },
+        certifications: { orderBy: { order: 'asc' } },
+        skills: { orderBy: { order: 'asc' } },
+        languages: { orderBy: { order: 'asc' } },
+        projects: { orderBy: { order: 'asc' } },
+        interests: { orderBy: { order: 'asc' } },
+      },
     })
 
     if (!resume) {
       return NextResponse.json({ error: 'CV introuvable' }, { status: 404 })
     }
 
-    // Lancer Puppeteer (avant la génération du token pour éviter l'expiration)
+    // Rendu du template React en HTML statique — élimine la requête vers /cv-render
+    const templateKey = (resume.template as TemplateType) || 'MODERN'
+    const TemplateComponent = templates[templateKey] || templates.MODERN
+    const cvData = buildCvData(resume as unknown as Record<string, unknown>)
+    const templateHtml = renderToStaticMarkup(
+      React.createElement(TemplateComponent, { data: cvData, locale })
+    )
+
+    const htmlContent = `<!DOCTYPE html>
+<html lang="${locale}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>* { margin: 0; padding: 0; box-sizing: border-box; } body { background: white; }</style>
+</head>
+<body>
+  <div data-auto-fit-wrapper style="width:21cm;margin:0 auto;">
+    <div data-cv-container>${templateHtml}</div>
+  </div>
+</body>
+</html>`
+
     const isProduction = process.env.VERCEL === '1'
     const puppeteer = (await import('puppeteer-core')).default
 
@@ -94,39 +144,21 @@ export async function GET(request: Request, { params }: RouteParams) {
     try {
       const page = await browser.newPage()
 
-      // Générer le token APRÈS le lancement du navigateur pour éviter l'expiration
-      const { token, ts } = generateRenderToken(id)
-      const baseUrl = process.env.NEXTAUTH_URL
-        || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
-        || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
-        || `http://localhost:${process.env.PORT || 3000}`
-      const renderUrl = `${baseUrl}/cv-render/${id}?token=${token}&ts=${ts}&locale=${locale}`
+      // setContent au lieu de goto — pas de requête réseau vers /cv-render
+      await page.setContent(htmlContent, { waitUntil: 'networkidle0', timeout: 15_000 })
 
-      // Pré-accepter les cookies pour éviter le bandeau
-      await page.evaluateOnNewDocument(() => {
-        localStorage.setItem('cookie-consent', 'refused')
-      })
-
-      await page.goto(renderUrl, { waitUntil: 'networkidle0', timeout: 15_000 })
-
-      // Appliquer le scaling auto-fit + nettoyage directement via Puppeteer
-      // (sans dépendre du useEffect client-side qui peut ne pas s'exécuter en headless)
       await page.evaluate(() => {
         const A4_RATIO = 29.7 / 21
 
-        // Forcer html/body sans marges
         document.documentElement.style.cssText = 'margin:0!important;padding:0!important;'
         document.body.style.cssText = 'margin:0!important;padding:0!important;background:white!important;'
 
-        // Forcer le wrapper et le template à prendre 100% de la largeur
-        // au lieu de 21cm (évite le décalage cm↔px en mode print)
         const wrapper = document.querySelector('[data-auto-fit-wrapper]') as HTMLElement | null
         if (wrapper) {
           wrapper.style.width = '100%'
           wrapper.style.margin = '0'
         }
 
-        // Forcer le template div (enfant de cv-container) à 100%
         const cvContainer = document.querySelector('[data-cv-container]') as HTMLElement | null
         const templateDiv = cvContainer?.firstElementChild as HTMLElement | null
         if (templateDiv) {
@@ -134,7 +166,6 @@ export async function GET(request: Request, { params }: RouteParams) {
           templateDiv.style.margin = '0'
         }
 
-        // Auto-fit : scaler si le contenu dépasse la hauteur A4
         const content = wrapper?.firstElementChild as HTMLElement | null
         if (wrapper && content) {
           const pageWidth = content.offsetWidth
@@ -148,7 +179,6 @@ export async function GET(request: Request, { params }: RouteParams) {
           }
         }
 
-        // Supprimer tout élément fixed/sticky résiduel (toaster, overlays, etc.)
         document.querySelectorAll('*').forEach(el => {
           const style = getComputedStyle(el)
           if (style.position === 'fixed' || style.position === 'sticky') {
