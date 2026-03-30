@@ -44,6 +44,7 @@ export function AdminCharts({ monthlyData, dailyDataByMonth }: AdminChartsProps)
   const [selectedMonth, setSelectedMonth] = useState<string>(currentMonthLabel)
 
   const dailyData = dailyDataByMonth[selectedMonth] ?? []
+  const monthStats = monthlyData.find(m => m.label === selectedMonth)
 
   return (
     <div className="space-y-6">
@@ -85,11 +86,25 @@ export function AdminCharts({ monthlyData, dailyDataByMonth }: AdminChartsProps)
             </button>
           ))}
         </div>
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-xs text-[#9B9590]">
-            <span className="font-semibold text-[#722F37]">{selectedMonth}</span> — activité jour par jour
-          </p>
-        </div>
+        {/* Récap du mois */}
+        {monthStats && (
+          <div className="grid grid-cols-3 gap-3 mb-5">
+            <div className="bg-[#FBF8F4] rounded-xl p-3.5">
+              <p className="text-xs text-[#9B9590] mb-1">Inscrits</p>
+              <p className="text-2xl font-bold text-[#1F1A17]">{monthStats.users}</p>
+            </div>
+            <div className="bg-[#FBF8F4] rounded-xl p-3.5">
+              <p className="text-xs text-[#9B9590] mb-1">Achats</p>
+              <p className="text-2xl font-bold text-[#722F37]">{monthStats.purchases}</p>
+            </div>
+            <div className="bg-[#FBF8F4] rounded-xl p-3.5">
+              <p className="text-xs text-[#9B9590] mb-1">Revenus</p>
+              <p className="text-2xl font-bold text-[#D97706]">
+                {monthStats.revenue > 0 ? `${monthStats.revenue.toFixed(2)} €` : '—'}
+              </p>
+            </div>
+          </div>
+        )}
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={dailyData} barSize={7} barGap={2}>
             <CartesianGrid strokeDasharray="3 3" stroke="#F0E8DC" vertical={false} />
