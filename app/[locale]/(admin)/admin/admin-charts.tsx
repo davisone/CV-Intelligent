@@ -16,7 +16,7 @@ interface MonthlyPoint {
 
 interface AdminChartsProps {
   monthlyData: MonthlyPoint[]
-  dailyData: MonthlyPoint[]
+  dailyDataByMonth: Record<string, MonthlyPoint[]>
 }
 
 const COLORS = {
@@ -39,29 +39,38 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
   )
 }
 
-export function AdminCharts({ monthlyData, dailyData }: AdminChartsProps) {
-  const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
-
+export function AdminCharts({ monthlyData, dailyDataByMonth }: AdminChartsProps) {
   const currentMonthLabel = new Date().toLocaleDateString('fr-FR', { month: 'short', year: '2-digit' })
-  const displayDailyFor = selectedMonth ?? currentMonthLabel
+  const [selectedMonth, setSelectedMonth] = useState<string>(currentMonthLabel)
+
+  const dailyData = dailyDataByMonth[selectedMonth] ?? []
 
   return (
     <div className="space-y-6">
 
       {/* Vue 12 mois */}
       <div className="bg-white border border-[#E0D6C8] rounded-2xl p-6">
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-sm font-semibold text-[#1F1A17]">12 derniers mois</h2>
-          <p className="text-xs text-[#9B9590]">Cliquer sur un mois pour le détail journalier</p>
+        <div className="mb-5">
+          <h2 className="text-sm font-semibold text-[#1F1A17] mb-4">12 derniers mois</h2>
+          {/* Sélecteur de mois */}
+          <div className="flex flex-wrap gap-1.5">
+            {monthlyData.map(m => (
+              <button
+                key={m.label}
+                onClick={() => setSelectedMonth(m.label)}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                  selectedMonth === m.label
+                    ? 'bg-[#722F37] text-white shadow-sm'
+                    : 'bg-[#F8F4EE] text-[#6B6560] hover:bg-[#EEE6DA] hover:text-[#1F1A17]'
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
         </div>
         <ResponsiveContainer width="100%" height={240}>
-          <LineChart
-            data={monthlyData}
-            onClick={(e) => {
-              if (e?.activeLabel && typeof e.activeLabel === 'string') setSelectedMonth(e.activeLabel)
-            }}
-            className="cursor-pointer"
-          >
+          <LineChart data={monthlyData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#F0E8DC" />
             <XAxis dataKey="label" tick={{ fill: '#9B9590', fontSize: 11 }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fill: '#9B9590', fontSize: 11 }} axisLine={false} tickLine={false} />
@@ -78,16 +87,8 @@ export function AdminCharts({ monthlyData, dailyData }: AdminChartsProps) {
       <div className="bg-white border border-[#E0D6C8] rounded-2xl p-6">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-sm font-semibold text-[#1F1A17]">
-            Détail — <span className="text-[#722F37]">{displayDailyFor}</span>
+            Détail — <span className="text-[#722F37]">{selectedMonth}</span>
           </h2>
-          {selectedMonth && (
-            <button
-              onClick={() => setSelectedMonth(null)}
-              className="text-xs text-[#722F37] hover:text-[#8B3A44] font-medium transition-colors"
-            >
-              ← mois en cours
-            </button>
-          )}
         </div>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={dailyData} barSize={7} barGap={2}>

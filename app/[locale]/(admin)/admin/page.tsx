@@ -94,15 +94,19 @@ export default async function AdminPage() {
     return { label, users, purchases, revenue: revenue / 100 }
   })
 
-  const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()
-  const dailyData = Array.from({ length: daysInMonth }, (_, i) => {
-    const day = new Date(now.getFullYear(), now.getMonth(), i + 1)
-    const nextDay = new Date(now.getFullYear(), now.getMonth(), i + 2)
-    const label = String(i + 1).padStart(2, '0')
-    const users = allUsers.filter(u => u.createdAt >= day && u.createdAt < nextDay).length
-    const purchases = allPayments.filter(p => p.createdAt >= day && p.createdAt < nextDay).length
-    const revenue = allPayments.filter(p => p.createdAt >= day && p.createdAt < nextDay).reduce((s, p) => s + p.amount, 0)
-    return { label, users, purchases, revenue: revenue / 100 }
+  const dailyDataByMonth: Record<string, { label: string; users: number; purchases: number; revenue: number }[]> = {}
+  months.forEach((monthDate) => {
+    const monthLabel = getMonthLabel(monthDate)
+    const daysInMonth = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0).getDate()
+    dailyDataByMonth[monthLabel] = Array.from({ length: daysInMonth }, (_, i) => {
+      const day = new Date(monthDate.getFullYear(), monthDate.getMonth(), i + 1)
+      const nextDay = new Date(monthDate.getFullYear(), monthDate.getMonth(), i + 2)
+      const label = String(i + 1).padStart(2, '0')
+      const users = allUsers.filter(u => u.createdAt >= day && u.createdAt < nextDay).length
+      const purchases = allPayments.filter(p => p.createdAt >= day && p.createdAt < nextDay).length
+      const revenue = allPayments.filter(p => p.createdAt >= day && p.createdAt < nextDay).reduce((s, p) => s + p.amount, 0)
+      return { label, users, purchases, revenue: revenue / 100 }
+    })
   })
 
   const kpis = [
@@ -146,7 +150,7 @@ export default async function AdminPage() {
         </div>
 
         {/* Graphiques */}
-        <AdminCharts monthlyData={monthlyData} dailyData={dailyData} />
+        <AdminCharts monthlyData={monthlyData} dailyDataByMonth={dailyDataByMonth} />
 
         {/* Tableau derniers inscrits */}
         <div className="mt-8">
