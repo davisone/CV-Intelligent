@@ -19,13 +19,14 @@ function getWeekStart() {
 }
 
 function getLast12Months() {
+  const appStart = new Date(2026, 1, 1) // février 2026 — date de lancement
   return Array.from({ length: 12 }, (_, i) => {
     const d = new Date()
     d.setDate(1)
     d.setMonth(d.getMonth() - (11 - i))
     d.setHours(0, 0, 0, 0)
     return d
-  })
+  }).filter(d => d >= appStart)
 }
 
 function getMonthLabel(date: Date) {

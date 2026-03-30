@@ -48,27 +48,9 @@ export function AdminCharts({ monthlyData, dailyDataByMonth }: AdminChartsProps)
   return (
     <div className="space-y-6">
 
-      {/* Vue 12 mois */}
+      {/* Vue mensuelle */}
       <div className="bg-white border border-[#E0D6C8] rounded-2xl p-6">
-        <div className="mb-5">
-          <h2 className="text-sm font-semibold text-[#1F1A17] mb-4">12 derniers mois</h2>
-          {/* Sélecteur de mois */}
-          <div className="flex flex-wrap gap-1.5">
-            {monthlyData.map(m => (
-              <button
-                key={m.label}
-                onClick={() => setSelectedMonth(m.label)}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                  selectedMonth === m.label
-                    ? 'bg-[#722F37] text-white shadow-sm'
-                    : 'bg-[#F8F4EE] text-[#6B6560] hover:bg-[#EEE6DA] hover:text-[#1F1A17]'
-                }`}
-              >
-                {m.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <h2 className="text-sm font-semibold text-[#1F1A17] mb-5">Évolution mensuelle</h2>
         <ResponsiveContainer width="100%" height={240}>
           <LineChart data={monthlyData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#F0E8DC" />
@@ -83,12 +65,30 @@ export function AdminCharts({ monthlyData, dailyDataByMonth }: AdminChartsProps)
         </ResponsiveContainer>
       </div>
 
-      {/* Vue journalière */}
+      {/* Vue journalière avec sélecteur de mois intégré */}
       <div className="bg-white border border-[#E0D6C8] rounded-2xl p-6">
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-sm font-semibold text-[#1F1A17]">
-            Détail — <span className="text-[#722F37]">{selectedMonth}</span>
-          </h2>
+        <h2 className="text-sm font-semibold text-[#1F1A17] mb-4">Détail journalier</h2>
+
+        {/* Sélecteur de mois */}
+        <div className="flex flex-wrap gap-1.5 mb-5">
+          {monthlyData.map(m => (
+            <button
+              key={m.label}
+              onClick={() => setSelectedMonth(m.label)}
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                selectedMonth === m.label
+                  ? 'bg-[#722F37] text-white shadow-sm'
+                  : 'bg-[#F8F4EE] text-[#6B6560] hover:bg-[#EEE6DA] hover:text-[#1F1A17]'
+              }`}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-xs text-[#9B9590]">
+            <span className="font-semibold text-[#722F37]">{selectedMonth}</span> — activité jour par jour
+          </p>
         </div>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={dailyData} barSize={7} barGap={2}>
