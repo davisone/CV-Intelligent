@@ -16,11 +16,11 @@ export const COVER_LETTER_AI_PRICING = {
   maxGenerations: 3,
 } as const
 
-// Promotion week-end : 27 mars → 29 mars 2026 23h59
+// Promotion prolongée : 30 mars → 5 avril 2026 23h59
 export const WEEKEND_PROMO = {
-  slug: 'promo-weekend-2026-03-27',
-  start: new Date('2026-03-27T00:00:00+01:00'),
-  end: new Date('2026-03-29T23:59:59+01:00'),
+  slug: 'promo-semaine-2026-03-30',
+  start: new Date('2026-03-30T00:00:00+01:00'),
+  end: new Date('2026-04-05T23:59:59+01:00'),
   discountCents: 100, // -1€
 } as const
 

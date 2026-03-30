@@ -50,14 +50,14 @@ export function PromoPopup() {
 
           {/* Étiquette promo */}
           <div className="inline-flex items-center gap-1.5 bg-[#722F37]/10 text-[#722F37] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-            <span>⚡</span> Offre week-end
+            <span>⚡</span> Offre prolongée
           </div>
 
           <h2 className="text-2xl font-bold text-[#1F1A17] mb-2">
-            -1€ sur tout ce week-end
+            -1€ toute la semaine !
           </h2>
           <p className="text-[#6B6560] text-sm leading-relaxed mb-5">
-            Profitez de tarifs réduits jusqu'à dimanche 23h59 sur tous nos services :
+            Vos retours ont été excellents — on prolonge la promo jusqu'à dimanche prochain sur tous nos services :
           </p>
 
           <div className="space-y-2.5 mb-6">
@@ -92,7 +92,7 @@ export function PromoPopup() {
           </button>
 
           <p className="text-center text-xs text-[#9B9590] mt-3">
-            Offre valable jusqu'au dimanche 29 mars à 23h59
+            Offre valable jusqu'au dimanche 5 avril à 23h59
           </p>
         </div>
       </div>
