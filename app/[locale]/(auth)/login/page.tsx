@@ -1,8 +1,8 @@
 'use client'
 
 import { Suspense, useState, useEffect } from 'react'
-import { signIn } from 'next-auth/react'
-import { useTranslations } from 'next-intl'
+import { signIn, getSession } from 'next-auth/react'
+import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
 import { toast } from 'sonner'
@@ -39,6 +39,7 @@ function LoginSkeleton() {
 function LoginForm() {
   const t = useTranslations('auth.login')
   const router = useRouter()
+  const locale = useLocale()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') ?? '/dashboard'
 
@@ -132,7 +133,8 @@ function LoginForm() {
         }
       } else {
         toast.success(t('success'))
-        window.location.href = callbackUrl
+        const session = await getSession()
+        window.location.href = session?.user?.isAdmin ? `/${locale}/admin` : callbackUrl
       }
     } catch {
       toast.error(t('errors.generic'))

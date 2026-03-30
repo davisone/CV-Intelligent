@@ -38,7 +38,6 @@ export default async function AdminPage() {
 
   const now = new Date()
   const weekStart = getWeekStart()
-  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1)
   const months = getLast12Months()
 
   const [
@@ -85,115 +84,63 @@ export default async function AdminPage() {
   const totalRevenue = revenueResult._sum.amount ?? 0
   const conversionRate = totalUsers > 0 ? ((totalPayments / totalUsers) * 100).toFixed(1) : '0'
 
-  // Données par mois pour le graphique global
   const monthlyData = months.map((monthDate) => {
     const nextMonth = new Date(monthDate)
     nextMonth.setMonth(nextMonth.getMonth() + 1)
     const label = getMonthLabel(monthDate)
-
-    const users = allUsers.filter(u =>
-      u.createdAt >= monthDate && u.createdAt < nextMonth
-    ).length
-
-    const purchases = allPayments.filter(p =>
-      p.createdAt >= monthDate && p.createdAt < nextMonth
-    ).length
-
-    const revenue = allPayments
-      .filter(p => p.createdAt >= monthDate && p.createdAt < nextMonth)
-      .reduce((sum, p) => sum + p.amount, 0)
-
+    const users = allUsers.filter(u => u.createdAt >= monthDate && u.createdAt < nextMonth).length
+    const purchases = allPayments.filter(p => p.createdAt >= monthDate && p.createdAt < nextMonth).length
+    const revenue = allPayments.filter(p => p.createdAt >= monthDate && p.createdAt < nextMonth).reduce((s, p) => s + p.amount, 0)
     return { label, users, purchases, revenue: revenue / 100 }
   })
 
-  // Données journalières du mois en cours
   const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()
   const dailyData = Array.from({ length: daysInMonth }, (_, i) => {
     const day = new Date(now.getFullYear(), now.getMonth(), i + 1)
     const nextDay = new Date(now.getFullYear(), now.getMonth(), i + 2)
     const label = String(i + 1).padStart(2, '0')
-
-    const users = allUsers.filter(u =>
-      u.createdAt >= day && u.createdAt < nextDay
-    ).length
-
-    const purchases = allPayments.filter(p =>
-      p.createdAt >= day && p.createdAt < nextDay
-    ).length
-
-    const revenue = allPayments
-      .filter(p => p.createdAt >= day && p.createdAt < nextDay)
-      .reduce((sum, p) => sum + p.amount, 0)
-
+    const users = allUsers.filter(u => u.createdAt >= day && u.createdAt < nextDay).length
+    const purchases = allPayments.filter(p => p.createdAt >= day && p.createdAt < nextDay).length
+    const revenue = allPayments.filter(p => p.createdAt >= day && p.createdAt < nextDay).reduce((s, p) => s + p.amount, 0)
     return { label, users, purchases, revenue: revenue / 100 }
   })
 
   const kpis = [
-    {
-      label: 'Utilisateurs',
-      value: totalUsers.toLocaleString('fr-FR'),
-      icon: Users,
-      sub: `+${newUsersWeek} cette semaine`,
-    },
-    {
-      label: 'CVs créés',
-      value: totalResumes.toLocaleString('fr-FR'),
-      icon: FileText,
-      sub: `${(totalResumes / Math.max(totalUsers, 1)).toFixed(1)} / utilisateur`,
-    },
-    {
-      label: 'Achats',
-      value: totalPayments.toLocaleString('fr-FR'),
-      icon: CreditCard,
-      sub: 'paiements complétés',
-    },
-    {
-      label: 'Revenus',
-      value: formatEuros(totalRevenue),
-      icon: TrendingUp,
-      sub: `${formatEuros(totalRevenue / Math.max(totalPayments, 1))} / achat`,
-    },
-    {
-      label: 'Conversion',
-      value: `${conversionRate}%`,
-      icon: Percent,
-      sub: 'inscrits → acheteurs',
-    },
-    {
-      label: 'Nouveaux / semaine',
-      value: newUsersWeek.toLocaleString('fr-FR'),
-      icon: Calendar,
-      sub: '7 derniers jours',
-    },
+    { label: 'Utilisateurs', value: totalUsers.toLocaleString('fr-FR'), icon: Users, sub: `+${newUsersWeek} cette semaine`, color: 'text-[#722F37]', bg: 'bg-[#722F37]/10' },
+    { label: 'CVs créés', value: totalResumes.toLocaleString('fr-FR'), icon: FileText, sub: `${(totalResumes / Math.max(totalUsers, 1)).toFixed(1)} / utilisateur`, color: 'text-[#722F37]', bg: 'bg-[#722F37]/10' },
+    { label: 'Achats', value: totalPayments.toLocaleString('fr-FR'), icon: CreditCard, sub: 'paiements complétés', color: 'text-[#722F37]', bg: 'bg-[#722F37]/10' },
+    { label: 'Revenus', value: formatEuros(totalRevenue), icon: TrendingUp, sub: `${formatEuros(totalRevenue / Math.max(totalPayments, 1))} / achat`, color: 'text-[#722F37]', bg: 'bg-[#722F37]/10' },
+    { label: 'Conversion', value: `${conversionRate}%`, icon: Percent, sub: 'inscrits → acheteurs', color: 'text-[#722F37]', bg: 'bg-[#722F37]/10' },
+    { label: 'Nouveaux / semaine', value: newUsersWeek.toLocaleString('fr-FR'), icon: Calendar, sub: '7 derniers jours', color: 'text-[#722F37]', bg: 'bg-[#722F37]/10' },
   ]
 
   return (
-    <div className="min-h-screen bg-[#0F0C0A] text-[#E8E0D5] p-8">
+    <div className="min-h-screen bg-[#FBF8F4] p-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="mb-10 flex items-end justify-between border-b border-[#2A2420] pb-6">
+        <div className="mb-8 flex items-end justify-between border-b border-[#E0D6C8] pb-6">
           <div>
-            <p className="text-[#722F37] text-xs font-mono uppercase tracking-[0.3em] mb-2">
-              Accès restreint
-            </p>
-            <h1 className="text-3xl font-bold text-[#FBF8F4]">Administration</h1>
+            <span className="inline-flex items-center gap-1.5 bg-[#722F37] text-white text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+              Admin
+            </span>
+            <h1 className="text-3xl font-bold text-[#1F1A17]">Tableau de bord</h1>
           </div>
-          <p className="text-[#5A5248] text-sm font-mono">
+          <p className="text-[#9B9590] text-sm">
             {now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
           </p>
         </div>
 
         {/* KPIs */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
-          {kpis.map(({ label, value, icon: Icon, sub }) => (
-            <div key={label} className="bg-[#1A1512] border border-[#2A2420] rounded-xl p-4 hover:border-[#722F37]/50 transition-colors">
-              <div className="flex items-center gap-2 mb-3">
-                <Icon className="w-3.5 h-3.5 text-[#722F37]" />
-                <span className="text-[#5A5248] text-xs font-mono uppercase tracking-wider">{label}</span>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+          {kpis.map(({ label, value, icon: Icon, sub, color, bg }) => (
+            <div key={label} className="bg-white border border-[#E0D6C8] rounded-2xl p-4 hover:border-[#722F37]/40 hover:shadow-sm transition-all">
+              <div className={`w-9 h-9 ${bg} rounded-xl flex items-center justify-center mb-3`}>
+                <Icon className={`w-4 h-4 ${color}`} />
               </div>
-              <p className="text-xl font-bold text-[#FBF8F4] mb-1">{value}</p>
-              <p className="text-[#5A5248] text-xs">{sub}</p>
+              <p className="text-2xl font-bold text-[#1F1A17] mb-0.5">{value}</p>
+              <p className="text-xs text-[#6B6560] font-medium mb-1">{label}</p>
+              <p className="text-xs text-[#9B9590]">{sub}</p>
             </div>
           ))}
         </div>
@@ -202,16 +149,16 @@ export default async function AdminPage() {
         <AdminCharts monthlyData={monthlyData} dailyData={dailyData} />
 
         {/* Tableau derniers inscrits */}
-        <div className="mt-10">
-          <h2 className="text-sm font-mono uppercase tracking-[0.2em] text-[#5A5248] mb-4">
+        <div className="mt-8">
+          <h2 className="text-sm font-semibold text-[#6B6560] uppercase tracking-wider mb-3">
             Derniers inscrits
           </h2>
-          <div className="bg-[#1A1512] border border-[#2A2420] rounded-xl overflow-hidden">
+          <div className="bg-white border border-[#E0D6C8] rounded-2xl overflow-hidden">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-[#2A2420]">
+                <tr className="border-b border-[#E0D6C8] bg-[#F8F4EE]">
                   {['Nom', 'Email', 'Inscription', 'CVs', 'Achat'].map(col => (
-                    <th key={col} className="text-left px-4 py-3 text-[#5A5248] font-mono text-xs uppercase tracking-wider">
+                    <th key={col} className="text-left px-5 py-3 text-[#6B6560] font-semibold text-xs uppercase tracking-wider">
                       {col}
                     </th>
                   ))}
@@ -221,27 +168,19 @@ export default async function AdminPage() {
                 {recentUsers.map((user, i) => (
                   <tr
                     key={user.id}
-                    className={`border-b border-[#2A2420]/50 hover:bg-[#231E1A] transition-colors ${i === recentUsers.length - 1 ? 'border-b-0' : ''}`}
+                    className={`hover:bg-[#FBF8F4] transition-colors ${i < recentUsers.length - 1 ? 'border-b border-[#E0D6C8]' : ''}`}
                   >
-                    <td className="px-4 py-3 text-[#E8E0D5] font-medium">
-                      {user.name ?? '—'}
-                    </td>
-                    <td className="px-4 py-3 text-[#9B9590] font-mono text-xs">
-                      {user.email}
-                    </td>
-                    <td className="px-4 py-3 text-[#9B9590] font-mono text-xs">
-                      {user.createdAt.toLocaleDateString('fr-FR')}
-                    </td>
-                    <td className="px-4 py-3 text-[#E8E0D5]">
-                      {user._count.resumes}
-                    </td>
-                    <td className="px-4 py-3">
+                    <td className="px-5 py-3.5 font-medium text-[#1F1A17]">{user.name ?? '—'}</td>
+                    <td className="px-5 py-3.5 text-[#6B6560] text-xs">{user.email}</td>
+                    <td className="px-5 py-3.5 text-[#6B6560] text-xs">{user.createdAt.toLocaleDateString('fr-FR')}</td>
+                    <td className="px-5 py-3.5 text-[#1F1A17] font-medium">{user._count.resumes}</td>
+                    <td className="px-5 py-3.5">
                       {user._count.payments > 0 ? (
-                        <span className="inline-flex items-center gap-1 bg-[#722F37]/20 text-[#c0535e] text-xs px-2 py-0.5 rounded-full">
+                        <span className="inline-flex items-center bg-[#722F37]/10 text-[#722F37] text-xs font-semibold px-2.5 py-1 rounded-full">
                           ✓ oui
                         </span>
                       ) : (
-                        <span className="text-[#5A5248] text-xs">non</span>
+                        <span className="text-[#9B9590] text-xs">non</span>
                       )}
                     </td>
                   </tr>
